@@ -1,0 +1,195 @@
+.navigation {
+     background: $govuk-link-colour;
+     margin: 0;
+     text-align: center;
+     padding: 0;
+     margin-top: -10px;
+     position: relative;
+     z-index: 10;
+     max-height: 4.075em;
+     &.landing-page {
+          background: none;
+          display: inline-block;
+          width: 100%;
+          .apprentice-details {
+               background: $govuk-link-colour;
+               color: white;
+               padding: 20px 0 15px 0;
+               margin-bottom: -4px;
+               display: inline-block;
+               width: 100%;
+               p, a {
+                    color: white;
+                    font-size: 14px;
+                    margin: 0;
+                    &.name {
+                         font-size: 22px;
+                    }
+               }
+               a {
+                    float: right;
+                    margin: 5px 0 0 15px;
+               }
+          }
+          .beta-details {
+               display: inline-block;
+               width: 100%;
+               .govuk-phase-banner {
+                    border-bottom: none;
+               }
+          }
+          .nav {
+               display: inline-block;
+               width: 100%;
+               background: #f0f3f7;
+               height: 3em;
+               border-bottom: 1px solid $govuk-border-colour;
+               ul li a.govuk-link {
+                    color: $govuk-link-colour;
+                    text-decoration: underline;
+                    padding: 15px 0 10px 0;
+                    margin: 0 30px 0 0;
+                    border-bottom: 5px solid #f0f3f7;
+                    &:hover, &:active, &:focus {
+                         background: none;
+                         border-bottom: 5px solid darken($govuk-link-colour, 10%);
+                    }
+                    &.selected {
+                         background: none;
+                         border-bottom: 5px solid $govuk-link-colour;
+                         &:after {
+                              display: none;
+                         }
+                    }
+               }
+          }
+     }
+     .govuk-width-container {
+          text-align: left;
+     }
+     ul {
+          display: inline-block;
+          width: 100%;
+          // float: left;
+          margin: 0;
+          // padding: 0.5em 0 0.5em 0;
+          padding: 0;
+          li {
+               float: left;
+               display: inline-block;
+               margin: 0 0 0 0;
+               &.email-container {
+                    float: right;
+               }
+               a.govuk-link {
+                    color: white;
+                    font-weight: bold;
+                    font-size: 0.875rem;
+                    padding: 1.5em 1em 1.25em 1em;
+                    display: inline-block;
+                    position: relative;
+                    &.selected {
+                         background: $govuk-link-hover-colour;
+                         &:after {
+                              content: ' ';
+                              display: inline-block;
+                              width: 0;
+                              height: 0;
+                              border-style: solid;
+                              border-width: 0 10px 8px 10px;
+                              border-color: transparent transparent white transparent;
+                              // background: white;
+                              position: absolute;
+                              left: 50%;
+                              bottom: 0;
+                              margin-left: -10px;
+                         }
+                    }
+                    &:hover, &:focus, &:active {
+                         outline: none;
+                         box-shadow: none;
+                         // background: darken($govuk-link-colour, 5%);
+                    }
+                    &.dropdown {
+                         padding-right: 1em;
+                         background: url('../images/arrow-down-white.svg') no-repeat 100% 70%;
+                         background-size: 0.75em;
+                    }
+                    &.email-preferences {
+                         margin: 0;
+                         padding-left: 2.75em;
+                         font-size: 1rem;
+                         float: right;
+                         background: url('../images/contact-email-white.svg') no-repeat 7.5% 54%;
+                         background-size: 1.35em;
+                         &:hover, &:focus, &:active {
+                              outline: none;
+                              box-shadow: none;
+                              background: url('../images/contact-email-white.svg') no-repeat 7.5% 54% darken($govuk-link-colour, 5%);
+                              background-size: 1.35em;
+                         }
+                    }
+               }
+          }
+     }
+}
+
+ul.dashboard-nav {
+     padding: 0;
+     margin: 3em 0 0 0;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     margin-bottom: 4em;
+     li {
+          padding: 0 0 1em 0;
+          margin: 2em 5% 0 0;
+          width: 47.5%;
+          border-bottom: 2px solid $govuk-border-colour;
+          list-style: none;
+          &:nth-of-type(1), &:nth-of-type(2) {
+               margin-top: 0;
+          }
+          &:nth-of-type(even) {
+               margin-right: 0;
+          }
+          a {
+               text-decoration: none;
+               display: inline-block;
+               strong {
+                    margin-bottom: 0.5em;
+               }
+               .govuk-heading-m {
+                    color: $govuk-link-colour;
+                    text-decoration: underline;
+                    display: inline-block;
+                    width: 100%;
+                    span {
+                         float: left;
+                         display: inline-block;
+                         text-decoration: underline;
+                    }
+                    .number {
+                         display: inline-block;
+                         background: $govuk-brand-colour;
+                         width: 1.5em;
+                         height: 1.5em;
+                         position: relative;
+                         top: 0.1em;
+                         text-decoration: none;
+                         font-size: 20px;
+                         margin: 0 0 0 0.5em;
+                         color: white;
+                         border-radius: 50%;
+                         display: flex;
+                         align-items: center;
+                         justify-content: center;
+                    }
+               }
+               p {
+                    color: $govuk-secondary-text-colour;
+                    text-decoration: none;
+               }
+          }
+     }
+}

@@ -1,0 +1,103 @@
+.tabs {
+     display: inline-block;
+     width: 100%;
+     margin: 2.5em 0;
+     &.standards-tabs {
+          ul.govuk-list {
+               li {
+                    width: 20%;
+                    button {
+                         min-height: 5em;
+                    }
+               }
+          }
+     }
+     // &.request-tabs {
+     //      ul.govuk-list {
+     //           li {
+     //                width: 25%;
+     //                // &:last-of-type {
+     //                //      width: 20%;
+     //                //      margin: 0 0 0 5%;
+     //                // }
+     //           }
+     //      }
+     // }
+     // &.planning-meeting-tabs {
+     //      ul.govuk-list {
+     //           li {
+     //                width: 25%;
+     //           }
+     //      }
+     // }
+     ul.govuk-list {
+          display: inline-block;
+          width: 100%;
+          margin: 0;
+          // border-bottom: 10px solid govuk-colour("light-grey");
+          li {
+               display: inline-block;
+               float: left;
+               width: 22.5%;
+               margin: 0 2% -10px 0;
+               button {
+                    &.govuk-link {
+                         background: none;
+                         border: none;
+                         border-bottom: 10px solid govuk-colour("light-grey");
+                         border-radius: 0;
+                         width: 100%;
+                         padding: 0 0.5em 1em 0.5em;
+                         text-align: center;
+                         font-size: 1rem;
+                         font-weight: bold;
+                         color: black;
+                         min-height: 5em;
+                         &:active, &:focus, &:hover {
+                              outline: none;
+                              box-shadow: none;
+                              cursor: pointer;
+                              border-bottom: 10px solid $govuk-link-hover-colour;
+                              color: $govuk-link-hover-colour;
+                         }
+                         &.selected {
+                              border-bottom: 10px solid $govuk-link-colour;
+                              color: $govuk-link-colour;
+                         }
+                         div {
+                              display: inline-block;
+                         }
+                         .number {
+                              background: $govuk-link-colour;
+                              color: white;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              font-weight: bold;
+                              float: left;
+                              width: 1.5em;
+                              height: 1.5em;
+                              margin: -0.25em 0.25em -0.25em 0;
+                              border-radius: 50%;
+                              position: relative;
+                              top: 0.1em;
+                              &.alert {
+                                   background: $govuk-error-colour;
+                              }
+                              &.complete {
+                                   background: govuk-colour("green");
+                              }
+                              &.signed {
+                                   background: url('../images/tick-white.svg') no-repeat 50% 50% govuk-colour("green");
+                                   background-size: 0.75em;
+                              }
+                              &.old {
+                                   color: govuk-colour("dark-grey");
+                                   background: govuk-colour("light-grey");
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}

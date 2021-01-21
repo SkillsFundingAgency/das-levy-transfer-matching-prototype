@@ -1,0 +1,40 @@
+.module-tracker {
+     margin: 0;
+     border: 10px solid #f0f3f7;
+     margin-left: 2em;
+     padding: 15px;
+     ul.completed-modules, ul.outstanding-modules {
+          list-style: none;
+          padding-left: 0;
+          li {
+               margin-bottom: 0.5em;
+               font-size: 14px;
+               strong {
+                    color: govuk-colour("green");
+                    &.fail {
+                         color: govuk-colour("red");
+                         span {
+                              background: url('../images/cross-error.svg') no-repeat 50% 50%;
+                              background-size: contain;
+                         }
+                    }
+                    span {
+                         position: relative;
+                         top: 0.15em;
+                         display: inline-block;
+                         width: 1em;
+                         height: 1em;
+                         margin: 0 0.25em 0 0;
+                         background: url('../images/tick-green.svg') no-repeat 50% 50%;
+                         background-size: contain;
+                    }
+               }
+          }
+     }
+     ul.completed-modules {
+          margin-bottom: 2em;
+     }
+     ul.outstanding-modules {
+
+     }
+}
