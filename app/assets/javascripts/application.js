@@ -18,6 +18,8 @@ if ($('div').hasClass('my-account-main-header')) {
 }
 
 $("#transfers-hub").parent().removeClass('my-account-wrapper');
+$("#transfers-hub.form-entry").parent().css('padding-top','0');
+
 
 if ($("#transfers-hub")) {
      $('.navigation ul li a').removeClass('selected');
@@ -39,4 +41,71 @@ $(document).ready(function(){
           // the following line has been simplified. Revision history contains original.
           $this.val(num2);
   });
+});
+
+// !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
+$('#sender-check-answers').find('.section-six').hide();
+
+// Locations
+function addAnotherLocation() {
+     event.preventDefault();
+     locationNumber++;
+     $("#locations").append(`
+          <div class="govuk-form-group">
+               <label class="govuk-label" for="pledge-location[url${locationNumber}]">Additional location</label>
+
+               <select class="govuk-select" id="pledge-location[url${locationNumber}]" name="pledge-location[url${locationNumber}]">
+                    <option value="National" selected>National</option>
+                    <option disabled>---------------------------------</option>
+                    <option value="East Midlands">East Midlands</option>
+                    <option value="East of England">East of England</option>
+                    <option value="Greater London">Greater London</option>
+                    <option value="North East">North East</option>
+                    <option value="North West England">North West England</option>
+                    <option value="South East England">South East England</option>
+                    <option value="South West England">South West England</option>
+                    <option value="West Midlands">West Midlands</option>
+                    <option value="Yorkshire and the Humber">Yorkshire and the Humber</option>
+               </select>
+               <p class="govuk-body">
+                    <a class="govuk-link govuk-link--no-visited-state" data-remove="url${locationNumber}" href="#">remove</a>
+               </p>
+          </div>
+     `).on("click", "[data-remove]", function () {
+     if ($("#locations").data("location-count") === 1) {
+          event.preventDefault();
+          $(this).closest(".govuk-form-group").remove();
+     }
+     });
+}
+
+function removeLocation() {
+     event.preventDefault();
+     var removeId = $(this).data("remove");
+     $("#locations").append(`
+          <input id="pledge-location[${removeId}]" name="pledge-location[${removeId}]" type="hidden" value="" />`
+     )
+     $(this).closest(".govuk-form-group").remove();
+}
+
+var locationNumber = $("#locations").data("location-count");
+$("#addAnotherLocation").on("click", addAnotherLocation);
+$("[data-remove]").on("click", removeLocation);
+
+// Sectors
+function toggle(source) {
+     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+     for (var i = 0; i < checkboxes.length; i++) {
+     if (checkboxes[i] != source)
+          checkboxes[i].checked = source.checked;
+     }
+}
+
+$('input[name="pledge-sector"]').on("click", function (e) {
+     // $('input[id="pledge-sector-all"]').prop('checked', false);
+     var numberChecked = $(":checkbox:checked").length;
+     // alert(numberChecked);
+     if (numberChecked <= 15) {
+          $('input[id="pledge-sector-all"]').prop('checked', false);
+     }
 });

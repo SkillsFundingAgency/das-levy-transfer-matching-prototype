@@ -10,19 +10,13 @@
 
 {% block content %}
 
-<div class="govuk-width-container" id="transfers-hub">
+<div class="govuk-width-container form-entry" id="transfers-hub">
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
-               <div class="govuk-breadcrumbs">
-                    <ol class="govuk-breadcrumbs__list">
-                         <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../my-account">Home</a></li>
-                         <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
-                         <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../transfers">Transfers</a></li>
-                         <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Create a pledge</a></li>
-                    </ol>
-               </div>
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
           </div>
      </div>
 
@@ -32,7 +26,7 @@
                <span class="govuk-caption-m">Transfer matching service</span>
                <h1 class="govuk-heading-xl">Create a transfers pledge</h1>
 
-               <form method="post" action="" class="">
+               <form method="post" action="" id="pledge-funding-form">
 
                     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -105,8 +99,8 @@
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge-sector">Sector the employer receiving the transfer works in (for example, construction)</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training" name="pledge-criteria" type="checkbox" value=""pledge-training">
-                                        <label class="govuk-label govuk-checkboxes__label" for=""pledge-training">Category of training (for example, health and science)</label>
+                                        <input class="govuk-checkboxes__input" id="pledge-training" name="pledge-criteria" type="checkbox" value="pledge-training">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training">Category of training (for example, health and science)</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input" id="pledge-level" name="pledge-criteria" type="checkbox" value="pledge-level">
@@ -120,7 +114,7 @@
 
                     <button class="govuk-button" data-module="govuk-button" id="pledge-criteria-continue">Continue</button>
 
-                    <a href="#" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+                    <a href="../transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
 
                </form>
 

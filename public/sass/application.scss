@@ -48,10 +48,86 @@ a {
      &.govuk-button--secondary {
           margin-left: 1em;
      }
+     &.govuk-link-secondary {
+          margin: 0.75em 0 0 2em;
+          display: inline-block;
+     }
+     &.add-location {
+          padding-left: 2em;
+          font-size: 1rem;
+          margin: 0.5em 0 0 0;
+          display: inline-block;
+          background: url("../images/add.svg") no-repeat 0% 50%;
+          background-size: contain;
+     }
+}
+
+#locations {
+     .govuk-form-group {
+          margin-bottom: 30px;
+          &:last-of-type {
+               margin-bottom: 0;
+          }
+     }
+}
+
+.govuk-form-group {
+     margin-bottom: 50px;
+     .govuk-checkboxes__item {
+          &.select-all {
+               border-bottom: 1px solid black;
+               padding-bottom: 20px;
+               margin-bottom: 20px;
+          }
+     }
 }
 
 #transfers-hub {
      .govuk-breadcrumbs {
           margin: -1em 0 3em 0;
+     }
+     .govuk-back-link {
+          margin-bottom: 3em;
+     }
+}
+
+.funding-wrapper {
+     position: relative;
+     width: auto;
+     display: inline-block;
+     .value {
+          font-weight: bold;
+          background: govuk-colour("light-grey");
+          padding: 0.3em 0.65em;
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+          border: 2px solid #0b0c0c;
+     }
+     input {
+          padding-left: 2.25em;
+          float: left;
+     }
+     .total {
+          width: 80%;
+          display: inline-block;
+          float: left;
+          clear: both;
+          background: govuk-colour("blue");
+          padding: 5% 10%;
+          margin: 1em 0 0 0;
+          p {
+               color: white;
+               margin: 0;
+               font-weight: bold;
+               &.number {
+                    font-size: 36px;
+               }
+          }
+
      }
 }

@@ -52,15 +52,42 @@ a {
           margin: 0.75em 0 0 2em;
           display: inline-block;
      }
+     &.add-location {
+          padding-left: 2em;
+          font-size: 1rem;
+          margin: 0.5em 0 0 0;
+          display: inline-block;
+          background: url("../images/add.svg") no-repeat 0% 50%;
+          background-size: contain;
+     }
+}
+
+#locations {
+     .govuk-form-group {
+          margin-bottom: 30px;
+          &:last-of-type {
+               margin-bottom: 0;
+          }
+     }
 }
 
 .govuk-form-group {
      margin-bottom: 50px;
+     .govuk-checkboxes__item {
+          &.select-all {
+               border-bottom: 1px solid black;
+               padding-bottom: 20px;
+               margin-bottom: 20px;
+          }
+     }
 }
 
 #transfers-hub {
      .govuk-breadcrumbs {
           margin: -1em 0 3em 0;
+     }
+     .govuk-back-link {
+          margin-bottom: 3em;
      }
 }
 
