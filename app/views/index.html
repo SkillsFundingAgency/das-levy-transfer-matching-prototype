@@ -94,33 +94,86 @@
 
 <div class="govuk-grid-row">
      <!-- Full width header section starts -->
-     <!-- <div class="govuk-grid-column-full">
+     <div class="govuk-grid-column-full">
           <h2 class="govuk-heading-m">
                Latest prototype link
           </h2>
           <p class="govuk-body">
-               <a href="/sprint-6/commitment-statement/emails/index" class="govuk-link govuk-link--no-visited-state">MVS - digital commitment</a>
-               <br>
-               <a href="/sprint-6/portability/sign-in/index" class="govuk-link govuk-link--no-visited-state">BETA - portability</a>
-               <br>
-               <a href="/sprint-6/employer/landing-page/index" class="govuk-link govuk-link--no-visited-state">Employer journey</a>
-
+               <a href="/sprint-3/sender/index" class="govuk-link govuk-link--no-visited-state">Sending employer</a>
           </p>
-     </div> -->
+     </div>
      <!-- Full width header section ends -->
 </div>
 
-<!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 <div class="govuk-grid-row">
      <!-- Sprints section starts -->
      <div class="govuk-grid-column-two-thirds">
 
           <h2 class="govuk-heading-l govuk-!-margin-top-9">
+               Alpha sprints
+          </h2>
+
+          {% include './sprint-3/_summary.html' %}
+
+
+          <h2 class="govuk-heading-l govuk-!-margin-top-9">
                Discovery sprints
           </h2>
 
-          {% include './sprint-0/_summary.html' %}
+          {% set sprint2Html %}
+               {% include './sprint-2/_summary.html' %}
+          {% endset %}
+
+          {% set sprint1Html %}
+               {% include './sprint-1/_summary.html' %}
+          {% endset %}
+
+          {% set sprint0Html %}
+               {% include './sprint-0/_summary.html' %}
+          {% endset %}
+
+
+          {{ govukAccordion({
+               id: "accordion-discovery",
+               items: [
+                    {
+                         heading: {
+                              text: "Sprint 2"
+                         },
+                         content: {
+                              html: sprint2Html
+                         },
+                         summary: {
+                              html: '17th February 2021 — 2nd March 2021'
+                         }
+                    },
+                    {
+                         heading: {
+                              text: "Sprint 1"
+                         },
+                         content: {
+                              html: sprint1Html
+                         },
+                         summary: {
+                              html: '3rd February 2021 — 16th February 2021'
+                         }
+                    },
+                    {
+                         heading: {
+                              text: "Sprint 0"
+                         },
+                         content: {
+                              html: sprint0Html
+                         },
+                         summary: {
+                              html: '20th January - 2nd February 2021'
+                         }
+                    }
+               ]
+          }) }}
+
 
 
      </div>

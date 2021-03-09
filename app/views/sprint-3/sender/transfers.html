@@ -1,0 +1,78 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">Transfers</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <p>You can spend spare levy funds by transferring up to 25% of your previous year's funds to another employer, to pay for their apprenticeship training.</p>
+
+               <p>You can make a transfer to any employer of your choice.</p>
+
+               <p>You are only responsible for paying the cost of their training with a transfer.</p>
+
+               <p>The employer receiving the transfer is responsible for everything else related to that apprenticeship.</p>
+
+               <p>The receiving employer will need an Apprenticeship Service account to receive the transfer.</p>
+
+               <p><strong>You can find an employer to receive a transfer using our transfers matching service.</strong></p>
+
+               <ol class="govuk-list govuk-list--number">
+                    <li>Create a pledge</li>
+                    <li>Review and approve applications from matching employers</li>
+                    <li>Make a connection on the service and confirm details of the transfer</li>
+               </ol>
+
+               <h2 class="govuk-heading-s">Transfer pledges</h2>
+               <p>You have no pending pledges.</p>
+
+               {% from "govuk/components/button/macro.njk" import govukButton %}
+
+               <a href="transfers/1-funding" class="govuk-button" data-module="govuk-button">Create a pledge</a>
+
+               <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">Make a transfer to someone I know</a>
+
+               <p><a href="#">Take me to the Transfer Matching service</a></p>
+
+               <hr class="separator">
+
+               <h2 class="govuk-heading-s">Connection requests</h2>
+               <p>You have no pending or approved requests.</p>
+
+               <h2 class="govuk-heading-s">Transfer requests</h2>
+               <p>You have no pending or approved requests.</p>
+
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
