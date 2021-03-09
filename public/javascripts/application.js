@@ -44,7 +44,7 @@ $(document).ready(function(){
 });
 
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
-$('#sender-check-answers').find('.section-six').hide();
+// $('#sender-check-answers').find('.section-six').hide();
 
 // Locations
 function addAnotherLocation() {
@@ -109,3 +109,56 @@ $('input[name="pledge-sector"]').on("click", function (e) {
           $('input[id="pledge-sector-all"]').prop('checked', false);
      }
 });
+
+// Training
+$('input[name="pledge-training"]').on("click", function (e) {
+     // $('input[id="pledge-sector-all"]').prop('checked', false);
+     var numberChecked = $(":checkbox:checked").length;
+     // alert(numberChecked);
+     if (numberChecked <= 15) {
+          $('input[id="pledge-training-all"]').prop('checked', false);
+     }
+});
+
+// Level
+$('input[name="pledge-level"]').on("click", function (e) {
+     // $('input[id="pledge-sector-all"]').prop('checked', false);
+     var numberChecked = $(":checkbox:checked").length;
+     // alert(numberChecked);
+     if (numberChecked <= 6) {
+          $('input[id="pledge-level-all"]').prop('checked', false);
+     }
+});
+
+// Intermediaries
+function addAnotherEmail() {
+     event.preventDefault();
+     emailNumber++;
+     $("#emails").append(`
+          <div class="govuk-form-group">
+               <label class="govuk-label" for="pledge-email[url${emailNumber}]"> Additional email address</label>
+               <input class="govuk-input govuk-!-width-three-quarters" id="pledge-email[url${emailNumber}]" name="pledge-email[url${emailNumber}]" type="email" spellcheck="false">
+               <p class="govuk-body">
+                    <a class="govuk-link govuk-link--no-visited-state" data-remove="url${emailNumber}" href="#">remove</a>
+               </p>
+          </div>
+     `).on("click", "[data-remove]", function () {
+     if ($("#emails").data("email-count") === 1) {
+          event.preventDefault();
+          $(this).closest(".govuk-form-group").remove();
+     }
+     });
+}
+
+function removeEmail() {
+     event.preventDefault();
+     var removeId = $(this).data("remove");
+     $("#emails").append(`
+          <input class="govuk-input govuk-!-width-three-quarters" id="pledge-email[${removeId}]" name="pledge-email[${removeId}]" type="email" spellcheck="false">`
+     )
+     $(this).closest(".govuk-form-group").remove();
+}
+
+var emailNumber = $("#emails").data("email-count");
+$("#addAnotherEmail").on("click", addAnotherEmail);
+$("[data-remove]").on("click", removeEmail);

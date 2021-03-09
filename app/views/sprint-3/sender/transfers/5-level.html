@@ -24,101 +24,48 @@
           <div class="govuk-grid-column-two-thirds">
 
                <span class="govuk-caption-m">Transfer matching service</span>
-               <h1 class="govuk-heading-xl">Category of apprenticeship training</h1>
+               <h1 class="govuk-heading-xl">Qualification level of apprenticeship training</h1>
 
-               <form method="post" action="" id="pledge-training-form">
+               <form method="post" action="6-intermediaries" id="pledge-level-form">
 
                     <div class="govuk-form-group">
-                         <fieldset class="govuk-fieldset" aria-describedby="pledge-training-hint">
-                              <legend class="govuk-fieldset__legend">Select the categories of training you want to fund.</legend>
+                         <fieldset class="govuk-fieldset" aria-describedby="pledge-level-hint">
+                              <legend class="govuk-fieldset__legend">Select the qualification level you would like to fund.</legend>
                               <div class="govuk-checkboxes">
                                    <div class="govuk-checkboxes__item select-all">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-all" name="pledge-training" type="checkbox" value="Select all" onClick="toggle(this)">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-all">Select all</label>
+                                        <input class="govuk-checkboxes__input" id="pledge-level-all" name="pledge-level" type="checkbox" value="Select all" onClick="toggle(this)">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-level-all">Select all</label>
                                    </div>
 
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-agriculture" name="pledge-training" type="checkbox" value="Agriculture, environmental and animal care" aria-describedby="pledge-training-agriculture-hint">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-agriculture">Agriculture, environmental and animal care</label>
-                                        <div id="pledge-training-agriculture-hint" class="govuk-hint govuk-checkboxes__hint">For example, Veterinary Nurse, Horticulture and Landscape Operative, Equine Groom, Golf Greenkeeper</div>
+                                        <input class="govuk-checkboxes__input" id="pledge-level-two" name="pledge-level" type="checkbox" value="Level 2 - GCSE">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-level-two">Level 2 - GCSE</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-business" name="pledge-training" type="checkbox" value="Business and administration">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-business">Business and administration</label>
-                                        <div id="pledge-training-business-hint" class="govuk-hint govuk-checkboxes__hint">For example, Team Leader or Supervisor, Operations or Departmental Manager, Business Administrator, Senior Leader (degree)</div>
+                                        <input class="govuk-checkboxes__input" id="pledge-level-three" name="pledge-level" type="checkbox" value="Level 3 - A level">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-level-three">Level 3 - A level</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-care" name="pledge-training" type="checkbox" value="Care services">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-care">Care services</label>
-                                        <div id="pledge-training-care-hint" class="govuk-hint govuk-checkboxes__hint">For example, Lead Adult Care Worker, Adult Care Worker, Children, Young People and Families Practitioner, Children, Young People and Families Manager</div>
+                                        <input class="govuk-checkboxes__input" id="pledge-level-four" name="pledge-level" type="checkbox" value="Level 4 - higher national certificate (HNC)">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-level-four">Level 4 - higher national certificate (HNC)</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-catering" name="pledge-training" type="checkbox" value="Catering and hospitality">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-catering">Catering and hospitality</label>
-                                        <div id="pledge-training-catering-hint" class="govuk-hint govuk-checkboxes__hint">For example, Hospitality Team Member, Hospitality Supervisor, Commis Chef, Production Chef</div>
+                                        <input class="govuk-checkboxes__input" id="pledge-level-five" name="pledge-level" type="checkbox" value="Level 5 - higher national diploma (HND)">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-level-five">Level 5 - higher national diploma (HND)</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-construction" name="pledge-training" type="checkbox" value="Construction">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-construction">Construction</label>
-                                        <div id="pledge-training-construction-hint" class="govuk-hint govuk-checkboxes__hint">For example, Installation Electrician or Maintenance Electrician, Carpentry and Joinery, Chartered Surveyor (degree), Bricklayer</div>
+                                        <input class="govuk-checkboxes__input" id="pledge-level-six" name="pledge-level" type="checkbox" value="Level 6 - degree">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-level-six">Level 6 - degree</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-creative" name="pledge-training" type="checkbox" value="Creative and design">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-creative">Creative and design</label>
-                                        <div id="pledge-training-creative-hint" class="govuk-hint govuk-checkboxes__hint">For example, Junior Content Producer, Junior Journalist, Creative Venue Technician, Broadcast Production Assistant</div>
-                                   </div>
-                                   <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-digital" name="pledge-training" type="checkbox" value="Digital">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-digital">Digital</label>
-                                        <div id="pledge-training-digital-hint" class="govuk-hint govuk-checkboxes__hint">For example, Infrastructure Technician, Digital and Technology Solutions Professional, Data Analyst, Software Developer</div>
-                                   </div>
-                                   <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-education" name="pledge-training" type="checkbox" value="Education and childcare">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-education">Education and childcare</label>
-                                        <div id="pledge-training-education-hint" class="govuk-hint govuk-checkboxes__hint">For example, Early Years Educator, Teaching Assistant, Academic Professional, Learning and Skills Teacher</div>
-                                   </div>
-                                   <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-engineering" name="pledge-training" type="checkbox" value="Engineering and manufacturing">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-engineering">Engineering and manufacturing</label>
-                                        <div id="pledge-training-engineering-hint" class="govuk-hint govuk-checkboxes__hint">For example, Engineering Technician, Motor Vehicle Service and Maintenance Technician, Maintenance and Operations Engineering Technician, Heavy Vehicle Service and Maintenance Technician</div>
-                                   </div>
-                                   <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-hair" name="pledge-training" type="checkbox" value="Hair and beauty">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-hair">Hair and beauty</label>
-                                        <div id="pledge-training-hair-hint" class="govuk-hint govuk-checkboxes__hint">For example, Hair Professional, Beauty Therapist, Nail Services Technician</div>
-                                   </div>
-                                   <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-health" name="pledge-training" type="checkbox" value="Health and science">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-health">Health and science</label>
-                                        <div id="pledge-training-health-hint" class="govuk-hint govuk-checkboxes__hint">For example, Senior Healthcare Support Worker, Dental Nurse, Nursing Associate, Healthcare Support Worker</div>
-                                   </div>
-                                   <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-legal" name="pledge-training" type="checkbox" value="Legal, finance and accounting">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-legal">Legal, finance and accounting</label>
-                                        <div id="pledge-training-legal-hint" class="govuk-hint govuk-checkboxes__hint">For example, Accountancy or Taxation Professional, Assistant Accountant, Professional Accounting or Taxation Technician, Insurance Practitioner</div>
-                                   </div>
-                                   <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-protective" name="pledge-training" type="checkbox" value="Protective services">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-protective">Protective services</label>
-                                        <div id="pledge-training-protective-hint" class="govuk-hint govuk-checkboxes__hint">For example, HM Forces Serviceperson, Police Constable, Operational Firefighter, Custody and Detention Officer</div>
-                                   </div>
-                                   <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-sales" name="pledge-training" type="checkbox" value="Sales, marketing and procurement">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-sales">Sales, marketing and procurement</label>
-                                        <div id="pledge-training-sales-hint" class="govuk-hint govuk-checkboxes__hint">For example, Customer Service Practitioner, Retailer, Digital Marketer, Retail Team Leader</div>
-                                   </div>
-                                   <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge-training-transport" name="pledge-training" type="checkbox" value="Transport and logistics">
-                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training-transport">Transport and logistics</label>
-                                        <div id="pledge-training-transport-hint" class="govuk-hint govuk-checkboxes__hint">For example, Large Goods Vehicle (LGV) Driver, Supply Chain Warehouse Operative, Passenger Transport Driver, Cabin Crew</div>
+                                        <input class="govuk-checkboxes__input" id="pledge-level-seven" name="pledge-level" type="checkbox" value="Level 7 - master’s degree">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-level-seven">Level 7 - master’s degree</label>
                                    </div>
                               </div>
                          </fieldset>
                     </div>
 
-                    <p><br></p>
-
-                    <button class="govuk-button" data-module="govuk-button" id="pledge-training-continue">Continue</button>
+                    <button class="govuk-button" data-module="govuk-button" id="pledge-level-continue">Continue</button>
 
                     <a href="../transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
 

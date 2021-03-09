@@ -49,10 +49,10 @@ a {
           margin-left: 1em;
      }
      &.govuk-link-secondary {
-          margin: 0.75em 0 0 2em;
+          margin: 0.65em 0 0 2em;
           display: inline-block;
      }
-     &.add-location {
+     &.add-location, &.add-emails {
           padding-left: 2em;
           font-size: 1rem;
           margin: 0.5em 0 0 0;
@@ -71,6 +71,12 @@ a {
      }
 }
 
+.updates-emails, .updates-locations {
+     .govuk-form-group {
+          margin-bottom: 30px;
+     }
+}
+
 .govuk-form-group {
      margin-bottom: 50px;
      .govuk-checkboxes__item {
@@ -78,6 +84,7 @@ a {
                border-bottom: 1px solid black;
                padding-bottom: 20px;
                margin-bottom: 20px;
+               margin-top: 1em;
           }
      }
 }

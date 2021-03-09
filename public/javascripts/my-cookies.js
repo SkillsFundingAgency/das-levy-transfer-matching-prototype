@@ -2,7 +2,7 @@
 
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
 // Sender - Funding
-$('#pledge-funding-form').attr('action','7-check-answers');
+$('#pledge-funding-form').attr('action','6-intermediaries');
 
 $("#pledge-criteria-continue").on("click", function (e) {
      // 1
@@ -62,31 +62,31 @@ $("#pledge-criteria-continue").on("click", function (e) {
 
 
 // Sender - Location
-if ($.cookie("pledge-location") == "true") {
-     $('#sender-check-answers').find('.section-two').show();
-} else {
-     $('#sender-check-answers').find('.section-two').hide();
-}
+// if ($.cookie("pledge-location") == "true") {
+//      $('#sender-check-answers').find('.section-two').show();
+// } else {
+//      $('#sender-check-answers').find('.section-two').hide();
+// }
 
 // Sender - Sector
-if ($.cookie("pledge-sector") == "true") {
-     $('#sender-check-answers').find('.section-three').show();
-} else {
-     $('#sender-check-answers').find('.section-three').hide();
-}
+// if ($.cookie("pledge-sector") == "true") {
+//      $('#sender-check-answers').find('.section-three').show();
+// } else {
+//      $('#sender-check-answers').find('.section-three').hide();
+// }
 
 // Sender - Training
-if ($.cookie("pledge-training") == "true") {
-     $('#sender-check-answers').find('.section-four').show();
-} else {
-     $('#sender-check-answers').find('.section-four').hide();
-}
+// if ($.cookie("pledge-training") == "true") {
+//      $('#sender-check-answers').find('.section-four').show();
+// } else {
+//      $('#sender-check-answers').find('.section-four').hide();
+// }
 
 // Sender - Level
-if ($.cookie("pledge-level") == "true") {
-     $('#sender-check-answers').find('.section-five').show();
-} else {
-     $('#sender-check-answers').find('.section-five').hide();
-}
+// if ($.cookie("pledge-level") == "true") {
+//      $('#sender-check-answers').find('.section-five').show();
+// } else {
+//      $('#sender-check-answers').find('.section-five').hide();
+// }
 
 //

@@ -28,7 +28,7 @@
 
                <!-- SECTION 1 - START -->
                <div class="section-one">
-                    <h2 class="govuk-heading-m">Location of the employer receiving the transfer</h2>
+                    <h2 class="govuk-heading-m">Pledge details</h2>
 
                     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                          <div class="govuk-summary-list__row">
@@ -50,274 +50,64 @@
                </div>
                <!-- SECTION 1 - END -->
 
-               <!-- SECTION 2 - START -->
-               <div class="section-two">
-                    <h2 class="govuk-heading-m">Location of the employer receiving the transfer</h2>
+               <div class="any-criteria">
 
+                    <h2 class="govuk-heading-m">Your pledge criteria</h2>
                     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                         <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">Anonymous?</dt>
-                              <dd class="govuk-summary-list__value">{{ data['pledge-anonymous'] }}</dd>
-                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="1-funding#pledge-anonymous">Change<span class="govuk-visually-hidden"> to remain anonymous</span></a></dd>
+
+                         <!-- SECTION 2 - START -->
+                         <div class="govuk-summary-list__row section-two">
+                              <dt class="govuk-summary-list__key">Location of the employer receiving the transfer</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-locations'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="2-location">Change<span class="govuk-visually-hidden"> lcoations</span></a></dd>
                          </div>
-                         <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">How much</dt>
-                              <dd class="govuk-summary-list__value">{{ data['pledge-amount'] }}</dd>
-                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="1-funding#pledge-amount">Change<span class="govuk-visually-hidden"> pledge amount</span></a></dd>
+                         <!-- SECTION 2 - END -->
+
+                         <!-- SECTION 3 - START -->
+                         <div class="govuk-summary-list__row section-three">
+                              <dt class="govuk-summary-list__key">Sector the employer receiving the transfer works in</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-sector'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="3-sector">Change<span class="govuk-visually-hidden"> sectors</span></a></dd>
                          </div>
-                         <div class="govuk-summary-list__row">
-                              <dt class="govuk-summary-list__key">Show pledge amount</dt>
-                              <dd class="govuk-summary-list__value">{{ data['pledge-public'] }}</dd>
-                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="1-funding#pledge-public">Change<span class="govuk-visually-hidden"> show pledge amount</span></a></dd>
+                         <!-- SECTION 3 - END -->
+
+                         <!-- SECTION 4 - START -->
+                         <div class="govuk-summary-list__row section-four">
+                              <dt class="govuk-summary-list__key">Category of apprenticeship training</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-training'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="4-training">Change<span class="govuk-visually-hidden"> training</span></a></dd>
                          </div>
+                         <!-- SECTION 4 - END -->
+
+                         <!-- SECTION 5 - START -->
+                         <div class="govuk-summary-list__row section-five">
+                              <dt class="govuk-summary-list__key">Qualification level of apprenticeship training</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-level'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="5-level">Change<span class="govuk-visually-hidden"> levels</span></a></dd>
+                         </div>
+                         <!-- SECTION 5 - END -->
+
                     </dl>
                </div>
-               <!-- SECTION 2 - END -->
-
-               <!-- SECTION 3 - START -->
-               <div class="section-three">
-                    <h2 class="govuk-heading-m">Sector the employer receiving the transfer works in</h2>
-
-                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Name
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    Sarah Philips
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> name</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Date of birth
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    5 January 1978
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> date of birth</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Address
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    72 Guild Street<br>London<br>SE23 6FH
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> address</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Contact details
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    <p class="govuk-body">07700 900457</p>
-                    <p class="govuk-body">sarah.phillips@example.com</p>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> contact details</span>
-                    </a>
-                    </dd>
-                    </div>
-                    </dl>
-               </div>
-               <!-- SECTION 3 - END -->
-
-               <!-- SECTION 4 - START -->
-               <div class="section-four">
-                    <h2 class="govuk-heading-m">Category of apprenticeship training</h2>
-
-                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Name
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    Sarah Philips
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> name</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Date of birth
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    5 January 1978
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> date of birth</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Address
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    72 Guild Street<br>London<br>SE23 6FH
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> address</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Contact details
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    <p class="govuk-body">07700 900457</p>
-                    <p class="govuk-body">sarah.phillips@example.com</p>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> contact details</span>
-                    </a>
-                    </dd>
-                    </div>
-                    </dl>
-               </div>
-               <!-- SECTION 4 - END -->
-
-               <!-- SECTION 5 - START -->
-               <div class="section-five">
-                    <h2 class="govuk-heading-m">Qualification level of apprenticeship training</h2>
-
-                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Name
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    Sarah Philips
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> name</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Date of birth
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    5 January 1978
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> date of birth</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Address
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    72 Guild Street<br>London<br>SE23 6FH
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> address</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Contact details
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    <p class="govuk-body">07700 900457</p>
-                    <p class="govuk-body">sarah.phillips@example.com</p>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> contact details</span>
-                    </a>
-                    </dd>
-                    </div>
-                    </dl>
-               </div>
-               <!-- SECTION 5 - END -->
 
                <!-- SECTION 6 - START -->
                <div class="section-six">
                     <h2 class="govuk-heading-m">Do you work with another organisation to manage transfers?</h2>
 
                     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Name
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    Sarah Philips
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> name</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Date of birth
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    5 January 1978
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> date of birth</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Address
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    72 Guild Street<br>London<br>SE23 6FH
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> address</span>
-                    </a>
-                    </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                    Contact details
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                    <p class="govuk-body">07700 900457</p>
-                    <p class="govuk-body">sarah.phillips@example.com</p>
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden"> contact details</span>
-                    </a>
-                    </dd>
-                    </div>
+
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">Intermediaries</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-intermediaries'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="6-intermediaries">Change<span class="govuk-visually-hidden"> intermediaries</span></a></dd>
+                         </div>
+
+                         <div class="govuk-summary-list__row intermediary-details">
+                              <dt class="govuk-summary-list__key">Emails</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-email'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="6-intermediaries">Change<span class="govuk-visually-hidden"> intermediaries</span></a></dd>
+                         </div>
+
                     </dl>
                </div>
                <!-- SECTION 6 - END -->
