@@ -79,7 +79,6 @@ function addAnotherLocation() {
 }
 
 function removeLocation() {
-     event.preventDefault();
      var removeId = $(this).data("remove");
      $("#locations").append(`
           <input id="pledge-location[${removeId}]" name="pledge-location[${removeId}]" type="hidden" value="" />`
@@ -87,7 +86,7 @@ function removeLocation() {
      $(this).closest(".govuk-form-group").remove();
 }
 
-var locationNumber = $("#locations").data("location-count");
+var locationNumber = $("#locations").data("location-count") || 1;
 $("#addAnotherLocation").on("click", addAnotherLocation);
 $("[data-remove]").on("click", removeLocation);
 
@@ -131,7 +130,6 @@ $('input[name="pledge-level"]').on("click", function (e) {
 
 // Intermediaries
 function addAnotherEmail() {
-     event.preventDefault();
      emailNumber++;
      $("#emails").append(`
           <div class="govuk-form-group">
@@ -143,14 +141,12 @@ function addAnotherEmail() {
           </div>
      `).on("click", "[data-remove]", function () {
      if ($("#emails").data("email-count") === 1) {
-          event.preventDefault();
           $(this).closest(".govuk-form-group").remove();
      }
      });
 }
 
 function removeEmail() {
-     event.preventDefault();
      var removeId = $(this).data("remove");
      $("#emails").append(`
           <input class="govuk-input govuk-!-width-three-quarters" id="pledge-email[${removeId}]" name="pledge-email[${removeId}]" type="email" spellcheck="false">`
@@ -158,7 +154,7 @@ function removeEmail() {
      $(this).closest(".govuk-form-group").remove();
 }
 
-var emailNumber = $("#emails").data("email-count");
+var emailNumber = $("#emails").data("email-count") || 1;
 $("#addAnotherEmail").on("click", addAnotherEmail);
 $("[data-remove]").on("click", removeEmail);
 
