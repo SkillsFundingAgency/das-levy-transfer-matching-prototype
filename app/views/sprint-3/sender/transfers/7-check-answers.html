@@ -59,9 +59,9 @@
                          <div class="govuk-summary-list__row section-two">
                               <dt class="govuk-summary-list__key">Location of the employer receiving the transfer</dt>
                               <dd class="govuk-summary-list__value">
-                                {% for key, location in data['pledge-location'] %}
-                                  {{ location }} <br>
-                                {% endfor %}
+                                   {% for key, location in data['pledge-location'] %}
+                                        {{ location }} <br>
+                                   {% endfor %}
                               </dd>
                               <dd class="govuk-summary-list__actions"><a class="govuk-link" href="2-location">Change<span class="govuk-visually-hidden"> lcoations</span></a></dd>
                          </div>
@@ -133,9 +133,9 @@
                          <div class="govuk-summary-list__row intermediary-details">
                               <dt class="govuk-summary-list__key">Emails</dt>
                               <dd class="govuk-summary-list__value">
-                                {% for key, email in data['pledge-email'] %}
-                                  {{ email }} <br>
-                                {% endfor %}
+                                   {% for key, email in data['pledge-email'] %}
+                                        {{ email }}<br>
+                                   {% endfor %}
                               <dd class="govuk-summary-list__actions"><a class="govuk-link" href="6-intermediaries">Change<span class="govuk-visually-hidden"> intermediaries</span></a></dd>
                          </div>
 
