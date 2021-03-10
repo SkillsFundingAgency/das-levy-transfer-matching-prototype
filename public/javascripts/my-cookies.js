@@ -5,6 +5,13 @@
 $('#pledge-funding-form').attr('action','6-intermediaries');
 
 $("#pledge-criteria-continue").on("click", function (e) {
+
+     if ($('input[id=pledge-anonymous]').is(':checked')) {
+          $.cookie("pledge-anonymous", true, {path:'/'});
+     } else {
+          $.cookie("pledge-anonymous", false, {path:'/'});
+     }
+
      // 1
      if ($('input[id=pledge-location]').is(':checked')) {
           $.cookie("pledge-location", true, {path:'/'});
@@ -89,4 +96,26 @@ $("#pledge-criteria-continue").on("click", function (e) {
 //      $('#sender-check-answers').find('.section-five').hide();
 // }
 
-//
+// Pledge complete
+$("#pledge-confirm-continue").on("click", function (e) {
+     $.cookie("pledge-complete", true, {path:'/'});
+});
+
+if ($.cookie("pledge-complete") == 'true') {
+     $('.pledge-complete, .pledge-complete-table').show();
+     $('.no-pledges').hide();
+     $('.pledge-complete').show();
+     setTimeout(function() {
+          $('.pledge-complete').fadeOut('fast');
+     }, 5000);
+}
+if ($.cookie("pledge-anonymous") == 'true') {
+     $('.anonymous-yes').show();
+     $('.anonymous-no').hide();
+} else {
+     $('.anonymous-yes').hide();
+     $('.anonymous-no').show();
+}
+
+// Pledges page
+// $('.approved-one, .rejected-one').hide();

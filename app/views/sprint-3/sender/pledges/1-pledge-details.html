@@ -1,0 +1,260 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Transfer matching service</span>
+               <h1 class="govuk-heading-xl">
+                    Applications for your transfer pledge
+                    <span class="govuk-caption-m anonymous-yes">Anonymous Pledge (9101)</span>
+                    <span class="govuk-caption-m anonymous-no">BARRY & BARRY Ltd (9101)</span>
+               </h1>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third title-options">
+               <p class="govuk-caption-m">
+                    <a href="" class="share govuk-link--no-visited-state">Share pledge</a>
+                    <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a>
+               </p>
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <div class="govuk-tabs" data-module="govuk-tabs" id="pledge-tabs">
+                    <!-- TABS - START -->
+                    <ul class="govuk-tabs__list">
+                         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="govuk-tabs__tab" href="#pledge-applications"><span class="number applications active">3</span>Applications</a></li>
+                         <li class="govuk-tabs__list-item"><a class="govuk-tabs__tab" href="#pledge-approved"><span class="number approved">0</span>Approved</a></li>
+                         <li class="govuk-tabs__list-item"><a class="govuk-tabs__tab" href="#pledge-rejected"><span class="number rejected">0</span>Rejected</a></li>
+                         <li class="govuk-tabs__list-item"><a class="govuk-tabs__tab" href="#pledge-details">Pledge details</a></li>
+                    </ul>
+                    <!-- TABS - END -->
+
+                    <!-- TAB ONE - START -->
+                    <div class="govuk-tabs__panel" id="pledge-applications">
+                         <h2 class="govuk-heading-m">Applications</h2>
+
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - START !!!!!!!!!!!!!!! -->
+                         <div class="application application-one">
+                              <div class="title">
+                                   <strong class="govuk-tag govuk-tag--green">100% match</strong>
+                                   <div class="govuk-grid-row">
+                                        <div class="govuk-grid-column-one-half">
+                                             <a href="#" class="govuk-heading-m">Belhavel Construction Ltd</a>
+                                             <span class="govuk-caption-m">Bricklaying (level 2), Birmingham, West Midlands</span>
+                                        </div>
+                                        <div class="govuk-grid-column-one-half main-ctas">
+                                             <a href="#" class="govuk-button">Approve</a>
+                                             <a href="#" class="govuk-button govuk-button--warning">Reject</a>
+                                        </div>
+                                   </div>
+                              </div>
+                              <p class="govuk-heading-m pledge-total">Total: £9,000</p>
+                              <details class="govuk-details" data-module="govuk-details">
+                                   <summary class="govuk-details__summary">
+                                        <span class="govuk-details__summary-text">More details</span>
+                                   </summary>
+                                   <div class="govuk-details__text">
+                                        <p>
+                                             1 apprentice<br>
+                                             Estimated duration: 24 months<br>
+                                             Maximum funding band: £9,000<br>
+                                             Total per year: £4,500
+                                        </p>
+                                   </div>
+                              </details>
+                         </div>
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - END !!!!!!!!!!!!!!! -->
+
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - START !!!!!!!!!!!!!!! -->
+                         <div class="application application-two">
+                              <div class="title">
+                                   <strong class="govuk-tag govuk-tag--yellow">75% match</strong>
+                                   <div class="govuk-grid-row">
+                                        <div class="govuk-grid-column-one-half">
+                                             <a href="#" class="govuk-heading-m">CBJ Engineering</a>
+                                             <span class="govuk-caption-m">Quantity surveying degree (level 6), West Midlands</span>
+                                        </div>
+                                        <div class="govuk-grid-column-one-half main-ctas">
+                                             <a href="#" class="govuk-button">Approve</a>
+                                             <a href="#" class="govuk-button govuk-button--warning">Reject</a>
+                                        </div>
+                                   </div>
+                              </div>
+                              <p class="govuk-heading-m pledge-total">Total: £36,000</p>
+                              <details class="govuk-details" data-module="govuk-details">
+                                   <summary class="govuk-details__summary">
+                                        <span class="govuk-details__summary-text">More details</span>
+                                   </summary>
+                                   <div class="govuk-details__text">
+                                        <p>
+                                             2 apprentices<br>
+                                             Estimated duration: 36 months<br>
+                                             Maximum funding band: £18,000<br>
+                                             Total per year: £12,000
+                                        </p>
+                                   </div>
+                              </details>
+                         </div>
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - END !!!!!!!!!!!!!!! -->
+
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 3 - START !!!!!!!!!!!!!!! -->
+                         <div class="application application-three">
+                              <div class="title">
+                                   <strong class="govuk-tag govuk-tag--orange">50% match</strong>
+                                   <div class="govuk-grid-row">
+                                        <div class="govuk-grid-column-one-half">
+                                             <a href="#" class="govuk-heading-m">Johnson and Johnson Building Co</a>
+                                             <span class="govuk-caption-m">Surveying technician (level 2) & Quantity surveying degree (level 6), Derbyshire</span>
+                                        </div>
+                                        <div class="govuk-grid-column-one-half main-ctas">
+                                             <a href="#" class="govuk-button">Approve</a>
+                                             <a href="#" class="govuk-button govuk-button--warning">Reject</a>
+                                        </div>
+                                   </div>
+                              </div>
+                              <p class="govuk-heading-m pledge-total">Total: £36,000</p>
+                              <details class="govuk-details" data-module="govuk-details">
+                                   <summary class="govuk-details__summary">
+                                        <span class="govuk-details__summary-text">More details</span>
+                                   </summary>
+                                   <div class="govuk-details__text">
+                                        <p>
+                                             <strong>Surveying technician (level 2)</strong><br>
+                                             2 apprentices<br>
+                                             Estimated duration: 24 months<br>
+                                             Maximum funding band: £9,000<br>
+                                             Total per year: £9,000
+                                        </p>
+                                        <p>
+                                             <strong>Quantity surveying degree (level 6)</strong><br>
+                                             2 apprentices<br>
+                                             Estimated duration: 36 months<br>
+                                             Maximum funding band: £18,000<br>
+                                             Total per year: £6,000
+                                        </p>
+                                   </div>
+                              </details>
+                         </div>
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 3 - END !!!!!!!!!!!!!!! -->
+
+                         <h1 class="govuk-heading-xl">Total bids: £<span class="total-bids">160,000</span></h1>
+
+                    </div>
+                    <!-- TAB ONE - END -->
+
+                    <!-- TAB TWO - START -->
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pledge-approved">
+                         <h2 class="govuk-heading-m">Approved</h2>
+
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - START !!!!!!!!!!!!!!! -->
+                         <div class="application approved-one">
+                              <div class="title">
+                                   <div class="govuk-grid-row">
+                                        <div class="govuk-grid-column-one-half">
+                                             <a href="#" class="govuk-heading-m">Belhavel Construction Ltd</a>
+                                             <span class="govuk-caption-m">Bricklaying (level 2), Birmingham, West Midlands</span>
+                                        </div>
+                                        <div class="govuk-grid-column-one-half main-ctas">
+                                             <p><a href="#">View</a></p>
+                                        </div>
+                                   </div>
+                              </div>
+                              <p class="govuk-heading-m pledge-total">Total: £9,000</p>
+                              <details class="govuk-details" data-module="govuk-details">
+                                   <summary class="govuk-details__summary">
+                                        <span class="govuk-details__summary-text">More details</span>
+                                   </summary>
+                                   <div class="govuk-details__text">
+                                        <p>
+                                             1 apprentice<br>
+                                             Estimated duration: 24 months<br>
+                                             Maximum funding band: £9,000<br>
+                                             Total per year: £4,500
+                                        </p>
+                                   </div>
+                              </details>
+                         </div>
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - END !!!!!!!!!!!!!!! -->
+
+                    </div>
+                    <!-- TAB TWO - END -->
+
+                    <!-- TAB THREE - START -->
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pledge-rejected">
+                         <h2 class="govuk-heading-m">Rejected</h2>
+
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - START !!!!!!!!!!!!!!! -->
+                         <div class="application rejected-one">
+                              <div class="title">
+                                   <div class="govuk-grid-row">
+                                        <div class="govuk-grid-column-one-half">
+                                             <a href="#" class="govuk-heading-m">CBJ Engineering</a>
+                                             <span class="govuk-caption-m">Quantity surveying degree (level 6), West Midlands</span>
+                                        </div>
+                                        <div class="govuk-grid-column-one-half main-ctas">
+                                             <p><a href="#">View</a></p>
+                                        </div>
+                                   </div>
+                              </div>
+                              <p class="govuk-heading-m pledge-total">Total: £36,000</p>
+                              <details class="govuk-details" data-module="govuk-details">
+                                   <summary class="govuk-details__summary">
+                                        <span class="govuk-details__summary-text">More details</span>
+                                   </summary>
+                                   <div class="govuk-details__text">
+                                        <p>
+                                             2 apprentices<br>
+                                             Estimated duration: 36 months<br>
+                                             Maximum funding band: £18,000<br>
+                                             Total per year: £12,000
+                                        </p>
+                                   </div>
+                              </details>
+                         </div>
+                         <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - END !!!!!!!!!!!!!!! -->
+
+                    </div>
+                    <!-- TAB THREE - END -->
+
+                    <!-- TAB FOUR - START -->
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pledge-details">
+                         <h2 class="govuk-heading-m">Pledge details</h2>
+                    </div>
+                    <!-- TAB FOUR - END -->
+
+               </div>
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

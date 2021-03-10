@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<div class="govuk-width-container" id="transfers-hub">
+<div class="govuk-width-container form-entry" id="transfers-hub">
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
@@ -67,13 +67,13 @@
                          <div class="govuk-summary-list__row section-three">
                               <dt class="govuk-summary-list__key">Sector the employer receiving the transfer works in</dt>
                               <dd class="govuk-summary-list__value">
-                                {% if data['pledge-sector'] %}
-                                <ul class="govuk-list govuk-list--bullet">
-                                  {% for answer in data['pledge-sector'] -%}
-                                    <li>{{ answer }}</li>
-                                  {% endfor %}
-                                </ul>
-                                {% endif %}
+                                   {% if data['pledge-sector'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge-sector'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                                   {% endif %}
                               </dd>
                               <dd class="govuk-summary-list__actions"><a class="govuk-link" href="3-sector">Change<span class="govuk-visually-hidden"> sectors</span></a></dd>
                          </div>
@@ -83,13 +83,13 @@
                          <div class="govuk-summary-list__row section-four">
                               <dt class="govuk-summary-list__key">Category of apprenticeship training</dt>
                               <dd class="govuk-summary-list__value">
-                                {% if data['pledge-training'] %}
-                                <ul class="govuk-list govuk-list--bullet">
-                                  {% for answer in data['pledge-training'] -%}
-                                  <li>{{ answer }}</li>
-                                  {% endfor %}
-                                </ul>
-                                {% endif %}
+                                   {% if data['pledge-training'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge-training'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                                   {% endif %}
                               </dd>
                               <dd class="govuk-summary-list__actions"><a class="govuk-link" href="4-training">Change<span class="govuk-visually-hidden"> training</span></a></dd>
                          </div>
@@ -98,7 +98,15 @@
                          <!-- SECTION 5 - START -->
                          <div class="govuk-summary-list__row section-five">
                               <dt class="govuk-summary-list__key">Qualification level of apprenticeship training</dt>
-                              <dd class="govuk-summary-list__value">{{ data['pledge-level'] }}</dd>
+                              <dd class="govuk-summary-list__value">
+                                   {% if data['pledge-level'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge-level'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                                   {% endif %}
+                              </dd>
                               <dd class="govuk-summary-list__actions"><a class="govuk-link" href="5-level">Change<span class="govuk-visually-hidden"> levels</span></a></dd>
                          </div>
                          <!-- SECTION 5 - END -->
@@ -131,13 +139,13 @@
 
                <h2 class="govuk-heading-m">Now send your application</h2>
 
-               <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+               <p class="govuk-body">By submitting this notification you are confirming that, to the best of you r knowledge, the details you are providing are correct.</p>
 
-               <form action="/form-handler" method="post" novalidate>
+               <form action="../transfers" method="post" novalidate>
 
                     <input type="hidden" name="answers-checked" value="true">
                     <button class="govuk-button" data-module="govuk-button" id="pledge-confirm-continue">Accept and send</button>
-                    <a href="../transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+                    <a href="8-cancel-pledge" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
 
                </form>
 

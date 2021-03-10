@@ -24,7 +24,6 @@ $("#transfers-hub.form-entry").parent().css('padding-top','0');
 if ($("#transfers-hub")) {
      $('.navigation ul li a').removeClass('selected');
      $('.navigation ul li a.link-two').addClass('selected');
-
 }
 
 // Number formatting
@@ -162,3 +161,25 @@ function removeEmail() {
 var emailNumber = $("#emails").data("email-count");
 $("#addAnotherEmail").on("click", addAnotherEmail);
 $("[data-remove]").on("click", removeEmail);
+
+// Cancel pledge
+$('input[id="pledge-cancel"]').on("click", function (e) {
+     $('#pledge-cancel-continue').attr('href','../transfers');
+});
+
+$('input[id="pledge-cancel-2"]').on("click", function (e) {
+     $('#pledge-cancel-continue').attr('href','javascript:history.back()');
+});
+
+// Date stamp
+document.getElementById("date-stamp").innerHTML = formatAMPM();
+
+function formatAMPM() {
+var d = new Date(),
+     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+     hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+     ampm = d.getHours() >= 12 ? 'pm' : 'am',
+     months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+}

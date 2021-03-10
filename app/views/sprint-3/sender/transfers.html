@@ -23,6 +23,14 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
+               <!-- APPLICATION COMPLETE - START -->
+               <div class="govuk-panel govuk-panel--confirmation pledge-complete">
+                    <h1 class="govuk-panel__title">Your pledge has been successfully created</h1>
+                    <p><a href="pledges/1-pledge-details">View your pledge</a></p>
+                    <!-- <div class="govuk-panel__body">Your reference number<br><strong>HDJ2123F</strong></div> -->
+               </div>
+               <!-- APPLICATION COMPLETE - END -->
+
                <h1 class="govuk-heading-xl">Transfers</h1>
 
           </div>
@@ -50,7 +58,40 @@
                </ol>
 
                <h2 class="govuk-heading-s">Transfer pledges</h2>
-               <p>You have no pending pledges.</p>
+               <p class="no-pledges">You have no pending pledges.</p>
+          </div>
+
+          <div class="govuk-grid-column-full">
+
+               <!-- PLEDGE TABLE - START -->
+               <table class="govuk-table pledge-complete-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Description</th>
+                              <th scope="col" class="govuk-table__header">Date</th>
+                              <th scope="col" class="govuk-table__header">Total</th>
+                              <th scope="col" class="govuk-table__header">Applications</th>
+                              <th scope="col" class="govuk-table__header">Approved</th>
+                              <th scope="col" class="govuk-table__header"></th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row new-pledge">
+                              <td class="govuk-table__cell">
+                                   <strong>
+                                        <div class="anonymous-yes">Anonymous Pledge (9101)</div>
+                                        <div class="anonymous-no">BARRY & BARRY Ltd (9101)</div>
+                                   </strong>
+                              </td>
+                              <td class="govuk-table__cell"><div id="date-stamp"></div></td>
+                              <td class="govuk-table__cell">£{{ data['pledge-amount'] }}</td>
+                              <td class="govuk-table__cell"><span class="pledge-bids">3</span></td>
+                              <td class="govuk-table__cell"><span class="pledge-approved">0</span></td>
+                              <td class="govuk-table__cell"><a href="pledges/1-pledge-details">View</a></td>
+                         </tr>
+                    </tbody>
+               </table>
+               <!-- PLEDGE TABLE - END -->
 
                {% from "govuk/components/button/macro.njk" import govukButton %}
 
