@@ -86,7 +86,7 @@ function removeLocation() {
      $(this).closest(".govuk-form-group").remove();
 }
 
-var locationNumber = $("#locations").data("location-count");
+var locationNumber = $("#locations").data("location-count") || 1;
 $("#addAnotherLocation").on("click", addAnotherLocation);
 $("[data-remove]").on("click", removeLocation);
 
@@ -157,7 +157,7 @@ function removeEmail() {
      $(this).closest(".govuk-form-group").remove();
 }
 
-var emailNumber = $("#emails").data("email-count");
+var emailNumber = $("#emails").data("email-count") || 1;
 $("#addAnotherEmail").on("click", addAnotherEmail);
 $("[data-remove]").on("click", removeEmail);
 
