@@ -159,6 +159,6 @@ function removeEmail() {
      $(this).closest(".govuk-form-group").remove();
 }
 
-var emailNumber = $("#emails").data("email-count");
+var emailNumber = $("#emails").data("email-count") || 1;
 $("#addAnotherEmail").on("click", addAnotherEmail);
 $("[data-remove]").on("click", removeEmail);

@@ -120,7 +120,10 @@
 
                          <div class="govuk-summary-list__row intermediary-details">
                               <dt class="govuk-summary-list__key">Emails</dt>
-                              <dd class="govuk-summary-list__value">{{ data['pledge-email'] }}</dd>
+                              <dd class="govuk-summary-list__value">
+                                {% for email, key in data['pledge-email'] %}
+                                  {{ email }} <br>
+                                {% endfor %}
                               <dd class="govuk-summary-list__actions"><a class="govuk-link" href="6-intermediaries">Change<span class="govuk-visually-hidden"> intermediaries</span></a></dd>
                          </div>
 
