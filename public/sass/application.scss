@@ -62,13 +62,13 @@ a {
           background-size: contain;
      }
      &.share {
-          padding-left: 2em;
-          background: url("../images/share.svg") no-repeat 0% 50%;
+          padding-left: 1.75em;
+          background: url("../images/share-blue.svg") no-repeat 0% 50%;
           background-size: contain;
      }
      &.edit {
-          padding-left: 2em;
-          background: url("../images/edit.svg") no-repeat 0% 50%;
+          padding-left: 1.75em;
+          background: url("../images/edit-blue.svg") no-repeat 0% 50%;
           background-size: contain;
      }
 }
@@ -146,6 +146,9 @@ a {
                     font-size: 36px;
                }
           }
+
+     }
+     .running-pledge-total {
 
      }
 }

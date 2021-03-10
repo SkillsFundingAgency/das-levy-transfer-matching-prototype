@@ -130,7 +130,7 @@ a {
           padding-left: 2.25em;
           float: left;
      }
-     .total {
+     .total, .running-pledge-total {
           width: 80%;
           display: inline-block;
           float: left;
@@ -146,6 +146,9 @@ a {
                     font-size: 36px;
                }
           }
+
+     }
+     .running-pledge-total {
 
      }
 }
@@ -173,7 +176,7 @@ a {
      }
 }
 
-.number {
+.pledge-number {
      display: flex;
      align-items: center;
      justify-content: center;

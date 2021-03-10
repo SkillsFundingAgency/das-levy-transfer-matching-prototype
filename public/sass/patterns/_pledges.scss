@@ -1,12 +1,24 @@
 .title-options {
      text-align: right;
      a {
-          margin: 0 0 0 1.5em;
+          margin: 0 0 0 1.25em;
+          font-size: 0.85em;
+          &:first-of-type {
+               margin-left: 0;
+          }
      }
 }
 
 #pledge-tabs {
      padding: 0;
+     .govuk-tabs__list {
+          border-bottom: 3px solid govuk-colour("light-grey");
+          .govuk-tabs__list-item--selected {
+               border: 3px solid govuk-colour("light-grey");
+               margin-bottom: -3px;
+               border-bottom: 3px solid white;
+          }
+     }
      .govuk-tabs__panel {
           padding-left: 0;
           padding-right: 0;
