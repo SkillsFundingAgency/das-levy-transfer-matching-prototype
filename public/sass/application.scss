@@ -130,7 +130,7 @@ a {
           padding-left: 2.25em;
           float: left;
      }
-     .total {
+     .total, .running-pledge-total {
           width: 80%;
           display: inline-block;
           float: left;
@@ -169,14 +169,15 @@ a {
      }
 }
 
-.govuk-caption-m {
+.govuk-caption-xl {
      &.anonymous-yes, &.anonymous-no {
           font-weight: bold;
           color: govuk-colour("blue");
+          margin-top: 0.25em;
      }
 }
 
-.number {
+.pledge-number {
      display: flex;
      align-items: center;
      justify-content: center;

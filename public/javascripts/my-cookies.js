@@ -101,6 +101,8 @@ $("#pledge-confirm-continue").on("click", function (e) {
      $.cookie("pledge-complete", true, {path:'/'});
 });
 
+$('.pledge-complete-table').hide();
+
 if ($.cookie("pledge-complete") == 'true') {
      $('.pledge-complete, .pledge-complete-table').show();
      $('.no-pledges').hide();
@@ -109,6 +111,9 @@ if ($.cookie("pledge-complete") == 'true') {
           $('.pledge-complete').fadeOut('fast');
      }, 5000);
 }
+
+$('.approved-one, .rejected-one').hide();
+
 if ($.cookie("pledge-anonymous") == 'true') {
      $('.anonymous-yes').show();
      $('.anonymous-no').hide();

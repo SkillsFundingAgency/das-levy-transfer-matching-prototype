@@ -20,7 +20,6 @@ if ($('div').hasClass('my-account-main-header')) {
 $("#transfers-hub").parent().removeClass('my-account-wrapper');
 $("#transfers-hub.form-entry").parent().css('padding-top','0');
 
-
 if ($("#transfers-hub")) {
      $('.navigation ul li a').removeClass('selected');
      $('.navigation ul li a.link-two').addClass('selected');

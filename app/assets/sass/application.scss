@@ -169,10 +169,11 @@ a {
      }
 }
 
-.govuk-caption-m {
+.govuk-caption-xl {
      &.anonymous-yes, &.anonymous-no {
           font-weight: bold;
           color: govuk-colour("blue");
+          margin-top: 0.25em;
      }
 }
 
