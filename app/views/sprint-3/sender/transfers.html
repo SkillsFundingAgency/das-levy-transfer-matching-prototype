@@ -31,10 +31,29 @@
                </div>
                <!-- APPLICATION COMPLETE - END -->
 
-               <h1 class="govuk-heading-xl">Transfers</h1>
+               <h1 class="govuk-heading-xl transfers-title">Transfers</h1>
 
           </div>
      </div>
+
+     <div class="transfer-values">
+          <div class="transfer-funds">
+               <p>Your transfer allowance:</p>
+               <p class="number">£<span class="value-format">150000</span></p>
+          </div>
+          <div class="transfer-funds-remaining">
+               <p>Remaining transfer allowance:</p>
+               <p class="number before-pledge">£<span class="value-format">150000</span></p>
+               <p class="number after-pledge">£<span class="value-format">{{ 150000-data['pledge-amount'] }}</span></p>
+          </div>
+          <div class="transfer-funds-non-pledge">
+               <p>Non-pledge funds:</p>
+               <p class="number">£<span class="value-format">0</span></p>
+               <!-- <p class="number after-pledge">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p> -->
+          </div>
+     </div>
+
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
@@ -84,7 +103,7 @@
                                    </strong>
                               </td>
                               <td class="govuk-table__cell"><div id="date-stamp"></div></td>
-                              <td class="govuk-table__cell">£{{ data['pledge-amount'] }}</td>
+                              <td class="govuk-table__cell">£<span class="value-format">{{ data['pledge-amount'] }}</span></td>
                               <td class="govuk-table__cell"><span class="pledge-bids">3</span></td>
                               <td class="govuk-table__cell"><span class="pledge-approved">0</span></td>
                               <td class="govuk-table__cell"><a href="pledges/1-pledge-details">View</a></td>

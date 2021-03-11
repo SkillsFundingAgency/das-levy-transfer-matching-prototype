@@ -22,6 +22,21 @@
 
      <div class="govuk-grid-row title-options">
           <div class="govuk-grid-column-full">
+
+               <!-- APPROVAL COMPLETE - START -->
+               <div class="govuk-panel govuk-panel--confirmation pledge-approved">
+                    <h1 class="govuk-panel__title">Application approved</h1>
+                    <p>You approved the Belhavel Construction Ltd application</p>
+               </div>
+               <!-- APPROVAL COMPLETE - END -->
+
+               <!-- REJECTION COMPLETE - START -->
+               <div class="govuk-panel govuk-panel--confirmation pledge-rejected">
+                    <h1 class="govuk-panel__title">Application rejected</h1>
+                    <p>You rejected the CBJ Engineering application</p>
+               </div>
+               <!-- REJECTION COMPLETE - END -->
+
                <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds left-side">
                          <span class="govuk-caption-m">Transfer matching service</span>
@@ -50,16 +65,15 @@
           </div>
           <div class="pledge-funds-spent">
                <p>Pledge funds committed:</p>
-               <p class="number">£<span class="value-format">0</span></p>
+               <p class="number before-approval">£<span class="value-format">0</span></p>
+               <p class="number after-approval">£<span class="value-format">9000</span></p>
           </div>
           <div class="pledge-funds-remaining">
                <p>Pledge funds remaining:</p>
                <p class="number before-approval">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
                <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p>
-
           </div>
      </div>
-
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
@@ -84,11 +98,11 @@
                                    <strong class="govuk-tag govuk-tag--green">100% match</strong>
                                    <div class="govuk-grid-row">
                                         <div class="govuk-grid-column-one-half">
-                                             <a href="#" class="govuk-heading-m">Belhavel Construction Ltd</a>
+                                             <a href="2-application-details" class="govuk-heading-m">Belhavel Construction Ltd</a>
                                              <span class="govuk-caption-m">Bricklaying (level 2), Birmingham, West Midlands</span>
                                         </div>
                                         <div class="govuk-grid-column-one-half main-ctas">
-                                             <a href="#" class="govuk-button">Approve</a>
+                                             <a href="3-approve" class="govuk-button">Approve</a>
                                              <a href="#" class="govuk-button govuk-button--warning">Reject</a>
                                         </div>
                                    </div>
@@ -116,12 +130,12 @@
                                    <strong class="govuk-tag govuk-tag--yellow">75% match</strong>
                                    <div class="govuk-grid-row">
                                         <div class="govuk-grid-column-one-half">
-                                             <a href="#" class="govuk-heading-m">CBJ Engineering</a>
+                                             <a href="5-application-details" class="govuk-heading-m">CBJ Engineering</a>
                                              <span class="govuk-caption-m">Quantity surveying degree (level 6), West Midlands</span>
                                         </div>
                                         <div class="govuk-grid-column-one-half main-ctas">
                                              <a href="#" class="govuk-button">Approve</a>
-                                             <a href="#" class="govuk-button govuk-button--warning">Reject</a>
+                                             <a href="4-reject" class="govuk-button govuk-button--warning">Reject</a>
                                         </div>
                                    </div>
                               </div>
@@ -182,7 +196,7 @@
                          </div>
                          <!-- !!!!!!!!!!!!!!! APPLICATION - 3 - END !!!!!!!!!!!!!!! -->
 
-                         <h1 class="govuk-heading-xl">Total bids: £<span class="total-bids">160,000</span></h1>
+                         <!-- <h1 class="govuk-heading-xl">Total bids: £<span class="total-bids">160,000</span></h1> -->
 
                     </div>
                     <!-- TAB ONE - END -->
@@ -198,11 +212,11 @@
                               <div class="title">
                                    <div class="govuk-grid-row">
                                         <div class="govuk-grid-column-one-half">
-                                             <a href="#" class="govuk-heading-m">Belhavel Construction Ltd</a>
+                                             <a href="2-application-details" class="govuk-heading-m">Belhavel Construction Ltd</a>
                                              <span class="govuk-caption-m">Bricklaying (level 2), Birmingham, West Midlands</span>
                                         </div>
                                         <div class="govuk-grid-column-one-half main-ctas">
-                                             <p><a href="#">View</a></p>
+                                             <p><a href="2-application-details">View</a></p>
                                         </div>
                                    </div>
                               </div>
@@ -237,28 +251,44 @@
                               <div class="title">
                                    <div class="govuk-grid-row">
                                         <div class="govuk-grid-column-one-half">
-                                             <a href="#" class="govuk-heading-m">CBJ Engineering</a>
+                                             <a href="5-application-details" class="govuk-heading-m">CBJ Engineering</a>
                                              <span class="govuk-caption-m">Quantity surveying degree (level 6), West Midlands</span>
                                         </div>
                                         <div class="govuk-grid-column-one-half main-ctas">
-                                             <p><a href="#">View</a></p>
+                                             <p><a href="5-application-details">View</a></p>
                                         </div>
                                    </div>
                               </div>
                               <p class="govuk-heading-m pledge-total">Total: £36,000</p>
-                              <details class="govuk-details" data-module="govuk-details">
-                                   <summary class="govuk-details__summary">
-                                        <span class="govuk-details__summary-text">More details</span>
-                                   </summary>
-                                   <div class="govuk-details__text">
-                                        <p>
-                                             2 apprentices<br>
-                                             Estimated duration: 36 months<br>
-                                             Maximum funding band: £18,000<br>
-                                             Total per year: £12,000
-                                        </p>
+                              <div class="govuk-grid-row">
+                                   <div class="govuk-grid-column-one-third">
+                                        <details class="govuk-details" data-module="govuk-details">
+                                             <summary class="govuk-details__summary">
+                                                  <span class="govuk-details__summary-text">More details</span>
+                                             </summary>
+                                             <div class="govuk-details__text">
+                                                  <p>
+                                                       2 apprentices<br>
+                                                       Estimated duration: 36 months<br>
+                                                       Maximum funding band: £18,000<br>
+                                                       Total per year: £12,000
+                                                  </p>
+                                             </div>
+                                        </details>
                                    </div>
-                              </details>
+                                   <div class="govuk-grid-column-two-thirds">
+                                        <details class="govuk-details" data-module="govuk-details">
+                                             <summary class="govuk-details__summary">
+                                                  <span class="govuk-details__summary-text">Rejection description</span>
+                                             </summary>
+                                             <div class="govuk-details__text">
+                                                  <p>
+                                                       {{ data['more-detail'] }}
+                                                  </p>
+                                             </div>
+                                        </details>
+                                   </div>
+                              </div>
                          </div>
                          <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - END !!!!!!!!!!!!!!! -->
 

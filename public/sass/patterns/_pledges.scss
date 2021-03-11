@@ -97,7 +97,7 @@
           }
           &.pledge-funds-spent, &.pledge-funds-remaining {
                background: govuk-colour("light-grey");
-               border-left: 10px solid govuk-colour("turquoise");
+               // border-left: 10px solid govuk-colour("turquoise");
                p {
                     color: black;
                }
@@ -106,8 +106,37 @@
                color: white;
                font-weight: bold;
                margin: 0;
+               font-size: 1rem;
                &.number {
                     font-size: 3rem;
+               }
+          }
+     }
+}
+
+section {
+     &.employer-details, &.employer-contact-details {
+          background: govuk-colour("light-grey");
+          padding: 1.5em 1.5em 4.5em 1.5em;
+          position: relative;
+          margin-bottom: 2em;
+          .total {
+               background: darken(govuk-colour("light-grey"),10%);
+               padding: 1em 1.5em;
+               position: absolute;
+               bottom: 0;
+               left: 0;
+               right: 0;
+               p {
+                    margin: 0;
+               }
+          }
+     }
+     &.employer-contact-details {
+          padding: 1.5em 1.5em 1.5em 1.5em;
+          p {
+               &:last-of-type {
+                    margin-bottom: 0;
                }
           }
      }

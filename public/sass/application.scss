@@ -16,6 +16,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/my-account";
 @import "patterns/navigation";
 @import "patterns/pledges";
+@import "patterns/transfers";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -35,13 +36,25 @@ $govuk-assets-path: '/govuk/assets/';
      }
 }
 
+.govuk-heading-xl {
+     span.highlight-text {
+          color: govuk-colour("blue");
+     }
+}
+
 hr {
      &.dashboard-heading-separator {
+          border: none;
           border-bottom: 5px solid #bfc1c3;
           margin: 10px 0;
      }
      &.separator {
           margin: 30px 0 30px 0;
+     }
+     &.dotted {
+          border: none;
+          margin: 30px 0 30px 0;
+          border-bottom: 5px dashed #bfc1c3;
      }
 }
 
@@ -156,6 +169,9 @@ a {
 .govuk-panel--confirmation {
      display: none;
      margin-bottom: 2em;
+     &.pledge-rejected {
+          background: govuk-colour("blue");
+     }
      h1 {
           margin: 0;
      }
@@ -163,10 +179,15 @@ a {
           margin: 0;
           font-size: 24px;
           font-weight: bold;
+          color: white;
           a {
                color: white;
           }
      }
+}
+
+.button-margin-left {
+     margin-left: 0.75em;
 }
 
 .govuk-caption-xl {
@@ -196,31 +217,22 @@ a {
      }
 }
 
-table {
-     &.pledge-complete-table {
-          thead {
-               tr {
-                    th {
-                         background: govuk-colour("light-grey");
-                         border: 4px solid white;
-                         text-align: center;
-                         padding: 0.5em 0;
-                    }
-               }
-          }
-          tbody {
-               tr {
-                    &.new-pledge {
-                         td {
-                              background: rgba(29,112,60,0.1);
-                         }
-                    }
-                    td {
-                         text-align: center;
-                         border: 4px solid white;
-                         padding: 0.5em 0;
-                    }
-               }
-          }
+.icon {
+     display: inline-block;
+     background: red;
+     margin: 0 0.5em -0.2em 0;
+     width: 1em;
+     height: 1em;
+     &.email {
+          background: url("../images/email-blue.svg") no-repeat 0% 50%;
+          background-size: contain;
+     }
+     &.contact {
+          background: url("../images/contact-blue.svg") no-repeat 0% 50%;
+          background-size: contain;
+     }
+     &.phone {
+          background: url("../images/phone-blue.svg") no-repeat 0% 50%;
+          background-size: contain;
      }
 }

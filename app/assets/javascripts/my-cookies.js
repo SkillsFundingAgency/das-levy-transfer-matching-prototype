@@ -123,13 +123,18 @@ $("#pledge-confirm-continue").on("click", function (e) {
 
 $('.pledge-complete-table').hide();
 
+$('.before-pledge').show();
+$('.after-pledge').hide();
+
 if ($.cookie("pledge-complete") == 'true') {
      $('.pledge-complete, .pledge-complete-table').show();
      $('.no-pledges').hide();
      $('.pledge-complete').show();
      setTimeout(function() {
-          $('.pledge-complete').fadeOut('fast');
+          $('.pledge-complete').slideUp('fast');
      }, 5000);
+     $('.before-pledge').hide();
+     $('.after-pledge').show();
 }
 
 $('.approved-one, .rejected-one').hide();
@@ -155,3 +160,59 @@ $('.after-approval').hide();
 // }
 
 // alert(pledgeValue);
+
+// Approve pledge
+$("#approve-pledge-continue").on("click", function (e) {
+     $.cookie("pledge-approved", true, {path:'/'});
+});
+
+var applicationsNumber = parseInt($('.pledge-number.applications').text());
+var approvedNumber = parseInt($('.pledge-number.approved').text());
+var rejectedNumber = parseInt($('.pledge-number.rejected').text());
+
+if ($.cookie("pledge-approved") == 'true') {
+     $('.before-approval').hide();
+     $('.after-approval').show();
+     $('.application.application-one').hide();
+     $('.approved-not-complete').hide();
+     $('.application.approved-one, .pledge-approved').show();
+     setTimeout(function() {
+          $('.pledge-approved').slideUp('fast');
+     }, 5000);
+     $('.pledge-number.applications').text(applicationsNumber - 1);
+     $('.pledge-number.approved').text(approvedNumber + 1);
+}
+
+if ($.cookie("pledge-complete") == 'true') {
+     $('.pledge-complete, .pledge-complete-table').show();
+     $('.no-pledges').hide();
+     $('.pledge-complete').show();
+     $('.before-pledge').hide();
+     $('.after-pledge').show();
+}
+
+// Pledge rejected
+$("#reject-pledge-continue").on("click", function (e) {
+     if ($('input[id=reject-application]').is(':checked')) {
+          $.cookie("pledge-rejected", true, {path:'/'});
+     } else {
+          $.cookie("pledge-rejected", false, {path:'/'});
+     }
+
+});
+
+if ($.cookie("pledge-rejected") == 'true') {
+     $('.application.application-two').hide();
+     $('.rejected-not-complete').hide();
+     $('.application.rejected-one').show();
+     $('.pledge-rejected').show();
+     setTimeout(function() {
+          $('.pledge-rejected').slideUp('fast');
+     }, 5000);
+     $('.pledge-number.applications').text(applicationsNumber - 1);
+     $('.pledge-number.rejected').text(approvedNumber + 1);
+}
+
+if ($.cookie("pledge-rejected") == 'true' && $.cookie("pledge-complete") == 'true') {
+     $('.pledge-number.applications').text(applicationsNumber - 2);
+}
