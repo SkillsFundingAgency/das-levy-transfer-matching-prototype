@@ -20,10 +20,20 @@
           </ol>
      </div>
 
-     <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
+     <div class="govuk-grid-row title-options">
+          <div class="govuk-grid-column-full">
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds left-side">
+                         <span class="govuk-caption-m">Transfer matching service</span>
+                    </div>
+                    <div class="govuk-grid-column-one-third right-side">
+                         <p class="govuk-caption-m">
+                              <a href="" class="share govuk-link--no-visited-state">Share pledge</a>
+                              <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a>
+                         </p>
+                    </div>
+               </div>
 
-               <span class="govuk-caption-m">Transfer matching service</span>
                <h1 class="govuk-heading-xl">
                     Applications for your transfer pledge
                     <span class="govuk-caption-xl anonymous-yes">Anonymous Pledge (9101)</span>
@@ -31,21 +41,23 @@
                </h1>
 
           </div>
-
-          <div class="govuk-grid-column-one-third title-options">
-               <p class="govuk-caption-m">
-                    <a href="" class="share govuk-link--no-visited-state">Share pledge</a>
-                    <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a>
-               </p>
-               <div class="funding-wrapper">
-                    <div class="running-pledge-total">
-                         <p>You can pledge:</p>
-                         <p class="number">£150,000</p>
-                    </div>
-               </div>
-          </div>
-
      </div>
+
+     <div class="pledge-values">
+          <div class="pledge-funds">
+               <p>Pledge funds:</p>
+               <p class="number">£<span class="value">150,000</span></p>
+          </div>
+          <div class="pledge-funds-spent">
+               <p>Pledge funds committed:</p>
+               <p class="number">£<span class="value">0</span></p>
+          </div>
+          <div class="pledge-funds-remaining">
+               <p>Pledge funds remaining:</p>
+               <p class="number">£<span class="value">150,000</span></p>
+          </div>
+     </div>
+
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
@@ -177,6 +189,8 @@
                     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pledge-approved">
                          <h2 class="govuk-heading-m">Approved</h2>
 
+                         <p class="approved-not-complete">You have no approved applications for this pledge.</p>
+
                          <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - START !!!!!!!!!!!!!!! -->
                          <div class="application approved-one">
                               <div class="title">
@@ -213,6 +227,8 @@
                     <!-- TAB THREE - START -->
                     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pledge-rejected">
                          <h2 class="govuk-heading-m">Rejected</h2>
+
+                         <p class="rejected-not-complete">You have no rejected applications for this pledge.</p>
 
                          <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - START !!!!!!!!!!!!!!! -->
                          <div class="application rejected-one">

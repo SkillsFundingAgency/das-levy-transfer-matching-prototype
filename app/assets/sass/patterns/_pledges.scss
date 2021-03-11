@@ -1,5 +1,11 @@
 .title-options {
-     text-align: right;
+     // text-align: right;
+     .left-side {
+          text-align: left;
+     }
+     .right-side {
+          text-align: right;
+     }
      p {
           margin-bottom: 0;
           a {
@@ -15,6 +21,9 @@
                width: auto;
                float: right;
           }
+     }
+     .govuk-heading-xl {
+          margin-bottom: 0;
      }
 }
 
@@ -73,5 +82,33 @@
                margin-bottom: 0;
           }
      }
+}
 
+.pledge-values {
+     display: flex;
+     margin: 1.5em 0 1.5em;
+     div {
+          width: 33%;
+          margin-right: 3%;
+          background: govuk-colour("turquoise");
+          padding: 2%;
+          &:last-of-type {
+               margin-right: 0;
+          }
+          &.pledge-funds-spent, &.pledge-funds-remaining {
+               background: govuk-colour("light-grey");
+               border-left: 10px solid govuk-colour("turquoise");
+               p {
+                    color: black;
+               }
+          }
+          p {
+               color: white;
+               font-weight: bold;
+               margin: 0;
+               &.number {
+                    font-size: 3rem;
+               }
+          }
+     }
 }

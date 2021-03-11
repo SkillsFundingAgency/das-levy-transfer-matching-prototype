@@ -123,4 +123,5 @@ if ($.cookie("pledge-anonymous") == 'true') {
 }
 
 // Pledges page
-// $('.approved-one, .rejected-one').hide();
+$('.approved-one, .rejected-one').hide();
+$('.approved-not-complete, .rejected-not-complete').show();
