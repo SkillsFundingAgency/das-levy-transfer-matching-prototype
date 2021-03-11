@@ -46,15 +46,17 @@
      <div class="pledge-values">
           <div class="pledge-funds">
                <p>Pledge funds:</p>
-               <p class="number">£<span class="value">150,000</span></p>
+               <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
           </div>
           <div class="pledge-funds-spent">
                <p>Pledge funds committed:</p>
-               <p class="number">£<span class="value">0</span></p>
+               <p class="number">£<span class="value-format">0</span></p>
           </div>
           <div class="pledge-funds-remaining">
                <p>Pledge funds remaining:</p>
-               <p class="number">£<span class="value">150,000</span></p>
+               <p class="number before-approval">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p>
+
           </div>
      </div>
 

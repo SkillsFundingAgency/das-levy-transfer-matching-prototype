@@ -6,6 +6,8 @@ $('#pledge-funding-form').attr('action','6-intermediaries');
 
 $("#pledge-criteria-continue").on("click", function (e) {
 
+     // $.cookie("pledge-amount", $('input[id="pledge-amount"]').val(), {path:'/'});
+
      if ($('input[id=pledge-anonymous]').is(':checked')) {
           $.cookie("pledge-anonymous", true, {path:'/'});
      } else {
@@ -96,6 +98,24 @@ $("#pledge-criteria-continue").on("click", function (e) {
 //      $('#sender-check-answers').find('.section-five').hide();
 // }
 
+// Check answers page
+$('.intermediary-details').hide();
+
+$("#pledge-intermediaries-continue").on("click", function (e) {
+     if ($('input[id=pledge-intermediaries-yes]').is(':checked')) {
+          $.cookie("pledge-intermediaries", true, {path:'/'});
+     } else {
+          $.cookie("pledge-intermediaries", false, {path:'/'});
+     }
+});
+
+if ($.cookie("pledge-intermediaries") == 'true') {
+     $('.intermediary-details').show();
+} else {
+     $('.intermediary-details').hide();
+}
+
+
 // Pledge complete
 $("#pledge-confirm-continue").on("click", function (e) {
      $.cookie("pledge-complete", true, {path:'/'});
@@ -125,3 +145,13 @@ if ($.cookie("pledge-anonymous") == 'true') {
 // Pledges page
 $('.approved-one, .rejected-one').hide();
 $('.approved-not-complete, .rejected-not-complete').show();
+
+$('.before-approval').show();
+$('.after-approval').hide();
+
+// if ($.cookie("pledge-amount")) {
+//      $('.pledge-funds .value').text($.cookie("pledge-amount"));
+//      $('.pledge-funds-remaining .value').text($.cookie("pledge-amount"));
+// }
+
+// alert(pledgeValue);
