@@ -1,0 +1,92 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <span class="govuk-caption-m">Transfer matching service</span>
+               <h1 class="govuk-heading-xl">
+                    Reject <span class="highlight-text">CBJ Engineering</span> application
+                    <span class="govuk-caption-m">West Midlands</span>
+               </h1>
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <form method="post" action="1-pledge-details" id="reject-pledge-form">
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+                    {% set rejectAllHtml %}
+                         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+                         {{ govukTextarea({
+                              name: "more-detail",
+                              id: "more-detail",
+                              label: {
+                                   text: "Write a short description of why the apllication was rejected",
+                                   isPageHeading: false
+                              },
+                              hint: {
+                                   text: "The information you provide will be shared with the ESFA and the receiving employer"
+                              }
+                         }) }}
+                    {% endset -%}
+
+                    {{ govukRadios({
+                    idPrefix: "reject-application",
+                         name: "reject-application",
+                         fieldset: {
+                              legend: {
+                                   text: "Are you sure you wish to reject the application?",
+                                   isPageHeading: false
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Yes, reject application",
+                                   text: "Yes, reject application",
+                                   conditional: {
+                                        html: rejectAllHtml
+                                   }
+                              },
+                              {
+                                   value: "No, keep application",
+                                   text: "No, keep application"
+                              }
+                         ]
+                    }) }}
+
+                    <button class="govuk-button" data-module="govuk-button" id="reject-pledge-continue">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

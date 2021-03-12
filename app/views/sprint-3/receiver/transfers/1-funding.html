@@ -1,0 +1,127 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Transfer matching service</span>
+               <h1 class="govuk-heading-xl">Create a transfers pledge</h1>
+
+               <form method="post" action="" id="pledge-funding-form">
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                    {{ govukRadios({
+                    idPrefix: "pledge-anonymous",
+                         name: "pledge-anonymous",
+                         fieldset: {
+                              legend: {
+                                   text: "Would you like your pledge to remain anonymous?",
+                                   isPageHeading: false
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Yes, remain anonymous",
+                                   text: "Yes, remain anonymous"
+                              },
+                              {
+                                   value: "No, I'm happy for people to see our organisation's name",
+                                   text: "No, I'm happy for people to see our organisation's name"
+                              }
+                         ]
+                    }) }}
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="pledge-amount">How much funding would you like to transfer?</label>
+                         <div class="funding-wrapper">
+                              <p class="value">£</p>
+                              <input class="govuk-input govuk-input--width-10" id="pledge-amount" name="pledge-amount"ype="text" data-type="number">
+                              <div class="total">
+                                   <p>You can pledge:</p>
+                                   <p class="number">£150,000</p>
+                              </div>
+                         </div>
+                    </div>
+
+                    {{ govukRadios({
+                    idPrefix: "pledge-public",
+                         name: "pledge-public",
+                         fieldset: {
+                              legend: {
+                                   text: "Do you want to show the pledge amount to the public?",
+                                   isPageHeading: false
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Yes, show my pledge amount",
+                                   text: "Yes, show my pledge amount"
+                              },
+                              {
+                                   value: "No, hide pledge amount",
+                                   text: "No, hide pledge amount"
+                              }
+                         ]
+                    }) }}
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="pledge-criteria">
+                              <legend class="govuk-fieldset__legend"><h1 class="govuk-fieldset__heading">Set criteria for the apprenticeships you want to fund.</h1>
+                              </legend>
+                              <div id="pledge-criteria" class="govuk-hint">All the criteria below are optional</div>
+                              <div class="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location" name="pledge-criteria" type="checkbox" value="pledge-location">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location">Location of the employer receiving the transfer</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-sector" name="pledge-criteria" type="checkbox" value="pledge-sector">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-sector">Sector the employer receiving the transfer works in (for example, construction)</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-training" name="pledge-criteria" type="checkbox" value="pledge-training">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training">Category of training (for example, health and science)</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-level" name="pledge-criteria" type="checkbox" value="pledge-level">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-level">Apprenticeship qualification level</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="pledge-criteria-continue">Continue</button>
+
+                    <a href="8-cancel-pledge" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

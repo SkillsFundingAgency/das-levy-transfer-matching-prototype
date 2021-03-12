@@ -1,0 +1,138 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <!-- APPLICATION COMPLETE - START -->
+               <div class="govuk-panel govuk-panel--confirmation pledge-complete">
+                    <h1 class="govuk-panel__title">Your pledge has been successfully created</h1>
+                    <p><a href="pledges/1-pledge-details">View your pledge</a></p>
+                    <!-- <div class="govuk-panel__body">Your reference number<br><strong>HDJ2123F</strong></div> -->
+               </div>
+               <!-- APPLICATION COMPLETE - END -->
+
+               <h1 class="govuk-heading-xl transfers-title">Transfers</h1>
+
+          </div>
+     </div>
+
+     <div class="transfer-values">
+          <div class="transfer-funds">
+               <p>Your transfer allowance:</p>
+               <p class="number">£<span class="value-format">150000</span></p>
+          </div>
+          <div class="transfer-funds-remaining">
+               <p>Remaining transfer allowance:</p>
+               <p class="number before-pledge">£<span class="value-format">150000</span></p>
+               <p class="number after-pledge">£<span class="value-format">{{ 150000-data['pledge-amount'] }}</span></p>
+          </div>
+          <div class="transfer-funds-non-pledge">
+               <p>Non-pledge funds:</p>
+               <p class="number">£<span class="value-format">0</span></p>
+               <!-- <p class="number after-pledge">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p> -->
+          </div>
+     </div>
+
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <p>You can spend spare levy funds by transferring up to 25% of your previous year's funds to another employer, to pay for their apprenticeship training.</p>
+
+               <p>You can make a transfer to any employer of your choice.</p>
+
+               <p>You are only responsible for paying the cost of their training with a transfer.</p>
+
+               <p>The employer receiving the transfer is responsible for everything else related to that apprenticeship.</p>
+
+               <p>The receiving employer will need an Apprenticeship Service account to receive the transfer.</p>
+
+               <p><strong>You can find an employer to receive a transfer using our transfers matching service.</strong></p>
+
+               <ol class="govuk-list govuk-list--number">
+                    <li>Create a pledge</li>
+                    <li>Review and approve applications from matching employers</li>
+                    <li>Make a connection on the service and confirm details of the transfer</li>
+               </ol>
+
+               <h2 class="govuk-heading-s">Transfer pledges</h2>
+               <p class="no-pledges">You have no pending pledges.</p>
+          </div>
+
+          <div class="govuk-grid-column-full">
+
+               <!-- PLEDGE TABLE - START -->
+               <table class="govuk-table pledge-complete-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Description</th>
+                              <th scope="col" class="govuk-table__header">Date</th>
+                              <th scope="col" class="govuk-table__header">Total</th>
+                              <th scope="col" class="govuk-table__header">Applications</th>
+                              <th scope="col" class="govuk-table__header">Approved</th>
+                              <th scope="col" class="govuk-table__header"></th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row new-pledge">
+                              <td class="govuk-table__cell">
+                                   <strong>
+                                        <div class="anonymous-yes">Anonymous Pledge (9101)</div>
+                                        <div class="anonymous-no">BARRY & BARRY Ltd (9101)</div>
+                                   </strong>
+                              </td>
+                              <td class="govuk-table__cell"><div id="date-stamp"></div></td>
+                              <td class="govuk-table__cell">£<span class="value-format">{{ data['pledge-amount'] }}</span></td>
+                              <td class="govuk-table__cell"><span class="pledge-bids">3</span></td>
+                              <td class="govuk-table__cell"><span class="pledge-approved">0</span></td>
+                              <td class="govuk-table__cell"><a href="pledges/1-pledge-details">View</a></td>
+                         </tr>
+                    </tbody>
+               </table>
+               <!-- PLEDGE TABLE - END -->
+
+               {% from "govuk/components/button/macro.njk" import govukButton %}
+
+               <a href="transfers/1-funding" class="govuk-button" data-module="govuk-button">Create a pledge</a>
+
+               <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">Make a transfer to someone I know</a>
+
+               <p><a href="#">Take me to the Transfer Matching service</a></p>
+
+               <hr class="separator">
+
+               <h2 class="govuk-heading-s">Connection requests</h2>
+               <p>You have no pending or approved requests.</p>
+
+               <h2 class="govuk-heading-s">Transfer requests</h2>
+               <p>You have no pending or approved requests.</p>
+
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

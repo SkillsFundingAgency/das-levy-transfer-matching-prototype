@@ -1,0 +1,66 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Transfer matching service</span>
+               <h1 class="govuk-heading-xl">Cancel creating this pledge</h1>
+
+               <p>When you cancel a pledge you will lose all data you have entered into the system.</p>
+
+               {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+               {{ govukRadios({
+               idPrefix: "pledge-cancel",
+                    name: "pledge-cancel",
+                    fieldset: {
+                         legend: {
+                              text: "Are you sure you want to continue and cancel this pledge?",
+                              isPageHeading: false
+                         }
+                    },
+                    items: [
+                         {
+                              value: "cancel",
+                              text: "Yes, cancel pledge"
+                         },
+                         {
+                              value: "keep",
+                              text: "No, continue creating the pledge"
+                         }
+                    ]
+               }) }}
+
+               <p><br></p>
+
+               <a href="#" class="govuk-button" id="pledge-cancel-continue">Continue</a>
+
+               <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
