@@ -39,7 +39,7 @@ $(document).ready(function(){
      //      // the following line has been simplified. Revision history contains original.
      //      $this.val(num2);
      // });
-     let x = document.querySelectorAll(".value-format"); 
+     let x = document.querySelectorAll(".value-format");
         for (let i = 0, len = x.length; i < len; i++) {
             let num = Number(x[i].innerHTML)
                       .toLocaleString('en');
@@ -56,11 +56,11 @@ function addAnotherLocation() {
      event.preventDefault();
      locationNumber++;
      $("#locations").append(`
-          <div class="govuk-form-group">
+          <div class="govuk-form-group new-location">
                <label class="govuk-label" for="pledge-location[url${locationNumber}]">Additional location</label>
 
                <select class="govuk-select" id="pledge-location[url${locationNumber}]" name="pledge-location[url${locationNumber}]">
-                    <option value="National" selected>National</option>
+                    <option value="All locations in England" selected>All locations in England</option>
                     <option disabled>---------------------------------</option>
                     <option value="East Midlands">East Midlands</option>
                     <option value="East of England">East of England</option>

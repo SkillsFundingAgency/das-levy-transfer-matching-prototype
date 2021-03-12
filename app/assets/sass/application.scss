@@ -16,6 +16,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/my-account";
 @import "patterns/navigation";
 @import "patterns/pledges";
+@import "patterns/search-pledges";
 @import "patterns/transfers";
 
 // Components that aren't in Frontend
@@ -91,6 +92,18 @@ a {
           margin-bottom: 30px;
           &:last-of-type {
                margin-bottom: 0;
+          }
+          &.new-location {
+               padding: 15px;
+               padding-left: 20px;
+               border-left: 5px solid $govuk-border-colour;
+               margin: 0;
+               &:last-of-type {
+                    margin-bottom: 1em;
+               }
+               p {
+                    margin: 0;
+               }
           }
      }
 }
@@ -234,5 +247,73 @@ a {
      &.phone {
           background: url("../images/phone-blue.svg") no-repeat 0% 50%;
           background-size: contain;
+     }
+}
+
+.finance-values {
+     div {
+          width: 47.5%;
+          float: left;
+          margin: 0 5% 2em 0;
+          &:nth-of-type(even) {
+               margin-right: 0;
+          }
+          p {
+               &.govuk-heading-s {
+                    margin-bottom: 0.25em;
+               }
+               &.value {
+                    font-size: 24px;
+                    padding: 10px 10px 10px 15px;
+                    border: 1px solid $govuk-border-colour;
+                    border-left: 10px solid black;
+               }
+          }
+          .govuk-caption-m {
+               font-size: 1rem;
+          }
+     }
+}
+
+.bottom-ctas {
+     hr.separator {
+          margin: 20px 0 60px 0;
+     }
+     p.govuk-body-l {
+          margin-bottom: 1em;
+     }
+}
+
+.approved-panel, .rejected-panel {
+     border-left: 10px solid govuk-colour("green");
+     background: govuk-colour("light-grey");
+     padding: 1em 3.5%;
+     margin: 0 0 1.5em 0;
+     display: none;
+     width: 92%;
+     .govuk-warning-text {
+          margin: 0;
+          .govuk-confirm__icon, .govuk-info__icon {
+               display: inline-block;
+               width: 35px;
+               height: 35px;
+               margin-top: -5px;
+               float: left;
+               background: url('../images/tick-green.svg') no-repeat 50% 50%;
+               background-size: contain;
+          }
+     }
+     .govuk-button {
+          margin: 0.5em 0 0.25em 0;
+     }
+}
+
+.rejected-panel {
+     border-left: 10px solid black;
+     .govuk-warning-text {
+          .govuk-info__icon {
+               background: url('../images/info-black.svg') no-repeat 50% 50%;
+               background-size: contain;
+          }
      }
 }

@@ -1,0 +1,68 @@
+{% extends "layout-ltm.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <span class="govuk-caption-m">Transfer Matching service</span>
+               <h1 class="govuk-heading-xl">Search transfer funding pledges</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-one-third">
+
+               <div class="search-filter">
+                    <h4 class="govuk-heading-s">Apply filter</h4>
+                    <div class="filters">
+                         <p>You do not have any tasks</p>
+                    </div>
+               </div>
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="search-results">
+
+                    <div class="search-title">
+                         <h2 class="govuk-heading-m">29 transfer pledges</h2>
+                         <p>Sorted by: <strong>Name</strong>
+                    </div>
+
+                    <!-- SECTION 1 - START -->
+                    <section class="pledge-details">
+                         <a href="#" class="govuk-heading-m">Anonymous employer (1234)</a>
+                         <span class="govuk-caption-m">£25,000</span>
+                         <p>
+                              <strong>Locations:</strong> West Midlands<br>
+                              <strong>Sectors:</strong> Agriculture, environmental and animal care, Engineering and manufacturing, Transport and logistics<br>
+                              <strong>Type of training:</strong> Agriculture, environmental and animal care, Engineering and manufacturing, Transport and logistics<br>
+                              <strong>Level:</strong> Level 6 - degree & Level 7 - master’s degree
+
+                         </p>
+                    </section>
+                    <!-- SECTION 1 - END -->
+
+               </div>
+
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

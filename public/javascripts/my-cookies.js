@@ -164,35 +164,47 @@ $('.after-approval').hide();
 // Approve pledge
 $("#approve-pledge-continue").on("click", function (e) {
      $.cookie("pledge-approved", true, {path:'/'});
+     $.cookie("pledge-approved-banner", true, {path:'/'});
 });
 
 var applicationsNumber = parseInt($('.pledge-number.applications').text());
 var approvedNumber = parseInt($('.pledge-number.approved').text());
 var rejectedNumber = parseInt($('.pledge-number.rejected').text());
+var pledgeNumberApproved = parseInt($('.pledge-approved-table').text());
+
 
 if ($.cookie("pledge-approved") == 'true') {
      $('.before-approval').hide();
      $('.after-approval').show();
      $('.application.application-one').hide();
      $('.approved-not-complete').hide();
-     $('.application.approved-one, .pledge-approved').show();
+     $('.application.approved-one').show();
+     $('.pledge-number.applications').text(applicationsNumber - 1);
+     $('.pledge-approved-table').text(pledgeNumberApproved + 1);
+     $('.pledge-number.approved').text(approvedNumber + 1);
+
+     // Pledge details page
+     $('.pledge-approved-button').hide();
+     $('#approved-back-to-pledge-details').removeClass('govuk-link-secondary');
+     $('.govuk-form-group.approved-panel').show();
+}
+
+if ($.cookie("pledge-approved-banner") == 'true') {
+     $('.pledge-approved').show();
      setTimeout(function() {
           $('.pledge-approved').slideUp('fast');
      }, 5000);
-     $('.pledge-number.applications').text(applicationsNumber - 1);
-     $('.pledge-number.approved').text(approvedNumber + 1);
 }
 
-if ($.cookie("pledge-complete") == 'true') {
-     $('.pledge-complete, .pledge-complete-table').show();
-     $('.no-pledges').hide();
-     $('.pledge-complete').show();
-     $('.before-pledge').hide();
-     $('.after-pledge').show();
-}
+setTimeout(function() {
+     $.cookie("pledge-approved-banner", false, {path:'/'});
+}, 5000);
+
 
 // Pledge rejected
 $("#reject-pledge-continue").on("click", function (e) {
+     $.cookie("pledge-rejected-banner", true, {path:'/'});
+
      if ($('input[id=reject-application]').is(':checked')) {
           $.cookie("pledge-rejected", true, {path:'/'});
      } else {
@@ -205,14 +217,28 @@ if ($.cookie("pledge-rejected") == 'true') {
      $('.application.application-two').hide();
      $('.rejected-not-complete').hide();
      $('.application.rejected-one').show();
+     $('.pledge-number.applications').text(applicationsNumber - 1);
+     $('.pledge-number.rejected').text(approvedNumber + 1);
+
+     // Pledge details page
+     $('.pledge-rejected-button').hide();
+     $('#rejected-back-to-pledge-details').removeClass('govuk-link-secondary');
+     $('.govuk-form-group.rejected-panel').show();
+
+}
+
+if ($.cookie("pledge-rejected-banner") == 'true') {
      $('.pledge-rejected').show();
      setTimeout(function() {
           $('.pledge-rejected').slideUp('fast');
      }, 5000);
-     $('.pledge-number.applications').text(applicationsNumber - 1);
-     $('.pledge-number.rejected').text(approvedNumber + 1);
 }
+
+setTimeout(function() {
+     $.cookie("pledge-rejected-banner", false, {path:'/'});
+}, 5000);
 
 if ($.cookie("pledge-rejected") == 'true' && $.cookie("pledge-complete") == 'true') {
      $('.pledge-number.applications').text(applicationsNumber - 2);
+
 }

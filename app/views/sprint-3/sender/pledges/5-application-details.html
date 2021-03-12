@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "../../includes/navigation-sender.html" %}
+{% include "../../includes/navigation-sender-secondary.html" %}
 {% endblock %}
 
 {% block content %}
@@ -32,6 +32,17 @@
           </div>
 
           <div class="govuk-grid-column-two-thirds">
+
+               <!-- APPROVED - START -->
+               <div class="govuk-form-group rejected-panel">
+                    <div class="govuk-warning-text">
+                         <span class="govuk-info__icon" aria-hidden="true"></span>
+                         <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Confirmed</span> You have rejected this application - <strong id="date-stamp"></strong>
+                         </strong>
+                    </div>
+               </div>
+               <!-- APPROVED - END -->
 
                <form method="post" action="" id="">
 
@@ -79,10 +90,10 @@
                          </p>
                     </section>
 
-                    <a href="" class="govuk-button" id="">Approve</a>
-                    <a href="4-reject" class="govuk-button govuk-button--warning button-margin-left">Reject</a>
+                    <a href="" class="govuk-button pledge-rejected-button" id="">Approve</a>
+                    <a href="4-reject" class="govuk-button govuk-button--warning button-margin-left pledge-rejected-button">Reject</a>
 
-                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link" id="rejected-back-to-pledge-details">Back</a>
 
                </form>
 

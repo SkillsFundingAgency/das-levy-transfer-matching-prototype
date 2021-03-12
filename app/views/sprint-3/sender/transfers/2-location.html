@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "../../includes/navigation-sender.html" %}
+{% include "../../includes/navigation-sender-secondary.html" %}
 {% endblock %}
 
 {% block content %}
@@ -33,7 +33,7 @@
                               <div class="govuk-form-group">
                                    <label class="govuk-label" for="pledge-location[url1]">Select region of the receiving employer:</label>
                                    <select class="govuk-select" id="pledge-location[url1]" name="pledge-location[url1]">
-                                        <option value="National" selected>National</option>
+                                        <option value="All locations in England" selected>All locations in England</option>
                                         <option disabled>---------------------------------</option>
                                         <option value="East Midlands">East Midlands</option>
                                         <option value="East of England">East of England</option>
@@ -50,10 +50,10 @@
                               {% for url, location in locations -%}
                                    {% if url != 'url1' %}
                                    {% if location != '' %}
-                                        <div class="govuk-form-group">
+                                        <div class="govuk-form-group new-location">
                                              <label class="govuk-label" for="pledge-location[{{url}}]">Additional location</label>
                                              <select class="govuk-select" id="pledge-location[{{url}}]" name="pledge-location[{{url}}]">
-                                                  <option value="National" selected>National</option>
+                                                  <option value="All locations in England" selected>All locations in England</option>
                                                   <option disabled>---------------------------------</option>
                                                   <option value="East Midlands">East Midlands</option>
                                                   <option value="East of England">East of England</option>
