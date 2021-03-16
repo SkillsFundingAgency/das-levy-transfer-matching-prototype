@@ -177,7 +177,149 @@ $('input[id="pledge-cancel-2"]').on("click", function (e) {
      $('#pledge-cancel-continue').attr('href','javascript:history.back()');
 });
 
-// Date stamp
+// Search filter
+$('.no-results').hide();
+
+function change() {
+     var locationFilter = document.querySelectorAll(".search-locations-filter input[type='checkbox']");
+     var sectorFilter = document.querySelectorAll(".search-sector-filter input[type='checkbox']");
+     var trainingFilter = document.querySelectorAll(".search-training-filter input[type='checkbox']");
+     var levelFilter = document.querySelectorAll(".search-level-filter input[type='checkbox']");
+     var filters = {
+          locations: getClassOfCheckedCheckboxes(locationFilter),
+          sectors: getClassOfCheckedCheckboxes(sectorFilter),
+          training: getClassOfCheckedCheckboxes(trainingFilter),
+          level: getClassOfCheckedCheckboxes(levelFilter)
+     };
+     filterResults(filters);
+}
+
+function getClassOfCheckedCheckboxes(checkboxes) {
+     var classes = [];
+
+     if (checkboxes && checkboxes.length > 0) {
+          for (var i = 0; i < checkboxes.length; i++) {
+               var cb = checkboxes[i];
+               if (cb.checked) {
+                    classes.push(cb.getAttribute("rel"));
+               }
+          }
+     }
+     return classes;
+}
+
+function filterResults(filters) {
+     var rElems = document.querySelectorAll(".search-results section");
+     var hiddenElems = [];
+
+     if (!rElems || rElems.length <= 0) {
+          return;
+     }
+
+     for (var i = 0; i < rElems.length; i++) {
+          var el = rElems[i];
+
+
+          if (filters.locations.length > 0) {
+               var isHidden = true;
+
+               for (var j = 0; j < filters.locations.length; j++) {
+                    var filter = filters.locations[j];
+
+                    if (el.classList.contains(filter)) {
+                         isHidden = false;
+                         break;
+                    }
+               }
+
+               if (isHidden) {
+                    hiddenElems.push(el);
+               }
+
+          }
+
+          if (filters.sectors.length > 0) {
+               var isHidden = true;
+
+               for (var j = 0; j < filters.sectors.length; j++) {
+                    var filter = filters.sectors[j];
+
+                    if (el.classList.contains(filter)) {
+                         isHidden = false;
+                         break;
+                    }
+               }
+
+               if (isHidden) {
+                    hiddenElems.push(el);
+               }
+          }
+
+          if (filters.training.length > 0) {
+               var isHidden = true;
+
+               for (var j = 0; j < filters.training.length; j++) {
+                    var filter = filters.training[j];
+
+                    if (el.classList.contains(filter)) {
+                         isHidden = false;
+                         break;
+                    }
+               }
+
+               if (isHidden) {
+                    hiddenElems.push(el);
+               }
+          }
+
+          if (filters.level.length > 0) {
+               var isHidden = true;
+
+               for (var j = 0; j < filters.level.length; j++) {
+                    var filter = filters.level[j];
+
+                    if (el.classList.contains(filter)) {
+                         isHidden = false;
+                         break;
+                    }
+               }
+
+               if (isHidden) {
+                    hiddenElems.push(el);
+               }
+          }
+
+     }
+
+     for (var i = 0; i < rElems.length; i++) {
+          rElems[i].style.display = "block";
+          // $('.filter-number').text(rElems.length);
+
+     }
+
+     if (hiddenElems.length <= 0) {
+          return;
+     }
+
+     if (hiddenElems.length >= 9) {
+          $('.filter-number').text(0);
+          $('.no-results').show();
+     } else {
+          $('.filter-number').text(29);
+          $('.no-results').hide();
+
+     }
+
+     for (var i = 0; i < hiddenElems.length; i++) {
+          hiddenElems[i].style.display = "none";
+     }
+
+}
+
+
+
+
+// !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
 document.getElementById("date-stamp").innerHTML = formatAMPM();
 
 function formatAMPM() {

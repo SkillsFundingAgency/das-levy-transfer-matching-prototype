@@ -181,7 +181,7 @@ if ($.cookie("pledge-approved") == 'true') {
      $('.application.approved-one').show();
      $('.pledge-number.applications').text(applicationsNumber - 1);
      $('.pledge-approved-table').text(pledgeNumberApproved + 1);
-     $('.pledge-number.approved').text(approvedNumber + 1);
+     $('.pledge-number.approved').text(approvedNumber + 1).addClass('active');
 
      // Pledge details page
      $('.pledge-approved-button').hide();
@@ -218,7 +218,7 @@ if ($.cookie("pledge-rejected") == 'true') {
      $('.rejected-not-complete').hide();
      $('.application.rejected-one').show();
      $('.pledge-number.applications').text(applicationsNumber - 1);
-     $('.pledge-number.rejected').text(approvedNumber + 1);
+     $('.pledge-number.rejected').text(approvedNumber + 1).addClass('active');
 
      // Pledge details page
      $('.pledge-rejected-button').hide();

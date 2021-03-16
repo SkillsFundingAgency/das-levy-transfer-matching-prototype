@@ -59,13 +59,21 @@
                          <div class="govuk-summary-list__row section-two">
                               <dt class="govuk-summary-list__key">Location of the employer receiving the transfer</dt>
                               <dd class="govuk-summary-list__value">
-                                {% if data['pledge-location'] %}
+                                   {% if data['pledge-location'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge-location'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                                   {% endif %}
+
+                                <!-- {% if data['pledge-location'] %}
                                 <ul class="govuk-list govuk-list--bullet">
                                    {% for key, location in data['pledge-location'] %}
                                       <li> {{ location }} </li>
                                    {% endfor %}
                                 </ul>
-                                {% endif %}
+                                {% endif %} -->
                               </dd>
                               <dd class="govuk-summary-list__actions"><a class="govuk-link" href="2-location">Change<span class="govuk-visually-hidden"> lcoations</span></a></dd>
                          </div>
