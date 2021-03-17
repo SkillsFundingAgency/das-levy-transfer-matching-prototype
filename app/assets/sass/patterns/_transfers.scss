@@ -3,7 +3,7 @@
 }
 
 table {
-     &.pledge-complete-table, &.application-complete-table {
+     &.pledge-complete-table, &.application-complete-table, &.application-deleted-table {
           thead {
                tr {
                     th {
@@ -25,6 +25,21 @@ table {
                          text-align: center;
                          border: 4px solid white;
                          padding: 0.5em 0;
+                    }
+               }
+          }
+     }
+}
+
+table {
+     &.application-deleted-table {
+          tbody {
+               tr {
+                    &.new-pledge {
+                         td {
+                              background: white;
+                              border-bottom: 1px solid govuk-colour("light-grey");
+                         }
                     }
                }
           }

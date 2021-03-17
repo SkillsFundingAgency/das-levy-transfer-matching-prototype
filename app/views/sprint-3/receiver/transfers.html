@@ -30,41 +30,92 @@
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-
                <p>Transfer content</p>
-
-               <h2 class="govuk-heading-s">Transfer applications</h2>
-               <p class="no-applications">You have no pending applications.</p>
           </div>
 
           <div class="govuk-grid-column-full">
 
-               <!-- APPLICATION TABLE - START -->
-               <table class="govuk-table application-complete-table">
-                    <thead class="govuk-table__head">
-                         <tr class="govuk-table__row">
-                              <th scope="col" class="govuk-table__header">Description</th>
-                              <th scope="col" class="govuk-table__header">Date</th>
-                              <th scope="col" class="govuk-table__header">Total</th>
-                              <th scope="col" class="govuk-table__header">Approved</th>
-                              <th scope="col" class="govuk-table__header"></th>
-                         </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row new-pledge">
-                              <td class="govuk-table__cell">
-                                   <strong>
-                                        <div class="pledge-name-answer">###</div>
-                                   </strong>
-                              </td>
-                              <td class="govuk-table__cell"><div id="date-stamp"></div></td>
-                              <td class="govuk-table__cell"><span class="pledge-value-answer">###</span></td>
-                              <td class="govuk-table__cell"><span class="">Awaiting approval</span></td>
-                              <td class="govuk-table__cell"><a href="application/6-application-details">View</a></td>
-                         </tr>
-                    </tbody>
-               </table>
-               <!-- APPLICATION TABLE - END -->
+               <div class="govuk-tabs" data-module="govuk-tabs" id="applications-tabs">
+                    <!-- TABS - START -->
+                    <ul class="govuk-tabs__list">
+                         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="govuk-tabs__tab" href="#pledge-applications"><span class="application-number applications">0</span>Applications</a></li>
+                         <li class="govuk-tabs__list-item"><a class="govuk-tabs__tab" href="#pledge-applications-deleted"><span class="application-number deleted">0</span>Deleted</a></li>
+                    </ul>
+                    <!-- TABS - END -->
+
+                    <!-- TAB ONE - START -->
+                    <div class="govuk-tabs__panel" id="pledge-applications">
+                         <h2 class="govuk-heading-m">Transfer applications</h2>
+                         <p class="no-applications">You have no pending applications.</p>
+
+                         <!-- APPLICATION TABLE - START -->
+                         <table class="govuk-table application-complete-table">
+                              <thead class="govuk-table__head">
+                                   <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Description</th>
+                                        <th scope="col" class="govuk-table__header">Date</th>
+                                        <th scope="col" class="govuk-table__header">Total</th>
+                                        <th scope="col" class="govuk-table__header">Approval status</th>
+                                        <th scope="col" class="govuk-table__header"></th>
+                                   </tr>
+                              </thead>
+                              <tbody class="govuk-table__body">
+                                   <tr class="govuk-table__row new-pledge">
+                                        <td class="govuk-table__cell">
+                                             <strong>
+                                                  <div class="pledge-name-answer">###</div>
+                                             </strong>
+                                        </td>
+                                        <td class="govuk-table__cell"><div id="date-stamp"></div></td>
+                                        <td class="govuk-table__cell"><span class="pledge-value-answer">###</span></td>
+                                        <td class="govuk-table__cell"><span class="">Awaiting approval</span></td>
+                                        <td class="govuk-table__cell"><a href="application/6-application-details">View</a></td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                         <!-- APPLICATION TABLE - END -->
+
+                    </div>
+                    <!-- TAB ONE - START -->
+
+                    <!-- TAB TWO - START -->
+                    <div class="govuk-tabs__panel" id="pledge-applications-deleted">
+                         <h2 class="govuk-heading-m">Deleted applications</h2>
+                         <p class="no-deleted-applications">You have no deleted applications.</p>
+
+
+                         <!-- APPLICATION TABLE - START -->
+                         <table class="govuk-table application-deleted-table">
+                              <thead class="govuk-table__head">
+                                   <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Description</th>
+                                        <th scope="col" class="govuk-table__header">Date</th>
+                                        <th scope="col" class="govuk-table__header">Total</th>
+                                        <th scope="col" class="govuk-table__header">Reason for deletetion</th>
+                                   </tr>
+                              </thead>
+                              <tbody class="govuk-table__body">
+                                   <tr class="govuk-table__row new-pledge">
+                                        <td class="govuk-table__cell">
+                                             <strong>
+                                                  <div class="pledge-name-answer">###</div>
+                                             </strong>
+                                             <a href="application/6-application-details">View details</a>
+                                        </td>
+                                        <td class="govuk-table__cell">
+                                             <div id="date-stamp-deletion"></div>
+                                        </td>
+                                        <td class="govuk-table__cell"><span class="pledge-value-answer">###</span></td>
+                                        <td class="govuk-table__cell"><span class="">{{ data['delete-more-detail'] }}</span></td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                         <!-- APPLICATION TABLE - END -->
+
+                    </div>
+                    <!-- TAB TWO - START -->
+
+               </div>
 
                {% from "govuk/components/button/macro.njk" import govukButton %}
 

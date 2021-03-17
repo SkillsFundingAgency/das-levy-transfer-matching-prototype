@@ -172,7 +172,6 @@ var approvedNumber = parseInt($('.pledge-number.approved').text());
 var rejectedNumber = parseInt($('.pledge-number.rejected').text());
 var pledgeNumberApproved = parseInt($('.pledge-approved-table').text());
 
-
 if ($.cookie("pledge-approved") == 'true') {
      $('.before-approval').hide();
      $('.after-approval').show();
@@ -243,6 +242,10 @@ if ($.cookie("pledge-rejected") == 'true' && $.cookie("pledge-complete") == 'tru
 
 }
 
+// !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
 // Search results data
 $("section.pledge-details .govuk-button").on("click", function (e) {
      $.cookie("pledge-confirm-details", true, {path:'/'});
@@ -319,6 +322,10 @@ if ($.cookie("pledge-confirm-details") == 'true') {
      $('.pledge-level-answer').text($.cookie("pledge-level"));
 }
 
+// Confirm application
+var receiverApplicationsNumber = parseInt($('.application-number.applications').text());
+var receiverDeletedNumber = parseInt($('.application-number.deleted').text());
+
 $("#pledge-application-confirm-continue").on("click", function (e) {
      $.cookie("pledge-application-completed", true, {path:'/'});
 });
@@ -328,6 +335,10 @@ $('.application-complete-table').hide();
 if ($.cookie("pledge-application-completed") == 'true') {
      $('.no-applications').hide();
      $('.application-complete-table').show();
+
+     $('.application-number.applications').text(receiverApplicationsNumber + 1).addClass('active');
+     // $('.application-number.deleted').text(receiverDeletedNumber + 1).addClass('active');
+
 }
 
 if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-1') {
@@ -358,4 +369,25 @@ if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-appli
 }
 if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-9') {
      $('.pledge-details[data-search=search-item-9]').addClass('applied');
+}
+
+// Delete application
+$("#delete-application-continue").on("click", function (e) {
+     if ($('input[id="delete-application"]:checked')) {
+          $.cookie("delete-application-completed", true, {path:'/'});
+     } else {
+          $.cookie("delete-application-completed", false, {path:'/'});
+     }
+});
+
+if ($.cookie("delete-application-completed") == 'true') {
+     $('table.application-complete-table').hide();
+     $('table.application-deleted-table').show();
+     $('.no-applications').show();
+     $('.no-deleted-applications').hide();
+     $('#delete-application').hide();
+     $('.deleted-panel').show();
+
+     $('.application-number.applications').text(receiverApplicationsNumber).removeClass('active');
+     $('.application-number.deleted').text(receiverDeletedNumber + 1).addClass('active');
 }

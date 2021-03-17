@@ -1,0 +1,91 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <span class="govuk-caption-m">Transfer matching service</span>
+               <h1 class="govuk-heading-xl">
+                    Delete your pledge application to <span class="highlight-text pledge-name-answer">CBJ Engineering</span>
+               </h1>
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <form method="post" action="../transfers" id="delete-application-form">
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+                    {% set deleteHtml %}
+                         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+                         {{ govukTextarea({
+                              name: "delete-more-detail",
+                              id: "delete-more-detail",
+                              label: {
+                                   text: "Write a short description of why you're deleting the application",
+                                   isPageHeading: false
+                              },
+                              hint: {
+                                   text: "The information you provide will be shared with the ESFA and the sending employer"
+                              }
+                         }) }}
+                    {% endset -%}
+
+                    {{ govukRadios({
+                    idPrefix: "delete-application",
+                         name: "delete-application",
+                         fieldset: {
+                              legend: {
+                                   text: "Are you sure you wish to delete the application?",
+                                   isPageHeading: false
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Yes, delete application",
+                                   text: "Yes, delete application",
+                                   conditional: {
+                                        html: deleteHtml
+                                   }
+                              },
+                              {
+                                   value: "No, keep application",
+                                   text: "No, keep application"
+                              }
+                         ]
+                    }) }}
+
+                    <button class="govuk-button" data-module="govuk-button" id="delete-application-continue">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

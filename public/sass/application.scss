@@ -215,7 +215,7 @@ a {
      }
 }
 
-.pledge-number {
+.pledge-number, .application-number {
      display: flex;
      align-items: center;
      justify-content: center;
@@ -288,7 +288,7 @@ a {
      }
 }
 
-.approved-panel, .rejected-panel {
+.approved-panel, .rejected-panel, .deleted-panel {
      border-left: 10px solid govuk-colour("green");
      background: govuk-colour("light-grey");
      padding: 1em 3.5%;

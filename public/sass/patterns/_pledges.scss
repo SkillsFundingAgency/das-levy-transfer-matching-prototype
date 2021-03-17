@@ -27,7 +27,7 @@
      }
 }
 
-#pledge-tabs {
+#pledge-tabs, #applications-tabs {
      padding: 0;
      .govuk-tabs__list {
           border-bottom: 3px solid govuk-colour("light-grey");
@@ -130,6 +130,9 @@ section {
                p {
                     margin: 0;
                }
+          }
+          .pledge-name-answer {
+               color: $govuk-link-colour;
           }
      }
      &.employer-contact-details {

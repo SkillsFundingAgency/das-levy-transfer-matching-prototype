@@ -20,11 +20,22 @@
           </div>
      </div>
 
-     <div class="govuk-grid-row" id="sender-check-answers">
+     <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
                <span class="govuk-caption-m">Transfer matching service</span>
                <h1 class="govuk-heading-xl">Your application details</h1>
+
+               <!-- DELETED - START -->
+               <div class="govuk-form-group deleted-panel">
+                    <div class="govuk-warning-text">
+                         <span class="govuk-info__icon" aria-hidden="true"></span>
+                         <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Confirmed</span> You have deleted this application - <strong id="date-stamp"></strong>
+                         </strong>
+                    </div>
+               </div>
+               <!-- DELETED - END -->
 
                <!-- SECTION 1 - START -->
                <h2 class="govuk-heading-m">Pledge details</h2>
@@ -80,7 +91,9 @@
                </section>
                <!-- SECTION 4 - END -->
 
-               <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-back-link" id="">Back</a>
+               <a href="7-delete" class="govuk-button govuk-button--warning" id="delete-application">Delete application</a>
+
+               <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link" id="">Back</a>
 
           </div>
 
