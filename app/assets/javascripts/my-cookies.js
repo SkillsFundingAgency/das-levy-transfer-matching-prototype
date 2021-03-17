@@ -250,13 +250,49 @@ $("section.pledge-details .govuk-button").on("click", function (e) {
      var searchItem = $(this).closest('.pledge-details').attr('data-search');
      $.cookie("pledge-application-id", searchItem, {path:'/'});
 
+     // Pledge information
      $.cookie("pledge-name", $(this).parent().find('.pledge-name').text(), {path:'/'});
      $.cookie("pledge-value", $(this).parent().parent().find('.govuk-caption-m').text(), {path:'/'});
      $.cookie("pledge-location", $(this).parent().parent().find('.location').text(), {path:'/'});
      $.cookie("pledge-sector", $(this).parent().parent().find('.sector').text(), {path:'/'});
      $.cookie("pledge-training", $(this).parent().parent().find('.training').text(), {path:'/'});
      $.cookie("pledge-level", $(this).parent().parent().find('.level').text(), {path:'/'});
+
+     // Filters
+     if ($('input[name="search-location"]:checked').length > 0) {
+          $.cookie("search-filter-location", true, {path:'/'});
+     } else {
+          $.cookie("search-filter-location", false, {path:'/'});
+     }
+     if ($('input[name="search-sector"]:checked').length > 0) {
+          $.cookie("search-filter-sector", true, {path:'/'});
+     } else {
+          $.cookie("search-filter-sector", false, {path:'/'});
+     }
+     if ($('input[name="search-training"]:checked').length > 0) {
+          $.cookie("search-filter-training", true, {path:'/'});
+     } else {
+          $.cookie("search-filter-training", false, {path:'/'});
+     }
+     if ($('input[name="search-level"]:checked').length > 0) {
+          $.cookie("search-filter-level", true, {path:'/'});
+     } else {
+          $.cookie("search-filter-level", false, {path:'/'});
+     }
+
+     // Location filter
+     if ($('input[id="search-location-east-mids"]:checked')) { $.cookie("search-location-east-mids", true, {path:'/'}); }
 });
+
+// Opens the filters
+if ($.cookie("search-filter-location") == 'true') { $('details[data-search-filter="location"').attr('open','isOpen'); }
+if ($.cookie("search-filter-sector") == 'true') { $('details[data-search-filter="sector"').attr('open','isOpen'); }
+if ($.cookie("search-filter-training") == 'true') { $('details[data-search-filter="training"').attr('open','isOpen'); }
+if ($.cookie("search-filter-level") == 'true') { $('details[data-search-filter="level"').attr('open','isOpen'); }
+
+// Checks the filters
+// Location
+if ($.cookie("search-location-east-mids") == 'true') { $('input[id="search-location-east-mids"]').attr('checked','checked'); }
 
 if ($.cookie("pledge-confirm-details") == 'true') {
      $('.pledge-name-answer').text($.cookie("pledge-name"));
@@ -271,8 +307,11 @@ $("#pledge-application-confirm-continue").on("click", function (e) {
      $.cookie("pledge-application-completed", true, {path:'/'});
 });
 
-if ($.cookie("pledge-application-completed") == 'true') {
+$('.application-complete-table').hide();
 
+if ($.cookie("pledge-application-completed") == 'true') {
+     $('.no-applications').hide();
+     $('.application-complete-table').show();
 }
 
 if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-1') {

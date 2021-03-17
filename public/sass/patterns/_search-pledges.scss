@@ -112,6 +112,24 @@
                     color: black;
                }
           }
+          .govuk-tag {
+               display: none;
+               margin-bottom: 0.5em;
+          }
+          &.applied {
+               padding: 1.25em;
+               background: govuk-colour("light-grey");
+               border-bottom: none;
+               .govuk-tag {
+                    display: inline-block;
+               }
+               .govuk-button {
+                    display: none;
+               }
+               p {
+                    margin: 0;
+               }
+          }
      }
 }
 
