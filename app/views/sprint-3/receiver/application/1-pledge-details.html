@@ -1,0 +1,96 @@
+{% extends "layout-ltm.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <span class="govuk-caption-m">Transfer matching service</span>
+               <h1 class="govuk-heading-xl">
+                    <span class="pledge-name-answer">####</span>
+                    <span class="govuk-caption-m pledge-location-answer">####</span>
+               </h1>
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <form method="post" action="2-contact-details" id="">
+
+                    <section class="employer-details">
+                         <h2 class="govuk-heading-l">Details about the pledge</h2>
+                         <p class="govuk-heading-m pledge-name-answer">####</p>
+                         <p><strong>Location(s):</strong> <span class="pledge-location-answer">####</span></p>
+                         <p><strong>Sectors:</strong> <span class="pledge-sector-answer">####</span></p>
+                         <p><strong>Type of training:</strong> <span class="pledge-training-answer">####</span></p>
+                         <p><strong>Level:</strong> <span class="pledge-level-answer">####</span></p>
+                         <div class="total">
+                              <p class="govuk-heading-m">Total funding: <span class="pledge-value-answer">####</span></p>
+                         </div>
+                    </section>
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="pledge-apply-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                   <h1 class="govuk-fieldset__heading">Do you match all the criteria for this pledge?</h1>
+                              </legend>
+                              <div id="pledge-apply-hint" class="govuk-hint">You can still apply for this pledge even if you don't match the criteria, please just tell us why you would suit this pledge.</div>
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="pledge-match-yes" name="pledge-match" type="radio" value="Yes" data-aria-controls="conditional-pledge-match-yes">
+                                        <label class="govuk-label govuk-radios__label" for="pledge-match-yes">Yes</label>
+                                   </div>
+                                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pledge-match-yes">
+                                        <div class="govuk-form-group">
+                                             <div class="govuk-form-group">
+                                                  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="pledge-match-yes-more-detail">Provide the organisation more detail about your business</label></h1>
+                                                  <div id="pledge-match-yes-more-detail-hint" class="govuk-hint">Tell them what this can help your business acheive or how it will help your business grow.</div>
+                                                  <textarea class="govuk-textarea" id="pledge-match-yes-more-detail" name="pledge-match-yes-more-detail" rows="5" aria-describedby="pledge-match-yes-more-detail-hint"></textarea>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="pledge-match-no" name="pledge-match" type="radio" value="No" data-aria-controls="conditional-pledge-match-no">
+                                        <label class="govuk-label govuk-radios__label" for="pledge-match-no">No</label>
+                                   </div>
+                                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pledge-match-no">
+                                        <div class="govuk-form-group">
+                                             <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="pledge-match-no-more-detail">Tell the organisation why this pledge will help you.</label></h1>
+                                             <div id="pledge-match-no-more-detail-hint" class="govuk-hint">Tell them what this can help your business acheive or how it will help your business grow.</div>
+                                             <textarea class="govuk-textarea" id="pledge-match-no-more-detail" name="pledge-match-no-more-detail" rows="5" aria-describedby="pledge-match-no-more-detail-hint"></textarea>
+                                        </div>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button" id="">Apply for pledge</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state" id="">Cancel application</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

@@ -316,8 +316,39 @@ function filterResults(filters) {
 
 }
 
+// Pledge application emails
+function addAnotherApplicationEmail() {
+     event.preventDefault();
+     emailApplicationNumber++;
+     $("#pledge-application-emails").append(`
+          <div class="govuk-form-group additional-email">
+               <label class="govuk-label" for="pledge-application-email[url${emailApplicationNumber}]"> Additional email address</label>
+               <input class="govuk-input govuk-input--width-20" id="pledge-application-email[url${emailApplicationNumber}]" name="pledge-application-email[url${emailApplicationNumber}]" type="email" spellcheck="false">
+               <p class="govuk-body">
+                    <a class="govuk-link govuk-link--no-visited-state" data-remove="url${emailApplicationNumber}" href="#">remove</a>
+               </p>
+          </div>
+     `).on("click", "[data-remove]", function () {
+     if ($("#pledge-application-emails").data("application-email-count") === 1) {
+          event.preventDefault();
+          $(this).closest(".govuk-form-group").remove();
+     }
+     alert(removeApplicationId);
+     });
+}
 
+function removeApplicationEmail() {
+     event.preventDefault();
+     var removeApplicationId = $(this).data("remove");
+     $("#pledge-application-emails").append(`
+          <input class="govuk-input govuk-input--width-20" id="pledge-application-email[${removeApplicationId}]" name="pledge-application-email[${removeApplicationId}]" type="email" spellcheck="false">`
+     )
+     $(this).closest(".govuk-form-group").remove();
+}
 
+var emailApplicationNumber = $("#pledge-application-emails").data("application-email-count");
+$("#addAnotherApplicationEmail").on("click", addAnotherApplicationEmail);
+$("[data-remove]").on("click", removeApplicationEmail);
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
 document.getElementById("date-stamp").innerHTML = formatAMPM();

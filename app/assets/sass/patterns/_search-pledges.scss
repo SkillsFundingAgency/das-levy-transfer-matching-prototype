@@ -112,5 +112,45 @@
                     color: black;
                }
           }
+          .govuk-tag {
+               display: none;
+               margin-bottom: 0.5em;
+          }
+          &.applied {
+               padding: 1em;
+               background: govuk-colour("light-grey");
+               .govuk-tag {
+                    display: inline-block;
+               }
+               .govuk-button {
+                    display: none;
+               }
+          }
      }
+}
+
+.pledge-name-answer {
+     color: $govuk-link-colour;
+}
+
+#pledge-application-emails {
+     // .first-of-type {
+     //      margin-bottom: 0;
+     // }
+     .additional-email {
+          padding: 1em 1em 1em 2em;
+          margin: 0;
+          border-left: 10px solid $govuk-border-colour;
+          &:last-of-type {
+               margin-bottom: 2em;
+          }
+          p {
+               margin: 0;
+          }
+     }
+}
+
+#addAnotherApplicationEmail {
+     margin-top: -1em;
+     display: block;
 }

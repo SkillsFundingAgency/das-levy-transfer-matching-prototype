@@ -242,3 +242,65 @@ if ($.cookie("pledge-rejected") == 'true' && $.cookie("pledge-complete") == 'tru
      $('.pledge-number.applications').text(applicationsNumber - 2);
 
 }
+
+// Search results data
+$("section.pledge-details .govuk-button").on("click", function (e) {
+     $.cookie("pledge-confirm-details", true, {path:'/'});
+     // alert()
+     var searchItem = $(this).closest('.pledge-details').attr('data-search');
+     $.cookie("pledge-application-id", searchItem, {path:'/'});
+
+     $.cookie("pledge-name", $(this).parent().find('.pledge-name').text(), {path:'/'});
+     $.cookie("pledge-value", $(this).parent().parent().find('.govuk-caption-m').text(), {path:'/'});
+     $.cookie("pledge-location", $(this).parent().parent().find('.location').text(), {path:'/'});
+     $.cookie("pledge-sector", $(this).parent().parent().find('.sector').text(), {path:'/'});
+     $.cookie("pledge-training", $(this).parent().parent().find('.training').text(), {path:'/'});
+     $.cookie("pledge-level", $(this).parent().parent().find('.level').text(), {path:'/'});
+});
+
+if ($.cookie("pledge-confirm-details") == 'true') {
+     $('.pledge-name-answer').text($.cookie("pledge-name"));
+     $('.pledge-value-answer').text($.cookie("pledge-value"));
+     $('.pledge-location-answer').text($.cookie("pledge-location"));
+     $('.pledge-sector-answer').text($.cookie("pledge-sector"));
+     $('.pledge-training-answer').text($.cookie("pledge-training"));
+     $('.pledge-level-answer').text($.cookie("pledge-level"));
+}
+
+$("#pledge-application-confirm-continue").on("click", function (e) {
+     $.cookie("pledge-application-completed", true, {path:'/'});
+});
+
+if ($.cookie("pledge-application-completed") == 'true') {
+
+}
+
+if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-1') {
+     $('.pledge-details[data-search=search-item-1]').addClass('applied');
+}
+
+if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-2') {
+     $('.pledge-details[data-search=search-item-2]').addClass('applied');
+}
+
+if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-3') {
+     $('.pledge-details[data-search=search-item-3]').addClass('applied');
+}
+if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-4') {
+     $('.pledge-details[data-search=search-item-4]').addClass('applied');
+}
+if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-5') {
+     $('.pledge-details[data-search=search-item-5]').addClass('applied');
+}
+if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-6') {
+     $('.pledge-details[data-search=search-item-6]').addClass('applied');
+}
+if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-7') {
+     $('.pledge-details[data-search=search-item-7]').addClass('applied');
+}
+if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-8') {
+     $('.pledge-details[data-search=search-item-8]').addClass('applied');
+}
+if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-9') {
+     $('.pledge-details[data-search=search-item-9]').addClass('applied');
+}

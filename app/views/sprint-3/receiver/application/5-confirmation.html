@@ -1,0 +1,41 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation application-complete">
+                    <h1 class="govuk-panel__title">Your application has been successfully created</h1>
+                    <p><a href="../transfers">View your application</a></p>
+               </div>
+
+               <p class="govuk-body">We have sent you a confirmation email.</p>
+
+               <h2 class="govuk-heading-m">View your other matches</h2>
+
+               <p class="govuk-body">You have 3 other matches to your search criteria would you like to apply for these also?</p>
+
+               <p class="govuk-body">
+                    <a href="#" class="govuk-link">View other matches</a>
+                    <br>
+                    or
+                    <br>
+                    <a href="../my-account" class="govuk-link">Continue to the my account page</a>
+               </p>
+          </div>
+     </div>
+
+</div>
+
+{% endblock %}

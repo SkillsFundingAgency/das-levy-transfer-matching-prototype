@@ -1,0 +1,145 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row" id="sender-check-answers">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Transfer matching service</span>
+               <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+               <!-- SECTION 1 - START -->
+               <div class="section-one">
+                    <h2 class="govuk-heading-m">Pledge details</h2>
+
+                    <section class="employer-details">
+                         <p class="govuk-heading-m pledge-name-answer">####</p>
+                         <p><strong>Location(s):</strong> <span class="pledge-location-answer">####</span></p>
+                         <p><strong>Sectors:</strong> <span class="pledge-sector-answer">####</span></p>
+                         <p><strong>Type of training:</strong> <span class="pledge-training-answer">####</span></p>
+                         <p><strong>Level:</strong> <span class="pledge-level-answer">####</span></p>
+                         <div class="total">
+                              <p class="govuk-heading-m">Total funding: <span class="pledge-value-answer">####</span></p>
+                         </div>
+                    </section>
+
+               </div>
+               <!-- SECTION 1 - END -->
+
+               <!-- SECTION 2 - START -->
+               <div class="section-two">
+                    <h2 class="govuk-heading-m">Pledge criteria</h2>
+
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">Do you match the criteria?</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-match'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="1-pledge-details">Change<span class="govuk-visually-hidden"> the criteria match</span></a></dd>
+                         </div>
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">Details</dt>
+                              <dd class="govuk-summary-list__value">
+                                   {{ data['pledge-match-yes-more-detail'] }}
+                                   {{ data['pledge-match-no-more-detail'] }}
+                              </dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="1-pledge-details">Change<span class="govuk-visually-hidden"> the details</span></a></dd>
+                         </div>
+                    </dl>
+
+               </div>
+               <!-- SECTION 2 - END -->
+
+               <!-- SECTION 3 - START -->
+               <div class="section-two">
+                    <h2 class="govuk-heading-m">Your details</h2>
+
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">Your organisation name</dt>
+                              <dd class="govuk-summary-list__value">My Organisation Ltd</dd>
+                              <dd class="govuk-summary-list__actions"></dd>
+                         </div>
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">Contact name</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-application-fullname'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="2-contact-details">Change<span class="govuk-visually-hidden"> your fullname</span></a></dd>
+                         </div>
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">Email address</dt>
+                              <dd class="govuk-summary-list__value">
+                                   {% if data['pledge-application-email'] %}
+                                        {% for key, applicationEmail in data['pledge-application-email'] %}
+                                             {{ applicationEmail }}
+                                        {% endfor %}
+                                   {% endif %}
+                              </dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="2-contact-details">Change<span class="govuk-visually-hidden"> show website</span></a></dd>
+                         </div>
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">Business website</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-application-website'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="2-contact-details">Change<span class="govuk-visually-hidden"> show website</span></a></dd>
+                         </div>
+                    </dl>
+
+               </div>
+               <!-- SECTION 3 - END -->
+
+               <!-- SECTION 4 - START -->
+               <div class="section-two">
+                    <h2 class="govuk-heading-m">About the apprenticeship</h2>
+
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">About the apprenticeship</dt>
+                              <dd class="govuk-summary-list__value">{{ data['pledge-application-more-detail'] }}</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="3-about">Change<span class="govuk-visually-hidden"> the details about the apprenticeship</span></a></dd>
+                         </div>
+                    </dl>
+
+               </div>
+               <!-- SECTION 4 - END -->
+
+               <h2 class="govuk-heading-m">Now send your application</h2>
+
+               <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+               <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> Please remember this is a bidding process - not all applications are guaranteed to be accepted</strong>
+               </div>
+
+               <form action="5-confirmation" method="post" novalidate>
+
+                    <input type="hidden" name="answers-checked" value="true">
+                    <div class="govuk-button-group">
+                    <button class="govuk-button" data-module="govuk-button" id="pledge-application-confirm-continue">Accept and send</button>
+                    <a href="../search-pledges" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

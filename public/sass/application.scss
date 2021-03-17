@@ -182,6 +182,10 @@ a {
 .govuk-panel--confirmation {
      display: none;
      margin-bottom: 2em;
+     &.application-complete {
+          display: inline-block;
+          margin: 2em 0 1em 0;
+     }
      &.pledge-rejected {
           background: govuk-colour("blue");
      }
