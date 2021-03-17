@@ -282,6 +282,14 @@ $("section.pledge-details .govuk-button").on("click", function (e) {
 
      // Location filter
      if ($('input[id="search-location-east-mids"]:checked')) { $.cookie("search-location-east-mids", true, {path:'/'}); }
+     if ($('input[id="search-location-east-eng"]:checked')) { $.cookie("search-location-east-eng", true, {path:'/'}); }
+     if ($('input[id="search-location-london"]:checked')) { $.cookie("search-location-london", true, {path:'/'}); }
+     if ($('input[id="search-location-north-east"]:checked')) { $.cookie("search-location-north-east", true, {path:'/'}); }
+     if ($('input[id="search-location-north-west"]:checked')) { $.cookie("search-location-north-west", true, {path:'/'}); }
+     if ($('input[id="search-location-south-east"]:checked')) { $.cookie("search-location-south-east", true, {path:'/'}); }
+     if ($('input[id="search-location-south-west"]:checked')) { $.cookie("search-location-south-west", true, {path:'/'}); }
+     if ($('input[id="search-location-west"]:checked')) { $.cookie("search-location-west", true, {path:'/'}); }
+     if ($('input[id="search-location-york"]:checked')) { $.cookie("search-location-york", true, {path:'/'}); }
 });
 
 // Opens the filters
@@ -292,7 +300,15 @@ if ($.cookie("search-filter-level") == 'true') { $('details[data-search-filter="
 
 // Checks the filters
 // Location
-if ($.cookie("search-location-east-mids") == 'true') { $('input[id="search-location-east-mids"]').attr('checked','checked'); }
+if ($.cookie("search-location-east-mids") == 'true') { $('input[id="search-location-east-mids"]').attr('checked','checked'); } else { $('input[id="search-location-east-mids"]').removeAttr('checked'); }
+if ($.cookie("search-location-east-eng") == 'true') { $('input[id="search-location-east-eng"]').attr('checked','checked'); } else { $('input[id="search-location-east-eng"]').removeAttr('checked'); }
+if ($.cookie("search-location-london") == 'true') { $('input[id="search-location-london"]').attr('checked','checked'); } else { $('input[id="search-location-london"]').removeAttr('checked'); }
+if ($.cookie("search-location-north-east") == 'true') { $('input[id="search-location-east-mids"]').attr('checked','checked'); } else { $('input[id="search-location-east-mids"]').removeAttr('checked'); }
+if ($.cookie("search-location-north-west") == 'true') { $('input[id="search-location-north-west"]').attr('checked','checked'); } else { $('input[id="search-location-north-west"]').removeAttr('checked'); }
+if ($.cookie("search-location-south-east") == 'true') { $('input[id="search-location-south-east"]').attr('checked','checked'); } else { $('input[id="search-location-south-east"]').removeAttr('checked'); }
+if ($.cookie("search-location-south-west") == 'true') { $('input[id="search-location-south-west"]').attr('checked','checked'); } else { $('input[id="search-location-south-west"]').removeAttr('checked'); }
+if ($.cookie("search-location-west") == 'true') { $('input[id="search-location-west"]').attr('checked','checked'); } else { $('input[id="search-location-west"]').removeAttr('checked'); }
+if ($.cookie("search-location-york") == 'true') { $('input[id="search-location-york"]').attr('checked','checked'); } else { $('input[id="search-location-york"]').removeAttr('checked'); }
 
 if ($.cookie("pledge-confirm-details") == 'true') {
      $('.pledge-name-answer').text($.cookie("pledge-name"));

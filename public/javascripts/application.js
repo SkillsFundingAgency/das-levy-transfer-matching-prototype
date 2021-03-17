@@ -17,6 +17,10 @@ if ($('div').hasClass('my-account-main-header')) {
      $('.my-account-main-header').parent().addClass('header-override');
 }
 
+if ($("#my-account-hub")) {
+     $('.navigation ul li a').removeClass('selected');
+     $('.navigation ul li a.link-one').addClass('selected');
+}
 $("#transfers-hub").parent().removeClass('my-account-wrapper');
 $("#transfers-hub.form-entry").parent().css('padding-top','0');
 
