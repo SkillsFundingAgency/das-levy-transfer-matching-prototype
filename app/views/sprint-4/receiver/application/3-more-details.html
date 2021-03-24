@@ -1,0 +1,79 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
+               <h1 class="govuk-heading-xl">Provide more detail about your apprenticeship</h1>
+
+               <p>This information will help the business offering the funding opportunity to make a decision about accepting your application.</p>
+
+               <p>Think about:</p>
+
+               <ul class="govuk-list govuk-list--bullet">
+                    <li>why you want to employ an apprentice</li>
+                    <li>what the apprentice will help your business to achieve</li>
+                    <li>any long term plans for your apprentice</li>
+               </ul>
+
+               <form method="post" action="4-contact-details" id="">
+
+                    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+                         <div class="govuk-form-group">
+                              <label class="govuk-label" for="pledge-application-more-details">Can you provide more detail?</label>
+                              <div id=pledge-application-more-details-hint" class="govuk-hint">
+                                   Do not include personal or financial information like your National Insurance number or credit card details.
+                              </div>
+                              <textarea class="govuk-textarea govuk-js-character-count" id="pledge-application-more-details" name="pledge-application-more-details" rows="5" aria-describedby="pledge-application-more-details-hint pledge-application-more-details-info"></textarea>
+                         </div>
+                         <div id="pledge-application-more-details-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You can enter up to 200 characters</div>
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="">Continue</button>
+
+                    <a href="../search-pledges" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel application</a>
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel">
+                    <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
+                    <p><strong>Locations:</strong> <span class="pledge-location-answer">####</span></p>
+                    <p><strong>Sectors:</strong> <span class="pledge-sector-answer">####</span></p>
+                    <p><strong>Categories of training:</strong> <span class="pledge-training-answer">####</span></p>
+                    <p><strong>Level:</strong> <span class="pledge-level-answer">####</span></p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available: up to <span class="pledge-value-answer">####</span></p>
+                    </div>
+               </section>
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

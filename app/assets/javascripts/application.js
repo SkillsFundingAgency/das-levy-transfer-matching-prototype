@@ -110,6 +110,15 @@ function toggle(source) {
      }
 }
 
+$('input[name="pledge-location"]').on("click", function (e) {
+     // $('input[id="pledge-sector-all"]').prop('checked', false);
+     var numberChecked = $(":checkbox:checked").length;
+     // alert(numberChecked);
+     if (numberChecked <= 15) {
+          $('input[id="pledge-location-all"]').prop('checked', false);
+     }
+});
+
 $('input[name="pledge-sector"]').on("click", function (e) {
      // $('input[id="pledge-sector-all"]').prop('checked', false);
      var numberChecked = $(":checkbox:checked").length;
@@ -196,6 +205,15 @@ function change() {
           level: getClassOfCheckedCheckboxes(levelFilter)
      };
      filterResults(filters);
+
+     var visibleNumberOfResults = parseInt($(".search-results section:visible").length);
+     $('.search-title .filter-number').text(visibleNumberOfResults);
+
+     if (visibleNumberOfResults = 0) {
+          $('.no-results').show();
+     } else {
+          $('.no-results').hide();
+     }
 }
 
 function getClassOfCheckedCheckboxes(checkboxes) {
@@ -305,15 +323,6 @@ function filterResults(filters) {
           return;
      }
 
-     if (hiddenElems.length >= 9) {
-          $('.filter-number').text(0);
-          $('.no-results').show();
-     } else {
-          $('.filter-number').text(29);
-          $('.no-results').hide();
-
-     }
-
      for (var i = 0; i < hiddenElems.length; i++) {
           hiddenElems[i].style.display = "none";
      }
@@ -354,6 +363,143 @@ var emailApplicationNumber = $("#pledge-application-emails").data("application-e
 $("#addAnotherApplicationEmail").on("click", addAnotherApplicationEmail);
 $("[data-remove]").on("click", removeApplicationEmail);
 
+
+// Pledge shortlist
+$('#pledge-shortlist .application').hide();
+$('.applications-empty').hide();
+
+$('.shortlist').on("click", function (e) {
+     e.preventDefault();
+     $(this).closest('.application').hide();
+
+     var newApplicationNumber = parseInt($('.pledge-number.applications').text());
+     var newShortlistNumber = parseInt($('.pledge-number.shortlist').text());
+
+     $('.pledge-number.applications').text(newApplicationNumber - 1);
+     $('.pledge-number.shortlist').text(newShortlistNumber + 1).addClass('active');
+
+     $('.shortlist-not-complete').hide();
+
+     var applicationNumber = $(this).closest('.application').data('application');
+
+     if (applicationNumber == "one") {
+          $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).show();
+     }
+
+     if (applicationNumber == "two") {
+          $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).show();
+     }
+
+     if (applicationNumber == "three") {
+          $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).show();
+     }
+
+     if (newApplicationNumber == 1) {
+          $('.pledge-number.applications').removeClass('active');
+          $('.applications-empty').show();
+     }
+
+     // if (shortlistNumber == 0) {
+     //      $('.pledge-number.applications').removeClass('active');
+     // }
+});
+
+$('.remove-shortlist').on("click", function (e) {
+     e.preventDefault();
+     $(this).closest('.application').hide();
+
+     var newApplicationNumber = parseInt($('.pledge-number.applications').text());
+     var newShortlistNumber = parseInt($('.pledge-number.shortlist').text());
+
+     $('.pledge-number.applications').text(newApplicationNumber + 1);
+     $('.pledge-number.shortlist').text(newShortlistNumber - 1).addClass('active');
+
+     $('.shortlist-not-complete').hide();
+
+     var applicationNumber = $(this).closest('.application').data('shortlist');
+
+     console.log(applicationNumber);
+
+     if (applicationNumber == "one") {
+          $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).hide();
+          $('#pledge-applications').find(`[data-application='${applicationNumber}']`).show();
+     }
+
+     if (applicationNumber == "two") {
+          $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).hide();
+          $('#pledge-applications').find(`[data-application='${applicationNumber}']`).show();
+     }
+
+     if (applicationNumber == "three") {
+          $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).hide();
+          $('#pledge-applications').find(`[data-application='${applicationNumber}']`).show();
+     }
+
+     if (newApplicationNumber > 1) {
+          $('.pledge-number.applications').addClass('active');
+          $('.pledge-number.shortlist').removeClass('active');
+          $('.applications-empty').hide();
+          $('.shortlist-not-complete').show();
+     }
+
+});
+
+// Order table
+$('#order-applications-table thead tr th').on("click", function (e) {
+     e.preventDefault();
+});
+
+function sortTable(n) {
+     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+     table = document.getElementById("order-applications-table");
+     switching = true;
+     // Set the sorting direction to ascending:
+     dir = "asc";
+     /* Make a loop that will continue until no switching has been done: */
+     while (switching) {
+          // start by saying: no switching is done:
+          switching = false;
+          rows = table.rows;
+          /* Loop through all table rows (except the first, which contains table headers): */
+          for (i = 1; i < (rows.length - 1); i++) {
+               // start by saying there should be no switching:
+               shouldSwitch = false;
+               /* Get the two elements you want to compare, one from current row and one from the next: */
+               x = rows[i].getElementsByTagName("TD")[n];
+               y = rows[i + 1].getElementsByTagName("TD")[n];
+               /* check if the two rows should switch place, based on the direction, asc or desc: */
+               if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                         // if so, mark as a switch and break the loop:
+                         shouldSwitch= true;
+                         break;
+                    }
+               } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                         // if so, mark as a switch and break the loop:
+                         shouldSwitch = true;
+                         break;
+                    }
+               }
+          }
+          if (shouldSwitch) {
+               /* If a switch has been marked, make the switchand mark that a switch has been done: */
+               rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+               switching = true;
+               // Each time a switch is done, increase this count by 1:
+               switchcount ++;
+          } else {
+               /* If no switching has been done AND the direction is "asc", set the direction to "desc" and run the while loop again. */
+               if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+               }
+          }
+     }
+}
+
+
+
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
 document.getElementById("date-stamp").innerHTML = formatAMPM();
 
@@ -364,7 +510,7 @@ var d = new Date(),
      ampm = d.getHours() >= 12 ? 'pm' : 'am',
      months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
      days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+     return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
 }
 
 document.getElementById("date-stamp-deletion").innerHTML = formatAMPMDeletion();

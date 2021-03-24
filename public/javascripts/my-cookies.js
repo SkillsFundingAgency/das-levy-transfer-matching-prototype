@@ -2,7 +2,7 @@
 
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
 // Sender - Funding
-$('#pledge-funding-form').attr('action','6-intermediaries');
+// $('#pledge-funding-form').attr('action','6-intermediaries');
 
 $("#pledge-criteria-continue").on("click", function (e) {
 
@@ -40,31 +40,31 @@ $("#pledge-criteria-continue").on("click", function (e) {
      }
 
      if ($('input[id=pledge-level]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','5-level');
+          $('#pledge-criteria-form').attr('action','5-level');
      }
 
      if ($('input[id=pledge-training]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','4-training');
+          $('#pledge-criteria-form').attr('action','5-training');
      } else if ($('input[id=pledge-training]').is(':checked') && $('input[id=pledge-level]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','4-training');
+          $('#pledge-criteria-form').attr('action','5-training');
      }
 
      if ($('input[id=pledge-location]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','3-sector');
+          $('#pledge-criteria-form').attr('action','4-sector');
      } else if ($('input[id=pledge-sector]').is(':checked') && $('input[id=pledge-training]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','3-sector');
+          $('#pledge-criteria-form').attr('action','4-sector');
      } else if ($('input[id=pledge-sector]').is(':checked') && $('input[id=pledge-training]').is(':checked') && $('input[id=pledge-level]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','3-sector');
+          $('#pledge-criteria-form').attr('action','4-sector');
      }
 
      if ($('input[id=pledge-location]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','2-location');
+          $('#pledge-criteria-form').attr('action','3-location');
      } else if ($('input[id=pledge-location]').is(':checked') && $('input[id=pledge-sector]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','2-location');
+          $('#pledge-criteria-form').attr('action','3-location');
      } else if ($('input[id=pledge-location]').is(':checked') && $('input[id=pledge-sector]').is(':checked') && $('input[id=pledge-training]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','2-location');
+          $('#pledge-criteria-form').attr('action','3-location');
      } else if ($('input[id=pledge-location]').is(':checked') && $('input[id=pledge-sector]').is(':checked') && $('input[id=pledge-training]').is(':checked') && $('input[id=pledge-level]').is(':checked')) {
-          $('#pledge-funding-form').attr('action','2-location');
+          $('#pledge-criteria-form').attr('action','3-location');
      }
 
 });
@@ -122,6 +122,7 @@ $("#pledge-confirm-continue").on("click", function (e) {
 });
 
 $('.pledge-complete-table').hide();
+$('.govuk-panel--confirmation.pledge-complete').hide();
 
 $('.before-pledge').show();
 $('.after-pledge').hide();
@@ -135,6 +136,10 @@ if ($.cookie("pledge-complete") == 'true') {
      }, 5000);
      $('.before-pledge').hide();
      $('.after-pledge').show();
+
+     $('.transfer-funds-non-pledge .number').hide();
+     $('.transfer-funds-non-pledge .number.after-pledge').show();
+
 }
 
 $('.approved-one, .rejected-one').hide();
@@ -168,6 +173,7 @@ $("#approve-pledge-continue").on("click", function (e) {
 });
 
 var applicationsNumber = parseInt($('.pledge-number.applications').text());
+var shortlistNumber = parseInt($('.pledge-number.shortlist').text());
 var approvedNumber = parseInt($('.pledge-number.approved').text());
 var rejectedNumber = parseInt($('.pledge-number.rejected').text());
 var pledgeNumberApproved = parseInt($('.pledge-approved-table').text());
@@ -182,18 +188,22 @@ if ($.cookie("pledge-approved") == 'true') {
      $('.pledge-approved-table').text(pledgeNumberApproved + 1);
      $('.pledge-number.approved').text(approvedNumber + 1).addClass('active');
 
+     // Table details
+     $('#order-applications-table tr[data-table-row="one"]').find('.awaiting').hide();
+     $('#order-applications-table tr[data-table-row="one"]').find('.application-approved').show();
+
      // Pledge details page
      $('.pledge-approved-button').hide();
      $('#approved-back-to-pledge-details').removeClass('govuk-link-secondary');
      $('.govuk-form-group.approved-panel').show();
 }
 
-if ($.cookie("pledge-approved-banner") == 'true') {
-     $('.pledge-approved').show();
-     setTimeout(function() {
-          $('.pledge-approved').slideUp('fast');
-     }, 5000);
-}
+// if ($.cookie("pledge-approved-banner") == 'true') {
+//      $('.pledge-approved').show();
+//      setTimeout(function() {
+//           $('.pledge-approved').slideUp('fast');
+//      }, 5000);
+// }
 
 setTimeout(function() {
      $.cookie("pledge-approved-banner", false, {path:'/'});
@@ -218,6 +228,10 @@ if ($.cookie("pledge-rejected") == 'true') {
      $('.application.rejected-one').show();
      $('.pledge-number.applications').text(applicationsNumber - 1);
      $('.pledge-number.rejected').text(approvedNumber + 1).addClass('active');
+
+     // Table details
+     $('#order-applications-table tr[data-table-row="two"]').find('.awaiting').hide();
+     $('#order-applications-table tr[data-table-row="two"]').find('.application-rejected').show();
 
      // Pledge details page
      $('.pledge-rejected-button').hide();
@@ -247,7 +261,7 @@ if ($.cookie("pledge-rejected") == 'true' && $.cookie("pledge-complete") == 'tru
 
 // !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
 // Search results data
-$("section.pledge-details .govuk-button").on("click", function (e) {
+$("section.pledge-details .govuk-button, section.pledge-details .pledge-name").on("click", function (e) {
      $.cookie("pledge-confirm-details", true, {path:'/'});
      // alert()
      var searchItem = $(this).closest('.pledge-details').attr('data-search');

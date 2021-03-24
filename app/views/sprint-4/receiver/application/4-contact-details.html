@@ -1,0 +1,104 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
+               <h1 class="govuk-heading-xl">Add contact details</h1>
+
+               <p>Add your contact details so they can be shared with <strong class="pledge-name-answer main-title">####</strong>.</p>
+
+               <p>They may contact you with follow-up questions about your application.</p>
+
+               <form method="post" action="5-check-answers" id="">
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="pledge-application-firstname">First name</label>
+                         <input class="govuk-input govuk-input--width-20" id="pledge-application-firstname" name="pledge-application-firstname" type="text">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="pledge-application-lastname">Last name</label>
+                         <input class="govuk-input govuk-input--width-20" id="pledge-application-lastname" name="pledge-application-lastname" type="text">
+                    </div>
+
+                    <div class="application-emails">
+                         <div id="pledge-application-emails" data-application-email-count="{{numberOfApplicationEmails}}">
+
+                              <div class="govuk-form-group first-of-type">
+                                   <label class="govuk-label" for="pledge-application-email[url1]">Email address</label>
+                                   <input class="govuk-input govuk-input--width-20" id="pledge-application-email[url1]" name="pledge-application-email[url1]" type="email" spellcheck="false">
+                              </div>
+
+                              {% for url, applicationEmail in applicationEmails -%}
+                                   {% if url != 'url1' %}
+                                   {% if applicationEmail != '' %}
+                                        <div class="govuk-form-group">
+                                             <label class="govuk-label" for="pledge-application-email[{{url}}]">Additional contact</label>
+                                             <input class="govuk-input govuk-input--width-20" id="pledge-application-email[{{url}}]" name="pledge-application-email[{{url}}]" type="email" spellcheck="false">
+                                             <p class="govuk-body">
+                                                  <a class="govuk-link govuk-link--no-visited-state" data-remove="pledge-application-email[{{url}}]" href="#">remove</a>
+                                             </p>
+                                        </div>
+                                   {% endif %}
+                                   {% endif %}
+                              {%- endfor %}
+                         </div>
+                         <p class="govuk-body govuk-!-margin-bottom-6">
+                              <a class="govuk-link govuk-link--no-visited-state add-emails" href="#" id="addAnotherApplicationEmail">Add additional contact</a>
+                         </p>
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="pledge-application-website">Business website (if you have one)</label>
+                         <input class="govuk-input govuk-input--width-20" id="pledge-application-website" name="pledge-application-website" type="text">
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="">Continue</button>
+
+                    <a href="../search-pledges" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel application</a>
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel">
+                    <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
+                    <p><strong>Locations:</strong> <span class="pledge-location-answer">####</span></p>
+                    <p><strong>Sectors:</strong> <span class="pledge-sector-answer">####</span></p>
+                    <p><strong>Categories of training:</strong> <span class="pledge-training-answer">####</span></p>
+                    <p><strong>Level:</strong> <span class="pledge-level-answer">####</span></p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available: up to <span class="pledge-value-answer">####</span></p>
+                    </div>
+               </section>
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

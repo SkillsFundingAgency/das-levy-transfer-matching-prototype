@@ -117,9 +117,10 @@
                margin-bottom: 0.5em;
           }
           &.applied {
-               padding: 1.25em;
+               padding: 1.25em 1.25em 3.25em 1.25em;
+               box-shadow: inset 0px -32px 0px 0px white;
                background: govuk-colour("light-grey");
-               border-bottom: none;
+               // border-bottom: none;
                .govuk-tag {
                     display: inline-block;
                }

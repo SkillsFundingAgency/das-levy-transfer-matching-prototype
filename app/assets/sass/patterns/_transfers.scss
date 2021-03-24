@@ -3,7 +3,7 @@
 }
 
 table {
-     &.pledge-complete-table, &.application-complete-table, &.application-deleted-table {
+     &.pledge-complete-table, &.application-complete-table, &.application-deleted-table, &.applications-table {
           thead {
                tr {
                     th {
@@ -25,6 +25,74 @@ table {
                          text-align: center;
                          border: 4px solid white;
                          padding: 0.5em 0;
+                    }
+               }
+          }
+     }
+     &.applications-table {
+          thead {
+               tr {
+                    border: none;
+                    th {
+                         padding: 1em 0.5em;
+                         background: none;
+                         border: none;
+                         border-bottom: 4px solid black;
+                         text-align: left;
+                         color: $govuk-brand-colour;
+                         text-decoration: underline;
+                         font-size: 1rem;
+                    }
+               }
+          }
+          tbody {
+               tr {
+                    border-bottom: 5px solid govuk-colour("light-grey");
+                    // &:nth-of-type(even) {
+                    //      background: govuk-colour("light-grey");
+                    // }
+                    // &:last-of-type {
+                    //      border-bottom: none;
+                    // }
+                    td {
+                         padding: 1em 0.5em;
+                         text-align: left;
+                         font-size: 1rem;
+                         // border-bottom: 2px solid govuk-colour("light-grey");
+                         &:last-child {
+                              padding-right: 0.5em;
+                         }
+                         a, p {
+                              margin: 0;
+                              font-size: 1rem;
+                         }
+                         p {
+                              // &.cross {
+                              //      color: $govuk-error-colour;
+                              // }
+                              &.application-approved, &.application-rejected {
+                                   display: none;
+                              }
+                              &.application-approved {
+                                   color: $govuk-success-colour;
+                              }
+                              &.application-rejected {
+                                   color: $govuk-error-colour;
+                              }
+                         }
+                         .icon {
+                              display: inline-block;
+                              &.cross, &.rejected {
+                                   width: 0.85em;
+                                   height: 0.85em;
+                                   margin: 0 0.65em -0.1em 0;
+                              }
+                              &.tick, &.approved {
+                                   width: 1em;
+                                   height: 1em;
+                                   margin: 0 0.5em -0.2em 0;
+                              }
+                         }
                     }
                }
           }

@@ -1,0 +1,109 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <span class="govuk-caption-m">Transfer matching service</span>
+               <h1 class="govuk-heading-xl">
+                    CBJ Engineering
+                    <span class="govuk-caption-m">West Midlands</span>
+               </h1>
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <!-- REJECTED - START -->
+               <div class="govuk-form-group rejected-panel">
+                    <div class="govuk-warning-text">
+                         <span class="govuk-info__icon" aria-hidden="true"></span>
+                         <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Confirmed</span> You have rejected this application - <strong id="date-stamp"></strong>
+                         </strong>
+                         <br>
+                         <p class="no-margin-bottom"><strong>Reason for rejection</strong></p>
+                         <p class="no-margin-bottom">{{ data['application-rejection-detail'] }}</p>
+                    </div>
+               </div>
+               <!-- REJECTED - END -->
+
+               <form method="post" action="" id="">
+
+                    <section class="employer-details">
+                         <h2 class="govuk-heading-l">Details about the transfer application</h2>
+                         <p class="govuk-heading-s"><a href="#" rel="external" target="_blank">Quantity surveying degree (level 6)</a></p>
+                         <p>
+                              Apprentices: <strong>2</strong><br>
+                              Estimated duration: <strong>36 months</strong><br>
+                              Start by: <strong>Aoril 2021</strong><br>
+                              Do the have a training provider?: <strong>Yes</strong><br>
+                         </p>
+                         <hr class="dotted">
+                         <p>
+                              Maximum funding band: <strong>£18,000</strong><br>
+                              Total per year: <strong>£12,000</strong>
+                         </p>
+                         <div class="total">
+                              <p class="govuk-heading-m">Total: £36,000</p>
+                         </div>
+                    </section>
+
+                    <section class="employer-contact-details">
+                         <h2 class="govuk-heading-l">Details about the employer</h2>
+
+                         <p class="govuk-heading-s">
+                              CBJ Engineering
+                              <span class="govuk-caption-m">West Midlands</span>
+                         </p>
+
+                         <p><a href="#">www.cbjengineering.com</a></p>
+
+                         <p>
+                              Sector: <strong>Construction company</strong><br>
+                              Levy payer: <strong>No</strong>
+                         </p>
+                         <hr class="dotted">
+
+                         <h2 class="govuk-heading-l">Main contact</h2>
+
+                         <p>
+                              <span class="icon contact"></span><strong>Pete Postlethwaite</strong><br>
+                              <span class="icon email"></span><a href="mailto:joe.bloggs@belhavel.com">pete@cbjengineering.com</a><br>
+                              <span class="icon phone"></span><a href="tel:0785678682">07856 78682</a>
+                         </p>
+                    </section>
+
+                    <a href="" class="govuk-button pledge-rejected-button" id="">Approve</a>
+                    <a href="4-reject" class="govuk-button govuk-button--warning button-margin-left pledge-rejected-button">Reject</a>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link" id="rejected-back-to-pledge-details">Back</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

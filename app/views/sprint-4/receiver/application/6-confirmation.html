@@ -1,0 +1,55 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation application-complete">
+                    <h1 class="govuk-panel__title">Your application has been submitted</h1>
+                    <!-- <p><a href="../transfers">View your application</a></p> -->
+               </div>
+
+               <p>We've sent you a confirmation email.</p>
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <p><strong class="pledge-name-answer main-title">####</strong> will review your application.</p>
+
+               <p>They may contact you to ask follow-up questions about your application.</p>
+
+               <p>When <strong class="pledge-name-answer main-title">####</strong> have made a decision you will receive an email and a notification in your Apprenticeship Service account.</p>
+
+               <h2 class="govuk-heading-m">You have 3 other matches</h2>
+               <p>
+                    <a href="../search-pledges" class="govuk-link">View other matches</a>
+                    <br>
+                    or
+                    <br>
+                    <a href="../my-account" class="govuk-link">Continue to my account</a>
+               </p>
+
+               <h2 class="govuk-heading-m">If your application is unsuccessful</h2>
+
+               <p>If your business doesn't pay the apprenticeship levy, the government can fund 95% of your apprenticeship training costs, so you only pay 5%.</p>
+
+               <p>To get 95% government funding, <a href="#">make a funding reservation</a>.
+
+               <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
+
+          </div>
+     </div>
+
+</div>
+
+{% endblock %}

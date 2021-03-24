@@ -27,7 +27,7 @@
      }
 }
 
-#pledge-tabs, #applications-tabs {
+#pledge-tabs, #applications-tabs, #pledge-table-tabs, #transfers-tabs {
      padding: 0;
      .govuk-tabs__list {
           border-bottom: 3px solid govuk-colour("light-grey");
@@ -46,6 +46,10 @@
      }
 }
 
+#pledge-tabs {
+     display: none;
+}
+
 .application {
      border: 3px solid govuk-colour("light-grey");
      margin-bottom: 1.5em;
@@ -56,7 +60,7 @@
           margin-bottom: 2em;
      }
      .title {
-          margin-bottom: 0.25em;
+          margin-bottom: 1em;
           .govuk-tag {
                margin-bottom: 0.5em;
           }
@@ -71,10 +75,56 @@
           }
           .main-ctas {
                text-align: right;
+               .shortlist, .remove-shortlist {
+                    float: right;
+                    clear: both;
+                    font-size: 1.2rem;
+                    margin: 0.75rem 0 0 0;
+               }
           }
      }
      .pledge-total {
           padding-top: 0;
+          margin: 0;
+     }
+     .matching-details, .pledge-details, .more-details-details {
+          display: inline-block;
+          width: 100%;
+          margin: 0;
+          padding: 0.75em 0;
+          border-top: 2px dashed govuk-colour("light-grey");
+          border-bottom: 2px dashed govuk-colour("light-grey");
+          p {
+               width: 25%;
+               float: left;
+               font-size: 1rem;
+               margin: 0;
+               &.cross {
+                    span {
+                         color: $govuk-error-colour;
+                    }
+               }
+               span {
+                    font-size: 1rem;
+               }
+               .icon {
+                    display: inline-block;
+                    width: 0.85em;
+                    height: 0.85em;
+                    margin: 0 0.5em -0.1em 0;
+                    background: url('../images/cross-red.svg') no-repeat 0% 50%;
+                    background-size: contain;
+               }
+          }
+     }
+     .matching-details, .pledge-details, .more-details-details {
+          border-bottom: none;
+     }
+     .more-details-details {
+          padding-bottom: 0;
+          p {
+               width: 100%;
+          }
      }
      .govuk-details {
           margin-bottom: 0;
@@ -95,7 +145,7 @@
           &:last-of-type {
                margin-right: 0;
           }
-          &.pledge-funds-spent, &.pledge-funds-remaining {
+          &.pledge-funds, &.pledge-funds-spent {
                background: govuk-colour("light-grey");
                // border-left: 10px solid govuk-colour("turquoise");
                p {
@@ -135,11 +185,60 @@ section {
                color: $govuk-link-colour;
           }
      }
+     &.employer-details {
+          .total {
+               margin: 0;
+               p {
+                    color: black;
+                    font-size: 1.5rem;
+               }
+          }
+          &.side-panel {
+               padding: 1em 1em 5em 1em;
+               .total {
+                    p {
+                         font-size: 1.2rem;
+                    }
+               }
+          }
+     }
      &.employer-contact-details {
           padding: 1.5em 1.5em 1.5em 1.5em;
           p {
                &:last-of-type {
                     margin-bottom: 0;
+               }
+          }
+     }
+}
+
+.pledge-name-answer {
+     &.main-title {
+          color: $govuk-link-colour;
+     }
+}
+
+details {
+     &.pledge-details {
+          margin: 15px 0 0 0;
+          .employer-details {
+               display: flex;
+               flex-wrap: wrap;
+               .wrapper {
+                    width: 50%;
+                    &:nth-of-type(1) {
+                         margin-bottom: 1em;
+                    }
+                    &:nth-of-type(2) {
+                         margin-bottom: 1em;
+                    }
+               }
+               .total {
+                    margin: 0;
+                    p {
+                         color: black;
+                         font-size: 1.5rem;
+                    }
                }
           }
      }

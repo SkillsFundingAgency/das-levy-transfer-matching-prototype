@@ -37,7 +37,7 @@
                Who's working on this project?
           </h2>
           <ul class="govuk-list govuk-list--bullet">
-               <li><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="https://skillsfundingagency.atlassian.net/wiki/people/5aba06b0f75bb52a823417cc" title="Link to Helen's profile on Confluence">Catherine Gilhooly</a> &ndash; Content Designer</li>
+               <li><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="https://skillsfundingagency.atlassian.net/wiki/people/5aba06b0f75bb52a823417cc" title="Link to Catherine's profile on Confluence">Catherine Gilhooly</a> &ndash; Content Designer</li>
                <li><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="https://skillsfundingagency.atlassian.net/wiki/people/5bd824414d969945b2bead6b" title="Link to Chris's profile on Confluence">Chris  Hewison</a> &ndash; Interaction Designer</li>
                <li><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="https://skillsfundingagency.atlassian.net/wiki/people/70121:88581e80-fe0f-474d-8859-5ca128f0c6d0" title="Link to Kyle's profile on Confluence">Jessie Ferguson</a> &ndash; User Researcher</li>
           </ul>
@@ -99,8 +99,8 @@
                Latest prototype link
           </h2>
           <ul class="govuk-list govuk-list--bullet">
-               <li><a href="/sprint-3/sender/index" class="govuk-link govuk-link--no-visited-state">Sending employer</a></li>
-               <li><a href="/sprint-3/receiver/index" class="govuk-link govuk-link--no-visited-state">Receiving employer</a></li>
+               <li><a href="/sprint-4/sender/index" class="govuk-link govuk-link--no-visited-state">Sending employer</a></li>
+               <li><a href="/sprint-4/receiver/index" class="govuk-link govuk-link--no-visited-state">Receiving employer</a></li>
           </ul>
      </div>
      <!-- Full width header section ends -->
@@ -116,12 +116,16 @@
                Alpha sprints
           </h2>
 
-          {% include './sprint-3/_summary.html' %}
+          {% include './sprint-4/_summary.html' %}
 
 
           <h2 class="govuk-heading-l govuk-!-margin-top-9">
                Discovery sprints
           </h2>
+
+          {% set sprint3Html %}
+               {% include './sprint-3/_summary.html' %}
+          {% endset %}
 
           {% set sprint2Html %}
                {% include './sprint-2/_summary.html' %}
@@ -139,6 +143,17 @@
           {{ govukAccordion({
                id: "accordion-discovery",
                items: [
+                    {
+                         heading: {
+                              text: "Sprint 3"
+                         },
+                         content: {
+                              html: sprint3Html
+                         },
+                         summary: {
+                              html: '3rd March 2021 — 16th March 2021'
+                         }
+                    },
                     {
                          heading: {
                               text: "Sprint 2"
