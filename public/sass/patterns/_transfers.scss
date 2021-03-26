@@ -1,5 +1,18 @@
 .transfers-title {
      margin-bottom: 0;
+     .date-wrapper {
+          float: right;
+          a {
+               font-size: 1rem;
+               font-weight: normal;
+               margin-left: 0.75em;
+               &.current {
+                    color: black;
+                    text-decoration: none;
+
+               }
+          }
+     }
 }
 
 table {
@@ -122,6 +135,9 @@ table {
           margin-right: 3%;
           background: govuk-colour("turquoise");
           padding: 2%;
+          display: flex;
+          flex-direction: column;
+          // justify-content: flex-end;
           &:last-of-type {
                margin-right: 0;
           }
@@ -132,11 +148,46 @@ table {
                     color: black;
                }
           }
+          &.transfer-funds-remaining {
+               padding: 0;
+               div {
+                    padding: 1.5em 1.5em 0.5em 1.5em;
+                    width: auto;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    background: govuk-colour("light-grey");
+                    // width: 100%;
+                    &.multiple-values {
+                         display: none;
+                         padding: 0;
+                         border-top: 3px solid white;
+                         flex-direction: row;
+                         justify-content: flex-end;
+                         p {
+                              padding: 0.5em 1.5em;
+                              width: 50%;
+                              font-size: 1.2rem;
+                              &:nth-of-type(1) {
+                                   border-right: 2px solid white;
+                                   // background: govuk-colour("light-grey");
+                              }
+                              &:nth-of-type(2) {
+                                   background: govuk-colour("light-grey");
+                              }
+                         }
+                    }
+                    p {
+                         color: black;
+                    }
+               }
+          }
           p {
                color: white;
                font-weight: bold;
                margin: 0;
-               font-size: 1rem;
+               font-size: 0.875rem;
                &.number {
                     font-size: 3rem;
                }

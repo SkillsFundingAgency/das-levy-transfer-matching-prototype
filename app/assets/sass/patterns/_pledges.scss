@@ -50,6 +50,58 @@
      display: none;
 }
 
+#transfers-tabs {
+     .tab-overide-deactive {
+          margin-bottom: -3px;
+          margin-top: 0px;
+          border: none !important;
+          border-bottom: 3px solid #f3f2f1 !important;
+          background-color: #f3f2f1;
+          position: relative;
+          margin-right: 5px;
+          margin-bottom: 0;
+          margin-left: 0;
+          padding: 10px 20px;
+          float: left;
+          text-align: center;
+          a {
+               text-decoration: underline;
+          }
+     }
+     .tab-overide-active {
+          background-color: #ffffff;
+          border: 3px solid #f3f2f1;
+          margin-bottom: -3px;
+          border-bottom: 3px solid white;
+          position: relative;
+          margin-top: -5px;
+          margin-bottom: -1px;
+          padding-top: 14px 19px 16px 19px;
+          a {
+               text-decoration: none;
+          }
+     }
+     .number {
+          display: inline-block;
+          width: 1.5em;
+          height: 1.5em;
+          background: $govuk-border-colour;
+          border-radius: 50%;
+          display: flex;
+          float: left;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          position: relative;
+          top: -0.05em;
+          margin: 0 0.45em 0 0;
+          &.active {
+               background: $govuk-link-colour;
+               color: white;
+          }
+     }
+}
+
 .application {
      border: 3px solid govuk-colour("light-grey");
      margin-bottom: 1.5em;
@@ -184,6 +236,9 @@ section {
           .pledge-name-answer {
                color: $govuk-link-colour;
           }
+          .govuk-tag {
+               margin-bottom: 1em;
+          }
      }
      &.employer-details {
           .total {
@@ -195,6 +250,12 @@ section {
           }
           &.side-panel {
                padding: 1em 1em 5em 1em;
+               &.applications-details {
+                    padding: 1em 1em 3.5em 1em;
+               }
+               p.details {
+                    font-size: 1rem;
+               }
                .total {
                     p {
                          font-size: 1.2rem;

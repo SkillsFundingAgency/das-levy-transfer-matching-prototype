@@ -23,10 +23,10 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
-               <span class="govuk-caption-m">Transfer matching service</span>
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
                <h1 class="govuk-heading-xl">
                     CBJ Engineering
-                    <span class="govuk-caption-m">West Midlands</span>
+                    <!-- <span class="govuk-caption-m">West Midlands</span> -->
                </h1>
 
           </div>
@@ -43,6 +43,15 @@
                          <br>
                          <p class="no-margin-bottom"><strong>Reason for rejection</strong></p>
                          <p class="no-margin-bottom">{{ data['application-rejection-detail'] }}</p>
+
+                         {% if data['rejection-reason'] %}
+                         <ul class="govuk-list govuk-list--bullet">
+                              {% for answer in data['rejection-reason'] -%}
+                              <li>{{ answer }}</li>
+                              {% endfor %}
+                         </ul>
+                         {% endif %}
+
                     </div>
                </div>
                <!-- REJECTED - END -->
@@ -50,26 +59,36 @@
                <form method="post" action="" id="">
 
                     <section class="employer-details">
-                         <h2 class="govuk-heading-l">Details about the transfer application</h2>
-                         <p class="govuk-heading-s"><a href="#" rel="external" target="_blank">Quantity surveying degree (level 6)</a></p>
+                         <h2 class="govuk-heading-l">Details about the application</h2>
+
+                         <strong class="govuk-tag govuk-tag--yellow">75% Match</strong>
+
+                         <p>
+                              <span class="icon tick"></span>Location: <strong>West Midlands</strong><br>
+                              <span class="icon tick"></span>Sector: <strong>Construction company</strong><br>
+                              <span class="icon tick"></span>Category of training: <strong>Construction quantity surveyor (degree)</strong><br>
+                              <span class="icon cross"></span>Level: <strong>6</strong>
+                         </p>
+
+                         <!-- <p class="govuk-heading-s"><a href="#" rel="external" target="_blank">Quantity surveying degree (level 6)</a></p> -->
                          <p>
                               Apprentices: <strong>2</strong><br>
                               Estimated duration: <strong>36 months</strong><br>
-                              Start by: <strong>Aoril 2021</strong><br>
+                              Start by: <strong>April 2021</strong><br>
                               Do the have a training provider?: <strong>Yes</strong><br>
                          </p>
                          <hr class="dotted">
                          <p>
                               Maximum funding band: <strong>£18,000</strong><br>
-                              Total per year: <strong>£12,000</strong>
+                              Estimated total per year: <strong>£3,600</strong>
                          </p>
                          <div class="total">
-                              <p class="govuk-heading-m">Total: £36,000</p>
+                              <p class="govuk-heading-m">Estimated total: £36,000</p>
                          </div>
                     </section>
 
                     <section class="employer-contact-details">
-                         <h2 class="govuk-heading-l">Details about the employer</h2>
+                         <!-- <h2 class="govuk-heading-l">Details about the employer</h2>
 
                          <p class="govuk-heading-s">
                               CBJ Engineering
@@ -82,15 +101,20 @@
                               Sector: <strong>Construction company</strong><br>
                               Levy payer: <strong>No</strong>
                          </p>
-                         <hr class="dotted">
+                         <hr class="dotted"> -->
 
                          <h2 class="govuk-heading-l">Main contact</h2>
+
+                         <p>You can contact CBJ Engineering if you would like to ask them for more information.</p>
 
                          <p>
                               <span class="icon contact"></span><strong>Pete Postlethwaite</strong><br>
                               <span class="icon email"></span><a href="mailto:joe.bloggs@belhavel.com">pete@cbjengineering.com</a><br>
                               <span class="icon phone"></span><a href="tel:0785678682">07856 78682</a>
                          </p>
+
+                         <p><span class="icon website"></span><a href="#">www.cbjengineering.com</a></p>
+
                     </section>
 
                     <a href="" class="govuk-button pledge-rejected-button" id="">Approve</a>

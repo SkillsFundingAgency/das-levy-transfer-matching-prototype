@@ -38,15 +38,15 @@
 
                <form method="post" action="4-contact-details" id="">
 
-                    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+                    <div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="200">
                          <div class="govuk-form-group">
                               <label class="govuk-label" for="pledge-application-more-details">Can you provide more detail?</label>
-                              <div id=pledge-application-more-details-hint" class="govuk-hint">
-                                   Do not include personal or financial information like your National Insurance number or credit card details.
+                              <div id="pledge-application-more-details-hint" class="govuk-hint">
+                                   Do not include personal or financial information like your bank account details.
                               </div>
                               <textarea class="govuk-textarea govuk-js-character-count" id="pledge-application-more-details" name="pledge-application-more-details" rows="5" aria-describedby="pledge-application-more-details-hint pledge-application-more-details-info"></textarea>
                          </div>
-                         <div id="pledge-application-more-details-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You can enter up to 200 characters</div>
+                         <div id="pledge-application-more-details-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You can enter up to 200 words</div>
                     </div>
 
                     <p><br></p>
@@ -62,10 +62,12 @@
           <div class="govuk-grid-column-one-third">
                <section class="employer-details side-panel">
                     <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
-                    <p><strong>Locations:</strong> <span class="pledge-location-answer">####</span></p>
-                    <p><strong>Sectors:</strong> <span class="pledge-sector-answer">####</span></p>
-                    <p><strong>Categories of training:</strong> <span class="pledge-training-answer">####</span></p>
-                    <p><strong>Level:</strong> <span class="pledge-level-answer">####</span></p>
+                    <p class="details">
+                         Location: <strong class="pledge-location-answer">####</strong><br>
+                         Sector: <strong class="pledge-sector-answer">####</strong><br>
+                         Category of training: <strong class="pledge-training-answer">####</strong><br>
+                         Level: <strong class="pledge-level-answer">####</strong>
+                    </p>
                     <div class="total">
                          <p class="govuk-heading-s">Total funding available: up to <span class="pledge-value-answer">####</span></p>
                     </div>

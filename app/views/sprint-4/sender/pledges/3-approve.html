@@ -23,10 +23,10 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
-               <span class="govuk-caption-m">Transfer matching service</span>
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
                <h1 class="govuk-heading-xl">
                     Approve <span class="highlight-text">Belhavel Construction Ltd</span> application
-                    <span class="govuk-caption-m">Birmingham, West Midlands</span>
+                    <!-- <span class="govuk-caption-m">Birmingham, West Midlands</span> -->
                </h1>
 
           </div>
@@ -39,11 +39,11 @@
                     {% from "govuk/components/input/macro.njk" import govukInput %}
 
                     {% set approveAllHtml %}
-                         <p>By fully approving this application, I am:</p>
+                         <p>By approving this application:</p>
                          <ul class="govuk-list govuk-list--bullet">
-                              <li>agreeing to pay the full costs of this apprenticeship training to completion</li>
-                              <li>accepting that funds for this transfer will take priority over funds for my own apprentices and transfers funding will leave my account first</li>
-                              <li>not responsible or liable for anything else relating to this apprenticeship</li>
+                              <li>agree to pay the full costs of this apprenticeship training to completion</li>
+                              <li>accept that funds for this transfer will take priority over funds for my own apprentices and transfers funding will leave my account first</li>
+                              <li>am not responsible or liable for anything else relating to this apprenticeship</li>
                          </ul>
                          <p>Belhavel Construction Ltd is bound by the funding rules for the levy transfer they receive.</p>
                     {% endset -%}
@@ -53,14 +53,14 @@
                          name: "approve-application",
                          fieldset: {
                               legend: {
-                                   text: "How would you like to proceed with the application?",
+                                   text: "How would you like to proceed with this application?",
                                    isPageHeading: false
                               }
                          },
                          items: [
                               {
                                    value: "approve all",
-                                   text: "Approve employer and all apprentices",
+                                   text: "Approve the application",
                                    conditional: {
                                         html: approveAllHtml
                                    },
@@ -70,9 +70,9 @@
                               },
                               {
                                    value: "approve with manual",
-                                   text: "Approve employer I still want to approve the apprentices",
+                                   text: "Approve the application in principle",
                                    hint: {
-                                        text: "I want to review and approve the details when Belhavel Construction Ltd have added their apprentice to their account"
+                                        text: "I want to review and approve the details when Belhavel Construction Ltd have added the apprentice(s) to their account"
                                    }
                               }
                          ]
@@ -80,9 +80,32 @@
 
                     <button class="govuk-button" data-module="govuk-button" id="approve-pledge-continue">Continue</button>
 
-                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-back-link">Back</a>
 
                </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+               <section class="employer-details side-panel applications-details">
+                    <p class="govuk-heading-s">Application details:</p>
+                    <p class="details">
+                         <span class="icon tick"></span>Location: <strong>Birmingham, West Midlands</strong><br>
+                         <span class="icon tick"></span>Sector: <strong>Construction company</strong><br>
+                         <span class="icon tick"></span>Category of training: <strong>Bricklaying</strong><br>
+                         <span class="icon tick"></span>Level: <strong>2</strong>
+                    </p>
+                    <p class="details">
+                         Apprentices: <strong>1</strong><br>
+                         Estimated duration: <strong>30 months</strong><br>
+                         Start by: <strong>March 2021</strong><br>
+                         Do they have a training provider?: <strong>No</strong><br>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Estimated total: £9,000</p>
+                    </div>
+               </section>
 
           </div>
 

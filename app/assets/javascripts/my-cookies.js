@@ -58,13 +58,13 @@ $("#pledge-criteria-continue").on("click", function (e) {
      }
 
      if ($('input[id=pledge-location]').is(':checked')) {
-          $('#pledge-criteria-form').attr('action','3-location');
+          $('#pledge-criteria-form').attr('action','3A-location');
      } else if ($('input[id=pledge-location]').is(':checked') && $('input[id=pledge-sector]').is(':checked')) {
-          $('#pledge-criteria-form').attr('action','3-location');
+          $('#pledge-criteria-form').attr('action','3A-location');
      } else if ($('input[id=pledge-location]').is(':checked') && $('input[id=pledge-sector]').is(':checked') && $('input[id=pledge-training]').is(':checked')) {
-          $('#pledge-criteria-form').attr('action','3-location');
+          $('#pledge-criteria-form').attr('action','3A-location');
      } else if ($('input[id=pledge-location]').is(':checked') && $('input[id=pledge-sector]').is(':checked') && $('input[id=pledge-training]').is(':checked') && $('input[id=pledge-level]').is(':checked')) {
-          $('#pledge-criteria-form').attr('action','3-location');
+          $('#pledge-criteria-form').attr('action','3A-location');
      }
 
 });
@@ -119,6 +119,7 @@ if ($.cookie("pledge-intermediaries") == 'true') {
 // Pledge complete
 $("#pledge-confirm-continue").on("click", function (e) {
      $.cookie("pledge-complete", true, {path:'/'});
+     $.cookie("pledge-tabs-update", true, {path:'/'});
 });
 
 $('.pledge-complete-table').hide();
@@ -126,6 +127,11 @@ $('.govuk-panel--confirmation.pledge-complete').hide();
 
 $('.before-pledge').show();
 $('.after-pledge').hide();
+
+$('.before-pledge-content').show();
+$('.after-pledge-content').hide();
+
+var pledgesNumber = parseInt($('#transfers-tabs .govuk-tabs__list-item[data-tab="two"] .number').text());
 
 if ($.cookie("pledge-complete") == 'true') {
      $('.pledge-complete, .pledge-complete-table').show();
@@ -140,7 +146,27 @@ if ($.cookie("pledge-complete") == 'true') {
      $('.transfer-funds-non-pledge .number').hide();
      $('.transfer-funds-non-pledge .number.after-pledge').show();
 
+     // Transfers tab
+     $('#transfers-tabs .govuk-tabs__list-item[data-tab="two"] .number').addClass('active');
+     $('#transfers-tabs .govuk-tabs__list-item[data-tab="two"] .number').text(pledgesNumber + 1);
+
+     // $('.multiple-values').show();
+     $('.before-pledge-content').hide();
+     $('.after-pledge-content').show();
 }
+
+if ($.cookie("pledge-tabs-update") == 'true') {
+     // Transfers tab
+     $('#transfers-tabs .govuk-tabs__list-item[data-tab="one"]').addClass('tab-overide-deactive');
+     $('#transfers-tabs .govuk-tabs__list-item[data-tab="two"]').addClass('tab-overide-active');
+
+     $('#transfers-tabs .govuk-tabs__panel').hide();
+     $('#transfers-tabs #transfer-pledges').show();
+}
+
+$("#transfers-tabs .govuk-tabs__list-item").on("click", function (e) {
+     $.cookie("pledge-tabs-update", false, {path:'/'});
+});
 
 $('.approved-one, .rejected-one').hide();
 
@@ -387,7 +413,7 @@ if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-appli
 
 // Delete application
 $("#delete-application-continue").on("click", function (e) {
-     if ($('input[id="delete-application"]:checked')) {
+     if ($('input[id="delete-application"]').prop('checked') == true) {
           $.cookie("delete-application-completed", true, {path:'/'});
      } else {
           $.cookie("delete-application-completed", false, {path:'/'});
@@ -404,4 +430,60 @@ if ($.cookie("delete-application-completed") == 'true') {
 
      $('.application-number.applications').text(receiverApplicationsNumber).removeClass('active');
      $('.application-number.deleted').text(receiverDeletedNumber + 1).addClass('active');
+}
+
+// RECEIVER - Criteria match
+$("#application-criteria-match").on("click", function (e) {
+     if ($('input[id=pledge-match-criteria]').prop('checked') == true) {
+          $.cookie("criteria-match-location", true, {path:'/'});
+     } else {
+          $.cookie("criteria-match-location", false, {path:'/'});
+     }
+     if ($('input[id="pledge-match-criteria-2"]').prop('checked') == true) {
+          $.cookie("criteria-match-sector", true, {path:'/'});
+     } else {
+          $.cookie("criteria-match-sector", false, {path:'/'});
+     }
+     if ($('input[id="pledge-match-criteria-3"]').prop('checked') == true) {
+          $.cookie("criteria-match-training", true, {path:'/'});
+     } else {
+          $.cookie("criteria-match-training", false, {path:'/'});
+     }
+     if ($('input[id="pledge-match-criteria-4"]').prop('checked') == true) {
+          $.cookie("criteria-match-level", true, {path:'/'});
+     } else {
+          $.cookie("criteria-match-level", false, {path:'/'});
+     }
+});
+
+if ($.cookie("criteria-match-location") == 'true') {
+     $('ul.govuk-list li[data-criteria="location"]').find('.tick').show();
+     $('ul.govuk-list li[data-criteria="location"]').find('.cross').hide();
+} else {
+     $('ul.govuk-list li[data-criteria="location"]').find('.tick').hide();
+     $('ul.govuk-list li[data-criteria="location"]').find('.cross').show();
+}
+
+if ($.cookie("criteria-match-sector") == 'true') {
+     $('ul.govuk-list li[data-criteria="sector"]').find('.tick').show();
+     $('ul.govuk-list li[data-criteria="sector"]').find('.cross').hide();
+} else {
+     $('ul.govuk-list li[data-criteria="sector"]').find('.tick').hide();
+     $('ul.govuk-list li[data-criteria="sector"]').find('.cross').show();
+}
+
+if ($.cookie("criteria-match-training") == 'true') {
+     $('ul.govuk-list li[data-criteria="training"]').find('.tick').show();
+     $('ul.govuk-list li[data-criteria="training"]').find('.cross').hide();
+} else {
+     $('ul.govuk-list li[data-criteria="training"]').find('.tick').hide();
+     $('ul.govuk-list li[data-criteria="training"]').find('.cross').show();
+}
+
+if ($.cookie("criteria-match-level") == 'true') {
+     $('ul.govuk-list li[data-criteria="level"]').find('.tick').show();
+     $('ul.govuk-list li[data-criteria="level"]').find('.cross').hide();
+} else {
+     $('ul.govuk-list li[data-criteria="level"]').find('.tick').hide();
+     $('ul.govuk-list li[data-criteria="level"]').find('.cross').show();
 }

@@ -29,6 +29,31 @@ if ($("#transfers-hub")) {
      $('.navigation ul li a.link-two').addClass('selected');
 }
 
+// Transfers
+$('.transfer-values-2019, .transfer-values-2020').hide();
+
+$('.finance-2019, .finance-2020, .finance-2021').on("click", function (e) {
+     e.preventDefault();
+     $('.transfers-title a').removeClass('current');
+     $(this).addClass('current');
+});
+
+$('.finance-2019').on("click", function (e) {
+     $('.transfer-values-2020, .transfer-values-2021').hide();
+     $('.transfer-values-2019').show();
+ });
+
+$('.finance-2020').on("click", function (e) {
+     $('.transfer-values-2019, .transfer-values-2021').hide();
+     $('.transfer-values-2020').show();
+});
+
+$('.finance-2021').on("click", function (e) {
+     $('.transfer-values-2019, .transfer-values-2020').hide();
+     $('.transfer-values-2021').show();
+});
+
+
 // Number formatting
 $(document).ready(function(){
      // $("input[data-type='number']").keyup(function(event){
@@ -56,26 +81,21 @@ $(document).ready(function(){
 // $('#sender-check-answers').find('.section-six').hide();
 
 // Locations
+$('input#pledge-location-cities').on("click", function (e) {
+     $('#pledge-location-form').attr('action','3B-location');
+});
+
+$('input#pledge-location-regions').on("click", function (e) {
+     $('#pledge-location-form').attr('action','3C-location');
+});
+
 function addAnotherLocation() {
      event.preventDefault();
      locationNumber++;
      $("#locations").append(`
           <div class="govuk-form-group new-location">
-               <label class="govuk-label" for="pledge-location[url${locationNumber}]">Additional location</label>
-
-               <select class="govuk-select" id="pledge-location[url${locationNumber}]" name="pledge-location[url${locationNumber}]">
-                    <option value="All locations in England" selected>All locations in England</option>
-                    <option disabled>---------------------------------</option>
-                    <option value="East Midlands">East Midlands</option>
-                    <option value="East of England">East of England</option>
-                    <option value="Greater London">Greater London</option>
-                    <option value="North East">North East</option>
-                    <option value="North West England">North West England</option>
-                    <option value="South East England">South East England</option>
-                    <option value="South West England">South West England</option>
-                    <option value="West Midlands">West Midlands</option>
-                    <option value="Yorkshire and the Humber">Yorkshire and the Humber</option>
-               </select>
+               <label class="govuk-label" for="pledge-location[url${locationNumber}]">Additional city or town</label>
+               <input class="govuk-input govuk-input--width-20" id="pledge-location[url${locationNumber}]" name="pledge-location[url${locationNumber}]" type="text" spellcheck="false">
                <p class="govuk-body">
                     <a class="govuk-link govuk-link--no-visited-state" data-remove="url${locationNumber}" href="#">remove</a>
                </p>
