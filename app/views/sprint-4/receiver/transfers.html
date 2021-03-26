@@ -30,7 +30,7 @@
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-               <p>Transfer content</p>
+               <p>This shows details of applications you have made for a funding transfer from large employers.</p>
           </div>
 
           <div class="govuk-grid-column-full">
@@ -52,9 +52,9 @@
                          <table class="govuk-table application-complete-table">
                               <thead class="govuk-table__head">
                                    <tr class="govuk-table__row">
-                                        <th scope="col" class="govuk-table__header">Description</th>
-                                        <th scope="col" class="govuk-table__header">Date</th>
-                                        <th scope="col" class="govuk-table__header">Total</th>
+                                        <th scope="col" class="govuk-table__header">Opportunity</th>
+                                        <th scope="col" class="govuk-table__header">Date applied</th>
+                                        <th scope="col" class="govuk-table__header">Total applied for</th>
                                         <th scope="col" class="govuk-table__header">Approval status</th>
                                         <th scope="col" class="govuk-table__header"></th>
                                    </tr>
@@ -88,9 +88,9 @@
                          <table class="govuk-table application-deleted-table">
                               <thead class="govuk-table__head">
                                    <tr class="govuk-table__row">
-                                        <th scope="col" class="govuk-table__header">Description</th>
-                                        <th scope="col" class="govuk-table__header">Date</th>
-                                        <th scope="col" class="govuk-table__header">Total</th>
+                                        <th scope="col" class="govuk-table__header">Opportunity</th>
+                                        <th scope="col" class="govuk-table__header">Date applied</th>
+                                        <th scope="col" class="govuk-table__header">Total applied for</th>
                                         <th scope="col" class="govuk-table__header">Reason for deletetion</th>
                                    </tr>
                               </thead>
@@ -106,7 +106,16 @@
                                              <div id="date-stamp-deletion"></div>
                                         </td>
                                         <td class="govuk-table__cell"><span class="pledge-value-answer">###</span></td>
-                                        <td class="govuk-table__cell"><span class="">{{ data['delete-more-detail'] }}</span></td>
+                                        <td class="govuk-table__cell">
+                                             {% if data['delete-reason'] %}
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['delete-reason'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                             {% endif %}
+                                             <span class="">{{ data['delete-more-detail'] }}</span>
+                                        </td>
                                    </tr>
                               </tbody>
                          </table>
@@ -119,9 +128,9 @@
 
                {% from "govuk/components/button/macro.njk" import govukButton %}
 
-               <a href="search-pledges" class="govuk-button" data-module="govuk-button">Find an pledge application</a>
+               <a href="search-pledges" class="govuk-button" data-module="govuk-button">Find more opportunities</a>
 
-               <p><a href="search-pledges">Take me to the Transfer Matching service</a></p>
+               <!-- <p><a href="search-pledges">Take me to the Transfer Matching service</a></p>
 
                <hr class="separator">
 
@@ -129,7 +138,7 @@
                <p>You have no pending or approved requests.</p>
 
                <h2 class="govuk-heading-s">Transfer requests</h2>
-               <p>You have no pending or approved requests.</p>
+               <p>You have no pending or approved requests.</p> -->
 
 
           </div>

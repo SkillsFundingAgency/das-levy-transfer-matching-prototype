@@ -63,6 +63,21 @@
           margin: 0;
           z-index: 10;
      }
+     .number {
+          width: 1.5em;
+          height: 1.5em;
+          background: $govuk-link-colour;
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          float: left;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          position: relative;
+          top: -0.05em;
+          margin: 0 0.45em 0 0;
+     }
 }
 
 .help-survey {

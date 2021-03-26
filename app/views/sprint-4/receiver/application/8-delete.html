@@ -23,7 +23,7 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
-               <span class="govuk-caption-m">Transfer matching service</span>
+               <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
                <h1 class="govuk-heading-xl">
                     Delete your pledge application to <span class="highlight-text pledge-name-answer">CBJ Engineering</span>
                </h1>
@@ -38,18 +38,30 @@
                     {% from "govuk/components/input/macro.njk" import govukInput %}
 
                     {% set deleteHtml %}
-                         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-                         {{ govukTextarea({
-                              name: "delete-more-detail",
-                              id: "delete-more-detail",
-                              label: {
-                                   text: "Write a short description of why you're deleting the application",
-                                   isPageHeading: false
-                              },
-                              hint: {
-                                   text: "The information you provide will be shared with the ESFA and the sending employer"
-                              }
-                         }) }}
+                         <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                                   <legend class="govuk-fieldset__legend">Select the reasons for deleting the application so we can share this with Barry & Barry Ltd (9101)</legend>
+                                   <div id="delete-reason-hint" class="govuk-hint"> Select all that apply.</div>
+                                   <div class="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="delete-reason-1" name="delete-reason" type="checkbox" value="I was successful with another funding opportunity">
+                                             <label class="govuk-label govuk-checkboxes__label" for="delete-reason-1">I was successful with another funding opportunity</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="delete-reason-2" name="delete-reason" type="checkbox" value="I no longer need an apprentice">
+                                             <label class="govuk-label govuk-checkboxes__label" for="delete-reason-2">I no longer need an apprentice</label>
+                                        </div>
+                                   </div>
+                              </fieldset>
+                         </div>
+
+                         <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
+                              <div class="govuk-form-group">
+                                   <label class="govuk-label" for="delete-more-detail">Explain why you're deleting your application. Do not include personal or financial information.</label>
+                                   <textarea class="govuk-textarea govuk-js-character-count" id="delete-more-detail" name="delete-more-detail" rows="5" aria-describedby="delete-more-detail-info"></textarea>
+                              </div>
+                              <div id="delete-more-detail-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You can enter up to 500 characters</div>
+                         </div>
                     {% endset -%}
 
                     {{ govukRadios({
@@ -57,7 +69,7 @@
                          name: "delete-application",
                          fieldset: {
                               legend: {
-                                   text: "Are you sure you wish to delete the application?",
+                                   text: "Are you sure you want to delete the application?",
                                    isPageHeading: false
                               }
                          },
@@ -70,15 +82,15 @@
                                    }
                               },
                               {
-                                   value: "No, keep application",
-                                   text: "No, keep application"
+                                   value: "No, keep the application",
+                                   text: "No, keep the application"
                               }
                          ]
                     }) }}
 
                     <button class="govuk-button" data-module="govuk-button" id="delete-application-continue">Continue</button>
 
-                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a>
 
                </form>
 

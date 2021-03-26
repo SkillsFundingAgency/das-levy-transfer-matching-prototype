@@ -372,6 +372,9 @@ $("#pledge-application-confirm-continue").on("click", function (e) {
 
 $('.application-complete-table').hide();
 
+$('.before-pledge').show();
+$('.after-pledge').hide();
+
 if ($.cookie("pledge-application-completed") == 'true') {
      $('.no-applications').hide();
      $('.application-complete-table').show();
@@ -379,6 +382,10 @@ if ($.cookie("pledge-application-completed") == 'true') {
      $('.application-number.applications').text(receiverApplicationsNumber + 1).addClass('active');
      // $('.application-number.deleted').text(receiverDeletedNumber + 1).addClass('active');
 
+     $('.before-pledge').hide();
+     $('.after-pledge').show();
+
+     $('.search-results').addClass('test');
 }
 
 if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-1') {

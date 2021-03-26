@@ -42,6 +42,24 @@ table {
                }
           }
      }
+     &.application-deleted-table {
+          thead {
+               tr {
+                    th {
+                         padding: 0.5em;
+                         text-align: left;
+                    }
+               }
+          }
+          tbody {
+               tr {
+                    td {
+                         text-align: left;
+                         padding: 0.5em;
+                    }
+               }
+          }
+     }
      &.applications-table {
           thead {
                tr {
