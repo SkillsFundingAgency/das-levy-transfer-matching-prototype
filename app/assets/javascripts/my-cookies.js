@@ -285,6 +285,23 @@ if ($.cookie("pledge-rejected") == 'true' && $.cookie("pledge-complete") == 'tru
 }
 
 // Private Transfer
+$("#private-transfer-route").on("click", function (e) {
+     if ($('input[id=transfer-training-course-yes]').prop('checked') == true) {
+          $.cookie("transfer-training-course-yes", true, {path:'/'});
+     } else if ($('input[id=transfer-training-course-no]').prop('checked') == true) {
+          $.cookie("transfer-training-course-yes", false, {path:'/'});
+     }
+});
+
+if ($.cookie("private-transfer-route") == 'true') {
+     $('.set-amount').show();
+     $('.upto-amount').hide();
+
+} else {
+     $('.set-amount').hide();
+     $('.upto-amount').set();
+}
+
 var transfersNumber = parseInt($('#transfers-tabs .govuk-tabs__list-item[data-tab="one"] .number').text());
 
 $('.transfer-complete-table, .after-transfer').hide();

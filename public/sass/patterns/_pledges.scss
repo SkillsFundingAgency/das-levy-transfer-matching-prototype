@@ -261,6 +261,17 @@ section {
                     }
                }
           }
+          &.confirm-details {
+               padding-bottom: 1.5em;
+               h2 {
+                    color: $govuk-link-colour;
+               }
+               p {
+                    &:last-of-type {
+                         margin: 0;
+                    }
+               }
+          }
      }
      &.employer-contact-details {
           padding: 1.5em 1.5em 1.5em 1.5em;
