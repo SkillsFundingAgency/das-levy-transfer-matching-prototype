@@ -125,13 +125,14 @@ $("#pledge-confirm-continue").on("click", function (e) {
 $('.pledge-complete-table').hide();
 $('.govuk-panel--confirmation.pledge-complete').hide();
 
-$('.before-pledge').show();
+// $('.before-pledge').show();
 $('.after-pledge').hide();
 
 $('.before-pledge-content').show();
 $('.after-pledge-content').hide();
 
 var pledgesNumber = parseInt($('#transfers-tabs .govuk-tabs__list-item[data-tab="two"] .number').text());
+$('#transfers-tabs .govuk-tabs__list-item .number').hide();
 
 if ($.cookie("pledge-complete") == 'true') {
      $('.pledge-complete, .pledge-complete-table').show();
@@ -147,6 +148,7 @@ if ($.cookie("pledge-complete") == 'true') {
      $('.transfer-funds-non-pledge .number.after-pledge').show();
 
      // Transfers tab
+     $('#transfers-tabs .govuk-tabs__list-item[data-tab="two"] .number').show();
      $('#transfers-tabs .govuk-tabs__list-item[data-tab="two"] .number').addClass('active');
      $('#transfers-tabs .govuk-tabs__list-item[data-tab="two"] .number').text(pledgesNumber + 1);
 
@@ -282,6 +284,30 @@ if ($.cookie("pledge-rejected") == 'true' && $.cookie("pledge-complete") == 'tru
 
 }
 
+// Private Transfer
+var transfersNumber = parseInt($('#transfers-tabs .govuk-tabs__list-item[data-tab="one"] .number').text());
+
+$('.transfer-complete-table, .after-transfer').hide();
+$('.no-transfers').show();
+
+$("#private-transfer-complete").on("click", function (e) {
+     $.cookie("private-transfer-complete", true, {path:'/'});
+});
+
+if ($.cookie("private-transfer-complete") == 'true') {
+     $('.transfer-complete-table').show();
+     $('.no-transfers').hide();
+
+     // Numbers info
+     $('.before-transfer').hide();
+     $('.after-transfer').show();
+
+     // TABS INFO
+     $('#transfers-tabs .govuk-tabs__list-item[data-tab="one"] .number').show();
+     $('#transfers-tabs .govuk-tabs__list-item[data-tab="one"] .number').addClass('active');
+     $('#transfers-tabs .govuk-tabs__list-item[data-tab="one"] .number').text(transfersNumber + 1);
+}
+
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
 
@@ -372,7 +398,7 @@ $("#pledge-application-confirm-continue").on("click", function (e) {
 
 $('.application-complete-table').hide();
 
-$('.before-pledge').show();
+// $('.before-pledge').show();
 $('.after-pledge').hide();
 
 if ($.cookie("pledge-application-completed") == 'true') {

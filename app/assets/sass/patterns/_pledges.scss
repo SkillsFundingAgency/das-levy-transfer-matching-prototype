@@ -216,7 +216,7 @@
 }
 
 section {
-     &.employer-details, &.employer-contact-details {
+     &.employer-details, &.employer-contact-details, &.transfer-details {
           background: govuk-colour("light-grey");
           padding: 1.5em 1.5em 4.5em 1.5em;
           position: relative;
@@ -267,6 +267,15 @@ section {
           p {
                &:last-of-type {
                     margin-bottom: 0;
+               }
+          }
+     }
+     &.transfer-details {
+          .total {
+               margin: 0;
+               p {
+                    color: black;
+                    font-size: 2rem;
                }
           }
      }

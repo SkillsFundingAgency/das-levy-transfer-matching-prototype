@@ -140,7 +140,10 @@
                <div class="govuk-tabs" data-module="govuk-tabs" id="transfers-tabs">
                     <ul class="govuk-tabs__list">
                          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" data-tab="one">
-                              <a class="govuk-tabs__tab" href="#transfer-connections">Transfer connections</a>
+                              <a class="govuk-tabs__tab" href="#transfer-connections">
+                                   <span class="number">0</span>
+                                   Transfer connections
+                              </a>
                          </li>
                          <li class="govuk-tabs__list-item" data-tab="two">
                               <a class="govuk-tabs__tab" href="#transfer-pledges">
@@ -155,7 +158,37 @@
 
                     <div class="govuk-tabs__panel" id="transfer-connections">
                          <h2 class="govuk-heading-s">Transfer connections</h2>
-                         <p class="">You have no pending transfer connections.</p>
+                         <p class="no-transfers">You have no pending transfer connections.</p>
+
+                         <!-- TRANSFER TABLE - START -->
+                         <table class="govuk-table transfer-complete-table">
+                              <thead class="govuk-table__head">
+                                   <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Employer</th>
+                                        <th scope="col" class="govuk-table__header">Date</th>
+                                        <th scope="col" class="govuk-table__header">Total</th>
+                                        <th scope="col" class="govuk-table__header">Status</th>
+                                        <th scope="col" class="govuk-table__header"></th>
+                                   </tr>
+                              </thead>
+                              <tbody class="govuk-table__body">
+                                   <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">
+                                             <strong>
+                                                  Belhavel Construction Ltd
+                                                  <!-- <div class="anonymous-yes">Anonymous Pledge (9101)</div>
+                                                  <div class="anonymous-no">BARRY & BARRY Ltd (9101)</div> -->
+                                             </strong>
+                                        </td>
+                                        <td class="govuk-table__cell"><div id="date-stamp-transfer"></div></td>
+                                        <td class="govuk-table__cell">£<span class="value-format">{{ data['transfer-private-amount'] }}</span></td>
+                                        <td class="govuk-table__cell">Awaiting confirmation</td>
+                                        <td class="govuk-table__cell"><a href="#">View</a></td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                         <!-- TRANSFER TABLE - END -->
+
                     </div>
 
                     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="transfer-pledges">
@@ -205,7 +238,7 @@
 
                <a href="transfers/index" class="govuk-button" data-module="govuk-button">Create a transfers pledge</a>
 
-               <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">Make a transfer to a business I know</a>
+               <a href="private/1-business-id" class="govuk-button govuk-button--secondary" data-module="govuk-button">Make a transfer to a business I know</a>
 
                <p class="before-pledge-content">View <a href="#">'Find a business to fund training for your apprentices'</a> to see how pledges look online.</p>
 
