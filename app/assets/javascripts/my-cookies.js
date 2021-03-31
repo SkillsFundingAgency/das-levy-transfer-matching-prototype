@@ -299,7 +299,7 @@ if ($.cookie("private-transfer-route") == 'true') {
 
 } else {
      $('.set-amount').hide();
-     $('.upto-amount').set();
+     $('.upto-amount').show();
 }
 
 var transfersNumber = parseInt($('#transfers-tabs .govuk-tabs__list-item[data-tab="one"] .number').text());
