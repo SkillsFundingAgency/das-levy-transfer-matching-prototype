@@ -159,11 +159,11 @@ if ($.cookie("pledge-complete") == 'true') {
 
 if ($.cookie("pledge-tabs-update") == 'true') {
      // Transfers tab
-     $('#transfers-tabs .govuk-tabs__list-item[data-tab="one"]').addClass('tab-overide-deactive');
-     $('#transfers-tabs .govuk-tabs__list-item[data-tab="two"]').addClass('tab-overide-active');
+     // $('#transfers-tabs .govuk-tabs__list-item[data-tab="one"]').addClass('tab-overide-deactive');
+     // $('#transfers-tabs .govuk-tabs__list-item[data-tab="two"]').addClass('tab-overide-active');
 
-     $('#transfers-tabs .govuk-tabs__panel').hide();
-     $('#transfers-tabs #transfer-pledges').show();
+     // $('#transfers-tabs .govuk-tabs__panel').hide();
+     // $('#transfers-tabs #transfer-pledges').show();
 }
 
 $("#transfers-tabs .govuk-tabs__list-item").on("click", function (e) {
@@ -239,6 +239,8 @@ setTimeout(function() {
 
 
 // Pledge rejected
+$('.pledge-rejected').hide();
+
 $("#reject-pledge-continue").on("click", function (e) {
      $.cookie("pledge-rejected-banner", true, {path:'/'});
 
@@ -287,9 +289,9 @@ if ($.cookie("pledge-rejected") == 'true' && $.cookie("pledge-complete") == 'tru
 // Private Transfer
 $("#private-transfer-route").on("click", function (e) {
      if ($('input[id=transfer-training-course-yes]').prop('checked') == true) {
-          $.cookie("transfer-training-course-yes", true, {path:'/'});
+          $.cookie("private-transfer-route", true, {path:'/'});
      } else if ($('input[id=transfer-training-course-no]').prop('checked') == true) {
-          $.cookie("transfer-training-course-yes", false, {path:'/'});
+          $.cookie("private-transfer-route", false, {path:'/'});
      }
 });
 
@@ -297,7 +299,7 @@ if ($.cookie("private-transfer-route") == 'true') {
      $('.set-amount').show();
      $('.upto-amount').hide();
 
-} else {
+} else if ($.cookie("private-transfer-route") == 'false') {
      $('.set-amount').hide();
      $('.upto-amount').show();
 }
