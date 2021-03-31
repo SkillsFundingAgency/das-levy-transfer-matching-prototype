@@ -1,0 +1,61 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Make a transfer to a business I know</span>
+               <h1 class="govuk-heading-xl">Tell us about the transfer you want to make to <span class="highlight-text">Belhavel Construction Ltd</span></h1>
+
+               <form method="post" action="" id="transfer-training-course-form">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Do you want to specify the training course being funded?</legend>
+                              <div class="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="transfer-training-course-yes" name="transfer-training-course" type="radio" value="Yes, this is the correct employer">
+                                        <label class="govuk-label govuk-radios__label" for="transfer-training-course-yes">Yes</label>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="transfer-training-course-no" name="transfer-training-course" type="radio" value="No, I want to re-entere account ID">
+                                        <label class="govuk-label govuk-radios__label" for="transfer-training-course-no">No, I only want to set a funding amount that can be spent on any type of apprenticeship training</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="private-transfer-route">Continue</button>
+
+                    <a href="../transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel transfer</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

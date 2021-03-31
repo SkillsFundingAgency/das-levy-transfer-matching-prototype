@@ -97,8 +97,8 @@
                Latest prototype link
           </h2>
           <ul class="govuk-list govuk-list--bullet">
-               <li><a href="/sprint-4/sender/index" class="govuk-link govuk-link--no-visited-state">Sending employer</a></li>
-               <li><a href="/sprint-4/receiver/index" class="govuk-link govuk-link--no-visited-state">Receiving employer</a></li>
+               <li><a href="/sprint-5/sender/index" class="govuk-link govuk-link--no-visited-state">Sending employer</a></li>
+               <li><a href="/sprint-5/receiver/index" class="govuk-link govuk-link--no-visited-state">Receiving employer</a></li>
           </ul>
      </div>
      <!-- Full width header section ends -->
@@ -114,12 +114,16 @@
                Alpha sprints
           </h2>
 
-          {% include './sprint-4/_summary.html' %}
+          {% include './sprint-5/_summary.html' %}
 
 
           <h2 class="govuk-heading-l govuk-!-margin-top-9">
                Discovery sprints
           </h2>
+
+          {% set sprint4Html %}
+               {% include './sprint-4/_summary.html' %}
+          {% endset %}
 
           {% set sprint3Html %}
                {% include './sprint-3/_summary.html' %}
@@ -141,6 +145,17 @@
           {{ govukAccordion({
                id: "accordion-discovery",
                items: [
+                    {
+                         heading: {
+                              text: "Sprint 4"
+                         },
+                         content: {
+                              html: sprint4Html
+                         },
+                         summary: {
+                              html: '17th March 2021 — 30th March 2021'
+                         }
+                    },
                     {
                          heading: {
                               text: "Sprint 3"

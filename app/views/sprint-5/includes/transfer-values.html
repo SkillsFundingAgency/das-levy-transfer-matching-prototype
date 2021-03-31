@@ -1,0 +1,77 @@
+<div class="transfer-values transfer-values-2019">
+     <div class="transfer-funds">
+          <p>Your transfer allowance 2018/19</p>
+          <p class="number">£<span class="value-format">150000</span></p>
+     </div>
+     <div class="transfer-funds-remaining">
+          <div class="text">
+               <p>Committed to transfers 2018/19</p>
+               <p class="number before-pledge">£<span class="value-format">0</span></p>
+               <p class="number after-pledge">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+          </div>
+          <div class="multiple-values">
+               <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+          </div>
+     </div>
+     <div class="transfer-funds-non-pledge">
+          <p>Available projected balance 2018/19</p>
+          <p class="number">£<span class="value-format">150000</span></p>
+          <p class="number after-pledge">£<span class="value-format">{{ 150000-data['pledge-amount'] }}</span></p>
+          <!-- <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p> -->
+     </div>
+</div>
+
+<div class="transfer-values transfer-values-2020">
+     <div class="transfer-funds">
+          <p>Your transfer allowance 2019/20</p>
+          <p class="number">£<span class="value-format">150000</span></p>
+     </div>
+     <div class="transfer-funds-remaining">
+          <div class="text">
+               <p>Committed to transfers 2019/20</p>
+               <p class="number before-pledge">£<span class="value-format">0</span></p>
+               <p class="number after-pledge">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+          </div>
+          <div class="multiple-values">
+               <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+          </div>
+     </div>
+     <div class="transfer-funds-non-pledge">
+          <p>Available projected balance 2019/20</p>
+          <p class="number">£<span class="value-format">150000</span></p>
+          <p class="number after-pledge">£<span class="value-format">{{ 150000-data['pledge-amount'] }}</span></p>
+          <!-- <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p> -->
+     </div>
+</div>
+
+<div class="transfer-values transfer-values-2021">
+     <div class="transfer-funds">
+          <p>Your transfer allowance 2020/21</p>
+          <p class="number before-transfer">£<span class="value-format">150000</span></p>
+          <p class="number after-transfer">£<span class="value-format">{{ 150000-data['transfer-private-amount'] }}</span></p>
+          <p class="number after-transfer-and-pledge">£<span class="value-format">{{ 150000-18000-data['transfer-private-amount'] }}</span></p>
+     </div>
+     <div class="transfer-funds-remaining">
+          <div class="text">
+               <p>Committed to transfers 2020/21</p>
+               <p class="number before-pledge before-transfer">£<span class="value-format">0</span></p>
+               <p class="number after-pledge">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number after-transfer">£<span class="value-format">{{ data['transfer-private-amount'] }}</span></p>
+               <p class="number after-transfer-and-pledge">£<span class="value-format">{{ data['transfer-private-amount'] }}</span></p>
+          </div>
+          <div class="multiple-values">
+               <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+          </div>
+     </div>
+     <div class="transfer-funds-non-pledge">
+          <p>Available projected balance 2020/21</p>
+          <p class="number before-transfer">£<span class="value-format">150000</span></p>
+          <p class="number after-pledge">£<span class="value-format">{{ 150000-data['pledge-amount'] }}</span></p>
+          <p class="number after-transfer">£<span class="value-format">{{ 150000-data['transfer-private-amount'] }}</span></p>
+          <p class="number after-transfer-and-pledge">£<span class="value-format">{{ 150000-data['transfer-private-amount']-18000 }}</span></p>
+          <!-- <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p> -->
+     </div>
+</div>
