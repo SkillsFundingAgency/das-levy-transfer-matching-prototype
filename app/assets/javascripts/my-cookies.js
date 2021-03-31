@@ -416,7 +416,7 @@ $("#pledge-application-confirm-continue").on("click", function (e) {
 $('.application-complete-table').hide();
 
 // $('.before-pledge').show();
-$('.after-pledge').hide();
+// $('.after-pledge').hide();
 
 if ($.cookie("pledge-application-completed") == 'true') {
      $('.no-applications').hide();
