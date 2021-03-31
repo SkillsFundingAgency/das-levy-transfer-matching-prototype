@@ -327,6 +327,13 @@ if ($.cookie("private-transfer-complete") == 'true') {
      $('#transfers-tabs .govuk-tabs__list-item[data-tab="one"] .number').text(transfersNumber + 1);
 }
 
+$(".after-transfer-and-pledge").hide();
+
+if ($.cookie("pledge-complete") == 'true' && $.cookie("private-transfer-complete") == 'true') {
+     $('.after-pledge, .after-transfer').hide();
+     $(".after-transfer-and-pledge").show();
+
+}
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
 
