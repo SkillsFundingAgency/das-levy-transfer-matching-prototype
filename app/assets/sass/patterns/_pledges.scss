@@ -196,6 +196,9 @@
           &:last-of-type {
                margin-right: 0;
           }
+          &.alert {
+               background: $govuk-error-colour;
+          }
           &.pledge-funds, &.pledge-funds-spent {
                background: govuk-colour("light-grey");
                // border-left: 10px solid govuk-colour("turquoise");

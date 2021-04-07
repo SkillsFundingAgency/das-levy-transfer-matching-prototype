@@ -334,6 +334,110 @@ if ($.cookie("pledge-complete") == 'true' && $.cookie("private-transfer-complete
      $(".after-transfer-and-pledge").show();
 
 }
+
+// Unhappy Path - ONE
+
+// var financePledgeFundUnhappyPath = parseInt($('#unhappy-finance .pledge-funds .value-format').text());
+// var financePledgeFundSpentUnhappyPath = parseInt($('#unhappy-finance .pledge-funds-spent .value-format').text());
+var financePledgeFundUnhappyPath = 50000;
+var financePledgeFundSpentUnhappyPath = 0;
+
+$("#approve-pledge-unhappy-1").on("click", function (e) {
+     $.cookie("pledge-unhappy-1-approved", true, {path:'/'});
+});
+
+$("#approve-pledge-unhappy-2").on("click", function (e) {
+     $.cookie("pledge-unhappy-2-approved", true, {path:'/'});
+});
+
+$("#approve-pledge-unhappy-3").on("click", function (e) {
+     $.cookie("pledge-unhappy-3-approved", true, {path:'/'});
+});
+
+$('.approved-panel-1, .approved-panel-2, .approved-panel-3').hide();
+
+if ($.cookie("pledge-unhappy-1-approved") == 'true' || $.cookie("pledge-unhappy-2-approved") == 'true' || $.cookie("pledge-unhappy-3-approved") == 'true') {
+     $('#unhappy-finance .before-approval').hide();
+     $('#unhappy-finance .after-approval').show();
+}
+
+if ($.cookie("pledge-unhappy-1-approved") == 'true') {
+
+     $('.approved-panel-1').show();
+
+     // Table details
+     $('#order-applications-table-unhappy tr[data-table-row="one"]').find('.awaiting').hide();
+     $('#order-applications-table-unhappy tr[data-table-row="one"]').find('.application-approved').show();
+
+     // Pledge details page
+     $('.unhappy-button-1').hide();
+     $('#unhappy-button-1-back').removeClass('govuk-link-secondary');
+
+     $('#unhappy-finance .pledge-funds-spent .value-format').text(financePledgeFundSpentUnhappyPath+20000);
+     $('#unhappy-finance .pledge-funds-remaining .value-format').text(financePledgeFundUnhappyPath-20000);
+}
+
+if ($.cookie("pledge-unhappy-2-approved") == 'true') {
+
+     $('.approved-panel-2').show();
+
+     // Table details
+     $('#order-applications-table-unhappy tr[data-table-row="two"]').find('.awaiting').hide();
+     $('#order-applications-table-unhappy tr[data-table-row="two"]').find('.application-approved').show();
+
+     // Pledge details page
+     $('.unhappy-button-2').hide();
+     $('#unhappy-button-2-back').removeClass('govuk-link-secondary');
+
+     $('#unhappy-finance .pledge-funds-spent .value-format').text(financePledgeFundSpentUnhappyPath+10000);
+     $('#unhappy-finance .pledge-funds-remaining .value-format').text(financePledgeFundUnhappyPath-10000);
+
+}
+
+if ($.cookie("pledge-unhappy-3-approved") == 'true') {
+
+     $('.approved-panel-3').show();
+
+     // Table details
+     $('#order-applications-table-unhappy tr[data-table-row="three"]').find('.awaiting').hide();
+     $('#order-applications-table-unhappy tr[data-table-row="three"]').find('.application-approved').show();
+
+     // Pledge details page
+     $('.unhappy-button-3').hide();
+     $('#unhappy-button-3-back').removeClass('govuk-link-secondary');
+
+     $('#unhappy-finance .pledge-funds-spent .value-format').text(financePledgeFundSpentUnhappyPath+10000);
+     $('#unhappy-finance .pledge-funds-remaining .value-format').text(financePledgeFundUnhappyPath-10000);
+
+}
+
+if ($.cookie("pledge-unhappy-1-approved") == 'true' && $.cookie("pledge-unhappy-2-approved") == 'true') {
+     $('#unhappy-finance .pledge-funds-spent .value-format').text(financePledgeFundSpentUnhappyPath+30000);
+     $('#unhappy-finance .pledge-funds-remaining .value-format').text(financePledgeFundUnhappyPath-30000);
+}
+
+$('#no-more-funds, .approved-panel-4, .application-funds').hide();
+$('.after-funds').hide();
+
+if ($.cookie("pledge-unhappy-1-approved") == 'true' && $.cookie("pledge-unhappy-2-approved") == 'true' && $.cookie("pledge-unhappy-3-approved") == 'true') {
+     $('#no-more-funds, .approved-panel-4').show();
+
+     $('#unhappy-finance .pledge-funds-spent .value-format').text(financePledgeFundSpentUnhappyPath+40000);
+     $('#unhappy-finance .pledge-funds-remaining .value-format').text(financePledgeFundUnhappyPath-40000);
+
+     $('#unhappy-finance .pledge-funds-remaining').addClass('alert');
+
+     $('#order-applications-table-unhappy tr[data-table-row="four"]').addClass('error');
+     $('#order-applications-table-unhappy tr[data-table-row="four"]').find('.awaiting').hide();
+     $('#order-applications-table-unhappy tr[data-table-row="four"]').find('.application-funds').show();
+
+     $('.unhappy-button-4').hide();
+     $('#unhappy-button-4-back').removeClass('govuk-link-secondary');
+
+     $('.before-funds').hide();
+     $('.after-funds').show();
+}
+
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
 

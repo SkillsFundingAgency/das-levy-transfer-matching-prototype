@@ -1,0 +1,373 @@
+<div class="govuk-tabs" data-module="govuk-tabs" id="pledge-table-tabs">
+     <!-- TABS - START -->
+     <!-- <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected"><a class="govuk-tabs__tab" href="#pledge-applications"><span class="pledge-number applications active">3</span>Applications</a></li>
+          <li class="govuk-tabs__list-item"><a class="govuk-tabs__tab" href="#pledge-shortlist"><span class="pledge-number shortlist">0</span>Shortlist</a></li>
+          <li class="govuk-tabs__list-item"><a class="govuk-tabs__tab" href="#pledge-approved"><span class="pledge-number approved">0</span>Approved</a></li>
+          <li class="govuk-tabs__list-item"><a class="govuk-tabs__tab" href="#pledge-rejected"><span class="pledge-number rejected">0</span>Rejected</a></li>
+     </ul> -->
+     <!-- TABS - END -->
+
+     <!-- TAB ONE - START -->
+     <div class="govuk-tabs__panel" id="pledge-applications">
+          <h2 class="govuk-heading-m">Applications</h2>
+
+          <p class="applications-empty">You have no current applications for this pledge.</p>
+
+          <!-- PLEDGE TABLE - START -->
+          <table class="govuk-table applications-table" id="order-applications-table-unhappy">
+               <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                         <th scope="col" class="govuk-table__header" onclick="sortTable(0)"><span class="icon sort"></span>Match</th>
+                         <th scope="col" class="govuk-table__header" onclick="sortTable(2)"><span class="icon sort"></span>Applicant</th>
+                         <th scope="col" class="govuk-table__header" onclick="sortTable(3)"><span class="icon sort"></span>Total cost</th>
+                         <th scope="col" class="govuk-table__header" onclick="sortTable(4)"><span class="icon sort"></span>Criteria</th>
+                         <th scope="col" class="govuk-table__header" onclick="sortTable(5)"><span class="icon sort"></span>Date</th>
+                         <th scope="col" class="govuk-table__header" onclick="sortTable(6)"><span class="icon sort"></span>Status</th>
+                         <th scope="col" class="govuk-table__header"></th>
+                    </tr>
+               </thead>
+               <tbody class="govuk-table__body">
+
+                    <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - START !!!!!!!!!!!!!!! -->
+                    <tr class="govuk-table__row" data-table-row="one">
+                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">100%</strong></td>
+                         <td class="govuk-table__cell"><a href="2/2A-application-details" class="govuk-heading-s govuk-link govuk-link--no-visited-state">Belhavel Construction Ltd</a></td>
+                         <td class="govuk-table__cell">£20,000<br>over 24 months</td>
+                         <td class="govuk-table__cell">
+                              <p><span class="icon tick"></span>Location</p>
+                              <p><span class="icon tick"></span>Sector</p>
+                              <p><span class="icon tick"></span>Category of training</p>
+                              <p><span class="icon tick"></span>Level</p>
+                         </td>
+                         <td class="govuk-table__cell">23/03/2021</td>
+                         <td class="govuk-table__cell">
+                              <p class="awaiting">Awaiting</p>
+                              <p class="application-approved"><span class="icon approved"></span>Approved</p>
+                         </td>
+                         <td class="govuk-table__cell"><a href="2/2A-application-details" class="">View</a></td>
+                    </tr>
+                    <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - END !!!!!!!!!!!!!!! -->
+
+                    <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - START !!!!!!!!!!!!!!! -->
+                    <tr class="govuk-table__row" data-table-row="two">
+                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">75%</strong></td>
+                         <td class="govuk-table__cell"><a href="3/3A-application-details" class="govuk-heading-s govuk-link govuk-link--no-visited-state">CBJ Engineering</a></td>
+                         <td class="govuk-table__cell">£10,000<br>over 24 months</td>
+                         <td class="govuk-table__cell">
+                              <p><span class="icon tick"></span>Location</p>
+                              <p><span class="icon tick"></span>Sector</p>
+                              <p><span class="icon tick"></span>Category of training</p>
+                              <p><span class="icon cross"></span>Level</p>
+                         </td>
+                         <td class="govuk-table__cell">15/03/2021</td>
+                         <td class="govuk-table__cell">
+                              <p class="awaiting">Awaiting</p>
+                              <p class="application-approved"><span class="icon approved"></span>Approved</p>
+                         </td>
+                         <td class="govuk-table__cell"><a href="3/3A-application-details" class="">View</a></td>
+                    </tr>
+                    <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - END !!!!!!!!!!!!!!! -->
+
+                    <!-- !!!!!!!!!!!!!!! APPLICATION - 3 - START !!!!!!!!!!!!!!! -->
+                    <tr class="govuk-table__row" data-table-row="three">
+                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">75%</strong></td>
+                         <td class="govuk-table__cell"><a href="4/4A-application-details" class="govuk-heading-s govuk-link govuk-link--no-visited-state">Dev Mechanics Ltd</a></td>
+                         <td class="govuk-table__cell">£10,000<br>over 24 months</td>
+                         <td class="govuk-table__cell">
+                              <p><span class="icon tick"></span>Location</p>
+                              <p><span class="icon cross"></span>Sector</p>
+                              <p><span class="icon tick"></span>Category of training</p>
+                              <p><span class="icon tick"></span>Level</p>
+                         </td>
+                         <td class="govuk-table__cell">15/03/2021</td>
+                         <td class="govuk-table__cell">
+                              <p class="awaiting">Awaiting</p>
+                              <p class="application-approved"><span class="icon approved"></span>Approved</p>
+                         </td>
+                         <td class="govuk-table__cell"><a href="4/4A-application-details" class="">View</a></td>
+                    </tr>
+                    <!-- !!!!!!!!!!!!!!! APPLICATION - 3 - END !!!!!!!!!!!!!!! -->
+
+                    <!-- !!!!!!!!!!!!!!! APPLICATION - 4 - START !!!!!!!!!!!!!!! -->
+                    <tr class="govuk-table__row" data-table-row="four" id="error-row">
+                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">50%</strong></td>
+                         <td class="govuk-table__cell"><a href="5/5A-application-details" class="govuk-heading-s govuk-link govuk-link--no-visited-state">Johnson and Johnson Building Co</a></td>
+                         <td class="govuk-table__cell">£12,000<br>over 24 months</td>
+                         <td class="govuk-table__cell">
+                              <p><span class="icon cross"></span>Location</p>
+                              <p><span class="icon tick"></span>Sector</p>
+                              <p><span class="icon tick"></span>Category of training</p>
+                              <p><span class="icon cross"></span>Level</p>
+
+                         </td>
+                         <td class="govuk-table__cell">28/03/2021</td>
+                         <td class="govuk-table__cell">
+                              <p class="awaiting">Awaiting</p>
+                              <p class="application-funds"><span class="icon rejected"></span>Not enough funds</p>
+                         </td>
+                         <td class="govuk-table__cell"><a href="5/5A-application-details" class="">View</a></td>
+                    </tr>
+                    <!-- !!!!!!!!!!!!!!! APPLICATION - 4 - END !!!!!!!!!!!!!!! -->
+
+               </tbody>
+          </table>
+          <!-- PLEDGE TABLE - END -->
+
+          <!-- <h1 class="govuk-heading-xl">Total bids: £<span class="total-bids">160,000</span></h1> -->
+
+     </div>
+     <!-- TAB ONE - END -->
+
+     <!-- TAB TWO - START -->
+     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pledge-shortlist">
+          <h2 class="govuk-heading-m">Shortlist</h2>
+
+          <p class="shortlist-not-complete">You have no shortlisted applications for this pledge.</p>
+
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - START !!!!!!!!!!!!!!! -->
+          <div class="application application-one" data-shortlist="one">
+               <div class="title">
+                    <div class="govuk-grid-row">
+                         <div class="govuk-grid-column-two-thirds">
+                              <strong class="govuk-tag govuk-tag--green">100% match</strong>
+                              <a href="2-application-details" class="govuk-heading-m">Belhavel Construction Ltd</a>
+                              <p class="govuk-heading-m pledge-total">Total: £9,000 over 24 months</p>
+                         </div>
+                         <div class="govuk-grid-column-one-third main-ctas">
+                              <!-- <a href="3-approve" class="govuk-button">Approve</a>
+                              <a href="#" class="govuk-button govuk-button--warning">Reject</a>
+                              <br> -->
+                              <a href="#" class="remove-shortlist">Remove from shortlist</a>
+                         </div>
+                    </div>
+               </div>
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">More details</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <div class="matching-details">
+                              <p>Location: <span class="govuk-caption-m">Birmingham, West Midlands</span></p>
+                              <p>Sector: <span class="govuk-caption-m">Construction</span></p>
+                              <p>Category of training: <span class="govuk-caption-m">Construction</span></p>
+                              <p>Level: <span class="govuk-caption-m">1 - Bricklaying (level 2)</span></p>
+                         </div>
+                         <div class="pledge-details">
+                              <p>Estimated duration: <span class="govuk-caption-m">24 months</span></p>
+                              <p>Maximum funding band: <span class="govuk-caption-m">£9,000</span></p>
+                              <p>Total per year: <span class="govuk-caption-m">£4,500</span></p>
+                         </div>
+                         <div class="more-details-details">
+                              <p>About the application: <span class="govuk-caption-m">Text description of why they would like the funding</span></p>
+                         </div>
+                    </div>
+               </details>
+          </div>
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - END !!!!!!!!!!!!!!! -->
+
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - START !!!!!!!!!!!!!!! -->
+          <div class="application application-two" data-shortlist="two">
+               <div class="title">
+                    <div class="govuk-grid-row">
+                         <div class="govuk-grid-column-two-thirds">
+                              <strong class="govuk-tag govuk-tag--yellow">75% match</strong>
+                              <a href="5-application-details" class="govuk-heading-m">CBJ Engineering</a>
+                              <p class="govuk-heading-m pledge-total">Total: £36,000 over 24 months</p>
+                         </div>
+                         <div class="govuk-grid-column-one-third main-ctas">
+                              <!-- <a href="#" class="govuk-button">Approve</a>
+                              <a href="4-reject" class="govuk-button govuk-button--warning">Reject</a>
+                              <br> -->
+                              <a href="#" class="remove-shortlist">Remove from shortlist</a>
+                         </div>
+                    </div>
+               </div>
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">More details</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <div class="matching-details">
+                              <p>Location: <span class="govuk-caption-m">West Midlands</span></p>
+                              <p>Sector: <span class="govuk-caption-m">Construction</span></p>
+                              <p>Category of training: <span class="govuk-caption-m">Construction</span></p>
+                              <p class="cross">Level: <span class="govuk-caption-m"><span class="icon"></span> 2 - Construction quantity surveyor (degree) (level 6)</span></p>
+                         </div>
+                         <div class="pledge-details">
+                              <p>Estimated duration: <span class="govuk-caption-m">36 months</span></p>
+                              <p>Maximum funding band: <span class="govuk-caption-m">£18,000</span></p>
+                              <p>Total per year: <span class="govuk-caption-m">£12,000</span></p>
+                         </div>
+                         <div class="more-details-details">
+                              <p>About the application: <span class="govuk-caption-m">Text description of why they would like the funding</span></p>
+                         </div>
+                    </div>
+               </details>
+          </div>
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - END !!!!!!!!!!!!!!! -->
+
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 3 - START !!!!!!!!!!!!!!! -->
+          <div class="application application-three" data-shortlist="three">
+               <div class="title">
+                    <div class="govuk-grid-row">
+                         <div class="govuk-grid-column-two-thirds">
+                              <strong class="govuk-tag govuk-tag--orange">50% match</strong>
+                              <a href="#" class="govuk-heading-m">Johnson and Johnson Building Co</a>
+                              <p class="govuk-heading-m pledge-total">Total: £18,000 over 24 months</p>
+                         </div>
+                         <div class="govuk-grid-column-one-third main-ctas">
+                              <!-- <a href="#" class="govuk-button">Approve</a>
+                              <a href="#" class="govuk-button govuk-button--warning">Reject</a>
+                              <br> -->
+                              <a href="#" class="remove-shortlist">Remove from shortlist</a>
+                         </div>
+                    </div>
+               </div>
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">More details</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <div class="matching-details">
+                              <p class="cross">Location: <span class="govuk-caption-m"><span class="icon"></span>Derbyshire</span></p>
+                              <p>Sector: <span class="govuk-caption-m">Construction</span></p>
+                              <p>Category of training: <span class="govuk-caption-m">Construction</span></p>
+                              <p class="cross">Level: <span class="govuk-caption-m"><span class="icon"></span>2 - Surveying technician (level 2)</span></p>
+                         </div>
+                         <div class="pledge-details">
+                              <p>Estimated duration: <span class="govuk-caption-m">24 months</span></p>
+                              <p>Maximum funding band: <span class="govuk-caption-m">£9,000</span></p>
+                              <p>Total per year: <span class="govuk-caption-m">£9,000</span></p>
+                         </div>
+                         <div class="more-details-details">
+                              <p>About the application: <span class="govuk-caption-m">Text description of why they would like the funding</span></p>
+                         </div>
+                    </div>
+               </details>
+          </div>
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 3 - END !!!!!!!!!!!!!!! -->
+
+     </div>
+     <!-- TAB TWO - END -->
+
+     <!-- TAB THREE - START -->
+     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pledge-approved">
+          <h2 class="govuk-heading-m">Approved</h2>
+
+          <p class="approved-not-complete">You have no approved applications for this pledge.</p>
+
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - START !!!!!!!!!!!!!!! -->
+          <div class="application approved-one">
+               <div class="title">
+                    <div class="govuk-grid-row">
+                         <div class="govuk-grid-column-two-thirds">
+                              <a href="2-application-details" class="govuk-heading-m">Belhavel Construction Ltd</a>
+                              <p class="govuk-heading-m pledge-total">Total: £9,000 over 24 months</p>
+                         </div>
+                         <div class="govuk-grid-column-one-third main-ctas">
+                              <p><a href="2-application-details">View</a></p>
+                         </div>
+                    </div>
+               </div>
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">More details</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <div class="matching-details">
+                              <p>Location: <span class="govuk-caption-m">Birmingham, West Midlands</span></p>
+                              <p>Sector: <span class="govuk-caption-m">Construction</span></p>
+                              <p>Category of training: <span class="govuk-caption-m">Construction</span></p>
+                              <p>Level: <span class="govuk-caption-m">1 - Bricklaying (level 2)</span></p>
+                         </div>
+                         <div class="pledge-details">
+                              <p>Estimated duration: <span class="govuk-caption-m">24 months</span></p>
+                              <p>Maximum funding band: <span class="govuk-caption-m">£9,000</span></p>
+                              <p>Total per year:<span class="govuk-caption-m"> £4,500</span></p>
+                         </div>
+                         <div class="more-details-details">
+                              <p>About the application: <span class="govuk-caption-m">Text description of why they would like the funding</span></p>
+                         </div>
+                    </div>
+               </details>
+          </div>
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 1 - END !!!!!!!!!!!!!!! -->
+
+     </div>
+     <!-- TAB THREE - END -->
+
+     <!-- TAB FOUR - START -->
+     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pledge-rejected">
+          <h2 class="govuk-heading-m">Rejected</h2>
+
+          <p class="rejected-not-complete">You have no rejected applications for this pledge.</p>
+
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - START !!!!!!!!!!!!!!! -->
+          <div class="application rejected-one">
+               <div class="title">
+                    <div class="govuk-grid-row">
+                         <div class="govuk-grid-column-two-thirds">
+                              <a href="5-application-details" class="govuk-heading-m">CBJ Engineering</a>
+                              <p class="govuk-heading-m pledge-total">Total: £36,000 over 24 months</p>
+                         </div>
+                         <div class="govuk-grid-column-one-third main-ctas">
+                              <p><a href="5-application-details">View</a></p>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-third">
+                         <details class="govuk-details" data-module="govuk-details">
+                              <summary class="govuk-details__summary">
+                                   <span class="govuk-details__summary-text">More details</span>
+                              </summary>
+                              <div class="govuk-details__text">
+                                   <div class="matching-details">
+                                        <p>Location: <span class="govuk-caption-m">West Midlands</span></p>
+                                        <p>Sector: <span class="govuk-caption-m">Construction</span></p>
+                                        <p>Category of training: <span class="govuk-caption-m">Construction</span></p>
+                                        <p class="cross">Level: <span class="govuk-caption-m"><span class="icon"></span> 2 - Construction quantity surveyor (degree) (level 6)</span></p>
+                                   </div>
+                                   <div class="pledge-details">
+                                        <p>Estimated duration: <span class="govuk-caption-m">36 months</span></p>
+                                        <p>Maximum funding band: <span class="govuk-caption-m">£18,000</span></p>
+                                        <p>Total per year: <span class="govuk-caption-m">£12,000</span></p>
+                                   </div>
+                              </div>
+                         </details>
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                         <details class="govuk-details" data-module="govuk-details">
+                              <summary class="govuk-details__summary">
+                                   <span class="govuk-details__summary-text">Rejection description</span>
+                              </summary>
+                              <div class="govuk-details__text">
+                                   <p>
+                                        Estimated duration: <span class="govuk-caption-m">{{ data['more-detail'] }}</span>
+                                   </p>
+                                   <div class="more-details-details">
+                                        <p>About the application: <span class="govuk-caption-m">Text description of why they would like the funding</span></p>
+                                   </div>
+                              </div>
+                         </details>
+                    </div>
+               </div>
+          </div>
+          <!-- !!!!!!!!!!!!!!! APPLICATION - 2 - END !!!!!!!!!!!!!!! -->
+
+     </div>
+     <!-- TAB FOUR - END -->
+
+     <!-- TAB FOUR - START -->
+     <!-- <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="pledge-details">
+          <h2 class="govuk-heading-m">Pledge details</h2>
+     </div> -->
+     <!-- TAB FOUR - END -->
+
+</div>
