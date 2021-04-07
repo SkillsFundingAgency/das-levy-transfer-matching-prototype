@@ -148,6 +148,67 @@ table {
 .transfer-values {
      display: flex;
      margin: 1.5em 0 1.5em;
+     &.transfer-values-2020, &.transfer-values-2022, &.transfer-values-2023, &.transfer-values-2024 {
+          div {
+               background: govuk-colour("light-grey");
+               // border-left: 10px solid govuk-colour("turquoise");
+               p {
+                    color: black;
+               }
+          }
+     }
+     &.transfer-values-2022, &.transfer-values-2023, &.transfer-values-2024 {
+          div {
+               &.transfer-funds, &.transfer-funds-non-pledge {
+                    p {
+                         color: $govuk-border-colour;
+                    }
+               }
+          }
+     }
+     &.transfer-values-2021 {
+          padding-bottom: 3em;
+          div.transfer-funds-remaining {
+               div.multiple-values {
+                    display: flex;
+                    p {
+                         padding: 0.5em 2.5%;
+                         width: 28.3%;
+                         font-size: 1.2rem;
+                         text-align: center;
+                         position: relative;
+                         &:nth-of-type(1) {
+                              border-right: 2px solid white;
+                              // background: govuk-colour("light-grey");
+                              .description {
+                                   bottom: -3em;
+                              }
+                         }
+                         &:nth-of-type(2) {
+                              // background: govuk-colour("light-grey");
+                              border-right: 2px solid white;
+                              .description {
+                                   bottom: -4.25em;
+                              }
+                         }
+                         &:nth-of-type(3) {
+                              .description {
+                                   bottom: -1.75em;
+                              }
+                         }
+                         .description {
+                              position: absolute;
+                              font-size: 0.75rem;
+                              left: 0;
+                              bottom: -3em;
+                              width: 100%;
+                              text-align: center;
+                              font-weight: normal;
+                         }
+                    }
+               }
+          }
+     }
      div {
           width: 33%;
           margin-right: 3%;
@@ -209,6 +270,36 @@ table {
                &.number {
                     font-size: 3rem;
                }
+          }
+     }
+}
+
+.transfer-values-V2 {
+     .transfer-values {
+          &.transfer-values-2021 {
+               padding-bottom: 0em;
+               div {
+                    &.transfer-funds-remaining {
+                         padding-bottom: 2%;
+                         .govuk-warning-text__icon {
+                              position: relative;
+                              left: 0;
+                              min-width: 20px;
+                              min-height: 20px;
+                              font-size: 14px;
+                              line-height: 14px;
+                              margin-right: 8px;
+                         }
+                    }
+               }
+          }
+     }
+}
+
+.transfer-values-V3 {
+     .transfer-values {
+          &.transfer-values-2021 {
+               padding-bottom: 0em;
           }
      }
 }

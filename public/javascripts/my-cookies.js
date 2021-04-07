@@ -144,8 +144,8 @@ if ($.cookie("pledge-complete") == 'true') {
      $('.before-pledge').hide();
      $('.after-pledge').show();
 
-     $('.transfer-funds-non-pledge .number').hide();
-     $('.transfer-funds-non-pledge .number.after-pledge').show();
+     $('.transfer-values-prototype .transfer-funds-non-pledge .number').hide();
+     $('.transfer-values-prototype .transfer-funds-non-pledge .number.after-pledge').show();
 
      // Transfers tab
      $('#transfers-tabs .govuk-tabs__list-item[data-tab="two"] .number').show();
