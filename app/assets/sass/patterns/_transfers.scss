@@ -274,6 +274,19 @@ table {
      }
 }
 
+.transfer-values-prototype {
+     .transfer-values {
+          &.transfer-values-2021 {
+               padding: 0;
+               div.transfer-funds-remaining {
+                    div.multiple-values {
+                         display: none;
+                    }
+               }
+          }
+     }
+}
+
 .transfer-values-V2 {
      .transfer-values {
           &.transfer-values-2021 {

@@ -30,18 +30,23 @@ if ($("#transfers-hub")) {
 }
 
 // Transfers
-$('.transfer-values-2020, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
+$('.transfer-values-2019, .transfer-values-2020, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
 
-$('.finance-2020, .finance-2021, .finance-2022, .finance-2023, .finance-2024').on("click", function (e) {
+$('.finance-2019, .finance-2020, .finance-2021, .finance-2022, .finance-2023, .finance-2024').on("click", function (e) {
      e.preventDefault();
      $('.transfers-title a').removeClass('current');
      $(this).addClass('current');
 });
 
+$('.finance-2019').on("click", function (e) {
+     $('.transfer-values-2020, .transfer-values-2021, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
+     $('.transfer-values-2019').show();
+});
+
 $('.finance-2020').on("click", function (e) {
      $('.transfer-values-2021, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
      $('.transfer-values-2020').show();
- });
+});
 
 $('.finance-2021').on("click", function (e) {
      $('.transfer-values-2020, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
