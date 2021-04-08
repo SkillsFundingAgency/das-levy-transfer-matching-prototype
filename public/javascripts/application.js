@@ -604,3 +604,15 @@ var d = new Date(),
      days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
      return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
 }
+
+document.getElementById("date-stamp-cancelled").innerHTML = formatAMPMCancelled();
+
+function formatAMPMCancelled() {
+var d = new Date(),
+     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+     hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+     ampm = d.getHours() >= 12 ? 'pm' : 'am',
+     months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+     return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
+}

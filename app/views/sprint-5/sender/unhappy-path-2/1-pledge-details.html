@@ -23,13 +23,6 @@
      <div class="govuk-grid-row title-options">
           <div class="govuk-grid-column-full">
 
-               <!-- REJECTION COMPLETE - START -->
-               <div class="govuk-panel govuk-panel--confirmation pledge-rejected">
-                    <h1 class="govuk-panel__title">Application rejected</h1>
-                    <p>You rejected the CBJ Engineering application</p>
-               </div>
-               <!-- REJECTION COMPLETE - END -->
-
                <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds left-side">
                          <span class="govuk-caption-m">Find a business to transfer your levy to</span>
@@ -55,46 +48,32 @@
                          <section class="employer-details">
                               <div class="wrapper">
                                    <p><strong>Locations:</strong></p>
-                                   {% if data['pledge-location'] %}
                                    <ul class="govuk-list govuk-list--bullet">
-                                        {% for answer in data['pledge-location'] -%}
-                                        <li>{{ answer }}</li>
-                                        {% endfor %}
+                                        <li>West Midlands</li>
                                    </ul>
-                                   {% endif %}
                               </div>
                               <div class="wrapper">
                                    <p><strong>Sectors:</strong></p>
-                                   {% if data['pledge-sector'] %}
                                    <ul class="govuk-list govuk-list--bullet">
-                                        {% for answer in data['pledge-sector'] -%}
-                                        <li>{{ answer }}</li>
-                                        {% endfor %}
+                                        <li>Construction</li>
                                    </ul>
-                                   {% endif %}
                               </div>
                               <div class="wrapper">
                                    <p><strong>Type of training:</strong></p>
-                                   {% if data['pledge-training'] %}
                                    <ul class="govuk-list govuk-list--bullet">
-                                        {% for answer in data['pledge-training'] -%}
-                                        <li>{{ answer }}</li>
-                                        {% endfor %}
+                                        <li>Construction</li>
                                    </ul>
-                                   {% endif %}
                               </div>
                               <div class="wrapper">
                                    <p><strong>Level:</strong></p>
-                                   {% if data['pledge-level'] %}
                                    <ul class="govuk-list govuk-list--bullet">
-                                        {% for answer in data['pledge-level'] -%}
-                                        <li>{{ answer }}</li>
-                                        {% endfor %}
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li>5</li>
                                    </ul>
-                                   {% endif %}
                               </div>
                               <div class="total">
-                                   <p class="govuk-heading-m">Total funding: £<span class="value-format">50000</span></p>
+                                   <p class="govuk-heading-m">Total funding: £<span class="value-format">30000</span></p>
                               </div>
                          </section>
                     </div>
@@ -103,36 +82,36 @@
           </div>
      </div>
 
-     <div class="pledge-values" id="unhappy-finance">
+     <div class="pledge-values" id="unhappy-finance-V2">
           <div class="pledge-funds">
                <p>Pledge amount</p>
-               <p class="number">£<span class="value-format">50000</span></p>
+               <p class="number">£<span class="value-format">30000</span></p>
           </div>
           <div class="pledge-funds-spent">
                <p>Pledge funds committed</p>
-               <p class="number before-approval">£<span class="value-format">0</span></p>
-               <p class="number after-approval">£<span class="value-format"></span></p>
+               <p class="number">£<span class="value-format">0</span></p>
           </div>
           <div class="pledge-funds-remaining">
                <p>Pledge funds remaining</p>
-               <p class="number before-approval">£<span class="value-format">50000</span></p>
-               <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p>
+               <p class="number">£<span class="value-format">30000</span></p>
           </div>
      </div>
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
-               <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" id="no-more-funds">
-                    <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
-                    <div class="govuk-error-summary__body">
-                         <ul class="govuk-list govuk-error-summary__list">
-                              <li><a href="#error-row">You have insufficient funds to accept any more applications</a></li>
-                         </ul>
+               <!-- CANCELLED COMPLETE - START -->
+               <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="cancelled-banner">
+                    <div class="govuk-notification-banner__header">
+                         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                         <p class="govuk-notification-banner__heading"><a class="govuk-notification-banner__link" href="2/2A-application-details">Belhavel Construction Ltd</a> has cancelled their application, the pledge has been credited £10,000.</p>
                     </div>
                </div>
+               <!-- CANCELLED COMPLETE - END -->
 
-               {% include "../../includes/pledges-table-unhappy.html" %}
+               {% include "../../includes/pledges-table-unhappy-V2.html" %}
 
                <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 

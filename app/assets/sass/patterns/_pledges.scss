@@ -199,6 +199,9 @@
           &.alert {
                background: $govuk-error-colour;
           }
+          &.empty {
+               background: $govuk-link-colour;
+          }
           &.pledge-funds, &.pledge-funds-spent {
                background: govuk-colour("light-grey");
                // border-left: 10px solid govuk-colour("turquoise");

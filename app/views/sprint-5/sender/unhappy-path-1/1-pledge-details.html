@@ -55,43 +55,29 @@
                          <section class="employer-details">
                               <div class="wrapper">
                                    <p><strong>Locations:</strong></p>
-                                   {% if data['pledge-location'] %}
                                    <ul class="govuk-list govuk-list--bullet">
-                                        {% for answer in data['pledge-location'] -%}
-                                        <li>{{ answer }}</li>
-                                        {% endfor %}
+                                        <li>West Midlands</li>
                                    </ul>
-                                   {% endif %}
                               </div>
                               <div class="wrapper">
                                    <p><strong>Sectors:</strong></p>
-                                   {% if data['pledge-sector'] %}
                                    <ul class="govuk-list govuk-list--bullet">
-                                        {% for answer in data['pledge-sector'] -%}
-                                        <li>{{ answer }}</li>
-                                        {% endfor %}
+                                        <li>Construction</li>
                                    </ul>
-                                   {% endif %}
                               </div>
                               <div class="wrapper">
                                    <p><strong>Type of training:</strong></p>
-                                   {% if data['pledge-training'] %}
                                    <ul class="govuk-list govuk-list--bullet">
-                                        {% for answer in data['pledge-training'] -%}
-                                        <li>{{ answer }}</li>
-                                        {% endfor %}
+                                        <li>Construction</li>
                                    </ul>
-                                   {% endif %}
                               </div>
                               <div class="wrapper">
                                    <p><strong>Level:</strong></p>
-                                   {% if data['pledge-level'] %}
                                    <ul class="govuk-list govuk-list--bullet">
-                                        {% for answer in data['pledge-level'] -%}
-                                        <li>{{ answer }}</li>
-                                        {% endfor %}
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li>5</li>
                                    </ul>
-                                   {% endif %}
                               </div>
                               <div class="total">
                                    <p class="govuk-heading-m">Total funding: £<span class="value-format">50000</span></p>
@@ -110,13 +96,11 @@
           </div>
           <div class="pledge-funds-spent">
                <p>Pledge funds committed</p>
-               <p class="number before-approval">£<span class="value-format">0</span></p>
-               <p class="number after-approval">£<span class="value-format"></span></p>
+               <p class="number">£<span class="value-format">0</span></p>
           </div>
           <div class="pledge-funds-remaining">
                <p>Pledge funds remaining</p>
-               <p class="number before-approval">£<span class="value-format">50000</span></p>
-               <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p>
+               <p class="number">£<span class="value-format">50000</span></p>
           </div>
      </div>
 

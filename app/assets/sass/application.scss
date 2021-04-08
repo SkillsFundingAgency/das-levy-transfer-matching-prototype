@@ -304,6 +304,10 @@ p {
           background: url('../images/cross-red.svg') no-repeat 0% 50%;
           background-size: contain;
      }
+     &.cancelled {
+          background: url('../images/cancel-red.svg') no-repeat 0% 50%;
+          background-size: contain;
+     }
      &.tick, &.approved {
           background: url('../images/tick-single-green.svg') no-repeat 0% 50%;
           background-size: contain;
@@ -360,7 +364,7 @@ p {
      }
 }
 
-.approved-panel, .rejected-panel, .deleted-panel {
+.approved-panel, .rejected-panel, .deleted-panel, .cancelled-panel {
      border-left: 10px solid govuk-colour("green");
      background: govuk-colour("light-grey");
      padding: 1em 3.5%;
@@ -384,7 +388,7 @@ p {
      }
 }
 
-.rejected-panel {
+.rejected-panel, .cancelled-panel {
      border-left: 10px solid black;
      .govuk-warning-text {
           .govuk-info__icon {
@@ -423,4 +427,8 @@ p {
 
 #no-more-funds {
      margin: 1em 0 0 0;
+}
+
+#cancelled-banner {
+     margin: 0.5em 0 1em 0;
 }

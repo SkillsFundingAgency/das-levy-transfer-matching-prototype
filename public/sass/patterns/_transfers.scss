@@ -34,8 +34,10 @@ table {
                               background: rgba(29,112,60,0.1);
                          }
                     }
-                    &.error {
+                    &.error, &.cancelled {
                          background: govuk-colour("light-grey");
+                         border-top: 3px solid white;
+                         border-bottom: 3px solid white;
                          td {
                               &:first-of-type {
                                    border-left: 5px solid govuk-colour("red");
@@ -110,13 +112,13 @@ table {
                               // &.cross {
                               //      color: $govuk-error-colour;
                               // }
-                              &.application-approved, &.application-rejected {
+                              &.application-approved, &.application-rejected, &.application-cancelled {
                                    display: none;
                               }
                               &.application-approved {
                                    color: $govuk-success-colour;
                               }
-                              &.application-rejected, &.application-funds {
+                              &.application-rejected, &.application-funds, &.application-cancelled {
                                    color: $govuk-error-colour;
                               }
                          }

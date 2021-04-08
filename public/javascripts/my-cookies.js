@@ -335,7 +335,7 @@ if ($.cookie("pledge-complete") == 'true' && $.cookie("private-transfer-complete
 
 }
 
-// Unhappy Path - ONE
+// !!!!!!!!!!!!!!!!!!!!!! UNHAPPY PATH - ONE
 
 // var financePledgeFundUnhappyPath = parseInt($('#unhappy-finance .pledge-funds .value-format').text());
 // var financePledgeFundSpentUnhappyPath = parseInt($('#unhappy-finance .pledge-funds-spent .value-format').text());
@@ -356,10 +356,10 @@ $("#approve-pledge-unhappy-3").on("click", function (e) {
 
 $('.approved-panel-1, .approved-panel-2, .approved-panel-3').hide();
 
-if ($.cookie("pledge-unhappy-1-approved") == 'true' || $.cookie("pledge-unhappy-2-approved") == 'true' || $.cookie("pledge-unhappy-3-approved") == 'true') {
-     $('#unhappy-finance .before-approval').hide();
-     $('#unhappy-finance .after-approval').show();
-}
+// if ($.cookie("pledge-unhappy-1-approved") == 'true' || $.cookie("pledge-unhappy-2-approved") == 'true' || $.cookie("pledge-unhappy-3-approved") == 'true') {
+//      $('#unhappy-finance .before-approval').hide();
+//      $('#unhappy-finance .after-approval').show();
+// }
 
 if ($.cookie("pledge-unhappy-1-approved") == 'true') {
 
@@ -436,6 +436,114 @@ if ($.cookie("pledge-unhappy-1-approved") == 'true' && $.cookie("pledge-unhappy-
 
      $('.before-funds').hide();
      $('.after-funds').show();
+}
+
+// !!!!!!!!!!!!!!!!!!!!!! UNHAPPY PATH - TWO
+
+var financePledgeFundUnhappyPathV2 = parseInt(30000);
+var financePledgeFundSpentUnhappyPathV2 = parseInt(0);
+
+$("#approve-pledge-unhappy-V2-1").on("click", function (e) {
+     $.cookie("pledge-unhappy-V2-1-approved", true, {path:'/'});
+});
+
+$("#approve-pledge-unhappy-V2-2").on("click", function (e) {
+     $.cookie("pledge-unhappy-V2-2-approved", true, {path:'/'});
+});
+
+$("#approve-pledge-unhappy-V2-3").on("click", function (e) {
+     $.cookie("pledge-unhappy-V2-3-approved", true, {path:'/'});
+});
+
+$('.approved-panel-V2-1, .approved-panel-V2-2, .approved-panel-V2-3').hide();
+
+if ($.cookie("pledge-unhappy-V2-1-approved") == 'true') {
+
+     $('.approved-panel-V2-1').show();
+
+     // Table details
+     $('#order-applications-table-unhappy-V2 tr[data-table-row="one"]').find('.awaiting').hide();
+     $('#order-applications-table-unhappy-V2 tr[data-table-row="one"]').find('.application-approved').show();
+
+     // Pledge details page
+     $('.unhappy-button-V2-1').hide();
+     $('#unhappy-button-V2-1-back').removeClass('govuk-link-secondary');
+
+     $('#unhappy-finance-V2 .pledge-funds-spent .value-format').text(financePledgeFundSpentUnhappyPathV2+10000);
+     $('#unhappy-finance-V2 .pledge-funds-remaining .value-format').text(financePledgeFundUnhappyPathV2-10000);
+}
+
+if ($.cookie("pledge-unhappy-V2-2-approved") == 'true') {
+
+     $('.approved-panel-V2-2').show();
+
+     // Table details
+     $('#order-applications-table-unhappy-V2 tr[data-table-row="two"]').find('.awaiting').hide();
+     $('#order-applications-table-unhappy-V2 tr[data-table-row="two"]').find('.application-approved').show();
+
+     // Pledge details page
+     $('.unhappy-button-V2-2').hide();
+     $('#unhappy-button-V2-2-back').removeClass('govuk-link-secondary');
+
+     $('#unhappy-finance-V2 .pledge-funds-spent .value-format').text(financePledgeFundSpentUnhappyPathV2+10000);
+     $('#unhappy-finance-V2 .pledge-funds-remaining .value-format').text(financePledgeFundUnhappyPathV2-10000);
+
+}
+
+if ($.cookie("pledge-unhappy-V2-3-approved") == 'true') {
+
+     $('.approved-panel-V2-3').show();
+
+     // Table details
+     $('#order-applications-table-unhappy-V2 tr[data-table-row="three"]').find('.awaiting').hide();
+     $('#order-applications-table-unhappy-V2 tr[data-table-row="three"]').find('.application-approved').show();
+
+     // Pledge details page
+     $('.unhappy-button-V2-3').hide();
+     $('#unhappy-button-V2-3-back').removeClass('govuk-link-secondary');
+
+     $('#unhappy-finance-V2 .pledge-funds-spent .value-format').text(financePledgeFundSpentUnhappyPathV2+10000);
+     $('#unhappy-finance-V2 .pledge-funds-remaining .value-format').text(financePledgeFundUnhappyPathV2-10000);
+
+}
+
+if ($.cookie("pledge-unhappy-V2-1-approved") == 'true' && $.cookie("pledge-unhappy-V2-2-approved") == 'true') {
+     $('#unhappy-finance-V2 .pledge-funds-spent .value-format').text(financePledgeFundSpentUnhappyPathV2+20000);
+     $('#unhappy-finance-V2 .pledge-funds-remaining .value-format').text(financePledgeFundUnhappyPathV2-20000);
+}
+
+if ($.cookie("pledge-unhappy-V2-1-approved") == 'true' && $.cookie("pledge-unhappy-V2-2-approved") == 'true' && $.cookie("pledge-unhappy-V2-3-approved") == 'true') {
+     $('#unhappy-finance-V2 .pledge-funds-spent .value-format').text(parseInt(financePledgeFundSpentUnhappyPathV2+30000));
+     $('#unhappy-finance-V2 .pledge-funds-remaining .value-format').text(parseInt(financePledgeFundUnhappyPathV2-30000));
+
+     $('#unhappy-finance-V2 .pledge-funds-remaining').addClass('alert');
+
+     $.cookie("pledge-unhappy-V2-application-removed", true, {path:'/'});
+
+}
+
+
+$('#cancelled-banner, .after-cancellation').hide();
+
+if ($.cookie("pledge-unhappy-V2-application-removed") == 'true') {
+     setTimeout(function() {
+          $('#unhappy-finance-V2 .pledge-funds-spent .value-format').text('20,000');
+          $('#unhappy-finance-V2 .pledge-funds-remaining .value-format').text('10,000');
+
+          $('#unhappy-finance-V2 .pledge-funds-remaining').removeClass('alert');
+
+          $('#cancelled-banner').slideDown();
+
+          // Table details
+          $('#order-applications-table-unhappy-V2 tr[data-table-row="one"]').addClass('cancelled');
+          $('#order-applications-table-unhappy-V2 tr[data-table-row="one"]').find('.application-approved').hide();
+          $('#order-applications-table-unhappy-V2 tr[data-table-row="one"]').find('.application-cancelled').show();
+     }, 5000);
+
+     $('.before-funds').hide();
+     $('.after-cancellation').show();
+     $('.approved-panel-V2-1').hide();
+     $('.cancelled-panel').show();
 }
 
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
