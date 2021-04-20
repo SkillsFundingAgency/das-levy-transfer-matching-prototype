@@ -691,6 +691,8 @@ $("#delete-application-continue").on("click", function (e) {
      }
 });
 
+$('.application-deleted-table').hide();
+
 if ($.cookie("delete-application-completed") == 'true') {
      $('table.application-complete-table').hide();
      $('table.application-deleted-table').show();
