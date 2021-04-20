@@ -44,27 +44,27 @@ $('.finance-2019').on("click", function (e) {
 });
 
 $('.finance-2020').on("click", function (e) {
-     $('.transfer-values-2021, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
+     $('.transfer-values-2019, .transfer-values-2021, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
      $('.transfer-values-2020').show();
 });
 
 $('.finance-2021').on("click", function (e) {
-     $('.transfer-values-2020, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
+     $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
      $('.transfer-values-2021').show();
 });
 
 $('.finance-2022').on("click", function (e) {
-     $('.transfer-values-2020, .transfer-values-2021, .transfer-values-2023, .transfer-values-2024').hide();
+     $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2021, .transfer-values-2023, .transfer-values-2024').hide();
      $('.transfer-values-2022').show();
 });
 
 $('.finance-2023').on("click", function (e) {
-     $('.transfer-values-2020, .transfer-values-2021, .transfer-values-2022, .transfer-values-2024').hide();
+     $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2021, .transfer-values-2022, .transfer-values-2024').hide();
      $('.transfer-values-2023').show();
 });
 
 $('.finance-2024').on("click", function (e) {
-     $('.transfer-values-2020, .transfer-values-2021, .transfer-values-2022, .transfer-values-2023').hide();
+     $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2021, .transfer-values-2022, .transfer-values-2023').hide();
      $('.transfer-values-2024').show();
 });
 
