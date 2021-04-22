@@ -1,0 +1,101 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">Pledge amount and publicity</h1>
+
+               <form method="post" action="pledge-core" id="pledge-funding-form">
+
+                    <!-- <p>Create a transfers funding pledge that will be advertised online so that businesses can apply to you for funding.</p>
+
+                    <p>The amount you choose and the criteria you set will be displayed publicly.</p>
+
+                    <p>You can choose whether or not to show your organisation's name publicly.</p> -->
+
+                    <div class="govuk-form-group">
+                         <div class="total">
+                              <p>In this financial year you can pledge up to:</p>
+                              <p class="number">£150,000</p>
+                         </div>
+                         <div class="wrapper">
+                              <label class="govuk-label" for="pledge-amount">How much funding would you like to transfer?</label>
+                              <div class="funding-wrapper">
+                                   <p class="value">£</p>
+                                   <input class="govuk-input govuk-input--width-10" id="pledge-amount" name="pledge-amount"ype="text" data-type="number">
+                              </div>
+                         </div>
+                    </div>
+
+                    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+                    {{ govukInput({
+                         label: {
+                              text: "Maximum number of apprentices per application",
+                              isPageHeading: false
+                         },
+                         classes: "govuk-input--width-3",
+                         hint: {
+                              text: "This bumber must be greater than 0"
+                         },
+                         id: "pledge-apprentices",
+                         name: "pledge-apprentices"
+                    }) }}
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                    {{ govukRadios({
+                    idPrefix: "pledge-anonymous",
+                         name: "pledge-anonymous",
+                         fieldset: {
+                              legend: {
+                                   text: "Would you like your pledge to show your organisation's name publicly?",
+                                   isPageHeading: false
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Yes, I'm happy for people to see our organisation's name",
+                                   text: "Yes"
+                              },
+                              {
+                                   value: "No, I'd like our organisation to be anonymous",
+                                   text: "No, I'd like our organisation to be anonymous"
+                              }
+                         ]
+                    }) }}
+
+                    <button class="govuk-button pledge-amount-continue" data-module="govuk-button" id="pledge-criteria-continue">Continue</button>
+
+                    <a href="9-cancel-pledge" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

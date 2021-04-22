@@ -55,6 +55,9 @@ hr {
      }
      &.separator {
           margin: 30px 0 30px 0;
+          &.dotted {
+               border-bottom: 5px dashed govuk-colour("light-grey");
+          }
      }
      &.dotted {
           border: none;

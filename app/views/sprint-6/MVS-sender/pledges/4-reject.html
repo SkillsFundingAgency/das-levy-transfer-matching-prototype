@@ -1,0 +1,128 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">
+                    Reject <span class="highlight-text">CBJ Engineering</span> application
+                    <!-- <span class="govuk-caption-m">West Midlands</span> -->
+               </h1>
+
+               <form method="post" action="1-pledge-details" id="reject-pledge-form">
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+                    {% set rejectAllHtml %}
+                         <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+                              <div class="govuk-form-group">
+                                   <label class="govuk-label">You can add more detail to share with CBJ Engineering here:</label>
+                                   <textarea class="govuk-textarea govuk-js-character-count" id="application-rejection-detail" name="application-rejection-detail" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+                              </div>
+                              <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You can enter up to 200 characters</div>
+                         </div>
+
+                         <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset" aria-describedby="rejection-reason-hint">
+                                   <legend class="govuk-fieldset__legend">Select the reasons for rejecting the application so we can share this with CBJ Engineering:</legend>
+                                   <div id="rejection-reason-hint" class="govuk-hint">Select all that apply.</div>
+                                   <div class="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="rejection-reason-1" name="rejection-reason" type="checkbox" value="didn't meet all the criteria we set in the pledge">
+                                             <label class="govuk-label govuk-checkboxes__label" for="rejection-reason-1">didn't meet all the criteria we set in the pledge</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="rejection-reason-2" name="rejection-reason" type="checkbox" value="potential conflict of interest">
+                                             <label class="govuk-label govuk-checkboxes__label" for="rejection-reason-2">potential conflict of interest</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="rejection-reason-3" name="rejection-reason" type="checkbox" value="received a large number of applications so couldn't approve them all">
+                                             <label class="govuk-label govuk-checkboxes__label" for="rejection-reason-3">received a large number of applications so couldn't approve them all</label>
+                                        </div>
+                                   </div>
+                              </fieldset>
+                         </div>
+                    {% endset -%}
+
+                    {{ govukRadios({
+                    idPrefix: "reject-application",
+                         name: "reject-application",
+                         fieldset: {
+                              legend: {
+                                   text: "Are you sure you want to reject the application?",
+                                   isPageHeading: false
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Yes, reject application",
+                                   text: "Yes, reject application",
+                                   conditional: {
+                                        html: rejectAllHtml
+                                   }
+                              },
+                              {
+                                   value: "No, keep application",
+                                   text: "No, keep application"
+                              }
+                         ]
+                    }) }}
+
+                    <button class="govuk-button" data-module="govuk-button" id="reject-pledge-continue">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+               <section class="employer-details side-panel applications-details">
+                    <p class="govuk-heading-s">Application details:</p>
+                    <p class="details">
+                         <span class="icon tick"></span>Location: <strong>West Midlands</strong><br>
+                         <span class="icon tick"></span>Sector: <strong>Construction company</strong><br>
+                         <span class="icon tick"></span>Category of training: <strong>Construction quantity surveyor (degree) </strong><br>
+                         <span class="icon cross"></span>Level: <strong>6</strong>
+                    </p>
+                    <p class="details">
+                         Apprentices: <strong>2</strong><br>
+                         Estimated duration: <strong>36 months</strong><br>
+                         Start by: <strong>April 2021</strong><br>
+                         Do they have a training provider?: <strong>No</strong><br>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Estimated total: £36,000</p>
+                    </div>
+               </section>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

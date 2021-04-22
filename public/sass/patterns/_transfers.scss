@@ -15,6 +15,67 @@
      }
 }
 
+.finance-homepage {
+     margin-top: 1em;
+     margin-bottom: 3em;
+     padding: 0 0 1em 0;
+     // border-left: 10px solid  $govuk-border-colour;
+     float: left;
+     width: 50%;
+     .govuk-button {
+          margin-bottom: 0;
+     }
+     &:nth-of-type(2n) {
+          .govuk-button {
+               margin-left: 0;
+          }
+     }
+}
+
+.pledge-core {
+     ol.app-task-list {
+          li {
+               h2 {
+                    display: inline-block;
+                    width: 100%;
+                    strong {
+                         float: right;
+                    }
+                    span {
+                         display: inline-block;
+                    }
+               }
+               ul {
+                    li {
+                         span {
+                              width: 30%;
+                              padding-right: 5%;
+                         }
+                         strong {
+                              float: right;
+                              width: 65%;
+                              text-align: right;
+                              span {
+                                   width: auto;
+                                   padding: 0;
+                              }
+                              ul {
+                                   margin: 0;
+                                   list-style-type: none;
+                                   li {
+                                        &:last-of-type {
+                                             margin-bottom: 0;
+                                        }
+                                        font-weight: bold;
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}
+
 table {
      &.pledge-complete-table, &.application-complete-table, &.application-deleted-table, &.applications-table, &.transfer-complete-table {
           thead {
@@ -159,7 +220,7 @@ table {
 .transfer-values {
      display: flex;
      margin: 1.5em 0 1.5em;
-     &.transfer-values-2020, &.transfer-values-2022, &.transfer-values-2023, &.transfer-values-2024 {
+     &.transfer-values-2019, &.transfer-values-2020, &.transfer-values-2022, &.transfer-values-2023, &.transfer-values-2024 {
           div {
                background: govuk-colour("light-grey");
                // border-left: 10px solid govuk-colour("turquoise");

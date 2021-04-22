@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Set up as user</h1>
+
+               <p>If you already have an account <a href="index">sign in</a></p>
+
+               <form method="post" action="" class="">
+                    <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--m" for="receiver-first-name">First name</label>
+                         <input class="govuk-input govuk-input--width-20" id="receiver-first-name" name="receiver-first-name" type="text">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--m" for="receiver-last-name">Last name</label>
+                         <input class="govuk-input govuk-input--width-20" id="receiver-last-name" name="receiver-last-name" type="text">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--m" for="receiver-email">Email</label>
+                         <div id="event-name-hint" class="govuk-hint">We'll send you an email to confirm your identity.</div>
+                         <input class="govuk-input govuk-input--width-20" id="receiver-email" name="receiver-email" type="text">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--m" for="sender-password">Create new password</label>
+                         <div id="event-name-hint" class="govuk-hint">Password requires upper and lowercase letters, a number and at least 8 characters.</div>
+                         <input class="govuk-input govuk-input--width-20" id="sender-password" name="sender-password" type="password">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--m" for="sender-confirm-password">Confirm password</label>
+                         <input class="govuk-input govuk-input--width-20" id="sender-confirm-password" name="sender-confirm-password" type="password">
+                    </div>
+
+                    <div class="govuk-inset-text">
+                         By continuing you accept the <a href="#">terms and conditions</a>.
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Set me up</button>
+
+                    <!-- <p><a href="#" class="govuk-link govuk-link--no-visited-state">Forgotton your password?</a></p> -->
+               </form>
+          </div>
+     </div>
+
+</div>
+
+{% endblock %}
