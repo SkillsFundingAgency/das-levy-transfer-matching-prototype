@@ -69,6 +69,9 @@ hr {
 a {
      &.govuk-button--secondary {
           margin-left: 1em;
+          &.secondary-overwrite {
+               margin-left: 0;
+          }
      }
      &.govuk-link-secondary {
           margin: 0.65em 0 0 2em;
@@ -322,6 +325,11 @@ p {
      &.website {
           background: url('../images/website-blue.svg') no-repeat 0% 50%;
           background-size: contain;
+     }
+     &.delete {
+          background: url('../images/delete.svg') no-repeat 0% 50%;
+          background-size: contain;
+          margin-right: 0.25em;
      }
      // &.approved {
      //      background: url("../images/tick-green.svg") no-repeat 0% 50%;

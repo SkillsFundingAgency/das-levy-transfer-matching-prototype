@@ -20,16 +20,33 @@
           </div>
      </div>
 
-     <div class="govuk-grid-row">
+     <div class="govuk-grid-row title-options">
           <div class="govuk-grid-column-full">
 
-               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds left-side">
+                         <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+                    </div>
+                    <div class="govuk-grid-column-one-third right-side">
+                         <p class="govuk-caption-m">
+                              <a href="" class="share govuk-link--no-visited-state">Share application</a>
+                              <!-- <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a> -->
+                         </p>
+                    </div>
+               </div>
+
                <h1 class="govuk-heading-xl">
                     CBJ Engineering
-                    <!-- <span class="govuk-caption-m">West Midlands</span> -->
+                    <!-- <span class="govuk-caption-m">Birmingham, West Midlands</span> -->
                </h1>
 
+               <p><br></p>
+
           </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
 
           <div class="govuk-grid-column-two-thirds">
 
@@ -40,7 +57,7 @@
                          <strong class="govuk-warning-text__text">
                               <span class="govuk-warning-text__assistive">Confirmed</span> You have rejected this application - <strong id="date-stamp"></strong>
                          </strong>
-                         <br>
+                         <!-- <br>
                          <p class="no-margin-bottom"><strong>Reason for rejection</strong></p>
                          <p class="no-margin-bottom">{{ data['application-rejection-detail'] }}</p>
 
@@ -50,16 +67,16 @@
                               <li>{{ answer }}</li>
                               {% endfor %}
                          </ul>
-                         {% endif %}
+                         {% endif %} -->
 
                     </div>
                </div>
                <!-- REJECTED - END -->
 
-               <form method="post" action="" id="">
+               <form method="post" action="1-pledge-details" id="">
 
                     <section class="employer-details">
-                         <h2 class="govuk-heading-l">Details about the application</h2>
+                         <h2 class="govuk-heading-m">Details about the application</h2>
 
                          <strong class="govuk-tag govuk-tag--yellow">75% Match</strong>
 
@@ -88,6 +105,14 @@
                     </section>
 
                     <section class="employer-contact-details">
+                         <h2 class="govuk-heading-m">About their apprenticeship opportunity:</h2>
+
+                         <p>
+                              No details were provided.
+                         </p>
+                    </section>
+
+                    <section class="employer-contact-details">
                          <!-- <h2 class="govuk-heading-l">Details about the employer</h2>
 
                          <p class="govuk-heading-s">
@@ -103,7 +128,7 @@
                          </p>
                          <hr class="dotted"> -->
 
-                         <h2 class="govuk-heading-l">Main contact</h2>
+                         <h2 class="govuk-heading-m">Main contact</h2>
 
                          <p>You can contact CBJ Engineering if you would like to ask them for more information.</p>
 
@@ -117,10 +142,45 @@
 
                     </section>
 
-                    <a href="" class="govuk-button pledge-rejected-button" id="">Approve</a>
-                    <a href="4-reject" class="govuk-button govuk-button--warning button-margin-left pledge-rejected-button">Reject</a>
+                    <div class="pledge-rejected-info">
 
-                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link" id="rejected-back-to-pledge-details">Back</a>
+                         <div class="govuk-inset-text">
+                              <strong>Disclaimer:</strong> The information provided by CBJ Engineering in their application for this pledge has not been checked and verified by the apprenticeship service.<br>
+                              <br>
+                              Please carry out your own due diligence when deciding whether to offer a transfer of your levy funds.
+                         </div>
+
+                         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                         {{ govukRadios({
+                              idPrefix: "mvs-application-reject",
+                              name: "mvs-application-reject",
+                              fieldset: {
+                                   legend: {
+                                        text: "What would you like to do with this application?",
+                                        isPageHeading: false,
+                                        classes: "govuk-fieldset__legend--m"
+                                   }
+                              },
+                              items: [
+                                   {
+                                        value: "approve",
+                                        text: "Approve the application"
+                                   },
+                                   {
+                                        value: "reject",
+                                        text: "Reject the application"
+                                   }
+                              ]
+                         }) }}
+
+                         <button class="govuk-button" data-module="govuk-button" id="mvs-reject-application">Continue</button>
+
+                         <!-- <a href="" class="govuk-button pledge-rejected-button" id="">Approve</a>
+                         <a href="4-reject" class="govuk-button govuk-button--warning button-margin-left pledge-rejected-button">Reject</a> -->
+                    </div>
+
+                    <p><a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-back-link" id="approved-back-to-pledge-details">Back</a></p>
 
                </form>
 

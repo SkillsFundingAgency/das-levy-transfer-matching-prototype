@@ -20,16 +20,33 @@
           </div>
      </div>
 
-     <div class="govuk-grid-row">
+     <div class="govuk-grid-row title-options">
           <div class="govuk-grid-column-full">
 
-               <span class="govuk-caption-m">Find an employer to transfer your levy to</span>
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds left-side">
+                         <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+                    </div>
+                    <div class="govuk-grid-column-one-third right-side">
+                         <p class="govuk-caption-m">
+                              <a href="" class="share govuk-link--no-visited-state">Share application</a>
+                              <!-- <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a> -->
+                         </p>
+                    </div>
+               </div>
+
                <h1 class="govuk-heading-xl">
                     Belhavel Construction Ltd
                     <!-- <span class="govuk-caption-m">Birmingham, West Midlands</span> -->
                </h1>
 
+               <p><br></p>
+
           </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
 
           <div class="govuk-grid-column-two-thirds">
 
@@ -44,10 +61,10 @@
                </div>
                <!-- APPROVED - END -->
 
-               <form method="post" action="" id="">
+               <form method="post" action="6-approved" id="">
 
                     <section class="employer-details">
-                         <h2 class="govuk-heading-l">Details about the application</h2>
+                         <h2 class="govuk-heading-m">Details about the application</h2>
 
                          <strong class="govuk-tag govuk-tag--green">100% Match</strong>
                          <p>
@@ -74,9 +91,12 @@
                     </section>
 
                     <section class="employer-contact-details">
-                         <h2 class="govuk-heading-l">About their apprenticeship opportunity:</h2>
+                         <h2 class="govuk-heading-m">About their apprenticeship opportunity:</h2>
 
-                         <p>We are a small family business, established 5 years ago in Birmingham. We would like to expand by taking on an apprentice bricklayer. This would be our first apprentice. We want to give the skills to a young person. We would be very grateful for this opportunity.</p>
+                         <p>
+                              We are a small family business, established 5 years ago in Birmingham. We would like to expand by taking on an apprentice bricklayer. This would be our first apprentice.
+                              We want to give the skills to a young person. We would be very grateful for this opportunity.
+                         </p>
                     </section>
 
                     <section class="employer-contact-details">
@@ -93,7 +113,7 @@
                          </p>
                          <hr class="dotted"> -->
 
-                         <h2 class="govuk-heading-l">Main contact</h2>
+                         <h2 class="govuk-heading-m">Main contact</h2>
 
                          <p>You can contact Belhavel Construction Ltd if you would like to ask them for more information.</p>
 
@@ -107,10 +127,46 @@
                          <p><span class="icon website"></span><a href="#">belhavel.com</a></p>
                     </section>
 
-                    <a href="3-approve" class="govuk-button pledge-approved-button" id="">Approve</a>
-                    <a href="#" class="govuk-button govuk-button--warning button-margin-left  pledge-approved-button">Reject</a>
+                    <div class="pledge-approved-info">
 
-                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link" id="approved-back-to-pledge-details">Back</a>
+                         <div class="govuk-inset-text">
+                              <strong>Disclaimer:</strong> The information provided by Belhavel Construction Ltd in their application for this pledge has not been checked and verified by the apprenticeship service.<br>
+                              <br>
+                              Please carry out your own due diligence when deciding whether to offer a  transfer of your levy funds.
+                         </div>
+
+
+                         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                         {{ govukRadios({
+                              idPrefix: "mvs-application-approve",
+                              name: "mvs-application-approve",
+                              fieldset: {
+                                   legend: {
+                                        text: "What would you like to do with this application?",
+                                        isPageHeading: false,
+                                        classes: "govuk-fieldset__legend--m"
+                                   }
+                              },
+                              items: [
+                                   {
+                                        value: "approve",
+                                        text: "Approve the application"
+                                   },
+                                   {
+                                        value: "reject",
+                                        text: "Reject the application"
+                                   }
+                              ]
+                         }) }}
+
+                         <button class="govuk-button" data-module="govuk-button" id="mvs-approve-application">Continue</button>
+
+                         <!-- <a href="3-approve" class="govuk-button pledge-approved-button" id="">Approve</a>
+                         <a href="#" class="govuk-button govuk-button--warning button-margin-left pledge-approved-button">Reject</a> -->
+                    </div>
+
+                    <p><a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-back-link" id="approved-back-to-pledge-details">Back</a></p>
 
                </form>
 

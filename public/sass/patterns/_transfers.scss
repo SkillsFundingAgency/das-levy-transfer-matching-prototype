@@ -132,16 +132,53 @@ table {
                }
           }
      }
+     &.pledge-complete-table, &.applications-table {
+          thead {
+               tr {
+                    th {
+                         border-bottom: none;
+                         text-align: left;
+                         padding: 0.75em;
+                         padding-left: 0.5em;
+                    }
+               }
+          }
+          tbody {
+               tr {
+                    border-bottom: 4px solid govuk-colour("light-grey");
+                    &:last-of-type {
+                         border-bottom: none;
+                    }
+                    td {
+                         text-align: left;
+                         padding-left: 0.5em;
+                         border-bottom: none;
+                         .govuk-caption-m {
+                              font-style: 1rem;
+                              div {
+                                   display: inline-block;
+                              }
+                         }
+                         .govuk-button {
+                              margin-bottom: 0.5em;
+                              font-size: 1rem;
+                         }
+                         .delete-pledge {
+                              font-size: 1rem;
+                         }
+                         &:last-of-type {
+                              // padding-right: 0.5em;
+                              text-align: right;
+                         }
+                    }
+               }
+          }
+     }
      &.applications-table {
           thead {
                tr {
-                    border: none;
                     th {
                          padding: 1em 0.5em;
-                         background: none;
-                         border: none;
-                         border-bottom: 4px solid black;
-                         text-align: left;
                          color: $govuk-brand-colour;
                          text-decoration: underline;
                          font-size: 1rem;
