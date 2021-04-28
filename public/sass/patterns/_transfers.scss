@@ -1,5 +1,6 @@
 .transfers-title {
      margin-bottom: 0;
+     // margin-top: 1em;
      .date-wrapper {
           float: right;
           a {
@@ -38,11 +39,15 @@
                h2 {
                     display: inline-block;
                     width: 100%;
-                    strong {
+                    p {
                          float: right;
                     }
                     span {
                          display: inline-block;
+                         &.number-one {
+                              float: left;
+                              height: 2em;
+                         }
                     }
                }
                ul {
@@ -51,10 +56,11 @@
                               width: 30%;
                               padding-right: 5%;
                          }
-                         strong {
+                         p, div {
                               float: right;
                               width: 65%;
                               text-align: right;
+                              margin: 0;
                               span {
                                    width: auto;
                                    padding: 0;
@@ -66,7 +72,7 @@
                                         &:last-of-type {
                                              margin-bottom: 0;
                                         }
-                                        font-weight: bold;
+                                        font-weight: normal;
                                    }
                               }
                          }
@@ -329,7 +335,7 @@ table {
           &:last-of-type {
                margin-right: 0;
           }
-          &.transfer-funds-remaining, &.transfer-funds-non-pledge {
+          &.transfer-funds-remaining, &.transfer-funds {
                background: govuk-colour("light-grey");
                // border-left: 10px solid govuk-colour("turquoise");
                p {
@@ -371,6 +377,37 @@ table {
                     }
                }
           }
+          // &.transfer-funds-non-pledge {
+          //      ul {
+          //           padding: 0;
+          //           margin: 0.25em 0 0 0;
+          //           li {
+          //                list-style: none;
+          //                float: left;
+          //                width: auto;
+          //                margin-right: 0;
+          //                a {
+          //                     padding: 0.5em;
+          //                     text-decoration: none;
+          //                     font-weight: bold;
+          //                     font-size: 0.75rem;
+          //                     color: black;
+          //                     &:active, &:hover, &:focus {
+          //                          outline: none;
+          //                          box-shadow: none;
+          //                          background: govuk-colour("turquoise");
+          //                          border-radius: 20px;
+          //                          color: white;
+          //                     }
+          //                     &.selected {
+          //                          background: govuk-colour("turquoise");
+          //                          border-radius: 20px;
+          //                          color: white;
+          //                     }
+          //                }
+          //           }
+          //      }
+          // }
           p {
                color: white;
                font-weight: bold;
@@ -390,6 +427,29 @@ table {
                div.transfer-funds-remaining {
                     div.multiple-values {
                          display: none;
+                    }
+               }
+          }
+     }
+     &.mvs-version {
+          .transfer-values {
+               div {
+                    &.transfer-funds-remaining {
+                         padding: 2%;
+                    }
+               }
+          }
+     }
+     &.mvs-projected-values {
+          .transfer-values {
+               div {
+                    background: govuk-colour("light-grey");
+                    // border-left: 10px solid govuk-colour("turquoise");
+                    p {
+                         color: black;
+                         &.number {
+                              font-size: 2rem;
+                         }
                     }
                }
           }
@@ -422,6 +482,16 @@ table {
      .transfer-values {
           &.transfer-values-2021 {
                padding-bottom: 0em;
+          }
+     }
+}
+
+details {
+     &.tranfer-values-projected {
+          margin: 0;
+          .govuk-details__text {
+               border: none;
+               padding: 0;
           }
      }
 }

@@ -98,22 +98,25 @@
           </h2>
           <ul class="govuk-list govuk-list--bullet">
                <li>
-                    <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-6/MVS-sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a>
+                    <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-7/MVS-sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a>
                </li>
-               <li><a href="/sprint-6/sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a></li>
-               <li><a href="/sprint-6/sender/unhappy-path-1/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - insufficient funds</a></li>
-               <li><a href="/sprint-6/sender/unhappy-path-2/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - cancelled application</a></li>
-               <li><a href="/sprint-6/sender/transfers-V1" class="govuk-link govuk-link--no-visited-state">Finance view - V1</a></li>
-               <li><a href="/sprint-6/sender/transfers-V2" class="govuk-link govuk-link--no-visited-state">Finance view - V2</a></li>
-               <li><a href="/sprint-6/sender/transfers-V3" class="govuk-link govuk-link--no-visited-state">Finance view - V3</a></li>
+               <li><a href="/sprint-7/sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a></li>
+               <!-- <li><a href="/sprint-7/sender/unhappy-path-1/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - insufficient funds</a></li>
+               <li><a href="/sprint-7/sender/unhappy-path-2/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - cancelled application</a></li> -->
+               <!-- <li><a href="/sprint-7/sender/transfers-V1" class="govuk-link govuk-link--no-visited-state">Finance view - V1</a></li>
+               <li><a href="/sprint-7/sender/transfers-V2" class="govuk-link govuk-link--no-visited-state">Finance view - V2</a></li>
+               <li><a href="/sprint-7/sender/transfers-V3" class="govuk-link govuk-link--no-visited-state">Finance view - V3</a></li> -->
           </ul>
           <h2 class="govuk-heading-m">
                Receiving employer prototype link
           </h2>
           <ul class="govuk-list govuk-list--bullet">
-               <li><a href="/sprint-6/receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a></li>
-               <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - multiple pledges</a></li>
-               <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - unwanted application</a></li>
+               <li>
+                    <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-7/receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a>
+               </li>
+               <li><a href="/sprint-7/receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a></li>
+               <!-- <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - multiple pledges</a></li>
+               <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - unwanted application</a></li> -->
           </ul>
      </div>
      <!-- Full width header section ends -->
@@ -129,7 +132,11 @@
                Alpha sprints
           </h2>
 
-          {% include './sprint-6/_summary.html' %}
+          {% include './sprint-7/_summary.html' %} 
+
+          {% set sprint6Html %}
+               {% include './sprint-6/_summary.html' %}
+          {% endset %}
 
           {% set sprint5Html %}
                {% include './sprint-5/_summary.html' %}
@@ -146,6 +153,17 @@
           {{ govukAccordion({
                id: "accordion-alpha",
                items: [
+                    {
+                         heading: {
+                              text: "Sprint 6"
+                         },
+                         content: {
+                              html: sprint6Html
+                         },
+                         summary: {
+                              html: '14th April - 27th April 2021'
+                         }
+                    },
                     {
                          heading: {
                               text: "Sprint 5"

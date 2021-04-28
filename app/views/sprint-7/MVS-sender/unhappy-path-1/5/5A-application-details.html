@@ -1,0 +1,107 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation-sender-tiercary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">
+                    Johnson and Johnson Building Co
+                    <!-- <span class="govuk-caption-m">West Midlands</span> -->
+               </h1>
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <!-- REJECTED - START -->
+               <div class="govuk-form-group rejected-panel approved-panel-4">
+                    <div class="govuk-warning-text">
+                         <span class="govuk-info__icon" aria-hidden="true"></span>
+                         <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Confirmed</span> You cannot accept this application as you do not have enough funds - <strong id="date-stamp"></strong>
+                         </strong>
+                    </div>
+               </div>
+               <!-- REJECTED - END -->
+
+               <form method="post" action="" id="">
+
+                    <section class="employer-details">
+                         <h2 class="govuk-heading-l">Details about the application</h2>
+
+                         <strong class="govuk-tag govuk-tag--yellow">50% Match</strong>
+
+                         <p>
+                              <span class="icon cross"></span>Location: <strong>London</strong><br>
+                              <span class="icon tick"></span>Sector: <strong>Engineering and manufacturing</strong><br>
+                              <span class="icon tick"></span>Category of training: <strong>Construction quantity surveyor (degree)</strong><br>
+                              <span class="icon cross"></span>Level: <strong>6</strong>
+                         </p>
+
+                         <!-- <p class="govuk-heading-s"><a href="#" rel="external" target="_blank">Quantity surveying degree (level 6)</a></p> -->
+                         <p>
+                              Apprentices: <strong>1</strong><br>
+                              Estimated duration: <strong>24 months</strong><br>
+                              Start by: <strong>April 2021</strong><br>
+                              Do the have a training provider?: <strong>Yes</strong><br>
+                         </p>
+                         <hr class="dotted">
+                         <p>
+                              Maximum funding band: <strong>£12,000</strong><br>
+                              Estimated total per year: <strong>£6,000</strong>
+                         </p>
+                         <div class="total">
+                              <p class="govuk-heading-m">Estimated total: £12,000</p>
+                         </div>
+                    </section>
+
+                    <section class="employer-contact-details">
+
+                         <h2 class="govuk-heading-l">Main contact</h2>
+
+                         <p>You can contact Johnson and Johnson Building Co if you would like to ask them for more information.</p>
+
+                         <p>
+                              <span class="icon contact"></span><strong>Stephen Fry</strong><br>
+                              <span class="icon email"></span><a href="mailto:s.fry@jjbuilding.co.uk">s.fry@jjbuilding.co.uk</a><br>
+                              <span class="icon phone"></span><a href="tel:0785678682">07856 78682</a>
+                         </p>
+
+                         <p><span class="icon website"></span><a href="#">www.jjbuilding.co.uk</a></p>
+
+                    </section>
+
+                    <a href="#" class="govuk-button pledge-rejected-button unhappy-button-4" id="">Approve</a>
+                    <a href="#" class="govuk-button govuk-button--warning button-margin-left pledge-rejected-button unhappy-button-4">Reject</a>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link" id="unhappy-button-4-back">Back</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

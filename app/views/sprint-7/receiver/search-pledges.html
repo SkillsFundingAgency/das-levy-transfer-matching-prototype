@@ -1,0 +1,234 @@
+{% extends "layout-ltm.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
+               <h1 class="govuk-heading-xl">Search funding opportunities</h1>
+
+               <p>Large businesses that want to fund the apprenticeships of other businesses can set funding criteria to show the training they want to support.</p>
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Examples</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <strong>Example 1</strong><br>
+                         A large business might choose to fund apprenticeships in construction companies based in the West Midlands.
+                         <br>
+                         <br>
+                         <strong>Example 2</strong><br>
+                         A large business might choose to fund digital apprenticeships in any sector in the North East.
+                    </div>
+               </details>
+
+               <p class="after-details">You can use the 4 criteria below to see which funding opportunities your business matches.</p>
+
+               <p>Or you can browse all the opportunities available.</p>
+
+               <p>Some businesses have chosen not to share their organisation's name publicly so these opportunities just show a reference number.  If your application is successful, we'll let you know who the employer willing to fund your apprenticeship training is.</p>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row search-container">
+
+          <div class="govuk-grid-column-one-third">
+
+               {% include "../includes/search-filter.html" %}
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="search-results">
+
+                    <div class="search-title">
+                         <h2 class="govuk-heading-m"><span class="filter-number">21</span> opportunities</h2>
+                         <p>Sorted by: <strong>Name</strong>
+                    </div>
+
+                    <!-- SECTION 1 - START -->
+                    <section class="pledge-details west-mids sector-construction training-agriculture training-business training-care training-catering training-construction training-creative training-digital training-education training-engineering training-hair training-health training-legal training-protective training-sales training-transport level-three level-four level-five" data-search="search-item-3">
+                         <strong class="govuk-tag govuk-tag--green">Applied</strong>
+                         <h2 class="govuk-heading-m">
+                              <a href="application/1-pledge-details" class="pledge-name govuk-link--no-visited-state">BARRY & BARRY Ltd (9101)</a>
+                              <a href="application/1-pledge-details" class="govuk-button">Apply</a>
+                         </h2>
+                         <span class="govuk-caption-m">£100,000</span>
+                         <p>
+                              <strong>Locations:</strong> <span class="location">West Midlands</span><br>
+                              <strong>Sectors:</strong> <span class="sector">Construction</span><br>
+                              <strong>Categories of training:</strong> <span class="training">All</span><br>
+                              <strong>Levels:</strong>  <span class="level">3, 4 and 5</span>
+                         </p>
+                    </section>
+                    <!-- SECTION 1 - END -->
+
+                    <!-- SECTION 2 - START -->
+                    <section class="pledge-details east-mids east-eng london north-east north-west south-east south-west west-mids yorks sector-agriculture sector-business sector-care sector-catering sector-construction sector-creative sector-digital sector-education sector-engineering sector-hair sector-health sector-legal sector-protective sector-sales sector-transport training-agriculture training-business training-care training-catering training-construction training-creative training-digital training-education training-engineering training-hair training-health training-legal training-protective training-sales training-transport level-two level-three level-four level-five level-six level-seven" data-search="search-item-4">
+                         <strong class="govuk-tag govuk-tag--green">Applied</strong>
+                         <h2 class="govuk-heading-m">
+                              <a href="application/1-pledge-details" class="pledge-name govuk-link--no-visited-state">BASS Ltd (1112)</a>
+                              <a href="application/1-pledge-details" class="govuk-button">Apply</a>
+                         </h2>
+                         <span class="govuk-caption-m">£30,000</span>
+                         <p>
+                              <strong>Locations:</strong> <span class="location">All</span><br>
+                              <strong>Sectors:</strong> <span class="sector">All</span><br>
+                              <strong>Categories of training:</strong> <span class="training">All</span><br>
+                              <strong>Levels:</strong>  <span class="level">All</span>
+                         </p>
+                    </section>
+                    <!-- SECTION 2 - END -->
+
+                    <!-- SECTION 3 - START -->
+                    <section class="pledge-details east-mids sector-agriculture training-agriculture level-two level-three level-four level-five level-six level-seven" data-search="search-item-5">
+                         <strong class="govuk-tag govuk-tag--green">Applied</strong>
+                         <h2 class="govuk-heading-m">
+                              <a href="application/1-pledge-details" class="pledge-name govuk-link--no-visited-state">Construction Now (1234)</a>
+                              <a href="application/1-pledge-details" class="govuk-button">Apply</a>
+                         </h2>
+                         <span class="govuk-caption-m">£15,000</span>
+                         <p>
+                              <strong>Locations:</strong> <span class="location">East Midlands</span><br>
+                              <strong>Sectors:</strong> <span class="sector">Agriculture, environmental and animal care</span><br>
+                              <strong>Categories of training:</strong> <span class="training">Agriculture, environmental and animal care</span><br>
+                              <strong>Levels:</strong>  <span class="level">All</span>
+                         </p>
+                    </section>
+                    <!-- SECTION 3 - END -->
+
+                    <!-- SECTION 4 - START -->
+                    <section class="pledge-details west-mids sector-engineering sector-transport training-business training-agriculture training-engineering training-transport level-four level-five level-six" data-search="search-item-6">
+                         <strong class="govuk-tag govuk-tag--green">Applied</strong>
+                         <h2 class="govuk-heading-m">
+                              <a href="application/1-pledge-details" class="pledge-name govuk-link--no-visited-state">Daytime Hauliers (5678)</a>
+                              <a href="application/1-pledge-details" class="govuk-button">Apply</a>
+                         </h2>
+                         <span class="govuk-caption-m">£250,000</span>
+                         <p>
+                              <strong>Locations:</strong> <span class="location">West Midlands</span><br>
+                              <strong>Sectors:</strong> <span class="sector">Engineering and manufacturing, Transport and logistics</span><br>
+                              <strong>Categories of training:</strong> <span class="training">Business and administration, Engineering and manufacturing, Transport and logistics</span><br>
+                              <strong>Levels:</strong> <span class="level">4, 5 and 6</span>
+                         </p>
+                    </section>
+                    <!-- SECTION 4 - END -->
+
+                    <!-- SECTION 5 - START -->
+                    <section class="pledge-details north-east north-west yorks sector-care sector-health training-agriculture training-business training-care training-catering training-construction training-creative training-digital training-education training-engineering training-hair training-health training-legal training-protective training-sales training-transport level-two level-three level-four level-five level-six level-seven" data-search="search-item-7">
+                         <strong class="govuk-tag govuk-tag--green">Applied</strong>
+                         <h2 class="govuk-heading-m">
+                              <a href="application/1-pledge-details" class="pledge-name govuk-link--no-visited-state">Everbright Ltd (9101)</a>
+                              <a href="application/1-pledge-details" class="govuk-button">Apply</a>
+                         </h2>
+                         <span class="govuk-caption-m">£65,000</span>
+                         <p>
+                              <strong>Locations:</strong> <span class="location">North East, North West, Yorkshire and the Humber</span><br>
+                              <strong>Sectors:</strong> <span class="sector">Care services, Health and science</span><br>
+                              <strong>Categories of training:</strong> <span class="training">All</span><br>
+                              <strong>Levels:</strong> <span class="level">All</span>
+                         </p>
+                    </section>
+                    <!-- SECTION 5 - END -->
+
+                    <!-- SECTION 6 - START -->
+                    <section class="pledge-details east-mids sector-agriculture sector-business sector-care sector-catering sector-construction sector-creative sector-digital sector-education sector-engineering sector-hair sector-health sector-legal sector-protective sector-sales sector-transport training-agriculture training-business training-care training-catering training-construction training-creative training-digital training-education training-engineering training-hair training-health training-legal training-protective training-sales training-transport level-two level-three level-four level-five level-six level-seven" data-search="search-item-8">
+                         <strong class="govuk-tag govuk-tag--green">Applied</strong>
+                         <h2 class="govuk-heading-m">
+                              <a href="application/1-pledge-details" class="pledge-name govuk-link--no-visited-state">Finders Keepers Ltd (1112)</a>
+                              <a href="application/1-pledge-details" class="govuk-button">Apply</a>
+                         </h2>
+                         <span class="govuk-caption-m">£300,000</span>
+                         <p>
+                              <strong>Locations:</strong> <span class="location">East Midlands</span><br>
+                              <strong>Sectors:</strong> <span class="sector">All</span><br>
+                              <strong>Categories of training:</strong> <span class="training">All</span><br>
+                              <strong>Levels:</strong> <span class="level">All</span>
+                         </p>
+                    </section>
+                    <!-- SECTION 6 - END -->
+
+                    <!-- SECTION 7 - START -->
+                    <section class="pledge-details london ector-agriculture sector-business sector-care sector-catering sector-construction sector-creative sector-digital sector-education sector-engineering sector-hair sector-health sector-legal sector-protective sector-sales sector-transport training-agriculture training-business training-care training-catering training-construction training-creative training-digital training-education training-engineering training-hair training-health training-legal training-protective training-sales training-transport level-two level-three level-four level-five level-six level-seven" data-search="search-item-9">
+                         <strong class="govuk-tag govuk-tag--green">Applied</strong>
+                         <h2 class="govuk-heading-m">
+                              <a href="application/1-pledge-details" class="pledge-name govuk-link--no-visited-state">Great Gatsby (1234)</a>
+                              <a href="application/1-pledge-details" class="govuk-button">Apply</a>
+                         </h2>
+                         <span class="govuk-caption-m">£25,000</span>
+                         <p>
+                              <strong>Locations:</strong> <span class="location">Greater London</span><br>
+                              <strong>Sectors:</strong> <span class="sector">All</span><br>
+                              <strong>Categories of training:</strong> <span class="training">All</span><br>
+                              <strong>Levels:</strong> <span class="level">All</span>
+                         </p>
+                    </section>
+                    <!-- SECTION 7 - END -->
+
+                    <!-- SECTION 8 - START -->
+                    <section class="pledge-details west-mids sector-agriculture sector-engineering sector-transport training-agriculture training-engineering training-transport level-two level-three level-four level-five level-six level-seven" data-search="search-item-1">
+                         <strong class="govuk-tag govuk-tag--green">Applied</strong>
+                         <h2 class="govuk-heading-m">
+                              <a href="application/1-pledge-details" class="pledge-name govuk-link--no-visited-state">Opportunity (1234)</a>
+                              <a href="application/1-pledge-details" class="govuk-button">Apply</a>
+                         </h2>
+                         <span class="govuk-caption-m">£25,000</span>
+                         <p>
+                              <strong>Locations:</strong> <span class="location">West Midlands</span><br>
+                              <strong>Sectors:</strong> <span class="sector">Agriculture, environmental and animal care, Engineering and manufacturing, Transport and logistics</span><br>
+                              <strong>Categories of training:</strong> <span class="training">Agriculture, environmental and animal care, Engineering and manufacturing, Transport and logistics</span><br>
+                              <strong>Levels:</strong> <span class="level">All</span>
+
+                         </p>
+                    </section>
+                    <!-- SECTION 8 - END -->
+
+                    <!-- SECTION 9 - START -->
+                    <section class="pledge-details london sector-agriculture sector-engineering training-agriculture training-business training-care training-catering training-construction training-creative training-digital training-education training-engineering training-hair training-health training-legal training-protective training-sales training-transport level-two level-three level-four level-five level-six level-seven" data-search="search-item-2">
+                         <strong class="govuk-tag govuk-tag--green">Applied</strong>
+                         <h2 class="govuk-heading-m">
+                              <a href="application/1-pledge-details" class="pledge-name govuk-link--no-visited-state">Opportunity (5678)</a>
+                              <a href="application/1-pledge-details" class="govuk-button">Apply</a>
+                         </h2>
+                         <span class="govuk-caption-m">£50,000</span>
+                         <p>
+                              <strong>Locations:</strong> <span class="location">Greater London</span><br>
+                              <strong>Sectors:</strong> <span class="sector">Engineering and manufacturing</span><br>
+                              <strong>Categories of training:</strong> <span class="training">All</span><br>
+                              <strong>Levels:</strong>  <span class="level">All</span>
+                         </p>
+                    </section>
+                    <!-- SECTION 9 - END -->
+
+               </div>
+
+               <!-- NO RESULTS - START -->
+               <section class="no-results">
+                    <h4 class="govuk-heading-m">There are no results for these criteria.</h4>
+                    <p>Try selecting different criteria options.</p>
+                    <p>If you're unsuccessful in getting one of these funding opportunities, you can still get 95% of your apprenticeship training funded by the government.</p>
+                    <p><a href="#">Make a funding reservation in your account.</a></p>
+                    <!-- <a href="#" class="govuk-button">Alert me</a> -->
+               </section>
+               <!-- NO RESULTS - END -->
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

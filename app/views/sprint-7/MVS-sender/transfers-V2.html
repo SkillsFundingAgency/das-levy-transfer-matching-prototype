@@ -1,0 +1,256 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl transfers-title">
+                    Transfers
+                    <div class="date-wrapper">
+                         <a href="#" class="finance-2020">View 2020/21</a>
+                         <a href="#" class="finance-2021 current">View 2021/22</a>
+                         <a href="#" class="finance-2022">View 2022/23</a>
+                         <a href="#" class="finance-2023">View 2023/24</a>
+                         <a href="#" class="finance-2024">View 2024/25</a>
+                    </div>
+               </h1>
+
+          </div>
+     </div>
+
+     {% include "../includes/transfer-values-V2.html" %}
+
+     <div class="govuk-grid-row">
+
+          <!--- BEFORE PLEDGE CONTENT - START --->
+          <div class="govuk-grid-column-two-thirds before-pledge-content">
+
+               <h2 class="govuk-heading-s">What is a transfer?</h2>
+
+               <p>You can send spare levy funds in your account by transferring up to 25% of your previous year's funds to another business, to pay for their apprenticeship training. The 25% is known as your transfer allowance.</p>
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Who can send and receive a transfer?</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <p>You can make a transfer to any business of your choice.</p>
+                         <p>Levy payers can receive a transfer from another levy payer, but you cannot do both at the same time. You can only be a sender or receiver of a transfer at any one time.</p>
+                         <p>By making a transfer of funds, you are only responsible for paying the cost of apprenticeship training for another business with that transfer.</p>
+                         <p>The business receiving the transfer is responsible for everything else related to that apprenticeship.</p>
+                    </div>
+               </details>
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Deciding who to transfer funding to</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <p>There are 2 ways to make a transfer:</p>
+
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li>transfer funding to a business you know by making a connection with them on the apprenticeship service</li>
+                              <li>create a public funding pledge which is advertised online so that businesses can apply to you for funding</li>
+                         </ul>
+
+                         <p>You can use both options and manage it all in your apprenticeship service account.</p>
+
+                         <p>Anyone receiving a transfer will also need an apprenticeship service account.</p>
+                    </div>
+               </details>
+
+               <h2 class="govuk-heading-l">Manage my transfers</h2>
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Managing transfers across financial years</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <p>When you make a transfer, you commit to funding for the entire duration of the apprenticeship.<p>
+
+                         <p>This usually means you are committing funding from your current transfers allowance, and from allowances in future financial years.<p>
+
+                         <p>Your 'committed to transfers' amount shows what you have agreed to transfer in this financial year. It breaks down into 2 amounts:<p>
+
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li>approved funding in principle</li>
+                              <li>approved funding where the apprentices and a start date have been added</li>
+                         </ul>
+
+                         <p>View transfers <a href="#">finances projected across multiple years</a>.
+
+                         <p>Read more information about<a href="#"> transfers funding</a> with examples across multiple years.
+                    </div>
+               </details>
+
+          </div>
+          <!--- BEFORE PLEDGE CONTENT - END --->
+
+          <!--- AFTER PLEDGE CONTENT - START --->
+          <div class="govuk-grid-column-two-thirds after-pledge-content">
+
+               <p><a href="">Your pledge can now be viewed publicly</a>, so that businesses can apply for funding.</p>
+
+               <p>You can review, approve and reject applications in your account.</p>
+
+               <p>You can create multiple pledges with different criteria.</p>
+
+               <p>You can share your pledge link with organisations that you work with to promote the pledge to help generate more applications.</p>
+
+               <p>Some partner organisations such as local authorities, skills bodies and training providers, may be able to offer support to the businesses that apply for pledges and help them setting up their apprenticeship service account.</p>
+
+               <p>You could also offer support to any businesses you decide to transfer funding to if they are new to working with apprentices.</p>
+
+               <p><a href="#">Remind me about the rules for transfers</a>.</p>
+
+               <p><br></p>
+
+          </div>
+          <!--- AFTER PLEDGE CONTENT - END --->
+
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               <div class="govuk-tabs" data-module="govuk-tabs" id="transfers-tabs">
+                    <ul class="govuk-tabs__list">
+                         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" data-tab="one">
+                              <a class="govuk-tabs__tab" href="#transfer-connections">
+                                   <span class="number">0</span>
+                                   Transfer connections
+                              </a>
+                         </li>
+                         <li class="govuk-tabs__list-item" data-tab="two">
+                              <a class="govuk-tabs__tab" href="#transfer-pledges">
+                                   <span class="number">0</span>
+                                   Transfer pledges
+                              </a>
+                         </li>
+                         <li class="govuk-tabs__list-item" data-tab="three">
+                              <a class="govuk-tabs__tab" href="#approved-transfers">Approved transfers</a>
+                         </li>
+                    </ul>
+
+                    <div class="govuk-tabs__panel" id="transfer-connections">
+                         <h2 class="govuk-heading-s">Transfer connections</h2>
+                         <p class="no-transfers">You have no pending transfer connections.</p>
+
+                         <!-- TRANSFER TABLE - START -->
+                         <table class="govuk-table transfer-complete-table">
+                              <thead class="govuk-table__head">
+                                   <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Employer</th>
+                                        <th scope="col" class="govuk-table__header">Date</th>
+                                        <th scope="col" class="govuk-table__header">Total</th>
+                                        <th scope="col" class="govuk-table__header">Status</th>
+                                        <th scope="col" class="govuk-table__header"></th>
+                                   </tr>
+                              </thead>
+                              <tbody class="govuk-table__body">
+                                   <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">
+                                             <strong>
+                                                  Belhavel Construction Ltd
+                                                  <!-- <div class="anonymous-yes">Anonymous Pledge (9101)</div>
+                                                  <div class="anonymous-no">BARRY & BARRY Ltd (9101)</div> -->
+                                             </strong>
+                                        </td>
+                                        <td class="govuk-table__cell"><div id="date-stamp-transfer"></div></td>
+                                        <td class="govuk-table__cell">£<span class="value-format">{{ data['transfer-private-amount'] }}</span></td>
+                                        <td class="govuk-table__cell">Awaiting confirmation</td>
+                                        <td class="govuk-table__cell"><a href="#">View</a></td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                         <!-- TRANSFER TABLE - END -->
+
+                    </div>
+
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="transfer-pledges">
+                         <h2 class="govuk-heading-s">Transfer pledges</h2>
+                         <p class="no-pledges">You have no pending pledges.</p>
+
+                         <!-- PLEDGE TABLE - START -->
+                         <table class="govuk-table pledge-complete-table">
+                              <thead class="govuk-table__head">
+                                   <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Description</th>
+                                        <th scope="col" class="govuk-table__header">Date</th>
+                                        <th scope="col" class="govuk-table__header">Total</th>
+                                        <th scope="col" class="govuk-table__header">Applications</th>
+                                        <th scope="col" class="govuk-table__header">Approved</th>
+                                        <th scope="col" class="govuk-table__header"></th>
+                                   </tr>
+                              </thead>
+                              <tbody class="govuk-table__body">
+                                   <tr class="govuk-table__row new-pledge">
+                                        <td class="govuk-table__cell">
+                                             <strong>
+                                                  Pledge number - 9101
+                                                  <!-- <div class="anonymous-yes">Anonymous Pledge (9101)</div>
+                                                  <div class="anonymous-no">BARRY & BARRY Ltd (9101)</div> -->
+                                             </strong>
+                                        </td>
+                                        <td class="govuk-table__cell"><div id="date-stamp"></div></td>
+                                        <td class="govuk-table__cell">£<span class="value-format">{{ data['pledge-amount'] }}</span></td>
+                                        <td class="govuk-table__cell"><span class="pledge-bids">3</span></td>
+                                        <td class="govuk-table__cell"><span class="pledge-approved-table">0</span></td>
+                                        <td class="govuk-table__cell"><a href="pledges/1-pledge-details">View</a></td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                         <!-- PLEDGE TABLE - END -->
+
+                    </div>
+
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="approved-transfers">
+                         <h2 class="govuk-heading-s">Approved transfers</h2>
+                         <p class="">You have no pending approved transfers.</p>
+                    </div>
+               </div>
+
+               {% from "govuk/components/button/macro.njk" import govukButton %}
+
+               <a href="transfers/index" class="govuk-button" data-module="govuk-button">Create a transfers pledge</a>
+
+               <a href="private/1-business-id" class="govuk-button govuk-button--secondary" data-module="govuk-button">Make a transfer to a business I know</a>
+
+               <p class="before-pledge-content">View <a href="#">'Find a business to fund training for your apprentices'</a> to see how pledges look online.</p>
+
+               <!-- <hr class="separator">
+
+               <h2 class="govuk-heading-s">Connection requests</h2>
+               <p>You have no pending or approved requests.</p>
+
+               <h2 class="govuk-heading-s">Transfer requests</h2>
+               <p>You have no pending or approved requests.</p> -->
+
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

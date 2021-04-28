@@ -108,7 +108,7 @@ function addAnotherLocation() {
      locationNumber++;
      $("#locations").append(`
           <div class="govuk-form-group new-location">
-               <label class="govuk-label" for="pledge-location[url${locationNumber}]">Additional city or town</label>
+               <label class="govuk-label" for="pledge-location[url${locationNumber}]">Additional city, town or local authority</label>
                <input class="govuk-input govuk-input--width-20" id="pledge-location[url${locationNumber}]" name="pledge-location[url${locationNumber}]" type="text" spellcheck="false">
                <p class="govuk-body">
                     <a class="govuk-link govuk-link--no-visited-state" data-remove="url${locationNumber}" href="#">remove</a>
@@ -565,7 +565,13 @@ $('#transfer-training-course-no').on("click", function (e) {
 });
 
 
-
+// Tooltips
+$('.copy-items').on("click", function (e) {
+     $('.tooltiptext').slideDown();
+     setTimeout(function() {
+          $('.tooltiptext').slideUp();
+     }, 5000);
+});
 
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
