@@ -167,6 +167,13 @@ if ($.cookie("pledge-jobs-complete") == "true" && $.cookie("pledge-training-all"
      // $('li.pledge-section-one strong.govuk-tag').removeClass('govuk-tag--grey').text('completed');
 }
 
+if ($.cookie("pledge-training-all") == "true") {
+     $('#pledge-training-all').attr('checked','checked');
+} else {
+     $('#pledge-training-all').attr('unchecked');
+}
+
+
 
 // MVS - Level
 $(".pledge-level-continue").on("click", function (e) {
