@@ -135,6 +135,11 @@ if ($.cookie("pledge-sector-complete") == "true" && $.cookie("pledge-sector-all"
      // $('li.pledge-section-one strong.govuk-tag').removeClass('govuk-tag--grey').text('completed');
 }
 
+if ($.cookie("pledge-sector-all") == "true") {
+     $('#pledge-sector-all').attr('checked','checked');
+} else {
+     $('#pledge-sector-all').attr('unchecked');
+}
 
 // MVS - Jobs
 $(".pledge-jobs-continue").on("click", function (e) {
@@ -161,6 +166,13 @@ if ($.cookie("pledge-jobs-complete") == "true" && $.cookie("pledge-training-all"
      $('.after-job-content').hide();
      // $('li.pledge-section-one strong.govuk-tag').removeClass('govuk-tag--grey').text('completed');
 }
+
+if ($.cookie("pledge-training-all") == "true") {
+     $('#pledge-training-all').attr('checked','checked');
+} else {
+     $('#pledge-training-all').attr('unchecked');
+}
+
 
 
 // MVS - Level
@@ -190,6 +202,11 @@ if ($.cookie("pledge-level-complete") == "true" && $.cookie("pledge-level-all") 
      // $('li.pledge-section-one strong.govuk-tag').removeClass('govuk-tag--grey').text('completed');
 }
 
+if ($.cookie("pledge-level-all") == "true") {
+     $('#pledge-level-all').attr('checked','checked');
+} else {
+     $('#pledge-level-all').attr('unchecked');
+}
 
 // Sender - Location
 // if ($.cookie("pledge-location") == "true") {

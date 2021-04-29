@@ -43,7 +43,7 @@
                               <label class="govuk-label" for="pledge-amount">How much funding would you like to transfer?</label>
                               <div class="funding-wrapper">
                                    <p class="value">£</p>
-                                   <input class="govuk-input govuk-input--width-10" id="pledge-amount" name="pledge-amount" type="text" data-type="number" value="{{ data["pledge-amount"] }}">
+                                   <input class="govuk-input govuk-input--width-10" id="pledge-amount" name="pledge-amount" type="text" data-type="number" value="{{ data['pledge-amount'] }}">
                               </div>
                          </div>
                     </div>
@@ -61,13 +61,13 @@
                          },
                          id: "pledge-apprentices",
                          name: "pledge-apprentices",
-                        value: data["pledge-apprentices"]
+                         value: data["pledge-apprentices"]
                     }) }}
 
                     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
                     {{ govukRadios({
-                    idPrefix: "pledge-anonymous",
+                         idPrefix: "pledge-anonymous",
                          name: "pledge-anonymous",
                          fieldset: {
                               legend: {

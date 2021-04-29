@@ -91,6 +91,14 @@
                                    </span>
                                    <p class="before-location-content">England</p>
                                    <div class="after-location-content">
+                                        <!-- {% if data['pledge-location'] %}
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             {% for answer in data['pledge-location'] -%}
+                                             <li>{{ answer }}</li>
+                                             {% endfor %}
+                                        </ul>
+                                        {% endif %} -->
+
                                         {% if data['pledge-location'] %}
                                         <ul class="govuk-list">
                                              {% for key, location in data['pledge-location'] %}
