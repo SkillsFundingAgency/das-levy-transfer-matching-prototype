@@ -345,15 +345,26 @@ $('.after-approval').hide();
 // alert(pledgeValue);
 
 // Approve pledge
-$("#approve-pledge-continue, #mvs-approve-application").on("click", function (e) {
+$("#approve-pledge-continue").on("click", function (e) {
      $.cookie("pledge-approved", true, {path:'/'});
      $.cookie("pledge-approved-banner", true, {path:'/'});
 });
 
+$("#mvs-approve-application").on("click", function (e) {
+     if ($('input[id=mvs-application-approve]').is(':checked')) {
+          $.cookie("pledge-approved", true, {path:'/'});
+          $.cookie("pledge-approved-banner", true, {path:'/'});
+     } else {
+          $.cookie("pledge-approved", false, {path:'/'});
+          $.cookie("pledge-approved-banner", false, {path:'/'});
+     }
+});
+
+
 var applicationsNumber = parseInt($('.pledge-number.applications').text());
 var shortlistNumber = parseInt($('.pledge-number.shortlist').text());
 var approvedNumber = parseInt($('.pledge-number.approved').text());
-var rejectedNumber = parseInt($('.pledge-number.rejected').text());
+var rejectedNumber = parseInt($('.pledge-approved-table').text());
 var pledgeNumberApproved = parseInt($('.pledge-approved-table').text());
 
 if ($.cookie("pledge-approved") == 'true') {
@@ -364,6 +375,7 @@ if ($.cookie("pledge-approved") == 'true') {
      $('.application.approved-one').show();
      $('.pledge-number.applications').text(applicationsNumber - 1);
      $('.pledge-approved-table').text(pledgeNumberApproved + 1);
+     $('.pledge-rejected-table').text(rejectedNumber + 1);
      $('.pledge-number.approved').text(approvedNumber + 1).addClass('active');
 
      // Table details
@@ -402,8 +414,13 @@ $("#reject-pledge-continue").on("click", function (e) {
 });
 
 $("#mvs-reject-application").on("click", function (e) {
-     $.cookie("pledge-rejected-banner", true, {path:'/'});
-     $.cookie("mvs-pledge-rejected", true, {path:'/'});
+     if ($('input[id=mvs-application-reject-2]').is(':checked')) {
+          $.cookie("pledge-rejected-banner", true, {path:'/'});
+          $.cookie("mvs-pledge-rejected", true, {path:'/'});
+     } else {
+          $.cookie("pledge-rejected-banner", false, {path:'/'});
+          $.cookie("mvs-pledge-rejected", false, {path:'/'});
+     }
 });
 
 
@@ -451,6 +468,7 @@ $("#pledge-delete-continue").on("click", function (e) {
 
 if ($.cookie("pledge-deleted") == 'true') {
      $.cookie("pledge-complete", false, {path:'/'});
+     $('.pledge-complete-table').hide();
 }
 
 // New pledge
@@ -505,7 +523,6 @@ $(".after-transfer-and-pledge").hide();
 if ($.cookie("pledge-complete") == 'true' && $.cookie("private-transfer-complete") == 'true') {
      $('.after-pledge, .after-transfer').hide();
      $(".after-transfer-and-pledge").show();
-
 }
 
 // !!!!!!!!!!!!!!!!!!!!!! UNHAPPY PATH - ONE

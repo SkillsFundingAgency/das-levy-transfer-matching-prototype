@@ -109,7 +109,7 @@ function addAnotherLocation() {
      $("#locations").append(`
           <div class="govuk-form-group new-location">
                <label class="govuk-label" for="pledge-location[url${locationNumber}]">Additional city, town or local authority</label>
-               <input class="govuk-input govuk-input--width-20" id="pledge-location[url${locationNumber}]" name="pledge-location[url${locationNumber}]" type="text" spellcheck="false">
+               <input class="govuk-input govuk-input--width-20 pledge-location-test" id="pledge-location[url${locationNumber}]" name="pledge-location[url${locationNumber}]" type="text" spellcheck="false">
                <p class="govuk-body">
                     <a class="govuk-link govuk-link--no-visited-state" data-remove="url${locationNumber}" href="#">remove</a>
                </p>
@@ -134,6 +134,23 @@ function removeLocation() {
 var locationNumber = $("#locations").data("location-count");
 $("#addAnotherLocation").on("click", addAnotherLocation);
 $("[data-remove]").on("click", removeLocation);
+
+$('.pledge-location-hidden').hide();
+
+$(document).ready(function(){
+     $('#locations').on("click", function (e) {
+          $('#pledge-location-all-of-england').removeAttr('checked');
+          $('.first-of-type input').show();
+          $('.pledge-location-hidden').hide();
+     });
+
+     $('#clear-pledge-location-all-of-england').on("click", function (e) {
+          $('.first-of-type input').hide();
+          $('.new-location').remove();
+          $('.pledge-location-hidden').show();
+          // alert('working');
+     });
+});
 
 // Sectors
 function toggle(source) {
@@ -161,6 +178,7 @@ $('input[name="pledge-sector"]').on("click", function (e) {
           $('input[id="pledge-sector-all"]').prop('checked', false);
      }
 });
+
 
 // Training
 $('input[name="pledge-training"]').on("click", function (e) {
@@ -223,6 +241,33 @@ $('input[id="pledge-cancel"]').on("click", function (e) {
 $('input[id="pledge-cancel-2"]').on("click", function (e) {
      $('#pledge-cancel-continue').attr('href','javascript:history.back()');
 });
+
+// Application approval - ONE
+$('input[id="mvs-application-approve"]').on("click", function (e) {
+     $('#belhavel-form').attr('action','6-approved');
+});
+
+$('input[id="mvs-application-approve-2"]').on("click", function (e) {
+     $('#belhavel-form').attr();
+});
+
+$('input[id="mvs-application-approve-3"]').on("click", function (e) {
+     $('#belhavel-form').attr('action','1-pledge-details');
+});
+
+// Application approval - TWO
+$('input[id="mvs-application-reject"]').on("click", function (e) {
+     $('#cbj-engineering').attr();
+});
+
+$('input[id="mvs-application-reject-2"]').on("click", function (e) {
+     $('#cbj-engineering').attr('action','1-pledge-details');
+});
+
+$('input[id="mvs-application-reject-3"]').on("click", function (e) {
+     $('#cbj-engineering').attr('action','1-pledge-details');
+});
+
 
 // Search filter
 $('.no-results').hide();

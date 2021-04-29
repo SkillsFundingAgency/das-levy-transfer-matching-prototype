@@ -478,3 +478,10 @@ p {
 #cancelled-banner {
      margin: 0.5em 0 1em 0;
 }
+
+.govuk-inset-text {
+     &.full-wrap {
+          background: govuk-colour("light-grey");
+          border-left: none;
+     }
+}

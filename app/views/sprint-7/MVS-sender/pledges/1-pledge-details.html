@@ -18,7 +18,7 @@
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../finance">Finance</a></li>
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../transfers">Transfers</a></li>
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../my-pledges">My pledges</a></li>
-               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Pledge 9101 details</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Pledge 910106 details</a></li>
           </ol>
      </div>
 
@@ -51,10 +51,10 @@
                </div> -->
 
                <h1 class="govuk-heading-xl">
-                    Pledge number 9101
-                    <!-- <span class="govuk-caption-xl">Pledge number - 9101</span> -->
-                    <!-- <span class="govuk-caption-xl anonymous-yes">Anonymous Pledge (9101)</span>
-                    <span class="govuk-caption-xl anonymous-no">BARRY & BARRY Ltd (9101)</span> -->
+                    Pledge number 910106
+                    <!-- <span class="govuk-caption-xl">Pledge number - 910106</span> -->
+                    <!-- <span class="govuk-caption-xl anonymous-yes">Anonymous Pledge (910106)</span>
+                    <span class="govuk-caption-xl anonymous-no">BARRY & BARRY Ltd (910106)</span> -->
                </h1>
 
                <details class="govuk-details pledge-details" data-module="govuk-details">
@@ -68,9 +68,11 @@
                                    <p class="before-location-content">England</p>
                                    <div class="after-location-content">
                                         {% if data['pledge-location'] %}
+                                        <ul class="govuk-list govuk-list--bullet">
                                              {% for key, location in data['pledge-location'] %}
-                                                  {{ location }}
+                                                  <li>{{ location }}</li>
                                              {% endfor %}
+                                        </ul>
                                         {% endif %}
                                    </div>
                               </div>
@@ -124,7 +126,7 @@
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                     <strong class="govuk-warning-text__text">
                          <span class="govuk-warning-text__assistive">Warning</span>
-                         <a href="#" class="gov-link">Your pledge can now be viewed publicly</a>, so that businesses can apply to you for funding.
+                         <a href="#" class="gov-link">Your pledge can now be viewed publicly and shared</a>, so that businesses can apply to you for funding.
                     </strong>
                </div>
 
@@ -133,7 +135,7 @@
 
      <div class="pledge-values">
           <div class="pledge-funds">
-               <p>Pledge 9101 amount</p>
+               <p>Pledge 910106 amount</p>
                <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
           </div>
           <div class="pledge-funds-spent">
