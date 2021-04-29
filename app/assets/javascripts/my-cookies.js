@@ -135,6 +135,11 @@ if ($.cookie("pledge-sector-complete") == "true" && $.cookie("pledge-sector-all"
      // $('li.pledge-section-one strong.govuk-tag').removeClass('govuk-tag--grey').text('completed');
 }
 
+if ($.cookie("pledge-sector-all") == "true") {
+     $('#pledge-sector-all').attr('checked','checked');
+} else {
+     $('#pledge-sector-all').attr('unchecked');
+}
 
 // MVS - Jobs
 $(".pledge-jobs-continue").on("click", function (e) {
