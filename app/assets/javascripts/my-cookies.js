@@ -202,6 +202,11 @@ if ($.cookie("pledge-level-complete") == "true" && $.cookie("pledge-level-all") 
      // $('li.pledge-section-one strong.govuk-tag').removeClass('govuk-tag--grey').text('completed');
 }
 
+if ($.cookie("pledge-level-all") == "true") {
+     $('#pledge-level-all').attr('checked','checked');
+} else {
+     $('#pledge-level-all').attr('unchecked');
+}
 
 // Sender - Location
 // if ($.cookie("pledge-location") == "true") {
