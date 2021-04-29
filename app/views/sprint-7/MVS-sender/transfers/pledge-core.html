@@ -92,9 +92,11 @@
                                    <p class="before-location-content">England</p>
                                    <div class="after-location-content">
                                         {% if data['pledge-location'] %}
+                                        <ul class="govuk-list">
                                              {% for key, location in data['pledge-location'] %}
-                                                  {{ location }}
+                                                  <li>{{ location }}</li>
                                              {% endfor %}
+                                        </ul>
                                         {% endif %}
                                    </div>
                               </li>
