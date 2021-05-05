@@ -1,0 +1,94 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">My applications</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               <!-- <p class="no-applications">You have no pending applications.</p> -->
+               <p class="before-application">You have <strong class="number-of-applications">0</strong> transfer applications.</p>
+               <p class="after-application">You have <strong class="number-of-applications">0</strong> transfers application.</p>
+
+               <!-- APPLICATION TABLE - START -->
+               <table class="govuk-table application-complete-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Opportunity</th>
+                              <th scope="col" class="govuk-table__header"></th>
+                              <th scope="col" class="govuk-table__header">Total</th>
+                              <th scope="col" class="govuk-table__header">Approval status</th>
+                              <th scope="col" class="govuk-table__header"></th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   <strong>
+                                        <a href="application/7-application-details" class="pledge-name-answer">###</a>
+                                        <br>
+                                   </strong>
+                                   <span class="govuk-caption-m">Date: <div id="date-stamp"></div></span>
+                              </td>
+                              <td class="govuk-table__cell"></td>
+                              <td class="govuk-table__cell"><span class="pledge-value-answer">###</span></td>
+                              <td class="govuk-table__cell">
+                                   <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                                   <br>
+                                   <br>
+                                   {% if data['delete-reason'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['delete-reason'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                                   {% endif %}
+                                   <span class="">{{ data['delete-more-detail'] }}</span>
+                              </td>
+                              <td class="govuk-table__cell"><a href="application/7-application-details">View</a></td>
+                         </tr>
+                    </tbody>
+               </table>
+               <!-- APPLICATION TABLE - END -->
+
+               <hr class="separator dotted">
+
+               <a href="index" class="govuk-button" data-module="govuk-button">Search for transfer opportunities</a>
+
+               <br>
+
+               <a href="transfers" class="govuk-back-link">Back to transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

@@ -1,5 +1,5 @@
 <div class="search-filter">
-     <h4 class="govuk-heading-s">Apply filter</h4>
+     <h4 class="govuk-heading-m">Apply filter</h4>
      <div class="filters">
 
           <!-- FILTER - 1 - START -->
@@ -7,12 +7,19 @@
                <summary class="govuk-details__summary"><span class="govuk-details__summary-text">Your location</span></summary>
                <div class="govuk-details__text">
                     <div class="govuk-form-group">
+                         <input class="govuk-input  govuk-!-width-one-half" id="pledge-application-location" name="pledge-application-location" type="text" value="{{ data['pledge-application-location'] }}">
+                         <div class="govuk-hint"><a href="#">Use current location</a></div>
+                    </div>
+                    <div class="govuk-form-group">
                          <fieldset class="govuk-fieldset">
                               <div class="govuk-checkboxes govuk-checkboxes--small search-locations-filter">
                                    <!-- <div class="govuk-checkboxes__item select-all">
                                         <input class="govuk-checkboxes__input" id="search-location-all" name="search-location" type="checkbox" value="All locations in England">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-location-all">All locations in England</label>
                                    </div> -->
+                                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        <h1 class="govuk-fieldset__heading">Additional location</h1>
+                                   </legend>
                                    <div class="govuk-checkboxes__item">
                                         <input class="govuk-checkboxes__input" id="search-location-east-mids" name="search-location" type="checkbox" value="East Midlands" rel="east-mids" onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-location-east-mids">East Midlands</label>
@@ -60,76 +67,84 @@
           <details class="govuk-details" data-module="govuk-details" data-search-filter="sector">
                <summary class="govuk-details__summary"><span class="govuk-details__summary-text">Your business sector</span></summary>
                <div class="govuk-details__text">
-                    <div class="govuk-form-group">
+                    {% if data['search-sector'] %}
+                    <ul class="govuk-list govuk-list--bullet">
+                         {% for answer in data['search-sector'] -%}
+                         <li>{{ answer }}</li>
+                         {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <a href="index" class="govuk-link govuk-link--no-visited-state">Change</a>
+                    <!-- <div class="govuk-form-group">
                          <fieldset class="govuk-fieldset">
                               <div class="govuk-checkboxes govuk-checkboxes--small search-sector-filter">
-                                   <!-- <div class="govuk-checkboxes__item select-all">
-                                        <input class="govuk-checkboxes__input" id="search-sector-all" name="_search-sector" type="checkbox" value="Select all" onClick="toggle(this)">
-                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-all">Select all</label>
-                                   </div> -->
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-agriculture" name="search-sector" type="checkbox" value="Agriculture, environmental and animal care" rel="sector-agriculture" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-agriculture" name="search-sector" type="checkbox" value="Agriculture, environmental and animal care" rel="sector-agriculture" {{checked('search-sector','Agriculture, environmental and animal care')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-agriculture">Agriculture, environmental and animal care</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-business" name="search-sector" type="checkbox" value="Business and administration" rel="sector-business" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-business" name="search-sector" type="checkbox" value="Business and administration" rel="sector-business" {{checked('search-sector','Business and administration')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-business">Business and administration</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-care" name="search-sector" type="checkbox" value="Care services" rel="sector-care" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-care" name="search-sector" type="checkbox" value="Care services" rel="sector-care" {{checked('search-sector','Care services')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-care">Care services</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-catering" name="search-sector" type="checkbox" value="Catering and hospitality" rel="sector-catering" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-catering" name="search-sector" type="checkbox" value="Catering and hospitality" rel="sector-catering" {{checked('search-sector','Catering and hospitality')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-catering">Catering and hospitality</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-construction" name="search-sector" type="checkbox" value="Construction" rel="sector-construction" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-charity" name="search-sector" type="checkbox" value="Charity" rel="sector-charity" {{checked('search-sector','Charity')}} onchange="change();">
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-charity">Charity</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-construction" name="search-sector" type="checkbox" value="Construction" rel="sector-construction" {{checked('search-sector','Construction')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-construction">Construction</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-creative" name="search-sector" type="checkbox" value="Creative and design" rel="sector-creative" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-creative" name="search-sector" type="checkbox" value="Creative and design" rel="sector-creative" {{checked('search-sector','Creative and design')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-creative">Creative and design</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-digital" name="search-sector" type="checkbox" value="Digital" rel="sector-digital" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-digital" name="search-sector" type="checkbox" value="Digital" rel="sector-digital" {{checked('search-sector','Digital')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-digital">Digital</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-education" name="search-sector" type="checkbox" value="Education and childcare" rel="sector-education" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-education" name="search-sector" type="checkbox" value="Education and childcare" rel="sector-education" {{checked('search-sector','Education and childcare')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-education">Education and childcare</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-engineering" name="search-sector" type="checkbox" value="Engineering and manufacturing" rel="sector-engineering" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-engineering" name="search-sector" type="checkbox" value="Engineering and manufacturing" rel="sector-engineering" {{checked('search-sector','Engineering and manufacturing')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-engineering">Engineering and manufacturing</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-hair" name="search-sector" type="checkbox" value="Hair and beauty" rel="sector-hair" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-hair" name="search-sector" type="checkbox" value="Hair and beauty" rel="sector-hair" {{checked('search-sector','Hair and beauty')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-hair">Hair and beauty</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-health" name="search-sector" type="checkbox" value="Health and science" rel="sector-health" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-health" name="search-sector" type="checkbox" value="Health and science" rel="sector-health" {{checked('search-sector','Health and science')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-health">Health and science</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-legal" name="search-sector" type="checkbox" value="Legal, finance and accounting" rel="sector-legal" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-legal" name="search-sector" type="checkbox" value="Legal, finance and accounting" rel="sector-legal" {{checked('search-sector','Legal, finance and accounting')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-legal">Legal, finance and accounting</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-protective" name="search-sector" type="checkbox" value="Protective services" rel="sector-protective" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-protective" name="search-sector" type="checkbox" value="Protective services" rel="sector-protective" {{checked('search-sector','Protective services')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-protective">Protective services</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-sales" name="search-sector" type="checkbox" value="Sales, marketing and procurement" rel="sector-sales" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-sales" name="search-sector" type="checkbox" value="Sales, marketing and procurement" rel="sector-sales" {{checked('search-sector','Sales, marketing and procurement')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-sales">Sales, marketing and procurement</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="search-sector-transport" name="search-sector" type="checkbox" value="Transport and logistics" rel="sector-transport" onchange="change();">
+                                        <input class="govuk-checkboxes__input" id="search-sector-transport" name="search-sector" type="checkbox" value="Transport and logistics" rel="sector-transport" {{checked('search-sector','Transport and logistics')}} onchange="change();">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-sector-transport">Transport and logistics</label>
                                    </div>
                               </div>
                          </fieldset>
-                    </div>
+                    </div> -->
                </div>
           </details>
           <!-- FILTER - 2 - END -->
@@ -139,8 +154,15 @@
                <summary class="govuk-details__summary"><span class="govuk-details__summary-text">Category of apprenticeship training</span></summary>
                <div class="govuk-details__text">
                     <div class="govuk-form-group">
+                         <input class="govuk-input govuk-input--width-20" id="pledge-application-standard" name="pledge-application-standard" type="text" value="{{ data['pledge-application-standard'] }}">
+                    </div>
+
+                    <div class="govuk-form-group">
                          <fieldset class="govuk-fieldset">
                               <div class="govuk-checkboxes govuk-checkboxes--small search-training-filter">
+                                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        <h1 class="govuk-fieldset__heading">Additional job roles</h1>
+                                   </legend>
                                    <!-- <div class="govuk-checkboxes__item select-all">
                                         <input class="govuk-checkboxes__input" id="search-training-all" name="_search-training" type="checkbox" value="Select all" onClick="toggle(this)">
                                         <label class="govuk-label govuk-checkboxes__label" for="search-training-all">Select all</label>
@@ -253,6 +275,10 @@
                </div>
           </details>
           <!-- FILTER - 4 - END -->
+
+          <a href="#" class="govuk-button" data-module="govuk-button" id="">Update results</a>
+          <br>
+          <a href="index" class="govuk-link govuk-link--no-visited-state" id="">Start again</a>
 
      </div>
 </div>

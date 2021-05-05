@@ -1,29 +1,84 @@
+.start-search-page {
+     // padding: 1.5em;
+     // border: 1px solid $govuk-border-colour;
+     .govuk-form-group {
+          &:last-of-type {
+               margin-bottom: 4em;
+          }
+     }
+     .govuk-label--m {
+          margin-bottom: 0;
+     }
+     button {
+          margin: 0;
+     }
+     .govuk-checkboxes--small {
+          display: flex;
+          flex-wrap: wrap;
+          .govuk-checkboxes__item {
+               width: 44%;
+               float: left;
+               clear: none;
+               padding-left: 29px;
+               &:hover .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label:before {
+                    box-shadow: 0 0 0 5px #b1b4b6;
+               }
+               label {
+                    font-size: 0.875rem;
+                    padding: 8px 15px 7px 0px;
+                    &:before {
+                         top: 5px;
+                         width: 19px;
+                         height: 19px;
+                    }
+                    &:after {
+                         top: 10px;
+                         left: 4px;
+                         width: 11px;
+                    }
+               }
+               input {
+                    &.govuk-checkboxes__input {
+                        left: -5px;
+                        top: 3px;
+                        width: 34px;
+                        height: 34px;
+                    }
+               }
+          }
+     }
+}
+
 .search-filter {
      margin: 0 0 4em 0;
-     border: 1px solid $govuk-border-colour;
+     // border: 1px solid $govuk-border-colour;
      padding: 0;
      position: relative;
      background: white;
      z-index: 1;
-     .govuk-heading-s {
+     .govuk-heading-m {
           display: block;
-          padding: 15px 15px;
-          border-bottom: 1px solid $govuk-border-colour;
+          padding: 0 0 15px 0;
+          border-bottom: 5px solid $govuk-border-colour;
           background: white;
-          margin: 0;
+          margin: 0 0 1em 0;
           z-index: 10;
      }
      .filters {
-          padding: 20px 15px;
+          padding: 0;
+          // padding: 20px 15px;
+          .govuk-button {
+               margin-bottom: 0.5em;
+          }
           details {
                margin-bottom: 0.75em;
                font-size: 1rem;
                padding-bottom: 0.75em;
                border-bottom: 2px dashed $govuk-border-colour;
                &:last-of-type {
-                    margin: 0;
-                    border-bottom: none;
-                    padding-bottom: 0;
+                    margin: 0 0 2em 0;
+                    // border-bottom: none;
+                    // padding-bottom: 0;
                }
                .govuk-details__text {
                     padding-right: 0;
@@ -101,7 +156,7 @@
                border-bottom: none;
           }
           .govuk-heading-m {
-               margin-bottom: 0;
+               margin-bottom: 0.5em;
                .govuk-button {
                     float: right;
                     margin: 0;

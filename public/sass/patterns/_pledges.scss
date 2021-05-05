@@ -257,17 +257,23 @@ section {
                }
           }
           &.side-panel {
-               padding: 1em 1em 5em 1em;
+               padding: 1em 1em 1em 1em;
                &.applications-details {
                     padding: 1em 1em 3.5em 1em;
                }
                p.details {
                     font-size: 1rem;
+                    margin: 0;
                }
                .total {
                     p {
                          font-size: 1.2rem;
                     }
+               }
+               &.border-overide {
+                    padding: 1em 0 0 0;
+                    border-top: 10px solid  $govuk-link-colour;
+                    background: white;
                }
           }
           &.confirm-details {

@@ -1,0 +1,161 @@
+{% extends "layout-ltm.html" %}
+
+{% block pageTitle %}
+     Find a business to fund training for your apprentices
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <span class="govuk-caption-m">Search and apply for pledges in England</span>
+               <h1 class="govuk-heading-xl">Find a business to fund training for your apprentices</h1>
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <form class="start-search-page" action="search-pledges" method="post">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="search-sector-hint">
+                              <legend class="govuk-label govuk-label--s" for="pledge-application-location">Your business sector</legend>
+                              <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-agriculture" name="search-sector" type="checkbox" value="Agriculture, environmental and animal care" {{checked('search-sector','Agriculture, environmental and animal care')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-agriculture">Agriculture, environmental and animal care</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-business" name="search-sector" type="checkbox" value="Business and administration" {{checked('search-sector','Business and administration')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-business">Business and administration</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-care" name="search-sector" type="checkbox" value="Care services" {{checked('search-sector','Care services')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-care">Care services</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-catering" name="search-sector" type="checkbox" value="Catering and hospitality" {{checked('search-sector','Catering and hospitality')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-catering">Catering and hospitality</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-charity" name="search-sector" type="checkbox" value="Charity" {{checked('search-sector','Charity')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-charity">Charity</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-construction" name="search-sector" type="checkbox" value="Construction" {{checked('search-sector','Construction')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-construction">Construction</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-creative" name="search-sector" type="checkbox" value="Creative and design" {{checked('search-sector','Creative and design')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-creative">Creative and design</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-digital" name="search-sector" type="checkbox" value="Digital" {{checked('search-sector','Digital')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-digital">Digital</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-education" name="search-sector" type="checkbox" value="Education and childcare" {{checked('search-sector','Education and childcare')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-education">Education and childcare</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-engineering" name="search-sector" type="checkbox" value="Engineering and manufacturing" {{checked('search-sector','Engineering and manufacturing')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-engineering">Engineering and manufacturing</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-hair" name="search-sector" type="checkbox" value="Hair and beauty" {{checked('search-sector','Hair and beauty')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-hair">Hair and beauty</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-health" name="search-sector" type="checkbox" value="Health and science" {{checked('search-sector','Health and science')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-health">Health and science</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-legal" name="search-sector" type="checkbox" value="Legal, finance and accounting" {{checked('search-sector','Legal, finance and accounting')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-legal">Legal, finance and accounting</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-protective" name="search-sector" type="checkbox" value="Protective services" {{checked('search-sector','Protective services')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-protective">Protective services</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-sales" name="search-sector" type="checkbox" value="Sales, marketing and procurement" {{checked('search-sector','Sales, marketing and procurement')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-sales">Sales, marketing and procurement</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="search-sector-transport" name="search-sector" type="checkbox" value="Transport and logistics" {{checked('search-sector','Transport and logistics')}}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="search-sector-transport">Transport and logistics</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--s" for="pledge-application-location">Your location</label>
+                         <div class="govuk-hint">Enter postcode, town or city or <a href="#">use current location</a></div>
+                         <input class="govuk-input govuk-!-width-one-quarter" id="pledge-application-location" name="pledge-application-location" type="text" value="{{ data['pledge-application-location'] }}">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--s" for="pledge-application-standard">Job role</label>
+                         <div class="govuk-hint">Do you know the name of the apprenticeship training course you need?</div>
+                         <input class="govuk-input govuk-input--width-20" id="pledge-application-standard" name="pledge-application-standard" type="text" value="{{ data['pledge-application-standard'] }}">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--s" for="pledge-application-apprentices">How many apprentices do you want to fund?</label>
+                         <input class="govuk-input govuk-input--width-5" id="pledge-application-apprentices" name="pledge-application-apprentices" type="text" value="{{ data['pledge-application-apprentices'] }}">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" role="group" aria-describedby="pledge-application-start-hint">
+                              <legend class="govuk-fieldset__legend">
+                                   <h1 class="govuk-fieldset__heading govuk-label--s">When would you like the apprenticeship training to start by?</h1>
+                              </legend>
+                              <div id="pledge-application-start-hint" class="govuk-hint">For example, 11 2007</div>
+                              <div class="govuk-date-input" id="pledge-application-start">
+                                   <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                             <label class="govuk-label govuk-date-input__label" for="pledge-application-start-month">Month</label>
+                                             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pledge-application-start-month" name="pledge-application-start-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['pledge-application-start-month'] }}">
+                                        </div>
+                                   </div>
+                                   <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                             <label class="govuk-label govuk-date-input__label" for="pledge-application-start-year">Year</label>
+                                             <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="pledge-application-start-year" name="pledge-application-start-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['pledge-application-start-year'] }}">
+                                        </div>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+
+                    <button class="govuk-button" data-module="govuk-button" id="filter-results">Search</button>
+
+                    <a href="search-pledges" class="govuk-link govuk-link-secondary govuk-link--no-visited-state" id="browse-results">Browse all pledges</a>
+
+               </form>
+
+          </div>
+
+          <!-- <aside class="govuk-grid-column-one-third">
+               <div class="govuk-related-items">
+                    <h2 class="govuk-heading-s">Help with transfers</h2>
+                    <ul class="govuk-list">
+                         <li><a href="content#about-transfers" class="govuk-link">About transfers</a></li>
+                         <li><a href="content#about-funding" class="govuk-link">Getting 95% apprenticeship funding from the government instead</a></li>
+                    </ul>
+               </div>
+          </aside> -->
+
+     </div>
+
+</div>
+
+{% endblock %}
