@@ -221,8 +221,9 @@ if ($.cookie("cancel-application-completed") == 'true') {
      $('.before-application').show();
      $('.after-application').hide();
 
+     $('.application-status .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('cancelled')
      $('.application-complete-table .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('cancelled');
-     $('.cancelled-info').hide();
+     $('.cancelled-info').show();
 
 }
 
