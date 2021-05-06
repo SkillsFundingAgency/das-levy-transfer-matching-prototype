@@ -60,16 +60,18 @@
                               <td class="govuk-table__cell"><span class="pledge-value-answer">###</span></td>
                               <td class="govuk-table__cell">
                                    <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
-                                   <br>
-                                   <br>
-                                   {% if data['delete-reason'] %}
-                                   <ul class="govuk-list govuk-list--bullet">
-                                        {% for answer in data['delete-reason'] -%}
-                                        <li>{{ answer }}</li>
-                                        {% endfor %}
-                                   </ul>
-                                   {% endif %}
-                                   <span class="">{{ data['delete-more-detail'] }}</span>
+                                   <div class="cancelled-info">
+                                        <br>
+                                        <br>
+                                        {% if data['delete-reason'] %}
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             {% for answer in data['delete-reason'] -%}
+                                             <li>{{ answer }}</li>
+                                             {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                        <span class="">{{ data['delete-more-detail'] }}</span>
+                                   </div>
                               </td>
                               <td class="govuk-table__cell"><a href="application/7-application-details">View</a></td>
                          </tr>

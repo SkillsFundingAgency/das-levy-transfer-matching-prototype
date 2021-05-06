@@ -44,14 +44,14 @@
                               <div id="pledge-application-more-details-hint" class="govuk-hint">
                                    Do not include personal or financial information like your bank account details.
                               </div>
-                              <textarea class="govuk-textarea govuk-js-character-count" id="pledge-application-more-details" name="pledge-application-more-details" rows="5" aria-describedby="pledge-application-more-details-hint pledge-application-more-details-info"></textarea>
+                              <textarea class="govuk-textarea govuk-js-character-count" id="pledge-application-more-details" name="pledge-application-more-details" rows="5" aria-describedby="pledge-application-more-details-hint pledge-application-more-details-info">{{ data['pledge-application-more-details'] }}</textarea>
                          </div>
                          <div id="pledge-application-more-details-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You can enter up to 200 words</div>
                     </div>
 
                     <p><br></p>
 
-                    <button class="govuk-button" data-module="govuk-button" id="">Continue</button>
+                    <button class="govuk-button" data-module="govuk-button" id="application-more-details">Continue</button>
 
                     <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-link-secondary govuk-back-link" id="">Back</a>
 
@@ -68,9 +68,9 @@
                          Category of training: <strong class="pledge-training-answer">####</strong><br>
                          Level: <strong class="pledge-level-answer">####</strong>
                     </p>
-                    <div class="total">
+                    <!-- <div class="total">
                          <p class="govuk-heading-s">Total funding available: up to <span class="pledge-value-answer">####</span></p>
-                    </div>
+                    </div> -->
                </section>
           </div>
 

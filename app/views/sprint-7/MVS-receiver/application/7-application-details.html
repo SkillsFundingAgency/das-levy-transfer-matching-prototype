@@ -51,10 +51,10 @@
                <section class="employer-contact-details">
                     <h2 class="govuk-heading-m">Do you match the criteria?</h2>
                     <ul class="govuk-list">
-                         <li data-criteria="location"><span class="icon tick"></span><span class="icon cross"></span>Location</li>
-                         <li data-criteria="sector"><span class="icon tick"></span><span class="icon cross"></span>Sector</li>
-                         <li data-criteria="training"><span class="icon tick"></span><span class="icon cross"></span>Category of apprenticeship training</li>
-                         <li data-criteria="level"><span class="icon tick"></span><span class="icon cross"></span>Apprenticeship qualification level</li>
+                         <li><span class="icon tick"></span>Location: <strong>{{ data['pledge-application-location'] }}</strong></li>
+                         <li><span class="icon tick"></span>Sector: <strong>{{ data['search-sector'] }}</strong></li>
+                         <li><span class="icon tick"></span>Job role & level: <strong>{{ data['pledge-application-standard'] }}</strong></li>
+                         <!-- <li><span class="icon tick"></span><span class="icon cross"></span>Apprenticeship qualification level</li> -->
                     </ul>
                     <!-- <p><strong>{{ data['pledge-match'] }}</strong></p>
                     <p>
@@ -65,10 +65,10 @@
                <!-- SECTION 2 - END -->
 
                <!-- SECTION 3 - START -->
-               <h2 class="govuk-heading-m">About the apprenticeship</h2>
+               <h2 class="govuk-heading-m">About your apprenticeship</h2>
 
                <section class="employer-contact-details">
-                    <h2 class="govuk-heading-m">Do you match the criteria?</h2>
+                    <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
                     <p><strong>Apprenticeship training course:</strong> {{ data['pledge-application-standard'] }}</p>
                     <p><strong>Number of apprentices:</strong> {{ data['pledge-application-apprentices'] }}</p>
                     <p><strong>Apprenticeship training to start by:</strong> {{ data['pledge-application-start-month'] }} / {{ data['pledge-application-start-year'] }}</p>
@@ -120,9 +120,9 @@
                          Category of training: <strong class="pledge-training-answer">####</strong><br>
                          Level: <strong class="pledge-level-answer">####</strong>
                     </p>
-                    <div class="total">
+                    <!-- <div class="total">
                          <p class="govuk-heading-s">Total funding available: up to <span class="pledge-value-answer">####</span></p>
-                    </div>
+                    </div> -->
                </section>
           </div>
 

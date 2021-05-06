@@ -44,12 +44,12 @@
                               <!-- <legend class="govuk-fieldset__legend">Have you found a training provider?</legend> -->
                               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                                    <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="pledge-application-training-provider-yes" name="pledge-application-training-provider" type="radio" value="Yes">
+                                        <input class="govuk-radios__input" id="pledge-application-training-provider-yes" name="pledge-application-training-provider" type="radio" value="Yes" {{checked('pledge-application-training-provider','Yes')}}>
                                         <label class="govuk-label govuk-radios__label" for="pledge-application-training-provider-yes">Yes</label>
                                    </div>
                                    <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="pledge-application-training-provider-no" name="pledge-application-training-provider" type="radio" value="No, I'd like to see apprenticeship training providers" data-aria-controls="conditional-pledge-application-training-provider-no">
-                                        <label class="govuk-label govuk-radios__label" for="pledge-application-training-provider-no">No, I'd like to see apprenticeship training providers</label>
+                                        <input class="govuk-radios__input" id="pledge-application-training-provider-no" name="pledge-application-training-provider" type="radio" value="No I want to see apprenticeship training providers" data-aria-controls="conditional-pledge-application-training-provider-no" {{checked('pledge-application-training-provider','No I want to see apprenticeship training providers')}}>
+                                        <label class="govuk-label govuk-radios__label" for="pledge-application-training-provider-no">No I want to see apprenticeship training providers</label>
                                    </div>
                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pledge-application-training-provider-no">
                                         <div class="govuk-form-group">
@@ -62,7 +62,7 @@
 
                     <p><br></p>
 
-                    <button class="govuk-button" data-module="govuk-button" id="">Continue</button>
+                    <button class="govuk-button" data-module="govuk-button" id="application-training-provder">Continue</button>
 
                     <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-link-secondary govuk-back-link" id="">Back</a>
 
