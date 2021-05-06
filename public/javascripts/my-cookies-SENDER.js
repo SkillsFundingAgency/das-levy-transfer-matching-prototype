@@ -303,7 +303,7 @@ if ($.cookie("pledge-complete") == 'true') {
      $('.before-pledge-complete').hide();
 }
 
-$("#activate-applications").on("click", function (e) {
+$(".activate-applications").on("click", function (e) {
      $.cookie("pledge-complete-and-items-shown", true, {path:'/'});
 });
 
