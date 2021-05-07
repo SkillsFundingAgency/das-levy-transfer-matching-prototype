@@ -4,21 +4,31 @@
 // Initial search
 $("#filter-results").on("click", function (e) {
      $.cookie("filter-results", true, {path:'/'});
-     if ($("input[name=search-sector]:checkbox:checked").length > 0) {
-          $.cookie("filter-results-sector", true, {path:'/'});
-     } else {
-          $.cookie("filter-results-sector", false, {path:'/'});
-     }
      if ($("input[id=pledge-application-location]").val()) {
           $.cookie("filter-results-location", true, {path:'/'});
      } else {
           $.cookie("filter-results-location", false, {path:'/'});
      }
-     if ($("input[id=pledge-application-standard]").val()) {
+     if ($("input[name=search-sector]:checkbox:checked").length > 0) {
+          $.cookie("filter-results-sector", true, {path:'/'});
+     } else {
+          $.cookie("filter-results-sector", false, {path:'/'});
+     }
+     if ($("input[name=search-training]:checkbox:checked").length > 0) {
           $.cookie("filter-results-standard", true, {path:'/'});
      } else {
           $.cookie("filter-results-standard", false, {path:'/'});
      }
+     if ($("input[name=search-level]:checkbox:checked").length > 0) {
+          $.cookie("filter-level", true, {path:'/'});
+     } else {
+          $.cookie("filter-level", false, {path:'/'});
+     }
+     // if ($("input[id=pledge-application-standard]").val()) {
+     //      $.cookie("filter-results-standard", true, {path:'/'});
+     // } else {
+     //      $.cookie("filter-results-standard", false, {path:'/'});
+     // }
 
 });
 
@@ -33,7 +43,7 @@ if ($.cookie("browse-results") == 'true') { $('.search-filter h4').text('Apply f
 if ($.cookie("filter-results-sector") == 'true') { $('details[data-search-filter="location"').attr('open','isOpen'); }
 if ($.cookie("filter-results-location") == 'true') { $('details[data-search-filter="sector"').attr('open','isOpen'); }
 if ($.cookie("filter-results-standard") == 'true') { $('details[data-search-filter="training"').attr('open','isOpen'); }
-// if ($.cookie("search-filter-level") == 'true') { $('details[data-search-filter="level"').attr('open','isOpen'); }
+if ($.cookie("filter-level") == 'true') { $('details[data-search-filter="level"').attr('open','isOpen'); }
 
 // if ($.cookie("search-filter-location") == 'true') { $('details[data-search-filter="location"').attr('open','isOpen'); }
 // if ($.cookie("search-filter-sector") == 'true') { $('details[data-search-filter="sector"').attr('open','isOpen'); }
