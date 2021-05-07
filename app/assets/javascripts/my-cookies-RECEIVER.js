@@ -177,14 +177,15 @@ $("#pledge-application-confirm-continue, #application-confirm-continue").on("cli
      $.cookie("pledge-application-completed", true, {path:'/'});
 });
 
-// $('.application-complete-table').hide();
+$('.application-complete-table').show();
+$('.application-complete-table tr[data-application-row="one"]').hide();
 
 $('.before-application').show();
 $('.after-application').hide();
 
 if ($.cookie("pledge-application-completed") == 'true') {
      $('.no-applications').hide();
-     $('.application-complete-table').show();
+     $('.application-complete-table tr[data-application-row="one"]').show();
 
      $('.after-application .number-of-applications').text(receiverApplicationsNumber + 1);
      // $('.application-number.deleted').text(receiverDeletedNumber + 1).addClass('active');
@@ -206,25 +207,36 @@ $("#delete-application-continue").on("click", function (e) {
      }
 });
 
-$('.application-deleted-table').hide();
+$('.application-deleted-table, #application-cancelled-banner, #accept-application').hide();
 
 if ($.cookie("cancel-application-completed") == 'true') {
-     $('.application-complete-table').show();
+     $('.application-complete-table tr[data-application-row="one"]').show();
      // $('table.application-deleted-table').show();
      // $('.no-applications').show();
-     $('.no-deleted-applications').hide();
-     $('#delete-application').hide();
-     $('.deleted-panel').show();
+     $('.no-deleted-applications, #delete-application-two, #delete-application-three, .application-status-two, .application-status-three').hide();
+     $('.cancelled-panel, .rejected-panel').show();
 
      // $('.after-application .number-of-applications').text(receiverApplicationsNumber);
      // $('.application-number.deleted').text(receiverDeletedNumber + 1).addClass('active');
-     $('.before-application').show();
-     $('.after-application').hide();
+     // $('.before-application').show();
+     // $('.after-application').hide();
 
-     $('.application-status .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('cancelled')
-     $('.application-complete-table .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('cancelled');
-     $('.cancelled-info').show();
+     // Cancelled info
+     $('.application-status-three .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--yellow').text('cancelled');
+     $('.application-complete-table tr[data-application-row="three"] .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--yellow').text('cancelled');
+     $('.cancelled-info, #application-cancelled-banner').show();
 
+     // Rejected info
+     $('.application-status-two .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('rejected');
+     $('.application-complete-table tr[data-application-row="two"] .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('rejected');
+     $('.rejection-info').show();
+
+     // Accepted info
+     $('.application-status-one .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--green').text('accepted');
+     $('.application-complete-table tr[data-application-row="one"] .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--green').text('accepted');
+     $('.rejection-info, #accept-application').show();
+
+     $('.after-application .number-of-applications').text(receiverApplicationsNumber - 1);
 }
 
 if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-1') {

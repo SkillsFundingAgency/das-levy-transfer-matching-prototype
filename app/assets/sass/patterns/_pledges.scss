@@ -49,6 +49,16 @@
      }
 }
 
+#application-cancelled-banner {
+     ul.govuk-list {
+          max-width: 100%;
+     }
+}
+
+#accept-application {
+     margin-right: 0.75em;
+}
+
 #pledge-tabs {
      display: none;
 }
@@ -241,7 +251,7 @@ section {
                     margin: 0;
                }
           }
-          .pledge-name-answer {
+          .pledge-name-answer, .application-name-answer {
                color: $govuk-link-colour;
           }
           .govuk-tag {
@@ -310,10 +320,13 @@ section {
      }
 }
 
-.pledge-name-answer {
+.pledge-name-answer, .application-name-answer {
      &.main-title {
           color: $govuk-link-colour;
      }
+}
+.application-name-answer, .pledge-name-answer {
+     color: $govuk-link-colour;
 }
 
 details {
