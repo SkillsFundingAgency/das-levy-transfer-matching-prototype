@@ -59,7 +59,7 @@ $("section.pledge-details .govuk-button, section.pledge-details .pledge-name").o
 
      // Pledge information
      $.cookie("pledge-name", $(this).parent().find('.pledge-name').text(), {path:'/'});
-     $.cookie("pledge-value", $(this).parent().parent().find('.govuk-caption-m').text(), {path:'/'});
+     $.cookie("pledge-value", $(this).parent().parent().find('.govuk-caption-m span').data('application-value'), {path:'/'});
      $.cookie("pledge-location", $(this).parent().parent().find('.location').text(), {path:'/'});
      $.cookie("pledge-sector", $(this).parent().parent().find('.sector').text(), {path:'/'});
      $.cookie("pledge-training", $(this).parent().parent().find('.training').text(), {path:'/'});
@@ -129,6 +129,7 @@ $('.after-apprenticeship-content, #add-another-apprenticeship, ol.app-task-list 
 
 $("#application-apprentice-details").on("click", function (e) {
      $.cookie("application-apprentice-details", true, {path:'/'});
+     $.cookie("application-total-cost", $('#apprenticeship-cost .value-format').text(), {path:'/'});
 });
 
 if ($.cookie("application-apprentice-details") == 'true') {
@@ -136,6 +137,7 @@ if ($.cookie("application-apprentice-details") == 'true') {
      $('.before-apprenticeship-content').hide();
      $('.after-apprenticeship-content, #add-another-apprenticeship, ol.app-task-list li.pledge-section-one h3').show();
      $('ol.app-task-list li.pledge-section-one').addClass('apprentice-added');
+     $('.apprenticeship-total .value-format').text($.cookie("application-total-cost"));
 }
 
 // Confirm - 2 - business details
@@ -204,6 +206,10 @@ if ($.cookie("application-contact-details") == 'true') {
 // Confirm - complete
 if ($.cookie("application-apprentice-details") == 'true' && $.cookie("application-business-details") == 'true' && $.cookie("application-more-details") == 'true' && $.cookie("application-contact-details") == 'true') {
      $('.submit-transfer-application').show();
+}
+
+if ($.cookie("funding-over") == 'true') {
+     $('.submit-transfer-application .funding-over').show();
 }
 
 

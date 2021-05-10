@@ -623,19 +623,21 @@ $('.copy-items').on("click", function (e) {
 // Apprenticeship total
 var applicationsCost = parseInt($('#apprenticeship-cost .number span').text());
 
-$('#apprenticeship-cost').hide();
+$('#apprenticeship-cost, .funding-over').hide();
 
 $('#pledge-application-apprentices').on("keyup", function (e) {
      $('#apprenticeship-cost').slideDown();
      var apprenticeshipNumbers = $('#pledge-application-apprentices').val();
      var applicationsTotalCost = parseInt(apprenticeshipNumbers * applicationsCost);
      $('#apprenticeship-cost .number span').text(apprenticeshipNumbers * applicationsCost);
-     var pledgeTotalCost = parseInt($.cookie("pledge-value"));
-     console.log(pledgeTotalCost);
-     console.log(applicationsTotalCost);
-     // if (applicationsTotalCost > pledgeTotalCost) {
-     //      console.log('working');
-     // }
+     var pledgeTotalCost = parseInt($.cookie("pledge-value").replace('%C2%A3','').replace('%2C',''));
+     // console.log(pledgeTotalCost);
+     // console.log(applicationsTotalCost);
+     if (applicationsTotalCost > pledgeTotalCost) {
+          // console.log('working');
+          $('.funding-over').show();
+          $.cookie("funding-over", true, {path:'/'});
+     }
 });
 
 // Apply for funds
