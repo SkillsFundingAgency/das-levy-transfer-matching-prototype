@@ -267,8 +267,10 @@ $('input[id="mvs-application-reject-2"]').on("click", function (e) {
 $('input[id="mvs-application-reject-3"]').on("click", function (e) {
      $('#cbj-engineering').attr('action','1-pledge-details');
 });
+// !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
 
+// !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
 // Search filter
 $('.no-results').hide();
 
@@ -618,6 +620,34 @@ $('.copy-items').on("click", function (e) {
      }, 5000);
 });
 
+// Apprenticeship total
+var applicationsCost = parseInt($('#apprenticeship-cost .number span').text());
+
+$('#apprenticeship-cost').hide();
+
+$('#pledge-application-apprentices').on("keyup", function (e) {
+     $('#apprenticeship-cost').slideDown();
+     var apprenticeshipNumbers = $('#pledge-application-apprentices').val();
+     var applicationsTotalCost = parseInt(apprenticeshipNumbers * applicationsCost);
+     $('#apprenticeship-cost .number span').text(apprenticeshipNumbers * applicationsCost);
+     var pledgeTotalCost = parseInt($.cookie("pledge-value"));
+     console.log(pledgeTotalCost);
+     console.log(applicationsTotalCost);
+     // if (applicationsTotalCost > pledgeTotalCost) {
+     //      console.log('working');
+     // }
+});
+
+// Apply for funds
+$('input[name=apply-pledge-funds]').on("click", function (e) {
+     if ($('input[id=apply-pledge-funds]').is(':checked')) {
+          $('#apply-application-form').attr('action','1-application-core');
+     } else if ($('input[id=apply-pledge-funds-2]').is(':checked')) {
+          $('#apply-application-form').attr('action','../search-pledges');
+     }
+});
+
+// !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
 document.getElementById("date-stamp").innerHTML = formatAMPM();

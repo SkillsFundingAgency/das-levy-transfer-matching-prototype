@@ -52,14 +52,60 @@
                          <h2 class="app-task-list__section">
                               <span class="app-task-list__section-number number-one">1. </span>
                               Apprenticeship details
-                              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="">completed</strong>
+                              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">not started</strong>
+                         </h2>
+                         <ul class="app-task-list__items">
+                              <li class="app-task-list__item">
+                                   <h3 class="govuk-heading-s">Apprenticeship one</h3>
+                                   <span class="app-task-list__task-name">
+                                        <a href="2-apprenticeship-details#pledge-application-standard">Job role</a>
+                                   </span>
+                                   <p class="before-apprenticeship-content">--</p>
+                                   <p class="after-apprenticeship-content">{{ data['pledge-application-standard'] }}</p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="2-apprenticeship-details#pledge-application-apprentices">Number of apprentices</a>
+                                   </span>
+                                   <p class="before-apprenticeship-content">--</p>
+                                   <p class="after-apprenticeship-content">{{ data['pledge-application-apprentices'] }}</p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="2-apprenticeship-details#pledge-application-apprentices">Start by</a>
+                                   </span>
+                                   <p class="before-apprenticeship-content">--</p>
+                                   <p class="after-apprenticeship-content">{{ data['pledge-application-start-month'] }} / {{ data['pledge-application-start-year'] }}</p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="3-training-provider">Have you found a training provider?</a>
+                                   </span>
+                                   <p class="before-apprenticeship-content">--</p>
+                                   <div class="after-apprenticeship-content">
+                                        {{ data['pledge-application-training-provider'] }}
+                                   </div>
+                              </li>
+                         </ul>
+                         <button class="govuk-button" data-module="govuk-button" id="add-another-apprenticeship"><span class="icon add white"></span>Add another apprenticeship</button>
+                         <h3 class="govuk-heading-m apprenticeship-total">Total: <strong>£<span></span></strong></h3>
+                    </li>
+                    <!-- SECTION - ONE - END -->
+
+                    <!-- SECTION - TWO - START -->
+                    <li class="pledge-section-two">
+                         <h2 class="app-task-list__section">
+                              <span class="app-task-list__section-number">2. </span>
+                              Your business details
+                              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">not started</strong>
                          </h2>
                          <ul class="app-task-list__items">
                               <li class="app-task-list__item">
                                    <span class="app-task-list__task-name">
-                                        <a href="2-apprenticeship-details#pledge-application-sector">Sector</a>
+                                        <a href="3-business-details#pledge-application-sector">Sector</a>
                                    </span>
-                                   <div>
+                                   <p class="before-business-content">--</p>
+                                   <div class="after-business-content">
                                         {% if data['search-sector'] %}
                                         <ul class="govuk-list govuk-list--bullet">
                                              {% for answer in data['search-sector'] -%}
@@ -71,48 +117,10 @@
                               </li>
                               <li class="app-task-list__item">
                                    <span class="app-task-list__task-name">
-                                        <a href="2-apprenticeship-details#pledge-application-location">Location</a>
+                                        <a href="3-business-details#pledge-application-location">Location</a>
                                    </span>
-                                   <p>{{ data['pledge-application-location'] }}</p>
-                              </li>
-                              <li class="app-task-list__item">
-                                   <span class="app-task-list__task-name">
-                                        <a href="2-apprenticeship-details#pledge-application-standard">Job role</a>
-                                   </span>
-                                   <p>{{ data['pledge-application-standard'] }}</p>
-                              </li>
-                              <li class="app-task-list__item">
-                                   <span class="app-task-list__task-name">
-                                        <a href="2-apprenticeship-details#pledge-application-apprentices">Number of apprentices</a>
-                                   </span>
-                                   <p>{{ data['pledge-application-apprentices'] }}</p>
-                              </li>
-                              <li class="app-task-list__item">
-                                   <span class="app-task-list__task-name">
-                                        <a href="2-apprenticeship-details#pledge-application-apprentices">Start by</a>
-                                   </span>
-                                   <p>{{ data['pledge-application-start-month'] }} / {{ data['pledge-application-start-year'] }}</p>
-                              </li>
-                         </ul>
-                    </li>
-                    <!-- SECTION - ONE - END -->
-
-                    <!-- SECTION - TWO - START -->
-                    <li class="pledge-section-two">
-                         <h2 class="app-task-list__section">
-                              <span class="app-task-list__section-number">2. </span>
-                              Training provider
-                              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="">not started</strong>
-                         </h2>
-                         <ul class="app-task-list__items">
-                              <li class="app-task-list__item">
-                                   <span class="app-task-list__task-name">
-                                        <a href="3-training-provider">Have you found a training provider?</a>
-                                   </span>
-                                   <p class="before-provider-content">--</p>
-                                   <div class="after-provider-content">
-                                        {{ data['pledge-application-training-provider'] }}
-                                   </div>
+                                   <p class="before-business-content">--</p>
+                                   <p class="after-business-content">{{ data['pledge-application-location'] }}</p>
                               </li>
                          </ul>
                     </li>
@@ -216,9 +224,9 @@
                          Type of job role: <strong class="pledge-training-answer">####</strong><br>
                          Level: <strong class="pledge-level-answer">####</strong>
                     </p>
-                    <!-- <div class="total">
+                    <div class="total">
                          <p class="govuk-heading-s">Total funding available: up to <span class="pledge-value-answer">####</span></p>
-                    </div> -->
+                    </div>
                </section>
           </div>
 

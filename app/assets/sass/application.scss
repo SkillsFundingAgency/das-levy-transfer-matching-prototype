@@ -264,6 +264,12 @@ p {
      }
 }
 
+#apprenticeship-cost {
+     .total {
+          margin-bottom: 0;
+     }
+}
+
 .wrapper {
      display: inline-block;
      float: left;
@@ -368,6 +374,16 @@ p {
           background: url('../images/delete.svg') no-repeat 0% 50%;
           background-size: contain;
           margin-right: 0.25em;
+     }
+     &.add {
+          &.black {
+               background: url('../images/add-black.svg') no-repeat 0% 50%;
+               background-size: contain;
+          }
+          &.white {
+               background: url('../images/add-white.svg') no-repeat 0% 50%;
+               background-size: contain;
+          }
      }
      // &.approved {
      //      background: url("../images/tick-green.svg") no-repeat 0% 50%;

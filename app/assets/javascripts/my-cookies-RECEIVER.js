@@ -123,25 +123,53 @@ if ($.cookie("pledge-confirm-details") == 'true') {
 // Confirm application
 $('.submit-transfer-application').hide();
 
-// Confirm - training provider
-$("#application-training-provder").on("click", function (e) {
-     if ($('input[name="pledge-application-training-provider"]:checked').length > 0) {
-          $.cookie("application-training-provder", true, {path:'/'});
-     } else {
-          $.cookie("application-training-provder", false, {path:'/'});
-     }
+// Confirm - 1 - apprenticeship details
+$('.before-apprenticeship-content').show();
+$('.after-apprenticeship-content, #add-another-apprenticeship, ol.app-task-list li.pledge-section-one h3').hide();
+
+$("#application-apprentice-details").on("click", function (e) {
+     $.cookie("application-apprentice-details", true, {path:'/'});
 });
 
-$('.before-provider-content').show();
-$('.after-provider-content').hide();
-
-if ($.cookie("application-training-provder") == 'true') {
-     $('.pledge-section-two .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
-     $('.before-provider-content').hide();
-     $('.after-provider-content').show();
+if ($.cookie("application-apprentice-details") == 'true') {
+     $('.pledge-section-one .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
+     $('.before-apprenticeship-content').hide();
+     $('.after-apprenticeship-content, #add-another-apprenticeship, ol.app-task-list li.pledge-section-one h3').show();
+     $('ol.app-task-list li.pledge-section-one').addClass('apprentice-added');
 }
 
-// Confirm - more details
+// Confirm - 2 - business details
+$('.before-business-content').show();
+$('.after-business-content').hide();
+
+$("#application-business-details").on("click", function (e) {
+     $.cookie("application-business-details", true, {path:'/'});
+});
+
+if ($.cookie("application-business-details") == 'true') {
+     $('.pledge-section-two .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
+     $('.before-business-content').hide();
+     $('.after-business-content').show();
+}
+
+// $("#application-training-provder").on("click", function (e) {
+//      if ($('input[name="pledge-application-training-provider"]:checked').length > 0) {
+//           $.cookie("application-training-provder", true, {path:'/'});
+//      } else {
+//           $.cookie("application-training-provder", false, {path:'/'});
+//      }
+// });
+//
+// $('.before-provider-content').show();
+// $('.after-provider-content').hide();
+//
+// if ($.cookie("application-training-provder") == 'true') {
+//      $('.pledge-section-two .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
+//      $('.before-provider-content').hide();
+//      $('.after-provider-content').show();
+// }
+
+// Confirm - 3 - more details
 $("#application-more-details").on("click", function (e) {
      if ($('input[name="pledge-application-more-details"]').val()) {
           $.cookie("application-more-details", false, {path:'/'});
@@ -159,7 +187,7 @@ if ($.cookie("application-more-details") == 'true') {
      $('.after-details-content').show();
 }
 
-// Confirm - contact details
+// Confirm - 4 - contact details
 $("#application-contact-details").on("click", function (e) {
      $.cookie("application-contact-details", true, {path:'/'});
 });
@@ -174,7 +202,7 @@ if ($.cookie("application-contact-details") == 'true') {
 }
 
 // Confirm - complete
-if ($.cookie("application-training-provder") == 'true' && $.cookie("application-more-details") == 'true' && $.cookie("application-contact-details") == 'true') {
+if ($.cookie("application-apprentice-details") == 'true' && $.cookie("application-business-details") == 'true' && $.cookie("application-more-details") == 'true' && $.cookie("application-contact-details") == 'true') {
      $('.submit-transfer-application').show();
 }
 
