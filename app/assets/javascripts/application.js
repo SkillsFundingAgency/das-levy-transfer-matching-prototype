@@ -626,7 +626,6 @@ var applicationsCost = parseInt($('#apprenticeship-cost .number span').text());
 $('#apprenticeship-cost, .funding-over').hide();
 
 $('#pledge-application-apprentices').on("keyup", function (e) {
-     $('#apprenticeship-cost').slideDown();
      var apprenticeshipNumbers = $('#pledge-application-apprentices').val();
      var applicationsTotalCost = parseInt(apprenticeshipNumbers * applicationsCost);
      $('#apprenticeship-cost .number span').text(apprenticeshipNumbers * applicationsCost);
@@ -638,6 +637,9 @@ $('#pledge-application-apprentices').on("keyup", function (e) {
           $('.funding-over').show();
           $.cookie("funding-over", true, {path:'/'});
      }
+});
+$('#pledge-application-start-year').on("keyup", function (e) {
+     $('#apprenticeship-cost').slideDown();
 });
 
 // Apply for funds

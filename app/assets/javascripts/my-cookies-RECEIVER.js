@@ -40,8 +40,18 @@ if ($.cookie("filter-results") == 'true') { $('.search-filter h4').text('Edit se
 if ($.cookie("browse-results") == 'true') { $('.search-filter h4').text('Apply filter'); }
 
 // Opens the filters
-if ($.cookie("filter-results-sector") == 'true') { $('details[data-search-filter="location"').attr('open','isOpen'); }
-if ($.cookie("filter-results-location") == 'true') { $('details[data-search-filter="sector"').attr('open','isOpen'); }
+if ($.cookie("filter-results-sector") == 'true') {
+     $('details[data-search-filter="location"').attr('open','isOpen');
+     $('.before-business-content').hide();
+     $('.after-business-content').show();
+}
+if ($.cookie("filter-results-location") == 'true') {
+     $('.before-business-content').hide();
+     $('.after-business-content').show();
+}
+if ($.cookie("filter-results-sector") == 'true' && $.cookie("filter-results-location") == 'true') {
+     $('.pledge-section-two .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
+}
 if ($.cookie("filter-results-standard") == 'true') { $('details[data-search-filter="training"').attr('open','isOpen'); }
 if ($.cookie("filter-level") == 'true') { $('details[data-search-filter="level"').attr('open','isOpen'); }
 
@@ -138,6 +148,7 @@ if ($.cookie("application-apprentice-details") == 'true') {
      $('.after-apprenticeship-content, #add-another-apprenticeship, ol.app-task-list li.pledge-section-one h3').show();
      $('ol.app-task-list li.pledge-section-one').addClass('apprentice-added');
      $('.apprenticeship-total .value-format').text($.cookie("application-total-cost"));
+     $('.apprenticeship-application-total.value-format').text($.cookie("application-total-cost"));
 }
 
 // Confirm - 2 - business details
@@ -150,6 +161,9 @@ $("#application-business-details").on("click", function (e) {
 
 if ($.cookie("application-business-details") == 'true') {
      $('.pledge-section-two .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
+     $('.before-business-content').hide();
+     $('.after-business-content').show();
+} else if ($.cookie("filter-results-sector") == 'true' && $.cookie("filter-results-location") == 'true') {
      $('.before-business-content').hide();
      $('.after-business-content').show();
 }
@@ -241,7 +255,7 @@ if ($.cookie("pledge-application-completed") == 'true') {
 }
 
 // Delete application
-$('.cancelled-info').hide();
+$('.cancelled-info, .rejection-info').hide();
 
 $("#delete-application-continue").on("click", function (e) {
      if ($('input[id="delete-application"]').prop('checked') == true) {
