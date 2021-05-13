@@ -48,21 +48,6 @@
                          </div>
                     </div>
 
-                    {% from "govuk/components/input/macro.njk" import govukInput %}
-
-                    {{ govukInput({
-                         label: {
-                              text: "Maximum number of apprentices per application",
-                              isPageHeading: false
-                         },
-                         classes: "govuk-input--width-3",
-                         hint: {
-                              text: "This number must be greater than 0"
-                         },
-                         id: "pledge-apprentices",
-                         name: "pledge-apprentices",
-                         value: data["pledge-apprentices"]
-                    }) }}
 
                     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
