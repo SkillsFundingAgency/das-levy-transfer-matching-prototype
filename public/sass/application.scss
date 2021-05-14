@@ -265,6 +265,11 @@ p {
 }
 
 #apprenticeship-cost {
+     &.error {
+          .total {
+               background: $govuk-error-colour;
+          }
+     }
      .total {
           margin-bottom: 0;
      }

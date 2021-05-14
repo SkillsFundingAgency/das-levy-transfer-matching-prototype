@@ -37,33 +37,6 @@
                     {% from "govuk/components/radios/macro.njk" import govukRadios %}
                     {% from "govuk/components/input/macro.njk" import govukInput %}
 
-                    {% set deleteHtml %}
-                         <div class="govuk-form-group">
-                              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-                                   <legend class="govuk-fieldset__legend">Select the reasons for cancelling the application so we can share this with Opportunity (123465)</legend>
-                                   <div id="delete-reason-hint" class="govuk-hint"> Select all that apply.</div>
-                                   <div class="govuk-checkboxes">
-                                        <div class="govuk-checkboxes__item">
-                                             <input class="govuk-checkboxes__input" id="delete-reason-1" name="delete-reason" type="checkbox" value="I was successful with another funding opportunity">
-                                             <label class="govuk-label govuk-checkboxes__label" for="delete-reason-1">I was successful with another funding opportunity</label>
-                                        </div>
-                                        <div class="govuk-checkboxes__item">
-                                             <input class="govuk-checkboxes__input" id="delete-reason-2" name="delete-reason" type="checkbox" value="I no longer need an apprentice">
-                                             <label class="govuk-label govuk-checkboxes__label" for="delete-reason-2">I no longer need an apprentice</label>
-                                        </div>
-                                   </div>
-                              </fieldset>
-                         </div>
-
-                         <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="500">
-                              <div class="govuk-form-group">
-                                   <label class="govuk-label" for="delete-more-detail">Explain why you're cancelling your application. Do not include personal or financial information.</label>
-                                   <textarea class="govuk-textarea govuk-js-character-count" id="delete-more-detail" name="delete-more-detail" rows="5" aria-describedby="delete-more-detail-info"></textarea>
-                              </div>
-                              <div id="delete-more-detail-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You can enter up to 500 characters</div>
-                         </div>
-                    {% endset -%}
-
                     {{ govukRadios({
                     idPrefix: "delete-application",
                          name: "delete-application",
@@ -76,10 +49,7 @@
                          items: [
                               {
                                    value: "Yes, cancel application",
-                                   text: "Yes, cancel application",
-                                   conditional: {
-                                        html: deleteHtml
-                                   }
+                                   text: "Yes, cancel application"
                               },
                               {
                                    value: "No, keep the application",

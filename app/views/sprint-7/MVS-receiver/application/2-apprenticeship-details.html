@@ -12,14 +12,24 @@
 <div class="govuk-width-container">
 
      <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <!-- ERROR MESSAGE - START -->
+               <div class="govuk-error-summary funding-over" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+                    <div class="govuk-error-summary__body">
+                         <ul class="govuk-list govuk-error-summary__list">
+                              <li>
+                                   <a href="#pledge-application-apprentices">There is not enough funding to support this many apprentices</a>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- ERROR MESSAGE - END -->
 
                <span class="govuk-caption-m">Search and apply for pledges in England</span>
                <h1 class="govuk-heading-xl">Apprenticeship details</h1>
-
-          </div>
-
-          <div class="govuk-grid-column-two-thirds">
 
                <form class="start-search-page" action="1-application-core" method="post">
 
@@ -29,8 +39,11 @@
                          <input class="govuk-input govuk-input--width-20" id="pledge-application-standard" name="pledge-application-standard" type="text" value="{{ data['pledge-application-standard'] }}">
                     </div>
 
-                    <div class="govuk-form-group">
+                    <div class="govuk-form-group" id="how-many-apprentices">
                          <label class="govuk-label govuk-label--s" for="pledge-application-apprentices">How many apprentices do you want to fund?</label>
+                         <span id="apprentices-error" class="govuk-error-message">
+                              <span class="govuk-visually-hidden">Error:</span> There is not enough funding to support this many apprentices
+                         </span>
                          <input class="govuk-input govuk-input--width-5" id="pledge-application-apprentices" name="pledge-application-apprentices" type="text" value="{{ data['pledge-application-apprentices'] }}">
                     </div>
 
@@ -87,10 +100,10 @@
                          </fieldset>
                     </div>
 
-                    <div class="govuk-warning-text funding-over">
+                    <!-- <div class="govuk-warning-text">
                          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                          <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> Your application exceeds the transfer funding set by <span class="pledge-name-answer">####</span>. We will notify them of this.</strong>
-                    </div>
+                    </div> -->
 
                     <button class="govuk-button" data-module="govuk-button" id="application-apprentice-details">Continue</button>
 
