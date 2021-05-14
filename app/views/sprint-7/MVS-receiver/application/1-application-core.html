@@ -48,7 +48,7 @@
                <ol class="app-task-list">
 
                     <!-- SECTION - ONE - START -->
-                    <li class="pledge-section-one">
+                    <li class="pledge-section-one" id="pledge-section-one">
                          <h2 class="app-task-list__section">
                               <span class="app-task-list__section-number number-one">1. </span>
                               Apprenticeship details
@@ -89,7 +89,7 @@
                          </ul>
                          <button class="govuk-button" data-module="govuk-button" id="add-another-apprenticeship"><span class="icon add white"></span>Add another apprenticeship</button>
                          <h3 class="govuk-heading-m apprenticeship-total">
-                              Total: <strong>£<span class="value-format"></span></strong>
+                              Total: <strong>£<span class="total-cost"></span></strong>
                               <br>
                               <span class="small-text">for financial year 2021/22</span>
                          </h3>
@@ -97,7 +97,7 @@
                     <!-- SECTION - ONE - END -->
 
                     <!-- SECTION - TWO - START -->
-                    <li class="pledge-section-two">
+                    <li class="pledge-section-two" id="pledge-section-two">
                          <h2 class="app-task-list__section">
                               <span class="app-task-list__section-number">2. </span>
                               Your business details
@@ -124,14 +124,14 @@
                                         <a href="3-business-details#pledge-application-location">Location</a>
                                    </span>
                                    <p class="before-business-content">--</p>
-                                   <p class="after-business-content">{{ data['pledge-application-location'] }}</p>
+                                   <p class="after-business-content post-code-answer">{{ data['pledge-application-location'] }}</p>
                               </li>
                          </ul>
                     </li>
                     <!-- SECTION - TWO - END -->
 
                     <!-- SECTION - THREE - START -->
-                    <li class="pledge-section-three">
+                    <li class="pledge-section-three" id="pledge-section-tree">
                          <h2 class="app-task-list__section">
                               <span class="app-task-list__section-number">3. </span>
                               About your apprenticeship
@@ -152,7 +152,7 @@
                     <!-- SECTION - THREE - END -->
 
                     <!-- SECTION - FOUR - START -->
-                    <li class="pledge-section-four">
+                    <li class="pledge-section-four" id="pledge-section-four">
                          <h2 class="app-task-list__section">
                               <span class="app-task-list__section-number">4. </span>
                               Contact details
@@ -176,11 +176,18 @@
                                    <div class="after-contact-content">
                                         {% if data['pledge-application-email'] %}
                                         <ul class="govuk-list">
+                                             {% for key, email in data['pledge-application-email'] %}
+                                                  <li>{{ email }}</li>
+                                             {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                        <!-- {% if data['pledge-application-email'] %}
+                                        <ul class="govuk-list">
                                              {% for key, applicationEmail in data['pledge-application-email'] %}
                                                   <li>{{ applicationEmail }}</li>
                                              {% endfor %}
                                         </ul>
-                                        {% endif %}
+                                        {% endif %} -->
                                    </div>
                               </li>
                               <li class="app-task-list__item">

@@ -139,6 +139,7 @@ $('.after-apprenticeship-content, #add-another-apprenticeship, ol.app-task-list 
 
 $("#application-apprentice-details").on("click", function (e) {
      $.cookie("application-apprentice-details", true, {path:'/'});
+     // var apprenticeshipTotal = $('#apprenticeship-cost .value-format').text();
      $.cookie("application-total-cost", $('#apprenticeship-cost .value-format').text(), {path:'/'});
 });
 
@@ -147,8 +148,11 @@ if ($.cookie("application-apprentice-details") == 'true') {
      $('.before-apprenticeship-content').hide();
      $('.after-apprenticeship-content, #add-another-apprenticeship, ol.app-task-list li.pledge-section-one h3').show();
      $('ol.app-task-list li.pledge-section-one').addClass('apprentice-added');
-     $('.apprenticeship-total .value-format').text($.cookie("application-total-cost"));
-     $('.apprenticeship-application-total.value-format').text($.cookie("application-total-cost"));
+     $('.apprenticeship-total .total-cost').text($.cookie("application-total-cost"));
+     $('.apprenticeship-application-total.total-cost').text($.cookie("application-total-cost"));
+
+     $('#apprenticeship-cost').show();
+     // $('#apprenticeship-cost .value-format').text($.cookie("application-total-cost"));
 }
 
 // Confirm - 2 - business details

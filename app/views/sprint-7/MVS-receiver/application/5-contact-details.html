@@ -30,7 +30,7 @@
 
                <p>They may contact you with follow-up questions about your application.</p>
 
-               <form method="post" action="1-application-core" id="">
+               <form method="post" action="1-application-core#pledge-section-four" id="">
 
                     <div class="govuk-form-group">
                          <label class="govuk-label" for="pledge-application-firstname">First name</label>
@@ -50,7 +50,7 @@
                                    <input class="govuk-input govuk-input--width-20" id="pledge-application-email[url1]" name="pledge-application-email[url1]" type="email" spellcheck="false" value="{{ data['pledge-application-email[url1]'] }}">
                               </div>
 
-                              {% for url, applicationEmail in applicationEmails -%}
+                              {% for url, applicationEmail in applicationEmail -%}
                                    {% if url != 'url1' %}
                                    {% if applicationEmail != '' %}
                                         <div class="govuk-form-group">

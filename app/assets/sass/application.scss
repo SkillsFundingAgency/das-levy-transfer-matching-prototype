@@ -27,6 +27,10 @@ $govuk-assets-path: '/govuk/assets/';
      // padding-top: 0;
 }
 
+.post-code-answer {
+     text-transform: uppercase;
+}
+
 .no-margin-bottom {
      margin-bottom: 0 !important;
 }
@@ -265,6 +269,7 @@ p {
 }
 
 #apprenticeship-cost {
+     display: none;
      &.error {
           .total {
                background: $govuk-error-colour;

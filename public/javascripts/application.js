@@ -623,7 +623,7 @@ $('.copy-items').on("click", function (e) {
 // Apprenticeship total
 var applicationsCost = parseInt($('#apprenticeship-cost .number span').text());
 
-$('#apprenticeship-cost, .funding-over, #apprentices-error').hide();
+$('.funding-over, #apprentices-error').hide();
 
 $('#pledge-application-start-year').on("keyup", function (e) {
      var apprenticeshipNumbers = parseInt($('#pledge-application-apprentices').val());
@@ -632,7 +632,7 @@ $('#pledge-application-start-year').on("keyup", function (e) {
      $('#apprenticeship-cost .number span').text(applicationsMaths.toLocaleString('en-US'));
      var pledgeTotalCost = parseInt($.cookie("pledge-value").replace('%C2%A3','').replace('%2C',''));
      // console.log(pledgeTotalCost);
-     // console.log(applicationsTotalCost);
+     console.log($('#apprenticeship-cost .value-format').text());
      if (applicationsTotalCost > pledgeTotalCost) {
           // console.log('working');
           $('#apprenticeship-cost').addClass('error');
@@ -646,6 +646,7 @@ $('#pledge-application-start-year').on("keyup", function (e) {
 });
 
 $('#pledge-application-start-year').on("keyup", function (e) {
+
 });
 
 // Apply for funds

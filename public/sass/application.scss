@@ -265,6 +265,7 @@ p {
 }
 
 #apprenticeship-cost {
+     display: none;
      &.error {
           .total {
                background: $govuk-error-colour;
