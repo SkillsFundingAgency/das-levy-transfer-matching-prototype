@@ -144,7 +144,7 @@ $("#application-apprentice-details").on("click", function (e) {
 });
 
 if ($.cookie("application-apprentice-details") == 'true') {
-     $('.pledge-section-one .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
+     $('.pledge-section-one .govuk-tag').removeClass('govuk-tag--grey').text('completed');
      $('.before-apprenticeship-content').hide();
      $('.after-apprenticeship-content, #add-another-apprenticeship, ol.app-task-list li.pledge-section-one h3').show();
      $('ol.app-task-list li.pledge-section-one').addClass('apprentice-added');
@@ -164,7 +164,7 @@ $("#application-business-details").on("click", function (e) {
 });
 
 if ($.cookie("application-business-details") == 'true') {
-     $('.pledge-section-two .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
+     $('.pledge-section-two .govuk-tag').removeClass('govuk-tag--grey').text('completed');
      $('.before-business-content').hide();
      $('.after-business-content').show();
 } else if ($.cookie("filter-results-sector") == 'true' && $.cookie("filter-results-location") == 'true') {
@@ -202,7 +202,7 @@ $('.before-details-content').show();
 $('.after-details-content').hide();
 
 if ($.cookie("application-more-details") == 'true') {
-     $('.pledge-section-three .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
+     $('.pledge-section-three .govuk-tag').removeClass('govuk-tag--grey').text('completed');
      $('.before-details-content').hide();
      $('.after-details-content').show();
 }
@@ -216,13 +216,17 @@ $('.before-contact-content').show();
 $('.after-contact-content').hide();
 
 if ($.cookie("application-contact-details") == 'true') {
-     $('.pledge-section-four .govuk-tag').addClass('govuk-tag--blue').removeClass('govuk-tag--grey').text('completed');
+     $('.pledge-section-four .govuk-tag').removeClass('govuk-tag--grey').text('completed');
      $('.before-contact-content').hide();
      $('.after-contact-content').show();
 }
 
 // Confirm - complete
-if ($.cookie("application-apprentice-details") == 'true' && $.cookie("application-business-details") == 'true' && $.cookie("application-more-details") == 'true' && $.cookie("application-contact-details") == 'true') {
+// if ($.cookie("application-apprentice-details") == 'true' && $.cookie("application-business-details") == 'true' && $.cookie("application-more-details") == 'true' && $.cookie("application-contact-details") == 'true') {
+//      $('.submit-transfer-application').show();
+// }
+
+if ($.cookie("application-apprentice-details") == 'true' && $.cookie("application-business-details") == 'true' && $.cookie("application-contact-details") == 'true') {
      $('.submit-transfer-application').show();
 }
 
