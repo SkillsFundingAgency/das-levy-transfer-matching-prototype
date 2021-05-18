@@ -52,6 +52,7 @@
 
                <h1 class="govuk-heading-xl">
                     Pledge number 910106
+                    <span class="govuk-caption-l">Amount for 2021/22 - £<span class="value-format">{{ data['pledge-amount'] }}</span></span>
                     <!-- <span class="govuk-caption-xl">Pledge number - 910106</span> -->
                     <!-- <span class="govuk-caption-xl anonymous-yes">Anonymous Pledge (910106)</span>
                     <span class="govuk-caption-xl anonymous-no">BARRY & BARRY Ltd (910106)</span> -->
@@ -122,18 +123,10 @@
                     </div>
                </details>
 
-               <div class="govuk-warning-text">
-                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                    <strong class="govuk-warning-text__text">
-                         <span class="govuk-warning-text__assistive">Warning</span>
-                         <a href="#" class="gov-link">Your pledge can now be viewed publicly and shared</a>, so that businesses can apply to you for funding.
-                    </strong>
-               </div>
-
           </div>
      </div>
 
-     <div class="pledge-values">
+     <!-- <div class="pledge-values">
           <div class="pledge-funds">
                <p>Pledge 910106 amount</p>
                <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
@@ -148,10 +141,18 @@
                <p class="number before-approval">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
                <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p>
           </div>
-     </div>
+     </div> -->
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
+
+               <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         <a href="#" class="gov-link">Your pledge can now be viewed publicly and shared</a>, so that businesses can apply to you for funding.
+                    </strong>
+               </div>
 
                <div class="empty-pledge">
                     <h2 class="govuk-heading-m">Manage your pledges and applications</h2>
@@ -168,6 +169,21 @@
                {% include "../../includes/MVS-pledges-table-design.html" %}
 
                <a href="#" class="govuk-button">Create a new pledge</a>
+
+               <div class="new-pledge-values">
+                    <h3 class="govuk-heading-l">
+                         <strong class="before-approval">£<span class="value-format">0</span></strong>
+                         <strong class="after-approval">£<span class="value-format">4500</span></strong>
+                         <br>
+                         <span class="small-text">Pledge funds committed</span>
+                    </h3>
+                    <h3 class="govuk-heading-l">
+                         <strong class="before-approval total-value">£<span class="value-format">{{ data['pledge-amount'] }}</span></strong>
+                         <strong class="after-approval total-value">£<span class="value-format">{{ data['pledge-amount']-4500 }}</span></strong>
+                         <br>
+                         <span class="small-text">Pledge funds remaining</span>
+                    </h3>
+               </div>
 
                <br>
 

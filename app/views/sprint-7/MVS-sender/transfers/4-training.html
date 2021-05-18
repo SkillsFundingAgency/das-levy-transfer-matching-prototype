@@ -39,6 +39,17 @@
                     </div>
                </details>
 
+               <section class="employer-details" id="sector-playback">
+                    <p class="govuk-heading-s">The current sectors you'd like to support are:</p>
+                    {% if data['pledge-sector'] %}
+                    <ul class="govuk-list govuk-list--bullet">
+                         {% for answer in data['pledge-sector'] -%}
+                         <li>{{ answer }}</li>
+                         {% endfor %}
+                    </ul>
+                    {% endif %}
+               </section>
+
                <form method="post" action="pledge-core#criteria-job" id="pledge-training-form">
 
                     <div class="govuk-form-group">

@@ -147,13 +147,21 @@
 
                     <div class="pledge-rejected-info">
 
-                         <div class="govuk-inset-text">
+                         <!-- <div class="govuk-inset-text">
                               <strong>Disclaimer:</strong> The information provided by CBJ Engineering in their application for this pledge has not been checked and verified by the apprenticeship service.<br>
                               <br>
                               Please carry out your own due diligence when deciding whether to offer a transfer of your levy funds.
-                         </div>
+                         </div> -->
 
                          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                         {% set approveHtml %}
+                              <p>
+                                   <strong>Disclaimer:</strong> The information provided by Belhavel Construction Ltd in their application for this pledge has not been checked and verified by the apprenticeship service.<br>
+                                   <br>
+                                   Please carry out your own due diligence when deciding whether to offer a  transfer of your levy funds.
+                              </p>
+                         {% endset -%}
 
                          {{ govukRadios({
                               idPrefix: "mvs-application-reject",
@@ -168,7 +176,10 @@
                               items: [
                                    {
                                         value: "approve",
-                                        text: "Approve the application"
+                                        text: "Approve the application",
+                                        conditional: {
+                                             html: approveHtml
+                                        }
                                    },
                                    {
                                         value: "reject",
@@ -192,6 +203,25 @@
                </form>
 
           </div>
+
+          <aside class="govuk-grid-column-one-third">
+
+               <div class="new-pledge-values side-panel">
+                    <h3 class="govuk-heading-l">
+                         <strong class="before-approval">£<span class="value-format">0</span></strong>
+                         <strong class="after-approval">£<span class="value-format">4500</span></strong>
+                         <br>
+                         <span class="small-text">Pledge funds committed</span>
+                    </h3>
+                    <h3 class="govuk-heading-l">
+                         <strong class="before-approval total-value">£<span class="value-format">{{ data['pledge-amount'] }}</span></strong>
+                         <strong class="after-approval total-value">£<span class="value-format">{{ data['pledge-amount']-4500 }}</span></strong>
+                         <br>
+                         <span class="small-text">Pledge funds remaining</span>
+                    </h3>
+               </div>
+
+          </aside>
 
      </div>
 

@@ -94,6 +94,21 @@ $(document).ready(function(){
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
 // $('#sender-check-answers').find('.section-six').hide();
 
+$('#pledge-amount-error').hide();
+
+// Funding
+$('#pledge-amount').on("keyup", function (e) {
+     var fundingTotal = parseInt($('#pledge-amount').val());
+     if (fundingTotal == 5999) {
+          $('#pledge-funding-form').attr('action','');
+          $('#pledge-amount-container').addClass('govuk-form-group--error');
+          $('#event-name-hint').addClass('govuk-error-message').removeClass('govuk-hint');
+          $('#pledge-amount-error').show();
+     } else {
+          $('#pledge-funding-form').attr('action','pledge-core');
+     }
+});
+
 // Locations
 $('input#pledge-location-cities').on("click", function (e) {
      $('#pledge-location-form').attr('action','3B-location');

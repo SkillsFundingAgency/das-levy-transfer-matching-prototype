@@ -123,9 +123,12 @@ $(".pledge-sector-continue").on("click", function (e) {
 
 });
 
+$('#sector-playback').hide();
+
 if ($.cookie("pledge-sector-complete") == "true") {
      $('.before-sector-content').hide();
      $('.after-sector-content').show();
+     $('#sector-playback').show();
      // $('li.pledge-section-one strong.govuk-tag').removeClass('govuk-tag--grey').text('completed');
 }
 
