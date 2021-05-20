@@ -98,9 +98,9 @@
           </h2>
           <ul class="govuk-list govuk-list--bullet">
                <li>
-                    <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-7/MVS-sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a>
+                    <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-8/MVS-sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a>
                </li>
-               <li><a href="/sprint-7/sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a></li>
+               <li><a href="/sprint-8/sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a></li>
                <!-- <li><a href="/sprint-7/sender/unhappy-path-1/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - insufficient funds</a></li>
                <li><a href="/sprint-7/sender/unhappy-path-2/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - cancelled application</a></li> -->
                <!-- <li><a href="/sprint-7/sender/transfers-V1" class="govuk-link govuk-link--no-visited-state">Finance view - V1</a></li>
@@ -112,9 +112,9 @@
           </h2>
           <ul class="govuk-list govuk-list--bullet">
                <li>
-                    <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-7/MVS-receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a>
+                    <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-8/MVS-receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a>
                </li>
-               <li><a href="/sprint-7/receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a></li>
+               <li><a href="/sprint-8/receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a></li>
                <!-- <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - multiple pledges</a></li>
                <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - unwanted application</a></li> -->
           </ul>
@@ -129,10 +129,19 @@
      <div class="govuk-grid-column-two-thirds">
 
           <h2 class="govuk-heading-l govuk-!-margin-top-9">
+               Beta sprints
+          </h2>
+
+          {% include './sprint-8/_summary.html' %}
+
+          <h2 class="govuk-heading-l govuk-!-margin-top-9">
                Alpha sprints
           </h2>
 
-          {% include './sprint-7/_summary.html' %}
+
+          {% set sprint7Html %}
+               {% include './sprint-7/_summary.html' %}
+          {% endset %}
 
           {% set sprint6Html %}
                {% include './sprint-6/_summary.html' %}
@@ -153,6 +162,17 @@
           {{ govukAccordion({
                id: "accordion-alpha",
                items: [
+                    {
+                         heading: {
+                              text: "Sprint 7"
+                         },
+                         content: {
+                              html: sprint7Html
+                         },
+                         summary: {
+                              html: '28th April - 11th May 2021'
+                         }
+                    },
                     {
                          heading: {
                               text: "Sprint 6"

@@ -1,0 +1,142 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../transfers">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row title-options">
+          <div class="govuk-grid-column-full">
+
+               <!-- REJECTION COMPLETE - START -->
+               <div class="govuk-panel govuk-panel--confirmation pledge-rejected">
+                    <h1 class="govuk-panel__title">Application rejected</h1>
+                    <p>You rejected the CBJ Engineering application</p>
+               </div>
+               <!-- REJECTION COMPLETE - END -->
+
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds left-side">
+                         <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+                    </div>
+                    <div class="govuk-grid-column-one-third right-side">
+                         <p class="govuk-caption-m">
+                              <a href="" class="share govuk-link--no-visited-state">Share pledge</a>
+                              <!-- <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a> -->
+                         </p>
+                    </div>
+               </div>
+
+               <h1 class="govuk-heading-xl">
+                    Applications for your transfer pledge
+                    <span class="govuk-caption-xl">Pledge number - 910106</span>
+                    <!-- <span class="govuk-caption-xl anonymous-yes">Anonymous Pledge (910106)</span>
+                    <span class="govuk-caption-xl anonymous-no">BARRY & BARRY Ltd (910106)</span> -->
+               </h1>
+
+               <details class="govuk-details pledge-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Details of your pledge</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <section class="employer-details">
+                              <div class="wrapper">
+                                   <p><strong>Locations:</strong></p>
+                                   {% if data['pledge-location'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge-location'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                                   {% endif %}
+                              </div>
+                              <div class="wrapper">
+                                   <p><strong>Sectors:</strong></p>
+                                   {% if data['pledge-sector'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge-sector'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                                   {% endif %}
+                              </div>
+                              <div class="wrapper">
+                                   <p><strong>Type of training:</strong></p>
+                                   {% if data['pledge-training'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge-training'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                                   {% endif %}
+                              </div>
+                              <div class="wrapper">
+                                   <p><strong>Level:</strong></p>
+                                   {% if data['pledge-level'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge-level'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                                   {% endif %}
+                              </div>
+                              <div class="total">
+                                   <p class="govuk-heading-m">Total funding: £<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+                              </div>
+                         </section>
+                    </div>
+               </details>
+
+          </div>
+     </div>
+
+     <div class="pledge-values">
+          <div class="pledge-funds">
+               <p>Pledge amount</p>
+               <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+          </div>
+          <div class="pledge-funds-spent">
+               <p>Pledge funds committed</p>
+               <p class="number before-approval">£<span class="value-format">0</span></p>
+               <p class="number after-approval">£<span class="value-format">9000</span></p>
+          </div>
+          <div class="pledge-funds-remaining">
+               <p>Pledge funds remaining</p>
+               <p class="number before-approval">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               {% include "../../includes/pledges-table-design.html" %}
+
+               {% include "../../includes/pledges-tile-design.html" %}
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+               <a href="#" class="govuk-button main-cta-float-right">Create a new pledge</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

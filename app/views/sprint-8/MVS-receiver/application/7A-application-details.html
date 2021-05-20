@@ -1,0 +1,123 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
+               <h1 class="govuk-heading-xl">Your <span class="pledge-name-answer">####</span> application details</h1>
+
+               <div class="govuk-warning-text application-status-one">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         Application status: <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                    </strong>
+               </div>
+
+               <!-- SECTION 2 - START -->
+               <h2 class="govuk-heading-m">Which criteria do you match?</h2>
+
+               <section class="employer-contact-details">
+                    <h2 class="govuk-heading-m">Do you match the criteria?</h2>
+                    <ul class="govuk-list">
+                         <li><span class="icon tick"></span>Location: <strong class="post-code-answer">{{ data['pledge-application-location'] }}</strong></li>
+                         <li><span class="icon tick"></span>Sector: <strong>{{ data['search-sector'] }}</strong></li>
+                         <li><span class="icon tick"></span>Job role & level: <strong>{{ data['pledge-application-standard'] }}</strong></li>
+                         <!-- <li><span class="icon tick"></span><span class="icon cross"></span>Apprenticeship qualification level</li> -->
+                    </ul>
+                    <!-- <p><strong>{{ data['pledge-match'] }}</strong></p>
+                    <p>
+                         {{ data['pledge-match-yes-more-detail'] }}
+                         {{ data['pledge-match-no-more-detail'] }}
+                    </p> -->
+               </section>
+               <!-- SECTION 2 - END -->
+
+               <!-- SECTION 3 - START -->
+               <h2 class="govuk-heading-m">About your apprenticeship</h2>
+
+               <section class="employer-contact-details">
+                    <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
+                    <p><strong>Apprenticeship training course:</strong> {{ data['pledge-application-standard'] }}</p>
+                    <p><strong>Number of apprentices:</strong> {{ data['pledge-application-apprentices'] }}</p>
+                    <p><strong>Apprenticeship training to start by:</strong> {{ data['pledge-application-start-month'] }} / {{ data['pledge-application-start-year'] }}</p>
+                    <p><strong>Have you found a training provider?:</strong> {{ data['pledge-application-training-provider'] }}</p>
+               </section>
+               <!-- SECTION 3 - END -->
+
+               <!-- SECTION 4 - START -->
+               <h2 class="govuk-heading-m">Details about your apprenticeship</h2>
+
+               <section class="employer-contact-details">
+                    <!-- <p class="govuk-heading-m">About the apprenticeship</p> -->
+                    <p>{{ data['pledge-application-more-details'] }}</p>
+               </section>
+               <!-- SECTION 4 - END -->
+
+               <!-- SECTION 5 - START -->
+               <h2 class="govuk-heading-m">Your organisation's details</h2>
+
+               <section class="employer-contact-details">
+                    <p><strong>Your organisation name:</strong> Belhavel Construction Ltd </p>
+                    <p><strong>Contact name:</strong> {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}</p>
+                    <p><strong>Email address:</strong>
+                         {% if data['pledge-application-email'] %}
+                              {% for key, applicationEmail in data['pledge-application-email'] %}
+                                   {{ applicationEmail }}
+                              {% endfor %}
+                         {% endif %}
+                    </p>
+                    <p><strong>Your website:</strong> {{ data['pledge-application-website'] }}</p>
+               </section>
+               <!-- SECTION 5 - END -->
+
+
+               <a href="9-accept" class="govuk-button" id="approve-application">Approve application</a>
+               <a href="#" class="govuk-button govuk-button--warning" id="delete-application">Cancel application</a>
+
+               <br>
+
+               <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-back-link" id="">Back</a>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel">
+                    <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
+                    <p class="details">
+                         Location: <strong class="pledge-location-answer">####</strong><br>
+                         Sector: <strong class="pledge-sector-answer">####</strong><br>
+                         Category of training: <strong class="pledge-training-answer">####</strong><br>
+                         Level: <strong class="pledge-level-answer">####</strong>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available:<br>up to £<span class="pledge-value-answer value-format">####</span> in 2021/22</p>
+                    </div>
+               </section>
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<div class="transfer-values-prototype mvs-version">
+
+     <div class="transfer-values transfer-values-2021">
+          <div class="transfer-funds">
+               <p>Your transfer allowance 2021/22</p>
+               <p class="number before-transfer">£<span class="value-format">150000</span></p>
+               <p class="number after-transfer">£<span class="value-format">{{ 150000-data['transfer-private-amount'] }}</span></p>
+               <p class="number after-transfer-and-pledge">£<span class="value-format">{{ 150000-18000-data['transfer-private-amount'] }}</span></p>
+          </div>
+          <div class="transfer-funds-remaining">
+               <p>Committed to transfers 2021/22</p>
+               <p class="number before-pledge before-transfer">£<span class="value-format">0</span></p>
+               <p class="number after-pledge">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number after-transfer">£<span class="value-format">{{ data['transfer-private-amount'] }}</span></p>
+               <p class="number after-transfer-and-pledge">£<span class="value-format">{{ data['transfer-private-amount'] }}</span></p>
+          </div>
+          <div class="transfer-funds-non-pledge">
+               <p>Remaining transfer funds 2021/22</p>
+               <p class="number before-transfer">£<span class="value-format">150000</span></p>
+               <p class="number after-pledge">£<span class="value-format">{{ 150000-data['pledge-amount'] }}</span></p>
+               <p class="number after-transfer">£<span class="value-format">{{ 150000-data['transfer-private-amount'] }}</span></p>
+               <p class="number after-transfer-and-pledge">£<span class="value-format">{{ 150000-data['transfer-private-amount']-18000 }}</span></p>
+          </div>
+     </div>
+
+</div>

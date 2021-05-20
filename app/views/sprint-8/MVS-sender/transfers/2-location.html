@@ -1,0 +1,89 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">Add the locations you'd like to fund</h1>
+
+               <form method="post" action="pledge-core#criteria-location" id="">
+
+                    <div class="updates-locations">
+                         <div id="locations" data-location-count="{{numberOfLocations}}">
+
+                              <div class="govuk-form-group first-of-type">
+                                   <label class="govuk-label" for="pledge-location[url0]">Start typing to find the city, town, region or local authority area you'd like to pledge money to.</label>
+                                   <div class="govuk-hint">
+                                        For example, Manchester, West Midlands, Leeds City Council
+                                   </div>
+                                   <input class="govuk-input govuk-input--width-20" id="pledge-location[url0]" name="pledge-location[url0]" type="text" spellcheck="false">
+                                   <input class="govuk-input govuk-input--width-20 pledge-location-hidden" id="" name="" type="text" spellcheck="false">
+
+                              </div>
+
+                              {% for url, location in location -%}
+                                   {% if url != 'url1' %}
+                                   {% if location != '' %}
+                                        <div class="govuk-form-group new-location">
+                                             <label class="govuk-label" for="pledge-location[{{url}}]">Additional city, town or local authority</label>
+                                             <input class="govuk-input govuk-input--width-20 pledge-location-test" id="pledge-location[{{url}}]" name="pledge-location[{{url}}]" type="text" spellcheck="false">
+                                             <p class="govuk-body">
+                                                  <a class="govuk-link govuk-link--no-visited-state" data-remove="[{{url}}]" href="#">remove</a>
+                                             </p>
+                                        </div>
+                                   {% endif %}
+                                   {% endif %}
+                              {%- endfor %}
+                         </div>
+                         <p class="govuk-body govuk-!-margin-bottom-6">
+                              <a class="govuk-link govuk-link--no-visited-state add-location" href="#" id="addAnotherLocation">Add another location</a>
+                         </p>
+                    </div>
+
+                    <div class="govuk-inset-text" id="clear-pledge-location-all-of-england">
+                         <!-- <h3 class="govuk-heading-s">Or open it up to all of England</h3> -->
+                         <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                   <div class="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="pledge-location-all-of-england" name="pledge-location-all-of-england" type="checkbox" value="England" {{checked('pledge-location-all-of-england','England')}}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="pledge-location-all-of-england">Or all of England</label>
+                                        </div>
+                                   </div>
+                              </fieldset>
+                         </div>
+                    </div>
+
+                    <button class="govuk-button pledge-location-continue" data-module="govuk-button" id="pledge-location-continue">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
