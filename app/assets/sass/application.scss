@@ -27,6 +27,12 @@ $govuk-assets-path: '/govuk/assets/';
      // padding-top: 0;
 }
 
+.clear-cookies {
+     position: fixed;
+     right: 1em;
+     bottom: 1em;
+}
+
 .post-code-answer {
      text-transform: uppercase;
 }

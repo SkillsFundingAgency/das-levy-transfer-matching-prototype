@@ -215,6 +215,9 @@ table {
           tbody {
                tr {
                     border-bottom: 5px solid govuk-colour("light-grey");
+                    &:last-of-type {
+                         border-bottom: 5px solid govuk-colour("light-grey");
+                    }
                     // &:nth-of-type(even) {
                     //      background: govuk-colour("light-grey");
                     // }

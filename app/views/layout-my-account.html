@@ -52,6 +52,7 @@
 
 {% if useAutoStoreData %}
   {% block footer %}
+  <a href="/" class="clear-cookies">Clear session</a>
     {{ govukFooter({
       meta: {
         items: [
@@ -61,7 +62,7 @@
           },
           {
             href: "/prototype-admin/clear-data",
-            text: "Clear data"
+            text: "Clear session"
           }
         ]
       }

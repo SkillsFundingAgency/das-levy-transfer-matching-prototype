@@ -9,6 +9,32 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
 
+// Clears all cookies
+function deleteAllCookies() {
+     var cookies = document.cookie.split(";");
+
+     for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i];
+          var eqPos = cookie.indexOf("=");
+          var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+          document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+     }
+}
+
+$(document).ready(function() {
+     $(".govuk-footer__link").eq(1).on('click', function(e) {
+          e.preventDefault();
+          deleteAllCookies();
+          document.location.href = "/prototype-admin/clear-data";
+     });
+     // $(".clear-cookies").click(function() {
+     //      deleteAllCookies();
+     //      // sessionStorage.clear();
+     //      // localStorage.clear();
+     //      // document.location = "index.html";
+     // });
+});
+
 if ($('#main-content').hasClass('my-account-wrapper')) {
      $('#main-content').parent().addClass('my-account-override');
 }
