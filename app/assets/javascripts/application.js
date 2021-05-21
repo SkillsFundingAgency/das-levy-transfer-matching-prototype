@@ -22,17 +22,13 @@ function deleteAllCookies() {
 }
 
 $(document).ready(function() {
-     $(".govuk-footer__link").eq(1).on('click', function(e) {
-          e.preventDefault();
+     var clearDataBtn = $("button:contains('Clear the data')");
+     clearDataBtn.on('click', function (e) {
           deleteAllCookies();
-          document.location.href = "/prototype-admin/clear-data";
-     });
-     // $(".clear-cookies").click(function() {
-     //      deleteAllCookies();
-     //      // sessionStorage.clear();
-     //      // localStorage.clear();
-     //      // document.location = "index.html";
-     // });
+          e.preventDefault()
+          var form = $(this).closest('form')
+          form.submit();
+     })
 });
 
 if ($('#main-content').hasClass('my-account-wrapper')) {
@@ -702,50 +698,63 @@ $('input[name=apply-pledge-funds]').on("click", function (e) {
 // !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
 // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
-document.getElementById("date-stamp").innerHTML = formatAMPM();
+var dateStamp = document.getElementById("date-stamp")
+if (dateStamp) {
+     dateStamp.innerHTML = formatAMPM();
+}
 
 function formatAMPM() {
-var d = new Date(),
-     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-     hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-     ampm = d.getHours() >= 12 ? 'pm' : 'am',
-     months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+     var d = new Date(),
+       minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+       hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+       ampm = d.getHours() >= 12 ? 'pm' : 'am',
+       months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+       days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
      return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
 }
 
-document.getElementById("date-stamp-transfer").innerHTML = formatAMPMTransfer();
+var dateStampTransfer = document.getElementById("date-stamp-transfer")
+if (dateStampTransfer) {
+     dateStampTransfer.innerHTML = formatAMPMTransfer();
+}
 
 function formatAMPMTransfer() {
-var d = new Date(),
-     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-     hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-     ampm = d.getHours() >= 12 ? 'pm' : 'am',
-     months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+     var d = new Date(),
+       minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+       hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+       ampm = d.getHours() >= 12 ? 'pm' : 'am',
+       months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+       days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
      return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
 }
 
-document.getElementById("date-stamp-deletion").innerHTML = formatAMPMDeletion();
+var dateStampDeletion = document.getElementById("date-stamp-deletion")
+if (dateStampDeletion) {
+     dateStampDeletion.innerHTML = formatAMPMDeletion();
+}
+
 
 function formatAMPMDeletion() {
-var d = new Date(),
-     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-     hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-     ampm = d.getHours() >= 12 ? 'pm' : 'am',
-     months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+     var d = new Date(),
+       minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+       hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+       ampm = d.getHours() >= 12 ? 'pm' : 'am',
+       months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+       days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
      return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
 }
 
-document.getElementById("date-stamp-cancelled").innerHTML = formatAMPMCancelled();
+var dateStampCancelled = document.getElementById("date-stamp-cancelled")
+if (dateStampCancelled) {
+     dateStampCancelled.innerHTML = formatAMPMCancelled();
+}
 
 function formatAMPMCancelled() {
-var d = new Date(),
-     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-     hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-     ampm = d.getHours() >= 12 ? 'pm' : 'am',
-     months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
-     days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+     var d = new Date(),
+       minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+       hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+       ampm = d.getHours() >= 12 ? 'pm' : 'am',
+       months = ['01','02','03','04','05','06','07','08','09','10','11','12'],
+       days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
      return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
 }
