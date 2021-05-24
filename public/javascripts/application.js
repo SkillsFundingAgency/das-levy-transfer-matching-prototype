@@ -22,13 +22,17 @@ function deleteAllCookies() {
 }
 
 $(document).ready(function() {
-     var clearDataBtn = $("button:contains('Clear the data')");
-     clearDataBtn.on('click', function (e) {
-          deleteAllCookies();
-          e.preventDefault()
-          var form = $(this).closest('form')
-          form.submit();
-     })
+     $('.clear-cookies').on("click", function (e) {
+           deleteAllCookies();
+     });
+
+     // var clearDataBtn = $("button:contains('Clear the data')");
+     // clearDataBtn.on('click', function (e) {
+     //      deleteAllCookies();
+     //      e.preventDefault()
+     //      var form = $(this).closest('form')
+     //      form.submit();
+     // })
 });
 
 if ($('#main-content').hasClass('my-account-wrapper')) {
