@@ -44,10 +44,16 @@
                     }
                     span {
                          display: inline-block;
+                         float: left;
                          &.number-one {
                               float: left;
                               height: 2em;
                          }
+                    }
+                    .text-wrapper {
+                         display: inline-block;
+                         float: left;
+                         max-width: 75%;
                     }
                }
                ul {
