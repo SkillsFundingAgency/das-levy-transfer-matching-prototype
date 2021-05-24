@@ -27,28 +27,25 @@
                <h1 class="govuk-heading-xl">Choose the types of job role you'd like to fund</h1>
 
                <p>
-                    Choose the types of job role you'd like to fund apprentices to train towards.
+                    You could choose to support all types of job role in those sectors, or you may only want to fund specific job roles.
                </p>
 
-               <details class="govuk-details" data-module="govuk-details">
+               <p>
+                    For example, if you have chosen to support the health and science sector, would you want to support a business administrator apprentice in that sector, or do you only want to support health and science job roles such as nursing?
+               </p>
+
+               <p>
+                    You can decide the type of job roles you want to support below.
+               </p>
+
+               <!-- <details class="govuk-details" data-module="govuk-details">
                     <summary class="govuk-details__summary">
                          <span class="govuk-details__summary-text">Example</span>
                     </summary>
                     <div class="govuk-details__text">
                          For example, a software developer apprentice working in a bank, works within the legal, finance and accounting sector, but their type of job role is digital.
                     </div>
-               </details>
-
-               <section class="employer-details" id="sector-playback">
-                    <p class="govuk-heading-s">The current sectors you'd like to support are:</p>
-                    {% if data['pledge-sector'] %}
-                    <ul class="govuk-list govuk-list--bullet">
-                         {% for answer in data['pledge-sector'] -%}
-                         <li>{{ answer }}</li>
-                         {% endfor %}
-                    </ul>
-                    {% endif %}
-               </section>
+               </details> -->
 
                <form method="post" action="pledge-core#criteria-job" id="pledge-training-form">
 
@@ -147,6 +144,23 @@
                </form>
 
           </div>
+
+
+          <aside class="govuk-grid-column-one-third">
+
+               <section class="employer-details" id="sector-playback">
+                    <p class="govuk-heading-s">The current sectors you'd like to support are:</p>
+                    {% if data['pledge-sector'] %}
+                    <ul class="govuk-list govuk-list--bullet">
+                         {% for answer in data['pledge-sector'] -%}
+                         <li>{{ answer }}</li>
+                         {% endfor %}
+                    </ul>
+                    {% endif %}
+               </section>
+
+          </aside>
+
 
      </div>
 
