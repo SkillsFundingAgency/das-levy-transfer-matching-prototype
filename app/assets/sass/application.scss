@@ -111,32 +111,6 @@ a {
           background: url("../images/copy-blue.svg") no-repeat 0% 50%;
           background-size: contain;
           position: relative;
-          .tooltiptext {
-               display: none;
-               width: 150px;
-               background-color: rgba(0,0,0,0.7);
-               color: #fff;
-               text-align: center;
-               border-radius: 6px;
-               padding: 0.5em;
-               position: absolute;
-               margin-left: -75px;
-               left: 50%;
-               bottom: -3.25em;
-               z-index: 1;
-               &:before {
-                    content: '';
-                    width: 0;
-                    height: 0;
-                    margin: 0 0 0 -0.5em;
-                    position: absolute;
-                    left: 50%;
-                    top: -0.5em;
-                    border-style: solid;
-                    border-width: 0 0.5em 0.5em 0.5em;
-                    border-color: transparent transparent rgba(0,0,0,0.7) transparent;
-               }
-          }
      }
      &.edit {
           padding-left: 1.75em;
@@ -146,6 +120,54 @@ a {
      &.main-cta-float-right {
           margin: 0;
           float: right;
+     }
+}
+
+.tooltiptext {
+     display: none;
+     width: 150px;
+     background-color: rgba(0,0,0,0.7);
+     color: #fff;
+     text-align: center;
+     border-radius: 6px;
+     padding: 0.5em;
+     position: absolute;
+     margin-left: -75px;
+     left: 50%;
+     bottom: -3.25em;
+     z-index: 1;
+     &:before {
+          content: '';
+          width: 0;
+          height: 0;
+          margin: 0 0 0 -0.5em;
+          position: absolute;
+          left: 50%;
+          top: -0.5em;
+          border-style: solid;
+          border-width: 0 0.5em 0.5em 0.5em;
+          border-color: transparent transparent rgba(0,0,0,0.7) transparent;
+     }
+}
+
+.small-text {
+     &.hover-over {
+          border-bottom: 1px dotted black;
+          padding-right: 1.5em;
+          background: url("../images/help-black.svg") no-repeat 100% 50%;
+          background-size: 1em;
+          position: relative;
+          &:hover, &:active, &:focus {
+               cursor: pointer;
+               .tooltiptext {
+                    display: inline-block;
+                    text-align: left;
+                    font-size: 1rem;
+                    width: 300px;
+                    margin-left: -150px;
+                    bottom: -12.25em;
+               }
+          }
      }
 }
 

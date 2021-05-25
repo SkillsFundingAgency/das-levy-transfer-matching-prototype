@@ -242,12 +242,12 @@
           margin: 0;
           float: left;
           display: inline-block;
-          line-height: 0.7;
+          line-height: 1;
           .total-value {
                color: $govuk-link-colour;
           }
           &:first-of-type {
-               margin-right: 2em;
+               margin-right: 1.5em;
           }
           .small-text {
                font-size: 18px;

@@ -27,15 +27,15 @@
                     <div class="govuk-grid-column-two-thirds left-side">
                          <span class="govuk-caption-m">Find a business to transfer your levy to</span>
                     </div>
-                    <div class="govuk-grid-column-one-third right-side">
+                    <!-- <div class="govuk-grid-column-one-third right-side">
                          <p class="govuk-caption-m">
                               <a href="#" class="copy copy-items govuk-link--no-visited-state">
                                    Copy application details
                                    <span class="tooltiptext">Copied to clipboard</span>
                               </a>
-                              <!-- <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a> -->
+                              <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a>
                          </p>
-                    </div>
+                    </div> -->
                </div>
 
                <h1 class="govuk-heading-xl">
@@ -168,10 +168,6 @@
                                    {
                                         value: "reject",
                                         text: "Reject the application"
-                                   },
-                                   {
-                                        value: "later",
-                                        text: "Decide later"
                                    }
                               ]
                          }) }}
@@ -195,13 +191,22 @@
                          <strong class="before-approval">£<span class="value-format">0</span></strong>
                          <strong class="after-approval">£<span class="value-format">4500</span></strong>
                          <br>
-                         <span class="small-text">Pledge funds committed</span>
+                         <div class="small-text hover-over">
+                              Pledge funds committed 2021/22
+                              <span class="tooltiptext ">
+                                   When you make a pledge, you commit to funds over the lifetime of the apprenticeship training.
+                                   <br><br>
+                                   The 'total cost' is the total cost of training over the lifetime of that training.
+                                   <br><br>
+                                   The 'pledge funds committed' shows the funds you are expecting to transfer in this financial year
+                              </span>
+                         </div>
                     </h3>
                     <h3 class="govuk-heading-l">
                          <strong class="before-approval total-value">£<span class="value-format">{{ data['pledge-amount'] }}</span></strong>
                          <strong class="after-approval total-value">£<span class="value-format">{{ data['pledge-amount']-4500 }}</span></strong>
                          <br>
-                         <span class="small-text">Pledge funds remaining</span>
+                         <div class="small-text">Pledge funds remaining 2021/22</div>
                     </h3>
                </div>
 

@@ -242,12 +242,12 @@
           margin: 0;
           float: left;
           display: inline-block;
-          line-height: 0.7;
+          line-height: 1;
           .total-value {
                color: $govuk-link-colour;
           }
           &:first-of-type {
-               margin-right: 2em;
+               margin-right: 1.5em;
           }
           .small-text {
                font-size: 18px;
@@ -256,11 +256,23 @@
      }
      &.side-panel {
           h3 {
-               margin-left: 1em;
+               margin-left: 0.5em;
                margin-bottom: 0.5em;
                margin-right: 0;
                border-left: 10px solid $govuk-link-colour;
-               padding: 0.5em 0 0.5em 0.5em;
+               padding: 0.25em 0 0.5em 0.5em;
+               line-height: 1.2;
+               .small-text {
+                    font-size: 0.9rem;
+                    &.hover-over {
+                         border-bottom: 1px dotted black;
+                         &:hover, &:active, &:focus {
+                              .tooltiptext {
+                                   bottom: -14.25em;
+                              }
+                         }
+                    }
+               }
           }
      }
 }

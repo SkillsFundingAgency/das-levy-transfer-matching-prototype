@@ -58,7 +58,7 @@
                     <span class="govuk-caption-xl anonymous-no">BARRY & BARRY Ltd (910106)</span> -->
                </h1>
 
-               <details class="govuk-details pledge-details" data-module="govuk-details">
+               <!-- <details class="govuk-details pledge-details" data-module="govuk-details">
                     <summary class="govuk-details__summary">
                          <span class="govuk-details__summary-text">Details of your pledge</span>
                     </summary>
@@ -116,12 +116,9 @@
                                         {% endif %}
                                    </div>
                               </div>
-                              <!-- <div class="total">
-                                   <p class="govuk-heading-m">Total funding: £<span class="value-format">{{ data['pledge-amount'] }}</span></p>
-                              </div> -->
                          </section>
                     </div>
-               </details>
+               </details> -->
 
           </div>
      </div>
@@ -146,13 +143,15 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
-               <div class="govuk-warning-text">
+               <p><br></p>
+
+               <!-- <div class="govuk-warning-text">
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                     <strong class="govuk-warning-text__text">
                          <span class="govuk-warning-text__assistive">Warning</span>
                          <a href="#" class="gov-link">Your pledge can now be viewed publicly and shared</a>, so that businesses can apply to you for funding.
                     </strong>
-               </div>
+               </div> -->
 
                <div class="empty-pledge">
                     <h2 class="govuk-heading-m">Manage your pledges and applications</h2>
@@ -175,13 +174,22 @@
                          <strong class="before-approval">£<span class="value-format">0</span></strong>
                          <strong class="after-approval">£<span class="value-format">4500</span></strong>
                          <br>
-                         <span class="small-text">Pledge funds committed</span>
+                         <div class="small-text hover-over">
+                              Pledge funds committed 2021/22
+                              <span class="tooltiptext ">
+                                   When you make a pledge, you commit to funds over the lifetime of the apprenticeship training.
+                                   <br><br>
+                                   The 'total cost' is the total cost of training over the lifetime of that training.
+                                   <br><br>
+                                   The 'pledge funds committed' shows the funds you are expecting to transfer in this financial year
+                              </span>
+                         </div>
                     </h3>
                     <h3 class="govuk-heading-l">
                          <strong class="before-approval total-value">£<span class="value-format">{{ data['pledge-amount'] }}</span></strong>
                          <strong class="after-approval total-value">£<span class="value-format">{{ data['pledge-amount']-4500 }}</span></strong>
                          <br>
-                         <span class="small-text">Pledge funds remaining 2021/22</span>
+                         <div class="small-text">Pledge funds remaining 2021/22</div>
                     </h3>
                </div>
 
