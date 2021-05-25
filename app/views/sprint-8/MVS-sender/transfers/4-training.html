@@ -26,8 +26,19 @@
                <span class="govuk-caption-m">Find a business to transfer your levy to</span>
                <h1 class="govuk-heading-xl">Choose the types of job role you'd like to fund</h1>
 
+               <section class="employer-details" id="sector-playback">
+                    <p class="govuk-heading-s">The current sectors you'd like to support are:</p>
+                    {% if data['pledge-sector'] %}
+                    <ul class="govuk-list govuk-list--bullet">
+                         {% for answer in data['pledge-sector'] -%}
+                         <li>{{ answer }}</li>
+                         {% endfor %}
+                    </ul>
+                    {% endif %}
+               </section>
+
                <p>
-                    You could choose to support all types of job role in those sectors, or you may only want to fund specific job roles.
+                    You could choose to support all types of job role in these sectors, or you may only want to fund specific job roles.
                </p>
 
                <p>
@@ -139,7 +150,7 @@
 
                     <button class="govuk-button pledge-jobs-continue" data-module="govuk-button" id="pledge-training-continue">Continue</button>
 
-                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a>
 
                </form>
 
@@ -147,17 +158,6 @@
 
 
           <aside class="govuk-grid-column-one-third">
-
-               <section class="employer-details" id="sector-playback">
-                    <p class="govuk-heading-s">The current sectors you'd like to support are:</p>
-                    {% if data['pledge-sector'] %}
-                    <ul class="govuk-list govuk-list--bullet">
-                         {% for answer in data['pledge-sector'] -%}
-                         <li>{{ answer }}</li>
-                         {% endfor %}
-                    </ul>
-                    {% endif %}
-               </section>
 
           </aside>
 
