@@ -153,8 +153,20 @@ a {
 .small-text {
      &.hover-over {
           border-bottom: 1px dotted black;
+          padding-right: 1.5em;
+          background: url("../images/help-black.svg") no-repeat 100% 50%;
+          background-size: 1em;
+          position: relative;
           &:hover, &:active, &:focus {
-
+               cursor: pointer;
+               .tooltiptext {
+                    display: inline-block;
+                    text-align: left;
+                    font-size: 1rem;
+                    width: 300px;
+                    margin-left: -150px;
+                    bottom: -12.25em;
+               }
           }
      }
 }

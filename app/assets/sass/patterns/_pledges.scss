@@ -374,8 +374,15 @@ section {
           color: $govuk-link-colour;
      }
 }
+
 .application-name-answer, .pledge-name-answer {
      color: $govuk-link-colour;
+}
+
+.govuk-panel--confirmation {
+     .pledge-name-answer {
+          color: white;
+     }
 }
 
 details {

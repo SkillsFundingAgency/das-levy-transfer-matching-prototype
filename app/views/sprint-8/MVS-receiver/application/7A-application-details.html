@@ -40,7 +40,7 @@
                <section class="employer-contact-details">
                     <h2 class="govuk-heading-m">Do you match the criteria?</h2>
                     <ul class="govuk-list">
-                         <li><span class="icon tick"></span>Location: <strong class="post-code-answer">{{ data['pledge-application-location'] }}</strong></li>
+                         <li><span class="icon tick"></span>Location: <strong>West Midlands</strong>, <strong class="post-code-answer">({{ data['pledge-application-location'] }})</strong></li>
                          <li><span class="icon tick"></span>Sector: <strong>{{ data['search-sector'] }}</strong></li>
                          <li><span class="icon tick"></span>Job role & level: <strong>{{ data['pledge-application-standard'] }}</strong></li>
                          <!-- <li><span class="icon tick"></span><span class="icon cross"></span>Apprenticeship qualification level</li> -->
@@ -65,32 +65,40 @@
                </section>
                <!-- SECTION 3 - END -->
 
-               <!-- SECTION 4 - START -->
-               <h2 class="govuk-heading-m">Details about your apprenticeship</h2>
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                         Your apprenticeship and contact details
+                    </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <!-- SECTION 4 - START -->
+                         <h2 class="govuk-heading-m">Details about your apprenticeship</h2>
 
-               <section class="employer-contact-details">
-                    <!-- <p class="govuk-heading-m">About the apprenticeship</p> -->
-                    <p>{{ data['pledge-application-more-details'] }}</p>
-               </section>
-               <!-- SECTION 4 - END -->
+                         <section class="employer-contact-details">
+                              <!-- <p class="govuk-heading-m">About the apprenticeship</p> -->
+                              <p>{{ data['pledge-application-more-details'] }}</p>
+                         </section>
+                         <!-- SECTION 4 - END -->
 
-               <!-- SECTION 5 - START -->
-               <h2 class="govuk-heading-m">Your organisation's details</h2>
+                         <!-- SECTION 5 - START -->
+                         <h2 class="govuk-heading-m">Your organisation's details</h2>
 
-               <section class="employer-contact-details">
-                    <p><strong>Your organisation name:</strong> Belhavel Construction Ltd </p>
-                    <p><strong>Contact name:</strong> {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}</p>
-                    <p><strong>Email address:</strong>
-                         {% if data['pledge-application-email'] %}
-                              {% for key, applicationEmail in data['pledge-application-email'] %}
-                                   {{ applicationEmail }}
-                              {% endfor %}
-                         {% endif %}
-                    </p>
-                    <p><strong>Your website:</strong> {{ data['pledge-application-website'] }}</p>
-               </section>
-               <!-- SECTION 5 - END -->
-
+                         <section class="employer-contact-details">
+                              <p><strong>Your organisation name:</strong> Belhavel Construction Ltd </p>
+                              <p><strong>Contact name:</strong> {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}</p>
+                              <p><strong>Email address:</strong>
+                                   {% if data['pledge-application-email'] %}
+                                        {% for key, applicationEmail in data['pledge-application-email'] %}
+                                             {{ applicationEmail }}
+                                        {% endfor %}
+                                   {% endif %}
+                              </p>
+                              <p><strong>Your website:</strong> {{ data['pledge-application-website'] }}</p>
+                         </section>
+                         <!-- SECTION 5 - END -->
+                    </div>
+               </details>
 
                <a href="9-accept" class="govuk-button" id="approve-application">Approve application</a>
                <a href="#" class="govuk-button govuk-button--warning" id="delete-application">Cancel application</a>

@@ -298,9 +298,10 @@ if ($.cookie("cancel-application-completed") == 'true') {
      $('.rejection-info').show();
 
      // Accepted info
-     $('.application-status-one .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--green').text('accepted');
+     $('.application-status-one .govuk-tag').removeClass('govuk-tag--grey').text('accepted');
      $('.application-complete-table tr[data-application-row="one"] .govuk-tag').removeClass('govuk-tag--grey').text('accepted');
      $('.rejection-info, #approve-application').show();
+     $('#delete-application').addClass('govuk-link-secondary no-margin-top');
 
      $('.after-application .number-of-applications').text(receiverApplicationsNumber - 1);
 }
@@ -344,12 +345,13 @@ $("#approve-application-continue").on("click", function (e) {
 });
 
 
-$('#application-cancelled-banner li.alert-four').hide();
+$('#application-cancelled-banner li.alert-four, #application-approved-banner').hide();
 
 if ($.cookie("approve-application-completed") == 'true' && $.cookie("cancel-application-completed") == 'true') {
-     $('#application-cancelled-banner li').hide();
-     $('#application-cancelled-banner li.alert-four').show();
+     // $('#application-cancelled-banner li').hide();
+     // $('#application-cancelled-banner li.alert-four').show();
      $('.application-complete-table tr[data-application-row="one"] .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--green').text('approved');
+     $('#application-approved-banner').show();
 }
 
 // RECEIVER - Criteria match
