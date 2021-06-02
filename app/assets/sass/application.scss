@@ -429,6 +429,10 @@ p {
           background: url("../images/help-black.svg") no-repeat 100% 50%;
           background-size: contain;
           margin-left: 0.25em;
+          &.white {
+               background: url("../images/help-white.svg") no-repeat 100% 50%;
+               background-size: contain;
+          }
      }
      // &.approved {
      //      background: url("../images/tick-green.svg") no-repeat 0% 50%;
