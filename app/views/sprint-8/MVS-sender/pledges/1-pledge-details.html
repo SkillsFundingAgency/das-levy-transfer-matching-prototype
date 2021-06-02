@@ -161,8 +161,9 @@
                          <li>review, approve and reject applications</li>
                          <li>share your pledge link with organisations you work with to promote your pledge</li>
                     </ul>
-                    <h2 class="govuk-heading-m">Applications</h2>
-                    <p>You have no current applications for this pledge.</p>
+                    <p><br></p>
+                    <!-- <h2 class="govuk-heading-m">Applications</h2>
+                    <p>You have no current applications for this pledge.</p> -->
                </div>
 
                {% include "../../includes/MVS-pledges-table-design.html" %}
@@ -175,13 +176,14 @@
                          <strong class="after-approval">£<span class="value-format">4500</span></strong>
                          <br>
                          <div class="small-text hover-over">
-                              Pledge funds committed 2021/22
+                              Pledge 910106 funds<br>committed 2021/22
+                              <span class="icon help"></span>
                               <span class="tooltiptext">
-                                   When you make a pledge, you commit to funds over the lifetime of the apprenticeship training.
+                                   Pledge funds committed shows an estimate of the funds you are expecting to transfer in this financial year for this specific pledge.
                                    <br><br>
-                                   The 'total cost' is the total cost of training over the lifetime of that training.
+                                   It is an estimated figure as the funds leaving your account will depend on the start date of the training.
                                    <br><br>
-                                   The 'pledge funds committed' shows the funds you are expecting to transfer in this financial year
+                                   It is also based on the funding band maximum, so may not reflect the final cost agreed with the training provider.
                               </span>
                          </div>
                     </h3>
@@ -189,7 +191,15 @@
                          <strong class="before-approval total-value">£<span class="value-format">{{ data['pledge-amount'] }}</span></strong>
                          <strong class="after-approval total-value">£<span class="value-format">{{ data['pledge-amount']-4500 }}</span></strong>
                          <br>
-                         <div class="small-text">Pledge funds remaining 2021/22</div>
+                         <div class="small-text hover-over">
+                              Pledge 910106 funds<br>remaining 2021/22
+                              <span class="icon help"></span>
+                              <span class="tooltiptext">
+                                   Pledge funds remaining is an estimate of the funds still available to transfer for this specific pledge.
+                                   <br><br>
+                                   It subtracts your pledge funds committed from your pledge total.
+                              </span>
+                         </div>
                     </h3>
                </div>
 
