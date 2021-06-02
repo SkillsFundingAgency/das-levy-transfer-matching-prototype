@@ -123,6 +123,23 @@ a {
      }
 }
 
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+     a {
+          &.govuk-button--secondary {
+               margin-left: 0;
+          }
+     }
+}
+
+@media (max-width: 500px) {
+
+}
+
+
 .tooltiptext {
      display: none;
      width: 150px;
