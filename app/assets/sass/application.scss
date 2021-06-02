@@ -433,6 +433,11 @@ p {
                background: url("../images/help-white.svg") no-repeat 100% 50%;
                background-size: contain;
           }
+          &.blue {
+               background: url("../images/help-blue.svg") no-repeat 100% 50%;
+               background-size: contain;
+          }
+
      }
      // &.approved {
      //      background: url("../images/tick-green.svg") no-repeat 0% 50%;

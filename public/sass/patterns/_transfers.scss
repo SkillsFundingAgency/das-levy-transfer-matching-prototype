@@ -215,6 +215,17 @@ table {
                          color: $govuk-brand-colour;
                          text-decoration: underline;
                          font-size: 1rem;
+                         .small-text {
+                              border: none;
+                              display: inline-block;
+                              text-decoration: underline;
+                              background: none;
+                              .tooltiptext {
+                                   font-weight: normal;
+                                   line-height: 1;
+                                   font-size: 0.9rem;
+                              }
+                         }
                     }
                }
           }
@@ -235,6 +246,10 @@ table {
                          text-align: left;
                          font-size: 1rem;
                          // border-bottom: 2px solid govuk-colour("light-grey");
+                         .govuk-tag {
+                              font-size: 0.875rem;
+                              margin-bottom: 0.5em;
+                         }
                          &:last-child {
                               padding-right: 0.5em;
                          }
@@ -365,9 +380,9 @@ table {
           // justify-content: flex-end;
           .small-text {
                &.hover-over {
-                    border-bottom: 1px dotted white;
-                    background: url("../images/help-white.svg") no-repeat 100% 50%;
-                    background-size: 1em;
+                    // border-bottom: 1px dotted white;
+                    // background: url("../images/help-white.svg") no-repeat 100% 50%;
+                    // background-size: 1em;
                     font-size: 0.875rem;
                     &:hover, &:active, &:focus {
                          .tooltiptext {
@@ -388,13 +403,13 @@ table {
                // border-left: 10px solid govuk-colour("turquoise");
                p {
                     color: black;
-                    .small-text {
-                         &.hover-over {
-                              border-bottom: 1px dotted black;
-                              background: url("../images/help-black.svg") no-repeat 100% 50%;
-                              background-size: 1em;
-                         }
-                    }
+                    // .small-text {
+                    //      &.hover-over {
+                    //           border-bottom: 1px dotted black;
+                    //           background: url("../images/help-black.svg") no-repeat 100% 50%;
+                    //           background-size: 1em;
+                    //      }
+                    // }
                }
           }
           &.transfer-funds-remaining {

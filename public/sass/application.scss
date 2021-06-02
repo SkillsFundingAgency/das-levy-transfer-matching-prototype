@@ -151,11 +151,12 @@ a {
 }
 
 .small-text {
+     text-decoration: underline;
      &.hover-over {
-          border-bottom: 1px dotted black;
-          padding-right: 1.5em;
-          background: url("../images/help-black.svg") no-repeat 100% 50%;
-          background-size: 1em;
+          // border-bottom: 1px dotted black;
+          // padding-right: 1.5em;
+          // background: url("../images/help-black.svg") no-repeat 100% 50%;
+          // background-size: 1em;
           position: relative;
           &:hover, &:active, &:focus {
                cursor: pointer;
@@ -423,6 +424,20 @@ p {
                background: url('../images/add-white.svg') no-repeat 0% 50%;
                background-size: contain;
           }
+     }
+     &.help {
+          background: url("../images/help-black.svg") no-repeat 100% 50%;
+          background-size: contain;
+          margin-left: 0.25em;
+          &.white {
+               background: url("../images/help-white.svg") no-repeat 100% 50%;
+               background-size: contain;
+          }
+          &.blue {
+               background: url("../images/help-blue.svg") no-repeat 100% 50%;
+               background-size: contain;
+          }
+
      }
      // &.approved {
      //      background: url("../images/tick-green.svg") no-repeat 0% 50%;
