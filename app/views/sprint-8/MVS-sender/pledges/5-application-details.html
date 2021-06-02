@@ -100,10 +100,25 @@
                          <hr class="dotted">
                          <p>
                               Maximum funding band per apprentice: <strong>£18,000</strong><br>
-                              Estimated total per year: <strong>£12,000</strong>
+                              <span class="small-text hover-over">
+                                   Estimated total cost per year <span class="icon help"></span>: £12,000
+                                   <span class="tooltiptext">
+                                        The estimated total cost of training per year is based on the funding band maximum and the duration of training.
+                                        <br><br>
+                                        The actual cost per year will depend on the start date of the training and the final cost agreed with the training provider.
+                                   </span>
+                              </span>
+
                          </p>
                          <div class="total">
-                              <p class="govuk-heading-m">Estimated total: £36,000</p>
+                              <p class="govuk-heading-m">
+                                   <span class="small-text hover-over">
+                                        Estimated total cost <span class="icon help"></span>: £36,000
+                                        <span class="tooltiptext">
+                                             The estimated total cost of training is based on the funding band maximum, so may not reflect the final cost agreed with the training provider.
+                                        </span>
+                                   </span>
+                              </p>
                          </div>
                     </section>
 
@@ -208,13 +223,12 @@
                          <strong class="after-approval">£<span class="value-format">4500</span></strong>
                          <br>
                          <div class="small-text hover-over">
-                              Pledge funds committed 2021/22
-                              <span class="tooltiptext ">
-                                   When you make a pledge, you commit to funds over the lifetime of the apprenticeship training.
+                              Pledge 910106 funds committed 2021/22
+                              <span class="icon help"></span>
+                              <span class="tooltiptext">
+                                   Pledge funds committed shows an estimate of the funds you are expecting to transfer in this financial year for this specific pledge.
                                    <br><br>
-                                   The 'total cost' is the total cost of training over the lifetime of that training.
-                                   <br><br>
-                                   The 'pledge funds committed' shows the funds you are expecting to transfer in this financial year
+                                   It is an estimated figure as the funds leaving your account will depend on the start date of the training.
                               </span>
                          </div>
                     </h3>
@@ -222,7 +236,15 @@
                          <strong class="before-approval total-value">£<span class="value-format">{{ data['pledge-amount'] }}</span></strong>
                          <strong class="after-approval total-value">£<span class="value-format">{{ data['pledge-amount']-4500 }}</span></strong>
                          <br>
-                         <div class="small-text">Pledge funds remaining 2021/22</div>
+                         <div class="small-text hover-over">
+                              Pledge 910106 funds remaining 2021/22
+                              <span class="icon help"></span>
+                              <span class="tooltiptext">
+                                   Pledge funds remaining is an estimate of the funds still available to transfer for this specific pledge.
+                                   <br><br>
+                                   It subtracts your pledge funds committed from your pledge total.
+                              </span>
+                         </div>
                     </h3>
                </div>
 

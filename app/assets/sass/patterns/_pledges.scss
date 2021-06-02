@@ -267,15 +267,15 @@
                padding: 0.25em 0 0.5em 0.5em;
                line-height: 1.2;
                .small-text {
-                    font-size: 0.9rem;
-                    &.hover-over {
-                         border-bottom: 1px dotted black;
-                         &:hover, &:active, &:focus {
-                              .tooltiptext {
-                                   bottom: -14.25em;
-                              }
-                         }
-                    }
+                    // font-size: 0.9rem;
+                    // &.hover-over {
+                    //      // border-bottom: 1px dotted black;
+                    //      &:hover, &:active, &:focus {
+                    //           .tooltiptext {
+                    //                bottom: -14.25em;
+                    //           }
+                    //      }
+                    // }
                }
           }
      }
