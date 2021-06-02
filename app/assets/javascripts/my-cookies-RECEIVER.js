@@ -298,8 +298,8 @@ if ($.cookie("cancel-application-completed") == 'true') {
      $('.rejection-info').show();
 
      // Accepted info
-     $('.application-status-one .govuk-tag').removeClass('govuk-tag--grey').text('accepted');
-     $('.application-complete-table tr[data-application-row="one"] .govuk-tag').removeClass('govuk-tag--grey').text('accepted');
+     $('.application-status-one .govuk-tag').removeClass('govuk-tag--grey').text('accepted awaiting approval');
+     $('.application-complete-table tr[data-application-row="one"] .govuk-tag').removeClass('govuk-tag--grey').text('accepted awaiting approval');
      $('.rejection-info, #approve-application').show();
      $('#delete-application').addClass('govuk-link-secondary no-margin-top');
 

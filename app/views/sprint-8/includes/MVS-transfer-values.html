@@ -2,20 +2,42 @@
 
      <div class="transfer-values transfer-values-2021">
           <div class="transfer-funds">
-               <p>Your transfer allowance 2021/22</p>
+               <p>
+                    <span class="small-text hover-over">Your transfer allowance 2021/22
+                         <span class="tooltiptext">
+                              This is based on 25% of your levy declarations for last year. This figure is updated by the end of April each year.
+                         </span>
+                    </span>
+               </p>
                <p class="number before-transfer">£<span class="value-format">150000</span></p>
                <p class="number after-transfer">£<span class="value-format">{{ 150000-data['transfer-private-amount'] }}</span></p>
                <p class="number after-transfer-and-pledge">£<span class="value-format">{{ 150000-18000-data['transfer-private-amount'] }}</span></p>
           </div>
           <div class="transfer-funds-remaining">
-               <p>Allocated for transfers 2021/22</p>
+               <p>
+                    <span class="small-text hover-over">Allocated for transfers 2021/22
+                         <span class="tooltiptext">
+                              Allocated for transfers shows an estimate of your levy funds allocated for transfers in this financial year.
+                              <br><br>
+                              It adds the pledges you have made this year to the ongoing transfer commitments you have made in previous years.
+                         </span>
+                    </span>
+               </p>
                <p class="number before-pledge before-transfer">£<span class="value-format">0</span></p>
                <p class="number after-pledge">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
                <p class="number after-transfer">£<span class="value-format">{{ data['transfer-private-amount'] }}</span></p>
                <p class="number after-transfer-and-pledge">£<span class="value-format">{{ data['transfer-private-amount'] }}</span></p>
           </div>
           <div class="transfer-funds-non-pledge">
-               <p>Remaining transfer funds 2021/22</p>
+               <p>
+                    <span class="small-text hover-over">Remaining transfer funds 2021/22
+                         <span class="tooltiptext">
+                              Your remaining transfer funds is an estimate of what remains for you to pledge to transfers in this financial year.
+                              <br><br>
+                              It subtracts your allocated transfer funds from your transfer allowance.
+                         </span>
+                    </span>
+               </p>
                <p class="number before-transfer">£<span class="value-format">150000</span></p>
                <p class="number after-pledge">£<span class="value-format">{{ 150000-data['pledge-amount'] }}</span></p>
                <p class="number after-transfer">£<span class="value-format">{{ 150000-data['transfer-private-amount'] }}</span></p>

@@ -126,7 +126,7 @@ a {
 .tooltiptext {
      display: none;
      width: 150px;
-     background-color: rgba(0,0,0,0.7);
+     background-color: rgba(0,0,0,0.8);
      color: #fff;
      text-align: center;
      border-radius: 6px;
@@ -165,7 +165,8 @@ a {
                     font-size: 1rem;
                     width: 300px;
                     margin-left: -150px;
-                    bottom: -12.25em;
+                    top: 2.25em;
+                    bottom: auto;
                }
           }
      }
