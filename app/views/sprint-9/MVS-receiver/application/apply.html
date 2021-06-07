@@ -51,30 +51,34 @@
 
                <form method="post" action="" id="apply-application-form">
 
-                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-                    {% from "govuk/components/input/macro.njk" import govukInput %}
-
-                    {{ govukRadios({
-                    idPrefix: "apply-pledge-funds",
-                         name: "apply-pledge-funds",
-                         fieldset: {
-                              legend: {
-                                   text: "Would you like to apply for the transfer funds?",
-                                   isPageHeading: false,
-                                   classes: "govuk-fieldset__legend--s"
-                              }
-                         },
-                         items: [
-                              {
-                                   value: "Yes, apply for transfer funds",
-                                   text: "Yes, apply for transfer funds"
-                              },
-                              {
-                                   value: "No",
-                                   text: "No"
-                              }
-                         ]
-                    }) }}
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend">
+                                   <h1 class="govuk-fieldset__heading govuk-label--s">Would you like to apply for the transfer funds?</h1>
+                              </legend>
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="apply-pledge-funds-yes" name="apply-pledge-funds" type="radio" value="Yes" data-aria-controls="conditional-apply-pledge-funds-yes" {{checked('apply-pledge-funds','Yes, apply for transfer funds')}}>
+                                        <label class="govuk-label govuk-radios__label" for="apply-pledge-funds-yes">Yes, apply for transfer funds</label>
+                                   </div>
+                                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-apply-pledge-funds-yes">
+                                        <div class="govuk-form-group">
+                                             <div class="govuk-warning-text">
+                                                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                                  <strong class="govuk-warning-text__text">
+                                                       <span class="govuk-warning-text__assistive">Warning</span>
+                                                       You'll need an apprenticeship service account to apply to be considered for funding
+                                                  </strong>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="apply-pledge-funds-no" name="apply-pledge-funds" type="radio" value="No I want to see apprenticeship training providers" {{checked('apply-pledge-funds','No')}}>
+                                        <label class="govuk-label govuk-radios__label" for="apply-pledge-funds-no">No</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
 
                     <button class="govuk-button" data-module="govuk-button" id="apply-application-continue">Continue</button>
 

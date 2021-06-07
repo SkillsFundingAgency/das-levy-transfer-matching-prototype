@@ -705,9 +705,9 @@ $('#pledge-application-apprentices').on("keyup", function (e) {
 
 // Apply for funds
 $('input[name=apply-pledge-funds]').on("click", function (e) {
-     if ($('input[id=apply-pledge-funds]').is(':checked')) {
+     if ($('input[id=apply-pledge-funds-yes]').is(':checked')) {
           $('#apply-application-form').attr('action','1-application-core');
-     } else if ($('input[id=apply-pledge-funds-2]').is(':checked')) {
+     } else if ($('input[id=apply-pledge-funds-no]').is(':checked')) {
           $('#apply-application-form').attr('action','../search-pledges');
      }
 });
