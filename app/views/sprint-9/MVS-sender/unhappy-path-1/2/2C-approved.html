@@ -1,0 +1,57 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation-sender-tiercary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <!-- APPROVAL COMPLETE - START -->
+               <div class="govuk-panel govuk-panel--confirmation pledge-approved">
+                    <h1 class="govuk-panel__title">Application approved</h1>
+                    <p>You approved the Belhavel Construction Ltd application</p>
+               </div>
+               <!-- APPROVAL COMPLETE - END -->
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <p>We've let them know, so they can accept your funding pledge.</p>
+
+               <p>You'll receive notifications when Belhavel Construction Ltd:</p>
+
+               <ul class="govuk-list govuk-list--bullet">
+                    <li>accepts your pledge</li>
+                    <li>adds apprentices to their account</li>
+               </ul>
+
+               <!-- <p>You'll also receive a notification when the training provider starts to withdraw funds for the training.</p> -->
+
+               <p><a href="../1-pledge-details" class="govuk-link govuk-link--no-visited-state">View other applications</a></p>
+
+               <a href="#" class="govuk-back-link">Back to Transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

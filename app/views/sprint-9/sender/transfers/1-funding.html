@@ -1,0 +1,114 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">Create a transfers pledge</h1>
+
+               <form method="post" action="2-criteria" id="pledge-funding-form">
+
+                    <p>Create a transfers funding pledge that will be advertised online so that businesses can apply to you for funding.</p>
+
+                    <p>The amount you choose and the criteria you set will be displayed publicly.</p>
+
+                    <p>You can choose whether or not to show your organisation's name publicly.</p>
+
+                    <div class="govuk-form-group">
+                         <div class="total">
+                              <p>You can pledge up to:</p>
+                              <p class="number">£150,000</p>
+                         </div>
+                         <div class="wrapper">
+                              <label class="govuk-label" for="pledge-amount">How much funding would you like to transfer?</label>
+                              <div class="funding-wrapper">
+                                   <p class="value">£</p>
+                                   <input class="govuk-input govuk-input--width-10" id="pledge-amount" name="pledge-amount"ype="text" data-type="number">
+                              </div>
+                         </div>
+                    </div>
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                    {{ govukRadios({
+                    idPrefix: "pledge-anonymous",
+                         name: "pledge-anonymous",
+                         fieldset: {
+                              legend: {
+                                   text: "Would you like your pledge to show your organisation's name publicly?",
+                                   isPageHeading: false
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Yes, I'm happy for people to see our organisation's name",
+                                   text: "Yes"
+                              },
+                              {
+                                   value: "No, I'd like our organisation to be anonymous",
+                                   text: "No, I'd like our organisation to be anonymous"
+                              }
+                         ]
+                    }) }}
+
+                    <!-- {{ govukRadios({
+                    idPrefix: "pledge-public",
+                         name: "pledge-public",
+                         fieldset: {
+                              legend: {
+                                   text: "Do you want to show the pledge amount?",
+                                   isPageHeading: false
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "Yes, show my pledge amount",
+                                   text: "Yes, show my pledge amount"
+                              },
+                              {
+                                   value: "No, hide my pledge amount",
+                                   text: "No, hide my pledge amount"
+                              }
+                         ]
+                    }) }} -->
+
+                    <div class="govuk-warning-text">
+                         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                         <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Warning</span> We will add a 4 digit reference number to each pledge you create to help keep track of applications.
+                         </strong>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button" id="pledge-criteria-continue">Continue</button>
+
+                    <a href="9-cancel-pledge" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

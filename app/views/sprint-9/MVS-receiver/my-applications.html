@@ -1,0 +1,169 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My applications</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">My applications</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               <!-- APPROVED COMPLETE - START -->
+               <div class="govuk-panel govuk-panel--confirmation" id="application-approved-banner">
+                    <h1 class="govuk-panel__title">You have approved the application to <strong class="pledge-name-answer">####</strong></h1>
+               </div>
+               <!-- APPROVED COMPLETE - END -->
+
+               <!-- CANCELLED COMPLETE - START -->
+               <!-- <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="application-cancelled-banner">
+                    <div class="govuk-notification-banner__header">
+                         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li class="alert-one">You have cancelled your application <strong>Opportunity (123465)</strong> - <span class="govuk-tag govuk-tag--yellow">Cancelled</span></li>
+                              <li class="alert-two">Your application to <strong>Finders Keepers Ltd (684509)</strong> has been rejected  - <span class="govuk-tag govuk-tag--red">Rejected</span></li>
+                              <li class="alert-three">Your application to <strong class="pledge-name-answer">####</strong> has been accepted - <span class="govuk-tag">Accepted</span></li>
+                              <li class="alert-four">You have approved the application to <strong class="pledge-name-answer">####</strong> - <span class="govuk-tag govuk-tag--green">Approved</span></li>
+                         </ul>
+                    </div>
+               </div> -->
+               <!-- CANCELLED COMPLETE - END -->
+
+               <!-- <p class="no-applications">You have no pending applications.</p> -->
+               <p class="before-application">You have <strong class="number-of-applications">0</strong> transfer applications.</p>
+               <p class="after-application">You have <strong class="number-of-applications">2</strong> transfer applications.</p>
+
+               <!-- APPLICATION TABLE - START -->
+               <table class="govuk-table application-complete-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Opportunity</th>
+                              <th scope="col" class="govuk-table__header">Total</th>
+                              <th scope="col" class="govuk-table__header">Approval status</th>
+                              <th scope="col" class="govuk-table__header"></th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                         <!-- ROW - ONE - START -->
+                         <tr class="govuk-table__row" data-application-row="one">
+                              <td class="govuk-table__cell">
+                                   <strong>
+                                        <a href="application/7A-application-details" class="pledge-name-answer govuk-link--no-visited-state">###</a>
+                                        <br>
+                                   </strong>
+                                   <span class="govuk-caption-m">Date: <div id="date-stamp"></div></span>
+                              </td>
+                              <td class="govuk-table__cell">£<span class="apprenticeship-application-total total-cost">###</span></td>
+                              <td class="govuk-table__cell">
+                                   <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                              </td>
+                              <td class="govuk-table__cell"><a href="application/7A-application-details" class="govuk-link--no-visited-state">View</a></td>
+                         </tr>
+                         <!-- ROW - ONE - END -->
+
+                         <!-- ROW - TWO - START -->
+                         <tr class="govuk-table__row" data-application-row="two">
+                              <td class="govuk-table__cell">
+                                   <strong>
+                                        <a href="application/7B-application-details" class="govuk-link--no-visited-state">Finders Keepers Ltd (684509)</a>
+                                        <br>
+                                   </strong>
+                                   <span class="govuk-caption-m">Date: Yesterday 09:45am</span>
+                              </td>
+                              <td class="govuk-table__cell">£25,000</td>
+                              <td class="govuk-table__cell">
+                                   <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                                   <!-- <details class="govuk-details rejection-info" data-module="govuk-details">
+                                        <summary class="govuk-details__summary">
+                                             <span class="govuk-details__summary-text">Reason for rejection</span>
+                                        </summary>
+                                        <div class="govuk-details__text">
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  <li>We ran out of funding</li>
+                                             </ul>
+                                        </div>
+                                   </details> -->
+                              </td>
+                              <td class="govuk-table__cell"><a href="application/7B-application-details" class="govuk-link--no-visited-state">View</a></td>
+                         </tr>
+                         <!-- ROW - TWO - END -->
+
+                         <!-- ROW - THREE - START -->
+                         <tr class="govuk-table__row" data-application-row="three">
+                              <td class="govuk-table__cell">
+                                   <strong>
+                                        <a href="application/7C-application-details" class="govuk-link--no-visited-state">Opportunity (123465)</a>
+                                        <br>
+                                   </strong>
+                                   <span class="govuk-caption-m">Date: Yesterday 12:58pm</span>
+                              </td>
+                              <td class="govuk-table__cell">£15,000</td>
+                              <td class="govuk-table__cell">
+                                   <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                                   <!-- <details class="govuk-details cancelled-info" data-module="govuk-details">
+                                        <summary class="govuk-details__summary">
+                                             <span class="govuk-details__summary-text">Reason for cancellation</span>
+                                        </summary>
+                                        <div class="govuk-details__text">
+                                             {% if data['delete-reason'] %}
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['delete-reason'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                             {% endif %}
+                                             <span class="">{{ data['delete-more-detail'] }}</span>
+                                        </div>
+                                   </details> -->
+                              </td>
+                              <td class="govuk-table__cell"><a href="application/7C-application-details" class="govuk-link--no-visited-state">View</a></td>
+                         </tr>
+                         <!-- ROW - THREE - END -->
+
+
+                    </tbody>
+               </table>
+               <!-- APPLICATION TABLE - END -->
+
+               <hr class="separator dotted">
+
+               <a href="index" class="govuk-button" data-module="govuk-button">Search for transfer opportunities</a>
+
+               <br>
+
+               <a href="transfers" class="govuk-back-link">Back to transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

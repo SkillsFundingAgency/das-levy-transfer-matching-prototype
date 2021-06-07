@@ -1,0 +1,79 @@
+{% extends "layout-ltm.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
+               <h1 class="govuk-heading-xl">
+                    Apply for transfer pledge
+               </h1>
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <form method="post" action="2-about" id="">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="pledge-match-criteria-hint">
+                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Tell us which criteria you match to for <strong class="pledge-name-answer main-title">####</strong> application</legend>
+                         <div id="pledge-match-criteria-hint" class="govuk-hint">You can still apply for this opportunity even if you don't match all the criteria.</div>
+
+                         <div class="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                   <input class="govuk-checkboxes__input" id="pledge-match-criteria" name="pledge-match-criteria" type="checkbox" value="Location">
+                                   <label class="govuk-label govuk-checkboxes__label" for="pledge-match-criteria">Location - <strong class="pledge-location-answer"></strong></label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                   <input class="govuk-checkboxes__input" id="pledge-match-criteria-2" name="pledge-match-criteria" type="checkbox" value="Sector">
+                                   <label class="govuk-label govuk-checkboxes__label" for="pledge-match-criteria-2">Sector - <strong class="pledge-sector-answer"></strong></label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                   <input class="govuk-checkboxes__input" id="pledge-match-criteria-3" name="pledge-match-criteria" type="checkbox" value="Category of apprenticeship training">
+                                   <label class="govuk-label govuk-checkboxes__label" for="pledge-match-criteria-3">Type of job role - <strong class="pledge-training-answer"></strong></label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                   <input class="govuk-checkboxes__input" id="pledge-match-criteria-4" name="pledge-match-criteria" type="checkbox" value="Apprenticeship qualification level">
+                                   <label class="govuk-label govuk-checkboxes__label" for="pledge-match-criteria-4">Level - <strong class="pledge-level-answer"></strong></label>
+                              </div>
+                         </div>
+
+                    </fieldset>
+
+                    <div class="govuk-inset-text">
+                         <strong>Total funding available: up to <span class="pledge-value-answer">####</span><strong>
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="application-criteria-match">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state" id="">Cancel application</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

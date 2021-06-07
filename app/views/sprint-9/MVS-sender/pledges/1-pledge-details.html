@@ -1,0 +1,217 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../my-pledges">My pledges</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Pledge 910106 details</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row title-options">
+          <div class="govuk-grid-column-full">
+
+               <!-- APPLICATION COMPLETE - START -->
+               <div class="govuk-panel govuk-panel--confirmation pledge-complete">
+                    <h1 class="govuk-panel__title">Your pledge has been created</h1>
+               </div>
+               <!-- APPLICATION COMPLETE - END -->
+
+               <!-- REJECTION COMPLETE - START -->
+               <div class="govuk-panel govuk-panel--confirmation pledge-rejected">
+                    <h1 class="govuk-panel__title">Application rejected</h1>
+                    <p>You rejected the CBJ Engineering application</p>
+               </div>
+               <!-- REJECTION COMPLETE - END -->
+
+               <!-- <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds left-side">
+                         <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+                    </div>
+                    <div class="govuk-grid-column-one-third right-side">
+                         <p class="govuk-caption-m">
+                              <a href="" class="share govuk-link--no-visited-state">Share pledge</a>
+                              <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a>
+                         </p>
+                    </div>
+               </div> -->
+
+               <h1 class="govuk-heading-xl">
+                    Pledge number 910106
+                    <span class="govuk-caption-l">Amount for 2021/22 - £<span class="value-format">{{ data['pledge-amount'] }}</span></span>
+                    <!-- <span class="govuk-caption-xl">Pledge number - 910106</span> -->
+                    <!-- <span class="govuk-caption-xl anonymous-yes">Anonymous Pledge (910106)</span>
+                    <span class="govuk-caption-xl anonymous-no">BARRY & BARRY Ltd (910106)</span> -->
+               </h1>
+
+               <!-- <details class="govuk-details pledge-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Details of your pledge</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <section class="employer-details mvs-version">
+                              <div class="wrapper">
+                                   <p><strong>Location:</strong></p>
+                                   <p class="before-location-content">England</p>
+                                   <div class="after-location-content">
+                                        {% if data['pledge-location'] %}
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             {% for key, location in data['pledge-location'] %}
+                                                  <li>{{ location }}</li>
+                                             {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                   </div>
+                              </div>
+                              <div class="wrapper">
+                                   <p><strong>Sector:</strong></p>
+                                   <p class="before-sector-content">All sectors and industries</p>
+                                   <div class="after-sector-content">
+                                        {% if data['pledge-sector'] %}
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             {% for answer in data['pledge-sector'] -%}
+                                             <li>{{ answer }}</li>
+                                             {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                   </div>
+                              </div>
+                              <div class="wrapper">
+                                   <p><strong>Type of job role:</strong></p>
+                                   <p class="before-job-content">All apprenticeship job roles</p>
+                                   <div class="after-job-content">
+                                        {% if data['pledge-training'] %}
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             {% for answer in data['pledge-training'] -%}
+                                             <li>{{ answer }}</li>
+                                             {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                   </div>
+                              </div>
+                              <div class="wrapper">
+                                   <p><strong>Level:</strong></p>
+                                   <p class="before-level-content">All qualification levels</p>
+                                   <div class="after-level-content">
+                                        {% if data['pledge-level'] %}
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             {% for answer in data['pledge-level'] -%}
+                                             <li>{{ answer }}</li>
+                                             {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                   </div>
+                              </div>
+                         </section>
+                    </div>
+               </details> -->
+
+          </div>
+     </div>
+
+     <!-- <div class="pledge-values">
+          <div class="pledge-funds">
+               <p>Pledge 910106 amount</p>
+               <p class="number">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+          </div>
+          <div class="pledge-funds-spent">
+               <p>Pledge funds committed</p>
+               <p class="number before-approval">£<span class="value-format">0</span></p>
+               <p class="number after-approval">£<span class="value-format">9000</span></p>
+          </div>
+          <div class="pledge-funds-remaining">
+               <p>Pledge funds remaining</p>
+               <p class="number before-approval">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+               <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p>
+          </div>
+     </div> -->
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <p><br></p>
+
+               <!-- <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         <a href="#" class="gov-link">Your pledge can now be viewed publicly and shared</a>, so that businesses can apply to you for funding.
+                    </strong>
+               </div> -->
+
+               <div class="empty-pledge">
+                    <h2 class="govuk-heading-m">Manage your pledges and applications</h2>
+                    <p>You can:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                         <li>create and delete pledges</li>
+                         <li>review, approve and reject applications</li>
+                         <li>share your pledge link with organisations you work with to promote your pledge</li>
+                    </ul>
+                    <p><br></p>
+                    <!-- <h2 class="govuk-heading-m">Applications</h2>
+                    <p>You have no current applications for this pledge.</p> -->
+               </div>
+
+               {% include "../../includes/MVS-pledges-table-design.html" %}
+
+               <a href="#" class="govuk-button">Create a new pledge</a>
+
+               <div class="new-pledge-values">
+                    <h3 class="govuk-heading-l">
+                         <strong class="before-approval">£<span class="value-format">0</span></strong>
+                         <strong class="after-approval">£<span class="value-format">4500</span></strong>
+                         <br>
+                         <div class="small-text hover-over">
+                              Pledge 910106 funds<br>committed 2021/22
+                              <span class="icon help"></span>
+                              <span class="tooltiptext">
+                                   Pledge funds committed shows an estimate of the funds you are expecting to transfer in this financial year for this specific pledge.
+                                   <br><br>
+                                   It is an estimated figure as the funds leaving your account will depend on the start date of the training.
+                                   <br><br>
+                                   It is also based on the funding band maximum, so may not reflect the final cost agreed with the training provider.
+                              </span>
+                         </div>
+                    </h3>
+                    <h3 class="govuk-heading-l">
+                         <strong class="before-approval total-value">£<span class="value-format">{{ data['pledge-amount'] }}</span></strong>
+                         <strong class="after-approval total-value">£<span class="value-format">{{ data['pledge-amount']-4500 }}</span></strong>
+                         <br>
+                         <div class="small-text hover-over">
+                              Pledge 910106 funds<br>remaining 2021/22
+                              <span class="icon help"></span>
+                              <span class="tooltiptext">
+                                   Pledge funds remaining is an estimate of the funds still available to transfer for this specific pledge.
+                                   <br><br>
+                                   It subtracts your pledge funds committed from your pledge total.
+                              </span>
+                         </div>
+                    </h3>
+               </div>
+
+               <br>
+
+               <a href="../my-pledges" class="govuk-back-link">Back to my pledges</a>
+
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

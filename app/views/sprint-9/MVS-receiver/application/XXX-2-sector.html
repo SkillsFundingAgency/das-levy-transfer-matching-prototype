@@ -1,0 +1,116 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Transfer matching service</span>
+               <h1 class="govuk-heading-xl">Which sector is your business in?</h1>
+
+               <form method="post" action="#" id="receiver-sector-form">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="receiver-sector-hint">
+                              <legend class="govuk-fieldset__legend">Which sector is your business in?</legend>
+                              <div class="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item select-all">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-all" name="_receiver-sector" type="checkbox" value="Select all" onClick="toggle(this)">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-all">Select all</label>
+                                   </div>
+
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-agriculture" name="receiver-sector" type="checkbox" value="Agriculture, environmental and animal care">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-agriculture">Agriculture, environmental and animal care</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-business" name="receiver-sector" type="checkbox" value="Business and administration">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-business">Business and administration</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-care" name="receiver-sector" type="checkbox" value="Care services">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-care">Care services</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-catering" name="receiver-sector" type="checkbox" value="Catering and hospitality">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-catering">Catering and hospitality</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-construction" name="receiver-sector" type="checkbox" value="Construction">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-construction">Construction</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-creative" name="receiver-sector" type="checkbox" value="Creative and design">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-creative">Creative and design</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-digital" name="receiver-sector" type="checkbox" value="Digital">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-digital">Digital</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-education" name="receiver-sector" type="checkbox" value="Education and childcare">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-education">Education and childcare</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-engineering" name="receiver-sector" type="checkbox" value="Engineering and manufacturing">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-engineering">Engineering and manufacturing</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-hair" name="receiver-sector" type="checkbox" value="Hair and beauty">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-hair">Hair and beauty</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-health" name="receiver-sector" type="checkbox" value="Health and science">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-health">Health and science</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-legal" name="receiver-sector" type="checkbox" value="Legal, finance and accounting">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-legal">Legal, finance and accounting</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-protective" name="receiver-sector" type="checkbox" value="Protective services">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-protective">Protective services</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-sales" name="receiver-sector" type="checkbox" value="Sales, marketing and procurement">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-sales">Sales, marketing and procurement</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="receiver-sector-transport" name="receiver-sector" type="checkbox" value="Transport and logistics">
+                                        <label class="govuk-label govuk-checkboxes__label" for="receiver-sector-transport">Transport and logistics</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button" id="receiver-sector-continue">Continue</button>
+
+                    <a href="8-cancel-pledge" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
