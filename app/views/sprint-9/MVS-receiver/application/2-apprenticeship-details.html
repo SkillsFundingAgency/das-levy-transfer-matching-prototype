@@ -46,7 +46,11 @@
 
                     <div class="govuk-form-group">
                          <label class="govuk-label govuk-label--s" for="pledge-application-standard">Job role</label>
-                         <div class="govuk-hint">Do you know the name of the apprenticeship training course you need?</div>
+                         <div class="govuk-hint">
+                              Start typing a job role or keywords to find an apprenticeship training course
+                              <br>
+                              You can search and browse courses on <a href="https://findapprenticeshiptraining.apprenticeships.education.gov.uk/" target="_blank">Find apprenticeship training</a>.
+                         </div>
                          <input class="govuk-input govuk-input--width-20" id="pledge-application-standard" name="pledge-application-standard" type="text" value="{{ data['pledge-application-standard'] }}">
                     </div>
 
@@ -100,11 +104,11 @@
                                    </div>
                                    <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="pledge-application-training-provider-no" name="pledge-application-training-provider" type="radio" value="No I want to see apprenticeship training providers" data-aria-controls="conditional-pledge-application-training-provider-no" {{checked('pledge-application-training-provider','No I want to see apprenticeship training providers')}}>
-                                        <label class="govuk-label govuk-radios__label" for="pledge-application-training-provider-no">No I want to see apprenticeship training providers</label>
+                                        <label class="govuk-label govuk-radios__label" for="pledge-application-training-provider-no">No, show me apprenticeship training providers</label>
                                    </div>
                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pledge-application-training-provider-no">
                                         <div class="govuk-form-group">
-                                             <p>For more information and to find the perfect standard for your needs, please visit <a href="#">Find apprenticeship training for your apprentice</a></p>
+                                             <p>Search for <a href="https://findapprenticeshiptraining.apprenticeships.education.gov.uk/" target="_blank">apprenticeship training courses and training providers</a>.</p>
                                         </div>
                                    </div>
                               </div>
