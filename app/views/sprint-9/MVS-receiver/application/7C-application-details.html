@@ -49,7 +49,7 @@
                <h2 class="govuk-heading-m">Which criteria do you match?</h2>
 
                <section class="employer-contact-details">
-                    <h2 class="govuk-heading-m">Do you match the criteria?</h2>
+                    <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
                     <ul class="govuk-list">
                          <li><span class="icon tick"></span>Location: <strong>West Midlands</strong>, <strong class="post-code-answer">({{ data['pledge-application-location'] }})</strong></li>
                          <li><span class="icon tick"></span>Sector: <strong>Agriculture, environmental and animal care, Engineering and manufacturing, Transport and logistics</strong></li>
@@ -66,7 +66,7 @@
                <!-- SECTION 2 - END -->
 
                <!-- SECTION 3 - START -->
-               <h2 class="govuk-heading-m">About your apprenticeship</h2>
+               <h2 class="govuk-heading-m">About your apprenticeship training course</h2>
 
                <section class="employer-contact-details">
                     <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
@@ -80,7 +80,7 @@
                <details class="govuk-details" data-module="govuk-details">
                     <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
-                         Your apprenticeship and contact details
+                         More details about your apprenticeship
                     </span>
                     </summary>
                     <div class="govuk-details__text">
@@ -94,21 +94,24 @@
                          <!-- SECTION 4 - END -->
 
                          <!-- SECTION 5 - START -->
-                         <h2 class="govuk-heading-m">Your organisation's details</h2>
+                         <div class="cancelled-content">
+                              <h2 class="govuk-heading-m">Your organisation's details</h2>
 
-                         <section class="employer-contact-details">
-                              <p><strong>Your organisation name:</strong> Belhavel Construction Ltd </p>
-                              <p><strong>Contact name:</strong> {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}</p>
-                              <p><strong>Email address:</strong>
-                                   {% if data['pledge-application-email'] %}
-                                        {% for key, applicationEmail in data['pledge-application-email'] %}
-                                             {{ applicationEmail }}
-                                        {% endfor %}
-                                   {% endif %}
-                              </p>
-                              <p><strong>Your website:</strong> {{ data['pledge-application-website'] }}</p>
-                         </section>
+                              <section class="employer-contact-details">
+                                   <p><strong>Your organisation name:</strong> Belhavel Construction Ltd </p>
+                                   <p><strong>Contact name:</strong> {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}</p>
+                                   <p><strong>Email address:</strong>
+                                        {% if data['pledge-application-email'] %}
+                                             {% for key, applicationEmail in data['pledge-application-email'] %}
+                                                  {{ applicationEmail }}
+                                             {% endfor %}
+                                        {% endif %}
+                                   </p>
+                                   <p><strong>Your website:</strong> {{ data['pledge-application-website'] }}</p>
+                              </section>
+                         </div>
                          <!-- SECTION 5 - END -->
+
                     </div>
                </details>
 

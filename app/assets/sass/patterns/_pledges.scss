@@ -356,6 +356,9 @@ section {
      }
      &.employer-contact-details {
           padding: 1.5em 1.5em 1.5em 1.5em;
+          ul {
+               margin-bottom: 0;
+          }
           p {
                &:last-of-type {
                     margin-bottom: 0;

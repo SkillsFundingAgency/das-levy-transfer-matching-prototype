@@ -34,27 +34,40 @@
                     </strong>
                </div>
 
-               <!-- SECTION 2 - START -->
-               <h2 class="govuk-heading-m">Which criteria do you match?</h2>
+               <div class="govuk-warning-text application-status-one-accepted">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         <span class="govuk-tag">approved, awaiting your acceptance</span> -
+                         Barry & Barry Ltd have approved your application for:
+                    </strong>
+               </div>
 
-               <section class="employer-contact-details">
-                    <h2 class="govuk-heading-m">Do you match the criteria?</h2>
-                    <ul class="govuk-list">
-                         <li><span class="icon tick"></span>Location: <strong>West Midlands</strong>, <strong class="post-code-answer">({{ data['pledge-application-location'] }})</strong></li>
-                         <li><span class="icon tick"></span>Sector: <strong>{{ data['search-sector'] }}</strong></li>
-                         <li><span class="icon tick"></span>Job role & level: <strong>{{ data['pledge-application-standard'] }}</strong></li>
-                         <!-- <li><span class="icon tick"></span><span class="icon cross"></span>Apprenticeship qualification level</li> -->
-                    </ul>
-                    <!-- <p><strong>{{ data['pledge-match'] }}</strong></p>
-                    <p>
-                         {{ data['pledge-match-yes-more-detail'] }}
-                         {{ data['pledge-match-no-more-detail'] }}
-                    </p> -->
-               </section>
+               <!-- SECTION 2 - START -->
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">Which criteria do you match?</h2>
+
+                    <section class="employer-contact-details">
+                         <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
+                         <ul class="govuk-list">
+                              <li><span class="icon tick"></span>Location: <strong>West Midlands</strong>, <strong class="post-code-answer">({{ data['pledge-application-location'] }})</strong></li>
+                              <li><span class="icon tick"></span>Sector: <strong>{{ data['search-sector'] }}</strong></li>
+                              <li><span class="icon tick"></span>Job role & level: <strong>{{ data['pledge-application-standard'] }}</strong></li>
+                              <!-- <li><span class="icon tick"></span><span class="icon cross"></span>Apprenticeship qualification level</li> -->
+                         </ul>
+                         <!-- <p><strong>{{ data['pledge-match'] }}</strong></p>
+                         <p>
+                              {{ data['pledge-match-yes-more-detail'] }}
+                              {{ data['pledge-match-no-more-detail'] }}
+                         </p> -->
+                    </section>
+               </div>
                <!-- SECTION 2 - END -->
 
                <!-- SECTION 3 - START -->
-               <h2 class="govuk-heading-m">About your apprenticeship</h2>
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">About your apprenticeship training course</h2>
+               </div>
 
                <section class="employer-contact-details">
                     <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
@@ -65,43 +78,50 @@
                </section>
                <!-- SECTION 3 - END -->
 
-               <details class="govuk-details" data-module="govuk-details">
-                    <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                         Your apprenticeship and contact details
-                    </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                         <!-- SECTION 4 - START -->
-                         <h2 class="govuk-heading-m">Details about your apprenticeship</h2>
+               <div class="accepted-text-hide">
+                    <details class="govuk-details" data-module="govuk-details">
+                         <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">
+                              More details about your apprenticeship
+                         </span>
+                         </summary>
+                         <div class="govuk-details__text">
+                              <!-- SECTION 4 - START -->
+                              <h2 class="govuk-heading-m">Details about your apprenticeship</h2>
 
-                         <section class="employer-contact-details">
-                              <!-- <p class="govuk-heading-m">About the apprenticeship</p> -->
-                              <p>{{ data['pledge-application-more-details'] }}</p>
-                         </section>
-                         <!-- SECTION 4 - END -->
+                              <section class="employer-contact-details">
+                                   <!-- <p class="govuk-heading-m">About the apprenticeship</p> -->
+                                   <p>{{ data['pledge-application-more-details'] }}</p>
+                              </section>
+                              <!-- SECTION 4 - END -->
 
-                         <!-- SECTION 5 - START -->
-                         <h2 class="govuk-heading-m">Your organisation's details</h2>
+                              <!-- SECTION 5 - START -->
+                              <h2 class="govuk-heading-m">Your organisation's details</h2>
 
-                         <section class="employer-contact-details">
-                              <p><strong>Your organisation name:</strong> Belhavel Construction Ltd </p>
-                              <p><strong>Contact name:</strong> {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}</p>
-                              <p><strong>Email address:</strong>
-                                   {% if data['pledge-application-email'] %}
-                                        {% for key, applicationEmail in data['pledge-application-email'] %}
-                                             {{ applicationEmail }}
-                                        {% endfor %}
-                                   {% endif %}
-                              </p>
-                              <p><strong>Your website:</strong> {{ data['pledge-application-website'] }}</p>
-                         </section>
-                         <!-- SECTION 5 - END -->
-                    </div>
-               </details>
+                              <section class="employer-contact-details">
+                                   <p><strong>Your organisation name:</strong> Belhavel Construction Ltd </p>
+                                   <p><strong>Contact name:</strong> {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}</p>
+                                   <p><strong>Email address:</strong>
+                                        {% if data['pledge-application-email'] %}
+                                             {% for key, applicationEmail in data['pledge-application-email'] %}
+                                                  {{ applicationEmail }}
+                                             {% endfor %}
+                                        {% endif %}
+                                   </p>
+                                   <p><strong>Your website:</strong> {{ data['pledge-application-website'] }}</p>
+                              </section>
+                              <!-- SECTION 5 - END -->
 
-               <a href="9-accept" class="govuk-button" id="approve-application">Approve application</a>
-               <a href="#" class="govuk-button govuk-button--warning" id="delete-application">Cancel application</a>
+                         </div>
+                    </details>
+               </div>
+
+               <div class="accepted-info">
+                    <h2 class="govuk-heading-m">Do you want to accept this transfer of funds?</h2>
+               </div>
+
+               <a href="9-accept" class="govuk-button" id="approve-application">Accept funding</a>
+               <a href="#" class="govuk-button govuk-button--warning accepted-journey-cancel-button" id="delete-application">Cancel application</a>
 
                <br>
 

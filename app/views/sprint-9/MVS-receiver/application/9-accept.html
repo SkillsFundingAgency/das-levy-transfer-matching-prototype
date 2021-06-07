@@ -21,16 +21,13 @@
      </div>
 
      <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
+
+          <div class="govuk-grid-column-two-thirds">
 
                <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
                <h1 class="govuk-heading-xl">
-                    Approve your pledge application to <span class="pledge-name-answer">####</span>
+                    Accept funding from <span class="pledge-name-answer">####</span>
                </h1>
-
-          </div>
-
-          <div class="govuk-grid-column-two-thirds">
 
                <form method="post" action="../my-applications" id="accept-application-form">
 
@@ -42,18 +39,18 @@
                          name: "accept-application",
                          fieldset: {
                               legend: {
-                                   text: "Are you sure you want to approve the application?",
+                                   text: "Are you sure you want to accept the funding?",
                                    isPageHeading: false
                               }
                          },
                          items: [
                               {
-                                   value: "yes approve application",
-                                   text: "Yes, approve application"
+                                   value: "yes, accept the funding",
+                                   text: "Yes, accept the funding"
                               },
                               {
-                                   value: "no refuse the application",
-                                   text: "No, refuse the application"
+                                   value: "no, reject the funding and cancel the application",
+                                   text: "No, reject the funding and cancel the application"
                               }
                          ]
                     }) }}
