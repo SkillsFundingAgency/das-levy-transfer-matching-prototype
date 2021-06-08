@@ -534,6 +534,13 @@ p {
      }
 }
 
+.rejected-panel {
+     border-left: none;
+     background: none;
+     padding: 0;
+     width: 100%;
+}
+
 .autocomplete-suggestions {
      background: white;
      border: 2px solid black;
