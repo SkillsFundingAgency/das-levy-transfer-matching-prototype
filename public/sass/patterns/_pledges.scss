@@ -243,7 +243,7 @@
           margin: 0;
           float: left;
           display: inline-block;
-          line-height: 1;
+          line-height: 1.2;
           .total-value {
                color: $govuk-link-colour;
           }
@@ -254,7 +254,7 @@
                font-size: 16px;
                font-weight: normal;
                border: none;
-               text-decoration: underline;
+               // text-decoration: underline;
                background: none;
           }
      }
@@ -299,7 +299,8 @@ section {
                }
           }
           .pledge-name-answer, .application-name-answer {
-               color: $govuk-link-colour;
+               // color: $govuk-link-colour;
+               font-weight: bold;
           }
           .govuk-tag {
                margin-bottom: 1em;
@@ -378,12 +379,14 @@ section {
 
 .pledge-name-answer, .application-name-answer {
      &.main-title {
-          color: $govuk-link-colour;
+          // color: $govuk-link-colour;
+          font-weight: bold;
      }
 }
 
 .application-name-answer, .pledge-name-answer {
-     color: $govuk-link-colour;
+     // color: $govuk-link-colour;
+     font-weight: bold;
 }
 
 .govuk-panel--confirmation {

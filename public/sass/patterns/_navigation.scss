@@ -79,6 +79,15 @@
                          padding-right: 0;
                     }
                }
+               &.icon-burger {
+                    display: none;
+                    width: 2em;
+                    height: 2em;
+                    // background: blue;
+                    margin-top: 0.75em;
+                    background: url('../images/menu-blue.svg') no-repeat 0% 50%;
+                    background-size: contain;
+               }
                &.email-container {
                     float: right;
                }
@@ -132,6 +141,31 @@
           }
      }
 }
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+     .navigation {
+          ul {
+               li {
+                    &:nth-of-type(5), &:nth-of-type(6), &:nth-of-type(7) {
+                         display: none;
+                    }
+                    &.icon-burger {
+                         display: inline-block;
+                         float: right;
+                    }
+               }
+          }
+     }
+}
+
+@media (max-width: 500px) {
+
+}
+
 
 ul.dashboard-nav {
      padding: 0;

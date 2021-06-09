@@ -243,7 +243,7 @@
           margin: 0;
           float: left;
           display: inline-block;
-          line-height: 1;
+          line-height: 1.2;
           .total-value {
                color: $govuk-link-colour;
           }
@@ -254,7 +254,7 @@
                font-size: 16px;
                font-weight: normal;
                border: none;
-               text-decoration: underline;
+               // text-decoration: underline;
                background: none;
           }
      }

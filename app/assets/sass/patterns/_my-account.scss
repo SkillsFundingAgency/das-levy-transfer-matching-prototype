@@ -53,6 +53,26 @@
      }
 }
 
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+     .my-account-section {
+          .account-wrapper {
+               div {
+                    width: 100%;
+                    padding-right: 0%;
+               }
+          }
+     }
+}
+
+@media (max-width: 500px) {
+
+}
+
+
 .tasks-section {
      margin: 4em 0;
      border: 1px solid $govuk-border-colour;
