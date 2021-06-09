@@ -47,6 +47,33 @@
      }
 }
 
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+     .app-task-list {
+          .pledge-section-one {
+               &.apprentice-added {
+                    .govuk-button {
+                         margin-left: 0em;
+                         margin-bottom: 1em;
+                    }
+                    .apprenticeship-total {
+                         margin: 0.75em 0 2em 0;
+                         font-size: 2rem;
+                         float: left;
+                    }
+               }
+          }
+     }
+}
+
+@media (max-width: 500px) {
+
+}
+
 .app-task-list__section {
      display: table;
      @include govuk-font($size:24, $weight: bold);

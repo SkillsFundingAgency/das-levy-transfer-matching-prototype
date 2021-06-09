@@ -195,6 +195,35 @@ a {
      }
 }
 
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+     .tooltiptext {
+          margin-left: 0;
+          left: 0%;
+          &:before {
+               left: 1em;
+          }
+     }
+     .small-text {
+          &.hover-over {
+               &:hover, &:active, &:focus {
+                    .tooltiptext {
+                         width: 300px;
+                         margin-left: 0;
+                    }
+               }
+          }
+     }
+}
+
+@media (max-width: 500px) {
+
+}
+
+
 p {
      &.after-details {
           margin-top: -0.75em;
@@ -620,4 +649,8 @@ p {
                margin-bottom: none;
           }
      }
+}
+
+.sidescrolling-table {
+     overflow-x: auto;
 }

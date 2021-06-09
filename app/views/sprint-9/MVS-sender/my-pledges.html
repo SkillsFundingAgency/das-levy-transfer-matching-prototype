@@ -36,52 +36,56 @@
                <p class="before-pledge">You have <strong class="number-of-pledges">0</strong> transfers pledges.</p>
                <p class="after-pledge">You have <strong class="number-of-pledges">0</strong> transfers pledge.</p>
 
-               <!-- PLEDGE TABLE - START -->
-               <table class="govuk-table pledge-complete-table">
-                    <thead class="govuk-table__head">
-                         <tr class="govuk-table__row">
-                              <th scope="col" class="govuk-table__header">Description</th>
-                              <th scope="col" class="govuk-table__header">Total</th>
-                              <th scope="col" class="govuk-table__header">Remaining funds</th>
-                              <th scope="col" class="govuk-table__header">Applications</th>
-                              <!-- <th scope="col" class="govuk-table__header">Approved</th>
-                              <th scope="col" class="govuk-table__header">Rejected</th> -->
-                              <th scope="col" class="govuk-table__header"></th>
-                         </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                              <td class="govuk-table__cell">
-                                   <a href="pledges/1-pledge-details" class="activate-applications"><strong>
-                                        Pledge number 910106
-                                   </strong></a>
-                                   <br>
-                                   <span class="govuk-caption-m">Date: <div id="date-stamp"></div></span>
-                              </td>
-                              <td class="govuk-table__cell">£<span class="value-format">{{ data['pledge-amount'] }}</span></td>
-                              <td class="govuk-table__cell">
-                                   <p class="number before-approval">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
-                                   <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p>
-                              </td>
-                              <td class="govuk-table__cell">
-                                   <span class="pledge-bids">3</span>
-                                   <br>
-                                   <div class="govuk-caption-m">
-                                        Approved: <span class="pledge-approved-table">0</span>
-                                        &nbsp; &nbsp;
-                                        Rejected: <span class="pledge-rejected-table">0</span>
-                                   </div>
+               <div class="sidescrolling-table">
 
-                              </td>
-                              <td class="govuk-table__cell">
-                                   <a href="pledges/1-pledge-details" class="govuk-button govuk-button--secondary activate-applications" id="">View applications</a>
-                                   <br>
-                                   <a href="delete-pledge" class="delete-pledge govuk-link--no-visited-state"><span class="icon delete"></span>Delete pledge</a>
-                              </td>
-                         </tr>
-                    </tbody>
-               </table>
-               <!-- PLEDGE TABLE - END -->
+                    <!-- PLEDGE TABLE - START -->
+                    <table class="govuk-table pledge-complete-table">
+                         <thead class="govuk-table__head">
+                              <tr class="govuk-table__row">
+                                   <th scope="col" class="govuk-table__header">Description</th>
+                                   <th scope="col" class="govuk-table__header">Total</th>
+                                   <th scope="col" class="govuk-table__header">Remaining funds</th>
+                                   <th scope="col" class="govuk-table__header">Applications</th>
+                                   <!-- <th scope="col" class="govuk-table__header">Approved</th>
+                                   <th scope="col" class="govuk-table__header">Rejected</th> -->
+                                   <th scope="col" class="govuk-table__header"></th>
+                              </tr>
+                         </thead>
+                         <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row">
+                                   <td class="govuk-table__cell">
+                                        <a href="pledges/1-pledge-details" class="activate-applications"><strong>
+                                             Pledge number 910106
+                                        </strong></a>
+                                        <br>
+                                        <span class="govuk-caption-m">Date: <div id="date-stamp"></div></span>
+                                   </td>
+                                   <td class="govuk-table__cell">£<span class="value-format">{{ data['pledge-amount'] }}</span></td>
+                                   <td class="govuk-table__cell">
+                                        <p class="number before-approval">£<span class="value-format">{{ data['pledge-amount'] }}</span></p>
+                                        <p class="number after-approval">£<span class="value-format">{{ data['pledge-amount']-9000 }}</span></p>
+                                   </td>
+                                   <td class="govuk-table__cell">
+                                        <span class="pledge-bids">3</span>
+                                        <br>
+                                        <div class="govuk-caption-m">
+                                             Approved: <span class="pledge-approved-table">0</span>
+                                             &nbsp; &nbsp;
+                                             Rejected: <span class="pledge-rejected-table">0</span>
+                                        </div>
+
+                                   </td>
+                                   <td class="govuk-table__cell">
+                                        <a href="pledges/1-pledge-details" class="govuk-button govuk-button--secondary activate-applications" id="">View applications</a>
+                                        <br>
+                                        <a href="delete-pledge" class="delete-pledge govuk-link--no-visited-state"><span class="icon delete"></span>Delete pledge</a>
+                                   </td>
+                              </tr>
+                         </tbody>
+                    </table>
+                    <!-- PLEDGE TABLE - END -->
+
+               </div>
 
                <hr class="separator dotted">
 
