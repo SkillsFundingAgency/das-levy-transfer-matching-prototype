@@ -299,7 +299,8 @@ section {
                }
           }
           .pledge-name-answer, .application-name-answer {
-               color: $govuk-link-colour;
+               // color: $govuk-link-colour;
+               font-weight: bold;
           }
           .govuk-tag {
                margin-bottom: 1em;
@@ -378,12 +379,14 @@ section {
 
 .pledge-name-answer, .application-name-answer {
      &.main-title {
-          color: $govuk-link-colour;
+          // color: $govuk-link-colour;
+          font-weight: bold;
      }
 }
 
 .application-name-answer, .pledge-name-answer {
-     color: $govuk-link-colour;
+     // color: $govuk-link-colour;
+     font-weight: bold;
 }
 
 .govuk-panel--confirmation {

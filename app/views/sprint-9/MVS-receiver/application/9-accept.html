@@ -34,6 +34,16 @@
                     {% from "govuk/components/radios/macro.njk" import govukRadios %}
                     {% from "govuk/components/input/macro.njk" import govukInput %}
 
+                    {% set yesAcceptHtml %}
+                         <p>By accepting a transfer of funding the full cost of training and assessment will be paid for by <span class="pledge-name-answer">####</span> from their levy funds in their apprenticeship service account.</p>
+
+                         <p>This will be paid monthly direct to your chosen training provider over the duration of the training course.</p>
+
+                         <p>You or your training provider will need to add the details of your apprentice in your apprenticeship service account.</p>
+
+                         <p><span class="pledge-name-answer">####</span> will then need to review and approve the transfer.</p>
+                    {% endset -%}
+
                     {{ govukRadios({
                     idPrefix: "accept-application",
                          name: "accept-application",
@@ -46,7 +56,10 @@
                          items: [
                               {
                                    value: "yes, accept the funding",
-                                   text: "Yes, accept the funding"
+                                   text: "Yes, accept the funding",
+                                   conditional: {
+                                        html: yesAcceptHtml
+                                   }
                               },
                               {
                                    value: "no, reject the funding and cancel the application",
