@@ -281,6 +281,26 @@
      }
 }
 
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+     .new-pledge-values {
+          float: left;
+          width: 100%;
+          h3 {
+               width: 100%;
+               margin: 0 0 1em 0 !important;
+          }
+     }
+}
+
+@media (max-width: 500px) {
+
+}
+
+
 section {
      &.employer-details, &.employer-contact-details, &.transfer-details {
           background: govuk-colour("light-grey");
@@ -376,6 +396,28 @@ section {
           }
      }
 }
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+     section {
+          &.employer-details {
+               &.side-panel {
+                    margin-top: 2em;
+                    &.applications-details {
+                         padding: 1em 1em 6.5em 1em;
+                    }
+               }
+          }
+     }
+}
+
+@media (max-width: 500px) {
+
+}
+
 
 .pledge-name-answer, .application-name-answer {
      &.main-title {

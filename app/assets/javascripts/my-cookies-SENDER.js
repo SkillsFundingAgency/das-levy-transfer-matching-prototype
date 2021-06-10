@@ -274,7 +274,7 @@ $('.after-pledge-content').hide();
 var pledgesNumber = parseInt($('#transfers-tabs .govuk-tabs__list-item[data-tab="two"] .number').text());
 $('#transfers-tabs .govuk-tabs__list-item .number').hide();
 
-$('.mvs-pledge-applications').hide();
+$('.mvs-pledge-applications, .new-pledge-values').hide();
 $('.after-pledge-complete').hide();
 
 if ($.cookie("pledge-complete") == 'true') {
@@ -313,7 +313,7 @@ $(".activate-applications").on("click", function (e) {
 if ($.cookie("pledge-complete-and-items-shown") == 'true') {
      $('.pledge-complete').hide();
      $('.empty-pledge').hide();
-     $('.mvs-pledge-applications').show();
+     $('.mvs-pledge-applications, .new-pledge-values').show();
 }
 
 if ($.cookie("pledge-tabs-update") == 'true') {

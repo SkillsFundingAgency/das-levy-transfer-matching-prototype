@@ -501,9 +501,10 @@ table {
      .transfer-values {
           // background: green;
           display: inline-block;
-          width: 95%;
+          width: 100%;
           div {
-               width: 100%;
+               width: 93%;
+               padding: 3.5% !important;
                margin-right: 0;
                margin-bottom: 1em;
           }
