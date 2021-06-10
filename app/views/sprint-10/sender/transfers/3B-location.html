@@ -1,0 +1,72 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">Add the cities or towns you'd like to fund</h1>
+
+               <form method="post" action="4-sector" id="">
+
+                    <div class="updates-locations">
+                         <div id="locations" data-location-count="{{numberOfLocations}}">
+
+                              <div class="govuk-form-group first-of-type">
+                                   <label class="govuk-label" for="pledge-location[url1]">City or town</label>
+                                   <input class="govuk-input govuk-input--width-20" id="pledge-location[url1]" name="pledge-location[url1]" type="text" spellcheck="false">
+                              </div>
+
+                              {% for url, location in location -%}
+                                   {% if url != 'url1' %}
+                                   {% if location != '' %}
+                                        <div class="govuk-form-group new-location">
+                                             <label class="govuk-label" for="pledge-location[{{url}}]">Additional city or town</label>
+                                             <input class="govuk-input govuk-input--width-20" id="pledge-location[{{url}}]" name="pledge-location[{{url}}]" type="email" spellcheck="false">
+                                             <p class="govuk-body">
+                                                  <a class="govuk-link govuk-link--no-visited-state" data-remove="[{{url}}]" href="#">remove</a>
+                                             </p>
+                                        </div>
+                                   {% endif %}
+                                   {% endif %}
+                              {%- endfor %}
+                         </div>
+                         <p class="govuk-body govuk-!-margin-bottom-6">
+                              <a class="govuk-link govuk-link--no-visited-state add-location" href="#" id="addAnotherLocation">Add another location</a>
+                         </p>
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="pledge-location-continue">Continue</button>
+
+                    <a href="9-cancel-pledge" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
