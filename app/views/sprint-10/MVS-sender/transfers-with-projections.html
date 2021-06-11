@@ -1,0 +1,126 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <h1 class="govuk-heading-xl small-margin-bottom">Transfers</h1>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <!-- <p>You can use unspent levy funds in your account by transferring up to 25% of your previous year's funds to another business.
+               <p>They can use the transferred funds to pay for apprenticeship training and assessment.</p>
+               <p>The levy funds you commit to a transfer will be paid from your account monthly over the duration of the apprenticeship. This means you are committing funds over multiple financial years.</p> -->
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Information about transfers</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <p>You can use unspent levy funds in your account by transferring up to 25% of your previous year's funds to other organisations.</p>
+                         <p>This is called your <strong>transfer allowance</strong>.</p>
+                         <p>It is calculated every year on 6 April.</p>
+                         <p>The organisations receiving transferred funds can use this to pay for apprenticeship training and assessment.</p>
+                         <p>The levy funds you commit to a transfer will be paid from your account monthly over the duration of the apprenticeship. This means you are committing funds over multiple financial years.</p>
+                    </div>
+               </details>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <h2 class="govuk-heading-m transfers-title">Transfers finances</h2>
+          </div>
+     </div>
+
+     {% include "../includes/MVS-transfer-values.html" %}
+
+     <details class="govuk-details tranfer-values-projected" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+               <span class="govuk-details__summary-text">Your transfer commitments in future financial years</span>
+          </summary>
+          <div class="govuk-details__text">
+               {% include "../includes/MVS-transfer-projected-values.html" %}
+          </div>
+     </details>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <hr class="separator dotted">
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h2 class="govuk-heading-m">My pledges</h2>
+               <p>Create a public funding pledge which is shown online so that businesses can apply to you for a transfer of funds.</p>
+               <div class="govuk-inset-text before-pledge">You have <strong class="number-of-pledges">0</strong> transfers pledges.</div>
+               <div class="govuk-inset-text after-pledge">You have <strong class="number-of-pledges">0</strong> transfers pledge.</div>
+
+               <a href="transfers/index" class="govuk-button" data-module="govuk-button" id="create-pledge-button">Create a transfers pledge</a>
+               <a href="my-pledges" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my pledges and applications</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <hr class="separator dotted">
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h2 class="govuk-heading-m">My transfer connections</h2>
+               <p>If you know a business you want to transfer funds to, you can make a connection to them and set up a transfer.</p>
+               <p>You'll need to know their apprenticeship service account ID number.</p>
+               <div class="govuk-inset-text">You have <strong class="number-of-connections">0</strong> pending transfer connections.</div>
+               <a href="private/1-business-id" class="govuk-button govuk-button--secondary secondary-overwrite" data-module="govuk-button">Make a transfer to a business I know</a>
+          </div>
+     </div>
+
+     <!-- <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               <hr class="separator dotted">
+
+               <div class="finance-homepage">
+                    <h2 class="govuk-heading-m">My transfers</h2>
+                    <p class="no-transfers">You have <strong class="number-of-pledges">0</strong> transfer pledges.</p>
+                    <a href="transfers/index" class="govuk-button" data-module="govuk-button">Create a transfers pledge</a>
+                    <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my pledges</a>
+               </div>
+
+               <div class="finance-homepage">
+                    <h2 class="govuk-heading-m">My transfer connections</h2>
+                    <p class="no-transfers">You have <strong class="number-of-connections">0</strong> pending transfer connections.</p>
+                    <a href="private/1-business-id" class="govuk-button govuk-button--secondary" data-module="govuk-button">Make a transfer to a business I know</a>
+               </div>
+
+          </div>
+
+     </div> -->
+
+</div>
+
+{% endblock %}
