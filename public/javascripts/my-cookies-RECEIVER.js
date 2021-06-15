@@ -293,8 +293,8 @@ if ($.cookie("cancel-application-completed") == 'true') {
      $('.cancelled-info, #application-cancelled-banner').show();
 
      // Rejected info
-     $('.application-status-two .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('rejected');
-     $('.application-complete-table tr[data-application-row="two"] .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('rejected');
+     $('.application-status-two .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('unsuccessful');
+     $('.application-complete-table tr[data-application-row="two"] .govuk-tag').removeClass('govuk-tag--grey').addClass('govuk-tag--red').text('unsuccessful');
      $('.rejection-info').show();
      $('.rejected-text-hide').hide();
 
