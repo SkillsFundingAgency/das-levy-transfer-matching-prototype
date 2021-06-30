@@ -1,0 +1,151 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
+               <h1 class="govuk-heading-xl">Your BARRY & BARRY Ltd (910106) application details</h1>
+
+               <div class="govuk-warning-text application-status-one">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         Application status: <span class="govuk-tag govuk-tag--green">Funds available</span>
+                    </strong>
+               </div>
+
+               <div class="govuk-warning-text application-status-one-accepted">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         <span class="govuk-tag">approved, awaiting your acceptance</span> -
+                         Barry & Barry Ltd have approved your application - <strong id="date-stamp"></strong>
+                    </strong>
+               </div>
+
+               <!-- SECTION 2 - START -->
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">Which criteria do you match?</h2>
+
+                    <section class="employer-contact-details">
+                         <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
+                         <ul class="govuk-list">
+                              <li><span class="icon tick"></span>Location: <strong>West Midlands</strong></li>
+                              <li><span class="icon tick"></span>Sector: <strong> </strong></li>
+                              <li><span class="icon tick"></span>Job role & level: <strong> </strong></li>
+                              <!-- <li><span class="icon tick"></span><span class="icon cross"></span>Apprenticeship qualification level</li> -->
+                         </ul>
+                         <!-- <p><strong>{{ data['pledge-match'] }}</strong></p>
+                         <p>
+                              {{ data['pledge-match-yes-more-detail'] }}
+                              {{ data['pledge-match-no-more-detail'] }}
+                         </p> -->
+                    </section>
+               </div>
+               <!-- SECTION 2 - END -->
+
+               <!-- SECTION 3 - START -->
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">About your apprenticeship training course</h2>
+               </div>
+
+               <section class="employer-contact-details">
+                    <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
+                    <p><strong>Apprenticeship training course:</strong> {{ data['pledge-application-standard'] }}</p>
+                    <p><strong>Number of apprentices:</strong> {{ data['pledge-application-apprentices'] }}</p>
+                    <p><strong>Apprenticeship training to start by:</strong> {{ data['pledge-application-start-month'] }} / {{ data['pledge-application-start-year'] }}</p>
+                    <p><strong>Have you found a training provider?:</strong> {{ data['pledge-application-training-provider'] }}</p>
+                    <p><strong>Total funding available:</strong> £20,000 in 2021/22</p>
+
+
+                    
+
+               </section>
+               <!-- SECTION 3 - END -->
+
+               <div class="accepted-text-hide">
+                    <details class="govuk-details" data-module="govuk-details">
+                         <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">
+                              More details about your apprenticeship
+                         </span>
+                         </summary>
+                         <div class="govuk-details__text">
+                              <!-- SECTION 4 - START -->
+                              <h2 class="govuk-heading-m">Details about your apprenticeship</h2>
+
+                              <section class="employer-contact-details">
+                                   <!-- <p class="govuk-heading-m">About the apprenticeship</p> -->
+                                   <p>{{ data['pledge-application-more-details'] }}</p>
+                              </section>
+                              <!-- SECTION 4 - END -->
+
+                              <!-- SECTION 5 - START -->
+                              <h2 class="govuk-heading-m">Your organisation's details</h2>
+
+                              <section class="employer-contact-details">
+                                   <p><strong>Your organisation name:</strong> Belhavel Construction Ltd </p>
+                                   <p><strong>Contact name:</strong> {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}</p>
+                                   <p><strong>Email address:</strong>
+                                        {% if data['pledge-application-email'] %}
+                                             {% for key, applicationEmail in data['pledge-application-email'] %}
+                                                  {{ applicationEmail }}
+                                             {% endfor %}
+                                        {% endif %}
+                                   </p>
+                                   <p><strong>Your website:</strong> {{ data['pledge-application-website'] }}</p>
+                              </section>
+                              <!-- SECTION 5 - END -->
+
+                         </div>
+                    </details>
+               </div>
+
+               <a href="start-to-use-funds.html" class="govuk-button govuk-button">Use funds now</a>
+
+          </div>
+
+          <!--
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel">
+                    <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
+                    <p class="details">
+                         Location: <strong class="pledge-location-answer">####</strong><br>
+                         Sector: <strong class="pledge-sector-answer">####</strong><br>
+                         Category of training: <strong class="pledge-training-answer">####</strong><br>
+                         Level: <strong class="pledge-level-answer">####</strong>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available:<br>up to £<span class="pledge-value-answer value-format">####</span> in 2021/22</p>
+                    </div>
+               </section>
+          </div>
+
+          -->
+
+     </div>
+
+</div>
+
+{% endblock %}
