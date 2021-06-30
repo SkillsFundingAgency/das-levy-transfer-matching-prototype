@@ -114,16 +114,19 @@
                     <div class="govuk-form-group">
                          <label class="govuk-label govuk-label--s" for="pledge-application-location">
                               <div class="small-text hover-over">
-                                   <span class="dotted-underline">Location where the apprentice will be working</span>
+                                   <span>Add the location where your apprentice will work</span>
+                                   <!--
                                    <span class="icon help"></span>
                                    <span class="tooltiptext">
                                         If your apprentice will work at more than one location, enter the one where they will spend most time.
                                         <br><br>
                                         If they are based at home, use this postcode or your business location.
                                    </span>
+                                   -->
                               </div>
                          </label>
-                         <div class="govuk-hint">Enter postcode, for example SW1 2AT</div>
+                         <div class="govuk-hint">If your apprentice will work at more than one location, enter the one where they will spend most time.
+                         If they are based at home, use this postcode or your business location. <br><br>Enter postcode, for example SW1 2AT</div>
                          <input class="govuk-input govuk-!-width-one-quarter" id="pledge-application-location" name="pledge-application-location" type="text" value="{{ data['pledge-application-location'] }}">
                     </div>
 

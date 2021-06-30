@@ -67,7 +67,7 @@
 
                <form method="post" action="" id="belhavel-form">
 
-                    <section class="employer-details">
+                    <section class="employer-details" style="padding-bottom: 1px;">
                          <h2 class="govuk-heading-m">Details about the application</h2>
 
                          <strong class="govuk-tag govuk-tag--green">100% Match</strong>
@@ -83,10 +83,24 @@
                               Estimated duration: <strong>30 months</strong><br>
                               Start by: <strong>March 2021</strong><br>
                               Do they have a training provider? <strong>No</strong><br>
+                              Estimated total cost 2021/22: <strong>£4,500</strong> <br>
                          </p>
+
+                         <details class="govuk-details" data-module="govuk-details">
+                           <summary class="govuk-details__summary">
+                             <span class="govuk-details__summary-text">
+                               Estimated total cost 
+                             </span>
+                           </summary>
+                           <div class="govuk-details__text">
+                             The estimated total cost of training for this financial year is based on the funding band maximum, the planned start date of training and the 20% EPA payment made at the end of training.
+                           </div>
+                         </details>
+
+                         <!--
                          <hr class="dotted">
                          <p>
-                              Funding band maximum per apprentice: <strong>£9,000</strong><br> 
+                             Funding band maximum per apprentice: <strong>£9,000</strong><br>
                               <span class="small-text hover-over">
                                    <span class="dotted-underline">Estimated total cost 2021/22:</span> <span class="icon help"></span>: £4,500
                                    <span class="tooltiptext">
@@ -104,6 +118,8 @@
                                    </span>
                               </p>
                          </div>
+                         -->
+
                     </section>
 
                     <section class="employer-contact-details">
@@ -220,6 +236,8 @@
                          <strong class="after-approval total-value">£<span class="value-format">{{ data['pledge-amount']-4500 }}</span></strong>
                          <br>
                          <div class="small-text hover-over">
+                              <span>Pledge 910106 funds remaining 2021/22</span>
+                              <!--
                               <span class="dotted-underline">Pledge 910106 funds remaining 2021/22</span>
                               <span class="icon help"></span>
                               <span class="tooltiptext">
@@ -227,8 +245,27 @@
                                    <br><br>
                                    It subtracts your pledge funds committed from your pledge total.
                               </span>
+                              -->
+
+                              <br><br>                 
+
                          </div>
+
+                         <details class="govuk-details" data-module="govuk-details" style="margin-bottom: 0px!important;">
+                                <summary class="govuk-details__summary">
+                                  <span class="govuk-details__summary-text">
+                                    Funds remaining
+                                  </span>
+                                </summary>
+                                <div class="govuk-details__text">
+                                   Pledge funds remaining is an estimate of the funds still available to transfer for this specific pledge.
+                                   <br><br>
+                                   It subtracts your pledge funds committed from your pledge total.
+                                </div>
+                         </details>
+
                     </h3>
+
                </div>
 
           </aside>
