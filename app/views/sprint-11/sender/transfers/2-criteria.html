@@ -1,0 +1,79 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">Set criteria for the apprenticeships you want<br>to fund</h1>
+
+               <form method="post" action="" id="pledge-criteria-form">
+
+                    <div class="govuk-inset-text">
+                         <p>By setting criteria you can decide how you want to spend your levy.</p>
+
+                         <p>Other businesses looking for funding for their apprenticeships will be able to filter using these criteria.</p>
+
+                         <p>When you review the applications you receive, you'll be able to see which criteria they match.</p>
+                    </div>
+
+                    <p>Select the criteria for your pledge</p>
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="pledge-criteria">
+                              <div id="pledge-criteria" class="govuk-hint">All the criteria below are optional.</div>
+                              <div class="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location" name="pledge-criteria" type="checkbox" value="pledge-location">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location">Location of the employer receiving the transfer</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-sector" name="pledge-criteria" type="checkbox" value="pledge-sector">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-sector">Sector the employer receiving the transfer works in (for example, construction)</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-training" name="pledge-criteria" type="checkbox" value="pledge-training">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-training">Category of training (for example, health and science)</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-level" name="pledge-criteria" type="checkbox" value="pledge-level">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-level">Apprenticeship qualification level</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="pledge-criteria-continue">Continue</button>
+
+                    <a href="9-cancel-pledge" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

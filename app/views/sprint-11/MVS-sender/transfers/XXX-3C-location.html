@@ -1,0 +1,93 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">Add the regions you'd like<br>to fund</h1>
+
+               <form method="post" action="4-sector" id="">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="pledge-location-hint">
+                              <div class="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item select-all">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-all" name="_pledge-location" type="checkbox" value="Select all" onClick="toggle(this)">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-all">All regions in England</label>
+                                   </div>
+
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-east-mids" name="pledge-location" type="checkbox" value="East Midlands">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-east-mids">East Midlands</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-east-eng" name="pledge-location" type="checkbox" value="East of England">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-east-eng">East of England</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-london" name="pledge-location" type="checkbox" value="Greater London">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-london">Greater London</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-north-east" name="pledge-location" type="checkbox" value="North East">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-north-east">North East</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-north-west" name="pledge-location" type="checkbox" value="North West England">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-north-west">North West England</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-south-east" name="pledge-location" type="checkbox" value="South East England">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-south-east">South East England</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-south-west" name="pledge-location" type="checkbox" value="South West England">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-south-west">South West England</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-west-mids" name="pledge-location" type="checkbox" value="West Midlands">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-west-mids">West Midlands</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge-location-yorks" name="pledge-location" type="checkbox" value="Yorkshire and the Humber">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge-location-yorks">Yorkshire and the Humber</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="pledge-location-continue">Continue</button>
+
+                    <a href="9-cancel-pledge" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

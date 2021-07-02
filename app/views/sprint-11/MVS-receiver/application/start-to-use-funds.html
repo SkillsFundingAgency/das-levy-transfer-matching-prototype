@@ -1,0 +1,85 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Using funds</h1>
+
+               
+ 
+               <!--
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">About your apprenticeship training course</h2>
+               </div>
+               -->
+
+               <section class="employer-contact-details">
+                    <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
+                    <p><strong>Total funding available:</strong>  £20,000</p>
+                    <p><strong>Apprenticeship training course:</strong>  </p>
+                    <p><strong>Number of apprentices:</strong> 0</p>
+                    <p><strong>Apprenticeship training to start by:</strong>  </p>
+                    <p><strong>Training provider:</strong>  </p>
+               </section>
+
+               <div class="accepted-text-hide">
+                    <P>Start page content here explaining how to use funds...</P>
+               </div>
+
+               <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+               <a href="..\my-applications-3.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                 Start now
+                 <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                   <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                 </svg>
+               </a>
+
+               <br><br><br>
+
+          </div>
+
+          <!--
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel">
+                    <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
+                    <p class="details">
+                         Location: <strong class="pledge-location-answer">####</strong><br>
+                         Sector: <strong class="pledge-sector-answer">####</strong><br>
+                         Category of training: <strong class="pledge-training-answer">####</strong><br>
+                         Level: <strong class="pledge-level-answer">####</strong>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available:<br>up to £<span class="pledge-value-answer value-format">####</span> in 2021/22</p>
+                    </div>
+               </section>
+          </div>
+
+         -->
+
+     </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation-sender-tiercary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">
+                    Approve <span class="highlight-text">CBJ Engineering</span> application
+                    <!-- <span class="govuk-caption-m">Birmingham, West Midlands</span> -->
+               </h1>
+
+               <form method="post" action="3C-approved" id="approve-pledge-form">
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+                    {% set approveAllHtml %}
+                         <p>By approving this application:</p>
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li>agree to pay the full costs of this apprenticeship training to completion</li>
+                              <li>accept that funds for this transfer will take priority over funds for my own apprentices and transfers funding will leave my account first</li>
+                              <li>am not responsible or liable for anything else relating to this apprenticeship</li>
+                         </ul>
+                         <p>CBJ Engineering is bound by the funding rules for the levy transfer they receive.</p>
+                    {% endset -%}
+
+                    {{ govukRadios({
+                    idPrefix: "approve-application",
+                         name: "approve-application",
+                         fieldset: {
+                              legend: {
+                                   text: "How would you like to proceed with this application?",
+                                   isPageHeading: false
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "approve all",
+                                   text: "Approve the application",
+                                   conditional: {
+                                        html: approveAllHtml
+                                   },
+                                   hint: {
+                                        text: "I don't need to see the details again unless something changes"
+                                   }
+                              },
+                              {
+                                   value: "approve with manual",
+                                   text: "Approve the application in principle",
+                                   hint: {
+                                        text: "I want to review and approve the details when CBJ Engineering have added the apprentice(s) to their account"
+                                   }
+                              }
+                         ]
+                    }) }}
+
+                    <button class="govuk-button" data-module="govuk-button" id="approve-pledge-unhappy-V2-2">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-back-link">Back</a>
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+               <section class="employer-details side-panel applications-details">
+                    <p class="govuk-heading-s">Application details:</p>
+                    <p class="details">
+                         <span class="icon tick"></span>Location: <strong>West Midlands</strong><br>
+                         <span class="icon tick"></span>Sector: <strong>Construction company</strong><br>
+                         <span class="icon tick"></span>Category of training: <strong>Construction quantity surveyor (degree)</strong><br>
+                         <span class="icon cross"></span>Level: <strong>6</strong>
+                    </p>
+                    <p class="details">
+                         Apprentices: <strong>1</strong><br>
+                         Estimated duration: <strong>24 months</strong><br>
+                         Start by: <strong>April 2021</strong><br>
+                         Do they have a training provider?: <strong>Yes</strong><br>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Estimated total: £10,000</p>
+                    </div>
+               </section>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

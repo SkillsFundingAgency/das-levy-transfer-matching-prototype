@@ -24,13 +24,13 @@
           <div class="govuk-grid-column-two-thirds">
 
                <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
-               <h1 class="govuk-heading-xl">Your BARRY & BARRY Ltd (910106) application details</h1>
+               <h1 class="govuk-heading-xl">Your <span class="pledge-name-answer">####</span> application details</h1>
 
                <div class="govuk-warning-text application-status-one">
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                     <strong class="govuk-warning-text__text">
                          <span class="govuk-warning-text__assistive">Warning</span>
-                         Application status: <span class="govuk-tag govuk-tag--green">Funds available</span>
+                         Application status: <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
                     </strong>
                </div>
 
@@ -50,9 +50,9 @@
                     <section class="employer-contact-details">
                          <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
                          <ul class="govuk-list">
-                              <li><span class="icon tick"></span>Location: <strong>West Midlands</strong></li>
-                              <li><span class="icon tick"></span>Sector: <strong> </strong></li>
-                              <li><span class="icon tick"></span>Job role & level: <strong> </strong></li>
+                              <li><span class="icon tick"></span>Location: <strong>West Midlands</strong>, <strong class="post-code-answer">({{ data['pledge-application-location'] }})</strong></li>
+                              <li><span class="icon tick"></span>Sector: <strong>{{ data['search-sector'] }}</strong></li>
+                              <li><span class="icon tick"></span>Job role & level: <strong>{{ data['pledge-application-standard'] }}</strong></li>
                               <!-- <li><span class="icon tick"></span><span class="icon cross"></span>Apprenticeship qualification level</li> -->
                          </ul>
                          <!-- <p><strong>{{ data['pledge-match'] }}</strong></p>
@@ -75,11 +75,6 @@
                     <p><strong>Number of apprentices:</strong> {{ data['pledge-application-apprentices'] }}</p>
                     <p><strong>Apprenticeship training to start by:</strong> {{ data['pledge-application-start-month'] }} / {{ data['pledge-application-start-year'] }}</p>
                     <p><strong>Have you found a training provider?:</strong> {{ data['pledge-application-training-provider'] }}</p>
-                    <p><strong>Total funding available:</strong> £20,000 in 2021/22</p>
-
-
-                    
-
                </section>
                <!-- SECTION 3 - END -->
 
@@ -121,12 +116,18 @@
                     </details>
                </div>
 
-               <a href="start-to-use-funds.html" class="govuk-button govuk-button">Use funds now NOW</a>
-               <a href="#" class="govuk-button govuk-button--warning">Cancel application</a>
+               <div class="accepted-info">
+                    <h2 class="govuk-heading-m">Do you want to accept this transfer of funds?</h2>
+               </div>
+
+               <a href="9-accept" class="govuk-button" id="approve-application">Accept funding</a>
+               <a href="#" class="govuk-button govuk-button--warning accepted-journey-cancel-button" id="delete-application">Cancel application</a>
+
+               <br>
+
+               <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-back-link" id="">Back</a>
 
           </div>
-
-          <!--
 
           <div class="govuk-grid-column-one-third">
                <section class="employer-details side-panel">
@@ -142,8 +143,6 @@
                     </div>
                </section>
           </div>
-
-          -->
 
      </div>
 

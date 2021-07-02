@@ -1,0 +1,105 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="finance">Finance</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Finance</h1>
+
+               <div class="finance-values">
+                    <div class="">
+                         <p class="govuk-heading-s">Current funds</p>
+                         <p class="value">£<span class="value-format">150000</span></p>
+                    </div>
+                    <div class="">
+                         <p class="govuk-heading-s">Funds spent since Mar 2020</p>
+                         <p class="value">£<span class="value-format">0</span></p>
+                    </div>
+                    <div class="">
+                         <p class="govuk-heading-s">Estimates</p>
+                         <p class="value">£<span class="value-format">0</span></p>
+                         <span class="govuk-caption-m">Estimated total funding for the next 12 months (based on funds entering your apprenticeship service account, including the 10% top up)</span>
+                    </div>
+                    <div class="">
+                         <p class="govuk-heading-s"><br></p>
+                         <p class="value">£<span class="value-format">93200</span></p>
+                         <span class="govuk-caption-m">Estimated planned spending for the next 12 months</span>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">How accurate are the estimates?</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         Estimates are based on details we have about your last levy payment and apprenticeship arrangements, which may not be up-to-date.<br>
+                         <br>
+                         You should use additional financial information when planning how to spend your funds.
+                    </div>
+               </details>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row bottom-ctas">
+          <div class="govuk-grid-column-full">
+
+               <hr class="separator">
+
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                         <p class="govuk-body-l"><a href="view-transactions"><strong>View transactions</strong></a></p>
+                         <p>View payments made into and out of your apprenticeship service account.</p>
+                    </div>
+
+                    <div class="govuk-grid-column-one-half">
+                         <p class="govuk-body-l"><a href="#"><strong>Download transactions</strong></a></p>
+                         <p>Download your financial transactions within a specific date range.</p>
+                    </div>
+               </div>
+
+               <p><br></p>
+
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                         <p class="govuk-body-l"><a href="#"><strong>Funding projection</strong></a></p>
+                         <p>View funding projection to plan your future spending.</p>
+                    </div>
+
+                    <div class="govuk-grid-column-one-half">
+                         <p class="govuk-body-l"><a href="transfers"><strong>Transfers</strong></a></p>
+                         <p>View your 25% transfers balance and manage your transfers, including finding a business to transfer your levy to.</p>
+                    </div>
+               </div>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

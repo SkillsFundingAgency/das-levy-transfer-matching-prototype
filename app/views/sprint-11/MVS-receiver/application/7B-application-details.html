@@ -1,0 +1,130 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation-sender-secondary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
+               <h1 class="govuk-heading-xl">Your <span class="application-name-answer">Finders Keepers Ltd (684509)</span> application details</h1>
+
+               <!-- DELETED - START -->
+               <div class="govuk-form-group rejected-panel">
+                    <div class="govuk-warning-text">
+                         <span class="govuk-info__icon" aria-hidden="true"></span>
+                         <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">unsuccessful</span> <span class="govuk-tag govuk-tag--red">unsuccessful</span> - Your application for funding from Finders Keepers Ltd has been unsuccessful - 17/06/2021 14:47<!--<strong id="date-stamp"></strong>-->
+                         </strong>
+                    </div>
+               </div>
+               <!-- DELETED - END -->
+
+
+               <div class="rejection-info govuk-inset-text">
+                    <h2 class="govuk-heading-m">Alternative funding options</h2>
+
+                    <p>If your business doesn't pay the apprenticeship levy, you could <a href="#">make a funding reservation</a> instead.</p>
+
+                    <p>This means the government will pay 95% of your apprenticeship training and assessment costs, so you only pay 5%.</p>
+
+                    <p>You could apply for transfer funding from another employer.</p>
+
+                    <p><a href="../search-pledges">View transfer funding opportunities</a></p>
+               </div>
+
+               <!-- SECTION 3 - START -->
+               <h2 class="govuk-heading-m">About your apprenticeship training course</h2>
+
+               <section class="employer-contact-details">
+                    <!-- <h2 class="govuk-heading-m">Do you match the criteria?</h2> -->
+                    <p><strong>Apprenticeship training course:</strong> {{ data['pledge-application-standard'] }}</p>
+                    <p><strong>Number of apprentices:</strong> {{ data['pledge-application-apprentices'] }}</p>
+                    <p><strong>Apprenticeship training to start by:</strong> {{ data['pledge-application-start-month'] }} / {{ data['pledge-application-start-year'] }}</p>
+                    <p><strong>Have you found a training provider?:</strong> {{ data['pledge-application-training-provider'] }}</p>
+               </section>
+               <!-- SECTION 3 - END -->
+
+               <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                         More details about your apprenticeship
+                    </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <!-- SECTION 4 - START -->
+                         <h2 class="govuk-heading-m">Details about your apprenticeship</h2>
+
+                         <section class="employer-contact-details">
+                              <!-- <p class="govuk-heading-m">About the apprenticeship</p> -->
+                              <p>{{ data['pledge-application-more-details'] }}</p>
+                         </section>
+                         <!-- SECTION 4 - END -->
+
+                         <!-- SECTION 5 - START -->
+                         <div class="rejected-text-hide">
+                              <h2 class="govuk-heading-m">Your organisation's details</h2>
+
+                              <section class="employer-contact-details">
+                                   <p><strong>Your organisation name:</strong> Belhavel Construction Ltd </p>
+                                   <p><strong>Contact name:</strong> {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}</p>
+                                   <p><strong>Email address:</strong>
+                                        {% if data['pledge-application-email'] %}
+                                             {% for key, applicationEmail in data['pledge-application-email'] %}
+                                                  {{ applicationEmail }}
+                                             {% endfor %}
+                                        {% endif %}
+                                   </p>
+                                   <p><strong>Your website:</strong> {{ data['pledge-application-website'] }}</p>
+                              </section>
+                         </div>
+                         <!-- SECTION 5 - END -->
+
+                    </div>
+               </details>
+
+               <a href="#" class="govuk-button govuk-button--warning" id="delete-application-two">Cancel application</a>
+
+               <br>
+
+               <a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-back-link" id="">Back</a>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel">
+                    <p class="govuk-heading-s"><span class="application-name-answer">Finders Keepers Ltd (684509)</span> wants to fund apprenticeship training in:</p>
+                    <p class="details">
+                         Location: <strong>West Midlands</strong><br>
+                         Sector: <strong>All</strong><br>
+                         Type of job role: <strong>All</strong><br>
+                         Level: <strong>All</strong>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available:<br>up to £<span class="pledge-value-answer value-format">####</span> in 2021/22</p>
+                    </div>
+               </section>
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation-sender-tiercary.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <span class="govuk-caption-m">Find an employer to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">
+                    Belhavel Construction Ltd
+                    <!-- <span class="govuk-caption-m">Birmingham, West Midlands</span> -->
+               </h1>
+
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <!-- APPROVED - START -->
+               <div class="govuk-form-group approved-panel approved-panel-1">
+                    <div class="govuk-warning-text">
+                         <span class="govuk-confirm__icon" aria-hidden="true"></span>
+                         <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Confirmed</span> You have approved this application - <strong id="date-stamp"></strong>
+                         </strong>
+                    </div>
+               </div>
+               <!-- APPROVED - END -->
+
+               <form method="post" action="" id="">
+
+                    <section class="employer-details">
+                         <h2 class="govuk-heading-l">Details about the application</h2>
+
+                         <strong class="govuk-tag govuk-tag--green">100% Match</strong>
+                         <p>
+                              <span class="icon tick"></span>Location: <strong>Birmingham, West Midlands</strong><br>
+                              <span class="icon tick"></span>Sector: <strong>Construction company</strong><br>
+                              <span class="icon tick"></span>Category of training: <strong>Bricklaying</strong><br>
+                              <span class="icon tick"></span>Level: <strong>2</strong>
+                         </p>
+
+                         <p>
+                              Apprentices: <strong>1</strong><br>
+                              Estimated duration: <strong>36 months</strong><br>
+                              Start by: <strong>March 2021</strong><br>
+                              Do they have a training provider?: <strong>No</strong><br>
+                         </p>
+                         <hr class="dotted">
+                         <p>
+                              Maximum funding band: <strong>£20,000</strong><br>
+                              Estimated total per year: <strong>£6,666.66</strong>
+                         </p>
+                         <div class="total">
+                              <p class="govuk-heading-m">Estimated total: £20,000</p>
+                         </div>
+                    </section>
+
+                    <section class="employer-contact-details">
+                         <h2 class="govuk-heading-l">About their apprenticeship opportunity:</h2>
+
+                         <p>We are a small family business, established 5 years ago in Birmingham. We would like to expand by taking on an apprentice bricklayer. This would be our first apprentice. We want to give the skills to a young person. We would be very grateful for this opportunity.</p>
+                    </section>
+
+                    <section class="employer-contact-details">
+                         <!-- <h2 class="govuk-heading-l">Details about the employer</h2>
+
+                         <p class="govuk-heading-s">
+                              Belhavel Construction Ltd
+                              <span class="govuk-caption-m">Birmingham, West Midlands</span>
+                         </p>
+
+                         <p>
+                              Sector: <strong>Construction company</strong><br>
+                              Levy payer: <strong>No</strong>
+                         </p>
+                         <hr class="dotted"> -->
+
+                         <h2 class="govuk-heading-l">Main contact</h2>
+
+                         <p>You can contact Belhavel Construction Ltd if you would like to ask them for more information.</p>
+
+                         <p>
+                              <span class="icon contact"></span><strong>Joe Bloggs</strong><br>
+                              <span class="icon email"></span><a href="mailto:joe.bloggs@belhavel.com">joe.bloggs@belhavel.com</a><br>
+                              <span class="icon email"></span><a href="mailto:joe.bloggs@belhavel.com">sarah.stone@belhavel.com</a><br>
+                              <span class="icon phone"></span><a href="tel:0123456789">0123 456 789</a>
+                         </p>
+
+                         <p><span class="icon website"></span><a href="#">belhavel.com</a></p>
+                    </section>
+
+                    <a href="2B-approve" class="govuk-button pledge-approved-button unhappy-button-1" id="">Approve</a>
+                    <a href="#" class="govuk-button govuk-button--warning button-margin-left  pledge-approved-button unhappy-button-1">Reject</a>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link" id="unhappy-button-1-back">Back</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
