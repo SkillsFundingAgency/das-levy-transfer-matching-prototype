@@ -5,44 +5,49 @@
 {% endblock %}
 
 {% block content %}
-<!-- Main content starts -->
 
-<!-- Full width heading starts -->
+
 <div class="govuk-grid-row">
      <div class="govuk-grid-column-full">
           <h1 class="govuk-heading-xl">
                <!--<span class="govuk-tag">ALPHA</span><br>-->
-               {{serviceName}} design history 
+               Levy transfer matching prototype 
           </h1>
      </div>
 </div>
-<!-- Full width heading ends -->
 
-<!-- Two thirds header section starts -->
+
 <div class="govuk-grid-row">
      <div class="govuk-grid-column-two-thirds">
+
           <h2 class="govuk-heading-m govuk-!-margin-top-6">
-               What is {{serviceName}}?
+               What is Levy transfer matching?
           </h2>
+
+          <p class="govuk-body">
+               Levy transfer matching service allow employeers and trainers to manage apprenticeships funds transfers. This service is part of the Manage Apprenticeship project.
+          </p>
+
           <p class="govuk-body">
                All documents and links are being collected on <a href="#" class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank">a Confluence page</a>.
           </p>
+
           <p class="govuk-body">
                This documents the Discovery and Alpha phase of the {{serviceName}} project, January 2021 onwards.
           </p>
 
           <h2 class="govuk-heading-m govuk-!-margin-top-6">
-               Who's working on this project?
+               Prototype design team
           </h2>
-          <ul class="govuk-list govuk-list--bullet">
-               <li><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="https://skillsfundingagency.atlassian.net/wiki/people/5aba06b0f75bb52a823417cc" title="Link to Catherine's profile on Confluence">Catherine Gilhooly</a> &ndash; Content Designer</li>
-               <li><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="https://skillsfundingagency.atlassian.net/wiki/people/5bd824414d969945b2bead6b" title="Link to Chris's profile on Confluence">Chris  Hewison</a> &ndash; Interaction Designer</li>
-               <li><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="https://skillsfundingagency.atlassian.net/wiki/people/6017e65c332cbe0070fe81e3" title="Link to Heather's profile on Confluence">Heather Fawbert</a> &ndash; User Researcher</li>
-          </ul>
-     </div>
-     <!-- Two thirds header section ends -->
 
-     <!-- One third header section starts -->
+          <ul class="govuk-list govuk-list--bullet">
+               <li><strong>User Researcher: &nbsp;</strong><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="https://skillsfundingagency.atlassian.net/wiki/people/6017e65c332cbe0070fe81e3" title="Link to Heather's profile on Confluence">Heather Fawbert</a></li>
+               <li><strong>Content Designer: &nbsp;</strong><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="https://skillsfundingagency.atlassian.net/wiki/people/5aba06b0f75bb52a823417cc" title="Link to Catherine's profile on Confluence">Catherine Gilhooly</a></li>
+               <li><strong>Interaction Designer: &nbsp;</strong><a class="govuk-link govuk-link--no-visited-state" rel="external" target="_blank" href="#" title="Link to Chris's profile on Confluence">Ramon Delgado</a></li>
+          </ul>
+
+     </div>
+
      <div class="govuk-grid-column-one-third">
           <!--<h2 class="govuk-heading-m">
                <br>Design artefacts
@@ -53,15 +58,18 @@
                </ul>
           </div>-->
      </div>
-     <!-- One third header section ends -->
 
 </div>
 
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+
+<!--
 <div class="govuk-grid-row">
-     <!-- Full width header section starts -->
+
      <div class="govuk-grid-column-full">
+
           <h2 class="govuk-heading-m">
                What are our design goals and what are we doing?
           </h2>
@@ -85,236 +93,298 @@
                }) }}
           </p>
      </div>
-     <!-- Full width header section ends -->
+     
 </div>
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+-->
 
 <div class="govuk-grid-row">
-     <!-- Full width header section starts -->
+
      <div class="govuk-grid-column-full">
-          <h2 class="govuk-heading-m">
-               Sending employer prototype links
-          </h2>
+
+          <strong class="govuk-tag">new version</strong>
+
+          <h2 class="govuk-heading-l" style="padding-top: 10px;margin-bottom: 0px;">MVS prototypes</h2>
+
+          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Sprint 12</span>
+
           <ul class="govuk-list govuk-list--bullet">
-               <li>
-                    <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-11/MVS-sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a>
+               <li><strong>STEP 1:</strong> &nbsp; 
+                    <a class="govuk-link govuk-link--no-visited-state" href="/sprint-12/MVS/sender/signin.html">Sender creates a transfer pledge</a>
                </li>
-               <!-- <li><a href="/sprint-10/sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a></li> -->
-               <!-- <li><a href="/sprint-7/sender/unhappy-path-1/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - insufficient funds</a></li>
-               <li><a href="/sprint-7/sender/unhappy-path-2/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - cancelled application</a></li> -->
-               <!-- <li><a href="/sprint-7/sender/transfers-V1" class="govuk-link govuk-link--no-visited-state">Finance view - V1</a></li>
-               <li><a href="/sprint-7/sender/transfers-V2" class="govuk-link govuk-link--no-visited-state">Finance view - V2</a></li>
-               <li><a href="/sprint-7/sender/transfers-V3" class="govuk-link govuk-link--no-visited-state">Finance view - V3</a></li> -->
-          </ul>
-          <h2 class="govuk-heading-m">
-               Receiving employer prototype link
-          </h2>
-          <ul class="govuk-list govuk-list--bullet">
-               <li>
-                    <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-11/MVS-receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a>
+               <li><strong>STEP 2:</strong> &nbsp;
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Receiver applies to the transfer pledge</a>
                </li>
-               <!-- <li><a href="/sprint-10/receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a></li> -->
-               <!-- <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - multiple pledges</a></li>
-               <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - unwanted application</a></li> -->
+               <li><strong>STEP 3:</strong> &nbsp;
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Sender approves the transfer pledge application</a>
+               </li>
+               <li><strong>STEP 4:</strong> &nbsp;
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Receiver accept the approved transfer pledge application</a>
+               </li>
+               <li><strong>STEP 5:</strong> &nbsp;
+                    <a class="govuk-link govuk-link--no-visited-state" href="#">Receiver use the transfer pledge funds</a>
+               </li>
           </ul>
+
      </div>
-     <!-- Full width header section ends -->
+     
 </div>
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+
 <div class="govuk-grid-row">
-     <!-- Sprints section starts -->
-     <div class="govuk-grid-column-two-thirds">
 
-          <h2 class="govuk-heading-l govuk-!-margin-top-9">
-               Beta sprints
-          </h2>
+     <div class="govuk-grid-column-full">
 
-          {% include './sprint-10/_summary.html' %}
+          <strong class="govuk-tag">previous version</strong>
 
-          {% set sprint9Html %}
-               {% include './sprint-9/_summary.html' %}
-          {% endset %}
+          <h2 class="govuk-heading-l" style="padding-top: 10px;margin-bottom: 0px;">Sprint prototypes</h2>
 
-          {% set sprint8Html %}
-               {% include './sprint-8/_summary.html' %}
-          {% endset %}
+          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Up to sprint 11</span>
 
-          {{ govukAccordion({
-               id: "accordion-beta",
-               items: [
-                    {
-                         heading: {
-                              text: "Sprint 9"
-                         },
-                         content: {
-                              html: sprint9Html
-                         },
-                         summary: {
-                              html: '26th May - 8th June 2021'
-                         }
-                    },
-                    {
-                         heading: {
-                              text: "Sprint 8"
-                         },
-                         content: {
-                              html: sprint8Html
-                         },
-                         summary: {
-                              html: '12th May - 25th May 2021'
-                         }
-                    }
-               ]
-          }) }}
+          <details class="govuk-details" data-module="govuk-details">
+               <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">Details</span>
+               </summary>
+               <div class="govuk-details__text">
+                    
+                    <!-- Start old versions of prototype -->
 
-          <h2 class="govuk-heading-l govuk-!-margin-top-9">
-               Alpha sprints
-          </h2>
+                    <br><br>
 
-          {% set sprint7Html %}
-               {% include './sprint-7/_summary.html' %}
-          {% endset %}
+                    <div class="govuk-grid-row">
+                  
+                         <div class="govuk-grid-column-full">
+                              <h2 class="govuk-heading-m">
+                                   Sending employer prototype links
+                              </h2>
+                              <ul class="govuk-list govuk-list--bullet">
+                                   <li>
+                                        <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-11/MVS-sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a>
+                                   </li>
+                                   <!-- <li><a href="/sprint-10/sender/index" class="govuk-link govuk-link--no-visited-state">Create a pledge</a></li> -->
+                                   <!-- <li><a href="/sprint-7/sender/unhappy-path-1/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - insufficient funds</a></li>
+                                   <li><a href="/sprint-7/sender/unhappy-path-2/1-pledge-details" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - cancelled application</a></li> -->
+                                   <!-- <li><a href="/sprint-7/sender/transfers-V1" class="govuk-link govuk-link--no-visited-state">Finance view - V1</a></li>
+                                   <li><a href="/sprint-7/sender/transfers-V2" class="govuk-link govuk-link--no-visited-state">Finance view - V2</a></li>
+                                   <li><a href="/sprint-7/sender/transfers-V3" class="govuk-link govuk-link--no-visited-state">Finance view - V3</a></li> -->
+                              </ul>
+                              <h2 class="govuk-heading-m">
+                                   Receiving employer prototype link
+                              </h2>
+                              <ul class="govuk-list govuk-list--bullet">
+                                   <li>
+                                        <strong class="govuk-tag govuk-tag--red">MVS version</strong> - <a href="/sprint-11/MVS-receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a>
+                                   </li>
+                                   <!-- <li><a href="/sprint-10/receiver/index" class="govuk-link govuk-link--no-visited-state">Search and apply for a pledge</a></li> -->
+                                   <!-- <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 1 - multiple pledges</a></li>
+                                   <li><a href="#" class="govuk-link govuk-link--no-visited-state">Unhappy path 2 - unwanted application</a></li> -->
+                              </ul>
+                         </div>
+                       
+                    </div>
 
-          {% set sprint6Html %}
-               {% include './sprint-6/_summary.html' %}
-          {% endset %}
+                    <div class="govuk-grid-row">
+                         <!-- Sprints section starts -->
+                         <div class="govuk-grid-column-two-thirds">
 
-          {% set sprint5Html %}
-               {% include './sprint-5/_summary.html' %}
-          {% endset %}
+                              <h2 class="govuk-heading-l govuk-!-margin-top-9">
+                                   Beta sprints
+                              </h2>
 
-          {% set sprint4Html %}
-               {% include './sprint-4/_summary.html' %}
-          {% endset %}
+                              {% include './sprint-10/_summary.html' %}
 
-          {% set sprint3Html %}
-               {% include './sprint-3/_summary.html' %}
-          {% endset %}
+                              {% set sprint9Html %}
+                                   {% include './sprint-9/_summary.html' %}
+                              {% endset %}
 
-          {{ govukAccordion({
-               id: "accordion-alpha",
-               items: [
-                    {
-                         heading: {
-                              text: "Sprint 7"
-                         },
-                         content: {
-                              html: sprint7Html
-                         },
-                         summary: {
-                              html: '28th April - 11th May 2021'
-                         }
-                    },
-                    {
-                         heading: {
-                              text: "Sprint 6"
-                         },
-                         content: {
-                              html: sprint6Html
-                         },
-                         summary: {
-                              html: '14th April - 27th April 2021'
-                         }
-                    },
-                    {
-                         heading: {
-                              text: "Sprint 5"
-                         },
-                         content: {
-                              html: sprint5Html
-                         },
-                         summary: {
-                              html: '31st March - 13th April 2021'
-                         }
-                    },
-                    {
-                         heading: {
-                              text: "Sprint 4"
-                         },
-                         content: {
-                              html: sprint4Html
-                         },
-                         summary: {
-                              html: '17th March 2021 — 30th March 2021'
-                         }
-                    },
-                    {
-                         heading: {
-                              text: "Sprint 3"
-                         },
-                         content: {
-                              html: sprint3Html
-                         },
-                         summary: {
-                              html: '3rd March 2021 — 16th March 2021'
-                         }
-                    }
-               ]
-          }) }}
+                              {% set sprint8Html %}
+                                   {% include './sprint-8/_summary.html' %}
+                              {% endset %}
+
+                              {{ govukAccordion({
+                                   id: "accordion-beta",
+                                   items: [
+                                        {
+                                             heading: {
+                                                  text: "Sprint 9"
+                                             },
+                                             content: {
+                                                  html: sprint9Html
+                                             },
+                                             summary: {
+                                                  html: '26th May - 8th June 2021'
+                                             }
+                                        },
+                                        {
+                                             heading: {
+                                                  text: "Sprint 8"
+                                             },
+                                             content: {
+                                                  html: sprint8Html
+                                             },
+                                             summary: {
+                                                  html: '12th May - 25th May 2021'
+                                             }
+                                        }
+                                   ]
+                              }) }}
+
+                              <h2 class="govuk-heading-l govuk-!-margin-top-9">
+                                   Alpha sprints
+                              </h2>
+
+                              {% set sprint7Html %}
+                                   {% include './sprint-7/_summary.html' %}
+                              {% endset %}
+
+                              {% set sprint6Html %}
+                                   {% include './sprint-6/_summary.html' %}
+                              {% endset %}
+
+                              {% set sprint5Html %}
+                                   {% include './sprint-5/_summary.html' %}
+                              {% endset %}
+
+                              {% set sprint4Html %}
+                                   {% include './sprint-4/_summary.html' %}
+                              {% endset %}
+
+                              {% set sprint3Html %}
+                                   {% include './sprint-3/_summary.html' %}
+                              {% endset %}
+
+                              {{ govukAccordion({
+                                   id: "accordion-alpha",
+                                   items: [
+                                        {
+                                             heading: {
+                                                  text: "Sprint 7"
+                                             },
+                                             content: {
+                                                  html: sprint7Html
+                                             },
+                                             summary: {
+                                                  html: '28th April - 11th May 2021'
+                                             }
+                                        },
+                                        {
+                                             heading: {
+                                                  text: "Sprint 6"
+                                             },
+                                             content: {
+                                                  html: sprint6Html
+                                             },
+                                             summary: {
+                                                  html: '14th April - 27th April 2021'
+                                             }
+                                        },
+                                        {
+                                             heading: {
+                                                  text: "Sprint 5"
+                                             },
+                                             content: {
+                                                  html: sprint5Html
+                                             },
+                                             summary: {
+                                                  html: '31st March - 13th April 2021'
+                                             }
+                                        },
+                                        {
+                                             heading: {
+                                                  text: "Sprint 4"
+                                             },
+                                             content: {
+                                                  html: sprint4Html
+                                             },
+                                             summary: {
+                                                  html: '17th March 2021 — 30th March 2021'
+                                             }
+                                        },
+                                        {
+                                             heading: {
+                                                  text: "Sprint 3"
+                                             },
+                                             content: {
+                                                  html: sprint3Html
+                                             },
+                                             summary: {
+                                                  html: '3rd March 2021 — 16th March 2021'
+                                             }
+                                        }
+                                   ]
+                              }) }}
 
 
-          <h2 class="govuk-heading-l govuk-!-margin-top-9">
-               Discovery sprints
-          </h2>
+                              <h2 class="govuk-heading-l govuk-!-margin-top-9">
+                                   Discovery sprints
+                              </h2>
 
-          {% set sprint2Html %}
-               {% include './sprint-2/_summary.html' %}
-          {% endset %}
+                              {% set sprint2Html %}
+                                   {% include './sprint-2/_summary.html' %}
+                              {% endset %}
 
-          {% set sprint1Html %}
-               {% include './sprint-1/_summary.html' %}
-          {% endset %}
+                              {% set sprint1Html %}
+                                   {% include './sprint-1/_summary.html' %}
+                              {% endset %}
 
-          {% set sprint0Html %}
-               {% include './sprint-0/_summary.html' %}
-          {% endset %}
+                              {% set sprint0Html %}
+                                   {% include './sprint-0/_summary.html' %}
+                              {% endset %}
 
 
-          {{ govukAccordion({
-               id: "accordion-discovery",
-               items: [
-                    {
-                         heading: {
-                              text: "Sprint 2"
-                         },
-                         content: {
-                              html: sprint2Html
-                         },
-                         summary: {
-                              html: '17th February 2021 — 2nd March 2021'
-                         }
-                    },
-                    {
-                         heading: {
-                              text: "Sprint 1"
-                         },
-                         content: {
-                              html: sprint1Html
-                         },
-                         summary: {
-                              html: '3rd February 2021 — 16th February 2021'
-                         }
-                    },
-                    {
-                         heading: {
-                              text: "Sprint 0"
-                         },
-                         content: {
-                              html: sprint0Html
-                         },
-                         summary: {
-                              html: '20th January - 2nd February 2021'
-                         }
-                    }
-               ]
-          }) }}
+                              {{ govukAccordion({
+                                   id: "accordion-discovery",
+                                   items: [
+                                        {
+                                             heading: {
+                                                  text: "Sprint 2"
+                                             },
+                                             content: {
+                                                  html: sprint2Html
+                                             },
+                                             summary: {
+                                                  html: '17th February 2021 — 2nd March 2021'
+                                             }
+                                        },
+                                        {
+                                             heading: {
+                                                  text: "Sprint 1"
+                                             },
+                                             content: {
+                                                  html: sprint1Html
+                                             },
+                                             summary: {
+                                                  html: '3rd February 2021 — 16th February 2021'
+                                             }
+                                        },
+                                        {
+                                             heading: {
+                                                  text: "Sprint 0"
+                                             },
+                                             content: {
+                                                  html: sprint0Html
+                                             },
+                                             summary: {
+                                                  html: '20th January - 2nd February 2021'
+                                             }
+                                        }
+                                   ]
+                              }) }}
+
+                         </div>
+                  
+                    </div>
+
+                    <!-- End of old versions of prototype -->
+
+               </div>
+          </details>
 
      </div>
-  <!-- Sprints section ends -->
+     
 </div>
 
-<!-- Main content ends -->
+
 {% endblock %}
