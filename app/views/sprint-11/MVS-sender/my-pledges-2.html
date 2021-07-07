@@ -1,0 +1,134 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../includes/navigation-sender.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs" style="margin-bottom: 0px;">
+          <a href="transfers" class="govuk-back-link">Back</a>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">My pledges</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               <p>You have <strong>3</strong> transfers pledges.</p>
+
+               <div class="sidescrolling-table">
+
+                    <!-- PLEDGE TABLE - START -->
+                    <table class="govuk-table pledge-complete-table">
+                         <thead class="govuk-table__head">
+                              <tr class="govuk-table__row">
+                                   <th scope="col" class="govuk-table__header">Description</th>
+                                   <th scope="col" class="govuk-table__header">Total</th>
+                                   <th scope="col" class="govuk-table__header">Remaining funds</th>
+                                   <th scope="col" class="govuk-table__header">Applications</th>
+                                   <!-- <th scope="col" class="govuk-table__header">Approved</th>
+                                   <th scope="col" class="govuk-table__header">Rejected</th> -->
+                              </tr>
+                         </thead>
+                         <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row">
+                                   <td class="govuk-table__cell">
+                                        <a href="pledges/1-pledge-details"><strong>
+                                             Pledge 910106
+                                        </strong></a>
+                                   </td>
+                                   <td class="govuk-table__cell" width="220px">
+                                        <p>£75,000</p>
+                                   </td>
+                                   <td class="govuk-table__cell" width="220px">
+                                        <p>£66,000</p>
+                                   </td>
+                                   <td class="govuk-table__cell" width="220px" style="text-align: left;">
+                                        <p>3</p>
+                                   </td>
+                                   <!--
+                                   <td class="govuk-table__cell">
+                                        <a href="pledges/1-pledge-details" class="govuk-button govuk-button--secondary activate-applications" id="">View applications</a>
+                                        <br>
+                                        <a href="delete-pledge" class="delete-pledge govuk-link--no-visited-state"><span class="icon delete"></span>Delete pledge</a>
+                                   </td>
+                                   -->
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <td class="govuk-table__cell">
+                                        <a href="pledges/2-pledge-details"><strong>
+                                             Pledge 910105
+                                        </strong></a>
+                                   </td>
+                                   <td class="govuk-table__cell">
+                                        <p>£75,000</p>
+                                   </td>
+                                   <td class="govuk-table__cell">
+                                        <p>£66,000</p>
+                                   </td>
+                                   <td class="govuk-table__cell" style="text-align: left;">
+                                        <p>3</p>
+                                   </td>
+                                   <!--
+                                   <td class="govuk-table__cell">
+                                        <a href="pledges/1-pledge-details" class="govuk-button govuk-button--secondary activate-applications" id="">View applications</a>
+                                        <br>
+                                        <a href="delete-pledge" class="delete-pledge govuk-link--no-visited-state"><span class="icon delete"></span>Delete pledge</a>
+                                   </td>
+                                   -->
+                              </tr>
+                              <tr class="govuk-table__row">
+                                   <td class="govuk-table__cell">
+                                        <a href="pledges/3-pledge-details"><strong>
+                                             Pledge 910104
+                                        </strong></a>
+                                   </td>
+                                   <td class="govuk-table__cell">
+                                        <p>£75,000</p>
+                                   </td>
+                                   <td class="govuk-table__cell">
+                                        <p>£66,000</p>
+                                   </td>
+                                   <td class="govuk-table__cell" style="text-align: left;">
+                                        <p>3</p>
+                                   </td>
+                                   <!--
+                                   <td class="govuk-table__cell">
+                                        <a href="pledges/1-pledge-details" class="govuk-button govuk-button--secondary activate-applications" id="">View applications</a>
+                                        <br>
+                                        <a href="delete-pledge" class="delete-pledge govuk-link--no-visited-state"><span class="icon delete"></span>Delete pledge</a>
+                                   </td>
+                                   -->
+                              </tr>
+
+                         </tbody>
+                    </table>
+                    <!-- PLEDGE TABLE - END -->
+
+               </div>
+
+               <a href="transfers/index" class="govuk-button" data-module="govuk-button">Create a transfers pledge</a>
+
+               <br><br><br>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
