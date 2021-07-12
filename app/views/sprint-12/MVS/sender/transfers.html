@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "../includes/navigation-sender.html" %}
+{% include "../../includes/navigation_sender_finance.html" %}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-width-container" id="transfers-hub">
+<div class="govuk-width-container">
 
      <div class="govuk-breadcrumbs">
           <ol class="govuk-breadcrumbs__list">
@@ -55,7 +55,43 @@
           
      </div>
 
-     {% include "../includes/MVS-transfer-values.html" %}
+     <!-- transfer-values -->
+
+     <div class="transfer-values-prototype mvs-version">
+
+          <div class="transfer-values">
+               <div class="transfer-funds">
+                    <p>
+                         <span>
+                              <span>Your transfer allowance 2021/22</span>
+                         </span>
+                    </p>
+                    <p class="number">£150,000</p>
+               </div>
+
+
+               <div class="transfer-funds">
+                    <p>
+                         <span>
+                              <span>Allocated for transfers 2021/22</span>
+                         </span>
+                    </p>
+                    <p class="number">£0</p>
+               </div>
+
+               <div>
+                    <p>
+                         <span>
+                              <span>Remaining transfer funds 2021/22</span>
+                         </span>
+                    </p>
+                    <p class="number">£150,000</p>
+               </div>
+
+          </div>
+
+     </div>
+
 
      <div>
           
@@ -83,15 +119,6 @@
 
      </div>
 
-     <!-- <details class="govuk-details tranfer-values-projected" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-               <span class="govuk-details__summary-text">Your transfer commitments in future financial years</span>
-          </summary>
-          <div class="govuk-details__text">
-               {% include "../includes/MVS-transfer-projected-values.html" %}
-          </div>
-     </details> -->
-
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
                <hr class="separator dotted">
@@ -102,11 +129,9 @@
           <div class="govuk-grid-column-two-thirds">
                <h2 class="govuk-heading-m">My pledges</h2>
                <p>Create a public funding pledge which is shown online so that businesses can apply to you for a transfer of funds.</p>
-               <div class="govuk-inset-text before-pledge">You have <strong class="number-of-pledges">0</strong> transfers pledges.</div>
-               <div class="govuk-inset-text after-pledge">You have <strong class="number-of-pledges">0</strong> transfers pledge.</div>
-
-               <a href="transfers/index" class="govuk-button" data-module="govuk-button" id="create-pledge-button">Create a transfers pledge</a>
-               <a href="my-pledges" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my pledges and applications</a>
+               <div class="govuk-inset-text">You have <strong>2</strong> transfers pledges.</div>
+               <a href="start-new-pledge" class="govuk-button" data-module="govuk-button">Create a transfers pledge</a>
+               <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my pledges and applications</a>
           </div>
      </div>
 
@@ -121,8 +146,8 @@
                <h2 class="govuk-heading-m">My transfer connections</h2>
                <p>If you know a business you want to transfer funds to, you can make a connection to them and set up a transfer.</p>
                <p>You'll need to know their apprenticeship service account ID number.</p>
-               <div class="govuk-inset-text">You have <strong class="number-of-connections">0</strong> pending transfer connections.</div>
-               <a href="private/1-business-id" class="govuk-button govuk-button--secondary secondary-overwrite" data-module="govuk-button">Make a transfer to a business I know</a>
+               <div class="govuk-inset-text">You have <strong>0</strong> pending transfer connections.</div>
+               <a href="#" class="govuk-button govuk-button--secondary secondary-overwrite" data-module="govuk-button">Make a transfer to a business I know</a>
           </div>
      </div>
 

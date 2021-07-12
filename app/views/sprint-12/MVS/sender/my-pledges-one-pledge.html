@@ -1,0 +1,71 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My pledges</a></li>
+          </ol>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">My pledges</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <p>You have <strong>1</strong> transfers pledges.</p>
+
+               <table class="govuk-table">
+                 <thead class="govuk-table__head">
+                   <tr class="govuk-table__row">
+                     <th scope="col" class="govuk-table__header">Description</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
+                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
+                   </tr>
+                 </thead>
+                 <tbody class="govuk-table__body">
+                   <tr class="govuk-table__row">
+                     <th scope="row" class="govuk-table__header"><span style="font-weight: 400;">Pledge 910106</span></th>
+                     <td class="govuk-table__cell govuk-table__cell--numeric">£65,000</td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric">£65,000</td>
+                     <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+                   </tr>
+                 </tbody>
+               </table>
+
+               <br>
+
+               <a href="#" class="govuk-button" data-module="govuk-button">Create a transfers pledge</a>
+
+               <br><br>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

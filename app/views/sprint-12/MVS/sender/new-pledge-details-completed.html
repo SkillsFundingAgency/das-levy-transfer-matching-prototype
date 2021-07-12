@@ -1,0 +1,169 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds pledge-core">
+
+               <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">Create a transfers pledge</h1>
+
+               <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+               <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 8 sections.</p> -->
+
+               <p>Create a transfers funding pledge that will be shown online so that businesses can apply to you for funding.</p>
+
+               <p>The amount you choose and the criteria you set will be displayed publicly.</p>
+
+               <p>You can choose whether or not to show your organisation's name publicly.</p>
+
+               <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span> We will add a reference number to each pledge you create to help keep track of applications.
+                    </strong>
+               </div>
+
+               <ol class="app-task-list">
+
+                    <li class="pledge-section-one">
+                         <h2 class="app-task-list__section">
+                              <span class="app-task-list__section-number number-one">1. </span>
+                              Pledge amount and option to hide<br>organisation name
+                              <strong class="govuk-tag govuk-tag app-task-list__tag">Completed</strong>
+                         </h2>
+                         <ul class="app-task-list__items">
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="new-pledge-details-1">Amount you want to pledge</a>
+                                   </span>
+                                   <p>£65,000</p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="new-pledge-details-1">Show or hide your organisation's name</a>
+                                   </span>
+                                   <p>Show</p>
+                              </li>
+                         </ul>
+                    </li>
+
+                    <li class="pledge-section-two">
+                         <h2 class="app-task-list__section">
+                              <span class="app-task-list__section-number">2. </span>
+                              <div class="text-wrapper">
+                                   Criteria
+                                   <span class="govuk-caption-m">The following criteria are all optional. They will remain set to 'all' unless you choose to change them.</span>
+                              </div>
+                              <strong class="govuk-tag govuk-tag--grey app-task-list__tag">optional</strong>
+                         </h2>
+                         <ul class="app-task-list__items">
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="new-pledge-details-2">Location</a>
+                                   </span>
+                                   <!--<p>All of England</p>-->
+                                   <div>
+                                        <ul class="govuk-list">
+                                                  <li>Manchester</li>
+                                                  <li>Liverpool</li>
+                                                  <li>Leeds</li>
+                                        </ul>
+                                   </div>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="new-pledge-details-3">Sector</a>
+                                   </span>
+                                   <!--<p>All sectors and industries</p>-->
+                                   <div>
+                                        <ul class="govuk-list govuk-list--bullet">
+                                                  <li>Construction</li>
+                                                  <li>Engineering and manufacturing</li>
+                                        </ul>
+                                   </div>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="new-pledge-details-4">Type of job role</a>
+                                   </span>
+                                   <!--<p>All apprenticeship job roles</p>-->
+                                   <div>
+                                        <ul class="govuk-list govuk-list--bullet">
+                                                  <li>Business and administration</li>
+                                                  <li>Construction</li>
+                                                  <li>Digital</li>
+                                        </ul>
+                                   </div>
+                                   
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="new-pledge-details-5">Level</a>
+                                   </span>
+                                   <!--<p>All qualification levels</p>-->
+                                   <div>
+                                        <ul class="govuk-list govuk-list--bullet">
+                                                  <li>Level 4 - higher national certificate (HNC)</li>
+                                                  <li>Level 5 - higher national diploma (HND)</li>
+                                                  <li>Level 6 - degree</li>
+                                        </ul>
+                                   </div>
+                                   
+                              </li>
+
+                         </ul>
+                    </li>
+
+               </ol>
+
+               <div>
+
+                    <h2 class="govuk-heading-m">Submit your transfers pledge</h2>
+
+                    <p class="govuk-body">I confirm that I want to make the above pledge so I can fund another business's apprenticeship training and assessment with my levy funds.</p>
+
+                    <div class="govuk-inset-text">
+                         <strong>Disclaimer:</strong> The information provided by applicants to your pledge will not be checked and verified by the apprenticeship service.
+                         <br>
+                         <br>Please carry out your own due diligence when deciding whether to offer a transfer of your levy funds.
+                    </div>
+
+                    <form action="new-pledge-confirmation" method="post" novalidate>
+
+                         <input type="hidden" name="answers-checked" value="true">
+                         <div class="govuk-button-group">
+                              <button class="govuk-button" data-module="govuk-button">Submit my pledge</button>
+                         </div>
+
+                    </form>
+
+               </div>
+
+               <a href="9-cancel-pledge" class="govuk-link govuk-link--no-visited-state">Cancel pledge</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
