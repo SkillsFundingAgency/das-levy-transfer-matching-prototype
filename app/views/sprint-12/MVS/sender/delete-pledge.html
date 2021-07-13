@@ -1,0 +1,96 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find an employer to transfer your levy to</span>
+               <h1 class="govuk-heading-xl">Delete transfer pledge 910106</h1>
+
+               <p>When you delete a transfer pledge you will also remove all applications to the transfer pledge and the transfer pledge details itself.</p>
+
+               <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                          <h2 class="govuk-heading-m" style="margin-bottom: 0px!important;">
+                            Are you sure you want to continue and delete this transfer pledge?
+                          </h2>
+                        </legend>
+                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                            <label class="govuk-label govuk-radios__label" for="contact">
+                              Yes, delete transfer pledge 910106
+                            </label>
+                          </div>
+                          
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label" for="contact-by-email">
+                                   <strong>Disclaimer: </strong>
+                                   <br>
+                                   Your transfer pledge will no longer be publicly displayed so businesses won't be able to apply to it for funding.
+                                   <br>
+                                   Any applications you have already approved for this transfer pledge will still be valid, including applications you have approved where the receiving employer is yet to accept the funding.
+                                   <br>
+                                   Any pending applications for this transfer pledge will be automatically rejected.
+                              </label>
+                              </div>
+                          </div>
+                          
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                            <label class="govuk-label govuk-radios__label" for="contact-2">
+                              No, keep transfer pledge 910106
+                            </label>
+                          </div>
+                          <!--
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label" for="contact-by-phone">
+                                Search for <a href="#">apprenticeship training courses and training providers</a>.
+                              </label>
+                              <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
+                            </div>
+                          </div>
+                          -->
+                        </div>
+                    </fieldset>
+               </div>
+
+               <form method="post" action="my-pledges-none-pledges-deletion">
+
+                    <button class="govuk-button" data-module="govuk-button" id="pledge-delete-continue">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
