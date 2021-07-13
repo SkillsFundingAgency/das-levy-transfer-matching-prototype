@@ -8,12 +8,12 @@
             var password = "12345678"; 
             if ((gi == gid) && (pw == password)) {
                 req.session.data.signin_error = false;
-                res.redirect('my_account');
+                res.redirect('my-account');
 
             }
             else {
                 req.session.data.signin_error = true;
-                res.redirect('signin');
+                res.redirect('signin-1');
             }
       } 
 
