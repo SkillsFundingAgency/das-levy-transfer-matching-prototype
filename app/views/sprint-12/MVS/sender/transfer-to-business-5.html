@@ -1,0 +1,47 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation pledge-approved">
+                    <h1 class="govuk-panel__title">We have sent a transfer pledge to Belhavel Construction Ltd</h1>
+               </div>
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <p><strong>Belhavel Construction Ltd</strong> will need to accept the transfer so they can receive up to <strong class="set-amount">£18,000</strong><strong class="upto-amount">£<span class="value-format">{{ data['transfer-private-amount'] }}</span></strong> of your levy funds to spend on any approved apprenticeship training.</p>
+
+               <p>We will notify you when <strong>Belhavel Construction Ltd</strong> accepts this transfer funding pledge.</p>
+
+               <a href="transfers" class="govuk-back-link">Back to Transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
