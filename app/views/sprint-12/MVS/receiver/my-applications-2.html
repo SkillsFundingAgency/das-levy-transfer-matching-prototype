@@ -1,0 +1,128 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My applications</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">My applications</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               <!-- 
+               <div class="govuk-panel govuk-panel--confirmation" id="application-approved-banner">
+                    <h1 class="govuk-panel__title">You have accepted funding from <strong class="pledge-name-answer">####</strong></h1>
+               </div>
+               -->
+
+               <!--
+               <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="application-cancelled-banner">
+                    <div class="govuk-notification-banner__header">
+                         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li class="alert-one">You have cancelled your application <strong>Opportunity (123465)</strong> - <span class="govuk-tag govuk-tag--yellow">Cancelled</span></li>
+                              <li class="alert-two">Your application to <strong>Finders Keepers Ltd (684509)</strong> has been rejected  - <span class="govuk-tag govuk-tag--red">Rejected</span></li>
+                              <li class="alert-three">Your application to <strong class="pledge-name-answer">####</strong> has been accepted - <span class="govuk-tag">Accepted</span></li>
+                              <li class="alert-four">You have approved the application to <strong class="pledge-name-answer">####</strong> - <span class="govuk-tag govuk-tag--green">Approved</span></li>
+                         </ul>
+                    </div>
+               </div> 
+               -->
+
+
+               <!-- <p class="no-applications">You have no pending applications.</p> -->
+               <p>You have <strong class="number-of-applications">0</strong> transfers applications.</p>
+
+               <p class="cancel-text">You have <strong>0</strong> transfer applications requiring action.</p>
+
+               <table class="govuk-table application-complete-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Opportunity</th>
+                              <th scope="col" class="govuk-table__header">Total</th>
+                              <th scope="col" class="govuk-table__header" width="200px;"> &nbsp; Approval status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell" colspan="4" style="text-align: center;">No transfer applications yet</td>
+                         </tr>
+
+                         <!--
+
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   <strong>
+                                        <a href="application/7B-application-details" class="govuk-link--no-visited-state">Finders Keepers Ltd (684509)</a>
+                                        <br>
+                                   </strong>
+                                   <span class="govuk-caption-m">Date: Yesterday 09:45am</span>
+                              </td>
+                              <td class="govuk-table__cell">£25,000</td>
+                              <td class="govuk-table__cell">
+                                   <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                              </td>
+                         </tr>
+
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   <strong>
+                                        <a href="application/7C-application-details" class="govuk-link--no-visited-state">Opportunity (123465)</a>
+                                        <br>
+                                   </strong>
+                                   <span class="govuk-caption-m">Date: Yesterday 12:58pm</span>
+                              </td>
+                              <td class="govuk-table__cell">£15,000</td>
+                              <td class="govuk-table__cell">
+                                   <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                              </td>
+                         </tr>
+
+                         -->
+
+                    </tbody>
+               </table>
+               <!-- APPLICATION TABLE - END -->
+
+               <hr class="separator dotted">
+
+               <a href="search-pledge" class="govuk-button" data-module="govuk-button">Search for transfer opportunities</a>
+
+               <br>
+
+               <a href="transfers" class="govuk-back-link">Back to transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

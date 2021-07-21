@@ -1,0 +1,70 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_home.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <div class="covid-banner">
+                    <h2 class="govuk-heading-m">Coronavirus (COVID-19): to find out how we can support you, including changes we’re making to help your apprentices continue learning, <a href="https://www.gov.uk/government/publications/coronavirus-covid-19-apprenticeship-programme-response?es_c=7B651DDC6B6986102E8BBB7918A20DDF&es_cl=53BFD9FD1669BCDAEBD12D5CDF1D9AB8&es_id=9d%c2%a3o3C" rel="external" target="_blank">read our updated guidance</a>.</h2>
+               </div>
+
+               <div>
+                    <h1 class="govuk-heading-xl" style="margin-bottom: 30px;">My accounts</h1>
+                    <p>Select an account or add a new one.</p>
+               </div>
+
+               <div>
+                    <table class="govuk-table">
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header" width="250px">Account name</th>
+                          <th scope="col" class="govuk-table__header">What you can do</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td scope="row" class="govuk-table__cell">
+                              <a href="#" class="govuk-link--no-visited-state">
+                              Belhavel Construction Ltd</a>
+                         </td>
+                          <td class="govuk-table__cell">Lorum ipsum est colabra pensare et vinculas sucumbas dolore causare sempre.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td scope="row" class="govuk-table__cell">
+                              <a href="#" class="govuk-link--no-visited-state">
+                              Finders keepers Limited</a>
+                          </td>
+                          <td class="govuk-table__cell">Lorum ipsum est colabra pensare et vinculas sucumbas dolore causare sempre.</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td scope="row" class="govuk-table__cell">
+                              <a href="#" class="govuk-link--no-visited-state">
+                              Cumbria Engineering Ltd</a>
+                          </td>
+                          <td class="govuk-table__cell">Senatus romanus sumus et aliquam supra mistae.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+               </div>
+
+               <br>
+
+               <button class="govuk-button" data-module="govuk-button">Add new account</button>
+
+          </div>
+     </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation application-complete">
+                    <h1 class="govuk-panel__title">You have successfully rejected a transfer of funds for apprenticeship training</h1>
+               </div>
+
+               <p>We've sent you a confirmation email.</p>
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <p><strong>BARRY & BARRY Ltd (910106)</strong> application is not available any more and you can apply to another opportunity.</p>
+
+               <p>
+                    <a href="search-pledge" class="govuk-link">View other opportunities</a>
+                    <br>
+                    or
+                    <br>
+                    <a href="my-account-3" class="govuk-link">Continue to my account</a>
+               </p>
+
+          </div>
+     </div>
+
+</div>
+
+{% endblock %}
