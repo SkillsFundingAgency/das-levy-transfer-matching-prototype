@@ -1,0 +1,61 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account-2">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers-2">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">Transfers</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h2 class="govuk-heading-m">My applications</h2>
+               <p>Search for a public funding pledge which is shown online, that you can apply to for transfer of funds.</p>
+               <div class="govuk-inset-text">You have <strong class="number-of-applications">3</strong> transfer application.</div>
+               <a href="start-new-search" class="govuk-button" data-module="govuk-button">Search for transfer opportunities</a>
+               <a href="my-applications-5" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my applications</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <hr class="separator dotted">
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h2 class="govuk-heading-m">My transfer connections</h2>
+               <p>If you know a business you want to transfer funds to, you can make a connection to them and set up a transfer.</p>
+               <p>You'll need to know their apprenticeship service account ID number.</p>
+               <div class="govuk-inset-text">You have <strong class="number-of-connections">0</strong> pending transfer connections.</div>
+               <a href="private/1-business-id" class="govuk-button govuk-button--secondary secondary-overwrite" data-module="govuk-button">Make a transfer to a business I know</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
