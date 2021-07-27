@@ -57,11 +57,42 @@
 
 
                <!-- <p class="no-applications">You have no pending applications.</p> -->
-               <p>You have <strong class="number-of-applications">3</strong> transfers application.</p>
+               <p>You have <strong class="number-of-applications">3</strong> transfer applications.</p>
 
-               <p class="cancel-text">You have <strong>1</strong> transfer application requiring action.</p>
+               <div class="accepted-text-hide">
+                    <details class="govuk-details" data-module="govuk-details">
+                         <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">
+                              More details about the status
+                         </span>
+                         </summary>
+                         <div class="govuk-details__text">
 
-               <table class="govuk-table application-complete-table">
+                              <section>
+
+                                   <p>The approval status shows the status of each application.</p>
+
+                                   <p>It could be:
+                                   <li>awaiting approval </li>
+                                   <li>approved, awaiting your acceptance </li>
+                                   <li>unsuccessful </li>
+                                   <li>funds available to use </li>
+                                   <li>withdrawn </li>
+                                   </p>
+
+                                   <p>If your application has been approved, you'll need to accept the funding offer by selecting the opportunity.</p>
+
+                                   <p>Funds will show as available to use if your application has been approved and you have acccepted the offer. You'll then need to add your apprentices and their training provider to your account.</p>
+
+                                   <p>The status shows as withdrawn if you have cancelled your application or decided to decline an offer of funding.</p>
+
+                              </section>
+
+                         </div>
+                    </details>
+               </div>
+
+               <table class="govuk-table">
                     <thead class="govuk-table__head">
                          <tr class="govuk-table__row">
                               <th scope="col" class="govuk-table__header">Opportunity</th>
@@ -77,9 +108,9 @@
                                         <a href="application-8" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
                                         <br>
                                    </strong>
-                                   <span class="govuk-caption-m">Date: <div id="date-stamp"></div></span>
+                                   <span class="govuk-caption-m">Date: 07/27/2021 20:42pm</span>
                               </td>
-                              <td class="govuk-table__cell">£20,000</td>
+                              <td class="govuk-table__cell">£18,000</td>
                               <td class="govuk-table__cell" width="200px;" style="text-align: left">
                                    <span class="govuk-tag govuk-tag">FUNDS AVAILABLE</span>
                               </td>
@@ -91,7 +122,7 @@
                                         <a href="#" class="govuk-link--no-visited-state">Finders Keepers Ltd (684509)</a>
                                         <br>
                                    </strong>
-                                   <span class="govuk-caption-m">Date: Yesterday 09:45am</span>
+                                   <span class="govuk-caption-m">Date: 06/27/2021 09:45pm</span>
                               </td>
                               <td class="govuk-table__cell">£25,000</td>
                               <td class="govuk-table__cell" style="text-align: left">
@@ -105,25 +136,20 @@
                                         <a href="#" class="govuk-link--no-visited-state">Opportunity (123465)</a>
                                         <br>
                                    </strong>
-                                   <span class="govuk-caption-m">Date: Yesterday 12:58pm</span>
+                                   <span class="govuk-caption-m">Date: 05/27/2021 17:58pm</span>
                               </td>
                               <td class="govuk-table__cell">£15,000</td>
                               <td class="govuk-table__cell" style="text-align: left">
-                                   <span class="govuk-tag govuk-tag--red">Rejected</span>
+                                   <span class="govuk-tag govuk-tag--red">WITHDRAWN</span>
                               </td>
                          </tr>
 
                     </tbody>
                </table>
-               <!-- APPLICATION TABLE - END -->
-
-               <hr class="separator dotted">
-
-               <a href="search-pledge" class="govuk-button" data-module="govuk-button">Search for transfer opportunities</a>
 
                <br>
 
-               <a href="transfers" class="govuk-back-link">Back to transfers</a>
+               <a href="transfers" class="govuk-back-link">Back to Transfers</a>
 
           </div>
 
