@@ -1,0 +1,110 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Find a business to fund training for your apprentices</span>
+               <h1 class="govuk-heading-xl">Your BARRY & BARRY Ltd (910106) application details</h1>
+
+               <div class="govuk-warning-text application-status-one">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         Application status: <span class="govuk-tag govuk-tag--red">UNSUCCESSFUL</span> <br>Your application for funding from BARRY & BARRY Ltd has been unsuccessful on 17/06/2021 at 14:47
+                    </strong>
+               </div>
+
+               <!--
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">Which criteria do you match?</h2>
+                    <section class="employer-contact-details">
+                         <ul class="govuk-list">
+                              <li><span class="icon tick"></span>Location: <strong>SW12AT</strong></li>
+                              <li><span class="icon tick"></span>Sector: <strong>Construction, Engineering and manufacturing</strong></li>
+                              <li><span class="icon tick"></span>Job role & level: <strong>Bricklayer (level 2)</strong></li>
+                         </ul>
+                    </section>
+               </div>
+               -->
+
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">About your apprenticeship training course</h2>
+               </div>
+
+               <section class="employer-contact-details">
+                    <p><strong>Apprenticeship training course:</strong> Bricklayer (level 2)</p>
+                    <p><strong>Number of apprentices:</strong> 2</p>
+                    <p><strong>Estimated total cost:</strong> £18,000</p>
+                    <p><strong>Apprenticeship training to start by:</strong> 06/2021</p>
+               </section>
+
+               <div class="govuk-inset-text">
+                        <h2 class="govuk-heading-m">Alternative funding options</h2>
+
+                        <p>If your business doesn't pay the apprenticeship levy, you could <a href="#">make a funding reservation</a> instead.</p>
+
+                        <p>This means the government will pay 95% of your apprenticeship training and assessment costs, so you only pay 5%.</p>
+
+                        <p>You could apply for transfer funding from another employer.</p>
+
+                        <p><a href="search-pledges">View transfer funding opportunities</a></p>
+               </div>
+
+               <a href="my-applications-3" class="govuk-button">Return to my applications</a> 
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel">
+                    <p class="govuk-heading-s">BARRY & BARRY Ltd (910106) wants to fund apprenticeship training in:</p>
+                    <p class="details">
+                         Location: <strong >Manchester, Liverpool, Leeds</strong><br>
+                         Sector: <strong>Construction, Engineering and manufacturing</strong><br>
+                         Type of job role: <strong>Business and administration, Construction, Digital</strong><br>
+                         Level: <strong>Level 4 - HNC, Level 5 - HND, Level 6 - degree</strong>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available:<br>up to £65,000</span> in 2021/22</p>
+                    </div>
+               </section>
+          </div>
+
+     </div>
+
+</div>
+
+
+<script>
+    function myFunction() {
+   
+        if(document.getElementById('option1').checked) {
+            document.getElementById('link').href = "application-2.html";
+        }
+        if(document.getElementById('option2').checked) {
+            document.getElementById('link').href = "application-3.html";
+        }
+    }
+</script>
+
+
+{% endblock %}

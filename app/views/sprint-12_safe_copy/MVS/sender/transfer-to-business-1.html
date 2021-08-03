@@ -1,0 +1,53 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Make a transfer to a business I know</span>
+               <h1 class="govuk-heading-xl">Tell us about the transfer you want to make</h1>
+
+               <form method="post" action="transfer-to-business-2" >
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label">Business that will receive the transfer</label>
+                         <div class="govuk-hint">Add their apprenticeship service account ID</div>
+                         <input class="govuk-input" name="transfer-private-id" type="text" aria-describedby="transfer-private-id-hint">
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="">Continue</button>
+
+                    <a href="transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel transfer</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
