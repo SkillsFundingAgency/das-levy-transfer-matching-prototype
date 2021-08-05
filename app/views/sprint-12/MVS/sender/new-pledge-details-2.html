@@ -31,9 +31,9 @@
                          <div id="locations">
 
                               <div class="govuk-form-group first-of-type">
-                                   <label class="govuk-label" for="pledge-location[url0]">Start typing to find the city, town, region or local authority area you'd like to pledge money to.</label>
+                                   <label class="govuk-label" for="pledge-location[url0]">Start typing to find the city or town you'd like to pledge funding to.</label>
                                    <div class="govuk-hint">
-                                        For example, Manchester, West Midlands, Leeds City Council
+                                        For example, Manchester
                                    </div>
                                    <input class="govuk-input govuk-input--width-20" id="pledge-location[url0]" name="pledge-location[url0]" type="text" spellcheck="false">
                                    <input class="govuk-input govuk-input--width-20 pledge-location-hidden" id="" name="" type="text" spellcheck="false">
@@ -44,7 +44,7 @@
                                    {% if url != 'url1' %}
                                    {% if location != '' %}
                                         <div class="govuk-form-group new-location">
-                                             <label class="govuk-label" for="pledge-location[{{url}}]">Additional city, town or local authority</label>
+                                             <label class="govuk-label" for="pledge-location[{{url}}]">Additional location</label>
                                              <input class="govuk-input govuk-input--width-20 pledge-location-test" name="pledge-location[{{url}}]" type="text" spellcheck="false">
                                              <p class="govuk-body">
                                                   <a class="govuk-link govuk-link--no-visited-state" data-remove="[{{url}}]" href="#">remove</a>
