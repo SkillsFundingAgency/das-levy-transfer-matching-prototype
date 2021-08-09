@@ -149,7 +149,7 @@ function addAnotherLocation() {
      locationNumber++;
      $("#locations").append(`
           <div class="govuk-form-group new-location">
-               <label class="govuk-label" for="pledge-location[url${locationNumber}]">Additional location</label>
+               <label class="govuk-label" for="pledge-location[url${locationNumber}]">Additional city, town or local authority</label>
                <input class="govuk-input govuk-input--width-20 pledge-location-test" id="pledge-location[url${locationNumber}]" name="pledge-location[url${locationNumber}]" type="text" spellcheck="false">
                <p class="govuk-body">
                     <a class="govuk-link govuk-link--no-visited-state" data-remove="url${locationNumber}" href="#">remove</a>
@@ -662,8 +662,7 @@ $('.copy-items').on("click", function (e) {
 });
 
 // Apprenticeship total
-var applicationsCost = 1450;
-var zero ='0';
+var applicationsCost = parseInt($('#apprenticeship-cost .number span').text());
 
 $('.funding-over, #apprentices-error').hide();
 
@@ -671,15 +670,10 @@ $('#pledge-application-start-year').on("keyup", function (e) {
      var apprenticeshipNumbers = parseInt($('#pledge-application-apprentices').val());
      var applicationsTotalCost = parseInt(apprenticeshipNumbers * applicationsCost);
      var applicationsMaths = apprenticeshipNumbers * applicationsCost;
-     var startYear = parseInt($('#pledge-application-start-year').val());
-	 if (isNaN(applicationsMaths) | (startYear != 2021)) {
-		 $('#apprenticeship-cost .number span').text(zero);
-	 } else {
-		$('#apprenticeship-cost .number span').text(applicationsMaths.toLocaleString('en-US'));
-	 }
+     $('#apprenticeship-cost .number span').text(applicationsMaths.toLocaleString('en-US'));
      var pledgeTotalCost = parseInt($.cookie("pledge-value").replace('%C2%A3','').replace('%2C',''));
-      console.log(pledgeTotalCost);
-      console.log($('#apprenticeship-cost .value-format').text());
+     // console.log(pledgeTotalCost);
+     // console.log($('#apprenticeship-cost .value-format').text());
      if (applicationsTotalCost > pledgeTotalCost) {
           // console.log('working');
           $('#apprenticeship-cost').addClass('error');
@@ -695,23 +689,18 @@ $('#pledge-application-start-year').on("keyup", function (e) {
 $('#pledge-application-apprentices').on("keyup", function (e) {
      var apprenticeshipNumbers = parseInt($('#pledge-application-apprentices').val());
      var applicationsTotalCost = parseInt(apprenticeshipNumbers * applicationsCost);
-     var startYear = parseInt($('#pledge-application-start-year').val());
-     if (!isNaN(startYear)) {
-               var applicationsMaths = apprenticeshipNumbers * applicationsCost;
-               $('#apprenticeship-cost .number span').text(applicationsMaths.toLocaleString('en-US'));
-               var pledgeTotalCost = parseInt($.cookie("pledge-value").replace('%C2%A3','').replace('%2C',''));
-               if (applicationsTotalCost > pledgeTotalCost) {
-                    // console.log('working');
-                    $('#apprenticeship-cost').addClass('error');
-                    $('.funding-over').show();
-                    $.cookie("funding-over", true, {path:'/'});
-                    $('#how-many-apprentices').addClass('govuk-form-group--error');
-                    $('#how-many-apprentices #apprentices-error').show();
-                    $('#how-many-apprentices input').addClass('govuk-input--error');
-               }
-     } else {
-		  $('#apprenticeship-cost .number span').text(zero);
-	 }
+     var applicationsMaths = apprenticeshipNumbers * applicationsCost;
+     $('#apprenticeship-cost .number span').text(applicationsMaths.toLocaleString('en-US'));
+     var pledgeTotalCost = parseInt($.cookie("pledge-value").replace('%C2%A3','').replace('%2C',''));
+     if (applicationsTotalCost > pledgeTotalCost) {
+          // console.log('working');
+          $('#apprenticeship-cost').addClass('error');
+          $('.funding-over').show();
+          $.cookie("funding-over", true, {path:'/'});
+          $('#how-many-apprentices').addClass('govuk-form-group--error');
+          $('#how-many-apprentices #apprentices-error').show();
+          $('#how-many-apprentices input').addClass('govuk-input--error');
+     }
 });
 
 // Apply for funds
