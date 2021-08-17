@@ -18,14 +18,23 @@
           </div>
      </div>
 
-     <p style="padding-bottom: 30px;"></p>
-
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
+               <!-- ////////////////////////// ERROR MESSAGE - START ////////////////////////// -->
+               <div class="govuk-error-summary location-error-message" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+                    <div class="govuk-error-summary__body">
+                         <ul class="govuk-list govuk-error-summary__list">
+                              <li><a href="#location-error">Please check the spelling of your location</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- ////////////////////////// ERROR MESSAGE - END ////////////////////////// -->
+
                <h1 class="govuk-heading-xl">Add the locations you'd like to fund</h1>
 
-               <form method="post" action="5-new-pledge-details#section-2">
+               <form method="post" action="5-new-pledge-details#section-2" id="sender-location-non-javascript">
 
                     <div class="updates-locations">
                          <div id="locations">
@@ -35,9 +44,11 @@
                                    <div class="govuk-hint">
                                         For example, Manchester
                                    </div>
-                                   <input class="govuk-input govuk-input--width-20" id="pledge-location[url0]" name="pledge-location[url0]" type="text" spellcheck="false">
-                                   <input class="govuk-input govuk-input--width-20 pledge-location-hidden" id="" name="" type="text" spellcheck="false">
-
+                                   <span id="location-input-error" class="govuk-error-message">
+                                        <span class="govuk-visually-hidden">Error:</span> Check the spelling of your location
+                                   </span>
+                                   <input class="govuk-input govuk-input--width-20 location-non-javascript" id="pledge-location[url0]" name="pledge-location[url0]" type="text" spellcheck="false">
+                                   <input class="govuk-input govuk-input--width-20 pledge-location-hidden" id="location-error" name="" type="text" spellcheck="false">
                               </div>
 
                               {% for url, location in location -%}
@@ -73,6 +84,7 @@
                     </div>
 
                     <button class="govuk-button pledge-location-continue" data-module="govuk-button">Continue</button>
+                    <a class="govuk-button error-message" data-module="govuk-button">Continue</a>
 
                     <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a>
 

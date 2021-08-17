@@ -193,6 +193,30 @@ if (window.console && window.console.info) {
         });
    });
 
+
+// Location - non-javascript
+$('.location-error-message, .error-message, #location-input-error').hide();
+
+$('.location-non-javascript').on('input',function(e){
+     if ($(this).val() == 'Mancheter') {
+          $('#sender-location-non-javascript').attr('action','');
+          $('.pledge-location-continue').hide();
+          $('.error-message').show();
+     } else {
+          $('#sender-location-non-javascript').attr('action','5-new-pledge-details#section-2');
+          $('.pledge-location-continue').show();
+          $('.error-message').hide();
+     }
+});
+
+
+$('.error-message').on('click',function(e){
+     $('.location-error-message, #location-input-error').show();
+     $('.updates-locations').addClass('govuk-form-group--error');
+     $('.location-non-javascript').addClass('govuk-input--error');
+});
+
+
    // Sectors
    function toggle(source) {
         var checkboxes = document.querySelectorAll('input[type="checkbox"]');
