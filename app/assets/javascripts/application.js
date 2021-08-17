@@ -202,11 +202,14 @@ $('.location-non-javascript').on('input',function(e){
           $('#sender-location-non-javascript').attr('action','');
           $('.pledge-location-continue').hide();
           $('.error-message').show();
+     } else if ($(this).val() == 'Warwick') {
+          $('#sender-location-non-javascript').attr('action','10-multiple-locations');
      } else {
           $('#sender-location-non-javascript').attr('action','5-new-pledge-details#section-2');
           $('.pledge-location-continue').show();
           $('.error-message').hide();
      }
+
 });
 
 
