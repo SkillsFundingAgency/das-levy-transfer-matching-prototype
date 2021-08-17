@@ -1,0 +1,251 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row title-options">
+          <div class="govuk-grid-column-full">
+
+               <div class="govuk-grid-row">
+                    
+                    <!-- <div class="govuk-grid-column-one-third right-side">
+                         <p class="govuk-caption-m">
+                              <a href="#" class="copy copy-items govuk-link--no-visited-state">
+                                   Copy application details
+                                   <span class="tooltiptext">Copied to clipboard</span>
+                              </a>
+                              <a href="" class="edit govuk-link--no-visited-state">Edit pledge</a>
+                         </p>
+                    </div> -->
+               </div>
+
+               <h1 class="govuk-heading-xl">
+                    Belhavel Construction Ltd
+                    <!-- <span class="govuk-caption-m">Birmingham, West Midlands</span> -->
+               </h1>
+
+               <p><br></p>
+
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <!--
+               <div class="govuk-form-group approved-panel">
+                    <div class="govuk-warning-text">
+                         <span class="govuk-confirm__icon" aria-hidden="true"></span>
+                         <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Confirmed</span> You have approved this application - <strong id="date-stamp"></strong>
+                         </strong>
+                    </div>
+               </div>
+               -->
+
+               <form method="post" action="">
+
+                    <section class="employer-details" style="padding-bottom: 1px;">
+                         <h2 class="govuk-heading-m">Details about the application</h2>
+                         <strong class="govuk-tag govuk-tag--green">100% Match</strong>
+                         <p>
+                              <span class="icon tick"></span>Location: <strong>Manchester</strong><br>
+                              <span class="icon tick"></span>Sector: <strong>Construction</strong><br>
+                              <span class="icon tick"></span>Type of job role: <strong>Bricklayer</strong><br>
+                              <span class="icon tick"></span>Level: <strong>2</strong>
+                         </p>
+                         <p>
+                              Apprentices: <strong>2</strong><br>
+                              Estimated duration: <strong>30 months</strong><br>
+                              Start by: <strong>October 2021</strong><br>
+                              Do they have a training provider? <strong>No</strong><br>
+                         </p>
+                    </section>
+
+                    <section class="employer-contact-details">
+                         <h2 class="govuk-heading-m">About their apprenticeship opportunity</h2>
+                         <p>
+                              We are a small family business established 5 years ago in Manchester. We would like to expand by taking on an apprentice bricklayer. This would be our first apprentice. We would be very grateful for this opportunity, please do not hesitate to contact us if you have any questions.
+                         </p>
+                    </section>
+
+                    <section class="employer-details" style="padding-bottom: 1px;">
+                         <h2 class="govuk-heading-m">Can I afford to fund this training?</h2>
+                         <p style="margin-bottom: 10px;">
+                             
+                              Estimated cost over 30 months: <strong>£18,000</strong>
+
+                              <br><br>
+
+                              <strong>For 2021/22: </strong>
+                              <br>
+                              Pledge funds remaining this year: <strong>&nbsp;&nbsp;&nbsp; £29,000</strong>
+                              <br>
+                              Estimated costs this year:<strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; £2,900</strong>
+                              </p>
+                              <p>
+                              <strong>Pledge funds remaining if application is approved:</strong> <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; £26,100</strong>
+                              <br>
+                         </p>
+
+                         <details class="govuk-details" data-module="govuk-details">
+                           <summary class="govuk-details__summary">
+                             <span class="govuk-details__summary-text">
+                               What is estimated cost? 
+                             </span>
+                           </summary>
+                           <div class="govuk-details__text">
+                             The estimated total cost of training is based on the funding band maximum.
+                              <br><br>
+                              The estimated cost of training for this financial year is based on the funding band maximum, the planned start date of training and the 20% EPA payment made at the end of training.
+                           </div>
+                         </details>
+
+                         <a href="forecast" class="govuk-button govuk-button">See forecast</a>
+       
+                         <!--
+                         <hr class="dotted">
+                         <p>
+                             Funding band maximum per apprentice: <strong>£9,000</strong><br>
+                              <span class="small-text hover-over">
+                                   <span class="dotted-underline">Estimated total cost 2021/22:</span> <span class="icon help"></span>: £4,500
+                                   <span class="tooltiptext">
+                                        The estimated total cost of training for this financial year is based on the funding band maximum, the planned start date of training and the 20% EPA payment made at the end of training.
+                                   </span>
+                              </span>
+                         </p>
+                         -->
+
+                         <!--
+                         <br><br><br><br><br>
+                         <div class="total">
+                              <p class="govuk-heading-m">
+                                   <span class="small-text hover-over">
+                                        Estimated cost 2021/22: <strong>£2,880</strong>  
+                                   </span>
+                              </p>
+                         </div>
+                         -->
+
+                    </section>
+
+                    <section class="employer-contact-details">
+                         <!-- 
+                         <h2 class="govuk-heading-l">Details about the employer</h2>
+                         <p class="govuk-heading-s">
+                              Belhavel Construction Ltd
+                              <span class="govuk-caption-m">Birmingham, West Midlands</span>
+                         </p>
+                         <p>
+                              Sector: <strong>Construction company</strong><br>
+                              Levy payer: <strong>No</strong>
+                         </p>
+                         <hr class="dotted"> 
+                         -->
+
+                         <h2 class="govuk-heading-m">Contact details</h2>
+                         <p>You can contact Belhavel Construction Ltd if you would like to ask them for more information.</p>
+                         <p>
+                              <span class="icon contact"></span><strong>John Doe </strong><br>
+                              <span class="icon email"></span><a href="mailto:joe.bloggs@belhavel.com">john.doe@belhavel.com</a><br>
+                              <span class="icon email"></span><a href="mailto:joe.bloggs@belhavel.com">john.doe2@belhavel.com</a><br>
+                              <span class="icon phone"></span><a href="tel:0123456789">0123 456 7890</a>
+                         </p>
+                         <p><span class="icon website"></span><a href="#">www.belhavel.com</a></p>
+                    </section>
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                               <h2 class="govuk-heading-m" style="margin-bottom: 0px!important;">
+                                 What would you like to do with this application?
+                               </h2>
+                             </legend>
+               
+                             <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                               <div class="govuk-radios__item">
+                                 <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                                 <label class="govuk-label govuk-radios__label" for="contact">
+                                   Approve the application
+                                 </label>
+                               </div>
+                               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                                 <div class="govuk-form-group">
+                                   <label class="govuk-label" for="contact-by-email">
+                                     <strong>Disclaimer:</strong> The information provided by Belhavel Construction Ltd in their application for this pledge has not been checked and verified by the apprenticeship service.
+                                     <br>
+                                     Please carry out your own due diligence when deciding whether to offer a transfer of your levy funds.
+                                   </label>
+               
+                                 </div>
+                               </div>
+                               <div class="govuk-radios__item">
+                                 <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                                 <label class="govuk-label govuk-radios__label" for="contact-2">
+                                   Reject the application
+                                 </label>
+                               </div>
+                             </div>
+                         </fieldset>
+                    </div>
+
+                    <a href="pledge-application-approve-confirmation" class="govuk-button" data-module="govuk-button">Continue</a>
+
+                    <p><a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-back-link" id="approved-back-to-pledge-details">Back</a></p>
+
+               </form>
+
+          </div>
+
+          <aside class="govuk-grid-column-one-third">
+
+               <div class="new-pledge-values side-panel">
+                    <!--
+                    <h3 class="govuk-heading-l">
+                         <strong class="before-approval">£<span class="value-format">0</span></strong>
+                         <strong class="after-approval">£<span class="value-format">4500</span></strong>
+                         <br>
+                         <div class="small-text hover-over">
+                              <span class="dotted-underline">Pledge 910106 funds committed 2021/22</span>
+                              <span class="icon help"></span>
+                              <span class="tooltiptext">
+                                   Pledge funds committed shows an estimate of the funds you are expecting to transfer in this financial year for this specific pledge.
+                                   <br><br>
+                                   It is an estimated figure as the funds leaving your account will depend on the start date of the training.
+                              </span>
+                         </div>
+                    </h3>
+                    -->
+
+              
+                    
+
+
+               </div>
+
+          </aside>
+
+     </div>
+
+</div>
+
+{% endblock %}

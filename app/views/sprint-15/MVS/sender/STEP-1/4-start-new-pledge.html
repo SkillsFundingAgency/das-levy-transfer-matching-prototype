@@ -1,0 +1,53 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Pledge and transfer your levy funds</h1>
+
+               <form method="post" action="5-new-pledge-details">
+
+                    <p>To help you find another business to transfer your levy funding to, you can:</p>
+
+                    <ol class="govuk-list govuk-list--number">
+                         <li>Set the criteria of how you want to spend your levy</li>
+                         <li>Create a public funding pledge that is searchable online</li>
+                         <li>Review and approve applications</li>
+                         <li>Connect with your chosen business and confirm details of the transfer</li>
+                     </ol>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="">Start</button>
+
+                    <a href="3-transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

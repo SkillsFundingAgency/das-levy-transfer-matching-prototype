@@ -4,15 +4,15 @@
 if (window.console && window.console.info) {
      window.console.info('GOV.UK Prototype Kit - do not use for production')
    }
-   
+
    $(document).ready(function () {
      window.GOVUKFrontend.initAll()
    })
-   
+
    // Clears all cookies
    function deleteAllCookies() {
         var cookies = document.cookie.split(";");
-   
+
         for (var i = 0; i < cookies.length; i++) {
              var cookie = cookies[i];
              var eqPos = cookie.indexOf("=");
@@ -20,12 +20,12 @@ if (window.console && window.console.info) {
              document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
         }
    }
-   
+
    $(document).ready(function() {
         $('.clear-cookies').on("click", function (e) {
               deleteAllCookies();
         });
-   
+
         // var clearDataBtn = $("button:contains('Clear the data')");
         // clearDataBtn.on('click', function (e) {
         //      deleteAllCookies();
@@ -34,66 +34,66 @@ if (window.console && window.console.info) {
         //      form.submit();
         // })
    });
-   
+
    if ($('#main-content').hasClass('my-account-wrapper')) {
         $('#main-content').parent().addClass('my-account-override');
    }
-   
+
    if ($('div').hasClass('my-account-main-header')) {
         $('.my-account-main-header').parent().addClass('header-override');
    }
-   
+
    if ($("#my-account-hub")) {
         $('.navigation ul li a').removeClass('selected');
         $('.navigation ul li a.link-one').addClass('selected');
    }
    $("#transfers-hub").parent().removeClass('my-account-wrapper');
    $("#transfers-hub.form-entry").parent().css('padding-top','0');
-   
+
    if ($("#transfers-hub")) {
         $('.navigation ul li a').removeClass('selected');
         $('.navigation ul li a.link-two').addClass('selected');
    }
-   
+
    // Transfers
    $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
-   
+
    $('.finance-2019, .finance-2020, .finance-2021, .finance-2022, .finance-2023, .finance-2024').on("click", function (e) {
         e.preventDefault();
         $('.transfers-title a').removeClass('current');
         $(this).addClass('current');
    });
-   
+
    $('.finance-2019').on("click", function (e) {
         $('.transfer-values-2020, .transfer-values-2021, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
         $('.transfer-values-2019').show();
    });
-   
+
    $('.finance-2020').on("click", function (e) {
         $('.transfer-values-2019, .transfer-values-2021, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
         $('.transfer-values-2020').show();
    });
-   
+
    $('.finance-2021').on("click", function (e) {
         $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
         $('.transfer-values-2021').show();
    });
-   
+
    $('.finance-2022').on("click", function (e) {
         $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2021, .transfer-values-2023, .transfer-values-2024').hide();
         $('.transfer-values-2022').show();
    });
-   
+
    $('.finance-2023').on("click", function (e) {
         $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2021, .transfer-values-2022, .transfer-values-2024').hide();
         $('.transfer-values-2023').show();
    });
-   
+
    $('.finance-2024').on("click", function (e) {
         $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2021, .transfer-values-2022, .transfer-values-2023').hide();
         $('.transfer-values-2024').show();
    });
-   
+
    // Number formatting
    $(document).ready(function(){
         // $("input[data-type='number']").keyup(function(event){
@@ -116,12 +116,12 @@ if (window.console && window.console.info) {
                x[i].classList.add("currSign");
            }
    });
-   
+
    // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
    // $('#sender-check-answers').find('.section-six').hide();
-   
+
    $('#pledge-amount-error').hide();
-   
+
    // Funding
    $('#pledge-amount').on("keyup", function (e) {
         var fundingTotal = parseInt($('#pledge-amount').val());
@@ -134,16 +134,16 @@ if (window.console && window.console.info) {
              $('#pledge-funding-form').attr('action','pledge-core');
         }
    });
-   
+
    // Locations
    $('input#pledge-location-cities').on("click", function (e) {
         $('#pledge-location-form').attr('action','3B-location');
    });
-   
+
    $('input#pledge-location-regions').on("click", function (e) {
         $('#pledge-location-form').attr('action','3C-location');
    });
-   
+
    function addAnotherLocation() {
         event.preventDefault();
         locationNumber++;
@@ -162,7 +162,7 @@ if (window.console && window.console.info) {
         }
         });
    }
-   
+
    function removeLocation() {
         event.preventDefault();
         var removeId = $(this).data("remove");
@@ -171,20 +171,20 @@ if (window.console && window.console.info) {
         )
         $(this).closest(".govuk-form-group").remove();
    }
-   
+
    var locationNumber = $("#locations").data("location-count");
    $("#addAnotherLocation").on("click", addAnotherLocation);
    $("[data-remove]").on("click", removeLocation);
-   
+
    $('.pledge-location-hidden').hide();
-   
+
    $(document).ready(function(){
         $('#locations').on("click", function (e) {
              $('#pledge-location-all-of-england').removeAttr('checked');
              $('.first-of-type input').show();
              $('.pledge-location-hidden').hide();
         });
-   
+
         $('#clear-pledge-location-all-of-england').on("click", function (e) {
              $('.first-of-type input').hide();
              $('.new-location').remove();
@@ -192,7 +192,7 @@ if (window.console && window.console.info) {
              // alert('working');
         });
    });
-   
+
    // Sectors
    function toggle(source) {
         var checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -201,46 +201,46 @@ if (window.console && window.console.info) {
              checkboxes[i].checked = source.checked;
         }
    }
-   
-   $('input[name="pledge-location"]').on("click", function (e) {
+
+   // $('input[name="pledge-location"]').on("click", function (e) {
+   //      // $('input[id="pledge-sector-all"]').prop('checked', false);
+   //      var numberChecked = $(":checkbox:checked").length;
+   //      // alert(numberChecked);
+   //      if (numberChecked <= 15) {
+   //           $('input[id="pledge-location-all"]').prop('checked', false);
+   //      }
+   // });
+
+   $('input[name="pledge-sector"], input[name="pledge_sector"]').on("click", function (e) {
         // $('input[id="pledge-sector-all"]').prop('checked', false);
         var numberChecked = $(":checkbox:checked").length;
         // alert(numberChecked);
         if (numberChecked <= 15) {
-             $('input[id="pledge-location-all"]').prop('checked', false);
+             $('input[id="pledge-sector-all"], input[id="pledge_sector_all"]').prop('checked', false);
         }
    });
-   
-   $('input[name="pledge-sector"]').on("click", function (e) {
-        // $('input[id="pledge-sector-all"]').prop('checked', false);
-        var numberChecked = $(":checkbox:checked").length;
-        // alert(numberChecked);
-        if (numberChecked <= 15) {
-             $('input[id="pledge-sector-all"]').prop('checked', false);
-        }
-   });
-   
-   
+
+
    // Training
-   $('input[name="pledge-training"]').on("click", function (e) {
+   $('input[name="pledge-training"], input[name="pledge_training"]').on("click", function (e) {
         // $('input[id="pledge-sector-all"]').prop('checked', false);
         var numberChecked = $(":checkbox:checked").length;
         // alert(numberChecked);
         if (numberChecked <= 15) {
-             $('input[id="pledge-training-all"]').prop('checked', false);
+             $('input[id="pledge-training-all"], input[id="pledge_training_all"]').prop('checked', false);
         }
    });
-   
+
    // Level
-   $('input[name="pledge-level"]').on("click", function (e) {
+   $('input[name="pledge-level"], input[name="pledge_level"]').on("click", function (e) {
         // $('input[id="pledge-sector-all"]').prop('checked', false);
         var numberChecked = $(":checkbox:checked").length;
         // alert(numberChecked);
         if (numberChecked <= 6) {
-             $('input[id="pledge-level-all"]').prop('checked', false);
+             $('input[id="pledge-level-all"], input[id="pledge_level_all"]').prop('checked', false);
         }
    });
-   
+
    // Intermediaries
    function addAnotherEmail() {
         event.preventDefault();
@@ -260,7 +260,7 @@ if (window.console && window.console.info) {
         }
         });
    }
-   
+
    function removeEmail() {
         event.preventDefault();
         var removeId = $(this).data("remove");
@@ -269,52 +269,52 @@ if (window.console && window.console.info) {
         )
         $(this).closest(".govuk-form-group").remove();
    }
-   
+
    var emailNumber = $("#emails").data("email-count");
    $("#addAnotherEmail").on("click", addAnotherEmail);
    $("[data-remove]").on("click", removeEmail);
-   
+
    // Cancel pledge
    $('input[id="pledge-cancel"]').on("click", function (e) {
         $('#pledge-cancel-continue').attr('href','../transfers');
    });
-   
+
    $('input[id="pledge-cancel-2"]').on("click", function (e) {
         $('#pledge-cancel-continue').attr('href','javascript:history.back()');
    });
-   
+
    // Application approval - ONE
    $('input[id="mvs-application-approve"]').on("click", function (e) {
         $('#belhavel-form').attr('action','6-approved');
    });
-   
+
    $('input[id="mvs-application-approve-2"]').on("click", function (e) {
         $('#belhavel-form').attr();
    });
-   
+
    $('input[id="mvs-application-approve-3"]').on("click", function (e) {
         $('#belhavel-form').attr('action','1-pledge-details');
    });
-   
+
    // Application approval - TWO
    $('input[id="mvs-application-reject"]').on("click", function (e) {
         $('#cbj-engineering').attr();
    });
-   
+
    $('input[id="mvs-application-reject-2"]').on("click", function (e) {
         $('#cbj-engineering').attr('action','1-pledge-details');
    });
-   
+
    $('input[id="mvs-application-reject-3"]').on("click", function (e) {
         $('#cbj-engineering').attr('action','1-pledge-details');
    });
    // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
-   
-   
+
+
    // !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
    // Search filter
    $('.no-results').hide();
-   
+
    function change() {
         var locationFilter = document.querySelectorAll(".search-locations-filter input[type='checkbox']");
         var sectorFilter = document.querySelectorAll(".search-sector-filter input[type='checkbox']");
@@ -327,20 +327,20 @@ if (window.console && window.console.info) {
              level: getClassOfCheckedCheckboxes(levelFilter)
         };
         filterResults(filters);
-   
+
         var visibleNumberOfResults = parseInt($(".search-results section:visible").length);
         $('.search-title .filter-number').text(visibleNumberOfResults);
-   
+
         if (visibleNumberOfResults = 0) {
              $('.no-results').show();
         } else {
              $('.no-results').hide();
         }
    }
-   
+
    function getClassOfCheckedCheckboxes(checkboxes) {
         var classes = [];
-   
+
         if (checkboxes && checkboxes.length > 0) {
              for (var i = 0; i < checkboxes.length; i++) {
                   var cb = checkboxes[i];
@@ -351,106 +351,106 @@ if (window.console && window.console.info) {
         }
         return classes;
    }
-   
+
    function filterResults(filters) {
         var rElems = document.querySelectorAll(".search-results section");
         var hiddenElems = [];
-   
+
         if (!rElems || rElems.length <= 0) {
              return;
         }
-   
+
         for (var i = 0; i < rElems.length; i++) {
              var el = rElems[i];
-   
-   
+
+
              if (filters.locations.length > 0) {
                   var isHidden = true;
-   
+
                   for (var j = 0; j < filters.locations.length; j++) {
                        var filter = filters.locations[j];
-   
+
                        if (el.classList.contains(filter)) {
                             isHidden = false;
                             break;
                        }
                   }
-   
+
                   if (isHidden) {
                        hiddenElems.push(el);
                   }
-   
+
              }
-   
+
              if (filters.sectors.length > 0) {
                   var isHidden = true;
-   
+
                   for (var j = 0; j < filters.sectors.length; j++) {
                        var filter = filters.sectors[j];
-   
+
                        if (el.classList.contains(filter)) {
                             isHidden = false;
                             break;
                        }
                   }
-   
+
                   if (isHidden) {
                        hiddenElems.push(el);
                   }
              }
-   
+
              if (filters.training.length > 0) {
                   var isHidden = true;
-   
+
                   for (var j = 0; j < filters.training.length; j++) {
                        var filter = filters.training[j];
-   
+
                        if (el.classList.contains(filter)) {
                             isHidden = false;
                             break;
                        }
                   }
-   
+
                   if (isHidden) {
                        hiddenElems.push(el);
                   }
              }
-   
+
              if (filters.level.length > 0) {
                   var isHidden = true;
-   
+
                   for (var j = 0; j < filters.level.length; j++) {
                        var filter = filters.level[j];
-   
+
                        if (el.classList.contains(filter)) {
                             isHidden = false;
                             break;
                        }
                   }
-   
+
                   if (isHidden) {
                        hiddenElems.push(el);
                   }
              }
-   
+
         }
-   
+
         for (var i = 0; i < rElems.length; i++) {
              rElems[i].style.display = "block";
              // $('.filter-number').text(rElems.length);
-   
+
         }
-   
+
         if (hiddenElems.length <= 0) {
              return;
         }
-   
+
         for (var i = 0; i < hiddenElems.length; i++) {
              hiddenElems[i].style.display = "none";
         }
-   
+
    }
-   
+
    // Pledge application emails
    function addAnotherApplicationEmail() {
         event.preventDefault();
@@ -471,7 +471,7 @@ if (window.console && window.console.info) {
         alert(removeApplicationId);
         });
    }
-   
+
    function removeApplicationEmail() {
         event.preventDefault();
         var removeApplicationId = $(this).data("remove");
@@ -480,97 +480,97 @@ if (window.console && window.console.info) {
         )
         $(this).closest(".govuk-form-group").remove();
    }
-   
+
    var emailApplicationNumber = $("#pledge-application-emails").data("application-email-count");
    $("#addAnotherApplicationEmail").on("click", addAnotherApplicationEmail);
    $("[data-remove]").on("click", removeApplicationEmail);
-   
-   
+
+
    // Pledge shortlist
    $('#pledge-shortlist .application').hide();
    $('.applications-empty').hide();
-   
+
    $('.shortlist').on("click", function (e) {
         e.preventDefault();
         $(this).closest('.application').hide();
-   
+
         var newApplicationNumber = parseInt($('.pledge-number.applications').text());
         var newShortlistNumber = parseInt($('.pledge-number.shortlist').text());
-   
+
         $('.pledge-number.applications').text(newApplicationNumber - 1);
         $('.pledge-number.shortlist').text(newShortlistNumber + 1).addClass('active');
-   
+
         $('.shortlist-not-complete').hide();
-   
+
         var applicationNumber = $(this).closest('.application').data('application');
-   
+
         if (applicationNumber == "one") {
              $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).show();
         }
-   
+
         if (applicationNumber == "two") {
              $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).show();
         }
-   
+
         if (applicationNumber == "three") {
              $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).show();
         }
-   
+
         if (newApplicationNumber == 1) {
              $('.pledge-number.applications').removeClass('active');
              $('.applications-empty').show();
         }
-   
+
         // if (shortlistNumber == 0) {
         //      $('.pledge-number.applications').removeClass('active');
         // }
    });
-   
+
    $('.remove-shortlist').on("click", function (e) {
         e.preventDefault();
         $(this).closest('.application').hide();
-   
+
         var newApplicationNumber = parseInt($('.pledge-number.applications').text());
         var newShortlistNumber = parseInt($('.pledge-number.shortlist').text());
-   
+
         $('.pledge-number.applications').text(newApplicationNumber + 1);
         $('.pledge-number.shortlist').text(newShortlistNumber - 1).addClass('active');
-   
+
         $('.shortlist-not-complete').hide();
-   
+
         var applicationNumber = $(this).closest('.application').data('shortlist');
-   
+
         console.log(applicationNumber);
-   
+
         if (applicationNumber == "one") {
              $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).hide();
              $('#pledge-applications').find(`[data-application='${applicationNumber}']`).show();
         }
-   
+
         if (applicationNumber == "two") {
              $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).hide();
              $('#pledge-applications').find(`[data-application='${applicationNumber}']`).show();
         }
-   
+
         if (applicationNumber == "three") {
              $('#pledge-shortlist').find(`[data-shortlist='${applicationNumber}']`).hide();
              $('#pledge-applications').find(`[data-application='${applicationNumber}']`).show();
         }
-   
+
         if (newApplicationNumber > 1) {
              $('.pledge-number.applications').addClass('active');
              $('.pledge-number.shortlist').removeClass('active');
              $('.applications-empty').hide();
              $('.shortlist-not-complete').show();
         }
-   
+
    });
-   
+
    // Order table
    $('#order-applications-table thead tr th').on("click", function (e) {
         e.preventDefault();
    });
-   
+
    function sortTable(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("order-applications-table");
@@ -619,40 +619,40 @@ if (window.console && window.console.info) {
              }
         }
    }
-   
-   
+
+
    // Private transfer
    $('.transfer-amount-text').hide();
    $('.transfer-details').hide();
-   
+
    $('#private-transfer-standard').on("keyup", function (e) {
         $('.transfer-amount-text').show();
    });
-   
+
    $('#private-transfer-apprentices').on("keyup", function (e) {
         $('.transfer-details').show();
    });
-   
-   
+
+
    // 2-confirm
    $('#transfer-private-employer-yes').on("click", function (e) {
         $('#transfer-confirm').attr('action','3-about-the-transfer');
    });
-   
+
    $('#transfer-private-employer-no').on("click", function (e) {
         $('#transfer-confirm').attr('action','1-business-id');
    });
-   
+
    // 3-approve
    $('#transfer-training-course-yes').on("click", function (e) {
         $('#transfer-training-course-form').attr('action','4A-yes-journey');
    });
-   
+
    $('#transfer-training-course-no').on("click", function (e) {
         $('#transfer-training-course-form').attr('action','4B-no-journey');
    });
-   
-   
+
+
    // Tooltips
    $('.copy-items').on("click", function (e) {
         $('.tooltiptext').slideDown();
@@ -660,13 +660,13 @@ if (window.console && window.console.info) {
              $('.tooltiptext').slideUp();
         }, 5000);
    });
-   
+
    // Apprenticeship total
    var applicationsCost = 1450;
    var zero ='0';
-   
+
    $('.funding-over, #apprentices-error').hide();
-   
+
    $('#pledge-application-start-year').on("keyup", function (e) {
         var apprenticeshipNumbers = parseInt($('#pledge-application-apprentices').val());
         var applicationsTotalCost = parseInt(apprenticeshipNumbers * applicationsCost);
@@ -692,7 +692,7 @@ if (window.console && window.console.info) {
         }
         $('#apprenticeship-cost').slideDown();
    });
-   
+
    $('#pledge-application-apprentices').on("keyup", function (e) {
         var apprenticeshipNumbers = parseInt($('#pledge-application-apprentices').val());
         var applicationsTotalCost = parseInt(apprenticeshipNumbers * applicationsCost);
@@ -718,7 +718,7 @@ if (window.console && window.console.info) {
                $('#apprenticeship-cost .number span').text(zero);
          }
    });
-   
+
    // Apply for funds
    $('input[name=apply-pledge-funds]').on("click", function (e) {
         if ($('input[id=apply-pledge-funds-yes]').is(':checked')) {
@@ -727,15 +727,15 @@ if (window.console && window.console.info) {
              $('#apply-application-form').attr('action','../search-pledges');
         }
    });
-   
+
    // !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
-   
+
    // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
    var dateStamp = document.getElementById("date-stamp")
    if (dateStamp) {
         dateStamp.innerHTML = formatAMPM();
    }
-   
+
    function formatAMPM() {
         var d = new Date(),
           minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
@@ -745,12 +745,12 @@ if (window.console && window.console.info) {
           days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
         return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
    }
-   
+
    var dateStampTransfer = document.getElementById("date-stamp-transfer")
    if (dateStampTransfer) {
         dateStampTransfer.innerHTML = formatAMPMTransfer();
    }
-   
+
    function formatAMPMTransfer() {
         var d = new Date(),
           minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
@@ -760,13 +760,13 @@ if (window.console && window.console.info) {
           days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
         return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
    }
-   
+
    var dateStampDeletion = document.getElementById("date-stamp-deletion")
    if (dateStampDeletion) {
         dateStampDeletion.innerHTML = formatAMPMDeletion();
    }
-   
-   
+
+
    function formatAMPMDeletion() {
         var d = new Date(),
           minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
@@ -776,12 +776,12 @@ if (window.console && window.console.info) {
           days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
         return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
    }
-   
+
    var dateStampCancelled = document.getElementById("date-stamp-cancelled")
    if (dateStampCancelled) {
         dateStampCancelled.innerHTML = formatAMPMCancelled();
    }
-   
+
    function formatAMPMCancelled() {
         var d = new Date(),
           minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
@@ -791,4 +791,3 @@ if (window.console && window.console.info) {
           days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
         return months[d.getMonth()]+'/'+d.getDate()+'/'+d.getFullYear()+' '+hours+':'+minutes+ampm;
    }
-   

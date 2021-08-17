@@ -1,0 +1,120 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <p style="padding-bottom: 13px;"></p>
+
+     <div class="govuk-grid-row">
+
+          <!--
+          <div class="govuk-grid-column-two-thirds">
+          -->
+          <div class="govuk-grid-column-full">
+
+               <!--
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds left-side">
+                         <span class="govuk-caption-m">Find a business to transfer your levy to</span>
+                    </div>
+               </div>
+               -->
+
+               <h1 class="govuk-heading-xl" style="margin-bottom: 40px;">
+                    Forecast
+               </h1>
+
+               <p>This is a forecast of the estimated costs for this apprenticeship by financial year (FY). <br> <p/>
+
+               <div>
+
+                    <table class="govuk-table">
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header"> </th>
+                          <th width="110" scope="col" class="govuk-table__header govuk-table__header--numeric">FY 2021/22</th>
+                          <th width="110" scope="col" class="govuk-table__header govuk-table__header--numeric">FY 2022/23</th>
+                          <th width="110" scope="col" class="govuk-table__header govuk-table__header--numeric">FY 2023/24</th>
+                          <th width="110" scope="col" class="govuk-table__header govuk-table__header--numeric">FY 2024/25</th>
+                          <th width="110" scope="col" class="govuk-table__header govuk-table__header--numeric">FY 2025/26</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">2 apprentices: Bricklayer level 2</th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£2,900</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£5,800</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£9,300</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">-</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">-</td>
+                        </tr>
+                        <!--
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Forecast levy balance</th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£7,120</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">-£880</span>
+                          </td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£3,760</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£10,000</td>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">£10,000</td>
+                        </tr>
+                        -->
+                      </tbody>
+                    </table>
+                    
+               </div>
+
+               <div>
+                    <details class="govuk-details" data-module="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          About the forecast
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                         <p>The forecast uses an estimated total cost of training, based on the funding band maximum for this apprenticeship.</p>
+
+                         <p>The yearly estimated costs are based on the planned start date of training and the 20% EPA payment made at the end of training. It uses the financial year starting April.</p>
+
+                         <p>As the estimated costs are based on information provided in the application to receive transfer funding, and details such as planned start and end dates and final agreed costs may change, the forecast can only be an estimate.</p>
+
+                         <!--
+                         <p>The forecast levy balance estimates your levy balance.</p>
+                         <p>A warning will be displayed if the forecast shows you may not have enough funds in your account.</p>
+                         -->
+                      </div>
+                    </details>
+               </div>
+
+               <br>
+
+               <a href="pledge-application-details-1.html" class="govuk-button govuk-button">Return to application details</a>
+
+               <br>
+               <br>
+               <br>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

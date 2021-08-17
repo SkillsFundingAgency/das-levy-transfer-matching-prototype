@@ -1,0 +1,78 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Choose the levels of apprenticeship training you'd like to fund</h1>
+
+               <form method="post" action="5-new-pledge-details#section-2">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <div class="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item select-all">
+                                        <input class="govuk-checkboxes__input" id="pledge_level_all" name="_pledge_level" type="checkbox" value="Select all" onClick="toggle(this)" {{ checked("_pledge_level", "Select all") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_level_all">All levels</label>
+                                   </div>
+
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_level_two" name="pledge_level" type="checkbox" value="Level 2 - GCSE" {{ checked("pledge_level", "Level 2 - GCSE") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_level_two">Level 2 - GCSE</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_level_three" name="pledge_level" type="checkbox" value="Level 3 - A level" {{ checked("pledge_level", "Level 3 - A level") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_level_three">Level 3 - A level</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_level_four" name="pledge_level" type="checkbox" value="Level 4 - higher national certificate (HNC)" {{ checked("pledge_level", "Level 4 - higher national certificate (HNC)") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_level_four">Level 4 - higher national certificate (HNC)</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_level_five" name="pledge_level" type="checkbox" value="Level 5 - higher national diploma (HND)" {{ checked("pledge_level", "Level 5 - higher national diploma (HND)") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_level_five">Level 5 - higher national diploma (HND)</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_level_six" name="pledge_level" type="checkbox" value="Level 6 - degree" {{ checked("pledge_level", "Level 6 - degree") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_level_six">Level 6 - degree</label>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_level_seven" name="pledge_level" type="checkbox" value="Level 7 - master’s degree" {{ checked("pledge_level", "Level 7 - master’s degree") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_level_seven">Level 7 - master’s degree</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button pledge-level-continue" data-module="govuk-button">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

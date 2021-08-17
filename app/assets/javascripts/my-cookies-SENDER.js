@@ -180,12 +180,12 @@ if ($.cookie("pledge-training-all") == "true") {
 
 // MVS - Level
 $(".pledge-level-continue").on("click", function (e) {
-     if ($('input[name=pledge-level]').is(':checked')) {
+     if ($('input[name=pledge-level]').is(':checked') || $('input[name=pledge_level]').is(':checked')) {
           $.cookie("pledge-level-complete", true, {path:'/'});
      } else {
           $.cookie("pledge-level-complete", false, {path:'/'});
      }
-     if ($('input[id=pledge-level-all]').is(':checked')) {
+     if ($('input[id=pledge-level-all]').is(':checked') || $('input[id=pledge_level_all]').is(':checked')) {
           $.cookie("pledge-level-all", true, {path:'/'});
      } else {
           $.cookie("pledge-level-all", false, {path:'/'});
@@ -205,10 +205,16 @@ if ($.cookie("pledge-level-complete") == "true" && $.cookie("pledge-level-all") 
      // $('li.pledge-section-one strong.govuk-tag').removeClass('govuk-tag--grey').text('completed');
 }
 
+$('.pledge_level_all').show();
+
 if ($.cookie("pledge-level-all") == "true") {
-     $('#pledge-level-all').attr('checked','checked');
+     $('#pledge-level-all, #pledge_level_all').attr('checked','checked');
+     $('.pledge_level_all').show();
+     $('.pledge_level_specific').hide();
 } else {
-     $('#pledge-level-all').attr('unchecked');
+     $('#pledge-level-all, #pledge_level_all').attr('unchecked');
+     $('.pledge_level_all').hide();
+     $('.pledge_level_specific').show();
 }
 
 // Sender - Location
