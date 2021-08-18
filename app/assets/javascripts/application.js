@@ -203,20 +203,68 @@ $('.location-non-javascript').on('input',function(e){
           $('.pledge-location-continue').hide();
           $('.error-message').show();
      } else if ($(this).val() == 'Warwick') {
-          $('#sender-location-non-javascript').attr('action','10-multiple-locations');
+          $('#sender-location-non-javascript').attr('action','10A-multiple-locations');
+     }  else if ($(this).val() == 'Stratford') {
+          $('#sender-location-non-javascript').attr('action','10B-multiple-locations');
      } else {
           $('#sender-location-non-javascript').attr('action','5-new-pledge-details#section-2');
           $('.pledge-location-continue').show();
           $('.error-message').hide();
      }
-
 });
-
 
 $('.error-message').on('click',function(e){
      $('.location-error-message, #location-input-error').show();
      $('.updates-locations').addClass('govuk-form-group--error');
      $('.location-non-javascript').addClass('govuk-input--error');
+});
+
+// Confirm location - Error 1
+$('#location-confirm-error_1, #location-confirm-error_2, #location-confirm-error_3, #pledge-location-confirmation').hide();
+
+$('input[name=location_duplicate_1]').on('click',function(e){
+     $('#pledge-location-confirmation').show();
+     $('.confirm-error-message_1').hide();
+     $('#location_duplicate_1').attr('action','5-new-pledge-details#section-2');
+});
+
+$('.confirm-error-message_1').on('click',function(e){
+     $('.location-error-message, #location-confirm-error_1').show();
+     $('#confirm-location').addClass('govuk-form-group--error');
+});
+
+
+// Confirm location - Error 2
+$('input[name=location_duplicate_2]').on('click',function(e){
+     if ($(this).is(':checked') && $('input[name=location_duplicate_3]').is(':checked')) {
+          $('#pledge-location-confirmation').show();
+          $('.confirm-error-message_2').hide();
+     }
+});
+
+$('input[name=location_duplicate_3]').on('click',function(e){
+     if ($(this).is(':checked') && $('input[name=location_duplicate_2]').is(':checked')) {
+          $('#pledge-location-confirmation').show();
+          $('.confirm-error-message_2').hide();
+     }
+});
+
+
+
+
+$('.confirm-error-message_2').on('click',function(e){
+     $('.location-error-message').show();
+     if ($('input[name=location_duplicate_2]').is(':checked')) {
+          $('#confirm-location, #confirm-location_3').addClass('govuk-form-group--error');
+          $('#confirm-location_2').removeClass('govuk-form-group--error');
+          $('.location-error-message, #location-confirm-error, #location-confirm-error_3').show();
+          $('#location-confirm-error_2, .confirm-location_2').hide();
+     } else if ($('input[name=location_duplicate_3]').is(':checked')) {
+          $('#confirm-location, #confirm-location_2').addClass('govuk-form-group--error');
+          $('#confirm-location_3').removeClass('govuk-form-group--error');
+          $('.location-error-message, #location-confirm-error, #location-confirm-error_2').show();
+          $('#location-confirm-error_3, .confirm-location_3').hide();
+     }
 });
 
 
