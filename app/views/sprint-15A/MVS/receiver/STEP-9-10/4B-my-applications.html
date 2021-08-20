@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "../../includes/navigation_sender_finance.html" %}
+{% include "../../../includes/navigation_sender_finance.html" %}
 {% endblock %}
 
 {% block content %}
@@ -14,9 +14,9 @@
 
      <div class="govuk-breadcrumbs">
           <ol class="govuk-breadcrumbs__list">
-               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account-2">Home</a></li>
-               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
-               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers-2">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-transfers">Transfers</a></li>
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My applications</a></li>
           </ol>
      </div>
@@ -24,7 +24,26 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
-               <h1 class="govuk-heading-xl">My applications</h1>
+               <!-- /////////////////// MESSAGES - START ///////////////////-->
+               {% if data['cancel_application'] == "Yes" %}
+                    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                         <div class="govuk-notification-banner__header">
+                              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
+                         </div>
+                         <div class="govuk-notification-banner__content">
+                              <h3 class="govuk-notification-banner__heading">Transfer application cancelled</h3>
+                              <p class="govuk-body">You cancelled the transfer application to Best Construction (867529).</p>
+                         </div>
+                    </div>
+               {% else %}
+
+               {% endif %}
+               <!-- /////////////////// MESSAGES - END ///////////////////-->
+
+               <h1 class="govuk-heading-xl">
+                    My applications
+                    <span class="govuk-caption-m">You have: <strong>4</strong> transfer applications.</span>
+               </h1>
 
           </div>
      </div>
@@ -33,38 +52,10 @@
 
           <div class="govuk-grid-column-full">
 
-               <!-- 
-               <div class="govuk-panel govuk-panel--confirmation" id="application-approved-banner">
-                    <h1 class="govuk-panel__title">You have accepted funding from <strong class="pledge-name-answer">####</strong></h1>
-               </div>
-               -->
-
-               <!--
-               <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="application-cancelled-banner">
-                    <div class="govuk-notification-banner__header">
-                         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
-                    </div>
-                    <div class="govuk-notification-banner__content">
-                         <ul class="govuk-list govuk-list--bullet">
-                              <li class="alert-one">You have cancelled your application <strong>Opportunity (123465)</strong> - <span class="govuk-tag govuk-tag--yellow">Cancelled</span></li>
-                              <li class="alert-two">Your application to <strong>Finders Keepers Ltd (684509)</strong> has been rejected  - <span class="govuk-tag govuk-tag--red">Rejected</span></li>
-                              <li class="alert-three">Your application to <strong class="pledge-name-answer">####</strong> has been accepted - <span class="govuk-tag">Accepted</span></li>
-                              <li class="alert-four">You have approved the application to <strong class="pledge-name-answer">####</strong> - <span class="govuk-tag govuk-tag--green">Approved</span></li>
-                         </ul>
-                    </div>
-               </div> 
-               -->
-
-
-               <!-- <p class="no-applications">You have no pending applications.</p> -->
-               <p>You have <strong class="number-of-applications">3</strong> transfer applications.</p>
-
                <div class="accepted-text-hide">
                     <details class="govuk-details" data-module="govuk-details">
                          <summary class="govuk-details__summary">
-                         <span class="govuk-details__summary-text">
-                              More details about the status
-                         </span>
+                              <span class="govuk-details__summary-text">More details about the status</span>
                          </summary>
                          <div class="govuk-details__text">
 
@@ -105,7 +96,7 @@
                          <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
                                    <strong>
-                                        <a href="application-1" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
+                                        <a href="#" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
                                         <br>
                                    </strong>
                                    <span class="govuk-caption-m">Date: 07/27/2021 20:42pm</span>
@@ -119,14 +110,36 @@
                          <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
                                    <strong>
-                                        <a href="#" class="govuk-link--no-visited-state">Finders Keepers Ltd (684509)</a>
+                                        <a href="5A-application" class="govuk-link--no-visited-state">Finders Keepers Ltd (684509)</a>
                                         <br>
                                    </strong>
                                    <span class="govuk-caption-m">Date: 06/27/2021 09:45pm</span>
                               </td>
                               <td class="govuk-table__cell">£25,000</td>
                               <td class="govuk-table__cell" style="text-align: left">
-                                   <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                                   {% if data['accept_funding'] == "No" %}
+                                        <span class="govuk-tag govuk-tag--yellow">Declined funding</span>
+                                   {% else %}
+                                        <span class="govuk-tag govuk-tag">APPROVED, awaiting your acceptance</span>
+                                   {% endif %}
+                              </td>
+                         </tr>
+
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   <strong>
+                                        <a href="5B-application" class="govuk-link--no-visited-state">Best Construction (867529)</a>
+                                        <br>
+                                   </strong>
+                                   <span class="govuk-caption-m">Date: 07/28/2021 12:32pm</span>
+                              </td>
+                              <td class="govuk-table__cell">£50,000</td>
+                              <td class="govuk-table__cell" style="text-align: left">
+                                   {% if data['cancel_application'] == "Yes" %}
+                                        <span class="govuk-tag govuk-tag--yellow">Cancelled application</span>
+                                   {% else %}
+                                        <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                                   {% endif %}
                               </td>
                          </tr>
 

@@ -1,0 +1,126 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-my-pledges">My transfer pledges</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfer pledge 910105</a></li>
+          </ol>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">
+                    Transfer pledge 910105
+                    <span class="govuk-caption-m">Applications for your transfer pledge: <strong>1</strong></span>
+               </h1>
+
+          </div>
+     </div>
+
+     <div>
+          <details class="govuk-details">
+               <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">Information about the applications</span>
+               </summary>
+               <div class="govuk-details__text">
+                    <p><span class="govuk-body govuk-!-font-weight-bold">Estimated cost in this financial year </span> <br>
+                         This is an estimate of the cost of training for each application in this financial year. It is based on the funding band maximum and the planned start date of training.
+                    </p>
+               </div>
+          </details>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header" width="250px">Applicant</th>
+                              <th scope="col" class="govuk-table__header" width="120px">
+                                   <div class="small-text">
+                                        Estimated cost 2021/22
+                                   </div>
+                              </th>
+                              <th scope="col" class="govuk-table__header" width="120px">Typical duration</th>
+                              <th scope="col" class="govuk-table__header">Criteria</th>
+                              <th scope="col" class="govuk-table__header">Date applied</th>
+                              <th scope="col" class="govuk-table__header" width="100">Status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><a href="#">Johnson and Johnson Building Co</a></td>
+                              <td class="govuk-table__cell">£7,500 </td>
+                              <td class="govuk-table__cell">24 months </td>
+                              <td class="govuk-table__cell">
+                                   50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">28/03/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                         </tr>
+                    </tbody>
+               </table>
+
+               <br>
+
+               <a href="#" class="govuk-button">Create a new transfer pledge</a>
+               &nbsp;&nbsp;&nbsp;
+               <a href="6-delete-pledge" class="govuk-button govuk-button--warning accepted-journey-cancel-button">Delete transfer pledge</a>
+
+
+               <div style="width: auto;float: right;margin-top: -0.5em;">
+                    <h3 class="govuk-heading-l" style="display: inline-block;">
+                         <strong>£<span>78,000</span></strong>
+                         <br>
+                         <div style="font-size: 16px; font-weight: normal;">
+                              <span>Pledge funds for 2021/22</span>
+                         </div>
+                    </h3>
+                    <h3 class="govuk-heading-l" style="display: inline-block;">
+                         &nbsp;&nbsp;
+                    </h3>
+                    <h3 class="govuk-heading-l" style="display: inline-block;">
+                         <strong><span style="color: #1d70b8">£78,000</span></strong>
+                         <br>
+                         <div style="font-size: 16px; font-weight: normal;">
+                              <span>Remaining pledge funds for 2021/22</span>
+                         </div>
+                    </h3>
+               </div>
+
+               <br>
+
+               <a href="my-pledges-one-pledges" class="govuk-back-link">Back to my transfer pledges</a>
+
+               <br><br><br><br><br>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

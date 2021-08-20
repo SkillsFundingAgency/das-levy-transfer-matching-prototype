@@ -438,7 +438,6 @@ $("#mvs-reject-application").on("click", function (e) {
      }
 });
 
-
 if ($.cookie("pledge-rejected") == 'true' || $.cookie("mvs-pledge-rejected") == 'true') {
      $('.application.application-two').hide();
      $('.rejected-not-complete').hide();
@@ -472,6 +471,16 @@ if ($.cookie("pledge-rejected") == 'true' && $.cookie("pledge-complete") == 'tru
      $('.pledge-number.applications').text(applicationsNumber - 2);
 }
 
+// setTimeout(function() {
+//      $.cookie("approve_application_banner", true, {path:'/'});
+// }, 10000);
+//
+// if ($.cookie("approve_application_banner") == 'true') {
+//      $('#approve_application_banner').hide();
+// }
+
+
+
 // Pledge deleted
 $("#pledge-delete-continue").on("click", function (e) {
      if ($('input[id=delete-pledge]').is(':checked')) {
@@ -485,6 +494,14 @@ if ($.cookie("pledge-deleted") == 'true') {
      $.cookie("pledge-complete", false, {path:'/'});
      $('.pledge-complete-table').hide();
 }
+
+// setTimeout(function() {
+//      $.cookie("delete_pledge_banner", true, {path:'/'});
+// }, 10000);
+//
+// if ($.cookie("delete_pledge_banner") == 'true') {
+//      $('#delete_pledge_banner').hide();
+// }
 
 // New pledge
 $("#create-pledge-button").on("click", function (e) {
@@ -726,7 +743,6 @@ if ($.cookie("pledge-unhappy-V2-1-approved") == 'true' && $.cookie("pledge-unhap
      $.cookie("pledge-unhappy-V2-application-removed", true, {path:'/'});
 
 }
-
 
 $('#cancelled-banner, .after-cancellation').hide();
 
