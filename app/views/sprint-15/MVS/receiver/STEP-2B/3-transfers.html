@@ -29,7 +29,9 @@
      </div>
 
      <!-- ////////////// NUMBERS - START //////////////-->
-     {% if data['prototype_user_type'] == "levy_both" or data['prototype_user_type'] == "levy_sender" or data['prototype_user_type'] == "levy_receiver" %}
+     {% if data['prototype_user_type'] == "non_levy" %}
+
+     {% elseif data['prototype_user_type'] == "levy_sender" %}
           <div class="transfer-values-prototype mvs-version">
                <div class="transfer-values">
                     <div class="transfer-funds">
@@ -47,7 +49,22 @@
                </div>
           </div>
      {% else %}
-
+          <div class="transfer-values-prototype mvs-version">
+               <div class="transfer-values">
+                    <div class="transfer-funds">
+                         <p><span>Your transfer allowance FY 2021/22</span></p>
+                         <p class="number">£200,000</p>
+                    </div>
+                    <div class="transfer-funds">
+                         <p><span>Allocated for transfers FY 2021/22</span></p>
+                         <p class="number">£0</p>
+                    </div>
+                    <div>
+                         <p><span>Remaining transfer funds FY 2021/22</span></p>
+                         <p class="number">£200,000</p>
+                    </div>
+               </div>
+          </div>
      {% endif %}
      <!-- ////////////// NUMBERS - END //////////////-->
 

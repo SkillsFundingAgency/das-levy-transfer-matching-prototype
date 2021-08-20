@@ -1,0 +1,85 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Pledge amount and option to hide organisation name</h1>
+
+               <form method="post" action="5-new-pledge-details#section-1">
+
+                    <!--
+
+                    <p>Create a transfers funding pledge that will be advertised online so that businesses can apply to you for funding.</p>
+
+                    <p>The amount you choose and the criteria you set will be displayed publicly.</p>
+
+                    <p>You can choose whether or not to show your organisation's name publicly.</p>
+
+                    -->
+
+                    <div class="govuk-form-group">
+                         <div class="total">
+                              <p>In this financial year you can pledge up to:</p>
+                              <p class="number">£80,000</p>
+                         </div>
+                         <div class="wrapper">
+                              <label class="govuk-label" for="pledge_amount">How much funding would you like to transfer?</label>
+                              <div id="pledge_amount-hint" class="govuk-hint">
+                                   Minimum pledge amount is £6,000
+                              </div>
+                              <div class="govuk-input__wrapper">
+                                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                  <input class="govuk-input govuk-input--width-10" id="pledge_amount" name="pledge_amount" type="text" spellcheck="false" value="{{ data['pledge_amount'] }}">
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend">
+                              Would you like your pledge to show your organisation's name publicly?
+                              </legend>
+                              <div class="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="show_publicly_show" name="show_publicly" type="radio" value="Show" {{ checked("show_publicly", "Show") }}>
+                                        <label class="govuk-label govuk-radios__label" for="show_publicly_show">Yes</label>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="show_publicly_hide" name="show_publicly" type="radio" value="No, I'd like our organisation to be anonymous" {{ checked("show_publicly", "No, I'd like our organisation to be anonymous") }}>
+                                        <label class="govuk-label govuk-radios__label" for="show_publicly_hide">No, I'd like our organisation to be anonymous</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button pledge-amount-continue" data-module="govuk-button">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

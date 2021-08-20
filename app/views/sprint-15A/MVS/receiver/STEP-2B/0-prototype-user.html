@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <form method="post" action="1-signin" class="check-answers-page">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                   <h1 class="govuk-fieldset__heading">Prototype user</h1>
+                              </legend>
+
+                              <p><strong>Please select the appropriate user type</strong></p>
+
+                              <div class="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="prototype_user_type_levy_both" name="prototype_user_type" type="radio" value="levy_both">
+                                        <label class="govuk-label govuk-radios__label" for="prototype_user_type_levy_both">Levy user - <strong>Neither sender/receiver</strong></label>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="prototype_user_type_levy_sender" name="prototype_user_type" type="radio" value="levy_sender">
+                                        <label class="govuk-label govuk-radios__label" for="prototype_user_type_levy_sender">Levy user - <strong>Sender</strong></label>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="prototype_user_type_levy_receiver" name="prototype_user_type" type="radio" value="levy_receiver">
+                                        <label class="govuk-label govuk-radios__label" for="prototype_user_type_levy_receiver">Levy user - <strong>Receiver</strong></label>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="prototype_user_type_non_levy" name="prototype_user_type" type="radio" value="non_levy" checked>
+                                        <label class="govuk-label govuk-radios__label" for="prototype_user_type_non_levy">Non Levy user</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+               </form>
+          </div>
+     </div>
+
+</div>
+{% endblock %}

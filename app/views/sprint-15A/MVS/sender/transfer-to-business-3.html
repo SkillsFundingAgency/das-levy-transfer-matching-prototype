@@ -1,0 +1,94 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <span class="govuk-caption-m">Make a transfer to a business I know</span>
+               <h1 class="govuk-heading-xl">Tell us about the transfer you want to make to <span class="highlight-text">Belhavel Construction Ltd</span></h1>
+
+               <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                              Do you want to specify the training course being funded?
+                           </legend>
+
+                           <p></p>
+
+                           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" name="selector" id="option1" type="radio" data-aria-controls="conditional-contact-2">
+                               <label class="govuk-label govuk-radios__label" for="option2">
+                                 Yes
+                                 <!--
+                                 <div id="with-hint-hint" class="govuk-hint">
+                                   You will be reimbursed via your deferment account.
+                                 </div>
+                                 -->
+                               </label>
+                             </div>
+
+                             <div class="govuk-radios__item">
+                               <input class="govuk-radios__input" name="selector" id="option2" type="radio">
+                               <label class="govuk-label govuk-radios__label" for="option1">
+                                 No, I only want to set a funding amount that can be spent on any type of apprenticeship training
+                                 <!--
+                                 <div id="with-hint-hint" class="govuk-hint">
+                                   You will be reimbursed via your bank account.
+                                 </div>
+                                 -->
+                               </label>
+                             </div>
+
+                    </fieldset>
+               </div>
+
+               <div>
+                    <a href="" onclick='myFunction()' id="link"><button class="govuk-button" data-module="govuk-button">Continue</button></a>
+                    <a href="transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel transfer</a>
+               </div>
+
+          </div>
+
+     </div>
+
+</div>
+
+
+<script>
+    function myFunction() {
+   
+        if(document.getElementById('option1').checked) {
+            document.getElementById('link').href = "transfer-to-business-4a-1.html";
+        }
+        if(document.getElementById('option2').checked) {
+            document.getElementById('link').href = "transfer-to-business-4b-1.html";
+        }
+    }
+</script>
+
+
+{% endblock %}
