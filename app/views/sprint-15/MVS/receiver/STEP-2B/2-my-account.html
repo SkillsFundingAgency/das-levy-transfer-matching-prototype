@@ -21,7 +21,7 @@
 
                <div class="my-account-header">
                     <span class="govuk-caption-xl">Account ID: M99X7Y</span>
-                    <h1 class="govuk-heading-xl">BARRY & BARRY LTD</h1>
+                    <h1 class="govuk-heading-xl">Belhavel Construction Ltd</h1>
                     <hr class="dashboard-heading-separator">
                </div>
 
@@ -31,129 +31,96 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
-               {% if data['prototype_user_type'] == "non_levy" %}
+               {% if data['prototype_user_type'] == "levy_both" or data['prototype_user_type'] == "levy_sender" or data['prototype_user_type'] == "levy_receiver" %}
+
+               {% else %}
                     <div class="help-survey setup">
                          <h3 class="govuk-heading-l">Set up an apprenticeship</h3>
                          <p>You can set up an apprenticeship for an existing employee or for someone new</p>
                          <button class="govuk-button" data-module="govuk-button">Setup apprenticeship</button>
                     </div>
-               {% else %}
-
                {% endif %}
 
-               <!-- SECTION 1 - START -->
                <section class="my-account-section">
                     <h3 class="govuk-heading-l">Apprenticeships</h3>
                     <span class="govuk-caption-m">Manage your apprentices, advertise apprenticeships and set training provider permissions</span>
                     <div class="account-wrapper">
 
-                         <!-- 1 - START -->
                          <div>
                               <a href="">Apprentices</a>
                               <p>Add apprentices, update details of existing apprentices, change training providers and authorise payments to training providers.</p>
                          </div>
-                         <!-- 1 - END -->
 
-                         <!-- 2 - START -->
                          <div>
                               <a href="">Your apprenticeship adverts</a>
                               <p>Create adverts to post on Find an apprenticeship, view applications and view previous adverts.</p>
                          </div>
-                         <!-- 2 - END -->
 
-                         <!-- 3 - START -->
                          <div>
                               <a href="">Your training providers</a>
                               <p>Add training providers and manage permissions to choose what they can do on your behalf.</p>
                          </div>
-                         <!-- 3 - END -->
 
-                         <!-- 4 - START -->
                          <div>
                               <a href="">Find apprenticeship training</a>
                               <p>Search for apprenticeships and see details of approved providers who can deliver the training.</p>
                          </div>
-                         <!-- 4 - END -->
 
                     </div>
                </section>
-               <!-- SECTION 1 - END -->
 
                <hr>
 
-               <!-- SECTION 2 - START -->
                <section class="my-account-section">
                     <h3 class="govuk-heading-l">Finances</h3>
                     <span class="govuk-caption-m">Manage your apprenticeship funds</span>
                     <div class="account-wrapper">
 
-                         <!-- 1 - START -->
                          <div>
-                              <a href="finance">Your finances</a>
-                              <p>View your financial transactions.</p>
+                              <a href="#">Your finances</a>
+                              <p>View your financial transactions and make funding reservations.</p>
                          </div>
-                         <!-- 1 - END -->
 
-                         <!-- 2 - START -->
-                         <!-- <div>
-                              <a href="">Apply for the hirea new apprentice payment</a>
-                              <p>You can apply for the payment you hire new apprenticesrom 1 August 2020 to 31 January 2021</p>
-                         </div> -->
-                         <!-- 2 - END -->
-
-                         <!-- 3 - START -->
                          <div>
                               <a href="">Your hire a new apprentice payments</a>
                               <p>Apply for the payment, view applications and change your payment details.</p>
                          </div>
-                         <!-- 3 - END -->
 
-                         <!-- 4 - START -->
                          <div>
                               <a href="3-transfers">Your transfers</a>
-                              <p>View your 25% transfer allowance and manage your transfers, including creating pledges to transfer your funds to other businesses.</p>
+                              <p>View your apprentices funded by a transfer. Find a large business to fund your apprenticeship training with a transfer.</p>
                          </div>
-                         <!-- 4 - END -->
 
                     </div>
 
                </section>
-               <!-- SECTION 2 - END -->
 
                <hr>
 
-               <!-- SECTION 3 - START -->
                <section class="my-account-section">
                     <h3 class="govuk-heading-l">Account</h3>
                     <span class="govuk-caption-m">Manage your account details and team</span>
 
                     <div class="account-wrapper">
 
-                         <!-- 1 - START -->
                          <div>
                               <a href="">Your organisations and agreements</a>
                               <p>Add your organisations that will make contracts with training providers.</p>
                          </div>
-                         <!-- 1 - END -->
 
-                         <!-- 2 - START -->
                          <div>
                               <a href="">Your team</a>
                               <p>Control what your team can do and invite new team members.</p>
                          </div>
-                         <!-- 2 - END -->
 
-                         <!-- 3 - START -->
                          <div>
                               <a href="">PAYE schemes</a>
                               <p>Add or remove PAYE schemes.</p>
                          </div>
-                         <!-- 3 - END -->
 
                     </div>
 
                </section>
-               <!-- SECTION 3 - END -->
 
                <div class="help-survey">
                     <h3 class="govuk-heading-s">Help us improve this service</h3>
@@ -165,13 +132,13 @@
 
           <div class="govuk-grid-column-one-third">
 
-               {% if data['prototype_user_type'] == "non_levy" %}
-
-               {% else %}
+               {% if data['prototype_user_type'] == "levy_both" or data['prototype_user_type'] == "levy_sender" or data['prototype_user_type'] == "levy_receiver" %}
                     <div class="tasks-section">
                          <h4 class="govuk-heading-s">Tasks</h4>
                          <p class="">You do not have any tasks</p>
                     </div>
+               {% else %}
+
                {% endif %}
 
           </div>

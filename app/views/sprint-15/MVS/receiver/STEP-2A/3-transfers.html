@@ -1,0 +1,159 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="transfers">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">Manage transfers</h1>
+
+          </div>
+     </div>
+
+     <!-- ////////////// NUMBERS - START //////////////-->
+     {% if data['prototype_user_type'] == "levy_both" or data['prototype_user_type'] == "levy_sender" or data['prototype_user_type'] == "levy_receiver" %}
+          <div class="transfer-values-prototype mvs-version">
+               <div class="transfer-values">
+                    <div class="transfer-funds">
+                         <p><span>Your transfer allowance FY 2021/22</span></p>
+                         <p class="number">£200,000</p>
+                    </div>
+                    <div class="transfer-funds">
+                         <p><span>Allocated for transfers FY 2021/22</span></p>
+                         <p class="number">£120,000</p>
+                    </div>
+                    <div>
+                         <p><span>Remaining transfer funds FY 2021/22</span></p>
+                         <p class="number">£80,000</p>
+                    </div>
+               </div>
+          </div>
+     {% else %}
+
+     {% endif %}
+     <!-- ////////////// NUMBERS - END //////////////-->
+
+     <!-- ////////////// EXTRA INFO - START //////////////-->
+     {% if data['prototype_user_type'] == "levy_both" or data['prototype_user_type'] == "levy_sender" or data['prototype_user_type'] == "levy_receiver" %}
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-two-thirds">
+                    <details class="govuk-details" data-module="govuk-details">
+                         <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">Information about transfers</span>
+                         </summary>
+                         <div class="govuk-details__text">
+                              <p><strong>Your transfer allowance for this financial year</strong></p>
+                              <p>You can use unspent levy funds in your account by transferring up to 25% of your previous year's funds to other organisations.</p>
+                              <p>This is called your transfer allowance.</p>
+                              <p>It is calculated every year on 6 April and shows in your account after 20 April.</p>
+                              <p>The organisations receiving transferred funds can use this to pay for apprenticeship training and assessment.</p>
+                              <p>The levy funds you commit to a transfer will be paid from your account monthly over the duration of the apprenticeship. This means you are committing funds over multiple financial years.</p>
+                              <p>Transfer payments will leave your account before payments for your own apprenticeships.</p>
+                              <p><strong>Allocated for transfers in this financial year</strong> </p>
+                              <p>This is an estimate of the amount allocated for your transfers in this financial year and includes any existing transfer commitments carried over from last year.</p>
+                              <p>It uses an estimate of monthly payments based on the planned start date of training and the 20% EPA payment made at the end of training. </p>
+                              <p>It adds the pledges you have made this year to the ongoing transfer commitments you have made in previous years. </p>
+                              <p><strong>Remaining transfer funds </strong></p>
+                              <p>This is an estimate of what remains for you to pledge to transfers in this financial year.</p>
+                         </div>
+                    </details>
+               </div>
+          </div>
+     {% else %}
+
+     {% endif %}
+     <!-- ////////////// EXTRA INFO - END //////////////-->
+
+     <!-- ////////////// 1 - PLEDGES - START //////////////-->
+     {% if data['prototype_user_type'] == "levy_both" or data['prototype_user_type'] == "levy_sender" %}
+          <div class="section">
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                         <h2 class="govuk-heading-m">My transfer pledges</h2>
+                         <p>Create a public funding pledge which is shown online so that businesses can apply to you for a transfer of funds.</p>
+                         <div class="govuk-inset-text">You have <strong>0</strong> transfer pledges.</div>
+                         <a href="" class="govuk-button" data-module="govuk-button">Create a transfer pledge</a>
+                         <a href="" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my transfer pledges and applications</a>
+                    </div>
+               </div>
+          </div>
+     {% elseif data['prototype_user_type'] == "levy_receiver" %}
+
+     {% else %}
+
+     {% endif %}
+     <!-- ////////////// 1 - PLEDGES - END //////////////-->
+
+     <!-- ////////////// 2 - APPLY - START //////////////-->
+     {% if data['prototype_user_type'] == "levy_both" or data['prototype_user_type'] == "levy_receiver" %}
+          <div class="section">
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                         <h2 class="govuk-heading-m">Apply for transfers funding</h2>
+                         <p>As a levy-payer you can receive transfer funds from other levy-payers, as long as you are not also sending transfer funds to other businesses.</p>
+                         <p>Search transfers funding opportunities and apply for a transfer of funds.</p>
+                         <div class="govuk-inset-text">You have <strong class="number-of-applications">0</strong> transfer applications.</div>
+                         <a href="4-start-new-search" class="govuk-button" data-module="govuk-button">Apply for transfer funding </a>
+                         <a href="#" class="govuk-button govuk-button--secondary data-module="govuk-button">View applications I've submitted</a>
+                    </div>
+               </div>
+          </div>
+     {% elseif data['prototype_user_type'] == "levy_sender" %}
+
+     {% else %}
+          <div class="section top-section">
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                         <h2 class="govuk-heading-m">Apply for transfers funding</h2>
+                         <p>Search transfers funding opportunities and apply for a transfer of funds.</p>
+                         <div class="govuk-inset-text">You have <strong class="number-of-applications">0</strong> transfer applications.</div>
+                         <a href="4-start-new-search" class="govuk-button" data-module="govuk-button">Apply for transfer opportunities</a>
+                         <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my transfer applications</a>
+                    </div>
+               </div>
+          </div>
+     {% endif %}
+     <!-- ////////////// 2 - APPLY - START //////////////-->
+
+     <!-- ////////////// 3 - CONNECT - START //////////////-->
+     <div class="section">
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-two-thirds">
+                    <h2 class="govuk-heading-m">My transfer connections</h2>
+                    {% if data['prototype_user_type'] == "levy_both" or data['prototype_user_type'] == "levy_sender" or data['prototype_user_type'] == "levy_receiver" %}
+                         <p>If you know a business you want to transfer funds to, you can make a connection to them and set up a transfer.</p>
+                         <p>You'll need to know their apprenticeship service account ID number.</p>
+                         <p>If you want to receive a transfer from a business you know, discuss details with them and give them their apprenticeship service account ID number so they can send you a connection request.</p>
+                         <p><strong>You cannot receive and send transfer funds at the same time.</strong></p>
+                         <div class="govuk-inset-text">You have <strong class="number-of-applications">0</strong> transfer applications.</div>
+                         <a href="#" class="govuk-button govuk-button--secondary no-margin-left" data-module="govuk-button">Make a transfer to a business I know</a>
+                    {% else %}
+                         <p>If you want to receive a transfer of funds from a business you know, they'll need to send you a connection request using your apprenticeship service account ID number.</p>
+                         <p>Discuss details of the transfer with them and give them your ID number so they can send you a connection request.</p>
+                    {% endif %}
+               </div>
+          </div>
+     </div>
+     <!-- ////////////// 3 - CONNECT - END //////////////-->
+
+</div>
+
+{% endblock %}

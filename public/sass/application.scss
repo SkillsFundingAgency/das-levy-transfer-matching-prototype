@@ -40,9 +40,15 @@ $govuk-assets-path: '/govuk/assets/';
 .no-margin-bottom {
      margin-bottom: 0 !important;
 }
+
 .no-margin-top {
      margin-top: 0 !important;
 }
+
+.no-margin-left {
+     margin-left: 0 !important;
+}
+
 .small-margin-bottom {
      margin-bottom: 0.5em !important;
 }
@@ -122,6 +128,13 @@ a {
           float: right;
      }
 }
+
+button {
+     &.govuk-button--secondary {
+          margin-left: 1em;
+     }
+}
+
 
 @media (max-width: 1024px) {
 

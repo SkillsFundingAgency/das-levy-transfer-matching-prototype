@@ -2,6 +2,25 @@
 //      padding-top: 0;
 // }
 
+.section {
+     padding: 2em 0 1em 0;
+     // margin-top: 1em;
+     border-top: 2px dashed $govuk-border-colour;
+     &.top-section {
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0;
+     }
+     &.unavailable {
+          padding: 2em 2em 0.5em 2em;
+          border-top: 2px dashed $govuk-border-colour;
+          border-left: 2px dashed $govuk-border-colour;
+          border-right: 2px dashed $govuk-border-colour;
+          border-bottom: none;
+          background: rgba(govuk-colour("light-grey"),0.5);
+     }
+}
+
 .my-account-override {
      width: 100%;
      max-width: 100%;
@@ -118,5 +137,9 @@
      }
      button {
           margin-bottom: 0;
+     }
+     &.setup {
+          margin: 2em 0 1em 0;
+          padding: 1.5em 1em 2em 1em;
      }
 }
