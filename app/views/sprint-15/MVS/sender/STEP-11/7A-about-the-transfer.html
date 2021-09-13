@@ -1,0 +1,93 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Tell us about the transfer you want to make to <span class="highlight-text">Belhavel Construction Ltd</span></h1>
+
+               <form method="post" action="7B-about-the-transfer">
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="private-transfer-standard">Do you know the name of the apprenticeship training course?</label>
+                         <input class="govuk-input govuk-input--width-20" id="private-transfer-standard" name="private-transfer-standard" type="search">
+                    </div>
+
+                    <div class="govuk-inset-text transfer-amount-text">
+                         Maximum cost: <strong>£9,000</strong>
+                         <br>
+                         Duration: <strong>30 months</strong>
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="private-transfer-apprentices">How many apprentices do you want to fund?</label>
+                         <input class="govuk-input govuk-input--width-5" id="private-transfer-apprentices" name="private-transfer-apprentices" type="text">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" role="group" aria-describedby="private-transfer-hint">
+                              <legend class="govuk-fieldset__legend">
+                                   <h1 class="govuk-fieldset__heading">When would you like the apprenticeship training to start by?</h1>
+                              </legend>
+                              <div id="private-transfer-hint" class="govuk-hint">For example, 11 2007</div>
+                              <div class="govuk-date-input" id="private-transfer-start">
+                                   <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                             <label class="govuk-label govuk-date-input__label" for="private-transfer-start-month">Month</label>
+                                             <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="private-transfer-start-month" name="private-transfer-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                   </div>
+                                   <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                             <label class="govuk-label govuk-date-input__label" for="private-transfer-start-year">Year</label>
+                                             <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="private-transfer-start-year" name="private-transfer-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <section class="transfer-details">
+                         <p class="govuk-heading-s">Estimated total cost (based on funding band maximum)</p>
+                         <div class="total">
+                              <p class="govuk-heading-m">£18,000</p>
+                         </div>
+                    </section>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="">Continue</button>
+
+                    <a href="transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel transfer</a>
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

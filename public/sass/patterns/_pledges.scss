@@ -234,7 +234,7 @@
      }
 }
 
-.new-pledge-values {
+.new-pledge-values, .pledge-values {
      display: inline-block;
      width: auto;
      float: right;
@@ -281,6 +281,28 @@
      }
 }
 
+.pledge-values {
+     h3 {
+          &:first-of-type {
+               margin-right: 1em;
+          }
+          &:last-of-type {
+               strong {
+                    color: $govuk-link-colour;
+               }
+          }
+          .sub-text {
+               background: none;
+               width: 100%;
+               margin: 0;
+               padding: 0;
+               font-size: 1rem;
+               color: $govuk-secondary-text-colour;
+               font-weight: normal;
+          }
+     }
+}
+
 @media (max-width: 1024px) {
 
 }
@@ -304,9 +326,17 @@
 section {
      &.employer-details, &.employer-contact-details, &.transfer-details {
           background: govuk-colour("light-grey");
-          padding: 1.5em 1.5em 4.5em 1.5em;
+          padding: 1.5em 1.5em 1.5em 1.5em;
           position: relative;
           margin-bottom: 2em;
+          p {
+               &:last-of-type {
+                    margin-bottom: 0;
+               }
+          }
+          .govuk-button {
+               margin-bottom: 0;
+          }
           .total {
                background: darken(govuk-colour("light-grey"),10%);
                padding: 1em 1.5em;

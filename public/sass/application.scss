@@ -24,7 +24,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 #main-content {
-     // padding-top: 0;
+     padding-top: 0;
 }
 
 .clear-cookies {
@@ -288,11 +288,15 @@ p {
 
 #transfers-hub {
      .govuk-breadcrumbs {
-          margin: -1em 0 3em 0;
+          margin: 1em 0 3em 0;
      }
      .govuk-back-link {
           margin-bottom: 3em;
      }
+}
+
+.govuk-back-link {
+     margin-bottom: 3em;
 }
 
 .funding-wrapper {
@@ -666,4 +670,18 @@ p {
 
 .sidescrolling-table {
      overflow-x: auto;
+}
+
+
+.govuk-checkboxes__divider {
+     font-family: "GDS Transport",arial,sans-serif;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     font-weight: 400;
+     font-size: 1.1875rem;
+     line-height: 1.31579;
+     color: #0b0c0c;
+     width: 25px;
+     margin-bottom: 8px;
+     text-align: center;
 }

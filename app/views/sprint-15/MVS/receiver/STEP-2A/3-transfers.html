@@ -22,9 +22,8 @@
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-
+               <p><br></p>
                <h1 class="govuk-heading-xl">Manage transfers</h1>
-
           </div>
      </div>
 
@@ -129,7 +128,7 @@
                          <p>Search transfers funding opportunities and apply for a transfer of funds.</p>
                          <div class="govuk-inset-text">You have <strong class="number-of-applications">0</strong> transfer applications.</div>
                          <a href="4-start-new-search" class="govuk-button" data-module="govuk-button">Apply for transfer funding </a>
-                         <a href="#" class="govuk-button govuk-button--secondary data-module="govuk-button">View applications I've submitted</a>
+                         <a href="11-my-applications" class="govuk-button govuk-button--secondary data-module="govuk-button">View applications I've submitted</a>
                     </div>
                </div>
           </div>
@@ -141,9 +140,14 @@
                     <div class="govuk-grid-column-two-thirds">
                          <h2 class="govuk-heading-m">Apply for transfers funding</h2>
                          <p>Search transfers funding opportunities and apply for a transfer of funds.</p>
-                         <div class="govuk-inset-text">You have <strong class="number-of-applications">0</strong> transfer applications.</div>
+                         {% if data['pledge-application-standard'] and data['search-sector'] and data['pledge-application-firstname'] %}
+                              <div class="govuk-inset-text">You have submitted <strong class="number-of-applications">1</strong> transfer application.</div>
+                         {% else %}
+                              <div class="govuk-inset-text">You have <strong class="number-of-applications">0</strong> transfer applications.</div>
+                         {% endif %}
+
                          <a href="4-start-new-search" class="govuk-button" data-module="govuk-button">Apply for transfer opportunities</a>
-                         <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my transfer applications</a>
+                         <a href="11-my-applications" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my transfer applications</a>
                     </div>
                </div>
           </div>

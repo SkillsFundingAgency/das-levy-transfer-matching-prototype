@@ -117,23 +117,23 @@ if (window.console && window.console.info) {
            }
    });
 
-   // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
-   // $('#sender-check-answers').find('.section-six').hide();
+// !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
+// $('#sender-check-answers').find('.section-six').hide();
 
-   $('#pledge-amount-error').hide();
+$('#pledge-amount-error, #pledge-amount-error-message').hide();
 
-   // Funding
-   $('#pledge-amount').on("keyup", function (e) {
-        var fundingTotal = parseInt($('#pledge-amount').val());
-        if (fundingTotal == 5999) {
-             $('#pledge-funding-form').attr('action','');
-             $('#pledge-amount-container').addClass('govuk-form-group--error');
-             $('#event-name-hint').addClass('govuk-error-message').removeClass('govuk-hint');
-             $('#pledge-amount-error').show();
-        } else {
-             $('#pledge-funding-form').attr('action','pledge-core');
-        }
-   });
+// Funding
+$('#pledge_amount').on("keyup", function (e) {
+     var fundingTotal = parseInt($('#pledge_amount').val());
+     if (fundingTotal == 5000) {
+          $('#pledge-funding-form').attr('action','');
+          $('#pledge-amount-container').addClass('govuk-form-group--error');
+          // $('#pledge-amount-error-message').addClass('govuk-error-message').removeClass('govuk-hint');
+          $('#pledge-amount-error, #pledge-amount-error-message').show();
+     } else {
+          $('#pledge-funding-form').attr('action','5-new-pledge-details#section-1');
+     }
+});
 
    // Locations
    $('input#pledge-location-cities').on("click", function (e) {
@@ -248,9 +248,6 @@ $('input[name=location_duplicate_3]').on('click',function(e){
           $('.confirm-error-message_2').hide();
      }
 });
-
-
-
 
 $('.confirm-error-message_2').on('click',function(e){
      $('.location-error-message').show();
@@ -383,11 +380,25 @@ $('.confirm-error-message_2').on('click',function(e){
    $('input[id="mvs-application-reject-3"]').on("click", function (e) {
         $('#cbj-engineering').attr('action','1-pledge-details');
    });
-   // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
+
+// ACCEPT APPLICATION
+$('#accept_application_error_summary, #accept_application_error_text').hide();
+
+$('#accept_application').on("click", function (e) {
+     if ($('input[name="accept_application"]').is(':checked')) {
+          $('#accept_application .govuk-form-group').removeClass('govuk-form-group--error');
+          $('#accept_application_error_summary, #accept_application_error_text').hide();
+     } else {
+          window.scrollTo(0, 0);
+          $('#accept_application .govuk-form-group').addClass('govuk-form-group--error');
+          $('#accept_application_error_summary, #accept_application_error_text').show();
+     }
+});
+// !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
 
-   // !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
-   // Search filter
+// !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - START -- !!!!!!!!!!!!!!!!!!!!!!!! //
+// Search filter
    $('.no-results').hide();
 
    function change() {
@@ -525,6 +536,28 @@ $('.confirm-error-message_2').on('click',function(e){
         }
 
    }
+
+// LOCATION
+$('#apprentice_location_error, #apprentice_location_error_text').hide();
+$('.form-action').hide();
+
+$('#accept_funding_error').on("click", function (e) {
+     $('#apprentice_location_error, #apprentice_location_error_text').show();
+     $('#apprentice_location_section').addClass('govuk-form-group--error');
+     $('#apprentice_location').addClass('govuk-input--error');
+     window.scrollTo(0, 0);
+});
+
+$('input[name="select_apprentice_location"]').on("click", function (e) {
+     $('.form-action').show();
+     $('.error-action').hide();
+});
+
+$('input[name="apprentice_location"]').on("keyup", function (e) {
+     $('.form-action').show();
+     $('.error-action').hide();
+});
+
 
    // Pledge application emails
    function addAnotherApplicationEmail() {
@@ -753,7 +786,8 @@ $('.confirm-error-message_2').on('click',function(e){
              $('#apprenticeship-cost .number span').text(applicationsMaths.toLocaleString('en-US'));
              document.getElementById('apprenticeship-cost').style.display = "block";
          }
-        var pledgeTotalCost = parseInt($.cookie("pledge-value").replace('%C2%A3','').replace('%2C',''));
+         var pledgeTotalCost = 60000;
+         // var pledgeTotalCost = parseInt($.cookie("pledge-value").replace('%C2%A3','').replace('%2C',''));
          console.log(pledgeTotalCost);
          console.log($('#apprenticeship-cost .value-format').text());
         if (applicationsTotalCost > pledgeTotalCost) {
@@ -779,7 +813,8 @@ $('.confirm-error-message_2').on('click',function(e){
                   } else {
                        $('#apprenticeship-cost .number span').text(applicationsMaths.toLocaleString('en-US'));
                   }
-                  var pledgeTotalCost = parseInt($.cookie("pledge-value").replace('%C2%A3','').replace('%2C',''));
+                  var pledgeTotalCost = 60000;
+                  // var pledgeTotalCost = parseInt($.cookie("pledge-value").replace('%C2%A3','').replace('%2C',''));
                   if (applicationsTotalCost > pledgeTotalCost) {
                        // console.log('working');
                        $('#apprenticeship-cost').addClass('error');
@@ -803,7 +838,80 @@ $('.confirm-error-message_2').on('click',function(e){
         }
    });
 
-   // !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
+// SUBMIT TRANFER APPLICATION
+$('#submit_transfer_application_error ,#submit_transfer_application_error_text').hide();
+
+$('#application-confirm-continue').on("click", function (e) {
+     if ($('input[name="confirm_accept"]').is(':not(:checked)')) {
+          window.scrollTo(0, 0);
+          $('#application_confirm').addClass('govuk-form-group--error');
+          $('#submit_transfer_application_error ,#submit_transfer_application_error_text').show();
+     } else {
+          $('#application_confirm').removeClass('govuk-form-group--error');
+          $('#submit_transfer_application_error ,#submit_transfer_application_error_text').hide();
+          window.location.href = "9-confirmation";
+     }
+});
+
+// ACCEPT FUNDING
+$('#accept_funding_error_1, #accept_funding_error_2, #accept_funding_error_3, #accept_funding_error_1_error_text, #accept_funding_error_2_error_text, #accept_funding_error_3_error_text').hide();
+$('.form-action').hide();
+
+$('#accept_funding_error').on("click", function (e) {
+     var radioValue = $('input[name="accept_funding"]:checked').val()
+     if ($('input[name="accept_funding"]').is(':checked') && $('input[name="confirm_accept"]').is(':checked') || $('input[name="accept_funding"]').is(':checked') && $('input[name="confirm_decline"]').is(':checked')) {
+          $('#accept_funding_form').removeClass('govuk-form-group--error');
+          $('#accept_funding_error_1, #accept_funding_error_1_error_text, #accept_funding_error_2, #accept_funding_error_2_error_text, #accept_funding_error_3, #accept_funding_error_3_error_text').hide();
+     }
+
+     if ($('input[name="accept_funding"]').is(':not(:checked)') && $('input[name="confirm_accept"]').is(':not(:checked)') || $('input[name="accept_funding"]').is(':not(:checked)') && $('input[name="confirm_decline"]').is(':not(:checked)')) {
+          window.scrollTo(0, 0);
+          $('#accept_funding_form').addClass('govuk-form-group--error');
+          // Error 1
+          $('#accept_funding_error_1, #accept_funding_error_1_error_text').show();
+          // Error 2 & 3
+          $('#accept_funding_error_2, #accept_funding_error_2_error_text, #accept_funding_error_3, #accept_funding_error_3_error_text').hide();
+     }
+
+     if ($('input[name="accept_funding"]').is(':checked')) {
+          window.scrollTo(0, 0);
+
+          if (radioValue === 'Accept') {
+               $('#accept_funding_form').addClass('govuk-form-group--error');
+               // Error 2
+               $('#accept_funding_error_2, #accept_funding_error_2_error_text').show();
+               // Error 1 & 3
+               $('#accept_funding_error_1, #accept_funding_error_1_error_text, #accept_funding_error_3, #accept_funding_error_3_error_text').hide();
+          } else if (radioValue === 'Decline') {
+               $('#accept_funding_form').addClass('govuk-form-group--error');
+               // Error 3
+               $('#accept_funding_error_3, #accept_funding_error_3_error_text').show();
+               // Error 1 & 2
+               $('#accept_funding_error_1, #accept_funding_error_1_error_text, #accept_funding_error_2, #accept_funding_error_2_error_text').hide();
+          }
+
+          if ($('input[name="accept_funding"]').is(':checked') && $('input[name="confirm_accept"]').is(':checked')) {
+               window.location.href = "6A-confirm";
+          } else if ($('input[name="accept_funding"]').is(':checked') && $('input[name="confirm_decline"]').is(':checked')) {
+               window.location.href = "4-my-applications";
+          }
+     }
+
+});
+
+$('input[name="confirm_accept"], input[name="confirm_decline"]').on("click", function (e) {
+     if ($('input[name="accept_funding"]').is(':checked') && $('input[name="confirm_accept"]').is(':checked') || $('input[name="accept_funding"]').is(':checked') && $('input[name="confirm_decline"]').is(':checked')) {
+          $('.form-action').show();
+          $('.error-action').hide();
+     } else {
+          $('.form-action').hide();
+          $('.error-action').show();
+     }
+});
+
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
    // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
    var dateStamp = document.getElementById("date-stamp")

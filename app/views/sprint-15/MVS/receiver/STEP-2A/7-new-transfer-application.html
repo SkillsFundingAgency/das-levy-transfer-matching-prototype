@@ -14,8 +14,25 @@
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-
                <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <!-- //////// ERROR SUMMARY 1 - START ////////-->
+               <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" id="submit_transfer_application_error">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+                    <div class="govuk-error-summary__body">
+                         <ul class="govuk-list govuk-error-summary__list">
+                              <li>
+                                   <a href="#application_confirm">You must agree to the terms and conditions before submitting this application</a>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- //////// ERROR SUMMARY 1 - END ////////-->
 
           </div>
      </div>
@@ -23,20 +40,10 @@
      <div class="govuk-grid-row">
 
           <div class="govuk-grid-column-full">
-
                <h1 class="govuk-heading-xl">Create a transfers application</h1>
           </div>
 
           <div class="govuk-grid-column-two-thirds application-core">
-
-               <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-               <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 8 sections.</p> -->
-
-               <!-- <p>Create a transfers funding pledge that will be shown online so that businesses can apply to you for funding.</p>
-
-               <p>The amount you choose and the criteria you set will be displayed publicly.</p>
-
-               <p>You can choose whether or not to show your organisation's name publicly.</p> -->
 
                <div class="govuk-warning-text">
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -121,9 +128,9 @@
                               <!-- <button class="govuk-button" data-module="govuk-button"><span class="icon add white"></span>Add another apprenticeship</button> -->
                               <h3 class="govuk-heading-m apprenticeship-total">
                                    <!-- Total: <strong>£<span class="total-cost">2,900</span></strong> -->
-                                   Total: <strong>£2,900</strong>
+                                   Total for this FY: <strong>£2,900</strong>
                                    <br>
-                                   <span class="small-text">for financial year 2021/22</span>
+                                   <span class="small-text">Total over length of apprenticeship: <strong>£20,000</strong></span>
                               </h3>
                               <p><br></p>
                               <p><br></p>
@@ -148,7 +155,7 @@
                          <ul class="app-task-list__items">
                               <li class="app-task-list__item">
                                    <span class="app-task-list__task-name">
-                                        <a href="8B-new-transfer-application">Sector</a>
+                                        <a href="8B-new-transfer-application-1">Sector</a>
                                    </span>
                                    <p>
                                         {% if data['search-sector'] %}
@@ -164,12 +171,11 @@
                               </li>
                               <li class="app-task-list__item">
                                    <span class="app-task-list__task-name">
-                                        <a href="8B-new-transfer-application">Location</a>
+                                        <a href="8B-new-transfer-application-1">Location</a>
                                    </span>
                                    <p>
-                                        {% if data['pledge-application-location'] %}
-                                             <!-- {{ data['pledge-application-location'] }} -->
-                                             M25DD
+                                        {% if data['select_apprentice_location'] %}
+                                             {{ data['select_apprentice_location'] }}
                                         {% else %}
                                              -
                                         {% endif %}
@@ -282,7 +288,7 @@
                </ol>
 
                {% if data['pledge-application-standard'] and data['search-sector'] and data['pledge-application-firstname'] %}
-                    <div class="submit-transfer-application">
+                    <div id="submit_transfer_application">
 
                          <div class="govuk-warning-text funding-over">
                               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -291,16 +297,38 @@
 
                          <h2 class="govuk-heading-m">Submit your transfers application</h2>
 
-                         <p class="govuk-body">I confirm that I want to make the above application so I can receive funding from another business for apprenticeship training.</p>
+                         <div class="govuk-form-group" id="application_confirm">
 
-                         <form action="9-confirmation" method="post" novalidate>
+                              <p>I confirm that:</p>
 
-                              <input type="hidden" name="answers-checked" value="true">
-                              <div class="govuk-button-group">
-                                   <button class="govuk-button" data-module="govuk-button" id="application-confirm-continue">Submit my application</button>
+                              <span id="submit_transfer_application_error_text" class="govuk-error-message">
+                                   <span class="govuk-visually-hidden">Error:</span> You must agree to the terms and conditions before submitting this application
+                              </span>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="confirm_accept_want" name="confirm_accept" type="checkbox" value="Truthful">
+                                        <label class="govuk-label govuk-checkboxes__label" for="confirm_accept_want">I want to make the above application so I can receive funding from another business for apprenticeship training</label>
+                                   </div>
                               </div>
 
-                         </form>
+                              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="confirm_accept_info" name="confirm_accept" type="checkbox" value="Comply">
+                                        <label class="govuk-label govuk-checkboxes__label" for="confirm_accept_info">the information I have provided is truthful and accurate</label>
+                                   </div>
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="confirm_accept_comply" name="confirm_accept" type="checkbox" value="Comply">
+                                        <label class="govuk-label govuk-checkboxes__label" for="confirm_accept_comply">I will comply with the <a href="https://www.gov.uk/guidance/apprenticeship-funding-rules" target="_blank" rel="external">apprenticeship funding rules</a>, including not offering or making any payments in return for a transfer of funding</label>
+                                   </div>
+                              </div>
+
+                         </div>
+
+                         <button class="govuk-button" data-module="govuk-button" id="application-confirm-continue">Submit my application</button>
 
                     </div>
                {% else %}

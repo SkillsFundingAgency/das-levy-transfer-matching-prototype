@@ -319,8 +319,11 @@ if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-appli
      $('.pledge-details[data-search=search-item-2]').addClass('applied');
 }
 
+$('.pledge-details[data-search=search-item-3] strong.govuk-tag--green').hide();
+
 if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-3') {
      $('.pledge-details[data-search=search-item-3]').addClass('applied');
+     $('.pledge-details[data-search=search-item-3] strong.govuk-tag--green').show();
 }
 if ($.cookie("pledge-application-completed") == 'true' && $.cookie("pledge-application-id") == 'search-item-4') {
      $('.pledge-details[data-search=search-item-4]').addClass('applied');
