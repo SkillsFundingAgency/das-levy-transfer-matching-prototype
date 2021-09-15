@@ -700,6 +700,15 @@ p {
           //      background: darken(#1d70b8, 10%);
           // }
      }
+     &.black-version {
+          padding: 0.5em 0em 0.5em 2.5em;
+          background: url('../images/download-black.svg') no-repeat 0% 100% white;
+          background-size: contain;
+          div {
+               font-weight: bold;
+               width: 100%;
+          }
+     }
      &.full-width {
           width: auto;
           margin: 0 0 0 0;
