@@ -18,12 +18,12 @@
                <h1 class="govuk-heading-m">Hi "NAME",</h1>
 
 
-               <h2 class="govuk-heading-s">The receiving employer no longer wants to use the funds from pledge <a href="#">910106</a></h2>
+               <h2 class="govuk-heading-s">You application has been approved</h2>
 
-               <p><span class="govuk-tag govuk-tag--red">rejected</span></p>
+               <p><span class="govuk-tag govuk-tag--blue">APPROVED, awaiting your acceptance</span></p>
 
                <p class="govuk-body">
-                    <a href="#" class="">Johnson and Johnson Building Co</a> has rejected the funding.
+                    As the receiving employer you must now either accept or reject your funds to be able to use them.
                </p>
 
                <p><br></p>
@@ -31,7 +31,7 @@
                {% from "govuk/components/button/macro.njk" import govukButton %}
 
                {{ govukButton({
-                    text: "View pledge",
+                    text: "View application",
                     classes: "no-bottom-margin",
                     href: "#"
                }) }}

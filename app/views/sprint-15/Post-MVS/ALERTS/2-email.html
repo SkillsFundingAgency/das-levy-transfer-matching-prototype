@@ -18,12 +18,16 @@
                <h1 class="govuk-heading-m">Hi "NAME",</h1>
 
 
-               <h2 class="govuk-heading-s">You application has been approved</h2>
+               <h2 class="govuk-heading-s">You application has been rejected</h2>
 
-               <p><span class="govuk-tag govuk-tag--blue">APPROVED, awaiting your acceptance</span></p>
+               <p><span class="govuk-tag govuk-tag--red">Unsuccessful</span></p>
 
                <p class="govuk-body">
-                    As the receiving employer you must now either accept or reject your funds to be able to use them.
+                    Just because you have been rejected for this application it doesn't mean that this is the end.
+               </p>
+
+               <p>
+                    There are plenty more apprentice funding pledges out there for you to apply for.
                </p>
 
                <p><br></p>
@@ -31,7 +35,7 @@
                {% from "govuk/components/button/macro.njk" import govukButton %}
 
                {{ govukButton({
-                    text: "View application",
+                    text: "Search pledges",
                     classes: "no-bottom-margin",
                     href: "#"
                }) }}
