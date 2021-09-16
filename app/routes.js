@@ -50,7 +50,7 @@ router.post('/sprint-15A/MVS/receiver/STEP-9-10/decline_application_action', fun
 router.post('/sprint-15/MVS/receiver/STEP-4/accept_funding_form_route', function (req, res) {
      const accept_funding = req.session.data.accept_funding
      if (accept_funding === 'Accept') {
-          res.redirect('/sprint-15/MVS/receiver/STEP-4/4-my-applications')
+          res.redirect('/sprint-15/MVS/receiver/STEP-4/6A-confirm')
      } else if (accept_funding === 'Decline') {
           res.redirect('/sprint-15/MVS/receiver/STEP-4/7-decline')
      }

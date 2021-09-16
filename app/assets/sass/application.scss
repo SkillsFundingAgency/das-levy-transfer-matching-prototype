@@ -18,6 +18,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/pledges";
 @import "patterns/search-pledges";
 @import "patterns/transfers";
+@import "patterns/email";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -25,6 +26,11 @@ $govuk-assets-path: '/govuk/assets/';
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 #main-content {
      padding-top: 0;
+     &.email-page {
+          padding-top: 2em;
+          border-top: 10px solid govuk-colour("blue");
+          margin-top: -10px;
+     }
 }
 
 .clear-cookies {

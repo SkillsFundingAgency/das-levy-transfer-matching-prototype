@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "../../../includes/navigation_sender_home.html" %}
+{% include "../../includes/navigation_sender_home.html" %}
 {% endblock %}
 
 {% block content %}
@@ -21,7 +21,7 @@
 
                <div class="my-account-header">
                     <span class="govuk-caption-xl">Account ID: M99X7Y</span>
-                    <h1 class="govuk-heading-xl">BARRY & BARRY LTD</h1>
+                    <h1 class="govuk-heading-xl">Belhavel Construction Ltd</h1>
                     <hr class="dashboard-heading-separator">
                </div>
 
@@ -31,26 +31,37 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
+               <div class="help-survey setup">
+                    <h3 class="govuk-heading-l">Set up an apprenticeship</h3>
+                    <p>You can set up an apprenticeship for an existing employee or for someone new</p>
+                    <button class="govuk-button" data-module="govuk-button">Setup apprenticeship</button>
+               </div>
+
                <section class="my-account-section">
                     <h3 class="govuk-heading-l">Apprenticeships</h3>
                     <span class="govuk-caption-m">Manage your apprentices, advertise apprenticeships and set training provider permissions</span>
                     <div class="account-wrapper">
+
                          <div>
                               <a href="">Apprentices</a>
                               <p>Add apprentices, update details of existing apprentices, change training providers and authorise payments to training providers.</p>
                          </div>
+
                          <div>
                               <a href="">Your apprenticeship adverts</a>
                               <p>Create adverts to post on Find an apprenticeship, view applications and view previous adverts.</p>
                          </div>
+
                          <div>
                               <a href="">Your training providers</a>
                               <p>Add training providers and manage permissions to choose what they can do on your behalf.</p>
                          </div>
+
                          <div>
                               <a href="">Find apprenticeship training</a>
                               <p>Search for apprenticeships and see details of approved providers who can deliver the training.</p>
                          </div>
+
                     </div>
                </section>
 
@@ -60,19 +71,24 @@
                     <h3 class="govuk-heading-l">Finances</h3>
                     <span class="govuk-caption-m">Manage your apprenticeship funds</span>
                     <div class="account-wrapper">
+
                          <div>
-                              <a href="3-finance">Your finances</a>
-                              <p>View your financial transactions.</p>
+                              <a href="#">Your finances</a>
+                              <p>View your financial transactions and make funding reservations.</p>
                          </div>
+
                          <div>
                               <a href="">Your hire a new apprentice payments</a>
                               <p>Apply for the payment, view applications and change your payment details.</p>
                          </div>
+
                          <div>
-                              <a href="3-transfers">Your transfers</a>
-                              <p>View your 25% transfers balance and manage your transfers, including finding a business to transfer your levy to.</p>
+                              <a href="#">Your transfers</a>
+                              <p>View your apprentices funded by a transfer. Find a large business to fund your apprenticeship training with a transfer.</p>
                          </div>
+
                     </div>
+
                </section>
 
                <hr>
@@ -82,19 +98,24 @@
                     <span class="govuk-caption-m">Manage your account details and team</span>
 
                     <div class="account-wrapper">
+
                          <div>
                               <a href="">Your organisations and agreements</a>
                               <p>Add your organisations that will make contracts with training providers.</p>
                          </div>
+
                          <div>
                               <a href="">Your team</a>
                               <p>Control what your team can do and invite new team members.</p>
                          </div>
+
                          <div>
                               <a href="">PAYE schemes</a>
                               <p>Add or remove PAYE schemes.</p>
                          </div>
+
                     </div>
+
                </section>
 
                <div class="help-survey">
@@ -109,11 +130,7 @@
 
                <div class="tasks-section">
                     <h4 class="govuk-heading-s">Tasks</h4>
-                    <p><a href="4-my-pledges"><span class="number">1</span> Transfer pledge application awaiting your approval</a></p>
-                    <!--
-                    <p><a href="#"><span class="number">1</span> Transfer application has been cancelled</a></p>
-                    <p><a href="#"><span class="number">3</span> You have had some pledge applications</a></p>
-                    -->
+                    <p><a href="#"><span class="number">3</span> Approved transfer pledge funds available to use</a></p>
                </div>
 
           </div>
