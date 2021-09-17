@@ -1,0 +1,72 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row" id="">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Confirm your transfer details</h1>
+
+               <form action="9-confirm" method="post" id="" novalidate>
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">I confirm that I want to transfer:</legend>
+
+                    <section class="employer-details confirm-details">
+                         <h2 class="govuk-heading-m">Up to £18,000 of levy funds to Belhavel<br>Construction Ltd</h2>
+                         <p>To spend on:</p>
+                         <p><strong>Apprenticeship training course:</strong> Bricklayer (level 2)</p>
+                         <p><strong>Maximum cost:</strong> £9,000</p>
+                         <p><strong>Duration:</strong> 30 months</p>
+                         <p><strong>Apprentices:</strong> 1</p>
+                    </section>
+
+                    <div class="govuk-form-group">
+                         <div class="govuk-checkboxes">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">I accept that:</legend>
+                              <div class="govuk-checkboxes__item">
+                                   <input class="govuk-checkboxes__input" id="private-transfer-agreement-1" name="private-transfer-agreement" type="checkbox" value="private-transfer-agreement-1">
+                                   <label class="govuk-label govuk-checkboxes__label" for="private-transfer-agreement-1">I am liable for the total cost of this apprenticeship training and assessment up to <strong>£9,000</strong>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                   <input class="govuk-checkboxes__input" id="private-transfer-agreement-2" name="private-transfer-agreement" type="checkbox" value="private-transfer-agreement-2">
+                                   <label class="govuk-label govuk-checkboxes__label" for="private-transfer-agreement-2"><strong>Belhavel Construction Ltd</strong> will be bound by the apprenticeship funding rules</label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                   <input class="govuk-checkboxes__input" id="private-transfer-agreement-3" name="private-transfer-agreement" type="checkbox" value="private-transfer-agreement-3">
+                                   <label class="govuk-label govuk-checkboxes__label" for="private-transfer-agreement-3">payment to the relevant training provider(s) will leave my account on a monthly basis, before funds for my own apprentices</label>
+                              </div>
+                         </div>
+                    </div>
+
+                    <p><br></p>
+
+                    <div class="govuk-button-group">
+                         <button class="govuk-button" data-module="govuk-button" id="private-transfer-complete">Continue</button>
+                         <a href="3-transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel transfer</a>
+                    </div>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

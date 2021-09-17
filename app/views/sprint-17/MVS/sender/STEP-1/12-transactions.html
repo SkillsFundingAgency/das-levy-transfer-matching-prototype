@@ -1,0 +1,100 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">View transactions</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <p><br></p>
+               <h1 class="govuk-heading-xl">
+                    View transactions
+                    <span class="govuk-caption-xl">May 2021</span>
+               </h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               <div class="sidescrolling-table">
+
+                    <table class="govuk-table">
+                         <thead class="govuk-table__head">
+                              <tr class="govuk-table__row">
+                                   <th scope="col" class="govuk-table__header app-custom-class">Payment date</th>
+                                   <th scope="col" class="govuk-table__header app-custom-class">Description</th>
+                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
+                                   <th scope="col" class="govuk-table__header app-custom-class"></th>
+                              </tr>
+                         </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">28 May 2021</td>
+                              <td class="govuk-table__cell">Expired levy</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">-£22,103.53</td>
+                              <td class="govuk-table__cell" width="100px" style="text-align: right;"><a href="#">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">27 May 2021</td>
+                              <td class="govuk-table__cell">Transfer sent to Tech Industries Limited</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">-£926.32</td>
+                              <td class="govuk-table__cell" width="100px" style="text-align: right;"><a href="#">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">25 May 2021</td>
+                              <td class="govuk-table__cell">Transfer sent to Sikas Brothers Ltd</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">-£600.01</td>
+                              <td class="govuk-table__cell" width="100px" style="text-align: right;"><a href="#">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">21 May 2021</td>
+                              <td class="govuk-table__cell">Transfer sent to Cobalt Corporation</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">-£488.43</td>
+                              <td class="govuk-table__cell" width="100px" style="text-align: right;"><a href="#">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">19 May 2021</td>
+                              <td class="govuk-table__cell">Transfer sent to Villas Aspiration Limited</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">-£976.49</td>
+                              <td class="govuk-table__cell" width="100px" style="text-align: right;"><a href="#">Details</a></td>
+                         </tr>
+                         </tbody>
+                    </table>
+
+               </div>
+
+               <!--
+               <a href="transfers/index" class="govuk-button" data-module="govuk-button">Create a transfers pledge</a>
+               -->
+
+               <br>
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back to finance</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

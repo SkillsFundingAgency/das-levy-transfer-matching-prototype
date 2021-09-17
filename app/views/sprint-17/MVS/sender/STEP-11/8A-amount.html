@@ -1,0 +1,56 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">How much funding do you want to transfer to <span class="highlight-text">Belhavel Construction Ltd</span>?</h1>
+
+               <form method="post" action="8B-amount" id="">
+
+                    <div class="govuk-form-group">
+                         <div class="total">
+                              <p>You can transfer up to:</p>
+                              <p class="number">£150,000</p>
+                         </div>
+                         <div class="wrapper">
+                              <label class="govuk-label" for="transfer-private-amount">How much funding would you like to transfer?</label>
+                              <div class="funding-wrapper">
+                                   <p class="value">£</p>
+                                   <input class="govuk-input govuk-input--width-10" id="transfer-private-amount" name="transfer-private-amount" type="text" data-type="number">
+                              </div>
+                         </div>
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="">Continue</button>
+
+                    <a href="transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel transfer</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

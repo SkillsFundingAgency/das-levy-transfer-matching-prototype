@@ -35,25 +35,29 @@ if (window.console && window.console.info) {
         // })
    });
 
-   if ($('#main-content').hasClass('my-account-wrapper')) {
-        $('#main-content').parent().addClass('my-account-override');
-   }
+if ($('#main-content').hasClass('my-account-wrapper')) {
+     $('#main-content').parent().addClass('my-account-override');
+}
 
-   if ($('div').hasClass('my-account-main-header')) {
-        $('.my-account-main-header').parent().addClass('header-override');
-   }
+if ($('div').hasClass('my-account-main-header')) {
+     $('.my-account-main-header').parent().addClass('header-override');
+}
 
-   if ($("#my-account-hub")) {
-        $('.navigation ul li a').removeClass('selected');
-        $('.navigation ul li a.link-one').addClass('selected');
-   }
-   $("#transfers-hub").parent().removeClass('my-account-wrapper');
-   $("#transfers-hub.form-entry").parent().css('padding-top','0');
+// $('.navigation ul li a').removeClass('selected');
+// $('.navigation ul li a.link-two').addClass('selected');
 
-   if ($("#transfers-hub")) {
-        $('.navigation ul li a').removeClass('selected');
-        $('.navigation ul li a.link-two').addClass('selected');
-   }
+// if ($("#my-account-hub")) {
+//      $('.navigation ul li a').removeClass('selected');
+//      $('.navigation ul li a.link-one').addClass('selected');
+// }
+
+$("#transfers-hub").parent().removeClass('my-account-wrapper');
+$("#transfers-hub.form-entry").parent().css('padding-top','0');
+
+// if ($("#transfers-hub")) {
+//      $('.navigation ul li a').removeClass('selected');
+//      $('.navigation ul li a.link-two').addClass('selected');
+// }
 
    // Transfers
    $('.transfer-values-2019, .transfer-values-2020, .transfer-values-2022, .transfer-values-2023, .transfer-values-2024').hide();
