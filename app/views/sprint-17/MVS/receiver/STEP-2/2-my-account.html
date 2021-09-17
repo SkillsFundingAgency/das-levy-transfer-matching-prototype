@@ -20,9 +20,15 @@
                </div>
 
                <div class="my-account-header">
-                    <span class="govuk-caption-xl">Account ID: M99X7Y</span>
-                    <h1 class="govuk-heading-xl">Belhavel Construction Ltd</h1>
-                    <hr class="dashboard-heading-separator">
+                    {% if data['prototype_user_type'] == "levy_both" or data['prototype_user_type'] == "levy_sender" or data['prototype_user_type'] == "levy_receiver" %}
+                         <span class="govuk-caption-xl">Account ID: M99X7Y</span>
+                         <h1 class="govuk-heading-xl">BARRY & BARRY LTD</h1>
+                         <hr class="dashboard-heading-separator">
+                    {% else %}
+                         <span class="govuk-caption-xl">Account ID: M99X7Y</span>
+                         <h1 class="govuk-heading-xl">Belhavel Construction Ltd</h1>
+                         <hr class="dashboard-heading-separator">
+                    {% endif %}
                </div>
 
           </div>
