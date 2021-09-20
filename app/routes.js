@@ -15,12 +15,12 @@ router.post('/sprint-17/MVS/sender/STEP-7-8/delete_pledge_action', function (req
      }
 })
 
-router.post('/sprint-17/MVS/sender/STEP-1A/delete_pledge_action', function (req, res) {
+router.post('/sprint-17/MVS/sender/STEP-1/delete_pledge_action', function (req, res) {
      const delete_pledge = req.session.data.delete_pledge
      if (delete_pledge === 'Yes') {
-          res.redirect('/sprint-17/MVS/sender/STEP-1A/8-my-pledges')
+          res.redirect('/sprint-17/MVS/sender/STEP-1/8-my-pledges')
      } else {
-          res.redirect('/sprint-17/MVS/sender/STEP-1A/11-pledge-details')
+          res.redirect('/sprint-17/MVS/sender/STEP-1/11-pledge-details')
      }
 })
 
@@ -100,11 +100,11 @@ router.post('/sprint-17/MVS/sender/STEP-11/about_the_transfer', function (req, r
 })
 
 // APPLY FOR TRANSFER
-router.post('/sprint-17/MVS/receiver/STEP-2A/apply_for_transfer', function (req, res) {
+router.post('/sprint-17/MVS/receiver/STEP-2/apply_for_transfer', function (req, res) {
      const apply_for_transfer = req.session.data.apply_for_transfer
      if (apply_for_transfer === 'Yes') {
-          res.redirect('/sprint-17/MVS/receiver/STEP-2A/7-new-transfer-application')
+          res.redirect('/sprint-17/MVS/receiver/STEP-2/7-new-transfer-application')
      } else {
-          res.redirect('/sprint-17/MVS/receiver/STEP-2A/1-signin')
+          res.redirect('/sprint-17/MVS/receiver/STEP-2/1-signin')
      }
 })
