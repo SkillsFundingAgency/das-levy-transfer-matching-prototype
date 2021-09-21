@@ -1,0 +1,60 @@
+.govuk-accordion {
+     .govuk-accordion__section-heading {
+          .value {
+               float: right;
+               display: inline-block;
+               color: $govuk-link-colour;
+               // color: $govuk-secondary-text-colour;
+          }
+     }
+}
+
+.finance-totals {
+     background: govuk-colour("light-grey");
+     padding: 1.5em;
+     margin-bottom: 3em;
+     display: flex;
+     p {
+          margin: 0;
+     }
+     .year {
+          width: 20%;
+          border-right: 1px solid $govuk-border-colour;
+          padding-left: 1em;
+          &:first-of-type {
+               padding-left: 0;
+          }
+          &:last-of-type {
+               border-right: none;
+          }
+          .total {
+               font-weight: bold;
+               background: none;
+               padding: 0;
+               font-size: 2rem;
+          }
+     }
+}
+
+.accordion-total {
+     float: right;
+     margin-bottom: 3em;
+     strong {
+          color: $govuk-link-colour;
+     }
+}
+
+.govuk-accordion__section-content {
+     .govuk-table {
+          margin-bottom: 2em;
+          tbody {
+               tr {
+                    &:last-of-type {
+                         th.govuk-table__header, td.govuk-table__cell {
+                              border-bottom: none;
+                         }
+                    }
+               }
+          }
+     }
+}

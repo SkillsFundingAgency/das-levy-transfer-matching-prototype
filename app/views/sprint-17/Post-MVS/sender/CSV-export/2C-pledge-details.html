@@ -27,11 +27,11 @@
                <p><br></p>
                <h1 class="govuk-heading-xl">
                     Transfer pledge 910106
-                    {% if data['accept_application'] == 'Reject' %}
+                    <!-- {% if data['accept_application'] == 'Reject' %}
                          <span class="govuk-caption-m">Applications for your transfer pledge: <strong>2</strong></span>
                     {% else %}
                          <span class="govuk-caption-m">Applications for your transfer pledge: <strong>3</strong></span>
-                    {% endif %}
+                    {% endif %} -->
                </h1>
           </div>
           <div class="govuk-grid-column-one-third">
@@ -59,7 +59,7 @@
                               <th scope="col" class="govuk-table__header" width="15%">Estimated cost 2021/22</th>
                               <th scope="col" class="govuk-table__header" width="15%">Typical duration</th>
                               <th scope="col" class="govuk-table__header" width="15%">Criteria</th>
-                              <!-- <th scope="col" class="govuk-table__header">Date applied</th> -->
+                              <th scope="col" class="govuk-table__header">Date applied</th>
                               <th scope="col" class="govuk-table__header" width="25%">Status</th>
                          </tr>
                     </thead>
@@ -67,7 +67,7 @@
                          <tr class="govuk-table__row" data-table-row="one">
                               <td class="govuk-table__cell">
                                    <a href="6A-application-details">Belhavel Construction Ltd</a>
-                                   <span class="govuk-caption-m">Date applied: 23/03/2021</span>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
                               </td>
                               <td class="govuk-table__cell">£2,900 <!--<br><p style="color: grey; padding-top: 5px;font-size: 16px;">Length of apprenticeship training: 24 months</p>-->
                               </td>
@@ -81,7 +81,7 @@
                                         &#8226; Level
                                    </p>
                               </td>
-                              <!-- <td class="govuk-table__cell"></td> -->
+                              <td class="govuk-table__cell">23/03/2021</td>
                               <td class="govuk-table__cell">
                                    {% if data['accept_application'] == 'Accept' %}
                                         <strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong>
@@ -95,7 +95,7 @@
                          <tr class="govuk-table__row" data-table-row="two">
                               <td class="govuk-table__cell">
                                    <a href="#">CBJ Engineering</a>
-                                   <span class="govuk-caption-m">Date applied: 15/03/2021</span>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
                               </td>
                               <td class="govuk-table__cell">£36,000 </td>
                               <td class="govuk-table__cell">24 months </td>
@@ -107,13 +107,13 @@
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <!-- <td class="govuk-table__cell"></td> -->
+                              <td class="govuk-table__cell">15/03/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong></td>
                          </tr>
                          <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
                                    <a href="#">Johnson and Johnson Building Co</a>
-                                   <span class="govuk-caption-m">Date applied: 28/03/2021</span>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
                               </td>
                               <td class="govuk-table__cell">£7,500 </td>
                               <td class="govuk-table__cell">24 months </td>
@@ -124,20 +124,20 @@
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <!-- <td class="govuk-table__cell"></td> -->
+                              <td class="govuk-table__cell">28/03/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
                          </tr>
                          <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
                                    <a href="#">123 Windows Co</a>
-                                   <span class="govuk-caption-m">Date applied: 21/03/2021</span>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
                               </td>
                               <td class="govuk-table__cell">£1,000 </td>
                               <td class="govuk-table__cell">18 months </td>
                               <td class="govuk-table__cell">
                                    0% match
                               </td>
-                              <!-- <td class="govuk-table__cell"></td> -->
+                              <td class="govuk-table__cell">21/03/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
                          </tr>
                     </tbody>
