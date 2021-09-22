@@ -19,6 +19,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/search-pledges";
 @import "patterns/transfers";
 @import "patterns/email";
+@import "patterns/accordion";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -717,9 +718,9 @@ p {
           &.full-width {
                width: auto;
                margin-top: 00;
-               padding: 0.5em 0em 0.5em 2.5em;
+               padding: 0.5em 0em 0.5em 2.75em;
                display: inline-block;
-               background: url('../images/download-black.svg') no-repeat 0% 100% white;
+               background: url('../images/finances-black.svg') no-repeat 0% 100% white;
                background-size: contain;
                div {
                     width: 100%;
@@ -747,5 +748,16 @@ p {
           float: right;
           width: 2.5em;
           height: 3em;
+     }
+}
+
+.sub-footer {
+     margin-bottom: -3em;
+     background: rgba(govuk-colour("blue"), 0.05);
+     padding-top: 3em;
+     .footer-wrapper {
+          margin-right: auto;
+          margin-left: auto;
+          max-width: 960px;
      }
 }

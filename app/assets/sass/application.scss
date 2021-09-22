@@ -40,6 +40,10 @@ $govuk-assets-path: '/govuk/assets/';
      bottom: 1em;
 }
 
+.hide-content {
+     display: none;
+}
+
 .post-code-answer {
      text-transform: uppercase;
 }
@@ -709,7 +713,7 @@ p {
      }
      &.black-version {
           padding: 0.5em 0em 0.5em 2.5em;
-          background: url('../images/download-black.svg') no-repeat 0% 100% white;
+          background: url('../images/download-black.svg') no-repeat 0% 100%;
           background-size: contain;
           div {
                font-weight: bold;
@@ -720,7 +724,7 @@ p {
                margin-top: 00;
                padding: 0.5em 0em 0.5em 2.75em;
                display: inline-block;
-               background: url('../images/finances-black.svg') no-repeat 0% 100% white;
+               background: url('../images/finances-black.svg') no-repeat 0% 100%;
                background-size: contain;
                div {
                     width: 100%;
@@ -753,11 +757,18 @@ p {
 
 .sub-footer {
      margin-bottom: -3em;
-     background: rgba(govuk-colour("blue"), 0.05);
+     background: lighten(govuk-colour("blue"), 56.5%);
      padding-top: 3em;
      .footer-wrapper {
           margin-right: auto;
           margin-left: auto;
           max-width: 960px;
+          .downloads {
+               float: left;
+               display: block;
+               width: 100%;
+               clear: both;
+               margin: 2em 0 5em 0;
+          }
      }
 }
