@@ -379,6 +379,9 @@ table {
           display: flex;
           flex-direction: column;
           // justify-content: flex-end;
+          &.low-funds {
+               background: govuk-colour("orange");
+          }
           .small-text {
                &.hover-over {
                     // border-bottom: 1px dotted white;
@@ -491,6 +494,26 @@ table {
      }
 }
 
+.transfer-values-prototype {
+     &.post-mvs-version {
+          .transfer-values {
+               div {
+                    width: 19.1%;
+                    margin-right: 2.5%;
+                    &:last-of-type {
+                         margin-right: 0;
+                    }
+                    &.low-funds {
+                         background: govuk-colour("orange");
+                    }
+                    p.number {
+                         font-size: 2.25rem;
+                    }
+               }
+          }
+     }
+}
+
 @media (max-width: 1024px) {
      // .transfer-values {
      //      background: blue;
@@ -529,6 +552,15 @@ table {
           }
      }
      &.mvs-version {
+          .transfer-values {
+               div {
+                    &.transfer-funds-remaining {
+                         padding: 2%;
+                    }
+               }
+          }
+     }
+     &.post-mvs-version {
           .transfer-values {
                div {
                     &.transfer-funds-remaining {
