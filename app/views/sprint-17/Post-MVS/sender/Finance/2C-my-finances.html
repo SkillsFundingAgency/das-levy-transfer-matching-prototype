@@ -1,0 +1,290 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="1A-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Financial breakdown</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <p><br></p>
+               <h1 class="govuk-heading-xl small-margin-bottom">Financial breakdown</h1>
+          </div>
+          <div class="govuk-grid-column-one-third">
+               <p><br></p>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <!-- ||||||||||||| SECTION 1 - START ||||||||||||| -->
+               <div class="hide-content">
+                    <h2 class="govuk-heading-m small-margin-bottom">Allocated to transfers</h2>
+                    <h3 class="govuk-heading-s no-margin-bottom">Total amount allocated</h3>
+                    <p>Based on approved apprenticeships</p>
+                    <section class="finance-totals">
+                         <div class="year">
+                              <p>FY 2022/23</p>
+                              <p class="total">£114,000</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2023/24</p>
+                              <p class="total">£100,000</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2024/25</p>
+                              <p class="total">£32,000</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2025/26</p>
+                              <p class="total">£0</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2026/27</p>
+                              <p class="total">£0</p>
+                         </div>
+                    </section>
+               </div>
+               <!-- ||||||||||||| SECTION 1 - END ||||||||||||| -->
+
+               <!-- ||||||||||||| SECTION 2 - START ||||||||||||| -->
+               <div class="hide-content">
+                    <h3 class="govuk-heading-s no-margin-bottom">Total balance EY remaining</h3>
+                    <p>How much money is left</p>
+                    <section class="finance-totals">
+                         <div class="year">
+                              <p>FY 2022/23</p>
+                              <p class="total">£114,000</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2023/24</p>
+                              <p class="total">£100,000</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2024/25</p>
+                              <p class="total">£32,000</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2025/26</p>
+                              <p class="total">£0</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2026/27</p>
+                              <p class="total">£0</p>
+                         </div>
+                    </section>
+               </div>
+               <!-- ||||||||||||| SECTION 2 - END ||||||||||||| -->
+
+               <!-- ||||||||||||| SECTION 3 - START ||||||||||||| -->
+               <div class="hide-content">
+                    <h3 class="govuk-heading-s no-margin-bottom">Transfers allowance EY remaining</h3>
+                    <p>How much money is left in your allowance</p>
+                    <section class="finance-totals">
+                         <div class="year">
+                              <p>FY 2022/23</p>
+                              <p class="total">£80,000</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2023/24</p>
+                              <p class="total">£3,000</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2024/25</p>
+                              <p class="total">£0</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2025/26</p>
+                              <p class="total">£0</p>
+                         </div>
+                         <div class="year">
+                              <p>FY 2026/27</p>
+                              <p class="total">£0</p>
+                         </div>
+                    </section>
+               </div>
+               <!-- ||||||||||||| SECTION 3 - END ||||||||||||| -->
+
+          </div>
+     </div>
+
+</div>
+
+<div class="sub-footer">
+
+     <div class="footer-wrapper">
+
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-full">
+
+                    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+                         <!-- ||||||||||||| ACCORDION 1 - START ||||||||||||| -->
+                         <div class="govuk-accordion__section ">
+                              <div class="govuk-accordion__section-header">
+                                   <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">Committed to apprenticeships</span>
+                                        <strong class="value">£4,000</strong>
+                                   </h2>
+                              </div>
+                              <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                                   <table class="govuk-table">
+                                        <caption class="govuk-table__caption govuk-table__caption--s">Showing spend - <span class="key">Sums can include the 20% completion payment</span></caption>
+                                        <thead class="govuk-table__head">
+                                             <tr class="govuk-table__row">
+                                                  <th scope="col" class="govuk-table__header">Pledge ID</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2022/23</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2023/24</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2024/25</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2025/26</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2026/27</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody class="govuk-table__body">
+                                             <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header"><a href="#">80201</a></th>
+                                                  <td class="govuk-table__cell">£4,000</td>
+                                                  <td class="govuk-table__cell">£7,000</td>
+                                                  <td class="govuk-table__cell">£7,000</td>
+                                                  <td class="govuk-table__cell epa-cell">£5,000</td>
+                                                  <td class="govuk-table__cell">-</td>
+                                             </tr>
+                                             <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header">Total:</th>
+                                                  <th scope="row" class="govuk-table__header">£4,000</th>
+                                                  <th scope="row" class="govuk-table__header">£7,000</th>
+                                                  <th scope="row" class="govuk-table__header">£7,000</th>
+                                                  <th scope="row" class="govuk-table__header">£5,000</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                             </tr>
+                                        </tbody>
+                                   </table>
+                              </div>
+                         </div>
+                         <!-- ||||||||||||| ACCORDION 1 - END ||||||||||||| -->
+
+                         <!-- ||||||||||||| ACCORDION 2 - START ||||||||||||| -->
+                         <div class="govuk-accordion__section ">
+                              <div class="govuk-accordion__section-header">
+                                   <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">Direct transfers</span>
+                                        <strong class="value">£600</strong>
+                                   </h2>
+                              </div>
+                              <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                                   <table class="govuk-table">
+                                        <thead class="govuk-table__head">
+                                             <tr class="govuk-table__row">
+                                                  <th scope="col" class="govuk-table__header">Organisation</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2022/23</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2023/24</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2024/25</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2025/26</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2026/27</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody class="govuk-table__body">
+                                             <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header">TinyCo Ltd</th>
+                                                  <td class="govuk-table__cell">£600</td>
+                                                  <td class="govuk-table__cell">£1,000</td>
+                                                  <td class="govuk-table__cell epa-cell">-</td>
+                                                  <td class="govuk-table__cell">-</td>
+                                                  <td class="govuk-table__cell">-</td>
+                                             </tr>
+                                             <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header">Total:</th>
+                                                  <th scope="row" class="govuk-table__header">£600</th>
+                                                  <th scope="row" class="govuk-table__header">£1,000</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                             </tr>
+                                        </tbody>
+                                   </table>
+                              </div>
+                         </div>
+                         <!-- ||||||||||||| ACCORDION 2 - END ||||||||||||| -->
+
+                         <!-- ||||||||||||| ACCORDION 3 - START ||||||||||||| -->
+                         <div class="govuk-accordion__section ">
+                              <div class="govuk-accordion__section-header">
+                                   <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">Already committed</span>
+                                        <strong class="value">£3,000</strong>
+                                   </h2>
+                              </div>
+                              <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                                   <table class="govuk-table">
+                                        <caption class="govuk-table__caption govuk-table__caption--s">Pledges and direct transfers started in previous years - <span class="key">Sums can include the 20% completion payment</span></caption>
+                                        <thead class="govuk-table__head">
+                                             <tr class="govuk-table__row">
+                                                  <th scope="col" class="govuk-table__header">Pledge ID</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2022/23</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2023/24</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2024/25</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2025/26</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2026/27</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody class="govuk-table__body">
+                                             <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header">70129 (2020)</th>
+                                                  <td class="govuk-table__cell">£3,000</td>
+                                                  <td class="govuk-table__cell">£2,000</td>
+                                                  <td class="govuk-table__cell epa-cell">-</td>
+                                                  <td class="govuk-table__cell">-</td>
+                                                  <td class="govuk-table__cell">-</td>
+                                             </tr>
+                                             <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header">Total:</th>
+                                                  <th scope="row" class="govuk-table__header">£3,000</th>
+                                                  <th scope="row" class="govuk-table__header">£2,000</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                             </tr>
+                                        </tbody>
+                                   </table>
+                              </div>
+                         </div>
+                         <!-- ||||||||||||| ACCORDION 3 - END ||||||||||||| -->
+
+                    </div>
+
+                    <h2 class="govuk-heading-l accordion-total">FY 2021/22 total: <strong>£7,600</strong></h2>
+
+                    <div class="downloads">
+
+                         <hr class="govuk-section-break dotted no-margin-top">
+
+                         <a href="#" class="download-csv black-version">
+                              <span class="black-download"></span>
+                              <div>Download forecasted learner levels - excel</div>
+                         </a>
+                    </div>
+
+               </div>
+          </div>
+
+     </div>
+</div>
+
+{% endblock %}
