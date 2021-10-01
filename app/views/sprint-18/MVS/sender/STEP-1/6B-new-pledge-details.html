@@ -1,0 +1,99 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <!-- ////////////////////////// ERROR MESSAGE - START ////////////////////////// -->
+               <div class="govuk-error-summary location-error-message" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+                    <div class="govuk-error-summary__body">
+                         <ul class="govuk-list govuk-error-summary__list">
+                              <li><a href="#location-error">Please check the spelling of your location</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- ////////////////////////// ERROR MESSAGE - END ////////////////////////// -->
+
+               <h1 class="govuk-heading-xl">Add the locations you'd like to fund</h1>
+
+               <form method="post" action="5-new-pledge-details#section-2" id="sender-location-non-javascript">
+
+                    <div class="updates-locations">
+                         <div id="locations">
+
+                              <div class="govuk-form-group first-of-type">
+                                   <label class="govuk-label" for="pledge-location[url0]">Start typing to find the city or town you'd like to pledge funding to.</label>
+                                   <div class="govuk-hint">
+                                        For example, Manchester
+                                   </div>
+                                   <span id="location-input-error" class="govuk-error-message">
+                                        <span class="govuk-visually-hidden">Error:</span> Check the spelling of your location
+                                   </span>
+                                   <input class="govuk-input govuk-input--width-20 location-non-javascript" id="pledge-location[url0]" name="pledge-location[url0]" type="text" spellcheck="false">
+                                   <input class="govuk-input govuk-input--width-20 pledge-location-hidden" id="location-error" name="" type="text" spellcheck="false">
+                              </div>
+
+                              {% for url, location in location -%}
+                                   {% if url != 'url1' %}
+                                   {% if location != '' %}
+                                        <div class="govuk-form-group new-location">
+                                             <label class="govuk-label" for="pledge-location[{{url}}]">Additional location</label>
+                                             <input class="govuk-input govuk-input--width-20 pledge-location-test" name="pledge-location[{{url}}]" type="text" spellcheck="false">
+                                             <p class="govuk-body">
+                                                  <a class="govuk-link govuk-link--no-visited-state" data-remove="[{{url}}]" href="#">remove</a>
+                                             </p>
+                                        </div>
+                                   {% endif %}
+                                   {% endif %}
+                              {%- endfor %}
+                         </div>
+                         <p class="govuk-body govuk-!-margin-bottom-6">
+                              <a class="govuk-link govuk-link--no-visited-state add-location" href="#" id="addAnotherLocation">Add another location</a>
+                         </p>
+                    </div>
+
+                    <div class="govuk-inset-text" id="clear-pledge-location-all-of-england">
+                         <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                   <div class="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="pledge-location-all-of-england" name="pledge-location-all-of-england" type="checkbox" value="England">
+                                             <label class="govuk-label govuk-checkboxes__label" for="pledge-location-all-of-england">Or all of England</label>
+                                        </div>
+                                   </div>
+                              </fieldset>
+                         </div>
+                    </div>
+
+                    <button class="govuk-button pledge-location-continue" data-module="govuk-button">Continue</button>
+                    <a class="govuk-button error-message" data-module="govuk-button">Continue</a>
+
+                    <!-- <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a> -->
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

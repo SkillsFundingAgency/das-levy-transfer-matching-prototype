@@ -1,0 +1,76 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+
+               <h1 class="govuk-heading-xl">Your BARRY & BARRY Ltd (910106) application details</h1>
+
+               <div class="govuk-warning-text application-status-one">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         Application status: <span class="govuk-tag govuk-tag">FUNDS AVAILABLE TO USE</span>
+                         <br>
+                         <br>
+                         Businesses will be able to use the funds pledged from the 27th October.
+                    </strong>
+               </div>
+
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">Funds balance</h2>
+               </div>
+
+               <section class="employer-contact-details">
+                    <p><strong>Accepted:</strong> £18,000 <br>
+                      <strong>Used:</strong> 0 <br>
+                      <strong>Remaining:</strong> £18,000
+                    </p>
+               </section>
+
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">About your apprenticeship training course</h2>
+               </div>
+
+               <section class="employer-contact-details">
+                    <p><strong>Apprenticeship training course:</strong> Bricklayer (level 2)</p>
+                    <p><strong>Number of apprentices:</strong> 2</p>
+                    <p><strong>Estimated total cost:</strong> £18,000</p>
+                    <p><strong>Apprenticeship training to start by:</strong> 10/2021</p>
+               </section>
+
+               <br>
+
+               <form method="post" action="5B-application-details" id="">
+                    <button class="govuk-button" data-module="govuk-button">Use funds</button>
+                    <br>
+                    <a href="4-my-applications" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link no-margin-left">Back</a>
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

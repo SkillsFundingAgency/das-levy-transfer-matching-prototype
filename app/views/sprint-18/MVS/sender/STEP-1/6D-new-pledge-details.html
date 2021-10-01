@@ -1,0 +1,163 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Choose the types of job role you'd like to fund</h1>
+
+               <section class="employer-details" style="padding-bottom: 15px;">
+                    <p class="govuk-heading-s">The current sectors you'd like to support are:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                         <li>Construction</li>
+                         <li>Engineering and manufacturing</li>
+                    </ul>
+               </section>
+
+               <p>
+                    You could choose to support all types of job role in these sectors, or you may only want to fund specific job roles.
+               </p>
+
+               <p>
+                    For example, if you have chosen to support the health and science sector, would you want to support a business administrator apprentice in that sector, or do you only want to support health and science job roles such as nursing?
+               </p>
+
+               <p>
+                    You can decide the type of job roles you want to support below.
+               </p>
+
+               <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Example</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         For example, a software developer apprentice working in a bank, works within the legal, finance and accounting sector, but their type of job role is digital.
+                    </div>
+               </details> -->
+
+               <form method="post" action="5-new-pledge-details#section-2">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <!-- <legend class="govuk-fieldset__legend">Select the categories of training you want to fund.</legend> -->
+                              <div class="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item select-all">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_all" name="_pledge_training" type="checkbox" value="Select all" onClick="toggle(this)">
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_all">All types of job role</label>
+                                   </div>
+
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_agriculture" name="pledge_training" type="checkbox" value="Agriculture, environmental and animal care" aria-describedby="pledge_training_agriculture-hint" {{ checked("pledge_training", "Agriculture, environmental and animal care") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_agriculture">Agriculture, environmental and animal care</label>
+                                        <div id="pledge_training_agriculture-hint" class="govuk-hint govuk-checkboxes__hint">For example, Veterinary nurse, Horticulture or landscape operative, Equine groom, Golf greenkeeper</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_business" name="pledge_training" type="checkbox" value="Business and administration" aria-describedby="pledge_training_business-hint" {{ checked("pledge_training", "Business and administration") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_business">Business and administration</label>
+                                        <div id="pledge_training_business-hint" class="govuk-hint govuk-checkboxes__hint">For example, Team leader or supervisor, Operations or departmental manager, Business administrator, HR support</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_care" name="pledge_training" type="checkbox" value="Care services" aria-describedby="pledge_training_care-hint" {{ checked("pledge_training", "Care services") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_care">Care services</label>
+                                        <div id="pledge_training_care-hint" class="govuk-hint govuk-checkboxes__hint">For example, Social worker, Adult care worker, Children, young people and families practitioner, Youth support worker</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_catering" name="pledge_training" type="checkbox" value="Catering and hospitality" aria-describedby="pledge_training_catering-hint" {{ checked("pledge_training", "Catering and hospitality") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_catering">Catering and hospitality</label>
+                                        <div id="pledge_training_catering-hint" class="govuk-hint govuk-checkboxes__hint">For example, Hospitality team member, Hospitality supervisor, Commis chef, Production chef, Baker</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_construction" name="pledge_training" type="checkbox" value="Construction" aria-describedby="pledge_training_construction-hint" {{ checked("pledge_training", "Construction") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_construction">Construction</label>
+                                        <div id="pledge_training_construction-hint" class="govuk-hint govuk-checkboxes__hint">For example, Installation electrician and maintenance electrician, Carpentry and joinery, Chartered surveyor, Bricklayer</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_creative" name="pledge_training" type="checkbox" value="Creative and design" aria-describedby="pledge_training_creative-hint" {{ checked("pledge_training", "Creative and design") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_creative">Creative and design</label>
+                                        <div id="pledge_training_creative-hint" class="govuk-hint govuk-checkboxes__hint">For example, Junior content producer, Junior journalist, Creative venue technician, Broadcast production assistant</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_digital" name="pledge_training" type="checkbox" value="Digital" aria-describedby="pledge_training_digital-hint" {{ checked("pledge_training", "Digital") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_digital">Digital</label>
+                                        <div id="pledge_training_digital-hint" class="govuk-hint govuk-checkboxes__hint">For example, Infrastructure technician, Digital and technology solutions professional, Data analyst, Software developer</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_education" name="pledge_training" type="checkbox" value="Education and childcare" aria-describedby="pledge_training_education-hint" {{ checked("pledge_training", "Education and childcare") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_education">Education and childcare</label>
+                                        <div id="pledge_training_education-hint" class="govuk-hint govuk-checkboxes__hint">For example, Early years educator, Teaching assistant, Academic professional, Learning and skills teacher</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_engineering" name="pledge_training" type="checkbox" value="Engineering and manufacturing" aria-describedby="pledge_training_engineering-hint" {{ checked("pledge_training", "Engineering and manufacturing") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_engineering">Engineering and manufacturing</label>
+                                        <div id="pledge_training_engineering-hint" class="govuk-hint govuk-checkboxes__hint">For example, Engineering technician, Motor vehicle service and maintenance technician, Metal fabricator, Aerospace engineer</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_hair" name="pledge_training" type="checkbox" value="Hair and beauty" aria-describedby="pledge_training_hair-hint" {{ checked("pledge_training", "Hair and beauty") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_hair">Hair and beauty</label>
+                                        <div id="pledge_training_hair-hint" class="govuk-hint govuk-checkboxes__hint">For example, Hair professional, Beauty therapist, Nail services technician</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_health" name="pledge_training" type="checkbox" value="Health and science" aria-describedby="pledge_training_health-hint" {{ checked("pledge_training", "Health and science") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_health">Health and science</label>
+                                        <div id="pledge_training_health-hint" class="govuk-hint govuk-checkboxes__hint">For example, Healthcare support worker, Dental nurse, Nursing associate, Midwife, Laboratory technician</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_legal" name="pledge_training" type="checkbox" value="Legal, finance and accounting" aria-describedby="pledge_training_legal-hint" {{ checked("pledge_training", "Legal, finance and accounting") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_legal">Legal, finance and accounting</label>
+                                        <div id="pledge_training_legal-hint" class="govuk-hint govuk-checkboxes__hint">For example, Assistant accountant, Mortgage adviser, Payroll administrator, Solicitor, Insurance practitioner</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_protective" name="pledge_training" type="checkbox" value="Protective services" aria-describedby="pledge_training_protective-hint" {{ checked("pledge_training", "Protective services") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_protective">Protective services</label>
+                                        <div id="pledge_training_protective-hint" class="govuk-hint govuk-checkboxes__hint">For example, HM forces serviceperson, Police constable, Operational firefighter, Custody and detention officer</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_sales" name="pledge_training" type="checkbox" value="Sales, marketing and procurement" aria-describedby="pledge_training_sales-hint" {{ checked("pledge_training", "Sales, marketing and procurement") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_sales">Sales, marketing and procurement</label>
+                                        <div id="pledge_training_sales-hint" class="govuk-hint govuk-checkboxes__hint">For example, Customer service practitioner, Digital marketer, Retail team leader, Junior estate agent</div>
+                                   </div>
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_transport" name="pledge_training" type="checkbox" value="Transport and logistics" aria-describedby="pledge_training_transport-hint" {{ checked("pledge_training", "Transport and logistics") }}>
+                                        <label class="govuk-label govuk-checkboxes__label" for="pledge_training_transport">Transport and logistics</label>
+                                        <div id="pledge_training_transport-hint" class="govuk-hint govuk-checkboxes__hint">For example, Large goods vehicle (LGV) driver, Supply chain warehouse operative, Cabin crew, Train driver</div>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button pledge-jobs-continue" data-module="govuk-button">Continue</button>
+
+                    <!-- <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a> -->
+
+               </form>
+
+          </div>
+
+
+          <aside class="govuk-grid-column-one-third">
+
+          </aside>
+
+
+     </div>
+
+</div>
+
+{% endblock %}

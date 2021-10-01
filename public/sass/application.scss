@@ -757,8 +757,8 @@ p {
 
 .sub-footer {
      margin-bottom: -3em;
-     background: lighten(govuk-colour("blue"), 56.5%);
-     padding-top: 3em;
+     // background: lighten(govuk-colour("blue"), 56.5%);
+     padding-top: 1em;
      .footer-wrapper {
           margin-right: auto;
           margin-left: auto;
@@ -770,5 +770,11 @@ p {
                clear: both;
                margin: 2em 0 5em 0;
           }
+     }
+}
+
+.govuk-notification-banner {
+     &.margin-bottom-overwrite {
+          margin-bottom: 30px;
      }
 }
