@@ -33,7 +33,7 @@ router.post('/sprint-18/MVS/sender/STEP-7-8/approve_application_action', functio
 router.post('/sprint-18/MVS/sender/STEP-3/accept_application', function (req, res) {
      const accept_application = req.session.data.accept_application
      if (accept_application === 'Accept') {
-          res.redirect('/sprint-18/MVS/sender/STEP-3/7B-confirmation')
+          res.redirect('/sprint-18/MVS/sender/STEP-3/7A-confirmation')
      } else if (accept_application === 'Reject') {
           res.redirect('/sprint-18/MVS/sender/STEP-3/5-pledge-details')
      }
