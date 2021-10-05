@@ -51,67 +51,70 @@
 
           <div class="govuk-grid-column-two-thirds">
 
-               {% if data['pledge_amount'] %}
-                    <p>You have <strong>1</strong> transfer pledge.</p>
-
-                    <table class="govuk-table">
-                         <thead class="govuk-table__head">
-                              <tr class="govuk-table__row">
-                                   <th scope="col" class="govuk-table__header">Transfer pledge</th>
-                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total 2021/22</th>
-                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
-                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
-                              </tr>
-                         </thead>
-                         <tbody class="govuk-table__body">
-                              <tr class="govuk-table__row">
-                                   <th scope="row" class="govuk-table__header"><a href="11-pledge-details" style="font-weight: 400;">910106</a></th>
-                                   <td class="govuk-table__cell govuk-table__cell--numeric">£65,000</td>
-                                   <td class="govuk-table__cell govuk-table__cell--numeric">£65,000</td>
-                                   <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
-                              </tr>
-                         </tbody>
-                    </table>
-               {% elseif data['delete_pledge'] == 'Yes' %}
+               {% if data['delete_pledge'] == 'Yes' %}
                     <p>You have <strong>0</strong> transfer pledges.</p>
 
                     <table class="govuk-table">
                          <thead class="govuk-table__head">
                               <tr class="govuk-table__row">
                                    <th scope="col" class="govuk-table__header">Transfer pledge</th>
-                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total 2021/22</th>
+                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Pledged to transfers</th>
+                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Approved for apprenticeships</th>
                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
                               </tr>
                          </thead>
                          <tbody class="govuk-table__body">
                               <tr class="govuk-table__row">
-                                   <td class="govuk-table__cell" colspan="4" style="text-align: center;">No transfer pledge created yet</td>
+                                   <td class="govuk-table__cell" colspan="5" style="text-align: center;">No transfer pledge created yet</td>
                               </tr>
                          </tbody>
                     </table>
                {% else %}
-                    <p>You have <strong>0</strong> transfer pledges.</p>
+                    {% if data['pledge_amount'] %}
+                         <p>You have <strong>1</strong> transfer pledge.</p>
 
-                    <table class="govuk-table">
-                         <thead class="govuk-table__head">
-                              <tr class="govuk-table__row">
-                                   <th scope="col" class="govuk-table__header">Transfer pledge</th>
-                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total 2021/22</th>
-                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
-                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
-                              </tr>
-                         </thead>
-                         <tbody class="govuk-table__body">
-                              <tr class="govuk-table__row">
-                                   <td class="govuk-table__cell" colspan="4" style="text-align: center;">No transfer pledge created yet</td>
-                              </tr>
-                         </tbody>
-                    </table>
+                         <table class="govuk-table">
+                              <thead class="govuk-table__head">
+                                   <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Transfer pledge</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Pledged to transfers</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Approved for apprenticeships</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
+                                   </tr>
+                              </thead>
+                              <tbody class="govuk-table__body">
+                                   <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header"><a href="11-pledge-details" style="font-weight: 400;">910106</a></th>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£<span class="value-format">{{ data['pledge_amount'] }}</span></td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">£<span class="value-format">{{ data['pledge_amount'] }}</span></td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    {% else %}
+                         <p>You have <strong>0</strong> transfer pledges.</p>
+
+                         <table class="govuk-table">
+                              <thead class="govuk-table__head">
+                                   <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Transfer pledge</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Pledged to transfers</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Approved for apprenticeships</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
+                                   </tr>
+                              </thead>
+                              <tbody class="govuk-table__body">
+                                   <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell" colspan="5" style="text-align: center;">No transfer pledge created yet</td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    {% endif %}
                {% endif %}
-
-
-
                <br>
 
                <a href="#" class="govuk-button" data-module="govuk-button">Create a transfer pledge</a>

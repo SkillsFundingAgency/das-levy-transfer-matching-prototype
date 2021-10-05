@@ -27,7 +27,7 @@
                <p><br></p>
                <h1 class="govuk-heading-xl">
                     Transfer pledge 910106
-                    <span class="govuk-caption-m">Applications for your transfer pledge: <strong>0</strong></span>
+                    <!-- <span class="govuk-caption-m">Applications for your transfer pledge: <strong>0</strong></span> -->
                </h1>
 
           </div>
@@ -78,11 +78,11 @@
 
                <div class="pledge-values">
                     <h3 class="govuk-heading-l">
-                         <strong>£<span>65,000</span></strong>
+                         <strong>£<span class="value-format">{{ data['pledge_amount'] }}</span></strong>
                          <div class="sub-text">Pledge funds for 2021/22</div>
                     </h3>
                     <h3 class="govuk-heading-l">
-                         <strong>£65,000</strong>
+                         <strong>£<span class="value-format">{{ data['pledge_amount'] }}</span></strong>
                          <div class="sub-text">Remaining pledge funds for 2021/22</div>
                     </h3>
                </div>

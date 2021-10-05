@@ -59,7 +59,7 @@
                                    </span>
                                    <p>
                                         {% if data['pledge_amount'] %}
-                                             £65,000
+                                             £<span class="value-format">{{ data['pledge_amount'] }}</span>
                                         {% else %}
                                              -
                                         {% endif %}
@@ -97,9 +97,9 @@
                                    <p>
                                         {% if data['pledge-location'] %}
                                              <ul class="govuk-list">
-                                                  <li>Manchester</li>
-                                                  <li>Liverpool</li>
-                                                  <li>Leeds</li>
+                                                  {% for key, location in data['pledge-location'] %}
+                                                       <li>{{ location }}</li>
+                                                  {% endfor %}
                                              </ul>
                                         {% else %}
                                              All of England
@@ -113,8 +113,9 @@
                                    <p>
                                         {% if data['pledge_sector'] %}
                                              <ul class="govuk-list govuk-list--bullet">
-                                                  <li>Construction</li>
-                                                  <li>Engineering and manufacturing</li>
+                                                  {% for answer in data['pledge_sector'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
                                              </ul>
                                         {% else %}
                                              All sectors and industries
@@ -128,9 +129,9 @@
                                    <p>
                                         {% if data['pledge_training'] %}
                                              <ul class="govuk-list govuk-list--bullet">
-                                                  <li>Business and administration</li>
-                                                  <li>Construction</li>
-                                                  <li>Digital</li>
+                                                  {% for answer in data['pledge_training'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
                                              </ul>
                                         {% else %}
                                              All apprenticeship job roles
@@ -144,11 +145,11 @@
                                    <p class="pledge_level_all">All qualification levels</p>
                                    <div class="pledge_level_specific">
                                         {% if data['pledge_level'] %}
-                                        <ul class="govuk-list govuk-list--bullet">
-                                             {% for answer in data['pledge_level'] -%}
-                                             <li>{{ answer }}</li>
-                                             {% endfor %}
-                                        </ul>
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['pledge_level'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
                                         {% else %}
                                              All qualification levels
                                         {% endif %}

@@ -56,11 +56,27 @@
                     </div>
                     <div class="transfer-funds">
                          <p><span>Allocated for transfers FY 2021/22</span></p>
-                         <p class="number">£0</p>
+                         {% if data['delete_pledge'] == 'Yes' %}
+                              <p class="number">£0</p>
+                         {% else %}
+                              {% if data['pledge_amount'] %}
+                                   <p class="number">£<span class="value-format">{{ data['pledge_amount'] }}</span></p>
+                              {% else %}
+                                   <p class="number">£0</p>
+                              {% endif %}
+                         {% endif %}
                     </div>
                     <div>
                          <p><span>Remaining transfer funds FY 2021/22</span></p>
-                         <p class="number">£200,000</p>
+                         {% if data['delete_pledge'] == 'Yes' %}
+                              <p class="number">£200,000</p>
+                         {% else %}
+                              {% if data['pledge_amount'] %}
+                                   <p class="number">£<span class="value-format">{{ 200000 - data['pledge_amount'] }}</span></p>
+                              {% else %}
+                                   <p class="number">£200,000</p>
+                              {% endif %}
+                         {% endif %}
                     </div>
                </div>
           </div>
@@ -109,7 +125,15 @@
                     <div class="govuk-grid-column-two-thirds">
                          <h2 class="govuk-heading-m">My transfer pledges</h2>
                          <p>Create a public funding pledge which is shown online so that businesses can apply to you for a transfer of funds.</p>
-                         <div class="govuk-inset-text">You have <strong>0</strong> transfer pledges.</div>
+                         {% if data['delete_pledge'] == 'Yes' %}
+                              <div class="govuk-inset-text">You have <strong>0</strong> transfer pledges.</div>
+                         {% else %}
+                              {% if data['pledge_amount'] %}
+                                   <div class="govuk-inset-text">You have <strong>1</strong> transfer pledge.</div>
+                              {% else %}
+                                   <div class="govuk-inset-text">You have <strong>0</strong> transfer pledges.</div>
+                              {% endif %}
+                         {% endif %}
                          <a href="4-start-new-pledge" class="govuk-button" data-module="govuk-button">Create a transfer pledge</a>
                          <a href="8-my-pledges" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my transfer pledges and applications</a>
                     </div>

@@ -109,13 +109,13 @@ if ($.cookie("pledge-location-complete") == "true" && $.cookie("pledge-location-
 }
 
 // MVS - Sector
-$(".pledge-sector-continue").on("click", function (e) {
-     if ($('input[name=pledge-sector]').is(':checked')) {
+$(".pledge_sector_continue").on("click", function (e) {
+     if ($('input[name=pledge_sector]').is(':checked')) {
           $.cookie("pledge-sector-complete", true, {path:'/'});
      } else {
           $.cookie("pledge-sector-complete", false, {path:'/'});
      }
-     if ($('input[id=pledge-sector-all]').is(':checked')) {
+     if ($('input[id=pledge_sector_all]').is(':checked')) {
           $.cookie("pledge-sector-all", true, {path:'/'});
      } else {
           $.cookie("pledge-sector-all", false, {path:'/'});
@@ -139,19 +139,19 @@ if ($.cookie("pledge-sector-complete") == "true" && $.cookie("pledge-sector-all"
 }
 
 if ($.cookie("pledge-sector-all") == "true") {
-     $('#pledge-sector-all').attr('checked','checked');
+     $('#pledge_sector_all').attr('checked','checked');
 } else {
-     $('#pledge-sector-all').attr('unchecked');
+     $('#pledge_sector_all').attr('unchecked');
 }
 
 // MVS - Jobs
 $(".pledge-jobs-continue").on("click", function (e) {
-     if ($('input[name=pledge-training]').is(':checked')) {
+     if ($('input[name=pledge_training]').is(':checked')) {
           $.cookie("pledge-jobs-complete", true, {path:'/'});
      } else {
           $.cookie("pledge-jobs-complete", false, {path:'/'});
      }
-     if ($('input[id=pledge-training-all]').is(':checked')) {
+     if ($('input[id=pledge_training_all]').is(':checked')) {
           $.cookie("pledge-training-all", true, {path:'/'});
      } else {
           $.cookie("pledge-training-all", false, {path:'/'});
@@ -171,9 +171,9 @@ if ($.cookie("pledge-jobs-complete") == "true" && $.cookie("pledge-training-all"
 }
 
 if ($.cookie("pledge-training-all") == "true") {
-     $('#pledge-training-all').attr('checked','checked');
+     $('#pledge_training_all').attr('checked','checked');
 } else {
-     $('#pledge-training-all').attr('unchecked');
+     $('#pledge_training_all').attr('unchecked');
 }
 
 

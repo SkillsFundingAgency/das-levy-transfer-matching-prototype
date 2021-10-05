@@ -26,8 +26,9 @@
                <section class="employer-details" style="padding-bottom: 15px;">
                     <p class="govuk-heading-s">The current sectors you'd like to support are:</p>
                     <ul class="govuk-list govuk-list--bullet">
-                         <li>Construction</li>
-                         <li>Engineering and manufacturing</li>
+                         {% for answer in data['pledge_sector'] -%}
+                         <li>{{ answer }}</li>
+                         {% endfor %}
                     </ul>
                </section>
 
@@ -59,7 +60,7 @@
                               <!-- <legend class="govuk-fieldset__legend">Select the categories of training you want to fund.</legend> -->
                               <div class="govuk-checkboxes">
                                    <div class="govuk-checkboxes__item select-all">
-                                        <input class="govuk-checkboxes__input" id="pledge_training_all" name="_pledge_training" type="checkbox" value="Select all" onClick="toggle(this)">
+                                        <input class="govuk-checkboxes__input" id="pledge_training_all" name="_pledge_training" type="checkbox" value="Select all" onClick="toggle(this)" {{ checked("_pledge_training", "Select all") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_training_all">All types of job role</label>
                                    </div>
 

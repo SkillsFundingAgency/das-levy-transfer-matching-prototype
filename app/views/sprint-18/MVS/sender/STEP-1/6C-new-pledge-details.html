@@ -30,7 +30,7 @@
                               <!-- <legend class="govuk-fieldset__legend">Select the business sectors you want to fund.</legend> -->
                               <div class="govuk-checkboxes">
                                    <div class="govuk-checkboxes__item select-all">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_all" name="_pledge_sector" type="checkbox" value="All sectors and industries" onClick="toggle(this)">
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_all" name="_pledge_sector" type="checkbox" value="All sectors and industries" onClick="toggle(this)" {{ checked("_pledge_sector", "Select all") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_all">All sectors and industries</label>
                                    </div>
 

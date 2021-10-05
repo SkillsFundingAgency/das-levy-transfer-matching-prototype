@@ -37,7 +37,7 @@
                <form method="post" action="5-new-pledge-details#section-2" id="sender-location-non-javascript">
 
                     <div class="updates-locations">
-                         <div id="locations">
+                         <div id="locations" data-location-count="{{numberOfLocations}}">
 
                               <div class="govuk-form-group first-of-type">
                                    <label class="govuk-label" for="pledge-location[url0]">Start typing to find the city or town you'd like to pledge funding to.</label>
@@ -56,7 +56,7 @@
                                    {% if location != '' %}
                                         <div class="govuk-form-group new-location">
                                              <label class="govuk-label" for="pledge-location[{{url}}]">Additional location</label>
-                                             <input class="govuk-input govuk-input--width-20 pledge-location-test" name="pledge-location[{{url}}]" type="text" spellcheck="false">
+                                             <input class="govuk-input govuk-input--width-20 pledge-location-test" id="pledge-location[{{url}}]" name="pledge-location[{{url}}]" type="text" spellcheck="false">
                                              <p class="govuk-body">
                                                   <a class="govuk-link govuk-link--no-visited-state" data-remove="[{{url}}]" href="#">remove</a>
                                              </p>
@@ -75,7 +75,7 @@
                               <fieldset class="govuk-fieldset">
                                    <div class="govuk-checkboxes">
                                         <div class="govuk-checkboxes__item">
-                                             <input class="govuk-checkboxes__input" id="pledge-location-all-of-england" name="pledge-location-all-of-england" type="checkbox" value="England">
+                                             <input class="govuk-checkboxes__input" id="pledge-location-all-of-england" name="pledge-location-all-of-england" type="checkbox" value="England" {{checked('pledge-location-all-of-england','England')}}>
                                              <label class="govuk-label govuk-checkboxes__label" for="pledge-location-all-of-england">Or all of England</label>
                                         </div>
                                    </div>
