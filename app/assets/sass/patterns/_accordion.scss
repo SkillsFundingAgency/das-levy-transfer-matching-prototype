@@ -8,15 +8,18 @@
           }
      }
      &.hide-open-all {
-          .govuk-accordion__open-all {
-               display: none;
+          // .govuk-accordion__open-all {
+          //      display: none;
+          // }
+          .accordion-heading {
+               margin: 0.5em 0;
           }
      }
 }
 
 .accordion-heading {
      .value {
-          float: right; 
+          float: right;
      }
 }
 

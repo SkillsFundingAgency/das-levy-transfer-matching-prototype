@@ -7,6 +7,17 @@
                // color: $govuk-secondary-text-colour;
           }
      }
+     // &.hide-open-all {
+     //      .govuk-accordion__open-all {
+     //           display: none;
+     //      }
+     // }
+}
+
+.accordion-heading {
+     .value {
+          float: right;
+     }
 }
 
 .finance-totals {
