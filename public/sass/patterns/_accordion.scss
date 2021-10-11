@@ -7,11 +7,14 @@
                // color: $govuk-secondary-text-colour;
           }
      }
-     // &.hide-open-all {
-     //      .govuk-accordion__open-all {
-     //           display: none;
-     //      }
-     // }
+     &.hide-open-all {
+          // .govuk-accordion__open-all {
+          //      display: none;
+          // }
+          .accordion-heading {
+               margin: 0.5em 0;
+          }
+     }
 }
 
 .accordion-heading {
@@ -61,18 +64,56 @@
      }
      .govuk-table {
           margin-bottom: 3em;
-          tbody {
+          thead {
                tr {
-                    &:last-of-type {
-                         th.govuk-table__header, td.govuk-table__cell {
-                              border-bottom: none;
-                              // &.epa-cell {
-                              //      background: darken(#f1f7f9, 7.5%);
-                              //      padding-left: 0.5em;
-                              //      border-right: 4px solid darken(#f1f7f9, 5%);
-                              // }
+                    th, td {
+                         &.this-year {
+                              padding-left: 0.5em;
+                              background: govuk-colour("light-grey");
+                              // border-right: 1em solid white;
+                              // border-left: 1em solid white;
+                         }
+                         &:nth-of-type(3n) {
+                              padding-left: 0.5em;
                          }
                     }
+               }
+          }
+          tbody {
+               tr, th {
+                    th, td {
+                         &.this-year {
+                              padding-left: 0.5em;
+                              background: govuk-colour("light-grey");
+                              // border-right: 1em solid white;
+                              // border-left: 1em solid white;
+                         }
+                         &:nth-of-type(2n) {
+                              padding-left: 0.5em;
+                         }
+                    }
+                    // td {
+                    //      padding-left: 0.5em;
+                    // }
+               }
+          }
+          tfoot {
+               th.govuk-table__header, td.govuk-table__cell {
+                    border-bottom: none;
+                    &.this-year {
+                         padding-left: 0.5em;
+                         background: govuk-colour("light-grey");
+                         // border-right: 1em solid white;
+                         // border-left: 1em solid white;
+                    }
+                    &:nth-of-type(3n) {
+                         padding-left: 0.5em;
+                    }
+                    // &.epa-cell {
+                    //      background: darken(#f1f7f9, 7.5%);
+                    //      padding-left: 0.5em;
+                    //      border-right: 4px solid darken(#f1f7f9, 5%);
+                    // }
                }
           }
           &.empty-table {

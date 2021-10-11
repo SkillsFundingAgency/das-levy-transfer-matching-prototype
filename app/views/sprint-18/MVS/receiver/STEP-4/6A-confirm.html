@@ -29,9 +29,22 @@
 
                <h2 class="govuk-heading-m">What happens next</h2>
 
-               <p>You can now add apprentices for this transfer of funding from <strong>Barry & Barry Ltd (910106)</strong>.</p>
+               <p>You can now add apprentices for this transfer of funding from
+                    {% if data['pledge-application-standard'] %}
+                         <strong class="pledge-name-answer">####</strong>
+                    {% else %}
+                         <strong>BARRY & BARRY Ltd (910106)</strong>
+                    {% endif %}
+               .</p>
 
-               <p><strong>Barry & Barry Ltd (910106)</strong> will need to review and approve the details after you have added them.</p>
+               <p>
+                    {% if data['pledge-application-standard'] %}
+                         <strong class="pledge-name-answer">####</strong>
+                    {% else %}
+                         <strong>BARRY & BARRY Ltd (910106)</strong>
+                    {% endif %}
+                    will need to review and approve the details after you have added them.
+               </p>
 
                <p>
                     <a href="4-my-applications" class="govuk-link">View my applications</a>

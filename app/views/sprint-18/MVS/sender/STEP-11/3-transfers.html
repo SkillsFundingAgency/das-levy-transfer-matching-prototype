@@ -38,12 +38,28 @@
                          <p class="number">£200,000</p>
                     </div>
                     <div class="transfer-funds">
-                         <p><span>Allocated for transfers FY 2021/22</span></p>
-                         <p class="number">£120,000</p>
+                         <p><span>Pledges and direct transfers FY 2021/22</span></p>
+                         {% if data['delete_pledge'] == 'Yes' %}
+                              <p class="number">£0</p>
+                         {% else %}
+                              {% if data['pledge_amount'] %}
+                                   <p class="number">£<span class="value-format">{{ data['pledge_amount'] }}</span></p>
+                              {% else %}
+                                   <p class="number">£0</p>
+                              {% endif %}
+                         {% endif %}
                     </div>
                     <div>
                          <p><span>Remaining transfer funds FY 2021/22</span></p>
-                         <p class="number">£80,000</p>
+                         {% if data['delete_pledge'] == 'Yes' %}
+                              <p class="number">£200,000</p>
+                         {% else %}
+                              {% if data['pledge_amount'] %}
+                                   <p class="number">£<span class="value-format">{{ 200000 - data['pledge_amount'] }}</span></p>
+                              {% else %}
+                                   <p class="number">£200,000</p>
+                              {% endif %}
+                         {% endif %}
                     </div>
                </div>
           </div>
@@ -55,12 +71,28 @@
                          <p class="number">£200,000</p>
                     </div>
                     <div class="transfer-funds">
-                         <p><span>Allocated for transfers FY 2021/22</span></p>
-                         <p class="number">£0</p>
+                         <p><span>Pledges and direct transfers FY 2021/22</span></p>
+                         {% if data['delete_pledge'] == 'Yes' %}
+                              <p class="number">£0</p>
+                         {% else %}
+                              {% if data['pledge_amount'] %}
+                                   <p class="number">£<span class="value-format">{{ data['pledge_amount'] }}</span></p>
+                              {% else %}
+                                   <p class="number">£0</p>
+                              {% endif %}
+                         {% endif %}
                     </div>
                     <div>
                          <p><span>Remaining transfer funds FY 2021/22</span></p>
-                         <p class="number">£200,000</p>
+                         {% if data['delete_pledge'] == 'Yes' %}
+                              <p class="number">£200,000</p>
+                         {% else %}
+                              {% if data['pledge_amount'] %}
+                                   <p class="number">£<span class="value-format">{{ 200000 - data['pledge_amount'] }}</span></p>
+                              {% else %}
+                                   <p class="number">£200,000</p>
+                              {% endif %}
+                         {% endif %}
                     </div>
                </div>
           </div>
@@ -94,6 +126,12 @@
                          </div>
                     </details>
                </div>
+               <div class="govuk-grid-column-one-third">
+                    <a href="#" class="download-csv black-version full-width">
+                         <span class="black-download"></span>
+                         <div>View my financial breakdown</div>
+                    </a>
+               </div>
           </div>
      {% endif %}
      <!-- ////////////// EXTRA INFO - END //////////////-->
@@ -124,7 +162,11 @@
                     <div class="govuk-grid-column-two-thirds">
                          <h2 class="govuk-heading-m">My transfer pledges</h2>
                          <p>Create a public funding pledge which is shown online so that businesses can apply to you for a transfer of funds.</p>
-                         <div class="govuk-inset-text">You have <strong>0</strong> transfer pledges.</div>
+                         {% if data['pledge_amount'] %}
+                              <div class="govuk-inset-text">You have <strong>1</strong> transfer pledge.</div>
+                         {% else %}
+                              <div class="govuk-inset-text">You have <strong>0</strong> transfer pledges.</div>
+                         {% endif %}
                          <a href="#" class="govuk-button" data-module="govuk-button">Create a transfer pledge</a>
                          <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my transfer pledges and applications</a>
                     </div>

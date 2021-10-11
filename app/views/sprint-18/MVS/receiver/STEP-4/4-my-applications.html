@@ -50,13 +50,15 @@
 
                                    <p>The approval status shows the status of each application.</p>
 
-                                   <p>It could be:
-                                   <li>awaiting approval </li>
-                                   <li>approved, awaiting your acceptance </li>
-                                   <li>unsuccessful </li>
-                                   <li>funds available to use </li>
-                                   <li>withdrawn </li>
-                                   </p>
+                                   <p>It could be:</p>
+
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        <li>awaiting approval </li>
+                                        <li>approved, awaiting your acceptance </li>
+                                        <li>unsuccessful </li>
+                                        <li>funds available to use </li>
+                                        <li>withdrawn </li>
+                                   </ul>
 
                                    <p>If your application has been approved, you'll need to accept the funding offer by selecting the opportunity.</p>
 
@@ -82,16 +84,30 @@
 
                          <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
-                                   <strong>
-                                        {% if data['accept_funding'] == 'Accept' %}
-                                             <a href="5B-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
-                                        {% else %}
-                                             <a href="5A-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
-                                        {% endif %}
-                                   </strong>
-                                   <span class="govuk-caption-m">Date: 07/27/2021 20:42pm</span>
+                                   {% if data['pledge-application-standard'] %}
+                                        <strong>
+                                             {% if data['accept_funding'] == 'Accept' %}
+                                                  <a href="5B-application-details" class="pledge-name-answer govuk-link--no-visited-state">####</a>
+                                             {% else %}
+                                                  <a href="5A-application-details" class="pledge-name-answer govuk-link--no-visited-state">####</a>
+                                             {% endif %}
+                                        </strong>
+                                   {% else %}
+                                        <strong>
+                                             {% if data['accept_funding'] == 'Accept' %}
+                                                  <a href="5B-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
+                                             {% else %}
+                                                  <a href="5A-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
+                                             {% endif %}
+                                        </strong>
+                                   {% endif %}
+                                   <p class="govuk-caption-m">Date: <span id="date-stamp">####</span></p>
                               </td>
-                              <td class="govuk-table__cell">£18,000</td>
+                              {% if data['pledge-application-standard'] %}
+                                   <td class="govuk-table__cell">£<span class="total-cost-multiplied value-format">####</span></td>
+                              {% else %}
+                                   <td class="govuk-table__cell">£18,000</td>
+                              {% endif %}
                               <td class="govuk-table__cell" width="200px;" style="text-align: left">
                                    {% if data['accept_funding'] == 'Accept' %}
                                         <span class="govuk-tag">Funds available to use</span>

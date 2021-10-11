@@ -46,7 +46,7 @@
 
                <h1 class="govuk-heading-xl">
                     Transfer pledge 910106
-                    <span class="govuk-caption-m">Applications for your transfer pledge: <strong>4</strong></span>
+                    <!-- <span class="govuk-caption-m">Applications for your transfer pledge: <strong>4</strong></span> -->
                </h1>
 
           </div>
@@ -160,7 +160,13 @@
 
                <div style="width: auto;float: right;margin-top: -0.5em;">
                     <h3 class="govuk-heading-l" style="display: inline-block;">
-                         <strong>£<span>65,000</span></strong>
+                         <strong>
+                              {% if data['pledge_amount'] %}
+                                   £<span class="value-format">{{ data['pledge_amount'] }}</span>
+                              {% else %}
+                                   £65,000
+                              {% endif %}
+                         </strong>
                          <br>
                          <div style="font-size: 16px; font-weight: normal;">
                               <span>Pledge funds for 2021/22</span>
@@ -170,7 +176,21 @@
                          &nbsp;&nbsp;
                     </h3>
                     <h3 class="govuk-heading-l" style="display: inline-block;">
-                         <strong><span style="color: #1d70b8">£29,000</span></strong>
+                         <strong>
+                              {% if data['pledge_amount'] %}
+                                   {% if data['accept_application'] == 'Accept' %}
+                                        <strong style="color: #1d70b8">£27,100</strong>
+                                   {% else %}
+                                        <strong style="color: #1d70b8">£30,000</strong>
+                                   {% endif %}
+                              {% else %}
+                                   {% if data['accept_application'] == 'Accept' %}
+                                        <span style="color: #1d70b8">£20,000</span>
+                                   {% else %}
+                                        <span style="color: #1d70b8">£29,000</span>
+                                   {% endif %}
+                              {% endif %}
+                         </strong>
                          <br>
                          <div style="font-size: 16px; font-weight: normal;">
                               <span>Remaining pledge funds for 2021/22</span>

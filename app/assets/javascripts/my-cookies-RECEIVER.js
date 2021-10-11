@@ -155,6 +155,10 @@ if ($.cookie("application-apprentice-details") == 'true') {
      // $('#apprenticeship-cost .value-format').text($.cookie("application-total-cost"));
 }
 
+var totalCost = $.cookie("application-total-cost");
+totalCost = totalCost.replace(/\,/g,'');
+$('.total-cost-multiplied').text(totalCost * 3);
+
 // Confirm - 2 - business details
 $('.before-business-content').show();
 $('.after-business-content').hide();

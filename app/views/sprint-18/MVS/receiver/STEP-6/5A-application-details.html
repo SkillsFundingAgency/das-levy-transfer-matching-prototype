@@ -23,8 +23,11 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
-
-               <h1 class="govuk-heading-xl">Your BARRY & BARRY Ltd (910106) application details</h1>
+               {% if data['pledge-application-standard'] %}
+                    <h1 class="govuk-heading-xl">Your <span class="pledge-name-answer">####</span> application details</h1>
+               {% else %}
+                    <h1 class="govuk-heading-xl">Your BARRY & BARRY Ltd (910106) application details</h1>
+               {% endif %}
 
                <div class="govuk-warning-text application-status-one">
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -42,9 +45,16 @@
                </div>
 
                <section class="employer-contact-details">
-                    <p><strong>Accepted:</strong> £18,000 <br>
-                      <strong>Used:</strong> 0 <br>
-                      <strong>Remaining:</strong> £18,000
+                    <p>
+                         {% if data['pledge-application-standard'] %}
+                              <strong>Accepted:</strong> £<span class="total-cost-multiplied value-format">####</span> <br>
+                              <strong>Used:</strong> 0 <br>
+                              <strong>Remaining:</strong> £<span class="total-cost-multiplied value-format">####</span>
+                         {% else %}
+                              <strong>Accepted:</strong> £18,000 <br>
+                              <strong>Used:</strong> 0 <br>
+                              <strong>Remaining:</strong> £18,000
+                         {% endif %}
                     </p>
                </section>
 
@@ -53,10 +63,38 @@
                </div>
 
                <section class="employer-contact-details">
-                    <p><strong>Apprenticeship training course:</strong> Bricklayer (level 2)</p>
-                    <p><strong>Number of apprentices:</strong> 2</p>
-                    <p><strong>Estimated total cost:</strong> £18,000</p>
-                    <p><strong>Apprenticeship training to start by:</strong> 10/2021</p>
+                    <p>
+                         <strong>Apprenticeship training course:</strong>
+                         {% if data['pledge-application-standard'] %}
+                              {{ data['pledge-application-standard'] }}
+                         {% else %}
+                              Bricklayer (level 2)
+                         {% endif %}
+                    </p>
+                    <p>
+                         <strong>Number of apprentices:</strong>
+                         {% if data['pledge-application-apprentices'] %}
+                              {{ data['pledge-application-apprentices'] }}
+                         {% else %}
+                              2
+                         {% endif %}
+                    </p>
+                    <p>
+                         <strong>Estimated total cost:</strong>
+                         {% if data['pledge-application-standard'] %}
+                              £<span class="total-cost-multiplied value-format">####</span>
+                         {% else %}
+                              £18,000
+                         {% endif %}
+                    </p>
+                    <p>
+                         <strong>Apprenticeship training to start by:</strong>
+                         {% if data['pledge-application-start-month'] %}
+                              {{ data['pledge-application-start-month'] }}/{{ data['pledge-application-start-year'] }}
+                         {% else %}
+                              10/2021
+                         {% endif %}
+                    </p>
                </section>
 
                <br>

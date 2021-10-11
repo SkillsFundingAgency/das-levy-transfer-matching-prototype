@@ -25,15 +25,29 @@
                     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                     <strong class="govuk-warning-text__text">
                          <span class="govuk-warning-text__assistive">Warning</span>
-                         Businesses will be able to use the funds pledged from the 27th October.
+                         You will be able to use the funds pledged from the 27th October.
                     </strong>
                </div>
 
                <h2 class="govuk-heading-m">What happens next</h2>
 
-               <p>You can now add apprentices for this transfer of funding from <strong>Barry & Barry Ltd (910106)</strong>.</p>
+               <p>
+                    You can now add apprentices for this transfer of funding from
+                    {% if data['pledge-application-standard'] %}
+                         <strong class="pledge-name-answer">####</strong>
+                    {% else %}
+                         <strong>BARRY & BARRY Ltd (910106)</strong>
+                    {% endif %}
+               .</p>
 
-               <p><strong>Barry & Barry Ltd (910106)</strong> will need to review and approve the details after you have added them.</p>
+               <p>
+                    {% if data['pledge-application-standard'] %}
+                         <strong class="pledge-name-answer">####</strong>
+                    {% else %}
+                         <strong>BARRY & BARRY Ltd (910106)</strong>
+                    {% endif %}
+                    will need to review and approve the details after you have added them.
+               </p>
 
                <p>
                     <a href="5B-application-details" class="govuk-link">Add apprentices</a>

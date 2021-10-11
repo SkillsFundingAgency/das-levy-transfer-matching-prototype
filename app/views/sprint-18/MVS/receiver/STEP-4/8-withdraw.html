@@ -23,7 +23,15 @@
 
                <h2 class="govuk-heading-m">What happens next</h2>
 
-               <p>Your application to <strong>BARRY & BARRY Ltd (910106)</strong> has been withdrawn. You can apply to another opportunity.</p>
+               <p>
+                    Your application to
+                    {% if data['pledge-application-standard'] %}
+                         <strong class="pledge-name-answer">####</strong>
+                    {% else %}
+                         <strong>BARRY & BARRY Ltd (910106)</strong>
+                    {% endif %}
+                    has been withdrawn. You can apply to another opportunity.
+               </p>
 
                <p>
                     <a href="../STEP-2A/5-search-pledge" class="govuk-link">View other opportunities</a>

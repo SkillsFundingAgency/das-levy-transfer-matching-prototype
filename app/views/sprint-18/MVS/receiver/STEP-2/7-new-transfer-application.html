@@ -93,8 +93,8 @@
                                    </span>
                                    <p>
                                         {% if data['pledge-application-apprentices'] %}
-                                             <!-- {{ data['pledge-application-apprentices'] }} -->
-                                             2
+                                             {{ data['pledge-application-apprentices'] }}
+                                             <!-- 2 -->
                                         {% else %}
                                              -
                                         {% endif %}
@@ -106,8 +106,8 @@
                                    </span>
                                    <p>
                                         {% if data['pledge-application-start-month'] %}
-                                             <!-- {{ data['pledge-application-start-month'] }}/{{ data['pledge-application-start-year'] }} -->
-                                             10/2021
+                                             {{ data['pledge-application-start-month'] }}/{{ data['pledge-application-start-year'] }}
+                                             <!-- 10/2021 -->
                                         {% else %}
                                              -
                                         {% endif %}
@@ -119,8 +119,8 @@
                                    </span>
                                    <p>
                                         {% if data['pledge-application-training-provider'] %}
-                                             <!-- {{ data['pledge-application-training-provider'] }} -->
-                                             No
+                                             {{ data['pledge-application-training-provider'] }}
+                                             <!-- No -->
                                         {% else %}
                                              -
                                         {% endif %}
@@ -132,9 +132,9 @@
                               <!-- <button class="govuk-button" data-module="govuk-button"><span class="icon add white"></span>Add another apprenticeship</button> -->
                               <h3 class="govuk-heading-m apprenticeship-total">
                                    <!-- Total: <strong>£<span class="total-cost">2,900</span></strong> -->
-                                   Total for this FY: <strong>£2,900</strong>
+                                   Total for this FY: <strong>£<span class="total-cost">####</span></strong>
                                    <br>
-                                   <span class="small-text">Total over length of apprenticeship: <strong>£20,000</strong></span>
+                                   <span class="small-text">Total over length of apprenticeship: <strong>£<span class="total-cost-multiplied value-format">####</span></strong></span>
                               </h3>
                               <p><br></p>
                               <p><br></p>
@@ -163,11 +163,15 @@
                                    </span>
                                    <p>
                                         {% if data['search-sector'] %}
-                                             <!-- {{ data['search-sector'] }} -->
-                                             <ul class="govuk-list">
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['search-sector'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                             <!-- <ul class="govuk-list">
                                                   <li>Construction</li>
                                                   <li>Engineering and manufacturing</li>
-                                             </ul>
+                                             </ul> -->
                                         {% else %}
                                              -
                                         {% endif %}
@@ -179,7 +183,11 @@
                                    </span>
                                    <p>
                                         {% if data['select_apprentice_location'] %}
-                                             {{ data['select_apprentice_location'] }}
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['select_apprentice_location'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
                                         {% else %}
                                              -
                                         {% endif %}
@@ -207,8 +215,8 @@
                                    </span>
                                    <p>
                                         {% if data['pledge-application-more-details'] %}
-                                             <!-- {{ data['pledge-application-more-details'] }} -->
-                                             We are a small family business established 5 years ago in Manchester. We would like to expand by taking on an apprentice bricklayer. This would be our first apprentice. We would be very grateful for this opportunity, please do not hesitate to contact us if you have any questions.
+                                             {{ data['pledge-application-more-details'] }}
+                                             <!-- We are a small family business established 5 years ago in Manchester. We would like to expand by taking on an apprentice bricklayer. This would be our first apprentice. We would be very grateful for this opportunity, please do not hesitate to contact us if you have any questions. -->
                                         {% else %}
                                              -
                                         {% endif %}
@@ -236,8 +244,8 @@
                                    </span>
                                    <p>
                                         {% if data['pledge-application-firstname'] and data['pledge-application-lastname'] %}
-                                             <!-- {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }} -->
-                                             John Doe
+                                             {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}
+                                             <!-- John Doe -->
                                         {% else %}
                                              -
                                         {% endif %}
@@ -249,11 +257,15 @@
                                    </span>
                                    <p>
                                         {% if data['pledge-application-email'] %}
-                                             <!-- {{ data['pledge-application-email'] }} -->
                                              <ul class="govuk-list">
+                                                  {% for key, applicationEmail in data['pledge-application-email'] %}
+                                                       <li>{{ applicationEmail }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                             <!-- <ul class="govuk-list">
                                                   <li>john.doe@belhavel.com</li>
                                                   <li>john.doe2@belhavel.com</li>
-                                             </ul>
+                                             </ul> -->
                                         {% else %}
                                              -
                                         {% endif %}
@@ -265,8 +277,8 @@
                                    </span>
                                    <p>
                                         {% if data['pledge-application-phonenumber'] %}
-                                             <!-- {{ data['pledge-application-phonenumber'] }} -->
-                                             01234567890
+                                             {{ data['pledge-application-phonenumber'] }}
+                                             <!-- 01234567890 -->
                                         {% else %}
                                              -
                                         {% endif %}
@@ -278,8 +290,8 @@
                                    </span>
                                    <p>
                                         {% if data['pledge-application-website'] %}
-                                             <!-- {{ data['pledge-application-website'] }} -->
-                                             www.belhavel.com
+                                             {{ data['pledge-application-website'] }}
+                                             <!-- www.belhavel.com -->
                                         {% else %}
                                              -
                                         {% endif %}
@@ -345,15 +357,15 @@
 
           <div class="govuk-grid-column-one-third">
                <section class="employer-details side-panel">
-                    <p class="govuk-heading-s">BARRY & BARRY Ltd (910106) wants to fund apprenticeship training in:</p>
+                    <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
                     <p class="details">
-                         Location: <strong >Manchester, Liverpool, Leeds</strong><br>
-                         Sector: <strong>Construction, Engineering and manufacturing</strong><br>
-                         Type of job role: <strong>Business and administration, Construction, Digital</strong><br>
-                         Level: <strong>All</strong>
+                         Location: <strong class="pledge-location-answer">####</strong><br>
+                         Sector: <strong class="pledge-sector-answer">####</strong><br>
+                         Type of job role: <strong class="pledge-training-answer">####</strong><br>
+                         Level: <strong class="pledge-level-answer">####</strong>
                     </p>
                     <div class="total">
-                         <p class="govuk-heading-s">Total funding available:<br>up to £65,000 in 2021/22</p>
+                         <p class="govuk-heading-s">Total funding available:<br>up to £<span class="pledge-value-answer value-format">####</span> in 2021/22</p>
                     </div>
                </section>
           </div>
