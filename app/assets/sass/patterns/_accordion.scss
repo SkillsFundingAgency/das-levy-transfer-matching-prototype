@@ -52,8 +52,9 @@
 }
 
 .accordion-total {
-     float: right;
-     margin-bottom: 0;
+     // float: left;
+     text-align: right;
+     margin-bottom: 0.25em;
      strong {
           color: $govuk-link-colour;
      }
