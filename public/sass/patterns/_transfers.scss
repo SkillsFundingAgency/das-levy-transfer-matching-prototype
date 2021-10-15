@@ -496,18 +496,25 @@ table {
 
 .transfer-values-prototype {
      &.post-mvs-version {
+          margin-top: 2em;
           .transfer-values {
                div {
                     width: 19.1%;
                     margin-right: 2.5%;
+                    background: none;
+                    padding: 1% 2%;
+                    border-left: 2px solid $govuk-border-colour;
                     &:last-of-type {
                          margin-right: 0;
                     }
                     &.low-funds {
                          background: govuk-colour("orange");
                     }
-                    p.number {
-                         font-size: 2.25rem;
+                    p {
+                         color: $govuk-text-colour;
+                         &.number {
+                              font-size: 2.25rem;
+                         }
                     }
                }
           }

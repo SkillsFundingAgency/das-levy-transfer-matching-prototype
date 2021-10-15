@@ -16,7 +16,7 @@
           <ol class="govuk-breadcrumbs__list">
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
-               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3A-transfers">Transfers</a></li>
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Financial breakdown</a></li>
           </ol>
      </div>
@@ -106,17 +106,24 @@
 
      </div>
 
-     <!-- <div class="govuk-grid-row">
+     <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
                <p><br></p>
-               <p style="border-top: 2px solid #b1b4b6;margin-top: 20px;margin-bottom: 40px;"></p>
                <h2 class="govuk-heading-m small-margin-bottom">Your transfer commitments in future financial years</h2>
           </div>
-     </div> -->
+     </div>
 
      <div class="transfer-values-prototype post-mvs-version">
 
           <div class="transfer-values">
+               <div>
+                    <p><span>Committed FY 2021/22</span></p>
+                    {% if data['pledge_amount'] %}
+                         <p class="number">£<span class="value-format">{{ (114000+data['pledge_amount'] | int) / 4 }}</span></p>
+                    {% else %}
+                         <p class="number">£106,000</p>
+                    {% endif %}
+               </div>
                <div>
                     <p><span>Committed FY 2022/23</span></p>
                     {% if data['pledge_amount'] %}
