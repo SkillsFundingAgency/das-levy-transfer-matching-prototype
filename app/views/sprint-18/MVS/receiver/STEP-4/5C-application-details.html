@@ -21,6 +21,32 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
+               <!-- //////// ERROR SUMMARY 1 - START ////////-->
+               <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" id="withdraw_application_error_1">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+                    <div class="govuk-error-summary__body">
+                         <ul class="govuk-list govuk-error-summary__list">
+                              <li>
+                                   <a href="#withdraw_application">You must confirm that you want to withdraw the application</a>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- //////// ERROR SUMMARY 1 - END ////////-->
+
+               <!-- //////// ERROR SUMMARY 2 - START ////////-->
+               <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" id="withdraw_application_error_2">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+                    <div class="govuk-error-summary__body">
+                         <ul class="govuk-list govuk-error-summary__list">
+                              <li>
+                                   <a href="#withdraw_application">You must select to either withdraw the application or keep the application</a>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- //////// ERROR SUMMARY 2 - END ////////-->
+
                <h1 class="govuk-heading-xl">Your Finders Keepers Ltd (684509) application details</h1>
 
                <div class="govuk-warning-text application-status-one">
@@ -55,9 +81,13 @@
 
                <form method="post" action="withdraw_application" id="withdraw_application">
 
-                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios" id="">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios" id="withdraw_application_form">
 
                          <h2 class="govuk-heading-m">Do you want to withdraw this application?</h2>
+
+                         <span id="withdraw_application_error_2_error_text" class="govuk-error-message">
+                              <span class="govuk-visually-hidden">Error:</span> You must select to either withdraw the application or keep the application
+                         </span>
 
                          <div class="govuk-radios__item">
                               <input class="govuk-radios__input" id="withdraw_application_withdraw" name="withdraw_application" type="radio" value="Withdraw" data-aria-controls="conditional-withdraw_application_withdraw">
@@ -66,6 +96,10 @@
 
                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-withdraw_application_withdraw">
                               <div class="govuk-form-group">
+
+                                   <span id="withdraw_application_error_1_error_text" class="govuk-error-message">
+                                        <span class="govuk-visually-hidden">Error:</span> You must confirm that you want to withdraw the application
+                                   </span>
 
                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                         <div class="govuk-checkboxes__item">
@@ -86,11 +120,19 @@
 
                     <BR>
 
-                    <button class="govuk-button" data-module="govuk-button" id="accept_funding">Continue</button>
-                    <br>
-                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link no-margin-left">Back</a>
+                    <div class="form-action">
+                         <button class="govuk-button" data-module="govuk-button" id="withdraw_application">Continue</button>
+                         <br>
+                         <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link no-margin-left">Back</a>
+                    </div>
 
                </form>
+
+               <div class="error-action">
+                    <button class="govuk-button" data-module="govuk-button" id="withdraw_application_error">Continue</button>
+                    <br>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link no-margin-left">Back</a>
+               </div>
 
           </div>
 

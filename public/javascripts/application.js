@@ -913,7 +913,46 @@ $('input[name="confirm_accept"], input[name="confirm_decline"]').on("click", fun
      }
 });
 
+// WITHDRAW APPLICATION
+$('#withdraw_application_error_1, #withdraw_application_error_2, #withdraw_application_error_1_error_text, #withdraw_application_error_2_error_text').hide();
+$('.form-action').hide();
 
+$('#withdraw_application_error').on("click", function (e) {
+     var radioValue = $('input[name="withdraw_application"]:checked').val()
+     if ($('input[name="withdraw_application"]').is(':checked') && $('input[name="confirm_withdraw"]').is(':checked')) {
+          $('#withdraw_application_form').removeClass('govuk-form-group--error');
+          $('#withdraw_application_error_1, #withdraw_application_error_2, #withdraw_application_error_1_error_text, #withdraw_application_error_2_error_text').hide();
+     }
+
+     if ($('input[name="withdraw_application"]').is(':not(:checked)') && $('input[name="confirm_withdraw"]').is(':not(:checked)')) {
+          window.scrollTo(0, 0);
+          $('#withdraw_application_form').addClass('govuk-form-group--error');
+          // Error 2
+          $('#withdraw_application_error_2, #withdraw_application_error_2_error_text').show();
+          // Error 1
+          $('#withdraw_application_error_1, #withdraw_application_error_1_error_text').hide();
+     }
+
+     if ($('input[name="withdraw_application"]').is(':checked') && $('input[name="confirm_withdraw"]').is(':not(:checked)')) {
+          window.scrollTo(0, 0);
+          $('#withdraw_application_form').addClass('govuk-form-group--error');
+          // Error 2
+          $('#withdraw_application_error_2, #withdraw_application_error_2_error_text').hide();
+          // Error 1
+          $('#withdraw_application_error_1, #withdraw_application_error_1_error_text').show();
+     }
+
+});
+
+$('input[name="confirm_withdraw"]').on("click", function (e) {
+     if ($('input[name="withdraw_application"]').is(':checked') && $('input[name="confirm_withdraw"]').is(':checked')) {
+          $('.form-action').show();
+          $('.error-action').hide();
+     } else {
+          $('.form-action').hide();
+          $('.error-action').show();
+     }
+});
 
 // !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
