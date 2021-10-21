@@ -1,0 +1,117 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Approving the apprentice details</h1>
+
+               <form method="post" action="7B-confirmation" id="approve-pledge-form">
+
+                    <p>
+                         You have approved the pledge application. The apprentice details will be added by Behavel Construction Ltd to use the funds. This step needs further approval. There are two options you can choose from:
+                    </p>
+
+                    <p>
+                         If you choose to check and review the apprentice details it means:
+                    </p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                         <li>you will get a prompt to look at the apprentice details when they’re added by the employer</li>
+                         <li>you will be able to check the standard, the cost and dates</li>
+                         <li>you can ask the employer to amend details</li>
+                         <li>you have the option to reject the application</li>
+                    </ul>
+
+                    <p>
+                         If you choose to automatically approve the apprentice details this means:
+                    </p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                         <li>you will not review and check the apprentice details</li>
+                         <li>you will not review and check the apprentice standard, cost or start date for the application</li>
+                         <li>the cost will not exceed the apprentice price</li>
+                    </ul>
+
+                    <p><br></p>
+
+                    {{ govukRadios({
+                    idPrefix: "approve-application",
+                         name: "approve-application",
+                         fieldset: {
+                              legend: {
+                                   text: "How do you want to approve the apprentice details?",
+                                   isPageHeading: false,
+                                   classes: "govuk-fieldset__legend--s"
+                              }
+                         },
+                         items: [
+                              {
+                                   value: "approve all",
+                                   text: "Check and review apprentice details"
+                              },
+                              {
+                                   value: "approve with manual",
+                                   text: "Approve the apprentice details"
+                              }
+                         ]
+                    }) }}
+
+                    <button class="govuk-button" data-module="govuk-button" id="approve-pledge-continue">Continue</button>
+
+                    <!-- <br>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-back-link">Back</a> -->
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+               <!-- <section class="employer-details side-panel applications-details">
+                    <p class="govuk-heading-s">Application details:</p>
+                    <p class="details">
+                         <span class="icon tick"></span>Location: <strong>Birmingham, West Midlands</strong><br>
+                         <span class="icon tick"></span>Sector: <strong>Construction company</strong><br>
+                         <span class="icon tick"></span>Category of training: <strong>Bricklaying</strong><br>
+                         <span class="icon tick"></span>Level: <strong>2</strong>
+                    </p>
+                    <p class="details">
+                         Apprentices: <strong>1</strong><br>
+                         Estimated duration: <strong>30 months</strong><br>
+                         Start by: <strong>March 2021</strong><br>
+                         Do they have a training provider?: <strong>No</strong><br>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Estimated total: £9,000</p>
+                    </div>
+               </section> -->
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

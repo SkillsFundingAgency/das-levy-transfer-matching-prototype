@@ -1,0 +1,89 @@
+
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+     GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+     <!-- <div class="email-banner">
+          <img src="/public/images/ESFA-logo.jpg" alt="Education & Skills Funding Agency">
+     </div> -->
+{% endblock %}
+
+{% block content %}
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <h1 class="govuk-heading-m">Hi "NAME",</h1>
+
+
+               <h2 class="govuk-heading-s">You can now review applications by approving or rejecting them</h2>
+
+               <p class="govuk-body">
+                    Here are this weeks applications to pledge <a href="#">910106</a>
+               </p>
+
+               <p></p>
+
+               <!-- Entry 1 - START -->
+               <hr>
+               <p></p>
+
+               <p>
+                    <a href="#" class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-24">Belhavel Construction Ltd</a>
+               </p>
+
+               <p class="govuk-body">
+                    <strong>Estimated cost 2021/22:</strong> £2,900
+                    <br>
+                    <strong>Typical duration:</strong> 30 months
+                    <br>
+                    <strong>Criteria:</strong> 100% match
+               </p>
+               <!-- Entry 1 - END -->
+
+               <!-- Entry 2 - START -->
+               <hr>
+               <p></p>
+
+               <p>
+                    <a href="#" class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-24">CBJ Engineering</a>
+               </p>
+
+               <p class="govuk-body">
+                    <strong>Estimated cost 2021/22:</strong> £36,000
+                    <br>
+                    <strong>Typical duration:</strong> 24 months
+                    <br>
+                    <strong>Criteria:</strong> 75% match
+               </p>
+               <!-- Entry 2 - END -->
+
+               <!-- Entry 3 - START -->
+               <hr>
+               <p></p>
+
+               <p>
+                    <a href="#" class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-font-size-24">Johnson and Johnson Building Co</a>
+               </p>
+
+               <p class="govuk-body">
+                    <strong>Estimated cost 2021/22:</strong> £7,500
+                    <br>
+                    <strong>Typical duration:</strong> 24 months
+                    <br>
+                    <strong>Criteria:</strong> 50% match
+               </p>
+               <!-- Entry 3 - END -->
+
+               <hr>
+
+               <p><br></p>
+
+
+          </div>
+
+     </div>
+
+{% endblock %}

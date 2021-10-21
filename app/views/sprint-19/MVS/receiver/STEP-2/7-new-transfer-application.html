@@ -1,0 +1,377 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <!-- //////// ERROR SUMMARY 1 - START ////////-->
+               <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" id="submit_transfer_application_error">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+                    <div class="govuk-error-summary__body">
+                         <ul class="govuk-list govuk-error-summary__list">
+                              <li>
+                                   <a href="#application_confirm">You must agree to the terms and conditions before submitting this application</a>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- //////// ERROR SUMMARY 1 - END ////////-->
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+               <h1 class="govuk-heading-xl">Create a transfers application</h1>
+          </div>
+
+          <div class="govuk-grid-column-two-thirds application-core">
+
+               <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         All your details will be passed to the large business offering a transfer of funding. Please ensure that the information you provide is truthful and accurate.
+                         <br>
+                         <br>
+                         Funds from a transfer will be available to use from 27th October.
+                    </strong>
+               </div>
+
+               <ol class="app-task-list">
+
+                    <!-- SECTION - ONE - START -->
+                    <li class="apprentice-section-one" id="section-1">
+                         <h2 class="app-task-list__section">
+                              <span class="app-task-list__section-number number-one">1. </span>
+                              Apprenticeship training
+                              {% if data['pledge-application-standard'] %}
+                                   <strong class="govuk-tag app-task-list__tag">completed</strong>
+                              {% else %}
+                                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag">not started</strong>
+                              {% endif %}
+                         </h2>
+                         <ul class="app-task-list__items">
+                              <li class="app-task-list__item">
+                                   {% if data['pledge-application-standard'] %}
+                                        <h3 class="govuk-heading-s">Apprenticeship one</h3>
+                                   {% else %}
+
+                                   {% endif %}
+                                   <span class="app-task-list__task-name">
+                                        <a href="8A-new-transfer-application">Job role</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-application-standard'] %}
+                                             {{ data['pledge-application-standard'] }}
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8A-new-transfer-application">Number of apprentices</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-application-apprentices'] %}
+                                             {{ data['pledge-application-apprentices'] }}
+                                             <!-- 2 -->
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8A-new-transfer-application">Start by</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-application-start-month'] %}
+                                             {{ data['pledge-application-start-month'] }}/{{ data['pledge-application-start-year'] }}
+                                             <!-- 10/2021 -->
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8A-new-transfer-application">Have you found a training provider?</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-application-training-provider'] %}
+                                             {{ data['pledge-application-training-provider'] }}
+                                             <!-- No -->
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                         </ul>
+
+                         {% if data['pledge-application-standard'] %}
+                              <!-- <button class="govuk-button" data-module="govuk-button"><span class="icon add white"></span>Add another apprenticeship</button> -->
+                              <h3 class="govuk-heading-m apprenticeship-total">
+                                   <!-- Total: <strong>£<span class="total-cost">2,900</span></strong> -->
+                                   Total for this FY: <strong>£<span class="total-cost">####</span></strong>
+                                   <br>
+                                   <span class="small-text">Total over length of apprenticeship: <strong>£<span class="total-cost-multiplied value-format">####</span></strong></span>
+                              </h3>
+                              <p><br></p>
+                              <p><br></p>
+                         {% else %}
+
+                         {% endif %}
+
+                    </li>
+                    <!-- SECTION - ONE - END -->
+
+                    <!-- SECTION - TWO - START -->
+                    <li id="section-2">
+                         <h2 class="app-task-list__section">
+                              <span class="app-task-list__section-number">2. </span>
+                              Your business details
+                              {% if data['search-sector'] %}
+                                   <strong class="govuk-tag app-task-list__tag">completed</strong>
+                              {% else %}
+                                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag">not started</strong>
+                              {% endif %}
+                         </h2>
+                         <ul class="app-task-list__items">
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8B-new-transfer-application-1">Sector</a>
+                                   </span>
+                                   <p>
+                                        {% if data['search-sector'] %}
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['search-sector'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                             <!-- <ul class="govuk-list">
+                                                  <li>Construction</li>
+                                                  <li>Engineering and manufacturing</li>
+                                             </ul> -->
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8B-new-transfer-application-1">Location</a>
+                                   </span>
+                                   <p>
+                                        {% if data['select_apprentice_location'] %}
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['select_apprentice_location'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                         </ul>
+                    </li>
+                    <!-- SECTION - TWO - END -->
+
+                    <!-- SECTION - THREE - START -->
+                    <li id="section-3">
+                         <h2 class="app-task-list__section">
+                              <span class="app-task-list__section-number">3. </span>
+                              About your apprenticeship
+                              {% if data['pledge-application-more-details'] %}
+                                   <strong class="govuk-tag app-task-list__tag">completed</strong>
+                              {% else %}
+                                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag">optional</strong>
+                              {% endif %}
+                         </h2>
+                         <ul class="app-task-list__items">
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8C-new-transfer-application">More detail</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-application-more-details'] %}
+                                             {{ data['pledge-application-more-details'] }}
+                                             <!-- We are a small family business established 5 years ago in Manchester. We would like to expand by taking on an apprentice bricklayer. This would be our first apprentice. We would be very grateful for this opportunity, please do not hesitate to contact us if you have any questions. -->
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                         </ul>
+                    </li>
+                    <!-- SECTION - THREE - END -->
+
+                    <!-- SECTION - FOUR - START -->
+                    <li id="section-4">
+                         <h2 class="app-task-list__section">
+                              <span class="app-task-list__section-number">4. </span>
+                              Contact details
+                              {% if data['pledge-application-firstname'] %}
+                                   <strong class="govuk-tag app-task-list__tag">completed</strong>
+                              {% else %}
+                                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag">not started</strong>
+                              {% endif %}
+                         </h2>
+                         <ul class="app-task-list__items">
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8D-new-transfer-application">Name</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-application-firstname'] and data['pledge-application-lastname'] %}
+                                             {{ data['pledge-application-firstname'] }} {{ data['pledge-application-lastname'] }}
+                                             <!-- John Doe -->
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8D-new-transfer-application">Email address</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-application-email'] %}
+                                             <ul class="govuk-list">
+                                                  {% for key, applicationEmail in data['pledge-application-email'] %}
+                                                       <li>{{ applicationEmail }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                             <!-- <ul class="govuk-list">
+                                                  <li>john.doe@belhavel.com</li>
+                                                  <li>john.doe2@belhavel.com</li>
+                                             </ul> -->
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8D-new-transfer-application">Phone number</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-application-phonenumber'] %}
+                                             {{ data['pledge-application-phonenumber'] }}
+                                             <!-- 01234567890 -->
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="8D-new-transfer-application">Business website</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-application-website'] %}
+                                             {{ data['pledge-application-website'] }}
+                                             <!-- www.belhavel.com -->
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                         </ul>
+                    </li>
+                    <!-- SECTION - FOUR - END -->
+
+               </ol>
+
+               {% if data['pledge-application-standard'] and data['search-sector'] and data['pledge-application-firstname'] %}
+                    <div id="submit_transfer_application">
+
+                         <div class="govuk-warning-text funding-over">
+                              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                              <strong class="govuk-warning-text__text"><span class="govuk-warning-text__assistive">Warning</span> Your application exceeds the transfer funding set by <span class="pledge-name-answer">####</span>. We will notify them of this.</strong>
+                         </div>
+
+                         <h2 class="govuk-heading-m">Submit your transfers application</h2>
+
+                         <div class="govuk-form-group" id="application_confirm">
+
+                              <p>I confirm that:</p>
+
+                              <span id="submit_transfer_application_error_text" class="govuk-error-message">
+                                   <span class="govuk-visually-hidden">Error:</span> You must agree to the terms and conditions before submitting this application
+                              </span>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="confirm_accept_want" name="confirm_accept" type="checkbox" value="Truthful">
+                                        <label class="govuk-label govuk-checkboxes__label" for="confirm_accept_want">I want to make the above application so I can receive funding from another business for apprenticeship training</label>
+                                   </div>
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="confirm_accept_info" name="confirm_accept" type="checkbox" value="Comply">
+                                        <label class="govuk-label govuk-checkboxes__label" for="confirm_accept_info">the information I have provided is truthful and accurate</label>
+                                   </div>
+                              </div>
+
+                              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                   <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="confirm_accept_comply" name="confirm_accept" type="checkbox" value="Comply">
+                                        <label class="govuk-label govuk-checkboxes__label" for="confirm_accept_comply">I will comply with the <a href="https://www.gov.uk/guidance/apprenticeship-funding-rules" target="_blank" rel="external">apprenticeship funding rules</a>, including not offering or making any payments in return for a transfer of funding</label>
+                                   </div>
+                              </div>
+
+                         </div>
+
+                         <button class="govuk-button" data-module="govuk-button" id="application-confirm-continue">Submit my application</button>
+
+                    </div>
+               {% else %}
+
+               {% endif %}
+
+               <a href="#" class="govuk-link govuk-link--no-visited-state">Cancel application</a>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel">
+                    <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
+                    <p class="details">
+                         Location: <strong class="pledge-location-answer">####</strong><br>
+                         Sector: <strong class="pledge-sector-answer">####</strong><br>
+                         Type of job role: <strong class="pledge-training-answer">####</strong><br>
+                         Level: <strong class="pledge-level-answer">####</strong>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available:<br>up to £<span class="pledge-value-answer value-format">####</span> in 2021/22</p>
+                    </div>
+               </section>
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My applications</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">My applications</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               {% if data['pledge-application-standard'] and data['search-sector'] and data['pledge-application-firstname'] %}
+                    <p>You have submitted <strong class="number-of-applications">1</strong> transfer application.</p>
+
+                    <div class="accepted-text-hide">
+                         <details class="govuk-details" data-module="govuk-details">
+                              <summary class="govuk-details__summary">
+                                   <span class="govuk-details__summary-text">More details about the status</span>
+                              </summary>
+                              <div class="govuk-details__text">
+
+                                   <section>
+                                        <p>The approval status shows the status of each application.</p>
+                                        <p>It could be:</p>
+
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             <li>awaiting approval </li>
+                                             <li>approved, awaiting your acceptance </li>
+                                             <li>unsuccessful </li>
+                                             <li>funds available to use </li>
+                                             <li>withdrawn </li>
+                                        </ul>
+
+                                        <p>If your application has been approved, you'll need to accept the funding offer by selecting the opportunity.</p>
+
+                                        <p>Funds will show as available to use if your application has been approved and you have acccepted the offer. You'll then need to add your apprentices and their training provider to your account.</p>
+
+                                        <p>The status shows as withdrawn if you have cancelled your application or decided to decline an offer of funding.</p>
+
+                                   </section>
+
+                              </div>
+                         </details>
+                    </div>
+               {% else %}
+                    <p>You have <strong class="number-of-applications">0</strong> transfer applications.</p>
+               {% endif %}
+
+               <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Opportunity</th>
+                              <th scope="col" class="govuk-table__header">Estimated total cost</th>
+                              <th scope="col" class="govuk-table__header" width="200px;"> &nbsp; Approval status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                         {% if data['pledge-application-standard'] and data['search-sector'] and data['pledge-application-firstname'] %}
+                              <tr class="govuk-table__row">
+                                   <td class="govuk-table__cell">
+                                        <strong>
+                                             <a href="#" class="pledge-name-answer govuk-link--no-visited-state">####</a>
+                                             <br>
+                                        </strong>
+                                        <p class="govuk-caption-m">Date: <span id="date-stamp">####</span></p>
+                                   </td>
+                                   <td class="govuk-table__cell">£<span class="total-cost-multiplied value-format">####</span></td>
+                                   <td class="govuk-table__cell" width="200px;">
+                                        <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                                   </td>
+                              </tr>
+                         {% else %}
+                              <tr class="govuk-table__row">
+                                   <td class="govuk-table__cell" colspan="4" style="text-align: center;">No transfer applications yet</td>
+                              </tr>
+                         {% endif %}
+
+                    </tbody>
+               </table>
+
+               <br>
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back to transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

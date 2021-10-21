@@ -1,0 +1,111 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+
+               <h1 class="govuk-heading-xl">Add contact details</h1>
+
+               <p>Add your contact details so they can be shared with <strong class="pledge-name-answer main-title">BARRY & BARRY LTD (910106)</strong>.</p>
+
+               <p>They may contact you with follow-up questions about your application.</p>
+
+               <form method="post" action="7-new-transfer-application#section-4" id="">
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="pledge-application-firstname">First name</label>
+                         <input class="govuk-input govuk-input--width-20" id="pledge-application-firstname" name="pledge-application-firstname" type="text" value="{{ data['pledge-application-firstname'] }}">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="pledge-application-lastname">Last name</label>
+                         <input class="govuk-input govuk-input--width-20" id="pledge-application-lastname" name="pledge-application-lastname" type="text" value="{{ data['pledge-application-lastname'] }}">
+                    </div>
+
+                    <div class="application-emails">
+                         <div id="pledge-application-emails" data-application-email-count="{{numberOfApplicationEmails}}">
+
+                              <div class="govuk-form-group first-of-type">
+                                   <label class="govuk-label" for="pledge-application-email[url1]">Email address</label>
+                                   <input class="govuk-input govuk-input--width-20" id="pledge-application-email[url1]" name="pledge-application-email[url1]" type="email" spellcheck="false" value="{{ data['pledge-application-email[url1]'] }}">
+                              </div>
+
+                              {% for url, applicationEmail in applicationEmail -%}
+                                   {% if url != 'url1' %}
+                                   {% if applicationEmail != '' %}
+                                        <div class="govuk-form-group">
+                                             <label class="govuk-label" for="pledge-application-email[{{url}}]">Additional contact</label>
+                                             <input class="govuk-input govuk-input--width-20" id="pledge-application-email[{{url}}]" name="pledge-application-email[{{url}}]" type="email" spellcheck="false" value="{{ data['pledge-application-email[{{url}}]'] }}">
+                                             <p class="govuk-body">
+                                                  <a class="govuk-link govuk-link--no-visited-state" data-remove="pledge-application-email[{{url}}]" href="#">remove</a>
+                                             </p>
+                                        </div>
+                                   {% endif %}
+                                   {% endif %}
+                              {%- endfor %}
+                         </div>
+                         <p class="govuk-body govuk-!-margin-bottom-6">
+                              <a class="govuk-link govuk-link--no-visited-state add-emails" href="#" id="addAnotherApplicationEmail">Add additional contact</a>
+                         </p>
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="pledge-application-phonenumber">Phone number</label>
+                         <input class="govuk-input govuk-input--width-20" id="pledge-application-phonenumber" name="pledge-application-phonenumber" type="text" value="{{ data['pledge-application-phonenumber'] }}">
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label" for="pledge-application-website">Business website (if you have one)</label>
+                         <input class="govuk-input govuk-input--width-20" id="pledge-application-website" name="pledge-application-website" type="text" value="{{ data['pledge-application-website'] }}">
+                    </div>
+
+                    <p><br></p>
+
+                    <button class="govuk-button" data-module="govuk-button" id="application-contact-details">Continue</button>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a>
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel">
+                    <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
+                    <p class="details">
+                         Location: <strong class="pledge-location-answer">####</strong><br>
+                         Sector: <strong class="pledge-sector-answer">####</strong><br>
+                         Type of job role: <strong class="pledge-training-answer">####</strong><br>
+                         Level: <strong class="pledge-level-answer">####</strong>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available:<br>up to £<span class="pledge-value-answer value-format">####</span> in 2021/22</p>
+                    </div>
+               </section>
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

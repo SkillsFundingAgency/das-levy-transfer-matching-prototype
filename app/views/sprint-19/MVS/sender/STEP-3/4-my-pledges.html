@@ -1,0 +1,125 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3A-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My transfer pledges</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <p><br></p>
+               <h1 class="govuk-heading-xl">My transfer pledges</h1>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               {% if data['pledge_amount'] %}
+                    <p>You have <strong>4</strong> transfer pledges.</p>
+               {% else %}
+                    <p>You have <strong>3</strong> transfer pledges.</p>
+               {% endif %}
+
+               <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Transfer pledge</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Pledged to transfers</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Approved for apprenticeships</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header"><a href="5-pledge-details" style="font-weight: 400;">910106</a></th>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['pledge_amount'] %}
+                                        £<span class="value-format">{{ data['pledge_amount'] }}</span>
+                                   {% else %}
+                                        £65,000
+                                   {% endif %}
+                              </td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['pledge_amount'] %}
+                                        £<span class="value-format">16500</span>
+                                   {% else %}
+                                        £36,000
+                                   {% endif %}
+                              </td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['pledge_amount'] %}
+                                        {% if data['accept_application'] == 'Accept' %}
+                                             £27,100
+                                        {% else %}
+                                             £30,000
+                                        {% endif %}
+                                   {% else %}
+                                        {% if data['accept_application'] == 'Accept' %}
+                                             £26,100
+                                        {% else %}
+                                             £29,000
+                                        {% endif %}
+                                   {% endif %}
+                              </td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header"><a href="#" style="font-weight: 400;">910105</a></th>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£78,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£64,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£14,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header"><a href="#" style="font-weight: 400;">910104</a></th>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£42,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£6,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£36,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+                         </tr>
+                         {% if data['pledge_amount'] %}
+                              <tr class="govuk-table__row">
+                                   <th scope="row" class="govuk-table__header"><a href="#" style="font-weight: 400;">910103</a></th>
+                                   <td class="govuk-table__cell govuk-table__cell--numeric">£5,000</td>
+                                   <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+                                   <td class="govuk-table__cell govuk-table__cell--numeric">£5,000</td>
+                                   <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+                              </tr>
+                         {% else %}
+
+                         {% endif %}
+                    </tbody>
+               </table>
+
+               <br>
+
+               <a href="#" class="govuk-button" data-module="govuk-button">Create a transfer pledge</a>
+
+               <br><br>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
