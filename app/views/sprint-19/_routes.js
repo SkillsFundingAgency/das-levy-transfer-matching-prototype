@@ -95,13 +95,12 @@ router.post('/MVS/sender/STEP-11/about_the_transfer', function (req, res) {
 
 // APPLY FOR TRANSFER
 router.post('/MVS/receiver/STEP-2/apply_for_transfer', function (req, res) {
-  console.log(123)
-  const apply_for_transfer = req.session.data.apply_for_transfer
-  if (apply_for_transfer === 'Yes') {
-    res.redirect('/' + version + '/MVS/receiver/STEP-2/7-new-transfer-application')
-  } else {
-    res.redirect('/' + version + '/MVS/receiver/STEP-2/1-signin')
-  }
+     const apply_for_transfer = req.session.data.apply_for_transfer
+     if (apply_for_transfer === 'Yes') {
+          res.redirect('/' + version + '/MVS/receiver/STEP-2/7-new-transfer-application')
+     } else {
+          res.redirect('/' + version + '/MVS/receiver/STEP-2/5-search-pledge')
+     }
 })
 
 // STEP 5 - CHOOSE ORGANISATION
