@@ -6,8 +6,6 @@ const version = 'sprint-18'
 
 // Add your routes here - above the module.exports line
 
-module.exports = router
-
 // DELETE PLEDGE
 router.post('/' + version + '/MVS/sender/STEP-7-8/delete_pledge_action', function (req, res) {
      const delete_pledge = req.session.data.delete_pledge
@@ -146,3 +144,5 @@ router.post('/' + version + '/MVS/receiver/STEP-5/add_apprentice_details', funct
      const add_apprentice_details = req.session.data.add_apprentice_details
      res.redirect('/' + version + '/MVS/receiver/STEP-5/6-approve-apprentice-details')
 })
+
+module.exports = router
