@@ -59,6 +59,25 @@
                          </fieldset>
                     </div>
 
+                    <details class="govuk-details" data-module="govuk-details">
+                         <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">Email address</span>
+                         </summary>
+                         <div class="govuk-details__text">
+                              Email text goes here
+                         </div>
+                    </details>
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Apprentice name</legend> -->
+                              <div class="govuk-form-group">
+                                   <!-- <label class="govuk-label" for="apprentice_first_name">First name</label> -->
+                                   <input class="govuk-input" type="text" id="apprentice_email" name="apprentice_email" value="{{ data['apprentice_email'] }}">
+                              </div>
+                         </fieldset>
+                    </div>
+
                     <div class="govuk-form-group">
                          <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
                               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Date of birth</legend>
@@ -88,23 +107,36 @@
                     </div>
 
                     <div class="govuk-form-group">
-                         <label class="govuk-label govuk-label--s" for="apprentice_standards">Add an apprenticeship</label>
-                         <div id="apprentice_standards_hint" class="govuk-hint">Start typing to search apprenticeships</div>
+                         <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Unique learner number</legend>
+                              <div class="govuk-form-group">
+                                   <span id="" class="govuk-hint">This will be added by your training provider</span>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group">
+                         <label class="govuk-label govuk-label--s" for="apprentice_standards">Apprenticeship training course</label>
+                         <div id="apprentice_standards_hint" class="govuk-hint">Start typing the name of the course</div>
                          <input class="govuk-input" id="apprentice_standards" name="apprentice_standards" type="text" aria-describedby="apprentice_standards_hint" autocomplete="off" value="{{ data['apprentice_standards'] }}">
                     </div>
 
                     <div class="govuk-form-group ">
                          <fieldset class="govuk-fieldset" aria-describedby="apprentice_start_date-hint" role="group">
                               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Planned training start date</legend>
-                              <span id="apprentice_start_date-hint" class="govuk-hint">For example, 01 09 2021</span>
+                              <span id="apprentice_start_date-hint" class="govuk-hint">
+                                   For example, 09 2021
+                                   <br>
+                                   The standard version will be based on the start date provided
+                              </span>
                               <span class="field-validation-valid govuk-error-message" data-valmsg-for="apprentice_start_date" data-valmsg-replace="true" id="error-message-StartDate"></span>
                               <div class="govuk-date-input">
-                                   <div class="govuk-date-input__item">
+                                   <!-- <div class="govuk-date-input__item">
                                         <div class="govuk-form-group">
                                              <label class="govuk-label govuk-date-input__label" for="apprentice_start_date_day">Day</label>
                                              <input min="1" max="31" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="apprentice_start_date_day" name="apprentice_start_date_day" value="{{ data['apprentice_start_date_day'] }}">
                                         </div>
-                                   </div>
+                                   </div> -->
                                    <div class="govuk-date-input__item">
                                         <div class="govuk-form-group">
                                              <label class="govuk-label govuk-date-input__label" for="apprentice_start_date_month">Month</label>
@@ -161,8 +193,8 @@
 
                     <div class="govuk-inset-text">
                          <h3 class="govuk-heading-s">End-point assessments</h3>
-                         <p>If you have chosen an apprenticeship standard, we'll ask you to confirm the <a class="govuk-link" href="https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations" target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this apprentice. We'll do this before the end of the apprenticeship.</p>
-                         <p>Apprenticeship frameworks have different assessment arrangements and don't need end-point assessments.</p>
+                         <p>We'll ask you to confirm the <a class="govuk-link" href="https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations" target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this apprentice. We'll do this before the end of the apprenticeship.</p>
+                         <!-- <p>Apprenticeship frameworks have different assessment arrangements and don't need end-point assessments.</p> -->
                     </div>
 
                     <button class="govuk-button" data-module="govuk-button">Save and continue</button>

@@ -44,18 +44,18 @@
                <div class="transfer-funds">
                     <p><span>Pledges and direct transfers FY 2021/22</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 114000+data['pledge_amount'] | int }}</span></p>
+                         <p class="number">£<span class="value-format">{{ 187400+data['pledge_amount'] | int }}</span></p>
                     {% else %}
-                         <p class="number">£114,000</p>
+                         <p class="number">£187,400</p>
                     {% endif %}
                </div>
 
                <div>
                     <p><span>Remaining transfer funds FY 2021/22</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 86000-data['pledge_amount'] }}</span></p>
+                         <p class="number">£<span class="value-format">{{ 12600-data['pledge_amount'] }}</span></p>
                     {% else %}
-                         <p class="number">£86,000</p>
+                         <p class="number">£12,600</p>
                     {% endif %}
                </div>
 
@@ -119,6 +119,7 @@
                <h2 class="govuk-heading-m">My transfer connections</h2>
                <p>If you know a business you want to transfer funds to, you can make a connection to them and set up a transfer.</p>
                <p>You'll need to know their apprenticeship service account ID number.</p>
+               <!-- <div class="govuk-inset-text">You have <strong>3</strong> active transfer connections for <strong>17 apprentices</strong>, with and estimated cost of <strong>£2,400 in FY 2021/22</strong>.</div> -->
                <div class="govuk-inset-text">You have <strong>0</strong> pending transfer connections.</div>
                <a href="#" class="govuk-button govuk-button--secondary secondary-overwrite" data-module="govuk-button">Make a transfer to a business I know</a>
           </div>

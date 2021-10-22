@@ -62,18 +62,18 @@
                <div class="transfer-funds">
                     <p><span>Pledges and direct transfers FY 2021/22</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 114000+data['pledge_amount'] | int }}</span></p>
+                         <p class="number">£<span class="value-format">{{ 187400+data['pledge_amount'] | int }}</span></p>
                     {% else %}
-                         <p class="number">£114,000</p>
+                         <p class="number">£187,400</p>
                     {% endif %}
                </div>
 
                <div>
                     <p><span>Remaining transfer funds FY 2021/22</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 86000-data['pledge_amount'] }}</span></p>
+                         <p class="number">£<span class="value-format">{{ 12600-data['pledge_amount'] }}</span></p>
                     {% else %}
-                         <p class="number">£86,000</p>
+                         <p class="number">£12,600</p>
                     {% endif %}
                </div>
 
@@ -97,17 +97,17 @@
                <div>
                     <p><span>Committed FY 2021/22</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (106000+data['pledge_amount'] | int) }}</span></p>
+                         <p class="number">£<span class="value-format">{{ (108400+data['pledge_amount'] | int) }}</span></p>
                     {% else %}
-                         <p class="number">£106,000</p>
+                         <p class="number">£108,400</p>
                     {% endif %}
                </div>
                <div>
                     <p><span>Committed FY 2022/23</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (140000+data['pledge_amount'] | int) }}</span></p>
+                         <p class="number">£<span class="value-format">{{ (142400+data['pledge_amount'] | int) }}</span></p>
                     {% else %}
-                         <p class="number">£140,000</p>
+                         <p class="number">£142,400</p>
                     {% endif %}
                </div>
 

@@ -6,12 +6,12 @@ const version = 'sprint-19'
 
 // DELETE PLEDGE
 router.post('/MVS/sender/STEP-7-8/delete_pledge_action', function (req, res) {
-  const delete_pledge = req.session.data.delete_pledge
-  if (delete_pledge === 'Yes') {
-    res.redirect('/' + version + '/MVS/sender/STEP-7-8/4-my-pledges')
-  } else {
-    res.redirect('/' + version + '/MVS/sender/STEP-7-8/5B-pledge-details')
-  }
+     const delete_pledge = req.session.data.delete_pledge
+     if (delete_pledge === 'Yes') {
+          res.redirect('/' + version + '/MVS/sender/STEP-7-8/4-my-pledges')
+     } else {
+          res.redirect('/' + version + '/MVS/sender/STEP-7-8/5B-pledge-details')
+     }
 })
 
 router.post('/MVS/sender/STEP-1/delete_pledge_action', function (req, res) {
@@ -106,36 +106,42 @@ router.post('/MVS/receiver/STEP-2/apply_for_transfer', function (req, res) {
 // STEP 5 - CHOOSE ORGANISATION
 // 1
 router.post('/MVS/receiver/STEP-5/choose_organisation', function (req, res) {
-  const choose_organisation = req.session.data.choose_organisation
-  res.redirect('/' + version + '/MVS/receiver/STEP-5/2-add-provider-details')
+     const choose_organisation = req.session.data.choose_organisation
+     res.redirect('/' + version + '/MVS/receiver/STEP-5/2-add-provider-details')
 })
 // 2
 router.post('/MVS/receiver/STEP-5/add_provider_details', function (req, res) {
-  const add_provider_details = req.session.data.add_provider_details
-  res.redirect('/' + version + '/MVS/receiver/STEP-5/3-confirm-training-provider')
+     const add_provider_details = req.session.data.add_provider_details
+     res.redirect('/' + version + '/MVS/receiver/STEP-5/3-confirm-training-provider')
 })
 // 3
 router.post('/MVS/receiver/STEP-5/confirm_training_provider', function (req, res) {
-  const confirm_training_provider = req.session.data.confirm_training_provider
-  if (confirm_training_provider === 'Yes') {
-    res.redirect('/' + version + '/MVS/receiver/STEP-5/4-start-adding-apprentices')
-  } else {
-    res.redirect('/' + version + '/MVS/receiver/STEP-5/2-add-provider-details')
-  }
+     const confirm_training_provider = req.session.data.confirm_training_provider
+     if (confirm_training_provider === 'Yes') {
+          res.redirect('/' + version + '/MVS/receiver/STEP-5/4-start-adding-apprentices')
+     } else {
+          res.redirect('/' + version + '/MVS/receiver/STEP-5/2-add-provider-details')
+     }
 })
 // 4
 router.post('/MVS/receiver/STEP-5/start_adding_apprentices', function (req, res) {
-  const start_adding_apprentices = req.session.data.start_adding_apprentices
-  if (start_adding_apprentices === 'I will add apprentices') {
-    res.redirect('/' + version + '/MVS/receiver/STEP-5/5-apprentice-details')
-  } else {
-    res.redirect('/' + version + '/MVS/receiver/STEP-5/4-start-adding-apprentices')
-  }
+     const start_adding_apprentices = req.session.data.start_adding_apprentices
+     if (start_adding_apprentices === 'I will add apprentices') {
+          res.redirect('/' + version + '/MVS/receiver/STEP-5/5-apprentice-details')
+     } else {
+          res.redirect('/' + version + '/MVS/receiver/STEP-5/4-start-adding-apprentices')
+     }
 })
 // 5
 router.post('/MVS/receiver/STEP-5/add_apprentice_details', function (req, res) {
-  const add_apprentice_details = req.session.data.add_apprentice_details
-  res.redirect('/' + version + '/MVS/receiver/STEP-5/6-approve-apprentice-details')
+     const add_apprentice_details = req.session.data.add_apprentice_details
+     res.redirect('/' + version + '/MVS/receiver/STEP-5/6-approve-apprentice-details')
+})
+
+// 6
+router.post('/MVS/receiver/STEP-5/approve_apprentice_details', function (req, res) {
+     const approve_apprentice_details = req.session.data.approve_apprentice_details
+     res.redirect('/' + version + '/MVS/receiver/STEP-5/7-confirmation')
 })
 
 module.exports = router

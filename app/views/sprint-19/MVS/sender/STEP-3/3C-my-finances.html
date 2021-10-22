@@ -71,18 +71,18 @@
                <div class="transfer-funds">
                     <p><span>Pledges and direct transfers FY 2021/22</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 114000+data['pledge_amount'] | int }}</span></p>
+                         <p class="number">£<span class="value-format">{{ 187400+data['pledge_amount'] | int }}</span></p>
                     {% else %}
-                         <p class="number">£114,000</p>
+                         <p class="number">£187,400</p>
                     {% endif %}
                </div>
 
                <div>
                     <p><span>Remaining transfer funds FY 2021/22</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 86000-data['pledge_amount'] }}</span></p>
+                         <p class="number">£<span class="value-format">{{ 12600-data['pledge_amount'] }}</span></p>
                     {% else %}
-                         <p class="number">£86,000</p>
+                         <p class="number">£12,600</p>
                     {% endif %}
                </div>
 
@@ -114,24 +114,24 @@
                <div>
                     <p><span>Committed FY 2021/22</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (114000+data['pledge_amount'] | int) / 4 }}</span></p>
+                         <p class="number">£<span class="value-format">{{ (108400+data['pledge_amount'] | int) }}</span></p>
                     {% else %}
-                         <p class="number">£106,000</p>
+                         <p class="number">£108,400</p>
                     {% endif %}
                </div>
                <div>
                     <p><span>Committed FY 2022/23</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (140000+data['pledge_amount'] | int) / 4 }}</span></p>
+                         <p class="number">£<span class="value-format">{{ (142400+data['pledge_amount'] | int) }}</span></p>
                     {% else %}
-                         <p class="number">£140,000</p>
+                         <p class="number">£142,400</p>
                     {% endif %}
                </div>
 
                <div>
                     <p><span>Committed FY 2023/24</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (90800+data['pledge_amount'] | int) / 4 }}</span></p>
+                         <p class="number">£<span class="value-format">{{ (90800+data['pledge_amount'] | int) }}</span></p>
                     {% else %}
                          <p class="number">£90,800</p>
                     {% endif %}
@@ -140,7 +140,7 @@
                <div>
                     <p><span>Committed FY 2024/25</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (54000+data['pledge_amount'] | int) / 4 }}</span></p>
+                         <p class="number">£<span class="value-format">{{ (54000+data['pledge_amount'] | int) }}</span></p>
                     {% else %}
                          <p class="number">£54,000</p>
                     {% endif %}
@@ -149,7 +149,7 @@
                <div>
                     <p><span>Committed FY 2025/26</span></p>
                     {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (0+data['pledge_amount'] | int) / 4 }}</span></p>
+                         <p class="number">£<span class="value-format">{{ (0+data['pledge_amount'] | int) }}</span></p>
                     {% else %}
                          <p class="number">£0</p>
                     {% endif %}
@@ -178,7 +178,7 @@
 
                <div class="govuk-grid-column-full">
 
-                    <h2 class="govuk-heading-l accordion-total">FY 2021/22 total: <strong>£185,000</strong></h2>
+                    <h2 class="govuk-heading-l accordion-total">FY 2021/22 total: <strong>£187,400</strong></h2>
 
                     <div class="govuk-accordion hide-open-all" data-module="govuk-accordion" id="accordion-default">
 
@@ -263,16 +263,48 @@
                               <div class="govuk-accordion__section-header">
                                    <h2 class="govuk-accordion__section-heading">
                                         <span class="govuk-accordion__section-button" id="accordion-default-heading-3">Direct transfers</span>
-                                        <strong class="value">£0</strong>
+                                        <strong class="value">£2,400</strong>
                                    </h2>
                               </div>
                               <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-                                   <table class="govuk-table empty-table">
+                                   <!-- <table class="govuk-table empty-table">
                                         <tbody class="govuk-table__body">
                                              <tr class="govuk-table__row">
                                                   <td scope="row" class="govuk-table__header">You current have no direct transfers</td>
                                              </tr>
                                         </tbody>
+                                   </table> -->
+                                   <table class="govuk-table">
+                                        <thead class="govuk-table__head">
+                                             <tr class="govuk-table__row">
+                                                  <th scope="col" class="govuk-table__header">Organisation</th>
+                                                  <th scope="col" class="govuk-table__header this-year">FY 2021/22</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2022/23</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2023/24</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2024/25</th>
+                                                  <th scope="col" class="govuk-table__header">FY 2025/26</th>
+                                             </tr>
+                                        </thead>
+                                        <tbody class="govuk-table__body">
+                                             <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header"><a href="#">AMC Ltd</a></th>
+                                                  <td class="govuk-table__cell this-year">£2,400</td>
+                                                  <td class="govuk-table__cell">£2,400</td>
+                                                  <td class="govuk-table__cell">-</td>
+                                                  <td class="govuk-table__cell">-</td>
+                                                  <td class="govuk-table__cell">-</td>
+                                             </tr>
+                                        </tbody>
+                                        <tfoot>
+                                             <tr class="govuk-table__row">
+                                                  <th scope="row" class="govuk-table__header">Total:</th>
+                                                  <th scope="row" class="govuk-table__header this-year">£2,400</th>
+                                                  <th scope="row" class="govuk-table__header">£2,400</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                                  <th scope="row" class="govuk-table__header">-</th>
+                                             </tr>
+                                        </tfoot>
                                    </table>
                               </div>
                          </div>

@@ -664,6 +664,9 @@ p {
           background: govuk-colour("light-grey");
           border-left: none;
      }
+     &.grey-background {
+          background: govuk-colour("light-grey");
+     }
 }
 
 .govuk-related-items {
