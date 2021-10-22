@@ -1,0 +1,113 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-transfers">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <p><br></p>
+               <h1 class="govuk-heading-xl">Transfers request details</h1>
+
+               <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__header">
+                         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                         <h3 class="govuk-heading-s no-margin-bottom">Transfer request is lower than the funding band maximum</h3>
+                         <p class="govuk-body">The receiving employer and training provider could renegotiate the total cost of the training during the lifetime of the apprenticeship up to the funding band mximum.</p>
+                         <p>You will not be asked to approve these funding changes.</p>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Receiving employer</th>
+                              <td class="govuk-table__cell"><span class="approval-name-answer"></span></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Receiving employer account ID</th>
+                              <td class="govuk-table__cell">M99X7Y</td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Cohort reference</th>
+                              <td class="govuk-table__cell">D9PXPL</td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Status</th>
+                              <td class="govuk-table__cell"><span class="approval-status-answer"></span></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Current transfer request</th>
+                              <td class="govuk-table__cell"><span class="approval-cost-answer"></span></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Funding band mximum</th>
+                              <td class="govuk-table__cell">£18,000</td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Training</th>
+                              <td class="govuk-table__cell">Business analyst, Level: 4 (1 Apprentice)</td>
+                         </tr>
+
+                    </tbody>
+               </table>
+
+               <p><br></p>
+
+               <form method="post" action="approvals_accept_reject" class="check-answers-page">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                   <h1 class="govuk-fieldset__heading">Do you want to accept or reject the request?</h1>
+                              </legend>
+
+                              <div class="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approvals_accept_reject_accept" name="approvals_accept_reject" type="radio" value="Accept">
+                                        <label class="govuk-label govuk-radios__label" for="approvals_accept_reject_accept">Yes, approve the request</label>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approvals_accept_reject_reject" name="approvals_accept_reject" type="radio" value="Reject">
+                                        <label class="govuk-label govuk-radios__label" for="approvals_accept_reject_reject">No, reject the request</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+                    <a href="4-transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

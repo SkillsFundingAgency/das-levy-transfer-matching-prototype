@@ -61,20 +61,12 @@
 
                <div class="transfer-funds">
                     <p><span>Pledges and direct transfers FY 2021/22</span></p>
-                    {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 187400+data['pledge_amount'] | int }}</span></p>
-                    {% else %}
-                         <p class="number">£187,400</p>
-                    {% endif %}
+                    <p class="number">£187,400</p>
                </div>
 
                <div>
                     <p><span>Remaining transfer funds FY 2021/22</span></p>
-                    {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 12600-data['pledge_amount'] }}</span></p>
-                    {% else %}
-                         <p class="number">£12,600</p>
-                    {% endif %}
+                    <p class="number">£12,600</p>
                </div>
 
           </div>
@@ -96,46 +88,26 @@
           <div class="transfer-values">
                <div>
                     <p><span>Committed FY 2021/22</span></p>
-                    {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (108400+data['pledge_amount'] | int) }}</span></p>
-                    {% else %}
-                         <p class="number">£108,400</p>
-                    {% endif %}
+                    <p class="number">£108,400</p>
                </div>
                <div>
                     <p><span>Committed FY 2022/23</span></p>
-                    {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (142400+data['pledge_amount'] | int) }}</span></p>
-                    {% else %}
-                         <p class="number">£142,400</p>
-                    {% endif %}
+                    <p class="number">£142,400</p>
                </div>
 
                <div>
                     <p><span>Committed FY 2023/24</span></p>
-                    {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (90800+data['pledge_amount'] | int) }}</span></p>
-                    {% else %}
-                         <p class="number">£90,800</p>
-                    {% endif %}
+                    <p class="number">£90,800</p>
                </div>
 
                <div>
                     <p><span>Committed FY 2024/25</span></p>
-                    {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (54000+data['pledge_amount'] | int) }}</span></p>
-                    {% else %}
-                         <p class="number">£54,000</p>
-                    {% endif %}
+                    <p class="number">£54,000</p>
                </div>
 
                <div>
                     <p><span>Committed FY 2025/26</span></p>
-                    {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ (0+data['pledge_amount'] | int) }}</span></p>
-                    {% else %}
-                         <p class="number">£0</p>
-                    {% endif %}
+                    <p class="number">£0</p>
                </div>
 
           </div>

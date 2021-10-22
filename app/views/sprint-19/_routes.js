@@ -103,45 +103,66 @@ router.post('/MVS/receiver/STEP-2/apply_for_transfer', function (req, res) {
      }
 })
 
-// STEP 5 - CHOOSE ORGANISATION
+// STEP 5.1 - APPROVALS - RECEIVER
 // 1
-router.post('/MVS/receiver/STEP-5/choose_organisation', function (req, res) {
+router.post('/MVS/receiver/STEP-5-1/choose_organisation', function (req, res) {
      const choose_organisation = req.session.data.choose_organisation
-     res.redirect('/' + version + '/MVS/receiver/STEP-5/2-add-provider-details')
+     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/2-add-provider-details')
 })
 // 2
-router.post('/MVS/receiver/STEP-5/add_provider_details', function (req, res) {
+router.post('/MVS/receiver/STEP-5-1/add_provider_details', function (req, res) {
      const add_provider_details = req.session.data.add_provider_details
-     res.redirect('/' + version + '/MVS/receiver/STEP-5/3-confirm-training-provider')
+     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/3-confirm-training-provider')
 })
 // 3
-router.post('/MVS/receiver/STEP-5/confirm_training_provider', function (req, res) {
+router.post('/MVS/receiver/STEP-5-1/confirm_training_provider', function (req, res) {
      const confirm_training_provider = req.session.data.confirm_training_provider
      if (confirm_training_provider === 'Yes') {
-          res.redirect('/' + version + '/MVS/receiver/STEP-5/4-start-adding-apprentices')
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/4-start-adding-apprentices')
      } else {
-          res.redirect('/' + version + '/MVS/receiver/STEP-5/2-add-provider-details')
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/2-add-provider-details')
      }
 })
 // 4
-router.post('/MVS/receiver/STEP-5/start_adding_apprentices', function (req, res) {
+router.post('/MVS/receiver/STEP-5-1/start_adding_apprentices', function (req, res) {
      const start_adding_apprentices = req.session.data.start_adding_apprentices
      if (start_adding_apprentices === 'I will add apprentices') {
-          res.redirect('/' + version + '/MVS/receiver/STEP-5/5-apprentice-details')
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/5-apprentice-details')
      } else {
-          res.redirect('/' + version + '/MVS/receiver/STEP-5/4-start-adding-apprentices')
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/4-start-adding-apprentices')
      }
 })
 // 5
-router.post('/MVS/receiver/STEP-5/add_apprentice_details', function (req, res) {
+router.post('/MVS/receiver/STEP-5-1/add_apprentice_details', function (req, res) {
      const add_apprentice_details = req.session.data.add_apprentice_details
-     res.redirect('/' + version + '/MVS/receiver/STEP-5/6-approve-apprentice-details')
+     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/6-approve-apprentice-details')
 })
 
 // 6
-router.post('/MVS/receiver/STEP-5/approve_apprentice_details', function (req, res) {
+router.post('/MVS/receiver/STEP-5-1/approve_apprentice_details', function (req, res) {
      const approve_apprentice_details = req.session.data.approve_apprentice_details
-     res.redirect('/' + version + '/MVS/receiver/STEP-5/7-confirmation')
+     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/7-confirmation')
 })
+
+// STEP 5.3 - APPROVALS - SENDER
+// 1
+router.post('/MVS/sender/STEP-5-3/approvals_accept_reject', function (req, res) {
+     const approvals_accept_reject = req.session.data.approvals_accept_reject
+     if (approvals_accept_reject === 'Accept') {
+          res.redirect('/' + version + '/MVS/sender/STEP-5-3/6-confirmation')
+     } else {
+          res.redirect('/' + version + '/MVS/sender/STEP-5-3/4-transfers')
+     }
+})
+// 2
+router.post('/MVS/sender/STEP-5-3/approvals_confirm', function (req, res) {
+     const approvals_confirm = req.session.data.approvals_confirm
+     if (approvals_confirm === 'Dashboard') {
+          res.redirect('/' + version + '/MVS/sender/STEP-5-3/4-transfers')
+     } else {
+          res.redirect('/' + version + '/MVS/sender/STEP-5-3/2-my-account')
+     }
+})
+
 
 module.exports = router

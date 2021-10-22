@@ -1,0 +1,54 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation application-complete">
+                    <h1 class="govuk-panel__title">Transfer request approved</h1>
+                    <div class="govuk-panel__body">You have approved a transfer request from <span class="approval-name-answer"></span></div>
+               </div>
+
+               <form method="post" action="approvals_confirm" class="check-answers-page">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                   <h1 class="govuk-fieldset__heading">What next?</h1>
+                              </legend>
+
+                              <div class="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approvals_confirm_dashboard" name="approvals_confirm" type="radio" value="Dashboard">
+                                        <label class="govuk-label govuk-radios__label" for="approvals_confirm_dashboard">Go to the transfer dashboard</label>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approvals_confirm_homepage" name="approvals_confirm" type="radio" value="Homepage">
+                                        <label class="govuk-label govuk-radios__label" for="approvals_confirm_homepage">Go to the homepage</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+               </form>
+
+
+          </div>
+     </div>
+
+</div>
+
+{% endblock %}

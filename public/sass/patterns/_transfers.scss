@@ -566,6 +566,18 @@ table {
                     }
                }
           }
+          &.purple {
+               div.transfer-funds {
+                    background: govuk-colour("bright-purple");
+                    p {
+                         font-size: 1.4rem;
+                         color: white;
+                         &.number {
+                              font-size: 3rem;
+                         }
+                    }
+               }
+          }
      }
      &.post-mvs-version {
           .transfer-values {

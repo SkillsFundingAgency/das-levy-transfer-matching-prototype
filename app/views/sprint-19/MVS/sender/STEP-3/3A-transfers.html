@@ -43,20 +43,12 @@
 
                <div class="transfer-funds">
                     <p><span>Pledges and direct transfers FY 2021/22</span></p>
-                    {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 187400+data['pledge_amount'] | int }}</span></p>
-                    {% else %}
-                         <p class="number">£187,400</p>
-                    {% endif %}
+                    <p class="number">£187,400</p>
                </div>
 
                <div>
                     <p><span>Remaining transfer funds FY 2021/22</span></p>
-                    {% if data['pledge_amount'] %}
-                         <p class="number">£<span class="value-format">{{ 12600-data['pledge_amount'] }}</span></p>
-                    {% else %}
-                         <p class="number">£12,600</p>
-                    {% endif %}
+                    <p class="number">£12,600</p>
                </div>
 
           </div>
@@ -98,11 +90,7 @@
           <div class="govuk-grid-column-two-thirds">
                <h2 class="govuk-heading-m">My transfer pledges</h2>
                <p>Create a public funding pledge which is shown online so that businesses can apply to you for a transfer of funds.</p>
-               {% if data['pledge_amount'] %}
-                    <div class="govuk-inset-text">You have <strong>4</strong> transfer pledges.</div>
-               {% else %}
-                    <div class="govuk-inset-text">You have <strong>3</strong> transfer pledges.</div>
-               {% endif %}
+               <div class="govuk-inset-text">You have <strong>3</strong> transfer pledges.</div>
                <a href="../STEP-1/4-start-new-pledge" class="govuk-button" data-module="govuk-button">Create a transfer pledge</a>
                <a href="4-my-pledges" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my transfer pledges and applications</a>
           </div>

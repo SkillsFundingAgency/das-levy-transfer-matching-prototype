@@ -32,11 +32,7 @@
 
           <div class="govuk-grid-column-two-thirds">
 
-               {% if data['pledge_amount'] %}
-                    <p>You have <strong>4</strong> transfer pledges.</p>
-               {% else %}
-                    <p>You have <strong>3</strong> transfer pledges.</p>
-               {% endif %}
+               <p>You have <strong>3</strong> transfer pledges.</p>
 
                <table class="govuk-table">
                     <thead class="govuk-table__head">
@@ -51,33 +47,13 @@
                     <tbody class="govuk-table__body">
                          <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header"><a href="5-pledge-details" style="font-weight: 400;">910106</a></th>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£65,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£36,000</td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">
-                                   {% if data['pledge_amount'] %}
-                                        £<span class="value-format">{{ data['pledge_amount'] }}</span>
+                                   {% if data['accept_application'] == 'Accept' %}
+                                        £26,100
                                    {% else %}
-                                        £65,000
-                                   {% endif %}
-                              </td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric">
-                                   {% if data['pledge_amount'] %}
-                                        £<span class="value-format">16500</span>
-                                   {% else %}
-                                        £36,000
-                                   {% endif %}
-                              </td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric">
-                                   {% if data['pledge_amount'] %}
-                                        {% if data['accept_application'] == 'Accept' %}
-                                             £27,100
-                                        {% else %}
-                                             £30,000
-                                        {% endif %}
-                                   {% else %}
-                                        {% if data['accept_application'] == 'Accept' %}
-                                             £26,100
-                                        {% else %}
-                                             £29,000
-                                        {% endif %}
+                                        £29,000
                                    {% endif %}
                               </td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
@@ -96,17 +72,6 @@
                               <td class="govuk-table__cell govuk-table__cell--numeric">£36,000</td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
                          </tr>
-                         {% if data['pledge_amount'] %}
-                              <tr class="govuk-table__row">
-                                   <th scope="row" class="govuk-table__header"><a href="#" style="font-weight: 400;">910103</a></th>
-                                   <td class="govuk-table__cell govuk-table__cell--numeric">£5,000</td>
-                                   <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
-                                   <td class="govuk-table__cell govuk-table__cell--numeric">£5,000</td>
-                                   <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
-                              </tr>
-                         {% else %}
-
-                         {% endif %}
                     </tbody>
                </table>
 

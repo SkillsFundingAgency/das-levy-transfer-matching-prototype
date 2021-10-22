@@ -767,4 +767,15 @@ if ($.cookie("pledge-unhappy-V2-application-removed") == 'true') {
      $('.cancelled-panel').show();
 }
 
+/// APPROVALS
+$(".approval-capture-details").on("click", function (e) {
+     $.cookie("approval-name-answer", $(this).parent().parent().find('.approval-name').text(), {path:'/'});
+     $.cookie("approval-status-answer", $(this).parent().parent().find('.approval-status').text(), {path:'/'});
+     $.cookie("approval-cost-answer", $(this).parent().parent().find('.approval-cost').text(), {path:'/'});
+});
+
+$('.approval-name-answer').text($.cookie("approval-name-answer"));
+$('.approval-status-answer').text($.cookie("approval-status-answer"));
+$('.approval-cost-answer').text($.cookie("approval-cost-answer"));
+
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
