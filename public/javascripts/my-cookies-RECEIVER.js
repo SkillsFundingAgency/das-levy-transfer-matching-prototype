@@ -128,6 +128,19 @@ if ($.cookie("pledge-confirm-details") == 'true') {
      $('.pledge-sector-answer').text($.cookie("pledge-sector"));
      $('.pledge-training-answer').text($.cookie("pledge-training"));
      $('.pledge-level-answer').text($.cookie("pledge-level"));
+
+     var locationStr = $.cookie("pledge-location")
+     var pledgeLocations = locationStr.split(', ')
+     var cbHtml = ''
+
+     $.each(pledgeLocations, function( index, value ) {
+          cbHtml = cbHtml + '<div class="govuk-checkboxes__item">'
+          cbHtml = cbHtml + '<input class="govuk-checkboxes__input" id="select_apprentice_location_' + index + '" name="select_apprentice_location" type="checkbox" value="' + value + '">'
+          cbHtml = cbHtml + '<label class="govuk-label govuk-checkboxes__label" for="select_apprentice_location_' + index + '">' + value + '</label>'
+          cbHtml = cbHtml + '</div>'
+     });
+
+     $('#locationFromCookie').html(cbHtml)
 }
 
 // Confirm application
