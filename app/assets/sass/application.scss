@@ -141,6 +141,11 @@ a {
 }
 
 button {
+     &.govuk-button {
+          &.float-right {
+               float: right;
+          }
+     }
      &.govuk-button--secondary {
           margin-left: 1em;
      }

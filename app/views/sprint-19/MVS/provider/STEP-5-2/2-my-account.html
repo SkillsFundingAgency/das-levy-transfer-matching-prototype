@@ -1,0 +1,118 @@
+{% extends "layout_provider.html" %}
+
+{% block pageTitle %}
+     Apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_provider.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="my-account-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <p><br></p>
+
+               <div class="govuk-notification-banner" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__header">
+                         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                         <p class="govuk-body"><strong>Coronavirus (COVID-19): to find out how we can support you, including changes we're making to help your apprentices continue learning, <a href="#">read our updated guidance.</a></strong></p>
+                         <p class="govuk-body"><strong>From 9th September, you or the employer must add a unique email address for each apprenitce you add. The apprentice will then receive an email invitation to create a 'My apprenticeship" account.</strong></p>
+                    </div>
+               </div>
+               <div class="my-account-header">
+                    <h1 class="govuk-heading-xl">Belhavel Construction Ltd</h1>
+                    <span class="govuk-caption-m"><strong>UKPRN: 1000528</strong></span>
+                    <p><br></p>
+                    <hr class="dashboard-heading-separator">
+               </div>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <section class="provider-section">
+
+                    <div class="account-wrapper">
+
+                         <div>
+                              <a href="">Create a cohort</a>
+                              <p>Create new cohorts on behalf of an employer.</p>
+                         </div>
+
+                         <div>
+                              <a href="">Get funding for non-levy employers</a>
+                              <p>Secure funding for a non-levy employer to train an apprentice.</p>
+                         </div>
+
+                         <div>
+                              <a href="3-apprentice-requests">Apprentice requests</a>
+                              <p>Review, edit, approve and add apprentices.</p>
+                         </div>
+
+                         <div>
+                              <a href="">Manage your funding reserved for non-levy employers</a>
+                              <p>Add apprentice information to funding you have already reserved for non-levy employers.</p>
+                         </div>
+
+                         <div>
+                              <a href="">Manage your apprentices</a>
+                              <p>View and update approved apprentice records.</p>
+                         </div>
+
+                         <div>
+                              <a href="">Recruit apprentices</a>
+                              <p>Create a vacancy to recruit an apprentice and manage applications.</p>
+                         </div>
+
+                         <div>
+                              <a href="">Find employers that need a training provider</a>
+                              <p>View employers and share your contact details with them.</p>
+                         </div>
+
+                         <div>
+                              <a href="">Organisations and agreements</a>
+                              <p>Find and view organisations and their agreement IDs.</p>
+                         </div>
+
+                         <div>
+                              <a href="">Set up employer account</a>
+                              <p>Start setting up an apprenticeship service account for an employer.</p>
+                              <p><a href="">View invited employers</a></p>
+                         </div>
+
+                    </div>
+               </section>
+
+               <h1 class="govuk-heading-m">Instructions for the apprentice employer</h1>
+
+               <p>Employers need to <a href="#">register to manage their apprenticeship funds.</a></p>
+
+               <p>Once they've registered they need to:</p>
+
+               <ol class="govuk-list govuk-list--number">
+                    <li>Add the PAYE schemes that the apprentice will be paid through.</li>
+                    <li>Add the employer organisations that will contract with the training provider.</li>
+                    <li>Accept agreements for their organisations so that they can spend their levy funds.</li>
+                    <li>Add apprentices to their account so they can authorise payments to you.</li>
+               </ol>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

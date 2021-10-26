@@ -521,6 +521,32 @@ table {
      }
 }
 
+.provider-values-prototype {
+     display: flex;
+     margin: 0 0 1.5em;
+     flex-wrap: wrap;
+     a {
+          width: 44%;
+          margin: 0 4% 2em 0;
+          background: none;
+          padding: 2% 2% 2% 2%;
+          text-decoration: none;
+          background: $govuk-link-visited-colour;
+          &:nth-of-type(even) {
+               margin-right: 0;
+          }
+          p {
+               color: white;
+               font-weight: bold;
+               font-size: 24px;
+               margin: 0;
+               &.number {
+                    font-size: 3.5rem;
+               }
+          }
+     }
+}
+
 @media (max-width: 1024px) {
      // .transfer-values {
      //      background: blue;

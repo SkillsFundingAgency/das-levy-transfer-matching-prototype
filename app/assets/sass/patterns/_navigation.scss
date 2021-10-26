@@ -11,6 +11,9 @@
      padding: 1em 0;
      display: inline-block;
      width: 100%;
+     &.provider {
+          background: govuk-colour("orange");
+     }
      p.business-name {
           color: white;
           font-weight: bold;
@@ -79,6 +82,9 @@
                          padding-right: 0;
                     }
                }
+               &.float-right {
+                    float: right;
+               }
                &.icon-burger {
                     display: none;
                     width: 2em;
@@ -122,6 +128,12 @@
                          padding-right: 1em;
                          background: url('../images/arrow-down-white.svg') no-repeat 100% 70%;
                          background-size: 0.75em;
+                    }
+                    &.more {
+                         float: right;
+                         padding-left: 1em;
+                         background: url('../images/arrow-down-black.svg') no-repeat 0% 50%;
+                         background-size: 0.35em;
                     }
                     &.email-preferences {
                          margin: 0;
