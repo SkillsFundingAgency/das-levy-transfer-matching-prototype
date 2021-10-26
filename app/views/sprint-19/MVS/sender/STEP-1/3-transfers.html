@@ -24,96 +24,8 @@
           <div class="govuk-grid-column-full">
                <p><br></p>
                <h1 class="govuk-heading-xl">Manage transfers</h1>
-               <h2 class="govuk-heading-m">My transfer finances</h2>
-
-               <p>This is a financial snapshot of what is available.</p>
           </div>
      </div>
-
-     <!-- ////////////// NUMBERS - START //////////////-->
-     {% if data['prototype_user_type'] == "non_levy" %}
-
-     {% elseif data['prototype_user_type'] == "levy_sender" %}
-          <div class="transfer-values-prototype mvs-version">
-               <div class="transfer-values">
-                    <div class="transfer-funds">
-                         <p><span>Your transfer allowance FY 2021/22</span></p>
-                         <p class="number">£200,000</p>
-                    </div>
-                    <div class="transfer-funds">
-                         <p><span>Pledges and direct transfers FY 2021/22</span></p>
-                         <p class="number">£120,000</p>
-                    </div>
-                    <div>
-                         <p><span>Remaining transfer funds FY 2021/22</span></p>
-                         <p class="number">£80,000</p>
-                    </div>
-               </div>
-          </div>
-     {% else %}
-          <div class="transfer-values-prototype mvs-version">
-               <div class="transfer-values">
-                    <div class="transfer-funds">
-                         <p><span>Your transfer allowance FY 2021/22</span></p>
-                         <p class="number">£200,000</p>
-                    </div>
-                    <div class="transfer-funds">
-                         <p><span>Pledges and direct transfers FY 2021/22</span></p>
-                         {% if data['delete_pledge'] == 'Yes' %}
-                              <p class="number">£0</p>
-                         {% else %}
-                              {% if data['pledge_amount'] %}
-                                   <p class="number">£<span class="value-format">{{ data['pledge_amount'] }}</span></p>
-                              {% else %}
-                                   <p class="number">£0</p>
-                              {% endif %}
-                         {% endif %}
-                    </div>
-                    <div>
-                         <p><span>Remaining transfer funds FY 2021/22</span></p>
-                         {% if data['delete_pledge'] == 'Yes' %}
-                              <p class="number">£200,000</p>
-                         {% else %}
-                              {% if data['pledge_amount'] %}
-                                   <p class="number">£<span class="value-format">{{ 200000 - data['pledge_amount'] }}</span></p>
-                              {% else %}
-                                   <p class="number">£200,000</p>
-                              {% endif %}
-                         {% endif %}
-                    </div>
-               </div>
-          </div>
-     {% endif %}
-     <!-- ////////////// NUMBERS - END //////////////-->
-
-     <!-- ////////////// EXTRA INFO - START //////////////-->
-     {% if data['prototype_user_type'] == "non_levy" %}
-
-     {% else %}
-          <div class="govuk-grid-row">
-               <div class="govuk-grid-column-two-thirds">
-                    <details class="govuk-details" data-module="govuk-details">
-                         <summary class="govuk-details__summary">
-                              <span class="govuk-details__summary-text">Transfers allowance information</span>
-                         </summary>
-                         <div class="govuk-details__text">
-                              <p><strong>Your transfer allowance for this financial year (FY)</strong></p>
-                              <p>This is calculated every year on 6 April and shows in your account after 20 April.</p>
-                              <p>Transfer payments will leave your account before payments for your own apprenticeships.</p>
-                              <p><strong>Pledges and direct transfers</strong></p>
-                              <p>This is an estimate of the amount allocated for your transfers in this financial year. It includes any existing transfer commitments carried over from last year.</p>
-                              <p><strong>Remaining transfer funds</strong></p>
-                              <p>This is an estimate of what remains for you to pledge to transfers in this financial year.</p>
-                         </div>
-                    </details>
-                    <a href="3A-my-finances" class="govuk-button govuk-button--secondary secondary-overwrite">View my transfer finances</a>
-               </div>
-               <div class="govuk-grid-column-one-third">
-
-               </div>
-          </div>
-     {% endif %}
-     <!-- ////////////// EXTRA INFO - END //////////////-->
 
      <!-- ////////////// 1 - PLEDGES - START //////////////-->
      {% if data['prototype_user_type'] == "levy_receiver" %}
@@ -121,7 +33,7 @@
      {% elseif data['prototype_user_type'] == "non_levy" %}
 
      {% else %}
-          <div class="section">
+          <div class="section top-section">
                <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds">
                          <h2 class="govuk-heading-m">My transfer pledges</h2>
@@ -194,6 +106,110 @@
           </div>
      </div>
      <!-- ////////////// 3 - CONNECT - END //////////////-->
+
+     <div class="section">
+
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-m">My transfer finances</h2>
+                    <p>This is a financial snapshot of what is available.</p>
+               </div>
+          </div>
+
+          <!-- ////////////// NUMBERS - START //////////////-->
+          {% if data['prototype_user_type'] == "non_levy" %}
+
+          {% elseif data['prototype_user_type'] == "levy_sender" %}
+               <div class="transfer-values-prototype mvs-version">
+                    <div class="transfer-values">
+                         <div class="transfer-funds">
+                              <p><span>Your transfer allowance FY 2021/22</span></p>
+                              <p class="number">£200,000</p>
+                         </div>
+                         <div class="transfer-funds">
+                              <p><span>Pledges and direct transfers FY 2021/22</span></p>
+                              {% if data['pledge_amount'] %}
+                                   <p class="number">£<span class="value-format">{{ 120000+data['pledge_amount'] | int }}</span></p>
+                              {% else %}
+                                   <p class="number">£120,000</p>
+                              {% endif %}
+                         </div>
+                         <div>
+                              <p><span>Remaining transfer funds FY 2021/22</span></p>
+                              {% if data['pledge_amount'] %}
+                                   <p class="number">£<span class="value-format">{{ 80000-data['pledge_amount'] | int }}</span></p>
+                              {% else %}
+                                   <p class="number">£80,000</p>
+                              {% endif %}
+                         </div>
+                    </div>
+               </div>
+          {% else %}
+               <div class="transfer-values-prototype mvs-version">
+                    <div class="transfer-values">
+                         <div class="transfer-funds">
+                              <p><span>Your transfer allowance FY 2021/22</span></p>
+                              <p class="number">£200,000</p>
+                         </div>
+                         <div class="transfer-funds">
+                              <p><span>Pledges and direct transfers FY 2021/22</span></p>
+                              {% if data['delete_pledge'] == 'Yes' %}
+                                   <p class="number">£0</p>
+                              {% else %}
+                                   {% if data['pledge_amount'] %}
+                                        <p class="number">£<span class="value-format">{{ data['pledge_amount'] }}</span></p>
+                                   {% else %}
+                                        <p class="number">£0</p>
+                                   {% endif %}
+                              {% endif %}
+                         </div>
+                         <div>
+                              <p><span>Remaining transfer funds FY 2021/22</span></p>
+                              {% if data['delete_pledge'] == 'Yes' %}
+                                   <p class="number">£200,000</p>
+                              {% else %}
+                                   {% if data['pledge_amount'] %}
+                                        <p class="number">£<span class="value-format">{{ 200000 - data['pledge_amount'] }}</span></p>
+                                   {% else %}
+                                        <p class="number">£200,000</p>
+                                   {% endif %}
+                              {% endif %}
+                         </div>
+                    </div>
+               </div>
+          {% endif %}
+          <!-- ////////////// NUMBERS - END //////////////-->
+
+          <!-- ////////////// EXTRA INFO - START //////////////-->
+          {% if data['prototype_user_type'] == "non_levy" %}
+
+          {% else %}
+               <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                         <details class="govuk-details" data-module="govuk-details">
+                              <summary class="govuk-details__summary">
+                                   <span class="govuk-details__summary-text">Transfers allowance information</span>
+                              </summary>
+                              <div class="govuk-details__text">
+                                   <p><strong>Your transfer allowance for this financial year (FY)</strong></p>
+                                   <p>This is calculated every year on 6 April and shows in your account after 20 April.</p>
+                                   <p>Transfer payments will leave your account before payments for your own apprenticeships.</p>
+                                   <p><strong>Pledges and direct transfers</strong></p>
+                                   <p>This is an estimate of the amount allocated for your transfers in this financial year. It includes any existing transfer commitments carried over from last year.</p>
+                                   <p><strong>Remaining transfer funds</strong></p>
+                                   <p>This is an estimate of what remains for you to pledge to transfers in this financial year.</p>
+                              </div>
+                         </details>
+                         <a href="3A-my-finances" class="govuk-button govuk-button--secondary secondary-overwrite">View my transfer finances</a>
+                    </div>
+                    <div class="govuk-grid-column-one-third">
+
+                    </div>
+               </div>
+          {% endif %}
+          <!-- ////////////// EXTRA INFO - END //////////////-->
+
+     </div>
 
 </div>
 
