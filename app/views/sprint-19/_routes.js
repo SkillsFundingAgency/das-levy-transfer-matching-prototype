@@ -144,6 +144,23 @@ router.post('/MVS/receiver/STEP-5-1/approve_apprentice_details', function (req, 
      res.redirect('/' + version + '/MVS/receiver/STEP-5-1/7-confirmation')
 })
 
+
+// STEP 5.2 - APPROVALS - PROVIDER
+// 1
+router.post('/MVS/provider/STEP-5-2/send_apprentice_details', function (req, res) {
+     const send_apprentice_details = req.session.data.send_apprentice_details
+     if (send_apprentice_details === 'Yes') {
+          res.redirect('/' + version + '/MVS/provider/STEP-5-2/6-confirmation')
+     } else {
+          res.redirect('/' + version + '/MVS/provider/STEP-5-2/3-apprentice-requests')
+     }
+})
+router.post('/MVS/provider/STEP-5-2/edit_apprentice_details', function (req, res) {
+     const edit_apprentice_details = req.session.data.edit_apprentice_details
+     res.redirect('/' + version + '/MVS/provider/STEP-5-2/5-approve-details')
+})
+
+
 // STEP 5.3 - APPROVALS - SENDER
 // 1
 router.post('/MVS/sender/STEP-5-3/approvals_accept_reject', function (req, res) {
@@ -163,6 +180,7 @@ router.post('/MVS/sender/STEP-5-3/approvals_confirm', function (req, res) {
           res.redirect('/' + version + '/MVS/sender/STEP-5-3/2-my-account')
      }
 })
+
 
 
 module.exports = router
