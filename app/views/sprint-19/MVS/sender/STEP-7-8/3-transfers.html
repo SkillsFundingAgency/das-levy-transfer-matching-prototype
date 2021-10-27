@@ -22,78 +22,13 @@
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
+               <p><br></p>
                <h1 class="govuk-heading-xl small-margin-bottom">Manage transfers</h1>
           </div>
      </div>
 
-     <!-- ////////////// NUMBERS - START //////////////-->
-     <div class="transfer-values-prototype mvs-version">
-          <div class="transfer-values">
-               <div class="transfer-funds">
-                    <p><span>Your transfer allowance FY 2021/22</span></p>
-                    <p class="number">£200,000</p>
-               </div>
-               <div class="transfer-funds">
-                    <p><span>Pledges and direct transfers FY 2021/22</span></p>
-                    {% if data['delete_pledge'] == 'Yes' %}
-                         <p class="number">£0</p>
-                    {% else %}
-                         {% if data['pledge_amount'] %}
-                              <p class="number">£<span class="value-format">{{ data['pledge_amount'] }}</span></p>
-                         {% else %}
-                              <p class="number">£0</p>
-                         {% endif %}
-                    {% endif %}
-               </div>
-               <div>
-                    <p><span>Remaining transfer funds FY 2021/22</span></p>
-                    {% if data['delete_pledge'] == 'Yes' %}
-                         <p class="number">£200,000</p>
-                    {% else %}
-                         {% if data['pledge_amount'] %}
-                              <p class="number">£<span class="value-format">{{ 200000 - data['pledge_amount'] }}</span></p>
-                         {% else %}
-                              <p class="number">£200,000</p>
-                         {% endif %}
-                    {% endif %}
-               </div>
-          </div>
-     </div>
-     <!-- ////////////// NUMBERS - END //////////////-->
-
-     <!-- ////////////// EXTRA INFO - START //////////////-->
-     <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
-               <details class="govuk-details" data-module="govuk-details">
-                    <summary class="govuk-details__summary">
-                         <span class="govuk-details__summary-text">Transfers allowance information</span>
-                    </summary>
-                    <div class="govuk-details__text">
-                         <p><strong>Your transfer allowance for this financial year</strong></p>
-                         <p>This is calculated every year on 6 April and shows in your account after 20 April.</p>
-                         <p>The levy funds you commit to a transfer will be paid from your account monthly over the duration of the apprenticeship. This means you are committing funds over multiple financial years.</p>
-                         <p>Transfer payments will leave your account before payments for your own apprenticeships.</p>
-                         <p><a href="https://www.gov.uk/guidance/transferring-your-apprenticeship-levy-to-another-business" target="_blank" rel="external">Find out more detailed information (opens in new tab or window)</a>
-                         <p><strong>Pledges and direct transfers</strong></p>
-                         <p>This is an estimate of the amount allocated for your transfers in this financial year. It includes any existing transfer commitments carried over from last year.</p>
-                         <p>It uses an estimate of monthly payments based on the planned start date of training and the 20% completion payment.</p>
-                         <p>It adds the pledges you have made this year to the ongoing transfer commitments you have made in previous years.</p>
-                         <p><strong>Remaining transfer funds</strong></p>
-                         <p>This is an estimate of what remains for you to pledge to transfers in this financial year.</p>
-                    </div>
-               </details>
-          </div>
-          <div class="govuk-grid-column-one-third">
-               <a href="#" class="download-csv black-version full-width">
-                    <span class="black-download"></span>
-                    <div>View my financial breakdown</div>
-               </a>
-          </div>
-     </div>
-     <!-- ////////////// EXTRA INFO - END //////////////-->
-
      <!-- ////////////// 1 - PLEDGES - START //////////////-->
-     <div class="section">
+     <div class="section top-section">
           <div class="govuk-grid-row">
                <div class="govuk-grid-column-two-thirds">
                     <h2 class="govuk-heading-m">My transfer pledges</h2>
@@ -152,6 +87,69 @@
           </div>
      </div>
      <!-- ////////////// 3 - CONNECT - END //////////////-->
+
+     <!-- ////////////// 4 - FINACE - START //////////////-->
+     <div class="section">
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-m">My transfer finances</h2>
+                    <p>This is a financial snapshot of what is available.</p>
+               </div>
+          </div>
+
+          <!-- transfer-values -->
+
+          <div class="transfer-values-prototype mvs-version">
+
+               <div class="transfer-values">
+                    <div class="transfer-funds">
+                         <p><span>Your transfer allowance FY 2021/22</span></p>
+                         <p class="number">£200,000</p>
+                    </div>
+
+
+                    <div class="transfer-funds">
+                         <p><span>Pledges and direct transfers FY 2021/22</span></p>
+                         <p class="number">£187,400</p>
+                    </div>
+
+                    <div>
+                         <p><span>Remaining transfer funds FY 2021/22</span></p>
+                         <p class="number">£12,600</p>
+                    </div>
+
+               </div>
+
+          </div>
+
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-two-thirds">
+
+                    <!-- <p>If you want to understand your transfer and pledge allownace you can do this on the link below.</p>
+                    <p>You can also download your finances.</p> -->
+
+                    <details class="govuk-details" data-module="govuk-details">
+                         <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">Transfers allowance information</span>
+                         </summary>
+                         <div class="govuk-details__text">
+                              <p><strong>Your transfer allowance for this financial year (FY)</strong></p>
+                              <p>This is calculated every year on 6 April and shows in your account after 20 April.</p>
+                              <p>Transfer payments will leave your account before payments for your own apprenticeships.</p>
+                              <p><strong>Pledges and direct transfers</strong></p>
+                              <p>This is an estimate of the amount allocated for your transfers in this financial year. It includes any existing transfer commitments carried over from last year.</p>
+                              <p><strong>Remaining transfer funds</strong></p>
+                              <p>This is an estimate of what remains for you to pledge to transfers in this financial year.</p>
+                         </div>
+                    </details>
+
+                    <a href="#" class="govuk-button govuk-button--secondary secondary-overwrite">View my transfer finances</a>
+               </div>
+               <div class="govuk-grid-column-one-third">
+               </div>
+          </div>
+     </div>
+     <!-- ////////////// 3 - FINACE - END //////////////-->
 
 </div>
 

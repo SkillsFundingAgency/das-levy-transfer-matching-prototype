@@ -85,21 +85,17 @@
                          <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
                                    {% if data['pledge-application-standard'] %}
-                                        <strong>
-                                             {% if data['accept_funding'] == 'Accept' %}
-                                                  <a href="5B-application-details" class="pledge-name-answer govuk-link--no-visited-state">####</a>
-                                             {% else %}
-                                                  <a href="5A-application-details" class="pledge-name-answer govuk-link--no-visited-state">####</a>
-                                             {% endif %}
-                                        </strong>
+                                        {% if data['accept_funding'] == 'Accept' %}
+                                             <a href="5B-application-details" class="pledge-name-answer govuk-link--no-visited-state">####</a>
+                                        {% else %}
+                                             <a href="5A-application-details" class="pledge-name-answer govuk-link--no-visited-state">####</a>
+                                        {% endif %}
                                    {% else %}
-                                        <strong>
-                                             {% if data['accept_funding'] == 'Accept' %}
-                                                  <a href="5B-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
-                                             {% else %}
-                                                  <a href="5A-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
-                                             {% endif %}
-                                        </strong>
+                                        {% if data['accept_funding'] == 'Accept' %}
+                                             <a href="5B-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
+                                        {% else %}
+                                             <a href="5A-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
+                                        {% endif %}
                                    {% endif %}
                                    <p class="govuk-caption-m">Date: <span id="date-stamp">####</span></p>
                               </td>
@@ -121,7 +117,7 @@
 
                          <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
-                                   <strong><a href="5C-application-details" class="govuk-link--no-visited-state">Finders Keepers Ltd (684509)</a></strong>
+                                   <a href="5C-application-details" class="govuk-link--no-visited-state">Finders Keepers Ltd (684509)</a>
                                    <span class="govuk-caption-m">Date: 06/27/2021 09:45pm</span>
                               </td>
                               <td class="govuk-table__cell">£25,000</td>
@@ -136,7 +132,7 @@
 
                          <tr class="govuk-table__row">
                               <td class="govuk-table__cell">
-                                   <strong><a href="5E-application-details" class="govuk-link--no-visited-state">Opportunity (123465)</a></strong>
+                                   <a href="5E-application-details" class="govuk-link--no-visited-state">Opportunity (123465)</a>
                                    <span class="govuk-caption-m">Date: 05/27/2021 17:58pm</span>
                               </td>
                               <td class="govuk-table__cell">£15,000</td>

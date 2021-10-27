@@ -145,6 +145,9 @@ button {
           &.float-right {
                float: right;
           }
+          &.margin-top {
+               margin-top: 1em;
+          }
      }
      &.govuk-button--secondary {
           margin-left: 1em;
