@@ -150,7 +150,7 @@ router.post('/MVS/receiver/STEP-5-1/approve_apprentice_details', function (req, 
 router.post('/MVS/provider/STEP-5-2/send_apprentice_details', function (req, res) {
      const send_apprentice_details = req.session.data.send_apprentice_details
      if (send_apprentice_details === 'Yes') {
-          res.redirect('/' + version + '/MVS/provider/STEP-5-2/6-confirmation')
+          res.redirect('/' + version + '/MVS/provider/STEP-5-2/7-confirmation')
      } else {
           res.redirect('/' + version + '/MVS/provider/STEP-5-2/3-apprentice-requests')
      }

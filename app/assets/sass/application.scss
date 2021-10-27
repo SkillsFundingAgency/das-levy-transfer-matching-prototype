@@ -427,7 +427,11 @@ p {
      clear: both;
 }
 
-
+.govuk-panel {
+     &.full-width {
+          width: 100%;
+     }
+}
 .govuk-panel--confirmation {
      // display: none;
      margin-bottom: 2em;

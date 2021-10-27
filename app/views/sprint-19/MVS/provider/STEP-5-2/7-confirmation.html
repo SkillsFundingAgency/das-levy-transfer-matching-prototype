@@ -1,0 +1,56 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_provider_requests.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation application-complete full-width">
+                    <h1 class="govuk-panel__title">Cohort approved</h1>
+               </div>
+
+               <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Cohort eference</th>
+                              <td class="govuk-table__cell"><span class="provider-cohort-ref-answer"></span></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Employer</th>
+                              <td class="govuk-table__cell"><span class="provider-company-name-answer"></span></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Approved by</th>
+                              <td class="govuk-table__cell">BARKING AND DAGENHAM COLLEGE</td>
+                         </tr>
+                    </tbody>
+               </table>
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <p>You'll receive a notification when the funding employer approves or rejects the transfer request.</p>
+
+               <p>Once the transfer request is approved, you'll be able to <a href="#">view and manager apprentices.</a></p>
+
+               <p>Your apprentice will now receive an email alert inviting them to the My apprenticeship service where they will review and confirm their apprenticeship details.</p>
+
+               <p><a href="3-apprentice-requests">Go to apprenticeships requests</a></p>
+
+               <p><a href="2-my-account" class="govuk-link">Go to homepage</a></p>
+
+          </div>
+     </div>
+
+</div>
+
+{% endblock %}
