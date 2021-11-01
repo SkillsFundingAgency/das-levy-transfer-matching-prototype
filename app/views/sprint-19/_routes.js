@@ -107,41 +107,41 @@ router.post('/MVS/receiver/STEP-2/apply_for_transfer', function (req, res) {
 // 1
 router.post('/MVS/receiver/STEP-5-1/choose_organisation', function (req, res) {
      const choose_organisation = req.session.data.choose_organisation
-     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/2-add-provider-details')
+     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/5-add-provider-details')
 })
 // 2
 router.post('/MVS/receiver/STEP-5-1/add_provider_details', function (req, res) {
      const add_provider_details = req.session.data.add_provider_details
-     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/3-confirm-training-provider')
+     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/6-confirm-training-provider')
 })
 // 3
 router.post('/MVS/receiver/STEP-5-1/confirm_training_provider', function (req, res) {
      const confirm_training_provider = req.session.data.confirm_training_provider
      if (confirm_training_provider === 'Yes') {
-          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/4-start-adding-apprentices')
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/7-start-adding-apprentices')
      } else {
-          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/2-add-provider-details')
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/5-add-provider-details')
      }
 })
 // 4
 router.post('/MVS/receiver/STEP-5-1/start_adding_apprentices', function (req, res) {
      const start_adding_apprentices = req.session.data.start_adding_apprentices
      if (start_adding_apprentices === 'I will add apprentices') {
-          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/5-apprentice-details')
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/8-apprentice-details')
      } else {
-          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/4-start-adding-apprentices')
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/7-start-adding-apprentices')
      }
 })
 // 5
 router.post('/MVS/receiver/STEP-5-1/add_apprentice_details', function (req, res) {
      const add_apprentice_details = req.session.data.add_apprentice_details
-     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/6-approve-apprentice-details')
+     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/9-approve-apprentice-details')
 })
 
 // 6
 router.post('/MVS/receiver/STEP-5-1/approve_apprentice_details', function (req, res) {
      const approve_apprentice_details = req.session.data.approve_apprentice_details
-     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/7-confirmation')
+     res.redirect('/' + version + '/MVS/receiver/STEP-5-1/10-confirmation')
 })
 
 
