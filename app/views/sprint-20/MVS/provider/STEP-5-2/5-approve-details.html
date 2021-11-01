@@ -1,0 +1,238 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_provider_requests.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">Approve apprentice details</h1>
+
+               <p><strong>Employer:</strong> &nbsp; <span class="provider-company-name-answer"></span></p>
+               <p><strong>Cohort reference:</strong> &nbsp; <span class="provider-cohort-ref-answer"></span></p>
+               <p><strong>Status:</strong> &nbsp; Ready for approval</p>
+               <p><strong>Message:</strong></p>
+               <div class="govuk-inset-text">
+                    <span class="provider-message-answer"></span>
+               </div>
+
+               <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+               <h3 class="govuk-heading-m">1 x Business analyst, Level:4</h3>
+
+               <table class="govuk-table das-table--responsive">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header das-table-cell-width-25">Name</th>
+                              <th scope="col" class="govuk-table__header das-table-cell-width-25">Unique learner number</th>
+                              <th scope="col" class="govuk-table__header das-table-cell-width-25">Date of birth</th>
+                              <th scope="col" class="govuk-table__header das-table-cell-width-30">Training dates</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric das-table-cell-width-10">Price</th>
+                              <th scope="col" class="govuk-table__header das-table-cell-width-10"><span class="govuk-visually-hidden">Action</span></th>
+                         </tr>
+                    </thead>
+               <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                         <td class="govuk-table__cell" data-label="Name">
+                              {% if data['apprentice_first_name'] %}
+                                   {{ data['apprentice_first_name'] }} {{ data['apprentice_last_name'] }}
+                              {% else %}
+                                   Joe Bloggs
+                              {% endif %}
+                         </td>
+                         <td class="govuk-table__cell" data-label="Name">
+                              {% if data['apprentice_ULN'] %}
+                                   {{ data['apprentice_ULN'] }}
+                              {% else %}
+                                   -
+                              {% endif %}
+                         </td>
+                         <td class="govuk-table__cell" data-label="Date of birth">
+                              {% if data['apprentice_ULN'] %}
+                                   {{ data['apprentice_DOB_day'] }}
+                                   {% if data['apprentice_DOB_month'] == '1' %}
+                                        Jan
+                                   {% elseif data['apprentice_DOB_month'] == '2' %}
+                                        Feb
+                                   {% elseif data['apprentice_DOB_month'] == '3' %}
+                                        Mar
+                                   {% elseif data['apprentice_DOB_month'] == '4' %}
+                                        Apr
+                                   {% elseif data['apprentice_DOB_month'] == '5' %}
+                                        May
+                                   {% elseif data['apprentice_DOB_month'] == '6' %}
+                                        Jun
+                                   {% elseif data['apprentice_DOB_month'] == '7' %}
+                                        Jul
+                                   {% elseif data['apprentice_DOB_month'] == '8' %}
+                                        Aug
+                                   {% elseif data['apprentice_DOB_month'] == '9' %}
+                                        Sep
+                                   {% elseif data['apprentice_DOB_month'] == '10' %}
+                                        Oct
+                                   {% elseif data['apprentice_DOB_month'] == '11' %}
+                                        Nov
+                                   {% else %}
+                                        Dec
+                                   {% endif %}
+                                   {{ data['apprentice_DOB_year'] }}
+                              {% else %}
+                                   19 Jul 1994
+                              {% endif %}
+                         </td>
+                         <td class="govuk-table__cell" data-label="Training dates">
+                              {% if data['apprentice_start_date_month'] %}
+                                   {% if data['apprentice_start_date_month'] == '1' %}
+                                        Jan
+                                   {% elseif data['apprentice_start_date_month'] == '2' %}
+                                        Feb
+                                   {% elseif data['apprentice_start_date_month'] == '3' %}
+                                        Mar
+                                   {% elseif data['apprentice_start_date_month'] == '4' %}
+                                        Apr
+                                   {% elseif data['apprentice_start_date_month'] == '5' %}
+                                        May
+                                   {% elseif data['apprentice_start_date_month'] == '6' %}
+                                        Jun
+                                   {% elseif data['apprentice_start_date_month'] == '7' %}
+                                        Jul
+                                   {% elseif data['apprentice_start_date_month'] == '8' %}
+                                        Aug
+                                   {% elseif data['apprentice_start_date_month'] == '9' %}
+                                        Sep
+                                   {% elseif data['apprentice_start_date_month'] == '10' %}
+                                        Oct
+                                   {% elseif data['apprentice_start_date_month'] == '11' %}
+                                        Nov
+                                   {% else %}
+                                        Dec
+                                   {% endif %}
+                                   {{ data['apprentice_start_date_year'] }}
+                              {% else %}
+                                   Jan 2020
+                              {% endif %}
+
+                              to
+
+                              {% if data['apprentice_finish_date_month'] %}
+                                   {% if data['apprentice_finish_date_month'] == '1' %}
+                                        Jan
+                                   {% elseif data['apprentice_finish_date_month'] == '2' %}
+                                        Feb
+                                   {% elseif data['apprentice_finish_date_month'] == '3' %}
+                                        Mar
+                                   {% elseif data['apprentice_finish_date_month'] == '4' %}
+                                        Apr
+                                   {% elseif data['apprentice_finish_date_month'] == '5' %}
+                                        May
+                                   {% elseif data['apprentice_finish_date_month'] == '6' %}
+                                        Jun
+                                   {% elseif data['apprentice_finish_date_month'] == '7' %}
+                                        Jul
+                                   {% elseif data['apprentice_finish_date_month'] == '8' %}
+                                        Aug
+                                   {% elseif data['apprentice_finish_date_month'] == '9' %}
+                                        Sep
+                                   {% elseif data['apprentice_finish_date_month'] == '10' %}
+                                        Oct
+                                   {% elseif data['apprentice_finish_date_month'] == '11' %}
+                                        Nov
+                                   {% else %}
+                                        Dec
+                                   {% endif %}
+                                   {{ data['apprentice_finish_date_year'] }}
+                              {% else %}
+                                   Jan 2023
+                              {% endif %}
+
+                         </td>
+                         <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">
+                              {% if data['apprentice_cost'] %}
+                                   £<span class="value-format">{{ data['apprentice_cost'] }}</span>
+                              {% else %}
+                                   £<span class="value-format">9000</span>
+                              {% endif %}
+                         </td>
+                         <td class="govuk-table__cell govuk-table__cell--numeric">
+                              <a class="govuk-link edit-apprentice" href="6-apprentice-details">Edit <span class="govuk-visually-hidden">{{ data['apprentice_first_name'] }} {{ data['apprentice_last_name'] }}'s details</span></a>
+                              <br><br>
+                              <a class="govuk-link delete-apprentice" href="#">Delete <span class="govuk-visually-hidden">{{ data['apprentice_first_name'] }} {{ data['apprentice_last_name'] }}'s details</span></a>
+                         </td>
+                    </tr>
+                    </tbody>
+               </table>
+
+               <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <th class="govuk-table__header das-table-cell-width-40" scope="row">Total apprenticeship training price <br>(excluding VAT)</th>
+                              <td class="govuk-table__cell das-table-cell-width-10 text-right" aria-hidden="true">
+                                   {% if data['apprentice_cost'] %}
+                                        <strong>£<span class="value-format">{{ data['apprentice_cost'] }}</span></strong>
+                                   {% else %}
+                                        <strong>£<span class="value-format">9000</span></strong>
+                                   {% endif %}
+                              </td>
+                         </tr>
+                    </tbody>
+               </table>
+
+               <p>
+                    <a href="#" class="govuk-link add-apprentice">Add another apprentice</a>
+                    <a class="govuk-link das-float-right" href="#">Delete this cohort</a>
+               </p>
+
+               <p>
+                    <a href="#" class="govuk-link add-apprentice">Upload apprentice(s) using a CSV file</a>
+               </p>
+
+               <p><br></p>
+
+               <form id="" novalidate="" method="post" action="send_apprentice_details">
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m"><h3 class="govuk-fieldset__heading">Submit to employer?</h3></legend>
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="send_apprentice_details_yes" name="send_apprentice_details" type="radio" value="Yes">
+                                        <label class="govuk-label govuk-radios__label" for="send_apprentice_details_yes">Yes, send to employer to review or add details</label>
+                                   </div>
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="send_apprentice_details_no" name="send_apprentice_details" type="radio" value="No">
+                                        <label class="govuk-label govuk-radios__label" for="send_apprentice_details_no">No, save and return to apprentice requests</label>
+                                   </div>
+
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
+
+                    <p><a href="#" class="govuk-link">Save and exit</a></p>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+     GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+     <!-- <div class="email-banner">
+          <img src="/public/images/ESFA-logo.jpg" alt="Education & Skills Funding Agency">
+     </div> -->
+{% endblock %}
+
+{% block content %}
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <h1 class="govuk-heading-m">Hi "NAME",</h1>
+
+               <p class="govuk-body">You’ve got <strong>10 application(s)</strong> that are ready for you to<br>review and approve.</p>
+
+               <button class="govuk-button margin-top" data-module="govuk-button">View the applications</button>
+
+          </div>
+
+     </div>
+
+{% endblock %}

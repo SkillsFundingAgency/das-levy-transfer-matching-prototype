@@ -1,0 +1,44 @@
+
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+     GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+     <!-- <div class="email-banner">
+          <img src="/public/images/ESFA-logo.jpg" alt="Education & Skills Funding Agency">
+     </div> -->
+{% endblock %}
+
+{% block content %}
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <h1 class="govuk-heading-m">Hi "NAME",</h1>
+
+
+               <h2 class="govuk-heading-s">The receiving employer no longer wants to use the funds from pledge <a href="#">910106</a></h2>
+
+               <p><span class="govuk-tag govuk-tag--red">rejected</span></p>
+
+               <p class="govuk-body">
+                    <a href="#" class="">Johnson and Johnson Building Co</a> has rejected the funding.
+               </p>
+
+               <p><br></p>
+
+               {% from "govuk/components/button/macro.njk" import govukButton %}
+
+               {{ govukButton({
+                    text: "View pledge",
+                    classes: "no-bottom-margin",
+                    href: "#"
+               }) }}
+               <!-- Entry 1 - END -->
+
+          </div>
+
+     </div>
+
+{% endblock %}

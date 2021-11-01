@@ -1,0 +1,191 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My transfer pledges</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfer pledge 910106</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <p><br></p>
+               <h1 class="govuk-heading-xl">
+                    Transfer pledge 910106
+                    <!-- {% if data['accept_application'] == 'Reject' %}
+                         <span class="govuk-caption-m">Applications for your transfer pledge: <strong>2</strong></span>
+                    {% else %}
+                         <span class="govuk-caption-m">Applications for your transfer pledge: <strong>3</strong></span>
+                    {% endif %} -->
+               </h1>
+          </div>
+          <div class="govuk-grid-column-one-third">
+               <p><br></p>
+               <a href="#" class="download-csv full-width">
+                    <div>
+                         Download applications - excel
+                    </div>
+                    <svg class="svg-inline--fa fa-file-excel fa-w-12 fa-3x feintBlueIcon" aria-hidden="true" data-prefix="far" data-icon="file-excel" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="#1d70b8" d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm212-240h-28.8c-4.4 0-8.4 2.4-10.5 6.3-18 33.1-22.2 42.4-28.6 57.7-13.9-29.1-6.9-17.3-28.6-57.7-2.1-3.9-6.2-6.3-10.6-6.3H124c-9.3 0-15 10-10.4 18l46.3 78-46.3 78c-4.7 8 1.1 18 10.4 18h28.9c4.4 0 8.4-2.4 10.5-6.3 21.7-40 23-45 28.6-57.7 14.9 30.2 5.9 15.9 28.6 57.7 2.1 3.9 6.2 6.3 10.6 6.3H260c9.3 0 15-10 10.4-18L224 320c.7-1.1 30.3-50.5 46.3-78 4.7-8-1.1-18-10.3-18z"></path></svg>
+               </a>
+          </div>
+     </div>
+
+     <details class="govuk-details">
+          <summary class="govuk-details__summary">
+               <span class="govuk-details__summary-text">Information about the applications</span>
+          </summary>
+          <div class="govuk-details__text">
+               <p><span class="govuk-body govuk-!-font-weight-bold">Estimated cost in this financial year </span> <br>
+                    This is an estimate of the cost of training for each application in this financial year. It is based on the funding band maximum and the planned start date of training.
+               </p>
+          </div>
+     </details>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header" width="30%">Applicant</th>
+                              <th scope="col" class="govuk-table__header" width="15%">Estimated cost 2021/22</th>
+                              <th scope="col" class="govuk-table__header" width="15%">Typical duration</th>
+                              <th scope="col" class="govuk-table__header" width="15%">Criteria</th>
+                              <th scope="col" class="govuk-table__header">Date applied</th>
+                              <th scope="col" class="govuk-table__header" width="25%">Status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row" data-table-row="one">
+                              <td class="govuk-table__cell">
+                                   <a href="6A-application-details">Belhavel Construction Ltd</a>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
+                              </td>
+                              <td class="govuk-table__cell">£2,900 <!--<br><p style="color: grey; padding-top: 5px;font-size: 16px;">Length of apprenticeship training: 24 months</p>-->
+                              </td>
+                              <td class="govuk-table__cell">30 months </td>
+                              <td class="govuk-table__cell">
+                                   100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">23/03/2021</td>
+                              <td class="govuk-table__cell">
+                                   {% if data['accept_application'] == 'Accept' %}
+                                        <strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong>
+                                   {% elseif data['accept_application'] == 'Reject' %}
+                                        <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                                   {% else %}
+                                        <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   {% endif %}
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row" data-table-row="two">
+                              <td class="govuk-table__cell">
+                                   <a href="#">CBJ Engineering</a>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
+                              </td>
+                              <td class="govuk-table__cell">£36,000 </td>
+                              <td class="govuk-table__cell">24 months </td>
+                              <td class="govuk-table__cell">
+                                   75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">15/03/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Johnson and Johnson Building Co</a>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
+                              </td>
+                              <td class="govuk-table__cell">£7,500 </td>
+                              <td class="govuk-table__cell">24 months </td>
+                              <td class="govuk-table__cell">
+                                   50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">28/03/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   <a href="#">123 Windows Co</a>
+                                   <span class="govuk-caption-m">Date applied: </span>
+                              </td>
+                              <td class="govuk-table__cell">£1,000 </td>
+                              <td class="govuk-table__cell">18 months </td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">21/03/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                         </tr>
+                    </tbody>
+               </table>
+
+               <br>
+
+               <div style="width: auto;float: right;margin-top: -0.5em;">
+                    <h3 class="govuk-heading-l" style="display: inline-block;">
+                         <strong>£<span>65,000</span></strong>
+                         <br>
+                         <div style="font-size: 16px; font-weight: normal;">
+                              <span>Pledge funds for 2021/22</span>
+                         </div>
+                    </h3>
+                    <h3 class="govuk-heading-l" style="display: inline-block;">
+                         &nbsp;&nbsp;
+                    </h3>
+                    <h3 class="govuk-heading-l" style="display: inline-block;">
+                         <strong>
+                              {% if data['accept_application'] == 'Accept' %}
+                                   <span style="color: #1d70b8">£20,000</span>
+                              {% else %}
+                                   <span style="color: #1d70b8">£29,000</span>
+                              {% endif %}
+                         </strong>
+                         <br>
+                         <div style="font-size: 16px; font-weight: normal;">
+                              <span>Remaining pledge funds for 2021/22</span>
+                         </div>
+                    </h3>
+               </div>
+
+               <br>
+
+               <a href="1-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

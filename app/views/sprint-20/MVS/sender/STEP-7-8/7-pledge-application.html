@@ -1,0 +1,168 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row title-options">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">
+                    Johnson and Johnson Building Co
+                    <!-- <span class="govuk-caption-m">Birmingham, West Midlands</span> -->
+               </h1>
+
+               <p><br></p>
+
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <form method="post" action="approve_application_action">
+
+                    <section class="employer-details" style="padding-bottom: 1px;">
+                         <h2 class="govuk-heading-m">Details about the application</h2>
+                         <strong class="govuk-tag govuk-tag--orange">50% Match</strong>
+                         <p>
+                              <span class="icon cross"></span>Location: <strong>Newcastle</strong><br>
+                              <span class="icon tick"></span>Sector: <strong>Construction</strong><br>
+                              <span class="icon tick"></span>Type of job role: <strong>Bricklayer</strong><br>
+                              <span class="icon cross"></span>Level: <strong>6</strong>
+                         </p>
+                         <p>
+                              Apprentices: <strong>2</strong><br>
+                              Estimated duration: <strong>24 months</strong><br>
+                              Start by: <strong>October 2021</strong><br>
+                              Do they have a training provider? <strong>No</strong><br>
+                         </p>
+                    </section>
+
+                    <section class="employer-contact-details">
+                         <h2 class="govuk-heading-m">About their apprenticeship opportunity</h2>
+                         <p>
+                              We are a small family business established 5 years ago in Newcastle. We would like to expand by taking on an apprentice bricklayer. This would be our first apprentice. We would be very grateful for this opportunity, please do not hesitate to contact us if you have any questions.
+                         </p>
+                    </section>
+
+                    <section class="employer-details" style="padding-bottom: 1px;">
+                         <h2 class="govuk-heading-m">Can I afford to fund this training?</h2>
+                         <p style="margin-bottom: 10px;">
+
+                              Estimated cost over 24 months: <strong>£18,000</strong>
+
+                              <br><br>
+
+                              <strong>For 2021/22: </strong>
+                              <br>
+                              Pledge funds remaining this year: <strong>&nbsp;&nbsp;&nbsp; £29,000</strong>
+                              <br>
+                              Estimated costs this year:<strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; £7,500</strong>
+                              </p>
+                              <p>
+                              <strong>Pledge funds remaining if application is approved:</strong> <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; £26,100</strong>
+                              <br>
+                         </p>
+
+                         <details class="govuk-details" data-module="govuk-details">
+                              <summary class="govuk-details__summary">
+                                   <span class="govuk-details__summary-text">What is estimated cost?</span>
+                              </summary>
+                              <div class="govuk-details__text">
+                                   The estimated total cost of training is based on the funding band maximum.
+                                   <br><br>
+                                   The estimated cost of training for this financial year is based on the funding band maximum, the planned start date of training and the 20% EPA payment made at the end of training.
+                              </div>
+                         </details>
+
+                         <a href="#" class="govuk-button govuk-button">See forecast</a>
+
+                    </section>
+
+                    <section class="employer-contact-details">
+                         <h2 class="govuk-heading-m">Contact details</h2>
+                         <p>You can contact Belhavel Construction Ltd if you would like to ask them for more information.</p>
+                         <p>
+                              <span class="icon contact"></span><strong>John Doe </strong><br>
+                              <span class="icon email"></span><a href="mailto:joe.bloggs@jjbuilding.com">john.doe@jjbuilding.com</a><br>
+                              <span class="icon email"></span><a href="mailto:joe.bloggs@jjbuilding.com">john.doe2@jjbuilding.com</a><br>
+                              <span class="icon phone"></span><a href="tel:0123456789">0123 456 7890</a>
+                         </p>
+                         <p><span class="icon website"></span><a href="#">www.jjbuilding.com</a></p>
+                    </section>
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                   <h2 class="govuk-heading-m" style="margin-bottom: 0px!important;">What would you like to do with this application?</h2>
+                              </legend>
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approve_application_yes" name="approve_application" type="radio" value="Yes" data-aria-controls="conditional-approve_application_yes">
+                                        <label class="govuk-label govuk-radios__label" for="approve_application_yes">Approve the application</label>
+                                   </div>
+                                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve_application_yes">
+                                        <div class="govuk-form-group">
+                                             <label class="govuk-label" for="contact-by-email">
+                                                  <strong>Disclaimer:</strong> The information provided by Belhavel Construction Ltd in their application for this pledge has not been checked and verified by the apprenticeship service.
+                                                  <p>Please carry out your own due diligence when deciding whether to offer a transfer of your levy funds.</p>
+                                             </label>
+                                        </div>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approve_application_no" name="approve_application" type="radio" value="No" data-aria-controls="conditional-approve_application_no">
+                                        <label class="govuk-label govuk-radios__label" for="approve_application_no">Reject the application</label>
+                                   </div>
+                                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve_application_no">
+                                        <div class="govuk-form-group">
+                                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                                  <div class="govuk-checkboxes__item">
+                                                       <input class="govuk-checkboxes__input" id="approve_application_no_confirm" name="approve_application_no_confirm" type="checkbox" value="Decline">
+                                                       <label class="govuk-label govuk-checkboxes__label" for="approve_application_no_confirm">I confirm I want to Reject the funding application</label>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                    <!-- <p><a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-back-link" id="approved-back-to-pledge-details">Back</a></p> -->
+
+               </form>
+
+          </div>
+
+          <aside class="govuk-grid-column-one-third">
+
+               <div class="new-pledge-values side-panel">
+
+               </div>
+
+          </aside>
+
+     </div>
+
+</div>
+
+{% endblock %}

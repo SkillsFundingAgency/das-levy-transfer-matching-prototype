@@ -1,0 +1,86 @@
+{% extends "layout_provider.html" %}
+
+{% block pageTitle %}
+     Apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_provider_requests.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="my-account-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+               <h1 class="govuk-heading-xl">Apprentice details ready for review</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Employer</th>
+                              <th scope="col" class="govuk-table__header">Reference</th>
+                              <th scope="col" class="govuk-table__header">Number of apprentices</th>
+                              <th scope="col" class="govuk-table__header">Last message</th>
+                              <th scope="col" class="govuk-table__header"></th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="provider-company-name">BIODUN AJALA TRANSPORT LIMITED</span></td>
+                              <td class="govuk-table__cell"><span class="provider-cohort-ref">VNKBR8</span></td>
+                              <td class="govuk-table__cell">0</td>
+                              <td class="govuk-table__cell"><span class="provider-message">Review</span></td>
+                              <td class="govuk-table__cell"><a href="5-approve-details" class="provider-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="provider-company-name">CARLTON & CO HAIRDRESSING LIMITED</span></td>
+                              <td class="govuk-table__cell"><span class="provider-cohort-ref">V6X9X8</span></td>
+                              <td class="govuk-table__cell">1</td>
+                              <td class="govuk-table__cell"><span class="provider-message">Please call us about the apprentice</span></td>
+                              <td class="govuk-table__cell"><a href="5-approve-details" class="provider-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="provider-company-name">BIODUN AJALA TRANSPORT LIMITED</span></td>
+                              <td class="govuk-table__cell"><span class="provider-cohort-ref">V4WJWJ</span></td>
+                              <td class="govuk-table__cell">1</td>
+                              <td class="govuk-table__cell"><span class="provider-message">No message added</span></td>
+                              <td class="govuk-table__cell"><a href="5-approve-details" class="provider-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="provider-company-name">ALDI LIMITED</span></td>
+                              <td class="govuk-table__cell"><span class="provider-cohort-ref">M7L8WR</span></td>
+                              <td class="govuk-table__cell">1</td>
+                              <td class="govuk-table__cell"><span class="provider-message">We need a quality candidate</span></td>
+                              <td class="govuk-table__cell"><a href="5-approve-details" class="provider-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="provider-company-name">COVENTRY & WARWICKSHIRE CHAMBER OF COMMERCE</span></td>
+                              <td class="govuk-table__cell"><span class="provider-cohort-ref">D9PXPL</span></td>
+                              <td class="govuk-table__cell">1</td>
+                              <td class="govuk-table__cell"><span class="provider-message">No message added</span></td>
+                              <td class="govuk-table__cell"><a href="5-approve-details" class="provider-capture-details">Details</a></td>
+                         </tr>
+                    </tbody>
+               </table>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

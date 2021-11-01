@@ -1,0 +1,56 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <div class="govuk-panel govuk-panel--confirmation application-complete">
+                    <h1 class="govuk-panel__title">Apprentice details approved and sent to training povider</h1>
+               </div>
+
+               <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Reference</th>
+                              <td class="govuk-table__cell">4RKBWY</td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Training provider</th>
+                              <td class="govuk-table__cell">BARKING AND DAGENHAM COLLEGE</td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header">Approved by</th>
+                              <td class="govuk-table__cell">{{ data['provider_name'] }}</td>
+                         </tr>
+                    </tbody>
+               </table>
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <p>Your training provider will review these apprentice details and either confirm the information is correct or contact you to suggest changes.</p>
+
+               <p><a href="#" class="govuk-link">Go back to view apprentice records.</a></p>
+
+               <div class="govuk-inset-text grey-background">
+                    <h3 class="govuk-heading-m">Help us improve this section</h3>
+                    <p class="">Take a 3 minute survey about adding apprentices so that we can improve this service.</p>
+                    <button class="govuk-button" data-module="govuk-button">Take the survey</button>
+               </div>
+
+          </div>
+     </div>
+
+</div>
+
+{% endblock %}

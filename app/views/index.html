@@ -73,9 +73,9 @@
 
           <h2 class="govuk-heading-l" style="padding-top: 10px;margin-bottom: 0px;">MVS prototypes</h2>
 
-          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Sprint 19</span>
+          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Sprint 20</span>
 
-          {% include './sprint-19/_summary.html' %}
+          {% include './sprint-20/_summary.html' %}
 
      </div>
 
@@ -91,7 +91,7 @@
 
           <h2 class="govuk-heading-l" style="padding-top: 10px;margin-bottom: 0px;">Sprint prototypes</h2>
 
-          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Up to sprint 18</span>
+          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Up to sprint 19</span>
 
           <details class="govuk-details" data-module="govuk-details">
                <summary class="govuk-details__summary">
@@ -106,6 +106,10 @@
                          <div class="govuk-grid-column-two-thirds">
 
                               <h2 class="govuk-heading-l">Beta sprints</h2>
+
+                              {% set sprint19Html %}
+                                   {% include './sprint-19/_summary.html' %}
+                              {% endset %}
 
                               {% set sprint18Html %}
                                    {% include './sprint-18/_summary.html' %}
@@ -142,6 +146,17 @@
                               {{ govukAccordion({
                                    id: "accordion-beta",
                                    items: [
+                                        {
+                                             heading: {
+                                                  text: "Sprint 19"
+                                             },
+                                             content: {
+                                                  html: sprint19Html
+                                             },
+                                             summary: {
+                                                  html: '13th September - 26th October 2021'
+                                             }
+                                        },
                                         {
                                              heading: {
                                                   text: "Sprint 18"
