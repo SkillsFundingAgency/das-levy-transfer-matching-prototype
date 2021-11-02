@@ -153,13 +153,12 @@
 
                <br>
 
-              <!-- <a href="#" class="govuk-button">Create a new transfer pledge</a>
-               &nbsp;&nbsp;&nbsp;
-               <a href="#" class="govuk-button govuk-button--warning accepted-journey-cancel-button">Delete transfer pledge</a>
-          -->
+               <a href="#" class="govuk-button">Create a new transfer pledge</a>
 
-               <div style="width: auto;float: right;margin-top: -0.5em;">
-                    <h3 class="govuk-heading-l" style="display: inline-block;">
+               <a href="#" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button no-margin-top">Close pledge</a>
+
+               <div class="pledge-values">
+                    <h3 class="govuk-heading-l">
                          <strong>
                               {% if data['pledge_amount'] %}
                                    £<span class="value-format">{{ data['pledge_amount'] }}</span>
@@ -167,15 +166,9 @@
                                    £65,000
                               {% endif %}
                          </strong>
-                         <br>
-                         <div style="font-size: 16px; font-weight: normal;">
-                              <span>Pledge funds for 2021/22</span>
-                         </div>
+                         <div class="sub-text">Pledge funds for 2021/22</div>
                     </h3>
-                    <h3 class="govuk-heading-l" style="display: inline-block;">
-                         &nbsp;&nbsp;
-                    </h3>
-                    <h3 class="govuk-heading-l" style="display: inline-block;">
+                    <h3 class="govuk-heading-l">
                          <strong>
                               {% if data['pledge_amount'] %}
                                    {% if data['accept_application'] == 'Accept' %}
@@ -191,10 +184,7 @@
                                    {% endif %}
                               {% endif %}
                          </strong>
-                         <br>
-                         <div style="font-size: 16px; font-weight: normal;">
-                              <span>Remaining pledge funds for 2021/22</span>
-                         </div>
+                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
                     </h3>
                </div>
 
@@ -202,7 +192,15 @@
 
                <a href="4-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
 
-               <br><br><br><br><br>
+               <hr class="govuk-section-break dotted no-margin-top">
+
+               <a href="#" class="download-csv black-version">
+                    <span class="black-download"></span>
+                    <div>Download applications - excel</div>
+               </a>
+
+               <p><br></p>
+               <p><br></p>
 
           </div>
 

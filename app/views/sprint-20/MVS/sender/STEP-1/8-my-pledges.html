@@ -37,7 +37,7 @@
      {% endif %}
 
      <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
+          <div class="govuk-grid-column-two-thirds">
                {% if data['delete_pledge'] == 'Yes' %}
 
                {% else %}
@@ -49,7 +49,7 @@
 
      <div class="govuk-grid-row">
 
-          <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-grid-column-full">
 
                {% if data['delete_pledge'] == 'Yes' %}
                     <p>You have <strong>0</strong> transfer pledges.</p>
@@ -62,11 +62,12 @@
                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Approved for apprenticeships</th>
                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
+                                   <th scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
                               </tr>
                          </thead>
                          <tbody class="govuk-table__body">
                               <tr class="govuk-table__row">
-                                   <td class="govuk-table__cell" colspan="5" style="text-align: center;">No transfer pledge created yet</td>
+                                   <td class="govuk-table__cell" colspan="6" style="text-align: center;">No transfer pledge created yet</td>
                               </tr>
                          </tbody>
                     </table>
@@ -82,6 +83,7 @@
                                         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Approved for apprenticeships</th>
                                         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
                                         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
                                    </tr>
                               </thead>
                               <tbody class="govuk-table__body">
@@ -91,6 +93,7 @@
                                         <td class="govuk-table__cell govuk-table__cell--numeric">£<span class="value-format">{{ data['pledge_amount'] }}</span></td>
                                         <td class="govuk-table__cell govuk-table__cell--numeric">£<span class="value-format">{{ data['pledge_amount'] }}</span></td>
                                         <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+                                        <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">Active</strong></td>
                                    </tr>
                               </tbody>
                          </table>
@@ -105,11 +108,12 @@
                                         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Approved for apprenticeships</th>
                                         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
                                         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
+                                        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
                                    </tr>
                               </thead>
                               <tbody class="govuk-table__body">
                                    <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell" colspan="5" style="text-align: center;">No transfer pledge created yet</td>
+                                        <td class="govuk-table__cell" colspan="6" style="text-align: center;">No transfer pledge created yet</td>
                                    </tr>
                               </tbody>
                          </table>

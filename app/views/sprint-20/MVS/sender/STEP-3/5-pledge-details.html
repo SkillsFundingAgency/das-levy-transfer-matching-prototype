@@ -161,31 +161,18 @@
                     </tbody>
                </table>
 
-               <br>
+               <a href="#" class="govuk-button">Create a new transfer pledge</a>
 
-               <div style="width: auto;float: right;margin-top: -0.5em;">
-                    <h3 class="govuk-heading-l" style="display: inline-block;">
-                         <strong>£65,000</strong>
-                         <br>
-                         <div style="font-size: 16px; font-weight: normal;">
-                              <span>Pledge funds for 2021/22</span>
-                         </div>
+               <a href="13-delete-pledge" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button no-margin-top">Close pledge</a>
+
+               <div class="pledge-values">
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">65000</span></strong>
+                         <div class="sub-text">Pledge funds for 2021/22</div>
                     </h3>
-                    <h3 class="govuk-heading-l" style="display: inline-block;">
-                         &nbsp;&nbsp;
-                    </h3>
-                    <h3 class="govuk-heading-l" style="display: inline-block;">
-                         <strong>
-                              {% if data['accept_application'] == 'Accept' %}
-                                   <span style="color: #1d70b8">£20,000</span>
-                              {% else %}
-                                   <span style="color: #1d70b8">£29,000</span>
-                              {% endif %}
-                         </strong>
-                         <br>
-                         <div style="font-size: 16px; font-weight: normal;">
-                              <span>Remaining pledge funds for 2021/22</span>
-                         </div>
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">29000</span></strong>
+                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
                     </h3>
                </div>
 

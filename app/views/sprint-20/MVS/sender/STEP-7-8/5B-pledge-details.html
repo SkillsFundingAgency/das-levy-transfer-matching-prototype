@@ -27,11 +27,18 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
-               <h1 class="govuk-heading-xl">
-                    Transfer pledge 910105
-                    <!-- <span class="govuk-caption-m">Applications for your transfer pledge: <strong>1</strong></span> -->
-               </h1>
+               <h1 class="govuk-heading-xl">Transfer pledge 910107</h1>
+               {% if data['delete_pledge'] == "Yes" %}
+                    <div class="govuk-warning-text">
+                         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                         <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Warning</span>
+                              This pledge is now: <span class="govuk-tag govuk-tag--grey">Inactive</span>
+                         </strong>
+                    </div>
+               {% else %}
 
+               {% endif %}
           </div>
      </div>
 
@@ -55,11 +62,7 @@
                     <thead class="govuk-table__head">
                          <tr class="govuk-table__row">
                               <th scope="col" class="govuk-table__header" width="250px">Applicant</th>
-                              <th scope="col" class="govuk-table__header" width="120px">
-                                   <div class="small-text">
-                                        Estimated cost 2021/22
-                                   </div>
-                              </th>
+                              <th scope="col" class="govuk-table__header" width="120px">Estimated cost 2021/22</th>
                               <th scope="col" class="govuk-table__header" width="120px">Typical duration</th>
                               <th scope="col" class="govuk-table__header">Criteria</th>
                               <th scope="col" class="govuk-table__header">Date applied</th>
@@ -67,55 +70,57 @@
                          </tr>
                     </thead>
                     <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row">
-                              <td class="govuk-table__cell"><a href="#">Johnson and Johnson Building Co</a></td>
-                              <td class="govuk-table__cell">£7,500 </td>
-                              <td class="govuk-table__cell">24 months </td>
-                              <td class="govuk-table__cell">
-                                   50% match
-                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
-                                        &#8226; Sector <br>
-                                        &#8226; Type of job role
-                                   </p>
-                              </td>
-                              <td class="govuk-table__cell">28/03/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                         <tr class="govuk-table__row" data-table-row="one">
+                              <td class="govuk-table__cell" colspan="6" style="text-align: center;">No applications received yet</td>
                          </tr>
                     </tbody>
                </table>
 
                <br>
 
-               <a href="#" class="govuk-button">Create a new transfer pledge</a>
-               &nbsp;&nbsp;&nbsp;
-               <a href="6-delete-pledge" class="govuk-button govuk-button--warning accepted-journey-cancel-button">Delete transfer pledge</a>
+               {% if data['delete_pledge'] == "Yes" %}
+                    <a href="#" class="govuk-button">Create a new transfer pledge</a>
 
+                    <div class="pledge-values">
+                         <h3 class="govuk-heading-l">
+                              <strong>£<span class="value-format">42000</span></strong>
+                              <div class="sub-text">Pledge funds for 2021/22</div>
+                         </h3>
+                         <h3 class="govuk-heading-l">
+                              <strong>£<span class="value-format">42000</span></strong>
+                              <div class="sub-text">Remaining pledge funds for 2021/22</div>
+                         </h3>
+                    </div>
+               {% else %}
+                    <a href="#" class="govuk-button">Create a new transfer pledge</a>
 
-               <div style="width: auto;float: right;margin-top: -0.5em;">
-                    <h3 class="govuk-heading-l" style="display: inline-block;">
-                         <strong>£<span>78,000</span></strong>
-                         <br>
-                         <div style="font-size: 16px; font-weight: normal;">
-                              <span>Pledge funds for 2021/22</span>
-                         </div>
-                    </h3>
-                    <h3 class="govuk-heading-l" style="display: inline-block;">
-                         &nbsp;&nbsp;
-                    </h3>
-                    <h3 class="govuk-heading-l" style="display: inline-block;">
-                         <strong><span style="color: #1d70b8">£78,000</span></strong>
-                         <br>
-                         <div style="font-size: 16px; font-weight: normal;">
-                              <span>Remaining pledge funds for 2021/22</span>
-                         </div>
-                    </h3>
-               </div>
+                    <a href="6-delete-pledge" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button no-margin-top">Close pledge</a>
+
+                    <div class="pledge-values">
+                         <h3 class="govuk-heading-l">
+                              <strong>£<span class="value-format">42000</span></strong>
+                              <div class="sub-text">Pledge funds for 2021/22</div>
+                         </h3>
+                         <h3 class="govuk-heading-l">
+                              <strong>£<span class="value-format">42000</span></strong>
+                              <div class="sub-text">Remaining pledge funds for 2021/22</div>
+                         </h3>
+                    </div>
+               {% endif %}
 
                <br>
 
                <a href="4-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
 
-               <br><br><br><br><br>
+               <hr class="govuk-section-break dotted no-margin-top">
+
+               <a href="#" class="download-csv black-version">
+                    <span class="black-download"></span>
+                    <div>Download applications - excel</div>
+               </a>
+
+               <p><br></p>
+               <p><br></p>
 
           </div>
 
