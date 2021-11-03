@@ -66,12 +66,12 @@ router.post('/MVS/receiver/STEP-4/withdraw_application', function (req, res) {
 
 // CANCEL APPLICATION
 router.post('/MVS/receiver/STEP-9-10/cancel_application_action', function (req, res) {
-  const cancel_application = req.session.data.cancel_application
-  if (cancel_application === 'Yes') {
-    res.redirect('/' + version + '/MVS/receiver/STEP-9-10/4B-my-applications')
-  } else {
-    res.redirect('/' + version + '/MVS/sender/STEP-7-8/5B-pledge-details')
-  }
+     const cancel_application = req.session.data.cancel_application
+     if (cancel_application === 'Yes') {
+          res.redirect('/' + version + '/MVS/receiver/STEP-9-10/4-my-applications')
+     } else {
+          res.redirect('/' + version + '/MVS/receiver/STEP-9-10/5B-pledge-details')
+     }
 })
 
 // CONNECT TO EMPLOYER

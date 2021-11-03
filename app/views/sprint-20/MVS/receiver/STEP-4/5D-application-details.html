@@ -45,35 +45,19 @@
                <section class="employer-contact-details">
                     <p>
                          <strong>Apprenticeship training course:</strong>
-                         {% if data['pledge-application-standard'] %}
-                              {{ data['pledge-application-standard'] }}
-                         {% else %}
-                              Bricklayer (level 2)
-                         {% endif %}
+                         Bricklayer (level 2)
                     </p>
                     <p>
                          <strong>Number of apprentices:</strong>
-                         {% if data['pledge-application-apprentices'] %}
-                              {{ data['pledge-application-apprentices'] }}
-                         {% else %}
-                              2
-                         {% endif %}
+                         2
                     </p>
                     <p>
                          <strong>Estimated total cost:</strong>
-                         {% if data['pledge-application-standard'] %}
-                              £<span class="total-cost-multiplied value-format">####</span>
-                         {% else %}
-                              £18,000
-                         {% endif %}
+                         £12,500
                     </p>
                     <p>
                          <strong>Apprenticeship training to start by:</strong>
-                         {% if data['pledge-application-start-month'] %}
-                              {{ data['pledge-application-start-month'] }}/{{ data['pledge-application-start-year'] }}
-                         {% else %}
-                              10/2021
-                         {% endif %}
+                         10/2021
                     </p>
                </section>
 
