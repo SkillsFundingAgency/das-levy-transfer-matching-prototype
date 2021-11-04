@@ -117,7 +117,13 @@
                               <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>
                          </tr>
                          <tr class="govuk-table__row">
-                              <td class="govuk-table__cell"><span class="approval-name">COVENTRY AND WARWICKSHIRE CHAMBER OF COMMERCE_LevyReceiver</span></td>
+                              <td class="govuk-table__cell">
+                                   {% if data['provider_name'] %}
+                                        <span class="approval-name">{{ data['provider_name'] }}</span>
+                                   {% else %}
+                                        <span class="approval-name">Belhavel Construction Ltd</span>
+                                   {% endif %}
+                              </td>
                               <td class="govuk-table__cell"><span class="approval-status">Pending</span></td>
                               <td class="govuk-table__cell"><span class="approval-cost">£9,000</span></td>
                               <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>

@@ -69,7 +69,13 @@
                          </tr>
                          <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Training</th>
-                              <td class="govuk-table__cell">Business analyst, Level: 4 (1 Apprentice)</td>
+                              <td class="govuk-table__cell">
+                                   {% if data['provider_name'] %}
+                                        {{ data['apprentice_standards'] }} (1 Apprentice)
+                                   {% else %}
+                                        Business analyst, Level: 4
+                                   {% endif %}
+                              </td>
                          </tr>
 
                     </tbody>

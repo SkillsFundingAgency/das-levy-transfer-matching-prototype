@@ -31,7 +31,13 @@
                          </tr>
                          <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header">Approved by</th>
-                              <td class="govuk-table__cell">{{ data['provider_name'] }}</td>
+                              <td class="govuk-table__cell">
+                                   {% if data['provider_name'] %}
+                                        {{ data['provider_name'] }}
+                                   {% else %}
+                                        Belhavel Construction Ltd
+                                   {% endif %}
+                              </td>
                          </tr>
                     </tbody>
                </table>

@@ -65,10 +65,26 @@
                               <td class="govuk-table__cell"><a href="5-approve-details" class="provider-capture-details">Details</a></td>
                          </tr>
                          <tr class="govuk-table__row">
-                              <td class="govuk-table__cell"><span class="provider-company-name">COVENTRY & WARWICKSHIRE CHAMBER OF COMMERCE</span></td>
-                              <td class="govuk-table__cell"><span class="provider-cohort-ref">D9PXPL</span></td>
+                              <td class="govuk-table__cell">
+                                   <span class="provider-company-name">
+                                        {% if data['provider_name'] %}
+                                             {{ data['provider_name'] }}
+                                        {% else %}
+                                             BARRY & BARRY Ltd
+                                        {% endif %}
+                                   </span>
+                              </td>
+                              <td class="govuk-table__cell"><span class="provider-cohort-ref">4RKBWY</span></td>
                               <td class="govuk-table__cell">1</td>
-                              <td class="govuk-table__cell"><span class="provider-message">No message added</span></td>
+                              <td class="govuk-table__cell">
+                                   <span class="provider-message">
+                                        {% if data['approve_apprentice_details_approve_text'] %}
+                                             {{ data['approve_apprentice_details_approve_text'] }}
+                                        {% else %}
+                                             No message added
+                                        {% endif %}
+                                   </span>
+                              </td>
                               <td class="govuk-table__cell"><a href="5-approve-details" class="provider-capture-details">Details</a></td>
                          </tr>
                     </tbody>
