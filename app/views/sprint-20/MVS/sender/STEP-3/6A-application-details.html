@@ -40,14 +40,6 @@
 
                <h1 class="govuk-heading-xl">Belhavel Construction Ltd</h1>
 
-               <div class="govuk-warning-text">
-                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                    <strong class="govuk-warning-text__text">
-                    <span class="govuk-warning-text__assistive">Warning</span>
-                         You will be able to use the funds pledged from the 27th October.
-                    </strong>
-               </div>
-
                <p><br></p>
 
           </div>
@@ -130,7 +122,7 @@
 
                <form method="post" action="accept_application" id="accept_application">
 
-                    <div class="govuk-form-group">
+                    <div class="govuk-form-group" id="accept_application_form">
                          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                                    <h2 class="govuk-heading-m no-margin-bottom">What would you like to do with this application?</h2>
@@ -169,11 +161,17 @@
                          </fieldset>
                     </div>
 
-                    <button class="govuk-button" data-module="govuk-button" id="accept_application">Continue</button>
+                    <div class="form-action">
+                         <button class="govuk-button" data-module="govuk-button" id="accept_application">Continue</button>
+                    </div>
 
                     <!-- <p><a href="javascript:history.back()" class="govuk-link govuk-link--no-visited-state govuk-back-link" id="approved-back-to-pledge-details">Back</a></p> -->
 
                </form>
+
+               <div class="error-action">
+                    <button class="govuk-button" data-module="govuk-button" id="accept_application_error">Continue</button>
+               </div>
 
           </div>
 

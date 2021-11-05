@@ -387,6 +387,7 @@ $('.confirm-error-message_2').on('click',function(e){
 
 // ACCEPT APPLICATION
 $('#accept_application_error_summary, #accept_application_error_text').hide();
+$('.form-action').hide();
 
 $('#accept_application').on("click", function (e) {
      if ($('input[name="accept_application"]').is(':checked')) {
@@ -397,6 +398,18 @@ $('#accept_application').on("click", function (e) {
           $('#accept_application .govuk-form-group').addClass('govuk-form-group--error');
           $('#accept_application_error_summary, #accept_application_error_text').show();
      }
+});
+
+
+$('#accept_application_error').on("click", function (e) {
+     $('#accept_application_error_summary, #accept_application_error_text').show();
+     $('#accept_application_form').addClass('govuk-form-group--error');
+     window.scrollTo(0, 0);
+});
+
+$('input[name="accept_application"]').on("click", function (e) {
+     $('.form-action').show();
+     $('.error-action').hide();
 });
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
