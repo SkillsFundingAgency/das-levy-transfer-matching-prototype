@@ -94,6 +94,16 @@
 
                <p><a href="https://findapprenticeshiptraining.apprenticeships.education.gov.uk" target="blank">Find a training provider</a>.</p>
 
+               <p>
+                    The apprentice details may be rejected if they exceed the estimated total cost that
+                    {% if data['pledge-application-standard'] %}
+                         <strong class="pledge-name-answer">####</strong>
+                    {% else %}
+                         <strong>BARRY & BARRY Ltd</strong>
+                    {% endif %}
+                    agreed to fund when they approved your application. If this happens you will be able to amend the apprentice details and send for approval again.
+               </p>
+
                <br>
 
                <a href="4B-choose-org" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">

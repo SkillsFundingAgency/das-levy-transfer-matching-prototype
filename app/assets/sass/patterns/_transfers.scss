@@ -220,6 +220,26 @@ table {
           }
      }
      &.applications-table {
+          &#order-applications-table {
+               thead {
+                    tr {
+                         th {
+                              &:active, &:hover, &:focus {
+                                   cursor: pointer;
+                              }
+                         }
+                    }
+               }
+               tbody {
+                    tr {
+                         td {
+                              &:last-child {
+                                   padding-right: 0em;
+                              }
+                         }
+                    }
+               }
+          }
           thead {
                tr {
                     th {
