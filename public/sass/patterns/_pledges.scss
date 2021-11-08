@@ -201,6 +201,11 @@
 .pledge-values {
      display: flex;
      margin: 1.5em 0 1.5em;
+     &.top-right {
+          border-left: 10px solid $govuk-link-colour;
+          padding-left: 1.5em;
+          margin: 3em 0 0 0;
+     }
      div {
           width: 33%;
           margin-right: 3%;
