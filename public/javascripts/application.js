@@ -989,14 +989,18 @@ $('.tabs.application-tabs button').on("click", function (e) {
 $('#type-of-applications').on("change", function (e) {
      if ($(this).val() == 'Awaiting approval') {
           $('#order-applications-table tbody tr').hide();
+          $('#order-applications-table tbody tr.awaiting_approval').show();
      } else if ($(this).val() =='Awaiting acceptance') {
-
+          $('#order-applications-table tbody tr').hide();
+          $('#order-applications-table tbody tr.awaiting_acceptance').show();
      } else if ($(this).val() =='Withdrawn') {
-
+          $('#order-applications-table tbody tr').hide();
+          $('#order-applications-table tbody tr.withdrawn').show();
      } else if ($(this).val() =='Rejected') {
-
+          $('#order-applications-table tbody tr').hide();
+          $('#order-applications-table tbody tr.rejected').show();
      } else {
-
+          $('#order-applications-table tbody tr').show();
      }
 });
 
