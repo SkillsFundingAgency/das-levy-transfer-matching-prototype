@@ -24,64 +24,43 @@
 
           <div class="govuk-grid-column-two-thirds">
 
-               <h1 class="govuk-heading-xl">Approving the apprentice details</h1>
+               <h1 class="govuk-heading-xl">Approving the apprenticeship details</h1>
 
                <form method="post" action="7B-confirmation" id="approve-pledge-form">
 
                     <p>
-                         You have approved the pledge application. The apprentice details will be added by <strong>Behavel Construction Ltd</strong> to use the funds. This step needs further approval. There are two options you can choose from:
+                         You have approved the pledge application. The apprentice details will be added by <strong>Behavel Construction Ltd</strong> to use the funds. You have two approval options to choose from:
+                         <!-- This step needs further approval. There are two options you can choose from: -->
                     </p>
 
-                    <p>
-                         If you choose to check and review the apprentice details it means:
-                    </p>
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <!-- <legend class="govuk-fieldset__legend">How do you want to approve the apprentice details?</legend> -->
+                              <div class="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approve-application" name="approve-application" type="radio" value="approve all">
+                                        <label class="govuk-label govuk-radios__label" for="approve-application"><strong>Check and review apprenticeship details</strong></label>
 
-                    <ul class="govuk-list govuk-list--bullet">
-                         <li>you will get a prompt to look at the apprentice details when they’re added by the employer</li>
-                         <li>you will get multiple prompts if the employer adds the apprentice details in batches</li>
-                         <li>you will be able to check the standard, the cost and dates</li>
-                         <li>you can ask the employer to amend details</li>
-                         <li>you will have the option to change the apprentice details</li>
-                    </ul>
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             <!-- <li>you will get a prompt to look at the apprenticeship details when they’re added by the employer</li> -->
+                                             <li>you may get multiple prompts if the employer adds the apprenticeship details in batches</li>
+                                             <li>you will be able to check the standard, the cost and dates</li>
+                                             <!-- <li>you can ask the employer to amend details</li> -->
+                                             <li>you will have the option to change the apprenticeship details or you can ask the employer to</li>
+                                        </ul>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approve-application-2" name="approve-application" type="radio" value="approve with manual">
+                                        <label class="govuk-label govuk-radios__label govuk-fieldset__legend--s" for="approve-application-2"><strong>Automatically approve the apprenticeship details</strong></label>
 
-                    <p>
-                         If you choose to automatically approve the apprentice details this means:
-                    </p>
-
-                    <ul class="govuk-list govuk-list--bullet">
-                         <li>you will not check and review the apprentice details</li>
-                         <li>you will not check and review the apprenticeship standard, cost or start date for the application</li>
-                         <!-- <li>the cost will not exceed the apprentice price</li> -->
-                    </ul>
-
-                    <p>
-                         The employer or training provider can choose a different apprenticeship standard, but the cost of the apprentice details cannot exceed the agreed transfer amount in the application.
-                         <!-- If the training provider chooses a different apprenticeship standard the costs will not exceed the transfer agreed in the application. -->
-                    </p>
-
-                    <p><br></p>
-
-                    {{ govukRadios({
-                    idPrefix: "approve-application",
-                         name: "approve-application",
-                         fieldset: {
-                              legend: {
-                                   text: "How do you want to approve the apprentice details?",
-                                   isPageHeading: false,
-                                   classes: "govuk-fieldset__legend--s"
-                              }
-                         },
-                         items: [
-                              {
-                                   value: "approve all",
-                                   text: "Check and review apprentice details"
-                              },
-                              {
-                                   value: "approve with manual",
-                                   text: "Automatically approve the apprentice details"
-                              }
-                         ]
-                    }) }}
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             <li>you will not check and review the apprenticeship details, the apprenticeship standard or the cost or start date for the application</li>
+                                             <li>the employer or training provider can choose a different apprenticeship standard, but the cost of the apprenticeship details cannot exceed the agreed transfer amount in the application.</li>
+                                        </ul>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
 
                     <button class="govuk-button" data-module="govuk-button" id="approve-pledge-continue">Continue</button>
 

@@ -23,6 +23,9 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
+@import "components/filter";
+@import "components/pagination";
+@import "components/tabs";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 #main-content {
@@ -311,15 +314,15 @@ p {
 
 #transfers-hub {
      .govuk-breadcrumbs {
-          margin: 1em 0 3em 0;
+          margin: 1em 0 2em 0;
      }
      .govuk-back-link {
-          margin-bottom: 3em;
+          margin-bottom: 2em;
      }
 }
 
 .govuk-back-link {
-     margin-bottom: 3em;
+     margin-bottom: 2em;
 }
 
 .funding-wrapper {

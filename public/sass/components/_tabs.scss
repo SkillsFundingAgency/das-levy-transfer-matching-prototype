@@ -1,0 +1,50 @@
+.tabs {
+     display: inline-block;
+     width: 100%;
+     margin-bottom: 1em;
+     ul.govuk-list {
+          margin: 0;
+          li {
+               display: inline-block;
+               float: left;
+               width: 18.4%;
+               margin-right: 2%;
+               &:last-of-type {
+                    margin-right: 0;
+               }
+               button {
+                    &.govuk-link {
+                         background: none;
+                         border: none;
+                         border-bottom: 10px solid govuk-colour("light-grey");
+                         border-radius: 0;
+                         width: 100%;
+                         padding: 1em 0;
+                         text-align: center;
+                         font-size: 0.975rem;
+                         font-weight: bold;
+                         color: black;
+                         span {
+                              color: $govuk-link-colour;
+                         }
+                         &:active, &:focus, &:hover {
+                              outline: none;
+                              box-shadow: none;
+                              cursor: pointer;
+                              border-bottom: 10px solid $govuk-link-hover-colour;
+                              color: $govuk-link-hover-colour;
+                         }
+                         &.selected {
+                              border-bottom: 10px solid $govuk-link-colour;
+                              color: $govuk-link-colour;
+                         }
+                    }
+               }
+          }
+     }
+}
+
+.applications-container {
+     display: inline-block;
+     width: 100%;
+}

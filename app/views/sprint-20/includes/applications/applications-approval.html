@@ -1,0 +1,49 @@
+<div class="govuk-grid-row application-tab-content" id="application-content-2" style="display:none;">
+     <div class="govuk-grid-column-full applications-container">
+
+          <table class="govuk-table applications-table in-tab" id="order-applications-table">
+               <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                         <th scope="col" class="govuk-table__header sort-section" width="20%" onclick="sortTable(1)"><span class="icon sort"></span>Applicant</th>
+                         <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(2)"><span class="icon sort"></span>Estimated cost 2021/22</th>
+                         <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(3)"><span class="icon sort"></span>Typical duration</th>
+                         <th scope="col" class="govuk-table__header sort-section" width="12.5%" onclick="sortTable(4)"><span class="icon sort"></span>Criteria</th>
+                         <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(5)"><span class="icon sort"></span>Date applied</th>
+                         <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(6)"><span class="icon sort"></span>Status</th>
+                    </tr>
+               </thead>
+               <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row" data-table-row="one">
+                         <td class="govuk-table__cell">
+                              <a href="6A-application-details">Belhavel Construction Ltd</a>
+                              <!-- <span class="govuk-caption-m">Date applied: </span> -->
+                         </td>
+                         <td class="govuk-table__cell">£2,900 <!--<br><p style="color: grey; padding-top: 5px;font-size: 16px;">Length of apprenticeship training: 24 months</p>-->
+                         </td>
+                         <td class="govuk-table__cell">30 months </td>
+                         <td class="govuk-table__cell">
+                              100% match
+                              <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                   &#8226; Location <br>
+                                   &#8226; Sector <br>
+                                   &#8226; Type of job role <br>
+                                   &#8226; Level
+                              </p>
+                         </td>
+                         <td class="govuk-table__cell">23/03/2021</td>
+                         <td class="govuk-table__cell">
+                              {% if data['accept_application'] == 'Accept' %}
+                                   <strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong>
+                              {% elseif data['accept_application'] == 'Reject' %}
+                                   <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                              {% else %}
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                              {% endif %}
+                         </td>
+                    </tr>
+               </tbody>
+          </table>
+
+
+     </div>
+</div>

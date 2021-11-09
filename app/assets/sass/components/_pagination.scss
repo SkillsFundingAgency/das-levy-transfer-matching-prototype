@@ -1,24 +1,62 @@
+.pagination-container {
+     border-bottom: 1px solid #ddd;
+     margin: 0 0 40px 0;
+     padding-bottom: 40px;
+     p {
+          float: right;
+          display: inline-block;
+          margin: 1em 0 0 0;
+     }
+     .dropdowns {
+          float: right;
+          margin: -1.15em 0 0 2em;
+          display: inline-block;
+          .govuk-form-group {
+               margin: 0;
+          }
+     }
+}
+
+.dropdowns {
+     &.top-version {
+          float: right;
+          margin-top: -2.5em;
+          .govuk-form-group {
+               margin: 0;
+          }
+     }
+}
+
 ul.pagination {
-     margin-top: 60px;
-     border-top: 1px solid #ddd;
+     margin: 0 0 0 0;
      padding: 0;
      list-style: none;
+     display: inline-block;
+     width: auto;
+     padding-bottom: 0;
      li {
-          margin: 2em 0 0 0;
+          margin: 1em 2em 0 0;
           display: inline-block;
-          width: 50%;
+          width: auto;
           font-size: 0.875rem;
           float: left;
+          // &:last-of-type {
+          //      float: right;
+          // }
           a {
-               text-decoration: none;
+               // text-decoration: none;
                font-weight: bold;
                line-height: 1.1;
-               min-height: 3em;
+               // min-height: 3em;
                font-size: 1.15rem;
+               &.current {
+                    text-decoration: none;
+                    color: black;
+               }
                &.link-previous, &.link-next {
                     background-repeat: no-repeat;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
+                    // padding-top: 10px;
+                    // padding-bottom: 10px;
                     display: inline-block;
                     box-sizing: border-box;
                     text-indent: 0;
@@ -38,7 +76,7 @@ ul.pagination {
                     }
                }
                &.link-previous {
-                    padding-left: 45px;
+                    padding-left: 20px;
                     background-image: url("../images/arrow-left.svg");
                     background-position: left center;
                     span {
@@ -46,11 +84,12 @@ ul.pagination {
                     }
                }
                &.link-next {
-                    padding-right: 45px;
+                    padding-right: 20px;
                     background-image: url("../images/arrow-right.svg");
                     background-position: right center;
                     text-align: right;
                     float: right;
+                    background-size: contain;
                     span {
                          float: right;
                     }

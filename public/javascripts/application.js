@@ -969,6 +969,41 @@ $('input[name="confirm_withdraw"]').on("click", function (e) {
 
 // !!!!!!!!!!!!!!!!!!!!!!!! -- RECEIVER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //
 
+// TABS & FILTER APPLICATIONS - START //
+
+function openTab(tabNumber) {
+     var i;
+     var x = document.getElementsByClassName("application-tab-content");
+     for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+     }
+     document.getElementById(tabNumber).style.display = "block";
+}
+
+$('.tabs.application-tabs button').on("click", function (e) {
+     $('.tabs.application-tabs button').removeClass('selected');
+     $(this).addClass('selected');
+});
+
+
+$('#type-of-applications').on("change", function (e) {
+     if ($(this).val() == 'Awaiting approval') {
+          $('#order-applications-table tbody tr').hide();
+     } else if ($(this).val() =='Awaiting acceptance') {
+
+     } else if ($(this).val() =='Withdrawn') {
+
+     } else if ($(this).val() =='Rejected') {
+
+     } else {
+
+     }
+});
+
+
+
+// TABS & FILTER APPLICATIONS - END //
+
    // !!!!!! --------------------------------- Date stamp - THIS MUST BE AT THE BOTTOM --------------------------------- !!!!!! //
    var dateStamp = document.getElementById("date-stamp")
    if (dateStamp) {

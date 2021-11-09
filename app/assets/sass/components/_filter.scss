@@ -1,0 +1,28 @@
+.filter {
+     &.search-applications {
+          .search {
+               float: left;
+               width: 40%;
+               position: relative;
+               button {
+                    position: absolute;
+                    right: 0.1em;
+                    bottom: 1.65em;
+                    margin: 0;
+                    text-indent: -1000em;
+                    width: 2em;
+                    height: 1.9em;
+                    border: none;
+                    // border-right: 2px solid black;
+                    // border-top: 2px solid black;
+                    // border-bottom: 2px solid black;
+                    background: url('../images/search-white.svg') no-repeat 50% 50% $govuk-link-colour;
+                    background-size: 1em;
+               }
+          }
+          .dropdowns {
+               width: auto;
+               float: right;
+          }
+     }
+}
