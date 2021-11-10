@@ -1,0 +1,47 @@
+
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+     GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+     <!-- <div class="email-banner">
+          <img src="/public/images/ESFA-logo.jpg" alt="Education & Skills Funding Agency">
+     </div> -->
+{% endblock %}
+
+{% block content %}
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <h1 class="govuk-heading-m">Belhavel Construction LTD, your transfer application to BARRY & BARRY Ltd (910106) is unsuccessful this time.</h1>
+
+               <p>You can apply to other transfer opportunities to secure funding for your apprenticeships.</p>
+
+               {% from "govuk/components/button/macro.njk" import govukButton %}
+
+               {{ govukButton({
+                    text: "Apply",
+                    classes: "no-bottom-margin",
+                    href: "https://transfers.manage-apprenticeships.service.gov.uk/Opportunities"
+               }) }}
+
+               <p class="govuk-body">
+                    Or you can find out more about <a href="#">apprenticeship funding if you are a non-levy paying company</a> or <a href="#">apprenticeship funding if you are a levy paying company</a>.
+               </p>
+
+               <p class="govuk-body">
+                    This is an automated message. Please don't reply to this email.
+               </p>
+
+               <p class="govuk-body">
+                    Kind regards,<br>
+                    <strong>Apprenticeship service team</strong>
+               </p>
+
+          </div>
+
+     </div>
+
+{% endblock %}

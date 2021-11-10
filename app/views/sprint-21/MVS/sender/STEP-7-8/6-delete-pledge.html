@@ -1,0 +1,76 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Close pledge 910107</h1>
+
+               <p>Though closed, applications awaiting approval for this pledge can still be approved by you..</p>
+
+               <form method="post" action="delete_pledge_action">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Are you sure you want to continue and close this pledge?</legend>
+
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="delete_pledge" id="delete_pledge_yes" value="Yes" type="radio" data-aria-controls="conditional_delete_pledge_yes">
+                                        <label class="govuk-label govuk-radios__label" for="delete_pledge_yes">Yes, close pledge 910107</label>
+                                   </div>
+
+                                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional_delete_pledge_yes">
+                                        <div class="govuk-form-group">
+                                             <label class="govuk-label" for="contact-by-email">
+                                                  <p><strong>Disclaimer: </strong></p>
+                                                  <p>Your pledge is no longer public and businesses won't be able to apply for funding from it.</p>
+                                                  <p>This pledge will still be valid for any applications you already approved, including those where the applicant has yet to accept funding.</p>
+                                                  <p>Applications awaiting approval for this pledge can still be approved or rejected by you.</p>
+                                             </label>
+                                        </div>
+                                   </div>
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="delete_pledge" id="delete_pledge_no" value="No" type="radio">
+                                        <label class="govuk-label govuk-radios__label" for="delete_pledge_no">No, keep pledge 910107 active</label>
+                                   </div>
+
+                              </div>
+
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

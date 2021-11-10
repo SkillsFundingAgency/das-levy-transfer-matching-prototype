@@ -1,0 +1,45 @@
+
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+     GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+     <!-- <div class="email-banner">
+          <img src="/public/images/ESFA-logo.jpg" alt="Education & Skills Funding Agency">
+     </div> -->
+{% endblock %}
+
+{% block content %}
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <h1 class="govuk-heading-m">Belhavel Construction LTD,  your application for transfer funds from (Transfer - ID) has been approved, awaiting your acceptance.</h1>
+
+               <p class="govuk-body">
+                    Sign in to your apprenticeship service account to accept or decline the funding.
+               </p>
+
+               {% from "govuk/components/button/macro.njk" import govukButton %}
+
+               {{ govukButton({
+                    text: "View applications",
+                    classes: "no-bottom-margin",
+                    href: "#"
+               }) }}
+
+               <p class="govuk-body">
+                    This is an automated message. Please don't reply to this email.
+               </p>
+
+               <p class="govuk-body">
+                    Kind regards,<br>
+                    <strong>Apprenticeship service team</strong>
+               </p>
+
+          </div>
+
+     </div>
+
+{% endblock %}
