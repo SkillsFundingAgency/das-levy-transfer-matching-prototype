@@ -58,17 +58,6 @@
                     </a>
                </h1>
 
-               <div class="pledge-values top-version">
-                    <h3 class="govuk-heading-l">
-                         <strong>£<span class="value-format">65000</span></strong>
-                         <div class="sub-text">Pledge funds for 2021/22</div>
-                    </h3>
-                    <h3 class="govuk-heading-l">
-                         <strong>£<span class="value-format">29000</span></strong>
-                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
-                    </h3>
-               </div>
-
                <details class="govuk-details">
                     <summary class="govuk-details__summary">
                          <span class="govuk-details__summary-text">Information about the applications</span>
@@ -85,17 +74,147 @@
      </div>
 
      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+               <div class="pledge-values top-version">
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">65000</span></strong>
+                         <div class="sub-text">Pledge funds for 2021/22</div>
+                    </h3>
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">29000</span></strong>
+                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
+                    </h3>
+               </div>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+
+               <div class="dropdowns top-version">
+                    <div class="govuk-form-group">
+                         <!-- <label class="govuk-label" for="type-of-applications">Filter applications</label> -->
+                         <select class="govuk-select" id="type-of-criteria" name="type-of-criteria">
+                              <option value="All criteria" selected="true" disabled="disabled">-- Filter criteria --</option>
+                              <option disabled="disabled">-----------------------</option>
+                              <option value="All criteria">All criteria</option>
+                              <option value="100% match">100% match</option>
+                              <option value="75% match">75% match</option>
+                              <option value="50% match">50% match</option>
+                              <option value="25% match">25% match</option>
+                              <option value="0% match">0% match</option>
+                         </select>
+                    </div>
+                    <div class="govuk-form-group">
+                         <!-- <label class="govuk-label" for="type-of-applications">Filter applications</label> -->
+                         <select class="govuk-select" id="type-of-applications" name="type-of-applications">
+                              <option value="All statuses" selected="true" disabled="disabled">-- Filter statuses --</option>
+                              <option disabled="disabled">-----------------------</option>
+                              <option value="All statuses">All statuses</option>
+                              <option value="Awaiting approval">Awaiting approval</option>
+                              <option value="Awaiting acceptance">Awaiting acceptance</option>
+                              <option value="Withdrawn">Withdrawn</option>
+                              <option value="Rejected">Rejected</option>
+                         </select>
+                    </div>
+               </div>
+
+          </div>
+
+     </div>
+
+
+     <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
-               {% include "../../../includes/tabs-application-page.html" %}
-
-               {% include "../../../includes/applications/applications-all.html" %}
-               {% include "../../../includes/applications/applications-approval.html" %}
-               {% include "../../../includes/applications/applications-acceptance.html" %}
-               {% include "../../../includes/applications/applications-withdrawn.html" %}
-               {% include "../../../includes/applications/applications-rejected.html" %}
-
-               {% include "../../../includes/pagination.html" %}
+               <table class="govuk-table applications-table in-tab" id="order-applications-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header sort-section" width="20%" onclick="sortTable(1)"><span class="icon sort"></span>Applicant</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(2)"><span class="icon sort"></span>Estimated cost 2021/22</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(3)"><span class="icon sort"></span>Typical duration</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="12.5%" onclick="sortTable(4)"><span class="icon sort"></span>Criteria</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(5)"><span class="icon sort"></span>Date applied</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(6)"><span class="icon sort"></span>Status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row awaiting_approval" data-table-row="one">
+                              <td class="govuk-table__cell">
+                                   <a href="6A-application-details">Belhavel Construction Ltd</a>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
+                              </td>
+                              <td class="govuk-table__cell">£2,900 <!--<br><p style="color: grey; padding-top: 5px;font-size: 16px;">Length of apprenticeship training: 24 months</p>-->
+                              </td>
+                              <td class="govuk-table__cell">30 months </td>
+                              <td class="govuk-table__cell">
+                                   100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">23/03/2021</td>
+                              <td class="govuk-table__cell">
+                                   {% if data['accept_application'] == 'Accept' %}
+                                        <strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong>
+                                   {% elseif data['accept_application'] == 'Reject' %}
+                                        <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                                   {% else %}
+                                        <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   {% endif %}
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row awaiting_acceptance" data-table-row="two">
+                              <td class="govuk-table__cell">
+                                   <a href="#">CBJ Engineering</a>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
+                              </td>
+                              <td class="govuk-table__cell">£36,000</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">15/03/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row rejected" data-table-row="three">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Johnson and Johnson Building Co</a>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
+                              </td>
+                              <td class="govuk-table__cell">£7,500 </td>
+                              <td class="govuk-table__cell">24 months </td>
+                              <td class="govuk-table__cell">
+                                   50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">28/03/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row withdrawn" data-table-row="four">
+                              <td class="govuk-table__cell">
+                                   <a href="#">123 Windows Co</a>
+                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
+                              </td>
+                              <td class="govuk-table__cell">£1,000 </td>
+                              <td class="govuk-table__cell">18 months </td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">21/03/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                         </tr>
+                    </tbody>
+               </table>
 
                <a href="#" class="govuk-button">Create a new transfer pledge</a>
 

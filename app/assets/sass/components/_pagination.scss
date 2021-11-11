@@ -20,9 +20,14 @@
 .dropdowns {
      &.top-version {
           float: right;
-          margin-top: -2.5em;
+          margin-top: 1em;
           .govuk-form-group {
                margin: 0;
+               display: inline-block;
+               clear: none;
+               &:first-of-type {
+                    margin-right: 1em;
+               }
           }
      }
 }
