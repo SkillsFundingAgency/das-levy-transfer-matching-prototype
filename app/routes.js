@@ -24,5 +24,6 @@ router.use('/sprint-17', require('./views/sprint-17/_routes'))
 router.use('/sprint-18', require('./views/sprint-18/_routes'))
 router.use('/sprint-19', require('./views/sprint-19/_routes'))
 router.use('/sprint-20', require('./views/sprint-20/_routes'))
+router.use('/sprint-21', require('./views/sprint-21/_routes'))
 
 module.exports = router
