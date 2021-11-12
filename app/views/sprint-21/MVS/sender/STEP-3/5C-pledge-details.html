@@ -95,12 +95,12 @@
                          <select class="govuk-select" id="type-of-criteria" name="type-of-criteria">
                               <option value="All criteria" selected="true" disabled="disabled">-- Filter criteria --</option>
                               <option disabled="disabled">-----------------------</option>
-                              <option value="All criteria">All criteria</option>
-                              <option value="100% match">100% match</option>
-                              <option value="75% match">75% match</option>
-                              <option value="50% match">50% match</option>
-                              <option value="25% match">25% match</option>
-                              <option value="0% match">0% match</option>
+                              <option value="all">All criteria</option>
+                              <option value="100">100% match</option>
+                              <option value="75">75% match</option>
+                              <option value="50">50% match</option>
+                              <option value="25">25% match</option>
+                              <option value="0">0% match</option>
                          </select>
                     </div>
                     <div class="govuk-form-group">
@@ -108,11 +108,11 @@
                          <select class="govuk-select" id="type-of-applications" name="type-of-applications">
                               <option value="All statuses" selected="true" disabled="disabled">-- Filter statuses --</option>
                               <option disabled="disabled">-----------------------</option>
-                              <option value="All statuses">All statuses</option>
-                              <option value="Awaiting approval">Awaiting approval</option>
-                              <option value="Awaiting acceptance">Awaiting acceptance</option>
-                              <option value="Withdrawn">Withdrawn</option>
-                              <option value="Rejected">Rejected</option>
+                              <option value="all">All statuses</option>
+                              <option value="1">Awaiting approval</option>
+                              <option value="2">Awaiting acceptance</option>
+                              <option value="3">Withdrawn</option>
+                              <option value="4">Rejected</option>
                          </select>
                     </div>
                </div>
@@ -137,7 +137,7 @@
                          </tr>
                     </thead>
                     <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row awaiting_approval match-100" data-table-row="one">
+                         <tr class="govuk-table__row" data-table-row="one" data-status="1" data-criteria="100">
                               <td class="govuk-table__cell">
                                    <a href="6A-application-details">Belhavel Construction Ltd</a>
                                    <!-- <span class="govuk-caption-m">Date applied: </span> -->
@@ -165,7 +165,7 @@
                                    {% endif %}
                               </td>
                          </tr>
-                         <tr class="govuk-table__row awaiting_acceptance match-75" data-table-row="two">
+                         <tr class="govuk-table__row awaiting_acceptance match-75" data-table-row="two" data-status="2" data-criteria="75">
                               <td class="govuk-table__cell">
                                    <a href="#">CBJ Engineering</a>
                                    <!-- <span class="govuk-caption-m">Date applied: </span> -->
@@ -183,7 +183,7 @@
                               <td class="govuk-table__cell">15/03/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong></td>
                          </tr>
-                         <tr class="govuk-table__row rejected match-50" data-table-row="three">
+                         <tr class="govuk-table__row rejected match-50" data-table-row="three" data-status="4" data-criteria="50">
                               <td class="govuk-table__cell">
                                    <a href="#">Johnson and Johnson Building Co</a>
                                    <!-- <span class="govuk-caption-m">Date applied: </span> -->
@@ -200,7 +200,7 @@
                               <td class="govuk-table__cell">28/03/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
                          </tr>
-                         <tr class="govuk-table__row withdrawn match-0" data-table-row="four">
+                         <tr class="govuk-table__row withdrawn match-0" data-table-row="four" data-status="3" data-criteria="0">
                               <td class="govuk-table__cell">
                                    <a href="#">123 Windows Co</a>
                                    <!-- <span class="govuk-caption-m">Date applied: </span> -->
@@ -230,4 +230,42 @@
 
 </div>
 
+{% endblock %}
+
+{% block pageScripts %}
+
+  <script>
+    var filterCriteria = 'all'
+    var filterStatus = 'all'
+
+    $('#type-of-applications').on("change", function (e) {
+      filterStatus = this.value
+      filterTable()
+    })
+
+    $('#type-of-criteria').on("change", function (e) {
+      filterCriteria = this.value
+      filterTable()
+    })
+
+    var filterTable = function () {
+      console.log(filterCriteria + " - " + filterStatus)
+      var appsTableRows = $('#order-applications-table tbody tr')
+      var match
+      appsTableRows.each(function () {
+        match = true
+        if (filterCriteria != 'all') {
+          if ($(this).data('criteria') != filterCriteria)
+            match = false
+        }
+        if (filterStatus != 'all') {
+          if ($(this).data('status') != filterStatus)
+            match = false
+        }
+        $(this).css('display', match ? 'table-row' : 'none')
+      })
+
+    }
+
+  </script>
 {% endblock %}

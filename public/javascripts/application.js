@@ -986,7 +986,7 @@ $('.tabs.application-tabs button').on("click", function (e) {
 });
 
 // $('#order-applications-table tbody tr').hide();
-
+/*
 $('#type-of-applications').on("change", function (e) {
      if ($(this).val() == 'Awaiting approval') {
           $('#order-applications-table tbody tr').hide();
@@ -1026,7 +1026,7 @@ $('#type-of-criteria').on("change", function (e) {
      }
 });
 
-
+*/
 
 
 // TABS & FILTER APPLICATIONS - END //
