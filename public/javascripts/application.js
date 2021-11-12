@@ -985,6 +985,7 @@ $('.tabs.application-tabs button').on("click", function (e) {
      $(this).addClass('selected');
 });
 
+// $('#order-applications-table tbody tr').hide();
 
 $('#type-of-applications').on("change", function (e) {
      if ($(this).val() == 'Awaiting approval') {
@@ -1003,6 +1004,28 @@ $('#type-of-applications').on("change", function (e) {
           $('#order-applications-table tbody tr').show();
      }
 });
+
+$('#type-of-criteria').on("change", function (e) {
+     if ($(this).val() == '100% match') {
+          $('#order-applications-table tbody tr').hide();
+          $('#order-applications-table tbody tr.match-100').show();
+     } else if ($(this).val() =='75% match') {
+          $('#order-applications-table tbody tr').hide();
+          $('#order-applications-table tbody tr.match-75').show();
+     } else if ($(this).val() =='50% match') {
+          $('#order-applications-table tbody tr').hide();
+          $('#order-applications-table tbody tr.match-50').show();
+     } else if ($(this).val() =='25% match') {
+          $('#order-applications-table tbody tr').hide();
+          $('#order-applications-table tbody tr.match-25').show();
+     } else if ($(this).val() =='0% match') {
+          $('#order-applications-table tbody tr').hide();
+          $('#order-applications-table tbody tr.match-0').show();
+     } else {
+          $('#order-applications-table tbody tr').show();
+     }
+});
+
 
 
 
