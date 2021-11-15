@@ -132,7 +132,7 @@
                               <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(2)">Estimated cost 2021/22</th>
                               <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(3)">Typical duration</th>
                               <th scope="col" class="govuk-table__header sort-section" width="12.5%" onclick="sortTable(4)">Criteria</th>
-                              <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(5)">Date applied</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(5)" data-class-name="priority">Date applied</th>
                               <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(6)">Status</th>
                          </tr>
                     </thead>
@@ -154,7 +154,7 @@
                                         &#8226; Level
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">Today</td>
+                              <td class="govuk-table__cell"><span class="hide-content">A</span> Today</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="2" data-criteria="75">
@@ -171,7 +171,7 @@
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">15/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="4" data-criteria="50">
@@ -181,13 +181,13 @@
                               <td class="govuk-table__cell">£7,500</td>
                               <td class="govuk-table__cell">24 months</td>
                               <td class="govuk-table__cell">
-                                   <span class="hide-content">C</span>5<span class="hide-content">E</span>0% match
+                                   <span class="hide-content">C</span>50% match
                                    <p style="color: grey; padding-top: 5px;font-size: 16px;">
                                         &#8226; Sector <br>
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">15/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="3" data-criteria="0">
@@ -199,7 +199,7 @@
                               <td class="govuk-table__cell">
                                    <span class="hide-content">E</span>0% match
                               </td>
-                              <td class="govuk-table__cell">15/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="3" data-criteria="0">
@@ -211,7 +211,7 @@
                               <td class="govuk-table__cell">
                                    <span class="hide-content">E</span>0% match
                               </td>
-                              <td class="govuk-table__cell">15/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 1 - 5 END ///////////////////////////// -->
@@ -232,7 +232,7 @@
                                         &#8226; Level
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">14/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">C</span> 14/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="2" data-criteria="75">
@@ -249,7 +249,7 @@
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">13/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">D</span> 13/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="4" data-criteria="50">
@@ -259,13 +259,13 @@
                               <td class="govuk-table__cell">£7,500 </td>
                               <td class="govuk-table__cell">24 months</td>
                               <td class="govuk-table__cell">
-                                   <span class="hide-content">C</span>5<span class="hide-content">E</span>0% match
+                                   <span class="hide-content">C</span>50% match
                                    <p style="color: grey; padding-top: 5px;font-size: 16px;">
                                         &#8226; Location <br>
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">13/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">D</span> 13/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="2" data-criteria="0">
@@ -277,7 +277,7 @@
                               <td class="govuk-table__cell">
                                    <span class="hide-content">E</span>0% match
                               </td>
-                              <td class="govuk-table__cell">21/03/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">D</span> 13/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="3" data-criteria="0">
@@ -289,7 +289,7 @@
                               <td class="govuk-table__cell">
                                    <span class="hide-content">E</span>0% match
                               </td>
-                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 6 - 10 END ///////////////////////////// -->
@@ -310,7 +310,7 @@
                                         &#8226; Level
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="4" data-criteria="75">
@@ -327,7 +327,7 @@
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="4" data-criteria="50">
@@ -337,13 +337,13 @@
                               <td class="govuk-table__cell">£7,500</td>
                               <td class="govuk-table__cell">24 months</td>
                               <td class="govuk-table__cell">
-                                   <span class="hide-content">C</span>5<span class="hide-content">E</span>0% match
+                                   <span class="hide-content">C</span>50% match
                                    <p style="color: grey; padding-top: 5px;font-size: 16px;">
                                         &#8226; Sector <br>
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="3" data-criteria="100">
@@ -355,7 +355,7 @@
                               <td class="govuk-table__cell">
                                    <span class="hide-content">E</span>0% match
                               </td>
-                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="1" data-criteria="100">
@@ -373,7 +373,7 @@
                                         &#8226; Level
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">10/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">F</span> 10/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 11 - 15 END ///////////////////////////// -->
@@ -394,7 +394,7 @@
                                         &#8226; Level
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">10/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">F</span> 10/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="1" data-criteria="75">
@@ -411,7 +411,7 @@
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">F</span> 10/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="1" data-criteria="50">
@@ -421,13 +421,13 @@
                               <td class="govuk-table__cell">£7,500</td>
                               <td class="govuk-table__cell">24 months</td>
                               <td class="govuk-table__cell">
-                                   <span class="hide-content">C</span>5<span class="hide-content">E</span>0% match
+                                   <span class="hide-content">C</span>50% match
                                    <p style="color: grey; padding-top: 5px;font-size: 16px;">
                                         &#8226; Sector <br>
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">07/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">G</span> 07/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="3" data-criteria="0">
@@ -439,7 +439,7 @@
                               <td class="govuk-table__cell">
                                    <span class="hide-content">E</span>0% match
                               </td>
-                              <td class="govuk-table__cell">07/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">G</span> 07/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="1" data-criteria="0">
@@ -451,7 +451,7 @@
                               <td class="govuk-table__cell">
                                    <span class="hide-content">E</span>0% match
                               </td>
-                              <td class="govuk-table__cell">07/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">G</span> 07/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 16 - 20 END ///////////////////////////// -->
@@ -472,7 +472,7 @@
                                         &#8226; Level
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">01/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">H</span> 01/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="1" data-criteria="75">
@@ -489,7 +489,7 @@
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">01/11/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">H</span> 01/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="1" data-criteria="50">
@@ -499,13 +499,13 @@
                               <td class="govuk-table__cell">£9,500</td>
                               <td class="govuk-table__cell">12 months</td>
                               <td class="govuk-table__cell">
-                                   <span class="hide-content">C</span>5<span class="hide-content">E</span>0% match
+                                   <span class="hide-content">C</span>50% match
                                    <p style="color: grey; padding-top: 5px;font-size: 16px;">
                                         &#8226; Sector <br>
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">28/10/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">I</span> 28/10/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="1" data-criteria="0">
@@ -517,7 +517,7 @@
                               <td class="govuk-table__cell">
                                    <span class="hide-content">E</span>0% match
                               </td>
-                              <td class="govuk-table__cell">28/10/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">I</span> 28/10/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <tr class="govuk-table__row" data-status="1" data-criteria="0">
@@ -529,7 +529,7 @@
                               <td class="govuk-table__cell">
                                    <span class="hide-content">E</span>0% match
                               </td>
-                              <td class="govuk-table__cell">26/10/2021</td>
+                              <td class="govuk-table__cell"><span class="hide-content">J</span> 26/10/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 21 - 25 END ///////////////////////////// -->
