@@ -96,11 +96,11 @@
                               <option value="All criteria" selected="true" disabled="disabled">-- Filter criteria --</option>
                               <option disabled="disabled">-----------------------</option>
                               <option value="all">All criteria</option>
-                              <option value="100">100% match</option>
-                              <option value="75">75% match</option>
-                              <option value="50">50% match</option>
-                              <option value="25">25% match</option>
-                              <option value="0">0% match</option>
+                              <option value="100">100% match - (2)</option>
+                              <option value="75">75% match - (2)</option>
+                              <option value="50">50% match - (2)</option>
+                              <option value="25">25% match - (0)</option>
+                              <option value="0">0% match - (4)</option>
                          </select>
                     </div>
                     <div class="govuk-form-group">
@@ -109,10 +109,10 @@
                               <option value="All statuses" selected="true" disabled="disabled">-- Filter statuses --</option>
                               <option disabled="disabled">-----------------------</option>
                               <option value="all">All statuses</option>
-                              <option value="1">Awaiting approval</option>
-                              <option value="2">Awaiting acceptance</option>
-                              <option value="3">Withdrawn</option>
-                              <option value="4">Rejected</option>
+                              <option value="1">Awaiting approval - (1)</option>
+                              <option value="2">Awaiting acceptance - (4)</option>
+                              <option value="3">Withdrawn - (3)</option>
+                              <option value="4">Rejected - (2)</option>
                          </select>
                     </div>
                </div>
@@ -137,14 +137,14 @@
                          </tr>
                     </thead>
                     <tbody class="govuk-table__body">
-                         <tr class="govuk-table__row" data-table-row="one" data-status="1" data-criteria="100">
+
+                         <!-- ///////////////////////////// BLOCK 1 - 5 START ///////////////////////////// -->
+                         <tr class="govuk-table__row" data-status="1" data-criteria="100">
                               <td class="govuk-table__cell">
                                    <a href="6A-application-details">Belhavel Construction Ltd</a>
-                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
                               </td>
-                              <td class="govuk-table__cell">£2,900 <!--<br><p style="color: grey; padding-top: 5px;font-size: 16px;">Length of apprenticeship training: 24 months</p>-->
-                              </td>
-                              <td class="govuk-table__cell">30 months </td>
+                              <td class="govuk-table__cell">£2,900</td>
+                              <td class="govuk-table__cell">30 months</td>
                               <td class="govuk-table__cell">
                                    100% match
                                    <p style="color: grey; padding-top: 5px;font-size: 16px;">
@@ -154,21 +154,12 @@
                                         &#8226; Level
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">23/03/2021</td>
-                              <td class="govuk-table__cell">
-                                   {% if data['accept_application'] == 'Accept' %}
-                                        <strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong>
-                                   {% elseif data['accept_application'] == 'Reject' %}
-                                        <strong class="govuk-tag govuk-tag--red">Rejected</strong>
-                                   {% else %}
-                                        <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
-                                   {% endif %}
-                              </td>
+                              <td class="govuk-table__cell">Today</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
                          </tr>
-                         <tr class="govuk-table__row awaiting_acceptance match-75" data-table-row="two" data-status="2" data-criteria="75">
+                         <tr class="govuk-table__row" data-status="2" data-criteria="75">
                               <td class="govuk-table__cell">
                                    <a href="#">CBJ Engineering</a>
-                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
                               </td>
                               <td class="govuk-table__cell">£36,000</td>
                               <td class="govuk-table__cell">24 months</td>
@@ -180,13 +171,12 @@
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">15/03/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">AWAITING ACCEPTANCE BY APPLICANT</strong></td>
+                              <td class="govuk-table__cell">15/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
                          </tr>
-                         <tr class="govuk-table__row rejected match-50" data-table-row="three" data-status="4" data-criteria="50">
+                         <tr class="govuk-table__row" data-status="4" data-criteria="50">
                               <td class="govuk-table__cell">
                                    <a href="#">Johnson and Johnson Building Co</a>
-                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
                               </td>
                               <td class="govuk-table__cell">£7,500 </td>
                               <td class="govuk-table__cell">24 months </td>
@@ -197,22 +187,373 @@
                                         &#8226; Type of job role
                                    </p>
                               </td>
-                              <td class="govuk-table__cell">28/03/2021</td>
+                              <td class="govuk-table__cell">15/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
                          </tr>
-                         <tr class="govuk-table__row withdrawn match-0" data-table-row="four" data-status="3" data-criteria="0">
+                         <tr class="govuk-table__row" data-status="3" data-criteria="0">
                               <td class="govuk-table__cell">
                                    <a href="#">123 Windows Co</a>
-                                   <!-- <span class="govuk-caption-m">Date applied: </span> -->
                               </td>
                               <td class="govuk-table__cell">£1,000 </td>
-                              <td class="govuk-table__cell">18 months </td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">15/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="3" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Ferlot & Co</a>
+                              </td>
+                              <td class="govuk-table__cell">£1,200</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">15/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 1 - 5 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 6 - 10 START ///////////////////////////// -->
+                         <tr class="govuk-table__row" data-status="2" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <a href="6A-application-details">ActiveCub Ltd</a>
+                              </td>
+                              <td class="govuk-table__cell">£2,900</td>
+                              <td class="govuk-table__cell">30 months</td>
+                              <td class="govuk-table__cell">
+                                   100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role<br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">14/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="2" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Solidaric</a>
+                              </td>
+                              <td class="govuk-table__cell">£36,000</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">13/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="4" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Nupositive</a>
+                              </td>
+                              <td class="govuk-table__cell">£7,500 </td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">13/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="2" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Zurova</a>
+                              </td>
+                              <td class="govuk-table__cell">£1,250 </td>
+                              <td class="govuk-table__cell">18 months</td>
                               <td class="govuk-table__cell">
                                    0% match
                               </td>
                               <td class="govuk-table__cell">21/03/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="3" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Radicalsy Limited</a>
+                              </td>
+                              <td class="govuk-table__cell">£1,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">12/11/2021</td>
                               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
                          </tr>
+                         <!-- ///////////////////////////// BLOCK 6 - 10 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 11 - 15 START ///////////////////////////// -->
+                         <tr class="govuk-table__row" data-status="1" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <a href="6A-application-details">Steepway Limited</a>
+                              </td>
+                              <td class="govuk-table__cell">£2,900</td>
+                              <td class="govuk-table__cell">30 months</td>
+                              <td class="govuk-table__cell">
+                                   100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="4" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Confidentify PLC</a>
+                              </td>
+                              <td class="govuk-table__cell">£36,000</td>
+                              <td class="govuk-table__cell">36 months</td>
+                              <td class="govuk-table__cell">
+                                   75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="4" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Steepby & Co</a>
+                              </td>
+                              <td class="govuk-table__cell">£7,500</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="3" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Onradical</a>
+                              </td>
+                              <td class="govuk-table__cell">£1,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="1" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Heroicology PLC</a>
+                              </td>
+                              <td class="govuk-table__cell">£10,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">10/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 11 - 15 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 16 - 20 START ///////////////////////////// -->
+                         <tr class="govuk-table__row" data-status="1" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <a href="6A-application-details">Fearlessia Limited</a>
+                              </td>
+                              <td class="govuk-table__cell">£5,000</td>
+                              <td class="govuk-table__cell">30 months</td>
+                              <td class="govuk-table__cell">
+                                   100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">10/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="1" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Steepist PLC</a>
+                              </td>
+                              <td class="govuk-table__cell">£36,000</td>
+                              <td class="govuk-table__cell">36 months</td>
+                              <td class="govuk-table__cell">
+                                   75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">12/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="1" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Steepline</a>
+                              </td>
+                              <td class="govuk-table__cell">£7,500</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">07/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="3" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Modby</a>
+                              </td>
+                              <td class="govuk-table__cell">£1,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">07/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="1" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Heroicon Ltd</a>
+                              </td>
+                              <td class="govuk-table__cell">£10,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">07/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 16 - 20 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 21 - 25 START ///////////////////////////// -->
+                         <tr class="govuk-table__row" data-status="1" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <a href="6A-application-details">Positivela</a>
+                              </td>
+                              <td class="govuk-table__cell">£7,500</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">01/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="1" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Heroicbar Ltd</a>
+                              </td>
+                              <td class="govuk-table__cell">£16,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">01/11/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="1" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Obviousmax Partners & Son</a>
+                              </td>
+                              <td class="govuk-table__cell">£9,500</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell">28/10/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="1" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Nubold Ltd</a>
+                              </td>
+                              <td class="govuk-table__cell">£10,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">28/10/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="1" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Edbold</a>
+                              </td>
+                              <td class="govuk-table__cell">£3,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   0% match
+                              </td>
+                              <td class="govuk-table__cell">26/10/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 21 - 25 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 26 - 30 START ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 26 - 30 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 31 - 35 START ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 31 - 35 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 36 - 40 START ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 36 - 40 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 41 - 45 START ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 41 - 45 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 46 - 50 START ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 46 - 50 END ///////////////////////////// -->
+
                     </tbody>
                </table>
 
@@ -234,37 +575,4 @@
 
 {% block pageScripts %}
 
-  <script>
-    var filterCriteria = 'all'
-    var filterStatus = 'all'
-
-    $('#type-of-applications').on("change", function (e) {
-      filterStatus = this.value
-      filterTable()
-    })
-
-    $('#type-of-criteria').on("change", function (e) {
-      filterCriteria = this.value
-      filterTable()
-    })
-
-    var filterTable = function () {
-      var appsTableRows = $('#order-applications-table tbody tr')
-      var match
-      appsTableRows.each(function () {
-        match = true
-        if (filterCriteria != 'all') {
-          if ($(this).data('criteria') != filterCriteria)
-            match = false
-        }
-        if (filterStatus != 'all') {
-          if ($(this).data('status') != filterStatus)
-            match = false
-        }
-        $(this).css('display', match ? 'table-row' : 'none')
-      })
-
-    }
-
-  </script>
 {% endblock %}

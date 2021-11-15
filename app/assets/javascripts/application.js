@@ -987,44 +987,75 @@ $('.tabs.application-tabs button').on("click", function (e) {
 
 // $('#order-applications-table tbody tr').hide();
 
+var filterCriteria = 'all'
+var filterStatus = 'all'
+
 $('#type-of-applications').on("change", function (e) {
-     if ($(this).val() == 'Awaiting approval') {
-          $('#order-applications-table tbody tr').hide();
-          $('#order-applications-table tbody tr.awaiting_approval').show();
-     } else if ($(this).val() =='Awaiting acceptance') {
-          $('#order-applications-table tbody tr').hide();
-          $('#order-applications-table tbody tr.awaiting_acceptance').show();
-     } else if ($(this).val() =='Withdrawn') {
-          $('#order-applications-table tbody tr').hide();
-          $('#order-applications-table tbody tr.withdrawn').show();
-     } else if ($(this).val() =='Rejected') {
-          $('#order-applications-table tbody tr').hide();
-          $('#order-applications-table tbody tr.rejected').show();
-     } else {
-          $('#order-applications-table tbody tr').show();
-     }
-});
+     filterStatus = this.value
+     filterTable()
+})
 
 $('#type-of-criteria').on("change", function (e) {
-     if ($(this).val() == '100% match') {
-          $('#order-applications-table tbody tr').hide();
-          $('#order-applications-table tbody tr.match-100').show();
-     } else if ($(this).val() =='75% match') {
-          $('#order-applications-table tbody tr').hide();
-          $('#order-applications-table tbody tr.match-75').show();
-     } else if ($(this).val() =='50% match') {
-          $('#order-applications-table tbody tr').hide();
-          $('#order-applications-table tbody tr.match-50').show();
-     } else if ($(this).val() =='25% match') {
-          $('#order-applications-table tbody tr').hide();
-          $('#order-applications-table tbody tr.match-25').show();
-     } else if ($(this).val() =='0% match') {
-          $('#order-applications-table tbody tr').hide();
-          $('#order-applications-table tbody tr.match-0').show();
-     } else {
-          $('#order-applications-table tbody tr').show();
-     }
-});
+     filterCriteria = this.value
+     filterTable()
+})
+
+var filterTable = function () {
+     var appsTableRows = $('#order-applications-table tbody tr')
+     var match
+     appsTableRows.each(function () {
+          match = true
+          if (filterCriteria != 'all') {
+               if ($(this).data('criteria') != filterCriteria)
+               match = false
+          }
+          if (filterStatus != 'all') {
+               if ($(this).data('status') != filterStatus)
+               match = false
+          }
+          $(this).css('display', match ? 'table-row' : 'none')
+     })
+}
+
+
+// $('#type-of-applications').on("change", function (e) {
+//      if ($(this).val() == 'Awaiting approval') {
+//           $('#order-applications-table tbody tr').hide();
+//           $('#order-applications-table tbody tr.awaiting_approval').show();
+//      } else if ($(this).val() =='Awaiting acceptance') {
+//           $('#order-applications-table tbody tr').hide();
+//           $('#order-applications-table tbody tr.awaiting_acceptance').show();
+//      } else if ($(this).val() =='Withdrawn') {
+//           $('#order-applications-table tbody tr').hide();
+//           $('#order-applications-table tbody tr.withdrawn').show();
+//      } else if ($(this).val() =='Rejected') {
+//           $('#order-applications-table tbody tr').hide();
+//           $('#order-applications-table tbody tr.rejected').show();
+//      } else {
+//           $('#order-applications-table tbody tr').show();
+//      }
+// });
+//
+// $('#type-of-criteria').on("change", function (e) {
+//      if ($(this).val() == '100% match') {
+//           $('#order-applications-table tbody tr').hide();
+//           $('#order-applications-table tbody tr.match-100').show();
+//      } else if ($(this).val() =='75% match') {
+//           $('#order-applications-table tbody tr').hide();
+//           $('#order-applications-table tbody tr.match-75').show();
+//      } else if ($(this).val() =='50% match') {
+//           $('#order-applications-table tbody tr').hide();
+//           $('#order-applications-table tbody tr.match-50').show();
+//      } else if ($(this).val() =='25% match') {
+//           $('#order-applications-table tbody tr').hide();
+//           $('#order-applications-table tbody tr.match-25').show();
+//      } else if ($(this).val() =='0% match') {
+//           $('#order-applications-table tbody tr').hide();
+//           $('#order-applications-table tbody tr.match-0').show();
+//      } else {
+//           $('#order-applications-table tbody tr').show();
+//      }
+// });
 
 
 
