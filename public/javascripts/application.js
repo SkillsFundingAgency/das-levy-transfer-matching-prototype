@@ -691,60 +691,78 @@ $('input[name="apprentice_location"]').on("keyup", function (e) {
 
    });
 
-   // Order table
-   $('#order-applications-table thead tr th').on("click", function (e) {
-        e.preventDefault();
-   });
+// Order table
+$('#order-applications-table thead tr th').on("click", function (e) {
+     e.preventDefault();
+});
 
-   function sortTable(n) {
-        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-        table = document.getElementById("order-applications-table");
-        switching = true;
-        // Set the sorting direction to ascending:
-        dir = "asc";
-        /* Make a loop that will continue until no switching has been done: */
-        while (switching) {
-             // start by saying: no switching is done:
-             switching = false;
-             rows = table.rows;
-             /* Loop through all table rows (except the first, which contains table headers): */
-             for (i = 1; i < (rows.length - 1); i++) {
-                  // start by saying there should be no switching:
-                  shouldSwitch = false;
-                  /* Get the two elements you want to compare, one from current row and one from the next: */
-                  x = rows[i].getElementsByTagName("TD")[n];
-                  y = rows[i + 1].getElementsByTagName("TD")[n];
-                  /* check if the two rows should switch place, based on the direction, asc or desc: */
-                  if (dir == "asc") {
-                       if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                            // if so, mark as a switch and break the loop:
-                            shouldSwitch= true;
-                            break;
-                       }
-                  } else if (dir == "desc") {
-                       if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                            // if so, mark as a switch and break the loop:
-                            shouldSwitch = true;
-                            break;
-                       }
-                  }
-             }
-             if (shouldSwitch) {
-                  /* If a switch has been marked, make the switchand mark that a switch has been done: */
-                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                  switching = true;
-                  // Each time a switch is done, increase this count by 1:
-                  switchcount ++;
-             } else {
-                  /* If no switching has been done AND the direction is "asc", set the direction to "desc" and run the while loop again. */
-                  if (switchcount == 0 && dir == "asc") {
-                       dir = "desc";
-                       switching = true;
-                  }
-             }
-        }
-   }
+function sortTable(n) {
+     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+     table = document.getElementById("order-applications-table");
+     switching = true;
+     // Set the sorting direction to ascending:
+     dir = "asc";
+     /* Make a loop that will continue until no switching has been done: */
+     while (switching) {
+          // start by saying: no switching is done:
+          switching = false;
+          rows = table.rows;
+          /* Loop through all table rows (except the first, which contains table headers): */
+          for (i = 1; i < (rows.length - 1); i++) {
+               // start by saying there should be no switching:
+               shouldSwitch = false;
+               /* Get the two elements you want to compare, one from current row and one from the next: */
+               x = rows[i].getElementsByTagName("TD")[n];
+               y = rows[i + 1].getElementsByTagName("TD")[n];
+               /* check if the two rows should switch place, based on the direction, asc or desc: */
+               if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                         // if so, mark as a switch and break the loop:
+                         shouldSwitch= true;
+                         break;
+                    }
+               } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                         // if so, mark as a switch and break the loop:
+                         shouldSwitch = true;
+                         break;
+                    }
+               }
+          }
+          if (shouldSwitch) {
+               /* If a switch has been marked, make the switchand mark that a switch has been done: */
+               rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+               switching = true;
+               // Each time a switch is done, increase this count by 1:
+               switchcount ++;
+          } else {
+               /* If no switching has been done AND the direction is "asc", set the direction to "desc" and run the while loop again. */
+               if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+               }
+          }
+     }
+}
 
+$(document).ready( function () {
+    $('#new-applications-table').DataTable();
+} );
+
+// $('span.sort-new.up,span.sort-new.down').hide();
+//
+// $('table#new-applications-table thead tr th').on("click", function (e) {
+//      if ($(this).hasClass('sorting_asc')) {
+//           $(this).find('span.sort-new, span.sort-new.down').hide();
+//           $(this).find('span.sort-new.up').show();
+//      }
+//
+//      if ($(this).hasClass('sorting_desc')) {
+//           $(this).find('span.sort-new, span.sort-new.up').hide();
+//           $(this).find('span.sort-new.down').show();
+//      }
+// });
+//
 
    // Private transfer
    $('.transfer-amount-text').hide();
@@ -1001,7 +1019,7 @@ $('#type-of-criteria').on("change", function (e) {
 })
 
 var filterTable = function () {
-     var appsTableRows = $('#order-applications-table tbody tr')
+     var appsTableRows = $('#new-applications-table tbody tr')
      var match
      appsTableRows.each(function () {
           match = true

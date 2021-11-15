@@ -529,6 +529,19 @@ p {
           background-size: contain;
           margin: 0.2em 0.25em -0.2em 0;
      }
+     &.sort-new {
+          background: url('../images/sort-grey.svg') no-repeat 0% 50%;
+          background-size: contain;
+          margin: 0.2em 0.25em -0.2em 0;
+          &.down {
+               background: url('../images/sort-blue-up.svg') no-repeat 0% 50%;
+               background-size: contain;
+          }
+          &.up {
+               background: url('../images/sort-blue-down.svg') no-repeat 0% 50%;
+               background-size: contain;
+          }
+     }
      &.website {
           background: url('../images/website-blue.svg') no-repeat 0% 50%;
           background-size: contain;

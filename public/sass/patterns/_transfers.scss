@@ -220,7 +220,7 @@ table {
           }
      }
      &.applications-table {
-          &#order-applications-table {
+          &#order-applications-table, &#new-applications-table {
                &.in-tab {
                     thead {
                          tr {
@@ -243,6 +243,12 @@ table {
                                    &:active, &:hover, &:focus {
                                         cursor: pointer;
                                    }
+                                   &.sorting_asc {
+
+                                   }
+                                   &.sorting_desc {
+
+                                   }
                               }
                          }
                     }
@@ -252,6 +258,27 @@ table {
                          td {
                               &:last-child {
                                    padding-right: 0em;
+                              }
+                         }
+                    }
+               }
+          }
+          &#new-applications-table {
+               thead {
+                    tr {
+                         th {
+                              &.sort-section {
+                                   padding-left: 1.25em;
+                                   background: url('../images/sort-grey.svg') no-repeat 0% 33%;
+                                   background-size: 0.75em;
+                                   &.sorting_asc {
+                                        background: url('../images/sort-blue-up.svg') no-repeat 0% 33%;
+                                        background-size: 0.75em;
+                                   }
+                                   &.sorting_desc {
+                                        background: url('../images/sort-blue-down.svg') no-repeat 0% 33%;
+                                        background-size: 0.75em;
+                                   }
                               }
                          }
                     }
@@ -337,6 +364,10 @@ table {
                }
           }
      }
+}
+
+.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {
+     display: none;
 }
 
 table {
