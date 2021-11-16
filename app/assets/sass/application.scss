@@ -733,7 +733,7 @@ p {
      text-align: center;
 }
 
-.download-csv {
+.download-csv, .shortlist-button {
      background: #f1f7f9;
      display: flex;
      float: left;
@@ -752,7 +752,7 @@ p {
           // }
      }
      &.black-version {
-          padding: 0.5em 0em 0.5em 2.5em;
+          padding: 0.35em 0em 0.35em 2em;
           background: url('../images/download-black.svg') no-repeat 0% 100%;
           background-size: contain;
           div {
@@ -820,7 +820,7 @@ p {
      }
 }
 
-.side-panel-finance {
+.side-panel-finance, .side-panel-applications {
      border-left: 10px solid $govuk-brand-colour;
      padding: 1em 0 1em 1em;
      margin-top: 3em;
@@ -830,6 +830,33 @@ p {
                font-size: 1.1875rem;
                margin: 0;
                padding: 0 0 0 2.5em;
+          }
+     }
+}
+
+.side-panel-applications {
+     border-left: none;
+     padding: 0;
+     .shortlist-button {
+          background: none;
+          padding: 0;
+          text-decoration: none;
+          margin-top: 0.75em;
+          div {
+               text-decoration: underline;
+               width: auto;
+          }
+          .number {
+               font-weight: bold;
+               color: white;
+               border-radius: 50%;
+               background: $govuk-link-colour;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               width: 1.75em;
+               height: 1.75em;
+               margin: -0.25em 0.5em 0 0;
           }
      }
 }

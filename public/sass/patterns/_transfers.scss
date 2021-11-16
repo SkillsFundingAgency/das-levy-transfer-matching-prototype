@@ -267,6 +267,9 @@ table {
                thead {
                     tr {
                          th {
+                              &.radio-section {
+                                   background: none !important;
+                              }
                               &.sort-section {
                                    padding-left: 1.25em;
                                    background: url('../images/sort-grey.svg') no-repeat 0% 33%;
@@ -280,6 +283,41 @@ table {
                                         background-size: 0.75em;
                                    }
                               }
+                         }
+                    }
+               }
+               thead, tbody {
+                    .govuk-checkboxes--small {
+                         .govuk-checkboxes__item {
+                              &:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label:before {
+                                   box-shadow: 0 0 0 3px #ffdd00, 0 0 0 3px #b1b4b6;
+                              }
+                              &:hover .govuk-checkboxes__input:not(:disabled) + .govuk-checkboxes__label:before {
+                                   box-shadow: 0 0 0 4px #b1b4b6;
+                              }
+                              input {
+                                   top: -10px;
+                              }
+                              label {
+                                   text-indent: -1000em;
+                                   padding: 0;
+                              }
+                         }
+                         .govuk-checkboxes__label:before {
+                              top: 0;
+                         }
+                         .govuk-checkboxes__label:after {
+                              top: 7px;
+                         }
+                    }
+               }
+               tbody {
+                    tr {
+                         td {
+                              &:first-of-type, &:nth-of-type(2n) {
+                                   padding-left: 0;
+                              }
+
                          }
                     }
                }

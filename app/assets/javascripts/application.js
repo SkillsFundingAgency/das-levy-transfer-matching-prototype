@@ -1035,6 +1035,12 @@ var filterTable = function () {
      })
 }
 
+$('input[name=application_select]').on("change", function (e) {
+     alert($(this).val());
+})
+
+
+
 
 // $('#type-of-applications').on("change", function (e) {
 //      if ($(this).val() == 'Awaiting approval') {

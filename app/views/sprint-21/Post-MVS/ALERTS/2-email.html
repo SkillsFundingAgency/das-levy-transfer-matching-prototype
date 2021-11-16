@@ -17,19 +17,18 @@
           <div class="govuk-grid-column-full">
                <h1 class="govuk-heading-m">Belhavel Construction LTD, your transfer application to BARRY & BARRY Ltd (910106) is unsuccessful this time.</h1>
 
-               <p>You can apply to other transfer opportunities to secure funding for your apprenticeships.</p>
+               <p>You can now apply for transfer opportunities to secure funding for your apprenticeships. Or you can find out more about using your apprenticeship levy or other government help in the following guides:</p>
 
-               {% from "govuk/components/button/macro.njk" import govukButton %}
+               <ul class="govuk-list">
+                    <li><a href="#">Funding an apprenticeship for non-levy employers</a></li>
+                    <li><a href="#">Funding an apprenticeship for levy payers</a></li>
+               </ul>
 
                {{ govukButton({
-                    text: "Apply",
+                    text: "Apply for transfer opportunities",
                     classes: "no-bottom-margin",
                     href: "https://transfers.manage-apprenticeships.service.gov.uk/Opportunities"
                }) }}
-
-               <p class="govuk-body">
-                    Or you can find out more about <a href="#">apprenticeship funding if you are a non-levy paying company</a> or <a href="#">apprenticeship funding if you are a levy paying company</a>.
-               </p>
 
                <p class="govuk-body">
                     This is an automated message. Please don't reply to this email.
