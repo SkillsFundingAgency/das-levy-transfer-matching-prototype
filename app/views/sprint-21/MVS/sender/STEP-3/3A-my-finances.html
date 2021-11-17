@@ -126,22 +126,40 @@
 
                <h2 class="govuk-heading-m small-margin-bottom">Download transfers finance data</h2>
 
-               <p>Below is a downloadable csv file that will provide you with a detailed breakdown of your transfer finances.</p>
+               <p>Below are two downloadable csv files that will provide you with a detailed breakdown of your transfer finances</p>
 
-               <p>This includes:</p>
+               <!-- <p>This includes:</p>
 
                <ul class="govuk-list govuk-list--bullet">
                     <li>High level financial data</li>
                     <li>Pledge data</li>
                     <li>Application financial data</li>
                     <li>Learner level financial data</li>
-               </ul>
+               </ul> -->
+
+               <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         Your projection was last updated on 14 December 2020
+                    </strong>
+               </div>
 
                <div class="downloads">
-                    <a href="#" class="download-csv black-version">
+                    <a href="/public/images/download-black.svg" class="download-csv black-version" download>
                          <span class="black-download"></span>
-                         <div>Download transfers finance data - excel</div>
+                         <div>Download year-to-date finance data - excel</div>
                     </a>
+                    <p class="govuk-caption-m">This shows actual learner level spend based on transactions reported by training providers via ILRs.</p>
+
+                    <a href="/public/images/download-black.svg" class="download-csv black-version" download>
+                         <span class="black-download"></span>
+                         <div>Download forecasted finance data - excel</div>
+                    </a>
+                    <p class="govuk-caption-m">
+                         This shows learner level forecasted financial data.  This is based on the information provided within approved pledge applications and confirmed transfers.
+                         This is a forecast and subject to change as details such as start and end dates, final agreed costs and breaks in learning may change.
+                    </p>
                </div>
           </div>
      </div>

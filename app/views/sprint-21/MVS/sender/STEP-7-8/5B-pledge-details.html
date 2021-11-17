@@ -22,37 +22,60 @@
           </ol>
      </div>
 
-     <p style="padding-bottom: 30px;"></p>
+     {% if data['delete_pledge'] == "Yes" %}
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-full">
+                    <p><br></p>
+                    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                         <div class="govuk-notification-banner__header">
+                              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                         </div>
+                         <div class="govuk-notification-banner__content">
+                              <p class="govuk-notification-banner__heading">This pledge is now closed.</p>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     {% else %}
+
+     {% endif %}
+
 
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-
-               <h1 class="govuk-heading-xl">Transfer pledge 910107</h1>
-               {% if data['delete_pledge'] == "Yes" %}
-                    <div class="govuk-warning-text">
-                         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                         <strong class="govuk-warning-text__text">
-                              <span class="govuk-warning-text__assistive">Warning</span>
-                              This pledge is now: <span class="govuk-tag govuk-tag--grey">Closed</span>
-                         </strong>
+               <p><br></p>
+               <h1 class="govuk-heading-xl no-margin-bottom">Transfer pledge 910107</h1>
+               <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Information about the applications</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <p><span class="govuk-body govuk-!-font-weight-bold">Estimated cost in this financial year </span> <br>
+                              This is an estimate of the cost of training for each application in this financial year. It is based on the funding band maximum and the planned start date of training.
+                         </p>
                     </div>
-               {% else %}
-
-               {% endif %}
+               </details>
           </div>
      </div>
 
-     <div>
-          <details class="govuk-details">
-               <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">Information about the applications</span>
-               </summary>
-               <div class="govuk-details__text">
-                    <p><span class="govuk-body govuk-!-font-weight-bold">Estimated cost in this financial year </span> <br>
-                         This is an estimate of the cost of training for each application in this financial year. It is based on the funding band maximum and the planned start date of training.
-                    </p>
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+               <div class="pledge-values top-version">
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">42000</span></strong>
+                         <div class="sub-text">Pledge funds for 2021/22</div>
+                    </h3>
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">42000</span></strong>
+                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
+                    </h3>
                </div>
-          </details>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+
+          </div>
+
      </div>
 
      <div class="govuk-grid-row">
@@ -76,51 +99,19 @@
                     </tbody>
                </table>
 
-               <br>
+               <p><br></p>
 
                {% if data['delete_pledge'] == "Yes" %}
                     <a href="#" class="govuk-button">Create a new transfer pledge</a>
-
-                    <div class="pledge-values">
-                         <h3 class="govuk-heading-l">
-                              <strong>£<span class="value-format">42000</span></strong>
-                              <div class="sub-text">Pledge funds for 2021/22</div>
-                         </h3>
-                         <h3 class="govuk-heading-l">
-                              <strong>£<span class="value-format">42000</span></strong>
-                              <div class="sub-text">Remaining pledge funds for 2021/22</div>
-                         </h3>
-                    </div>
                {% else %}
                     <a href="#" class="govuk-button">Create a new transfer pledge</a>
 
                     <a href="6-delete-pledge" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button no-margin-top">Close pledge</a>
-
-                    <div class="pledge-values">
-                         <h3 class="govuk-heading-l">
-                              <strong>£<span class="value-format">42000</span></strong>
-                              <div class="sub-text">Pledge funds for 2021/22</div>
-                         </h3>
-                         <h3 class="govuk-heading-l">
-                              <strong>£<span class="value-format">42000</span></strong>
-                              <div class="sub-text">Remaining pledge funds for 2021/22</div>
-                         </h3>
-                    </div>
                {% endif %}
 
                <br>
 
                <a href="4-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
-
-               <hr class="govuk-section-break dotted no-margin-top">
-
-               <a href="#" class="download-csv black-version">
-                    <span class="black-download"></span>
-                    <div>Download applications - excel</div>
-               </a>
-
-               <p><br></p>
-               <p><br></p>
 
           </div>
 
