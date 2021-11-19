@@ -777,5 +777,4 @@ $(".approval-capture-details").on("click", function (e) {
 $('.approval-name-answer').text($.cookie("approval-name-answer"));
 $('.approval-status-answer').text($.cookie("approval-status-answer"));
 $('.approval-cost-answer').text($.cookie("approval-cost-answer"));
-
 // !!!!!!!!!!!!!!!!!!!!!!!! -- SENDER - END -- !!!!!!!!!!!!!!!!!!!!!!!! //

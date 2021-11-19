@@ -26,6 +26,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/filter";
 @import "components/pagination";
 @import "components/tabs";
+@import "components/sticky-footer";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 #main-content {
@@ -834,23 +835,37 @@ p {
      }
 }
 
-.side-panel-applications {
+.side-panel-applications, .sticky-footer {
      border-left: none;
      padding: 0;
      .shortlist-button {
+          display: flex;
           background: none;
           padding: 0;
           text-decoration: none;
           margin-top: 0.75em;
+          &.applications-selected {
+               display: flex;
+               font-family: "GDS Transport",arial,sans-serif;
+               div {
+                    text-decoration: none;
+               }
+               .number {
+                    background: $govuk-link-colour;
+                    color: white;
+                    width: 2em;
+                    margin: -0.35em 0.5em 0 0;
+               }
+          }
           div {
                text-decoration: underline;
                width: auto;
           }
           .number {
                font-weight: bold;
-               color: white;
+               color: $govuk-secondary-text-colour;
                border-radius: 50%;
-               background: $govuk-link-colour;
+               background: govuk-colour("light-grey");
                display: flex;
                justify-content: center;
                align-items: center;

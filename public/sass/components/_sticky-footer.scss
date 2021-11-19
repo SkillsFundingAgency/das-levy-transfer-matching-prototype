@@ -1,0 +1,33 @@
+.sticky-footer {
+     display: inline-block;
+     position: fixed;
+     padding: 0.5em 0 !important;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: white;
+     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+     border: 1px solid #b1b4b6;
+     z-index: 1;
+     .govuk-form-group {
+          width: auto;
+          float: left;
+          margin: 0 1.5em 0 0;
+          select {
+               margin: 0.25em 0 0 0;
+          }
+          .govuk-button {
+               margin: 0.25em 0 0 0;
+          }
+     }
+     p {
+          margin: 0.65em 0 0 0;
+          float: left;
+          a {
+               color: $govuk-link-colour;
+               &:hover, &:active, &:focus {
+                    cursor: pointer;
+               }
+          }
+     }
+}

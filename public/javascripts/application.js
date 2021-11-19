@@ -1035,51 +1035,38 @@ var filterTable = function () {
      })
 }
 
+$('.sticky-footer').hide();
+
 $('input[name=application_select]').on("change", function (e) {
-     alert($(this).val());
-})
+     $(this).closest('tr').toggleClass('selected');
+     $('.sticky-footer').slideDown();
+     var applicationsSelected = parseInt($(":checkbox:checked").length);
+     $('.applications-selected .number').text(applicationsSelected);
+     $('.clear-selection').show();
+});
 
+$('.clear-selection').on("click", function (e) {
+     e.preventDefault;
+     $('input[name=application_select]').removeAttr('checked');
+     $('#new-applications-table tr').removeClass('selected');
+     $('.applications-selected .number').text('0');
+});
 
+$('#applications-action').on("click", function (e) {
+     $('.applications-selected .number').text('0');
+     $('.clear-selection').hide();
+     // if ($('#type-of-action').val() == 'shortlist') {
+     //      if ($('input[name=application_select]:checked')) {
+     //           var applicationsSelected = parseInt($(":checkbox:checked").length);
+     //           $('.applications-selected .number').text(applicationsSelected);
+     //      }
+     // } else if ($('#type-of-action').val() == 'approve') {
+     //      alert('approved');
+     // } else if ($('#type-of-action').val() == 'reject') {
+     //      alert('rejected');
+     // }
+});
 
-
-// $('#type-of-applications').on("change", function (e) {
-//      if ($(this).val() == 'Awaiting approval') {
-//           $('#order-applications-table tbody tr').hide();
-//           $('#order-applications-table tbody tr.awaiting_approval').show();
-//      } else if ($(this).val() =='Awaiting acceptance') {
-//           $('#order-applications-table tbody tr').hide();
-//           $('#order-applications-table tbody tr.awaiting_acceptance').show();
-//      } else if ($(this).val() =='Withdrawn') {
-//           $('#order-applications-table tbody tr').hide();
-//           $('#order-applications-table tbody tr.withdrawn').show();
-//      } else if ($(this).val() =='Rejected') {
-//           $('#order-applications-table tbody tr').hide();
-//           $('#order-applications-table tbody tr.rejected').show();
-//      } else {
-//           $('#order-applications-table tbody tr').show();
-//      }
-// });
-//
-// $('#type-of-criteria').on("change", function (e) {
-//      if ($(this).val() == '100% match') {
-//           $('#order-applications-table tbody tr').hide();
-//           $('#order-applications-table tbody tr.match-100').show();
-//      } else if ($(this).val() =='75% match') {
-//           $('#order-applications-table tbody tr').hide();
-//           $('#order-applications-table tbody tr.match-75').show();
-//      } else if ($(this).val() =='50% match') {
-//           $('#order-applications-table tbody tr').hide();
-//           $('#order-applications-table tbody tr.match-50').show();
-//      } else if ($(this).val() =='25% match') {
-//           $('#order-applications-table tbody tr').hide();
-//           $('#order-applications-table tbody tr.match-25').show();
-//      } else if ($(this).val() =='0% match') {
-//           $('#order-applications-table tbody tr').hide();
-//           $('#order-applications-table tbody tr.match-0').show();
-//      } else {
-//           $('#order-applications-table tbody tr').show();
-//      }
-// });
 
 
 
