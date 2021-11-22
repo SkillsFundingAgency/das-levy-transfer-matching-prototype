@@ -22,9 +22,43 @@
           </ol>
      </div>
 
+     <p><br></p>
+
+     <!-- ALERT BANNER - START -->
+     {% if data['type-of-action'] == "shortlist" %}
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+               <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
+               </div>
+               <div class="govuk-notification-banner__content">
+                    <h3 class="govuk-notification-banner__heading"><span class="shortlist-number"></span> applications have been added to your shortlist.</h3>
+               </div>
+          </div>
+     {% elseif data['type-of-action'] == "reject" %}
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+               <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
+               </div>
+               <div class="govuk-notification-banner__content">
+                    <h3 class="govuk-notification-banner__heading"><span class="rejected-number"></span> applications have been rejected.</h3>
+               </div>
+          </div>
+     {% elseif data['type-of-action'] == "approve" %}
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+               <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
+               </div>
+               <div class="govuk-notification-banner__content">
+                    <h3 class="govuk-notification-banner__heading"><span class="approval-number"></span> applications have been approved.</h3>
+               </div>
+          </div>
+     {% else %}
+
+     {% endif %}
+     <!-- ALERT BANNER - END -->
+
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-               <p><br></p>
                <h1 class="govuk-heading-xl no-margin-bottom">Transfer pledge 910106</h1>
 
                <details class="govuk-details">
@@ -78,11 +112,11 @@
                               <option value="All criteria" selected="true" disabled="disabled">-- Filter criteria --</option>
                               <option disabled="disabled">-----------------------</option>
                               <option value="all">All criteria</option>
-                              <option value="100">100% match - (9)</option>
-                              <option value="75">75% match - (5)</option>
-                              <option value="50">50% match - (5)</option>
-                              <option value="25">25% match - (2)</option>
-                              <option value="0">0% match - (0)</option>
+                              <option value="100">100% match</option>
+                              <option value="75">75% match</option>
+                              <option value="50">50% match</option>
+                              <option value="25">25% match</option>
+                              <option value="0">0% match</option>
                          </select>
                     </div>
                     <div class="govuk-form-group">
@@ -91,11 +125,11 @@
                               <option value="All statuses" selected="true" disabled="disabled">-- Filter statuses --</option>
                               <option disabled="disabled">-----------------------</option>
                               <option value="all">All statuses</option>
-                              <option value="1">Accepted - (0)</option>
-                              <option value="2">Awaiting approval - (15)</option>
-                              <option value="3">Awaiting acceptance - (6)</option>
-                              <option value="4">Withdrawn - (5)</option>
-                              <option value="5">Rejected - (4)</option>
+                              <option value="1">Accepted</option>
+                              <option value="2">Awaiting approval</option>
+                              <option value="3">Awaiting acceptance</option>
+                              <option value="4">Withdrawn</option>
+                              <option value="5">Rejected</option>
                          </select>
                     </div>
                </div>
@@ -128,6 +162,10 @@
                     </thead>
                     <tbody class="govuk-table__body">
 
+                         <tr class="govuk-table__row empty-row" data-status="1">
+                              <td class="govuk-table__cell" colspan="7">There are <strong>0 applications</strong> that have been approved</td>
+                         </tr>
+
                          <!-- ///////////////////////////// BLOCK 1 - 5 START ///////////////////////////// -->
                          <tr class="govuk-table__row row-1" data-status="2" data-criteria="100">
                               <td class="govuk-table__cell">
@@ -154,7 +192,11 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">A</span> Today</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-2" data-status="3" data-criteria="75">
                               <td class="govuk-table__cell">
@@ -180,16 +222,19 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-3" data-status="5" data-criteria="50">
                               <td class="govuk-table__cell">
-                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                              <input class="govuk-checkboxes__input" id="application_select_3" name="application_select" type="checkbox" value="Johnson and Johnson Building Co" {{ checked("application_select", "Johnson and Johnson Building Co") }}>
                                              <label class="govuk-label govuk-checkboxes__label" for="application_select_3">Johnson and Johnson Building Co</label>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </td>
                               <td class="govuk-table__cell">
                                    <a href="#">Johnson and Johnson Building Co</a>
@@ -205,16 +250,18 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-4" data-status="4" data-criteria="0">
                               <td class="govuk-table__cell">
-                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                              <input class="govuk-checkboxes__input" id="application_select_4" name="application_select" type="checkbox" value="123 Windows Co" {{ checked("application_select", "123 Windows Co") }}>
                                              <label class="govuk-label govuk-checkboxes__label" for="application_select_4">123 Windows Co</label>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </td>
                               <td class="govuk-table__cell">
                                    <a href="#">123 Windows Co</a>
@@ -226,16 +273,18 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-5" data-status="4" data-criteria="0">
                               <td class="govuk-table__cell">
-                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                              <input class="govuk-checkboxes__input" id="application_select_5" name="application_select" type="checkbox" value="Ferlot & Co" {{ checked("application_select", "Ferlot & Co") }}>
                                              <label class="govuk-label govuk-checkboxes__label" for="application_select_5">Ferlot & Co</label>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </td>
                               <td class="govuk-table__cell">
                                    <a href="#">Ferlot & Co</a>
@@ -247,7 +296,9 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 1 - 5 END ///////////////////////////// -->
 
@@ -277,7 +328,10 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">C</span> 14/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-7" data-status="3" data-criteria="75">
                               <td class="govuk-table__cell">
@@ -303,16 +357,19 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">D</span> 13/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-8" data-status="5" data-criteria="50">
                               <td class="govuk-table__cell">
-                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                              <input class="govuk-checkboxes__input" id="application_select_8" name="application_select" type="checkbox" value="Nupositive" {{ checked("application_select", "Nupositive") }}>
                                              <label class="govuk-label govuk-checkboxes__label" for="application_select_8">Nupositive</label>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </td>
                               <td class="govuk-table__cell">
                                    <a href="#">Nupositive</a>
@@ -328,7 +385,9 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">D</span> 13/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-9" data-status="3" data-criteria="0">
                               <td class="govuk-table__cell">
@@ -349,16 +408,19 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">D</span> 13/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-10" data-status="4" data-criteria="0">
                               <td class="govuk-table__cell">
-                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                              <input class="govuk-checkboxes__input" id="application_select_10" name="application_select" type="checkbox" value="Radicalsy Limited" {{ checked("application_select", "Radicalsy Limited") }}>
                                              <label class="govuk-label govuk-checkboxes__label" for="application_select_10">Radicalsy Limited</label>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </td>
                               <td class="govuk-table__cell">
                                    <a href="#">Radicalsy Limited</a>
@@ -370,7 +432,9 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 6 - 10 END ///////////////////////////// -->
 
@@ -400,16 +464,20 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-12" data-status="5" data-criteria="75">
                               <td class="govuk-table__cell">
-                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                              <input class="govuk-checkboxes__input" id="application_select_12" name="application_select" type="checkbox" value="Confidentify PLC" {{ checked("application_select", "Confidentify PLC") }}>
                                              <label class="govuk-label govuk-checkboxes__label" for="application_select_12">Confidentify PLC</label>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </td>
                               <td class="govuk-table__cell">
                                    <a href="#">Confidentify PLC</a>
@@ -426,16 +494,18 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-13" data-status="5" data-criteria="50">
                               <td class="govuk-table__cell">
-                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                              <input class="govuk-checkboxes__input" id="application_select_13" name="application_select" type="checkbox" value="Steepby & Co" {{ checked("application_select", "Steepby & Co") }}>
                                              <label class="govuk-label govuk-checkboxes__label" for="application_select_13">Steepby & Co</label>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </td>
                               <td class="govuk-table__cell">
                                    <a href="#">Steepby & Co</a>
@@ -451,16 +521,18 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-14" data-status="4" data-criteria="100">
                               <td class="govuk-table__cell">
-                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                              <input class="govuk-checkboxes__input" id="application_select_14" name="application_select" type="checkbox" value="Onradical" {{ checked("application_select", "Onradical") }}>
                                              <label class="govuk-label govuk-checkboxes__label" for="application_select_14">Onradical</label>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </td>
                               <td class="govuk-table__cell">
                                    <a href="#">Onradical</a>
@@ -472,7 +544,9 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-15" data-status="2" data-criteria="100">
                               <td class="govuk-table__cell">
@@ -499,7 +573,11 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">F</span> 10/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 11 - 15 END ///////////////////////////// -->
 
@@ -529,7 +607,11 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">F</span> 10/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-17" data-status="2" data-criteria="75">
                               <td class="govuk-table__cell">
@@ -555,7 +637,11 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">F</span> 10/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-18" data-status="2" data-criteria="50">
                               <td class="govuk-table__cell">
@@ -580,16 +666,20 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">G</span> 07/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-19" data-status="4" data-criteria="0">
                               <td class="govuk-table__cell">
-                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
                                         <div class="govuk-checkboxes__item">
                                              <input class="govuk-checkboxes__input" id="application_select_19" name="application_select" type="checkbox" value="Modby" {{ checked("application_select", "Modby") }}>
                                              <label class="govuk-label govuk-checkboxes__label" for="application_select_19">Modby</label>
                                         </div>
-                                   </div>
+                                   </div> -->
                               </td>
                               <td class="govuk-table__cell">
                                    <a href="#">Modby</a>
@@ -601,7 +691,9 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">G</span> 07/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-20" data-status="2" data-criteria="0">
                               <td class="govuk-table__cell">
@@ -622,7 +714,11 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">G</span> 07/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 16 - 20 END ///////////////////////////// -->
 
@@ -652,7 +748,11 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">H</span> 01/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-22" data-status="2" data-criteria="75">
                               <td class="govuk-table__cell">
@@ -678,7 +778,11 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">H</span> 01/11/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-23" data-status="2" data-criteria="50">
                               <td class="govuk-table__cell">
@@ -703,7 +807,11 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">I</span> 28/10/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-24" data-status="2" data-criteria="0">
                               <td class="govuk-table__cell">
@@ -724,7 +832,11 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">I</span> 28/10/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-25" data-status="2" data-criteria="0">
                               <td class="govuk-table__cell">
@@ -745,7 +857,11 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">J</span> 26/10/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 21 - 25 END ///////////////////////////// -->
 
@@ -775,7 +891,10 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">K</span> 25/10/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-27" data-status="2" data-criteria="75">
                               <td class="govuk-table__cell">
@@ -799,7 +918,11 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">K</span> 25/10/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-28" data-status="2" data-criteria="50">
                               <td class="govuk-table__cell">
@@ -823,7 +946,11 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">K</span> 25/10/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-29" data-status="2" data-criteria="0">
                               <td class="govuk-table__cell">
@@ -844,7 +971,11 @@
                                    <span class="hide-content">E</span>0% match
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">L</span> 24/10/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <tr class="govuk-table__row row-30" data-status="3" data-criteria="0">
                               <td class="govuk-table__cell">
@@ -871,7 +1002,10 @@
                                    </p>
                               </td>
                               <td class="govuk-table__cell"><span class="hide-content">J</span> 26/10/2021</td>
-                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong></td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
                          </tr>
                          <!-- ///////////////////////////// BLOCK 26 - 30 END ///////////////////////////// -->
 
@@ -905,7 +1039,7 @@
                          </span>
                     </div>
                     <div class="govuk-form-group">
-                         <form class="" action="5C-pledge-details" method="post">
+                         <form class="" action="" method="post" id="applications_actions_form">
                               <select class="govuk-select" id="type-of-action" name="type-of-action">
                                    <option value="All actions" selected="true" disabled="disabled">-- Actions --</option>
                                    <option disabled="disabled">-----------------------</option>

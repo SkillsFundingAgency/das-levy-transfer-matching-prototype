@@ -98,12 +98,206 @@ $('#applications-action').on("click", function (e) {
           }
      }
 
+     // REJECTED ITEMS
+     if ($('#type-of-action').val() == 'reject') {
+          $.cookie("number_of_applications_rejected", parseInt($(":checkbox:checked").length), {path:'/'});
+
+          if ($('input[id=application_select_1]').is(':checked')) {
+               $.cookie("application_select_1", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_2]').is(':checked')) {
+               $.cookie("application_select_2", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_3]').is(':checked')) {
+               $.cookie("application_select_3", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_4]').is(':checked')) {
+               $.cookie("application_select_4", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_5]').is(':checked')) {
+               $.cookie("application_select_5", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_6]').is(':checked')) {
+               $.cookie("application_select_6", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_7]').is(':checked')) {
+               $.cookie("application_select_7", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_8]').is(':checked')) {
+               $.cookie("application_select_8", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_9]').is(':checked')) {
+               $.cookie("application_select_9", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_10]').is(':checked')) {
+               $.cookie("application_select_10", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_11]').is(':checked')) {
+               $.cookie("application_select_11", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_12]').is(':checked')) {
+               $.cookie("application_select_12", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_13]').is(':checked')) {
+               $.cookie("application_select_13", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_14]').is(':checked')) {
+               $.cookie("application_select_14", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_15]').is(':checked')) {
+               $.cookie("application_select_15", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_16]').is(':checked')) {
+               $.cookie("application_select_16", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_17]').is(':checked')) {
+               $.cookie("application_select_17", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_18]').is(':checked')) {
+               $.cookie("application_select_18", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_19]').is(':checked')) {
+               $.cookie("application_select_19", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_20]').is(':checked')) {
+               $.cookie("application_select_20", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_21]').is(':checked')) {
+               $.cookie("application_select_21", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_22]').is(':checked')) {
+               $.cookie("application_select_22", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_23]').is(':checked')) {
+               $.cookie("application_select_23", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_24]').is(':checked')) {
+               $.cookie("application_select_24", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_25]').is(':checked')) {
+               $.cookie("application_select_25", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_26]').is(':checked')) {
+               $.cookie("application_select_26", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_27]').is(':checked')) {
+               $.cookie("application_select_27", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_28]').is(':checked')) {
+               $.cookie("application_select_28", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_29]').is(':checked')) {
+               $.cookie("application_select_29", 'rejected', {path:'/'});
+          }
+          if ($('input[id=application_select_30]').is(':checked')) {
+               $.cookie("application_select_30", 'rejected', {path:'/'});
+          }
+     }
+
+     // APPROVED ITEMS
+     if ($('#type-of-action').val() == 'approve') {
+          $.cookie("number_of_applications_approved", parseInt($(":checkbox:checked").length), {path:'/'});
+
+          if ($('input[id=application_select_1]').is(':checked')) {
+               $.cookie("application_select_1", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_2]').is(':checked')) {
+               $.cookie("application_select_2", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_3]').is(':checked')) {
+               $.cookie("application_select_3", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_4]').is(':checked')) {
+               $.cookie("application_select_4", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_5]').is(':checked')) {
+               $.cookie("application_select_5", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_6]').is(':checked')) {
+               $.cookie("application_select_6", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_7]').is(':checked')) {
+               $.cookie("application_select_7", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_8]').is(':checked')) {
+               $.cookie("application_select_8", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_9]').is(':checked')) {
+               $.cookie("application_select_9", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_10]').is(':checked')) {
+               $.cookie("application_select_10", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_11]').is(':checked')) {
+               $.cookie("application_select_11", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_12]').is(':checked')) {
+               $.cookie("application_select_12", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_13]').is(':checked')) {
+               $.cookie("application_select_13", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_14]').is(':checked')) {
+               $.cookie("application_select_14", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_15]').is(':checked')) {
+               $.cookie("application_select_15", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_16]').is(':checked')) {
+               $.cookie("application_select_16", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_17]').is(':checked')) {
+               $.cookie("application_select_17", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_18]').is(':checked')) {
+               $.cookie("application_select_18", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_19]').is(':checked')) {
+               $.cookie("application_select_19", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_20]').is(':checked')) {
+               $.cookie("application_select_20", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_21]').is(':checked')) {
+               $.cookie("application_select_21", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_22]').is(':checked')) {
+               $.cookie("application_select_22", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_23]').is(':checked')) {
+               $.cookie("application_select_23", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_24]').is(':checked')) {
+               $.cookie("application_select_24", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_25]').is(':checked')) {
+               $.cookie("application_select_25", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_26]').is(':checked')) {
+               $.cookie("application_select_26", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_27]').is(':checked')) {
+               $.cookie("application_select_27", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_28]').is(':checked')) {
+               $.cookie("application_select_28", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_29]').is(':checked')) {
+               $.cookie("application_select_29", 'approved', {path:'/'});
+          }
+          if ($('input[id=application_select_30]').is(':checked')) {
+               $.cookie("application_select_30", 'approved', {path:'/'});
+          }
+     }
+
+
 });
 
 var originalNumber = parseInt($('.shortlist-button.float-right .number').text());
 
 if ($.cookie("shortlist_active") == 'true') {
      $('.shortlist-button.float-right .number').text(parseInt(originalNumber + $.cookie("number_of_applications")));
+     $('.shortlist-number').text($.cookie("number_of_applications"));
 }
 
 // ADD SHORTLIST ITEMS
@@ -226,4 +420,264 @@ if ($.cookie("application_select_29") == 'shortlisted') {
 if ($.cookie("application_select_30") == 'shortlisted') {
      $('#new-applications-table tr.row-30').addClass('shortlisted-row');
      $('.shortlist-table tr.row-30').show();
+}
+
+// REJECT ITEMS
+if ($.cookie("number_of_applications_rejected")) {
+     // var rejectedNumber = parseInt($.cookie('number_of_applications_rejected'));
+     // $('select#type-of-applications option:contains("Rejected")').text("Rejected - (" + (rejectedNumber+4) + ")");
+     $('.rejected-number').text($.cookie("number_of_applications_rejected"));
+}
+
+$('.application_rejection').hide();
+
+if ($.cookie("application_select_1") == 'rejected') {
+     $('#new-applications-table tr.row-1').addClass('rejected-row').data('status', 5);
+     $('.application_1').show();
+}
+if ($.cookie("application_select_2") == 'rejected') {
+     $('#new-applications-table tr.row-2').addClass('rejected-row').data('status', 5);
+     $('.application_2').show();
+}
+if ($.cookie("application_select_3") == 'rejected') {
+     $('#new-applications-table tr.row-3').addClass('rejected-row').data('status', 5);
+     $('.application_3').show();
+}
+if ($.cookie("application_select_4") == 'rejected') {
+     $('#new-applications-table tr.row-4').addClass('rejected-row').data('status', 5);
+     $('.application_4').show();
+}
+if ($.cookie("application_select_5") == 'rejected') {
+     $('#new-applications-table tr.row-5').addClass('rejected-row').data('status', 5);
+     $('.application_5').show();
+}
+if ($.cookie("application_select_6") == 'rejected') {
+     $('#new-applications-table tr.row-6').addClass('rejected-row').data('status', 5);
+     $('.application_6').show();
+}
+if ($.cookie("application_select_7") == 'rejected') {
+     $('#new-applications-table tr.row-7').addClass('rejected-row').data('status', 5);
+     $('.application_7').show();
+}
+if ($.cookie("application_select_8") == 'rejected') {
+     $('#new-applications-table tr.row-8').addClass('rejected-row').data('status', 5);
+     $('.application_8').show();
+}
+if ($.cookie("application_select_9") == 'rejected') {
+     $('#new-applications-table tr.row-9').addClass('rejected-row').data('status', 5);
+     $('.application_9').show();
+}
+if ($.cookie("application_select_10") == 'rejected') {
+     $('#new-applications-table tr.row-10').addClass('rejected-row').data('status', 5);
+     $('.application_10').show();
+}
+if ($.cookie("application_select_11") == 'rejected') {
+     $('#new-applications-table tr.row-11').addClass('rejected-row').data('status', 5);
+     $('.application_11').show();
+}
+if ($.cookie("application_select_12") == 'rejected') {
+     $('#new-applications-table tr.row-12').addClass('rejected-row').data('status', 5);
+     $('.application_12').show();
+}
+if ($.cookie("application_select_13") == 'rejected') {
+     $('#new-applications-table tr.row-13').addClass('rejected-row').data('status', 5);
+     $('.application_13').show();
+}
+if ($.cookie("application_select_14") == 'rejected') {
+     $('#new-applications-table tr.row-14').addClass('rejected-row').data('status', 5);
+     $('.application_14').show();
+}
+if ($.cookie("application_select_15") == 'rejected') {
+     $('#new-applications-table tr.row-15').addClass('rejected-row').data('status', 5);
+     $('.application_15').show();
+}
+if ($.cookie("application_select_16") == 'rejected') {
+     $('#new-applications-table tr.row-16').addClass('rejected-row').data('status', 5);
+     $('.application_16').show();
+}
+if ($.cookie("application_select_17") == 'rejected') {
+     $('#new-applications-table tr.row-17').addClass('rejected-row').data('status', 5);
+     $('.application_17').show();
+}
+if ($.cookie("application_select_18") == 'rejected') {
+     $('#new-applications-table tr.row-18').addClass('rejected-row').data('status', 5);
+     $('.application_18').show();
+}
+if ($.cookie("application_select_19") == 'rejected') {
+     $('#new-applications-table tr.row-19').addClass('rejected-row').data('status', 5);
+     $('.application_19').show();
+}
+if ($.cookie("application_select_20") == 'rejected') {
+     $('#new-applications-table tr.row-20').addClass('rejected-row').data('status', 5);
+     $('.application_20').show();
+}
+if ($.cookie("application_select_21") == 'rejected') {
+     $('#new-applications-table tr.row-21').addClass('rejected-row').data('status', 5);
+     $('.application_21').show();
+}
+if ($.cookie("application_select_22") == 'rejected') {
+     $('#new-applications-table tr.row-22').addClass('rejected-row').data('status', 5);
+     $('.application_22').show();
+}
+if ($.cookie("application_select_23") == 'rejected') {
+     $('#new-applications-table tr.row-23').addClass('rejected-row').data('status', 5);
+     $('.application_23').show();
+}
+if ($.cookie("application_select_24") == 'rejected') {
+     $('#new-applications-table tr.row-24').addClass('rejected-row').data('status', 5);
+     $('.application_24').show();
+}
+if ($.cookie("application_select_25") == 'rejected') {
+     $('#new-applications-table tr.row-25').addClass('rejected-row').data('status', 5);
+     $('.application_25').show();
+}
+if ($.cookie("application_select_26") == 'rejected') {
+     $('#new-applications-table tr.row-26').addClass('rejected-row').data('status', 5);
+     $('.application_26').show();
+}
+if ($.cookie("application_select_27") == 'rejected') {
+     $('#new-applications-table tr.row-27').addClass('rejected-row').data('status', 5);
+     $('.application_27').show();
+}
+if ($.cookie("application_select_28") == 'rejected') {
+     $('#new-applications-table tr.row-28').addClass('rejected-row').data('status', 5);
+     $('.application_28').show();
+}
+if ($.cookie("application_select_29") == 'rejected') {
+     $('#new-applications-table tr.row-29').addClass('rejected-row').data('status', 5);
+     $('.application_29').show();
+}
+if ($.cookie("application_select_30") == 'rejected') {
+     $('#new-applications-table tr.row-30').addClass('rejected-row').data('status', 5);
+     $('.application_30').show();
+}
+
+// APPROVED ITEMS
+if ($.cookie("number_of_applications_approved")) {
+     // var approvedNumber = parseInt($.cookie('number_of_applications_approved'));
+     // $('select#type-of-applications option:contains("Awaiting approval")').text("Awaiting approval - (" + (approvedNumber+15) + ")");
+     $('.approval-number').text($.cookie("number_of_applications_approved"));
+}
+
+$('.application_approval').hide();
+
+if ($.cookie("application_select_1") == 'approved') {
+     $('#new-applications-table tr.row-1').addClass('approved-row').data('status', 3);
+     $('.application_1').show();
+}
+if ($.cookie("application_select_2") == 'approved') {
+     $('#new-applications-table tr.row-2').addClass('approved-row').data('status', 3);
+     $('.application_2').show();
+}
+if ($.cookie("application_select_3") == 'approved') {
+     $('#new-applications-table tr.row-3').addClass('approved-row').data('status', 3);
+     $('.application_3').show();
+}
+if ($.cookie("application_select_4") == 'approved') {
+     $('#new-applications-table tr.row-4').addClass('approved-row').data('status', 3);
+     $('.application_4').show();
+}
+if ($.cookie("application_select_5") == 'approved') {
+     $('#new-applications-table tr.row-5').addClass('approved-row').data('status', 3);
+     $('.application_5').show();
+}
+if ($.cookie("application_select_6") == 'approved') {
+     $('#new-applications-table tr.row-6').addClass('approved-row').data('status', 3);
+     $('.application_6').show();
+}
+if ($.cookie("application_select_7") == 'approved') {
+     $('#new-applications-table tr.row-7').addClass('approved-row').data('status', 3);
+     $('.application_7').show();
+}
+if ($.cookie("application_select_8") == 'approved') {
+     $('#new-applications-table tr.row-8').addClass('approved-row').data('status', 3);
+     $('.application_8').show();
+}
+if ($.cookie("application_select_9") == 'approved') {
+     $('#new-applications-table tr.row-9').addClass('approved-row').data('status', 3);
+     $('.application_9').show();
+}
+if ($.cookie("application_select_10") == 'approved') {
+     $('#new-applications-table tr.row-10').addClass('approved-row').data('status', 3);
+     $('.application_10').show();
+}
+if ($.cookie("application_select_11") == 'approved') {
+     $('#new-applications-table tr.row-11').addClass('approved-row').data('status', 3);
+     $('.application_11').show();
+}
+if ($.cookie("application_select_12") == 'approved') {
+     $('#new-applications-table tr.row-12').addClass('approved-row').data('status', 3);
+     $('.application_12').show();
+}
+if ($.cookie("application_select_13") == 'approved') {
+     $('#new-applications-table tr.row-13').addClass('approved-row').data('status', 3);
+     $('.application_13').show();
+}
+if ($.cookie("application_select_14") == 'approved') {
+     $('#new-applications-table tr.row-14').addClass('approved-row').data('status', 3);
+     $('.application_14').show();
+}
+if ($.cookie("application_select_15") == 'approved') {
+     $('#new-applications-table tr.row-15').addClass('approved-row').data('status', 3);
+     $('.application_15').show();
+}
+if ($.cookie("application_select_16") == 'approved') {
+     $('#new-applications-table tr.row-16').addClass('approved-row').data('status', 3);
+     $('.application_16').show();
+}
+if ($.cookie("application_select_17") == 'approved') {
+     $('#new-applications-table tr.row-17').addClass('approved-row').data('status', 3);
+     $('.application_17').show();
+}
+if ($.cookie("application_select_18") == 'approved') {
+     $('#new-applications-table tr.row-18').addClass('approved-row').data('status', 3);
+     $('.application_18').show();
+}
+if ($.cookie("application_select_19") == 'approved') {
+     $('#new-applications-table tr.row-19').addClass('approved-row').data('status', 3);
+     $('.application_19').show();
+}
+if ($.cookie("application_select_20") == 'approved') {
+     $('#new-applications-table tr.row-20').addClass('approved-row').data('status', 3);
+     $('.application_20').show();
+}
+if ($.cookie("application_select_21") == 'approved') {
+     $('#new-applications-table tr.row-21').addClass('approved-row').data('status', 3);
+     $('.application_21').show();
+}
+if ($.cookie("application_select_22") == 'approved') {
+     $('#new-applications-table tr.row-22').addClass('approved-row').data('status', 3);
+     $('.application_22').show();
+}
+if ($.cookie("application_select_23") == 'approved') {
+     $('#new-applications-table tr.row-23').addClass('approved-row').data('status', 3);
+     $('.application_23').show();
+}
+if ($.cookie("application_select_24") == 'approved') {
+     $('#new-applications-table tr.row-24').addClass('approved-row').data('status', 3);
+     $('.application_24').show();
+}
+if ($.cookie("application_select_25") == 'approved') {
+     $('#new-applications-table tr.row-25').addClass('approved-row').data('status', 3);
+     $('.application_25').show();
+}
+if ($.cookie("application_select_26") == 'approved') {
+     $('#new-applications-table tr.row-26').addClass('approved-row').data('status', 3);
+     $('.application_26').show();
+}
+if ($.cookie("application_select_27") == 'approved') {
+     $('#new-applications-table tr.row-27').addClass('approved-row').data('status', 3);
+     $('.application_27').show();
+}
+if ($.cookie("application_select_28") == 'approved') {
+     $('#new-applications-table tr.row-28').addClass('approved-row').data('status', 3);
+     $('.application_28').show();
+}
+if ($.cookie("application_select_29") == 'approved') {
+     $('#new-applications-table tr.row-29').addClass('approved-row').data('status', 3);
+     $('.application_29').show();
+}
+if ($.cookie("application_select_30") == 'approved') {
+     $('#new-applications-table tr.row-30').addClass('approved-row').data('status', 3);
+     $('.application_30').show();
 }

@@ -1011,6 +1011,11 @@ var filterStatus = 'all'
 $('#type-of-applications').on("change", function (e) {
      filterStatus = this.value
      filterTable()
+     if ($(this).val() == '1') {
+          $('#new-applications-table tr.empty-row').show();
+     } else {
+          $('#new-applications-table tr.empty-row').hide();
+     }
 })
 
 $('#type-of-criteria').on("change", function (e) {
@@ -1055,18 +1060,14 @@ $('.clear-selection').on("click", function (e) {
 $('#applications-action').on("click", function (e) {
      $('.applications-selected .number').text('0');
      $('.clear-selection').hide();
-     // if ($('#type-of-action').val() == 'shortlist') {
-     //      if ($('input[name=application_select]:checked')) {
-     //           var applicationsSelected = parseInt($(":checkbox:checked").length);
-     //           $('.applications-selected .number').text(applicationsSelected);
-     //      }
-     // } else if ($('#type-of-action').val() == 'approve') {
-     //      alert('approved');
-     // } else if ($('#type-of-action').val() == 'reject') {
-     //      alert('rejected');
-     // }
+     if ($('#type-of-action').val() == 'shortlist') {
+          $('#applications_actions_form').attr("action", '5C-pledge-details');
+     } else if ($('#type-of-action').val() == 'approve') {
+          $('#applications_actions_form').attr("action", '10A-approval');
+     } else if ($('#type-of-action').val() == 'reject') {
+          $('#applications_actions_form').attr("action", '11-reject');
+     }
 });
-
 
 
 

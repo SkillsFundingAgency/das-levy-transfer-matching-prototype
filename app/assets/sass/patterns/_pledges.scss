@@ -399,6 +399,15 @@ section {
                     border-top: 10px solid  $govuk-link-colour;
                     background: white;
                }
+               &.applications_for_approval {
+                    padding-bottom: 1em;
+                    .govuk-heading-s {
+                         margin-bottom: 1em;
+                    }
+                    ul.govuk-list {
+                         margin-bottom: 0;
+                    }
+               }
           }
           &.confirm-details {
                padding-bottom: 1.5em;

@@ -16,11 +16,16 @@
      }
 }
 
-.shortlisted {
+.shortlisted, .rejected-label, .approved-label {
      margin-top: 0.5em;
      float: left;
      clear: both;
      display: none;
+}
+
+.rejected-label, .approved-label {
+     float: right;
+     margin-top: 0;
 }
 
 .finance-homepage {
@@ -260,6 +265,9 @@ table {
 
                                    }
                               }
+                              &:last-of-type {
+                                   text-align: right;
+                              }
                          }
                     }
                }
@@ -294,10 +302,33 @@ table {
                                         background-size: 0.75em;
                                    }
                               }
+                              &:last-of-type {
+                                   &.sort-section {
+                                        padding-right: 0.75em;
+                                        background: url('../images/sort-grey.svg') no-repeat 58% 33%;
+                                        background-size: 0.75em;
+                                        &.sorting_asc {
+                                             background: url('../images/sort-blue-up.svg') no-repeat 58% 33%;
+                                             background-size: 0.75em;
+                                        }
+                                        &.sorting_desc {
+                                             background: url('../images/sort-blue-down.svg') no-repeat 58% 33%;
+                                             background-size: 0.75em;
+                                        }
+                                   }
+                              }
                          }
                     }
                }
                thead, tbody {
+                    tr {
+                         &.empty-row {
+                              display: none;
+                              td {
+                                   text-align: center;
+                              }
+                         }
+                    }
                     .govuk-checkboxes--small {
                          .govuk-checkboxes__item {
                               &:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label:before {
@@ -336,6 +367,27 @@ table {
                          &.shortlisted-row {
                               td {
                                    .shortlisted {
+                                        display: inline-block;
+                                   }
+                              }
+                         }
+                         &.rejected-row {
+                              td {
+                                   .govuk-checkboxes {
+                                        display: none;
+                                   }
+                                   .govuk-tag {
+                                        display: none;
+                                        &.rejected-label {
+                                             display: inline-block;
+                                        }
+                                   }
+                              }
+                         }
+                         &.approved-row {
+                              .govuk-tag {
+                                   display: none;
+                                   &.approved-label {
                                         display: inline-block;
                                    }
                               }
