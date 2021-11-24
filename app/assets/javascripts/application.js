@@ -1012,9 +1012,9 @@ $('#type-of-applications').on("change", function (e) {
      filterStatus = this.value
      filterTable()
      if ($(this).val() == '1') {
-          $('#new-applications-table tr.empty-row').show();
+          $('p.empty-row').show();
      } else {
-          $('#new-applications-table tr.empty-row').hide();
+          $('p.empty-row').hide();
      }
 })
 

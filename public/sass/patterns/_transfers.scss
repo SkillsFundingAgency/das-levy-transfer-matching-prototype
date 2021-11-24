@@ -321,14 +321,6 @@ table {
                     }
                }
                thead, tbody {
-                    tr {
-                         &.empty-row {
-                              display: none;
-                              td {
-                                   text-align: center;
-                              }
-                         }
-                    }
                     .govuk-checkboxes--small {
                          .govuk-checkboxes__item {
                               &:hover .govuk-checkboxes__input:focus + .govuk-checkboxes__label:before {
@@ -507,6 +499,11 @@ table {
                }
           }
      }
+}
+
+p.empty-row {
+     display: none;
+     text-align: center;
 }
 
 .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {
