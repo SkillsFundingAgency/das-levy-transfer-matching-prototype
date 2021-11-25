@@ -364,10 +364,10 @@ table {
                          &.selected {
                               background: govuk-colour("light-grey");
                               &.shortlisted-row {
-                                   background: none;
-                                   .govuk-checkboxes--small .govuk-checkboxes__label:after {
-                                        display: none;
-                                   }
+                                   // background: none;
+                                   // .govuk-checkboxes--small .govuk-checkboxes__label:after {
+                                   //      display: none;
+                                   // }
                               }
                          }
                          &.shortlisted-row {

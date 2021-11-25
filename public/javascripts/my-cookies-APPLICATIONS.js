@@ -290,6 +290,103 @@ $('#applications-action').on("click", function (e) {
           }
      }
 
+     // REMOVED ITEMS
+     if ($('#type-of-action').val() == 'remove-from-shortlist') {
+          $.cookie("number_of_applications_removed", parseInt($(":checkbox:checked").length), {path:'/'});
+
+          if ($('input[id=application_select_1]').is(':checked')) {
+               $.cookie("application_select_1", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_2]').is(':checked')) {
+               $.cookie("application_select_2", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_3]').is(':checked')) {
+               $.cookie("application_select_3", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_4]').is(':checked')) {
+               $.cookie("application_select_4", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_5]').is(':checked')) {
+               $.cookie("application_select_5", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_6]').is(':checked')) {
+               $.cookie("application_select_6", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_7]').is(':checked')) {
+               $.cookie("application_select_7", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_8]').is(':checked')) {
+               $.cookie("application_select_8", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_9]').is(':checked')) {
+               $.cookie("application_select_9", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_10]').is(':checked')) {
+               $.cookie("application_select_10", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_11]').is(':checked')) {
+               $.cookie("application_select_11", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_12]').is(':checked')) {
+               $.cookie("application_select_12", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_13]').is(':checked')) {
+               $.cookie("application_select_13", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_14]').is(':checked')) {
+               $.cookie("application_select_14", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_15]').is(':checked')) {
+               $.cookie("application_select_15", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_16]').is(':checked')) {
+               $.cookie("application_select_16", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_17]').is(':checked')) {
+               $.cookie("application_select_17", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_18]').is(':checked')) {
+               $.cookie("application_select_18", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_19]').is(':checked')) {
+               $.cookie("application_select_19", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_20]').is(':checked')) {
+               $.cookie("application_select_20", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_21]').is(':checked')) {
+               $.cookie("application_select_21", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_22]').is(':checked')) {
+               $.cookie("application_select_22", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_23]').is(':checked')) {
+               $.cookie("application_select_23", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_24]').is(':checked')) {
+               $.cookie("application_select_24", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_25]').is(':checked')) {
+               $.cookie("application_select_25", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_26]').is(':checked')) {
+               $.cookie("application_select_26", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_27]').is(':checked')) {
+               $.cookie("application_select_27", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_28]').is(':checked')) {
+               $.cookie("application_select_28", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_29]').is(':checked')) {
+               $.cookie("application_select_29", 'removed', {path:'/'});
+          }
+          if ($('input[id=application_select_30]').is(':checked')) {
+               $.cookie("application_select_30", 'removed', {path:'/'});
+          }
+     }
+
+
 
 });
 
@@ -299,6 +396,12 @@ if ($.cookie("shortlist_active") == 'true') {
      $('.shortlist-button.float-right .number').text(parseInt(originalNumber + $.cookie("number_of_applications")));
      $('.shortlist-number').text($.cookie("number_of_applications"));
 }
+
+if ($.cookie("number_of_applications_removed") && $.cookie("shortlist_active") == 'true') {
+     $('.shortlist-button.float-right .number').text(parseInt($.cookie("number_of_applications") - $.cookie("number_of_applications_removed")));
+     $('.shortlist-number').text(parseInt($.cookie("number_of_applications") - $.cookie("number_of_applications_removed")));
+}
+
 
 // ADD SHORTLIST ITEMS
 if ($.cookie("application_select_1") == 'shortlisted') {

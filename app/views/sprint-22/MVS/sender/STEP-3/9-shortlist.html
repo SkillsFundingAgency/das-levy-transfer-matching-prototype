@@ -28,6 +28,15 @@
                <h1 class="govuk-heading-xl no-margin-bottom">My shortlist</h1>
                <p><br></p>
           </div>
+
+          <div class="govuk-grid-column-one-third">
+               <div class="side-panel-applications shortlist">
+                    <a href="#" class="download-csv black-version float-right">
+                         <span class="black-download"></span>
+                         <div>Download applications - excel</div>
+                    </a>
+               </div>
+          </div>
      </div>
 
      <div class="govuk-grid-row">
@@ -795,14 +804,16 @@
                          </span>
                     </div>
                     <div class="govuk-form-group">
-                         <select class="govuk-select" id="type-of-action" name="type-of-action">
-                              <option value="All actions" selected="true" disabled="disabled">-- Actions --</option>
-                              <option disabled="disabled">-----------------------</option>
-                              <option value="approve">Approve applications</option>
-                              <option value="shortlist">Add to shortlist</option>
-                              <option value="reject">Reject applications</option>
-                         </select>
-                         <button class="govuk-button" data-module="govuk-button" id="applications-action">Continue</button>
+                         <form class="" action="" method="post" id="applications_actions_form">
+                              <select class="govuk-select" id="type-of-action" name="type-of-action">
+                                   <option value="All actions" selected="true" disabled="disabled">-- Actions --</option>
+                                   <option disabled="disabled">-----------------------</option>
+                                   <option value="approve">Approve applications</option>
+                                   <option value="remove-from-shortlist">Remove from shortlist</option>
+                                   <option value="reject">Reject applications</option>
+                              </select>
+                              <button class="govuk-button" data-module="govuk-button" id="applications-action">Continue</button>
+                         </form>
                     </div>
                     <p><a class="clear-selection">Clear selection</a></p>
                </div>
