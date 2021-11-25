@@ -1042,7 +1042,7 @@ var filterTable = function () {
 
 $('.sticky-footer').hide();
 
-$('input[name=application_select]').on("change", function (e) {
+$('input[name=application_select], input[name=_application_select]').on("change", function (e) {
      $(this).closest('tr').toggleClass('selected');
      $('.sticky-footer').slideDown();
      var applicationsSelected = parseInt($(":checkbox:checked").length);
