@@ -1,0 +1,187 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-my-pledges">My transfer pledges</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfer pledge 910107</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <p><br></p>
+               <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__header">
+                         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                         <p class="govuk-notification-banner__heading">This pledge is now closed.</p>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h1 class="govuk-heading-xl no-margin-bottom">Transfer pledge 910104</h1>
+               <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Information about the applications</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <p><span class="govuk-body govuk-!-font-weight-bold">Estimated cost in this financial year </span> <br>
+                              This is an estimate of the cost of training for each application in this financial year. It is based on the funding band maximum and the planned start date of training.
+                         </p>
+                    </div>
+               </details>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <div class="side-panel-applications no-margin-top">
+                    <a href="#" class="download-csv black-version float-right">
+                         <span class="black-download"></span>
+                         <div>Download applications - excel</div>
+                    </a>
+                    <!-- <a href="#" class="shortlist-button float-right">
+                         <span class="number">0</span>
+                         <div>View shortlist</div>
+                    </a> -->
+               </div>
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+               <div class="pledge-values top-version">
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">42000</span></strong>
+                         <div class="sub-text">Pledge funds for 2021/22</div>
+                    </h3>
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">36000</span></strong>
+                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
+                    </h3>
+               </div>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+
+               <div class="dropdowns top-version">
+                    <div class="govuk-form-group">
+                         <!-- <label class="govuk-label" for="type-of-applications">Filter applications</label> -->
+                         <select class="govuk-select" id="type-of-criteria" name="type-of-criteria">
+                              <option value="All criteria" selected="true" disabled="disabled">-- Filter criteria --</option>
+                              <option disabled="disabled">-----------------------</option>
+                              <option value="all">All criteria</option>
+                              <option value="100">100% match - (1)</option>
+                              <option value="75">75% match - (1)</option>
+                              <option value="50">50% match - (0)</option>
+                              <option value="25">25% match - (0)</option>
+                              <option value="0">0% match - (0)</option>
+                         </select>
+                    </div>
+                    <div class="govuk-form-group">
+                         <!-- <label class="govuk-label" for="type-of-applications">Filter applications</label> -->
+                         <select class="govuk-select" id="type-of-applications" name="type-of-applications">
+                              <option value="All statuses" selected="true" disabled="disabled">-- Filter statuses --</option>
+                              <option disabled="disabled">-----------------------</option>
+                              <option value="all">All statuses</option>
+                              <option value="1">Accepted - (1)</option>
+                              <option value="2">Awaiting approval - (0)</option>
+                              <option value="3">Awaiting acceptance - (0)</option>
+                              <option value="4">Withdrawn - (0)</option>
+                              <option value="5">Rejected - (1)</option>
+                         </select>
+                    </div>
+               </div>
+
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <table class="govuk-table applications-table in-tab" id="new-applications-table" data-page-length='50'>
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header sort-section" width="20%" onclick="sortTable(1)">Applicant</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(2)">Estimated cost 2021/22</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(3)">Typical duration</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="12.5%" onclick="sortTable(4)">Criteria</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(5)" data-class-name="priority">Date applied</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(6)">Status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                         <tr class="govuk-table__row" data-status="1" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <a href="#">Symphony Tower Ltd</a>
+                              </td>
+                              <td class="govuk-table__cell">£6,000</td>
+                              <td class="govuk-table__cell">30 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">A</span> 21/10/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Accepted</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row" data-status="5" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <a href="#">CBJ Engineering</a>
+                              </td>
+                              <td class="govuk-table__cell">£24,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">B</span>75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">B</span> 15/10/2021</td>
+                              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Rejected</strong></td>
+                         </tr>
+
+                    </tbody>
+               </table>
+
+               <p><br></p>
+
+               <a href="#" class="govuk-button">Create a new transfer pledge</a>
+
+               <br>
+
+               <a href="4-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
