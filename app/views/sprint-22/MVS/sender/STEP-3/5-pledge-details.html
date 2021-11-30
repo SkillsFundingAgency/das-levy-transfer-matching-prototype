@@ -37,38 +37,42 @@
 
      {% endif %}
 
+     {% if data['accept_application'] == 'Reject' %}
+
+     {% else %}
+          <p><br></p>
+     {% endif %}
 
      <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-               {% if data['accept_application'] == 'Reject' %}
+          <div class="govuk-grid-column-two-thirds">
+               <h1 class="govuk-heading-xl no-margin-bottom">Transfer pledge 910106</h1>
+               <br>
+               <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Information about the applications</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <p><span class="govuk-body govuk-!-font-weight-bold">Estimated cost in this financial year </span> <br>
+                              This is an estimate of the cost of training for each application in this financial year. It is based on the funding band maximum and the planned start date of training.
+                         </p>
+                    </div>
+               </details>
+          </div>
 
-               {% else %}
-                    <p><br></p>
-               {% endif %}
-               <h1 class="govuk-heading-xl">
-                    Transfer pledge 910106
-                    <!-- {% if data['accept_application'] == 'Reject' %}
-                         <span class="govuk-caption-m">Applications for your transfer pledge: <strong>2</strong></span>
-                    {% else %}
-                         <span class="govuk-caption-m">Applications for your transfer pledge: <strong>3</strong></span>
-                    {% endif %} -->
-               </h1>
+          <div class="govuk-grid-column-one-third">
+               <div class="side-panel-applications">
+                    <a href="#" class="download-csv black-version float-right">
+                         <span class="black-download"></span>
+                         <div>Download applications - excel</div>
+                    </a>
+               </div>
           </div>
      </div>
 
-     <details class="govuk-details">
-          <summary class="govuk-details__summary">
-               <span class="govuk-details__summary-text">Information about the applications</span>
-          </summary>
-          <div class="govuk-details__text">
-               <p><span class="govuk-body govuk-!-font-weight-bold">Estimated cost in this financial year </span> <br>
-                    This is an estimate of the cost of training for each application in this financial year. It is based on the funding band maximum and the planned start date of training.
-               </p>
-          </div>
-     </details>
-
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
+
+               <p><br></p>
 
                <table class="govuk-table">
                     <thead class="govuk-table__head">
@@ -161,6 +165,8 @@
                     </tbody>
                </table>
 
+               <p><br></p>
+
                <a href="#" class="govuk-button">Create a new transfer pledge</a>
 
                <a href="13-delete-pledge" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button no-margin-top">Close pledge</a>
@@ -180,12 +186,12 @@
 
                <a href="4-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
 
-               <hr class="govuk-section-break dotted no-margin-top">
+               <!-- <hr class="govuk-section-break dotted no-margin-top">
 
                <a href="#" class="download-csv black-version">
                     <span class="black-download"></span>
                     <div>Download applications - excel</div>
-               </a>
+               </a> -->
 
           </div>
 

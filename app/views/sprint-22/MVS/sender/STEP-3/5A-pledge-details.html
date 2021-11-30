@@ -37,38 +37,15 @@
 
      {% endif %}
 
+     {% if data['accept_application'] == 'Reject' %}
+
+     {% else %}
+          <p><br></p>
+     {% endif %}
 
      <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-               {% if data['accept_application'] == 'Reject' %}
-
-               {% else %}
-                    <p><br></p>
-               {% endif %}
-               <h1 class="govuk-heading-xl no-margin-bottom">
-                    Transfer pledge 910106
-                    <!-- {% if data['accept_application'] == 'Reject' %}
-                         <span class="govuk-caption-m">Applications for your transfer pledge: <strong>2</strong></span>
-                    {% else %}
-                         <span class="govuk-caption-m">Applications for your transfer pledge: <strong>3</strong></span>
-                    {% endif %} -->
-                    <a href="#" class="download-csv black-version float-right">
-                         <span class="black-download"></span>
-                         <div>Download applications - excel</div>
-                    </a>
-               </h1>
-
-               <div class="pledge-values top-version">
-                    <h3 class="govuk-heading-l">
-                         <strong>£<span class="value-format">65000</span></strong>
-                         <div class="sub-text">Pledge funds for 2021/22</div>
-                    </h3>
-                    <h3 class="govuk-heading-l">
-                         <strong>£<span class="value-format">29000</span></strong>
-                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
-                    </h3>
-               </div>
-
+          <div class="govuk-grid-column-two-thirds">
+               <h1 class="govuk-heading-xl no-margin-bottom">Transfer pledge 910106</h1>
                <details class="govuk-details">
                     <summary class="govuk-details__summary">
                          <span class="govuk-details__summary-text">Information about the applications</span>
@@ -80,6 +57,26 @@
                     </div>
                </details>
 
+
+               <div class="pledge-values top-version">
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">65000</span></strong>
+                         <div class="sub-text">Pledge funds for 2021/22</div>
+                    </h3>
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">29000</span></strong>
+                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
+                    </h3>
+               </div>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <div class="side-panel-applications">
+                    <a href="#" class="download-csv black-version float-right">
+                         <span class="black-download"></span>
+                         <div>Download applications - excel</div>
+                    </a>
+               </div>
           </div>
 
      </div>
