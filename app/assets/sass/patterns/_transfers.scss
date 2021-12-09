@@ -305,14 +305,14 @@ table {
                               &:last-of-type {
                                    &.sort-section {
                                         padding-right: 0.75em;
-                                        background: url('../images/sort-grey.svg') no-repeat 58% 33%;
+                                        background: url('../images/sort-grey.svg') no-repeat 50% 33%;
                                         background-size: 0.75em;
                                         &.sorting_asc {
-                                             background: url('../images/sort-blue-up.svg') no-repeat 58% 33%;
+                                             background: url('../images/sort-blue-up.svg') no-repeat 50% 33%;
                                              background-size: 0.75em;
                                         }
                                         &.sorting_desc {
-                                             background: url('../images/sort-blue-down.svg') no-repeat 58% 33%;
+                                             background: url('../images/sort-blue-down.svg') no-repeat 50% 33%;
                                              background-size: 0.75em;
                                         }
                                    }

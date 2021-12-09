@@ -1,0 +1,185 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="transfers-hub">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My applications</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-xl">My applications</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               {% if data['accept_funding'] == 'Accept' %}
+                    <p>You have submitted <strong class="number-of-applications">5</strong> transfer applications.</p>
+               {% else %}
+                    <p>You have submitted <strong class="number-of-applications">3</strong> transfer applications.</p>
+               {% endif %}
+
+               <div class="accepted-text-hide">
+                    <details class="govuk-details" data-module="govuk-details">
+                         <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">More details about the status</span>
+                         </summary>
+                         <div class="govuk-details__text">
+
+                              <section>
+
+                                   <p>The approval status shows the status of each application.</p>
+
+                                   <p>It could be:</p>
+
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        <li>awaiting approval </li>
+                                        <li>approved, awaiting your acceptance </li>
+                                        <li>unsuccessful </li>
+                                        <li>funds available to use </li>
+                                        <li>withdrawn </li>
+                                   </ul>
+
+                                   <p>If your application has been approved, you'll need to accept the funding offer by selecting the opportunity.</p>
+
+                                   <p>Funds will show as available to use if your application has been approved and you have acccepted the offer. You'll then need to add your apprentices and their training provider to your account.</p>
+
+                                   <p>The status shows as withdrawn if you have cancelled your application or decided to decline an offer of funding.</p>
+
+                              </section>
+
+                         </div>
+                    </details>
+               </div>
+
+               <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Opportunity</th>
+                              <th scope="col" class="govuk-table__header" width="150px;">Estimated total cost</th>
+                              <th scope="col" class="govuk-table__header" width="370px;"> Approval status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   {% if data['pledge-application-standard'] %}
+                                        {% if data['accept_funding'] == 'Accept' %}
+                                             <a href="5B-application-details" class="pledge-name-answer govuk-link--no-visited-state">####</a>
+                                        {% else %}
+                                             <a href="5A-application-details" class="pledge-name-answer govuk-link--no-visited-state">####</a>
+                                        {% endif %}
+                                   {% else %}
+                                        {% if data['accept_funding'] == 'Accept' %}
+                                             <a href="5B-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
+                                        {% else %}
+                                             <a href="5A-application-details" class="pledge-name-answer govuk-link--no-visited-state">BARRY & BARRY Ltd (910106)</a>
+                                        {% endif %}
+                                   {% endif %}
+                                   <p class="govuk-caption-m">Date: <span id="date-stamp">####</span></p>
+                              </td>
+                              {% if data['pledge-application-standard'] %}
+                                   <td class="govuk-table__cell">£<span class="total-cost-multiplied value-format">####</span></td>
+                              {% else %}
+                                   <td class="govuk-table__cell">£18,000</td>
+                              {% endif %}
+                              <td class="govuk-table__cell" width="200px;" style="text-align: left">
+                                   {% if data['accept_funding'] == 'Accept' %}
+                                        <span class="govuk-tag">Funds available to use</span>
+                                   {% elseif data['accept_funding'] == 'Decline' %}
+                                        <span class="govuk-tag govuk-tag--orange">You declined the funding</span>
+                                   {% else %}
+                                        <span class="govuk-tag govuk-tag--blue">APPROVED, awaiting your acceptance</span>
+                                   {% endif %}
+                              </td>
+                         </tr>
+
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   <a href="5C-application-details" class="govuk-link--no-visited-state">Finders Keepers Ltd (684509)</a>
+                                   <span class="govuk-caption-m">Date: 06/27/2021 09:45pm</span>
+                              </td>
+                              <td class="govuk-table__cell">£25,000</td>
+                              <td class="govuk-table__cell" style="text-align: left">
+                                   {% if data['withdraw_application'] == 'Withdraw' %}
+                                        <span class="govuk-tag govuk-tag--yellow">Withdrawn</span>
+                                   {% else %}
+                                        <span class="govuk-tag govuk-tag--grey">Awaiting approval</span>
+                                   {% endif %}
+                              </td>
+                         </tr>
+
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   <a href="5E-application-details" class="govuk-link--no-visited-state">Opportunity (123465)</a>
+                                   <span class="govuk-caption-m">Date: 05/27/2021 17:58pm</span>
+                              </td>
+                              <td class="govuk-table__cell">£15,000</td>
+                              <td class="govuk-table__cell" style="text-align: left">
+                                   <span class="govuk-tag govuk-tag--yellow">Withdrawn</span>
+                              </td>
+                         </tr>
+
+                         {% if data['accept_funding'] == 'Accept' %}
+
+                              <tr class="govuk-table__row">
+                                   <td class="govuk-table__cell">
+                                        <a href="5D-application-details" class="govuk-link--no-visited-state">THE BIG SUPERMARKET (856348)</a>
+                                        <span class="govuk-caption-m">Date: 11/03/2021 12:51pm</span>
+                                   </td>
+                                   <td class="govuk-table__cell">£12,500</td>
+                                   <td class="govuk-table__cell" style="text-align: left">
+                                        <span class="govuk-tag govuk-tag--red">Unsuccessful</span>
+                                   </td>
+                              </tr>
+
+                              <tr class="govuk-table__row">
+                                   <td class="govuk-table__cell">
+                                        <a href="#" class="govuk-link--no-visited-state">BANKING UK LTD (364710)</a>
+                                        <span class="govuk-caption-m">Date: 11/05/2021 09:23am</span>
+                                   </td>
+                                   <td class="govuk-table__cell">£15,000</td>
+                                   <td class="govuk-table__cell" style="text-align: left">
+                                        <span class="govuk-tag govuk-tag--blue">APPROVED, AWAITING YOUR ACCEPTANCE</span>
+                                   </td>
+                              </tr>
+
+                         {% else %}
+
+                         {% endif %}
+
+                    </tbody>
+               </table>
+
+               <br>
+
+               <a href="3-transfers" class="govuk-back-link">Back to Transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

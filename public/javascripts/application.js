@@ -129,11 +129,15 @@ $('#pledge-amount-error, #pledge-amount-error-message').hide();
 // Funding
 $('#pledge_amount').on("keyup", function (e) {
      var fundingTotal = parseInt($('#pledge_amount').val());
-     if (fundingTotal == 5000) {
+     if (fundingTotal <= 999) {
           $('#pledge-funding-form').attr('action','');
           $('#pledge-amount-container').addClass('govuk-form-group--error');
           // $('#pledge-amount-error-message').addClass('govuk-error-message').removeClass('govuk-hint');
           $('#pledge-amount-error, #pledge-amount-error-message').show();
+     } else if (fundingTotal >= 1000) {
+          $('#pledge-amount-container').removeClass('govuk-form-group--error');
+          $('#pledge-amount-error, #pledge-amount-error-message').hide();
+          $('#pledge-funding-form').attr('action','5-new-pledge-details#section-1');
      } else {
           $('#pledge-funding-form').attr('action','5-new-pledge-details#section-1');
      }
