@@ -1,0 +1,139 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="5-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="7-my-pledges">My transfer pledges</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfer pledge 910107</a></li>
+          </ol>
+     </div>
+
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               {% if data['delete_pledge'] == "Yes" %}
+                    <p><br></p>
+                    <!-- /////////////////// CLOSE PLEDGE MESSAGE - START ///////////////////-->
+                    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                         <div class="govuk-notification-banner__header">
+                              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                         </div>
+                         <div class="govuk-notification-banner__content">
+                              <p class="govuk-notification-banner__heading">This pledge is now closed.</p>
+                         </div>
+                    </div>
+                    <!-- /////////////////// CLOSE PLEDGE MESSAGE - END ///////////////////-->
+               {% else %}
+                    <p><br></p>
+                    <!-- /////////////////// PLEDGE 2022 MESSAGE - START ///////////////////-->
+                    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                         <div class="govuk-notification-banner__header">
+                              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                         </div>
+                         <div class="govuk-notification-banner__content">
+                              <p class="govuk-notification-banner__heading">
+                                   This pledge is set to automatically close on 5th April 2021.
+                              </p>
+                              <p class="govuk-body">
+                                   Choose whether close or renew this pledge and what to do with its applications here: <a href=""><strong>Take action</strong></a>
+                              </p>
+                         </div>
+                    </div>
+                    <!-- /////////////////// PLEDGE 2022 MESSAGE - END ///////////////////-->
+               {% endif %}
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h1 class="govuk-heading-xl no-margin-bottom">Transfer pledge 910107</h1>
+               <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Information about the applications</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <p><span class="govuk-body govuk-!-font-weight-bold">Estimated cost in this financial year </span> <br>
+                              This is an estimate of the cost of training for each application in this financial year. It is based on the funding band maximum and the planned start date of training.
+                         </p>
+                    </div>
+               </details>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+               <div class="pledge-values top-version">
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">42000</span></strong>
+                         <div class="sub-text">Pledge funds for 2021/22</div>
+                    </h3>
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">42000</span></strong>
+                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
+                    </h3>
+               </div>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <table class="govuk-table applications-table in-tab" id="new-applications-table" data-page-length='50'>
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header sort-section" width="20%" onclick="sortTable(1)">Applicant</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(2)">Estimated cost 2021/22</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(3)">Typical duration</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="12.5%" onclick="sortTable(4)">Criteria</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(5)" data-class-name="priority">Date applied</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(6)">Status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row" data-table-row="one">
+                              <td class="govuk-table__cell" colspan="6" style="text-align: center;">No applications received yet</td>
+                         </tr>
+                    </tbody>
+               </table>
+
+               <p><br></p>
+
+               {% if data['delete_pledge'] == "Yes" %}
+                    <a href="#" class="govuk-button">Create a new transfer pledge</a>
+               {% else %}
+                    <a href="#" class="govuk-button">Create a new transfer pledge</a>
+
+                    <a href="10-delete-pledge" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button no-margin-top">Close pledge</a>
+               {% endif %}
+
+               <br>
+
+               <a href="7-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

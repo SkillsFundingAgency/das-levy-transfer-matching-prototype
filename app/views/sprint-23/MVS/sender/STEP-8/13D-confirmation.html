@@ -1,0 +1,53 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation pledge-approved">
+                    <h1 class="govuk-panel__title">Your pledge 910104 will close at the end of the financial year</h1>
+               </div>
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <p>From 6th April, your pledge will no longer be shown publicly, and businesses won't be able to apply for funding from it.</p>
+
+               <p>This pledge will continue to fund all applications you have already approved, including applications you have approved but the applicant has not yet accepted funding.</p>
+
+               <p>In the meantime, you will still be able to view, approve and reject any applications you have received from this pledge.</p>
+
+               <p>
+                    <a href="8D-pledge-details" class="govuk-link govuk-link--no-visited-state">View pledge 910104</a><br>
+                    or<br>
+                    <a href="7-my-pledges" class="govuk-link govuk-link--no-visited-state">View other applications</a>
+               </p>
+
+               <p></p>
+
+               <a href="5-transfers" class="govuk-back-link">Back to Transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

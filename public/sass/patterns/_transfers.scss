@@ -305,14 +305,14 @@ table {
                               &:last-of-type {
                                    &.sort-section {
                                         padding-right: 0.75em;
-                                        background: url('../images/sort-grey.svg') no-repeat 58% 33%;
+                                        background: url('../images/sort-grey.svg') no-repeat 50% 33%;
                                         background-size: 0.75em;
                                         &.sorting_asc {
-                                             background: url('../images/sort-blue-up.svg') no-repeat 58% 33%;
+                                             background: url('../images/sort-blue-up.svg') no-repeat 50% 33%;
                                              background-size: 0.75em;
                                         }
                                         &.sorting_desc {
-                                             background: url('../images/sort-blue-down.svg') no-repeat 58% 33%;
+                                             background: url('../images/sort-blue-down.svg') no-repeat 50% 33%;
                                              background-size: 0.75em;
                                         }
                                    }
@@ -716,6 +716,14 @@ table {
 
 .transfer-values-prototype {
      &.post-mvs-version {
+          &.three-across {
+               .transfer-values {
+                    div {
+                         width: 28.2%;
+                         margin-right: 1%;
+                    }
+               }
+          }
           margin-top: 0.5em;
           .transfer-values {
                div {

@@ -4,29 +4,71 @@ const version = 'sprint-23'
 
 // Add your routes here - above the module.exports line
 
-// DELETE PLEDGE
-router.post('/MVS/sender/STEP-7-8/delete_pledge_action', function (req, res) {
+// STEP 8 - CLOSE PLEDGE
+router.post('/MVS/sender/STEP-8/delete_pledge_action', function (req, res) {
      const delete_pledge = req.session.data.delete_pledge
      if (delete_pledge === 'Yes') {
-          res.redirect('/' + version + '/MVS/sender/STEP-7-8/4-my-pledges')
+          res.redirect('/' + version + '/MVS/sender/STEP-8/8A-pledge-details')
      } else {
-          res.redirect('/' + version + '/MVS/sender/STEP-7-8/5B-pledge-details')
+          res.redirect('/' + version + '/MVS/sender/STEP-8/8A-pledge-details')
      }
 })
 
-router.post('/MVS/sender/STEP-1/delete_pledge_action', function (req, res) {
-  const delete_pledge = req.session.data.delete_pledge
-  if (delete_pledge === 'Yes') {
-    res.redirect('/' + version + '/MVS/sender/STEP-1/8-my-pledges')
-  } else {
-    res.redirect('/' + version + '/MVS/sender/STEP-1/11-pledge-details')
-  }
+// 910106
+router.post('/MVS/sender/STEP-8/pledge_action_910106', function (req, res) {
+     const pledge_actions_910106 = req.session.data.pledge_actions_910106
+     res.redirect('/' + version + '/MVS/sender/STEP-8/11-action')
 })
 
-// REJECT APPLICANTION
-router.post('/MVS/sender/STEP-7-8/approve_application_action', function (req, res) {
+router.post('/MVS/sender/STEP-8/confirm_910106', function (req, res) {
+     const confirm_910106 = req.session.data.confirm_910106
+     res.redirect('/' + version + '/MVS/sender/STEP-8/8B-pledge-details')
+})
+
+// 910105
+router.post('/MVS/sender/STEP-8/pledge_action_910105', function (req, res) {
+     const pledge_actions_910105 = req.session.data.pledge_actions_910105
+     res.redirect('/' + version + '/MVS/sender/STEP-8/11-action')
+})
+
+router.post('/MVS/sender/STEP-8/confirm_910105', function (req, res) {
+     const confirm_910105 = req.session.data.confirm_910105
+     res.redirect('/' + version + '/MVS/sender/STEP-8/13A-carry-over')
+})
+
+router.post('/MVS/sender/STEP-8/confirm_carry_over', function (req, res) {
+     const confirm_carry_over_910105 = req.session.data.confirm_carry_over_910105
+     res.redirect('/' + version + '/MVS/sender/STEP-8/create-pledge/5-new-pledge-details')
+})
+
+
+
+
+// 910104
+router.post('/MVS/sender/STEP-8/pledge_action_910104', function (req, res) {
+     const pledge_actions_910104 = req.session.data.pledge_actions_910104
+     res.redirect('/' + version + '/MVS/sender/STEP-8/12-action-answer')
+})
+
+router.post('/MVS/sender/STEP-8/confirm_910104', function (req, res) {
+     const confirm_910104 = req.session.data.confirm_910104
+     res.redirect('/' + version + '/MVS/sender/STEP-8/13D-confirmation')
+})
+
+// 910107
+router.post('/MVS/sender/STEP-1/delete_pledge_action', function (req, res) {
+     const delete_pledge = req.session.data.delete_pledge
+     if (delete_pledge === 'Yes') {
+          res.redirect('/' + version + '/MVS/sender/STEP-1/8-my-pledges')
+     } else {
+          res.redirect('/' + version + '/MVS/sender/STEP-1/11-pledge-details')
+     }
+})
+
+//  STEP 7 - REJECT APPLICANTION
+router.post('/MVS/sender/STEP-7/approve_application_action', function (req, res) {
   const approve_application_action = req.session.data.approve_application_action
-  res.redirect('/' + version + '/MVS/sender/STEP-7-8/5A-pledge-details')
+  res.redirect('/' + version + '/MVS/sender/STEP-7/5A-pledge-details')
 })
 
 router.post('/MVS/sender/STEP-3/accept_application', function (req, res) {

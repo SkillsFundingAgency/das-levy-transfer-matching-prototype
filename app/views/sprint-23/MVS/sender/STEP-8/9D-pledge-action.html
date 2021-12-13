@@ -1,0 +1,115 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">What would you like to do with this pledge?</h1>
+
+               <div class="transfer-values-prototype post-mvs-version three-across">
+                    <div class="transfer-values">
+                         <div>
+                              <p><span>Levy balance FY 2021/22</span></p>
+                              <p class="number">£200,000</p>
+                         </div>
+                         <div>
+                              <p><span>Committed FY 2021/22</span></p>
+                              <p class="number">£142,400</p>
+                         </div>
+                         <div>
+                              <p><span>Committed FY 2022/23</span></p>
+                              <p class="number">£60,000</p>
+                         </div>
+                    </div>
+               </div>
+
+               <p>Below are the options you have for this current transfer pledge, if you take no action:</p>
+
+               <ul class="govuk-list govuk-list--bullet">
+                    <li>the pledge will be automatically closed on 5th April 2022</li>
+                    <li>all unapproved applications will be rejected</li>
+                    <li>any approved applications that have not been accepted by the receiving employer will be rejected.</li>
+               </ul>
+
+               <p>All pledges can be closed at anytime during the financial year.</p>
+
+               <form method="post" action="pledge_action_910104">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="pledge_actions_910104" id="pledge_actions_renew" value="Renew" type="radio">
+                                        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_actions_renew">Renew the pledge, 6th April 2022 - 5th April 2023</label>
+
+                                        <ul class="govuk-list govuk-list--bullet govuk-caption-m">
+                                             <li>the pledge will be renewed on 6th April, 2022  for the same amount and with the same criteria</li>
+                                             <li>applications "awaiting approval" and "Awaiting acceptance by applicant" will be carried forward into the renewed pledge</li>
+                                             <li>all "Withdrawn" and "Rejected" applications will not be carried forward</li>
+                                             <li>£65,000 will come out of your transfer allowance for financial year 2022/23</li>
+                                        </ul>
+                                   </div>
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="pledge_actions_910104" id="pledge_actions_new" value="New pledge" type="radio">
+                                        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_actions_new">Create a new pledge</label>
+
+                                        <ul class="govuk-list govuk-list--bullet govuk-caption-m">
+                                             <li>on 5th April, 2022 this pledge will close and will no longer be displayed publicly, organisations will not be able to apply to it</li>
+                                             <li>a new pledge will start on 6th April, 2022 using criteria and amount set by you</li>
+                                             <li>you can choose whether to carry forward applications from the old pledge into the new one<li>
+                                             <li>you are still committed to funding any applications that you have approved and that the receiving employer has accepted</li>
+                                        </ul>
+                                   </div>
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="pledge_actions_910104" id="pledge_actions_close" value="Close" type="radio">
+                                        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_actions_close">Close the pledge</label>
+
+                                        <ul class="govuk-list govuk-list--bullet govuk-caption-m">
+                                             <li>on 5th April, 2022 all applications "awaiting approval" will be automatically rejected</li>
+                                             <li>applications "approved, awaiting for acceptance" will stay active</li>
+                                             <li>the pledge will no longer be displayed publicly and employers will not be able to apply</li>
+                                             <li>you will need to create a new pledge if you wish to pledge transfers in the new financial year</li>
+                                             <li>you will continue to fund all applications you have already approved, including applications you have approved but the applicant has not yet accepted funding.</li>
+                                        </ul>
+                                   </div>
+
+                              </div>
+
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

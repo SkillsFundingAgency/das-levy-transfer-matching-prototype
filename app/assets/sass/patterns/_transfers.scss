@@ -716,6 +716,14 @@ table {
 
 .transfer-values-prototype {
      &.post-mvs-version {
+          &.three-across {
+               .transfer-values {
+                    div {
+                         width: 28.2%;
+                         margin-right: 1%;
+                    }
+               }
+          }
           margin-top: 0.5em;
           .transfer-values {
                div {
