@@ -1,0 +1,57 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Pledges at financial year end and your transfer allowance</h1>
+
+               <p>The maximum amount you can pledge is based on your transfer allowance, the allowance is valid for the current financial year <strong>£200,000</strong>.</p>
+
+               <p>When you tell us you want to renew or create a new pledge in the next financial year, we assume that your transfer allowance will be the same as this year.</p>
+
+               <p>When your actual allowance is calculated (at the end of April), if it is lower than the sum of all your transfer commitments and pledges for that year, we will notify you and automatically reduce your pledges?</p>
+
+               <h2 class="govuk-heading-s">Further information on your transfer allowance calculation</h2>
+
+               <p>Your transfer allowance in the next financial year will be calculated and shown in your account by the end of April and is <a href="#">based on the total amount of levy you declared during the previous tax year</a>.</p>
+
+               <p>We are unable to calculate transfer allowances in advance.</p>
+
+               <p>If your workforce/annual pay bill is at a steady level then we would not envisage your allowance fluctuating by much; we cannot guarantee this as it depends on your annual pay bill and any potential growth/downsizing/restructuring.</p>
+
+               <p><br></p>
+
+               <form method="post" action="12C-action-answer">
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

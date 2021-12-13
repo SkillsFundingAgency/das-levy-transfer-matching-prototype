@@ -17,7 +17,7 @@ router.post('/MVS/sender/STEP-8/delete_pledge_action', function (req, res) {
 // 910106
 router.post('/MVS/sender/STEP-8/pledge_action_910106', function (req, res) {
      const pledge_actions_910106 = req.session.data.pledge_actions_910106
-     res.redirect('/' + version + '/MVS/sender/STEP-8/11-action')
+     res.redirect('/' + version + '/MVS/sender/STEP-8/11B-action')
 })
 
 router.post('/MVS/sender/STEP-8/confirm_910106', function (req, res) {
@@ -28,7 +28,7 @@ router.post('/MVS/sender/STEP-8/confirm_910106', function (req, res) {
 // 910105
 router.post('/MVS/sender/STEP-8/pledge_action_910105', function (req, res) {
      const pledge_actions_910105 = req.session.data.pledge_actions_910105
-     res.redirect('/' + version + '/MVS/sender/STEP-8/11-action')
+     res.redirect('/' + version + '/MVS/sender/STEP-8/11C-action')
 })
 
 router.post('/MVS/sender/STEP-8/confirm_910105', function (req, res) {
@@ -41,13 +41,10 @@ router.post('/MVS/sender/STEP-8/confirm_carry_over', function (req, res) {
      res.redirect('/' + version + '/MVS/sender/STEP-8/create-pledge/5-new-pledge-details')
 })
 
-
-
-
 // 910104
 router.post('/MVS/sender/STEP-8/pledge_action_910104', function (req, res) {
      const pledge_actions_910104 = req.session.data.pledge_actions_910104
-     res.redirect('/' + version + '/MVS/sender/STEP-8/12-action-answer')
+     res.redirect('/' + version + '/MVS/sender/STEP-8/12D-action-answer')
 })
 
 router.post('/MVS/sender/STEP-8/confirm_910104', function (req, res) {
