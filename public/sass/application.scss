@@ -886,3 +886,8 @@ p {
 .das-float-right {
      float: right;
 }
+
+.govuk-notification-banner__content > * {
+     width: 100%;
+     max-width: 100%;
+}
