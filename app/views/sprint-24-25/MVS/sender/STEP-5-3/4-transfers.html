@@ -1,0 +1,170 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <div class="covid-banner">
+                    <h2 class="govuk-heading-m">Coronavirus (COVID-19): to find out how we can support you, including changes we’re making to help your apprentices continue learning, <a href="https://www.gov.uk/government/publications/coronavirus-covid-19-apprenticeship-programme-response?es_c=7B651DDC6B6986102E8BBB7918A20DDF&es_cl=53BFD9FD1669BCDAEBD12D5CDF1D9AB8&es_id=9d%c2%a3o3C" rel="external" target="_blank">read our updated guidance</a>.</h2>
+               </div>
+               <p><br></p>
+               <h1 class="govuk-heading-xl">Transfers</h1>
+          </div>
+     </div>
+
+     <!-- transfer-values -->
+
+     <div class="transfer-values-prototype mvs-version purple">
+
+          <div class="transfer-values">
+               <div class="transfer-funds">
+                    <p class="number">£0</p>
+                    <p><span>Remaining transfer allowance</span></p>
+               </div>
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <p><br></p>
+
+               <p><a href="#">Estimate</a> the number of apprentices you can fund with your transfer allowance.</p>
+
+               <p>Employers who pay the apprenticeship levy can connect with other employers and transfer up to 25% of their previous year's annual funds.</p>
+
+               <p>Before starting a connection, both the sending and receiving employers need to read and understand the <a href="#">rules for sending and receiving transfers</a>.</p>
+
+               <p>Only the sendin employer can start the connection.</p>
+
+               <p><br></p>
+
+               <table class="govuk-table">
+                    <caption class="govuk-table__caption govuk-table__caption--m">Connection requests</caption>
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Employer</th>
+                              <th scope="col" class="govuk-table__header">Status</th>
+                              <th scope="col" class="govuk-table__header"></th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">COVENTRY AND WARWICKSHIRE CHAMBER OF COMMERCE_LevyReceiver</td>
+                              <td class="govuk-table__cell">Approved</td>
+                              <td class="govuk-table__cell"><a href="#">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">COVENTRY AND WARWICKSHIRE PROPERTY SOLUTIONS LTD</td>
+                              <td class="govuk-table__cell">Approved</td>
+                              <td class="govuk-table__cell"><a href="#">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">COVENTRY ACCOUNTANTS LTD</td>
+                              <td class="govuk-table__cell">Approved</td>
+                              <td class="govuk-table__cell"><a href="#">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">SUPER PRESTIGE MOTOR SERVICES LTD</td>
+                              <td class="govuk-table__cell">Approved</td>
+                              <td class="govuk-table__cell"><a href="#">Details</a></td>
+                         </tr>
+                    </tbody>
+               </table>
+
+               <p><br></p>
+
+               <table class="govuk-table">
+                    <caption class="govuk-table__caption govuk-table__caption--m">Transfer requests</caption>
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Employer</th>
+                              <th scope="col" class="govuk-table__header">Status</th>
+                              <th scope="col" class="govuk-table__header">Total cost</th>
+                              <th scope="col" class="govuk-table__header"></th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="approval-name">COVENTRY AND WARWICKSHIRE CHAMBER OF COMMERCE_LevyReceiver</span></td>
+                              <td class="govuk-table__cell"><span class="approval-status">Approved</span></td>
+                              <td class="govuk-table__cell"><span class="approval-cost">£200</span></td>
+                              <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="approval-name">COVENTRY AND WARWICKSHIRE CHAMBER OF COMMERCE_LevyReceiver</span></td>
+                              <td class="govuk-table__cell"><span class="approval-status">Approved</span></td>
+                              <td class="govuk-table__cell"><span class="approval-cost">£700</span></td>
+                              <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   {% if data['provider_name'] %}
+                                        <span class="approval-name">{{ data['provider_name'] }}</span>
+                                   {% else %}
+                                        <span class="approval-name">Belhavel Construction Ltd</span>
+                                   {% endif %}
+                              </td>
+                              <td class="govuk-table__cell"><span class="approval-status">Pending</span></td>
+                              <td class="govuk-table__cell"><span class="approval-cost">£9,000</span></td>
+                              <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="approval-name">COVENTRY ACCOUNTANTS LTD</span></td>
+                              <td class="govuk-table__cell"><span class="approval-status">Approved</span></td>
+                              <td class="govuk-table__cell"><span class="approval-cost">£100</span></td>
+                              <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="approval-name">COVENTRY ACCOUNTANTS LTD</span></td>
+                              <td class="govuk-table__cell"><span class="approval-status">Rejected</span></td>
+                              <td class="govuk-table__cell"><span class="approval-cost">£33</span></td>
+                              <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="approval-name">COVENTRY ACCOUNTANTS LTD</span></td>
+                              <td class="govuk-table__cell"><span class="approval-status">Pending</span></td>
+                              <td class="govuk-table__cell"><span class="approval-cost">£1,250</span></td>
+                              <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="approval-name">COVENTRY ACCOUNTANTS LTD</span></td>
+                              <td class="govuk-table__cell"><span class="approval-status">Pending</span></td>
+                              <td class="govuk-table__cell"><span class="approval-cost">£6,200</span></td>
+                              <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><span class="approval-name">SUPER PRESTIGE MOTOR SERVICES LTD</span></td>
+                              <td class="govuk-table__cell"><span class="approval-status">Approved</span></td>
+                              <td class="govuk-table__cell"><span class="approval-cost">£1,500</span></td>
+                              <td class="govuk-table__cell"><a href="5-request-details" class="approval-capture-details">Details</a></td>
+                         </tr>
+                    </tbody>
+               </table>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

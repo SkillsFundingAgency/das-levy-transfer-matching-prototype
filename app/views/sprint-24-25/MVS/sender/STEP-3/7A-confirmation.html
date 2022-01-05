@@ -1,0 +1,102 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Approving the apprenticeship details</h1>
+
+               <form method="post" action="7B-confirmation" id="approve-pledge-form">
+
+                    <p>
+                         You have chosen to approve the application. The apprentice details will be added by <strong>Behavel Construction Ltd</strong> to use the funds. You have two approval options to choose from:
+                         <!-- This step needs further approval. There are two options you can choose from: -->
+                    </p>
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <!-- <legend class="govuk-fieldset__legend">How do you want to approve the apprentice details?</legend> -->
+                              <div class="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approve-application" name="approve-application" type="radio" value="approve all">
+                                        <label class="govuk-label govuk-radios__label" for="approve-application"><strong>Check and review apprenticeship details</strong></label>
+
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             <!-- <li>you will get a prompt to look at the apprenticeship details when they’re added by the employer</li> -->
+                                             <li>you may get multiple prompts if the employer adds the apprenticeship details in batches</li>
+                                             <li>you will be able to check the standard, the cost and dates</li>
+                                             <!-- <li>you can ask the employer to amend details</li> -->
+                                             <li>you will have the option to change the apprenticeship details or you can ask the employer to</li>
+                                        </ul>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="approve-application-2" name="approve-application" type="radio" value="approve with manual">
+                                        <label class="govuk-label govuk-radios__label govuk-fieldset__legend--s" for="approve-application-2"><strong>Automatically approve the apprenticeship details</strong></label>
+
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             <li>you will not check and review the apprenticeship details, the apprenticeship standard or the cost or start date for the application</li>
+                                             <li>the employer or training provider can choose a different apprenticeship standard, but the cost of the apprenticeship details cannot exceed the agreed transfer amount in the application.</li>
+                                        </ul>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button" id="approve-pledge-continue">Continue</button>
+
+                    <!-- <br>
+
+                    <a href="javascript:history.back()" class="govuk-link govuk-back-link">Back</a> -->
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+               <!-- <section class="employer-details side-panel applications-details">
+                    <p class="govuk-heading-s">Application details:</p>
+                    <p class="details">
+                         <span class="icon tick"></span>Location: <strong>Birmingham, West Midlands</strong><br>
+                         <span class="icon tick"></span>Sector: <strong>Construction company</strong><br>
+                         <span class="icon tick"></span>Category of training: <strong>Bricklaying</strong><br>
+                         <span class="icon tick"></span>Level: <strong>2</strong>
+                    </p>
+                    <p class="details">
+                         Apprentices: <strong>1</strong><br>
+                         Estimated duration: <strong>30 months</strong><br>
+                         Start by: <strong>March 2021</strong><br>
+                         Do they have a training provider?: <strong>No</strong><br>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Estimated total: £9,000</p>
+                    </div>
+               </section> -->
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,169 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="5-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My transfer pledges</a></li>
+          </ol>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <!-- /////////////////// PLEDGE 2022 MESSAGE - START ///////////////////-->
+               <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__header">
+                         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                         <p class="govuk-notification-banner__heading">
+                              On 5th April 2022 any ACTIVE pledges will be automatically closed unless you choose to renew them.
+                         </p>
+                         <p class="govuk-body">
+                              You can tell us if you want to renew your pledges and whether to carry over any unapproved and unaccepted applications by clicking on the Transfer pledge link in the table below and following the instructions on the pledge details page.
+                         </p>
+                    </div>
+               </div>
+               <!-- /////////////////// PLEDGE 2022 MESSAGE - END ///////////////////-->
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">My transfer pledges</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               <p>You have <strong>5</strong> transfer pledges.</p>
+
+               <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Transfer pledge</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Pledged to transfers</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Approved for apprenticeships</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         {% if data['pledge_actions_910105'] == "New pledge" and data['confirm_910105'] == "New pledge" %}
+                              <tr class="govuk-table__row">
+                                   <td class="govuk-table__cell">
+                                        100356<br>
+                                        <span class="govuk-caption-m govuk-!-font-size-16">Goes live start FY 2022/23</span>
+                                   </td>
+                                   <td class="govuk-table__cell govuk-table__cell--numeric">£<span class="value-format">{{ data['pledge_amount'] }}</span></td>
+                                   <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+                                   <td class="govuk-table__cell govuk-table__cell--numeric">£<span class="value-format">{{ data['pledge_amount'] }}</span></td>
+                                   <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+                                   <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">NEW</strong></td>
+                              </tr>
+                         {% else %}
+
+                         {% endif %}
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><a href="8A-pledge-details">910107</a></td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£42,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£42,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['delete_pledge'] == "Yes" %}
+                                        <strong class="govuk-tag govuk-tag--grey">Closed</strong>
+                                   {% else %}
+                                        <strong class="govuk-tag govuk-tag--orange">DUE TO BE CLOSED</strong>
+                                   {% endif %}
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><a href="8B-pledge-details">910106</a></td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£65,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£36,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£29,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['pledge_actions_910106'] == "Renew" and data['confirm_910106'] == "Renew" %}
+                                        <strong class="govuk-tag govuk-tag--blue">DUE TO BE RENEWED</strong>
+                                   {% else %}
+                                        <strong class="govuk-tag govuk-tag--orange">DUE TO BE CLOSED</strong>
+                                   {% endif %}
+                              </td>
+                         </tr>
+
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><a href="8C-pledge-details">910105</a></td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£78,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£64,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£14,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['pledge_actions_910105'] == "New pledge" and data['confirm_910105'] == "New pledge" %}
+                                        <strong class="govuk-tag govuk-tag--red">CLOSING END OF FY</strong>
+                                   {% else %}
+                                        <strong class="govuk-tag govuk-tag--orange">DUE TO BE CLOSED</strong>
+                                   {% endif %}
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><a href="8D-pledge-details">910104</a></td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£5,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£5,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['pledge_actions_910104'] == "Close" and data['confirm_910104'] == "Close" %}
+                                        <strong class="govuk-tag govuk-tag--red">CLOSING END OF FY</strong>
+                                   {% else %}
+                                        <strong class="govuk-tag govuk-tag--orange">DUE TO BE CLOSED</strong>
+                                   {% endif %}
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><a href="8E-pledge-details">910103</a></td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£42,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£6,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£36,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--grey">Closed</strong></td>
+                         </tr>
+                    </tbody>
+               </table>
+
+               <br>
+
+               <a href="#" class="govuk-button" data-module="govuk-button">Create a transfer pledge</a>
+
+               <br><br>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
