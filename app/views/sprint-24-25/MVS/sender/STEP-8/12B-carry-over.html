@@ -1,0 +1,96 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Would you like to carry over the applications from pledge 910106?</h1>
+
+               <h3 class="govuk-heading-s no-margin-bottom">Applications</h3>
+               <p class="govuk-caption-m">
+                    <strong>15 awaiting approval</strong> applications will be carried forward;<br>
+                    <strong>6 awaiting acceptance</strong> applications will be carried forward
+               </p>
+
+               {% if data['pledge_action_criteria'] == "Yes" %}
+                    <form method="post" action="renew_pledge_carry_applications">
+
+                         <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                                   <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                        <div class="govuk-radios__item">
+                                             <input class="govuk-radios__input" name="pledge_action_applications" id="pledge_action_applications_yes" value="Yes" type="radio">
+                                             <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_action_applications_yes">Yes, carry over applications</label>
+                                        </div>
+
+                                        <div class="govuk-radios__item">
+                                             <input class="govuk-radios__input" name="pledge_action_applications" id="pledge_action_applications_no" value="No" type="radio">
+                                             <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_action_applications_no">No, reject all applications</label>
+                                        </div>
+
+                                   </div>
+
+                              </fieldset>
+                         </div>
+
+                         <button class="govuk-button" data-module="govuk-button">Continue</button>
+                         <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+                    </form>
+               {% else %}
+                    <form method="post" action="create_pledge_carry_applications">
+
+                         <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                                   <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                        <div class="govuk-radios__item">
+                                             <input class="govuk-radios__input" name="pledge_action_applications" id="pledge_action_applications_yes" value="Yes" type="radio">
+                                             <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_action_applications_yes">Yes, carry over applications</label>
+                                        </div>
+
+                                        <div class="govuk-radios__item">
+                                             <input class="govuk-radios__input" name="pledge_action_applications" id="pledge_action_applications_no" value="No" type="radio">
+                                             <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_action_applications_no">No, remove all applications</label>
+                                        </div>
+
+                                   </div>
+
+                              </fieldset>
+                         </div>
+
+                         <button class="govuk-button" data-module="govuk-button">Continue</button>
+                         <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+                    </form>
+               {% endif %}
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

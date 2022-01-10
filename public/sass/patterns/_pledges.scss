@@ -385,6 +385,15 @@ section {
                &.applications-details {
                     padding: 1em 1em 4.5em 1em;
                }
+               &.criteria {
+                    padding-bottom: 1.5em;
+                    p.details {
+                         margin-bottom: 0.5em;
+                         &:last-of-type {
+                              margin: 0;
+                         }
+                    }
+               }
                p.details {
                     font-size: 1rem;
                     margin: 0;

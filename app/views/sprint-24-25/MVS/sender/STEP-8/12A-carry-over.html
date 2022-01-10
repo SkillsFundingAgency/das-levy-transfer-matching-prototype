@@ -23,15 +23,7 @@
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
-               <h1 class="govuk-heading-xl">Are you sure you wish to create a new pledge for 910105?</h1>
-
-               <!-- <h2 class="govuk-heading-l">910105</h2> -->
-
-               <h3 class="govuk-heading-s no-margin-bottom">Applications</h3>
-               <p class="govuk-caption-m">
-                    <strong>1 awaiting approval</strong> applications will be carried forward;<br>
-                    <strong>4 awaiting acceptance</strong> applications will be carried forward
-               </p>
+               <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Would you like to keep the same funding level and same criteria as 910106?</h1>
 
                <h3 class="govuk-heading-s no-margin-bottom">Criteria</h3>
                <p class="govuk-caption-m">
@@ -43,27 +35,30 @@
 
                <h3 class="govuk-heading-s no-margin-bottom">Funds</h3>
                <p class="govuk-caption-m">
-                    Total pledge funds committed in FY 2021/22: <strong>£78,000</strong>
+                    Total pledge funds committed in FY 2021/22: <strong>£65,000</strong>
                </p>
 
-               <p><br></p>
+               <div class="govuk-inset-text no-margin-top">
+                    <p>If the actual transfer allowance is lower than the sum of your pledges we will notify you. We will automatically reduce the pledges to match the transfer allowance that is available.</p>
+               </div>
 
-               <form method="post" action="confirm_910105">
+               <form method="post" action="pledge_action_carry_criteria">
 
                     <div class="govuk-form-group">
                          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Is this what you want to pledge for 2022/23?</legend>
 
                               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
                                    <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" name="confirm_910105" id="confirm_new_910105" value="New pledge" type="radio">
-                                        <label class="govuk-label govuk-radios__label" for="confirm_new_910105">Yes, create a new pledge</label>
+                                        <input class="govuk-radios__input" name="pledge_action_criteria" id="pledge_action_criteria_yes" value="Yes" type="radio">
+                                        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_action_criteria_yes">Yes, use same funding level and same criteria</label>
+
                                    </div>
 
                                    <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" name="confirm_910105" id="dont_create_new_910105" value="No" type="radio">
-                                        <label class="govuk-label govuk-radios__label" for="dont_create_new_910105">No, not at this time</label>
+                                        <input class="govuk-radios__input" name="pledge_action_criteria" id="pledge_action_criteria_no" value="No" type="radio">
+                                        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_action_criteria_no">No, change funding level and/or criteria</label>
+
                                    </div>
 
                               </div>
