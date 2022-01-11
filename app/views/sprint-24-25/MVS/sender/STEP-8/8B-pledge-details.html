@@ -18,7 +18,7 @@
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-finance">Finance</a></li>
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="5-transfers">Transfers</a></li>
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="7-my-pledges">My transfer pledges</a></li>
-               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfer pledge 910106</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfer pledge 100356</a></li>
           </ol>
      </div>
 
@@ -53,65 +53,84 @@
      </div>
 
      <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
+          <div class="govuk-grid-column-two-thirds">
 
-               <h3 class="govuk-heading-s no-margin-bottom">Criteria</h3>
-               <p class="govuk-caption-m">
-                    Show or hide your organisation's name: <strong>{{ data['show_publicly'] }}</strong><br>
-                    Location: <strong>
-                         {% if data['pledge-location'] %}
-                              <ul class="govuk-list">
-                                   {% for key, location in data['pledge-location'] %}
-                                        <li>{{ location }}</li>
-                                   {% endfor %}
-                              </ul>
-                         {% else %}
-                              All of England
-                         {% endif %}
-                    </strong><br>
-                    Sector: <strong>
-                         {% if data['pledge_sector'] %}
-                              <ul class="govuk-list govuk-list--bullet">
-                                   {% for answer in data['pledge_sector'] -%}
-                                   <li>{{ answer }}</li>
-                                   {% endfor %}
-                              </ul>
-                         {% else %}
-                              All sectors and industries
-                         {% endif %}
-                    </strong><br>
-                    Type of job role: <strong>
-                         {% if data['pledge_training'] %}
-                              <ul class="govuk-list govuk-list--bullet">
-                                   {% for answer in data['pledge_training'] -%}
-                                   <li>{{ answer }}</li>
-                                   {% endfor %}
-                              </ul>
-                         {% else %}
-                              All apprenticeship job roles
-                         {% endif %}
-                    </strong><br>
-                    Level: <strong>
-                         {% if data['pledge_level'] %}
-                              <ul class="govuk-list govuk-list--bullet">
-                                   {% for answer in data['pledge_level'] -%}
-                                   <li>{{ answer }}</li>
-                                   {% endfor %}
-                              </ul>
-                         {% else %}
-                              All qualification levels
-                         {% endif %}
-                    </strong>
-               </p>
+               {% if data['pledge_action_criteria'] == "Yes" %}
+                    <h3 class="govuk-heading-s no-margin-bottom">Criteria</h3>
+                    <p class="govuk-caption-m">
+                         Show or hide your organisation's name: <strong>Show</strong><br>
+                         Location: <strong>Manchester, Liverpool, Leeds</strong><br>
+                         Sector: <strong>Construction, Engineering and manufacturing</strong><br>
+                         Type of job role: <strong>Business and administration, Construction, Digital</strong><br>
+                         Level: <strong>All</strong>
+                    </p>
 
-               <h3 class="govuk-heading-s no-margin-bottom">Funds</h3>
-               <p class="govuk-caption-m">
-                    Total pledge funds committed in FY 2021/22: <strong>£<span class="value-format">{{ data['pledge_amount'] }}</span></strong>
-               </p>
+                    <h3 class="govuk-heading-s no-margin-bottom">Funds</h3>
+                    <p class="govuk-caption-m">
+                         Total pledge funds committed in FY 2022/23: <strong>£<span class="value-format">65000</span></strong>
+                    </p>
 
-               <p><br></p>
+               {% elseif data['pledge_action_criteria'] == "No" %}
+                    <h3 class="govuk-heading-s no-margin-bottom">Criteria</h3>
+                    <p class="govuk-caption-m">
+                         Show or hide your organisation's name: <strong>{{ data['show_publicly'] }}</strong><br>
+                         Location: <strong>
+                              {% if data['pledge-location'] %}
+                                   <ul class="govuk-list">
+                                        {% for key, location in data['pledge-location'] %}
+                                             <li>{{ location }}</li>
+                                        {% endfor %}
+                                   </ul>
+                              {% else %}
+                                   All of England
+                              {% endif %}
+                         </strong><br>
+                         Sector: <strong>
+                              {% if data['pledge_sector'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge_sector'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                              {% else %}
+                                   All sectors and industries
+                              {% endif %}
+                         </strong><br>
+                         Type of job role: <strong>
+                              {% if data['pledge_training'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge_training'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                              {% else %}
+                                   All apprenticeship job roles
+                              {% endif %}
+                         </strong><br>
+                         Level: <strong>
+                              {% if data['pledge_level'] %}
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        {% for answer in data['pledge_level'] -%}
+                                        <li>{{ answer }}</li>
+                                        {% endfor %}
+                                   </ul>
+                              {% else %}
+                                   All qualification levels
+                              {% endif %}
+                         </strong>
+                    </p>
 
-               <a href="#" class="govuk-button govuk-button--warning accepted-journey-cancel-button">Close pledge</a>
+                    <h3 class="govuk-heading-s no-margin-bottom">Funds</h3>
+                    <p class="govuk-caption-m">
+                         Total pledge funds committed in FY 2022/23: <strong>£<span class="value-format">{{ data['pledge_amount'] }}</span></strong>
+                    </p>
+               {% endif %}
+
+
+               <div class="govuk-inset-text">
+                    If you no longer wish to pledges these funds in the next financial year, you can <a href="14-pledge-closed">withdraw this pledge</a> here.
+               </div>
+               <!-- <a href="#" class="govuk-button govuk-button--warning accepted-journey-cancel-button">Close pledge</a> -->
                <br>
                <a href="7-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
 
