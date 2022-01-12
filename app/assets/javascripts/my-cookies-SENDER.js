@@ -781,7 +781,7 @@ $('.approval-cost-answer').text($.cookie("approval-cost-answer"));
 
 
 // WITHDRAW APPLICATION
-$('.FY-2022').hide();
+$('.FY-2022, #FY-2022').hide();
 
 $("#withdraw-pledge").on("click", function (e) {
      $.cookie("withdraw-pledge", true, {path:'/'});
