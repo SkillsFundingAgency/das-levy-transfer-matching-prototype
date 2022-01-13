@@ -23,31 +23,6 @@
 
      <p style="padding-bottom: 30px;"></p>
 
-     <!-- /////////////////// PLEDGE 2022 MESSAGE - START ///////////////////-->
-     <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-               {% if data['pledge_actions_910106'] == "Renew" %}
-
-               {% else %}
-                    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-                         <div class="govuk-notification-banner__header">
-                              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
-                         </div>
-                         <div class="govuk-notification-banner__content">
-                              <p class="govuk-notification-banner__heading">
-                                   You have 1 pledge that is due for renewal at the end of this financial year, 5th April 2022.
-                              </p>
-                              <p class="govuk-body">
-                                   Tell us what you want to happen with your pledge.  You can choose to continue with this pledge into the next financial year or close this pledge.
-                              </p>
-                         </div>
-                    </div>
-               {% endif %}
-          </div>
-     </div>
-     <!-- /////////////////// PLEDGE 2022 MESSAGE - END ///////////////////-->
-
-
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
@@ -80,9 +55,21 @@
                               <td class="govuk-table__cell">
                                    <a href="8B-pledge-details">100356</a><br>
                               </td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric">£<span class="value-format">65000</span></td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['pledge_amount'] %}
+                                        £<span class="value-format">{{ data['pledge_amount'] }}</span>
+                                   {% else %}
+                                        £<span class="value-format">65000</span>
+                                   {% endif %}
+                              </td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">£0</td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric">£<span class="value-format">65000</span></td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['pledge_amount'] %}
+                                        £<span class="value-format">{{ data['pledge_amount'] }}</span>
+                                   {% else %}
+                                        £<span class="value-format">65000</span>
+                                   {% endif %}
+                              </td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
                               <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">ACTIVE</strong></td>
                          </tr>

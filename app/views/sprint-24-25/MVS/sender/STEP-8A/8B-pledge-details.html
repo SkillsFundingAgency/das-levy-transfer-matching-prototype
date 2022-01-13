@@ -55,18 +55,26 @@
           <div class="govuk-grid-column-two-thirds">
                <div class="pledge-values top-version">
                     <h3 class="govuk-heading-l">
-                         <strong>£75,000</strong>
+                         {% if data['pledge_amount'] %}
+                              <strong>£<span class="value-format">{{ data['pledge_amount'] }}</span></strong>
+                         {% else %}
+                              <strong>£<span class="value-format">65000</span></strong>
+                         {% endif %}
                          <div class="sub-text">Pledge funds for 2022/23</div>
                     </h3>
                     <h3 class="govuk-heading-l">
-                         <strong><span style="color: #1d70b8">£75,000</span></strong>
+                         {% if data['pledge_amount'] %}
+                              <strong>£<span class="value-format" style="color: #1d70b8">{{ data['pledge_amount'] }}</span></strong>
+                         {% else %}
+                              <strong>£<span class="value-format" style="color: #1d70b8">65000</span></strong>
+                         {% endif %}
                          <div class="sub-text">Remaining pledge funds for 2022/23</div>
                     </h3>
                </div>
           </div>
 
           <div class="govuk-grid-column-one-third">
-               <a href="#" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button float-right">Close pledge</a>
+               <a href="#" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button float-right">Close pledge now</a>
           </div>
 
      </div>
@@ -98,7 +106,7 @@
                </table>
 
 
-               <!-- <a href="#" class="govuk-button govuk-button--warning accepted-journey-cancel-button">Close pledge</a> -->
+               <!-- <a href="#" class="govuk-button govuk-button--warning accepted-journey-cancel-button">Close pledge now</a> -->
                <br>
                <a href="7-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
 

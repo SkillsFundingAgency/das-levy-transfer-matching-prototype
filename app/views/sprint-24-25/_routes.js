@@ -15,14 +15,14 @@ router.post('/MVS/sender/STEP-8/delete_pledge_action', function (req, res) {
 })
 
 // 910106
-router.post('/MVS/sender/STEP-8/pledge_action_910106', function (req, res) {
-     const pledge_actions_910106 = req.session.data.pledge_actions_910106
-     if (pledge_actions_910106 === 'Renew') {
-          res.redirect('/' + version + '/MVS/sender/STEP-8/12-carry-over')
-     } else {
-          res.redirect('/' + version + '/MVS/sender/STEP-8/10-delete-pledge')
-     }
-})
+// router.post('/MVS/sender/STEP-8/pledge_action_910106', function (req, res) {
+//      const pledge_actions_910106 = req.session.data.pledge_actions_910106
+//      if (pledge_actions_910106 === 'Renew') {
+//           res.redirect('/' + version + '/MVS/sender/STEP-8/12-carry-over')
+//      } else {
+//           res.redirect('/' + version + '/MVS/sender/STEP-8/10-delete-pledge')
+//      }
+// })
 
 router.post('/MVS/sender/STEP-8/confirm_910106', function (req, res) {
      const confirm_910106 = req.session.data.confirm_910106

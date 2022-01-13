@@ -27,48 +27,7 @@
      <!-- /////////////////// PLEDGE 2022 MESSAGE - START ///////////////////-->
      <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-               {% if data['pledge_actions_910106'] == "Renew" %}
-                    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-                         <div class="govuk-notification-banner__header">
-                              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
-                         </div>
-                         <div class="govuk-notification-banner__content">
-                              <p class="govuk-notification-banner__heading">
-                                   This pledge will close on the 5th April 2022.
-                              </p>
-                              <!-- <p class="govuk-body">
-                                   All applications, except rejected and withdrawn applications, will be carried across into the new financial year 2022/23.
-                              </p>
-                              <p class="govuk-body">
-                                   If you no longer wish to renew this pledge, you <a href="9-pledge-action">choose what to do with it here</a>.
-                              </p> -->
-                         </div>
-                    </div>
-               <!-- {% elseif data['pledge_action_criteria'] == "No" %}
-                    <div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-                         <div class="govuk-notification-banner__header">
-                              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
-                         </div>
-                         <div class="govuk-notification-banner__content">
-                              {% if data['pledge_action_applications'] == "Yes" %}
-                                   <p class="govuk-notification-banner__heading">
-                                        You have created a new pledge 100356, this will go live on the 6th April 2022.
-                                   </p>
-                                   <p class="govuk-body">
-                                        On the 5th April, all applications "awaiting approval" and "awaiting acceptance by applicant" will be carried forward into the new pledge.
-                                   </p>
-                              {% else %}
-                                   <p class="govuk-notification-banner__heading">
-                                        You have created a new pledge 100356, this will go live on the 6th April 2022.
-                                   </p>
-                                   <p class="govuk-body">
-                                        On the 5th April, all applications below will be automatically rejected, except "accepted".
-                                   </p>
-                              {% endif %}
-
-                         </div>
-                    </div> -->
-               {% elseif data['pledge_actions_910106'] == "Close" %}
+               {% if data['pledge_action_criteria'] %}
                     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
                          <div class="govuk-notification-banner__header">
                               <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
@@ -86,10 +45,10 @@
                          </div>
                          <div class="govuk-notification-banner__content">
                               <p class="govuk-notification-banner__heading">
-                                   Tell us if you wish to continue with this pledge or close it.
+                                   Tell us if you wish to extend this pledge or do nothing and let is close in the new financial year.
                               </p>
                               <p class="govuk-body">
-                                   <a href="9-pledge-action" class="govuk-button no-margin-bottom">Continue</a>
+                                   <a href="12-carry-over" class="govuk-button no-margin-bottom">Continue</a>
                               </p>
                          </div>
                     </div>
@@ -140,7 +99,7 @@
           </div>
 
           <div class="govuk-grid-column-one-half">
-               <a href="#" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button float-right">Close pledge</a>
+               <a href="#" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button float-right">Close pledge now</a>
           </div>
 
      </div>
