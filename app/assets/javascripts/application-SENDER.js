@@ -15,7 +15,7 @@ $('#pledge_amount').on("keyup", function (e) {
           $('.form-action').show();
           $('#pledge-amount-container').removeClass('govuk-form-group--error');
           $('#pledge-amount-error, #pledge-amount-error-message').hide();
-          $('#pledge-funding-form').attr('action','5-pledge-details#section-1');
+          $('#pledge-funding-form').attr('action','5-new-pledge-details#section-1');
      }
 });
 
