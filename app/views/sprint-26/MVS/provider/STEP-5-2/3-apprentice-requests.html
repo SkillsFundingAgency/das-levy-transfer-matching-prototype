@@ -1,0 +1,57 @@
+{% extends "layout_provider.html" %}
+
+{% block pageTitle %}
+     Apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_provider_requests.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container" id="my-account-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+               <h1 class="govuk-heading-xl">Apprentice requests</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="provider-values-prototype">
+                    <a href="4-apprentice-details">
+                         <p class="number">39</p>
+                         <p>ready to review</p>
+                    </a>
+                    <a href="#">
+                         <p class="number">18</p>
+                         <p>with employers</p>
+                    </a>
+                    <a href="#">
+                         <p class="number">97</p>
+                         <p>drafts</p>
+                    </a>
+                    <a href="#">
+                         <p class="number">1</p>
+                         <p>with transfer sending employers</p>
+                    </a>
+               </div>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

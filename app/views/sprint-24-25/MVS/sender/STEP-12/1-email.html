@@ -1,0 +1,58 @@
+
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+     GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+     <!-- <div class="email-banner">
+          <img src="/public/images/ESFA-logo.jpg" alt="Education & Skills Funding Agency">
+     </div> -->
+{% endblock %}
+
+{% block content %}
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-m">Barry and Barry</h1>
+
+               <h1 class="govuk-heading-s">Your transfer allowance for the financial year April 6th 2022 to April 5th 2023 has now been calculated and is available to view.</h1>
+
+               <p>
+                    This transfer allowance is now available to support new transfers, while continuing to fund your existing transfer pledge commitments.
+               </p>
+
+               <p>
+                    <a href="1-signin">Sign into your apprenticeship service account</a> and go to ‘your transfers’ to review your options.
+               </p>
+
+               <p>
+                    Your options are to:
+               </p>
+
+               <ul class="govuk-list govuk-list--bullet">
+                    <li>create a new transfer pledge</li>
+                    <li>view your existing transfer pledges and applications</li>
+                    <li>close any transfer pledges you no longer want </li>
+                    <li>view or amend your existing transfer pledges</li>
+                    <!-- <li>transfer to a business that you know using transfer connections</li> -->
+               </ul>
+
+               <p>Full details of how <a href="#" target="_blank">transferring an apprenticeship levy</a> works are on the GOV.UK website.</p>
+
+               <p class="govuk-body">
+                    This is an automated message. Please don't reply to this email.
+               </p>
+
+               <p class="govuk-body">
+                    Kind regards,<br>
+                    <strong>Apprenticeship service team</strong>
+               </p>
+
+          </div>
+
+     </div>
+
+{% endblock %}

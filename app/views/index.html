@@ -83,9 +83,9 @@
 
           <h2 class="govuk-heading-l" style="padding-top: 10px;margin-bottom: 0px;">MVS prototypes</h2>
 
-          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Sprint 24-25</span>
+          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Sprint 26</span>
 
-          {% include './sprint-24-25/_summary.html' %}
+          {% include './sprint-26/_summary.html' %}
 
      </div>
 
@@ -101,7 +101,7 @@
 
           <h2 class="govuk-heading-l" style="padding-top: 10px;margin-bottom: 0px;">Sprint prototypes</h2>
 
-          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Up to sprint 23</span>
+          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Up to sprint 24/25</span>
 
           <details class="govuk-details" data-module="govuk-details">
                <summary class="govuk-details__summary">
@@ -116,6 +116,10 @@
                          <div class="govuk-grid-column-two-thirds">
 
                               <h2 class="govuk-heading-l">Beta sprints</h2>
+
+                              {% set sprint24-25Html %}
+                                   {% include './sprint-22-25/_summary.html' %}
+                              {% endset %}
 
                               {% set sprint23Html %}
                                    {% include './sprint-23/_summary.html' %}
@@ -172,6 +176,17 @@
                               {{ govukAccordion({
                                    id: "accordion-beta",
                                    items: [
+                                        {
+                                             heading: {
+                                                  text: "Sprint 24/25"
+                                             },
+                                             content: {
+                                                  html: sprint22-25Html
+                                             },
+                                             summary: {
+                                                  html: '22nd December - 18th January 2021'
+                                             }
+                                        },
                                         {
                                              heading: {
                                                   text: "Sprint 23"

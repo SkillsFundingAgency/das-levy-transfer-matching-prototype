@@ -1,0 +1,55 @@
+<div class="pagination-container">
+     <ul class="pagination">
+          <!-- <li>
+               <a href="#" class="link-previous">
+                    <span class="sub-text"></span>
+               </a>
+          </li> -->
+          <li><a href="#" class="current">1</a></li>
+          <li><a href="#" class="">2</a></li>
+          <li><a href="#" class="">3</a></li>
+          <li><a href="#" class="">4</a></li>
+          <li><a href="#" class="">5</a></li>
+          <li>
+               <a href="#" class="link-next">
+                    Next page
+                    <span class="sub-text"></span>
+               </a>
+          </li>
+     </ul>
+
+     <div class="dropdowns">
+          {{ govukSelect({
+               id: "applications-per-page",
+               name: "applications-per-page",
+               label: {
+                    text: "Per page"
+               },
+               items: [
+                    {
+                         value: "item-25",
+                         text: "25"
+                    },
+                    {
+                         value: "item-50",
+                         text: "50"
+                    },
+                    {
+                         value: "item-75",
+                         text: "75"
+                    },
+                    {
+                         value: "item-100",
+                         text: "100"
+                    },
+                    {
+                         value: "all-applications",
+                         text: "All applications"
+                    }
+               ]
+          }) }}
+     </div>
+
+     <p>Showing <strong>1</strong> - <strong>25</strong> of <strong>100</strong> results</p>
+
+</div>
