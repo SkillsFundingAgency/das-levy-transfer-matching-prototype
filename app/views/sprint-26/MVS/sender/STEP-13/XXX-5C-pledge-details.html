@@ -1,0 +1,1069 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-my-pledges">My transfer pledges</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="5C-pledge-details">Transfer pledge 910106</a></li>
+          </ol>
+     </div>
+
+     <p><br></p>
+
+     <!-- ALERT BANNER - START -->
+     {% if data['type-of-action'] == "shortlist" %}
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+               <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
+               </div>
+               <div class="govuk-notification-banner__content">
+                    <h3 class="govuk-notification-banner__heading"><span class="shortlist-number"></span> applications have been added to your shortlist.</h3>
+               </div>
+          </div>
+     {% elseif data['type-of-action'] == "reject" %}
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+               <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
+               </div>
+               <div class="govuk-notification-banner__content">
+                    <h3 class="govuk-notification-banner__heading"><span class="rejected-number"></span> applications have been rejected.</h3>
+               </div>
+          </div>
+     {% elseif data['type-of-action'] == "approve" %}
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+               <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
+               </div>
+               <div class="govuk-notification-banner__content">
+                    <h3 class="govuk-notification-banner__heading"><span class="approval-number"></span> applications have been approved.</h3>
+               </div>
+          </div>
+     {% else %}
+
+     {% endif %}
+     <!-- ALERT BANNER - END -->
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h1 class="govuk-heading-xl no-margin-bottom">Transfer pledge 910106</h1>
+
+               <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                         <span class="govuk-details__summary-text">Information about the applications</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                         <p><span class="govuk-body govuk-!-font-weight-bold">Estimated cost in this financial year </span> <br>
+                              This is an estimate of the cost of training for each application in this financial year. It is based on the funding band maximum and the planned start date of training.
+                         </p>
+                    </div>
+               </details>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <div class="side-panel-applications">
+                    <a href="#" class="download-csv black-version float-right">
+                         <span class="black-download"></span>
+                         <div>Download applications - excel</div>
+                    </a>
+                    <a href="9-shortlist" class="shortlist-button float-right">
+                         <span class="number">0</span>
+                         <div>View shortlist</div>
+                    </a>
+               </div>
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+               <div class="pledge-values top-version">
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">65000</span></strong>
+                         <div class="sub-text">Pledge funds for 2021/22</div>
+                    </h3>
+                    <h3 class="govuk-heading-l">
+                         <strong>£<span class="value-format">29000</span></strong>
+                         <div class="sub-text">Remaining pledge funds for 2021/22</div>
+                    </h3>
+               </div>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+
+               <div class="dropdowns top-version">
+                    <div class="govuk-form-group">
+                         <!-- <label class="govuk-label" for="type-of-applications">Filter applications</label> -->
+                         <select class="govuk-select" id="type-of-criteria" name="type-of-criteria">
+                              <option value="All criteria" selected="true" disabled="disabled">-- Filter criteria --</option>
+                              <option disabled="disabled">-----------------------</option>
+                              <option value="all">All criteria</option>
+                              <option value="100">100% match</option>
+                              <option value="75">75% match</option>
+                              <option value="50">50% match</option>
+                              <option value="25">25% match</option>
+                              <option value="0">0% match</option>
+                         </select>
+                    </div>
+                    <div class="govuk-form-group">
+                         <!-- <label class="govuk-label" for="type-of-applications">Filter applications</label> -->
+                         <select class="govuk-select" id="type-of-applications" name="type-of-applications">
+                              <option value="All statuses" selected="true" disabled="disabled">-- Filter statuses --</option>
+                              <option disabled="disabled">-----------------------</option>
+                              <option value="all">All statuses</option>
+                              <option value="1">Accepted</option>
+                              <option value="2">Awaiting approval</option>
+                              <option value="3">Awaiting acceptance</option>
+                              <option value="4">Withdrawn</option>
+                              <option value="5">Rejected</option>
+                         </select>
+                    </div>
+               </div>
+
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <table class="govuk-table applications-table in-tab" id="new-applications-table" data-page-length='50'>
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header radio-section" width="5%">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item select-all">
+                                             <input class="govuk-checkboxes__input" id="application_select_all" name="_application_select" type="checkbox" value="All applications" onClick="toggle(this)" {{ checked("_application_select", "Select all") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_all">All applications</label>
+                                        </div>
+                                   </div>
+                              </th>
+                              <th scope="col" class="govuk-table__header sort-section" width="22.5%" onclick="sortTable(1)">Applicant</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="15%" onclick="sortTable(2)">Estimated cost 2021/22</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="12.5%" onclick="sortTable(3)">Typical duration</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="17.5%" onclick="sortTable(4)">Criteria</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="10%" onclick="sortTable(5)" data-class-name="priority">Date applied</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="20%" onclick="sortTable(6)">Status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                         <!-- ///////////////////////////// BLOCK 1 - 5 START ///////////////////////////// -->
+                         <tr class="govuk-table__row row-1" data-status="2" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_1" name="application_select" type="checkbox" value="Belhavel Construction Ltd" {{ checked("application_select", "Belhavel Construction Ltd") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_1">Belhavel Construction Ltd</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Belhavel Construction Ltd</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£2,900</td>
+                              <td class="govuk-table__cell">30 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">A</span> Today</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-2" data-status="3" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_2" name="application_select" type="checkbox" value="CBJ Engineering" {{ checked("application_select", "CBJ Engineering") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_2">CBJ Engineering</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">CBJ Engineering</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£36,000</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">B</span>75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-3" data-status="5" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_3" name="application_select" type="checkbox" value="Johnson and Johnson Building Co" {{ checked("application_select", "Johnson and Johnson Building Co") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_3">Johnson and Johnson Building Co</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Johnson and Johnson Building Co</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£7,500</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">C</span>50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-4" data-status="4" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_4" name="application_select" type="checkbox" value="123 Windows Co" {{ checked("application_select", "123 Windows Co") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_4">123 Windows Co</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">123 Windows Co</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£1,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-5" data-status="4" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_5" name="application_select" type="checkbox" value="Ferlot & Co" {{ checked("application_select", "Ferlot & Co") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_5">Ferlot & Co</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Ferlot & Co</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£1,200</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">B</span> 15/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 1 - 5 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 6 - 10 START ///////////////////////////// -->
+                         <tr class="govuk-table__row row-6" data-status="3" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_6" name="application_select" type="checkbox" value="ActiveCub Ltd" {{ checked("application_select", "ActiveCub Ltd") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_6">ActiveCub Ltd</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">ActiveCub Ltd</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£2,900</td>
+                              <td class="govuk-table__cell">30 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role<br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">C</span> 14/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-7" data-status="3" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_7" name="application_select" type="checkbox" value="Solidaric" {{ checked("application_select", "Solidaric") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_7">Solidaric</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Solidaric</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£36,000</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">B</span>75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">D</span> 13/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-8" data-status="5" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_8" name="application_select" type="checkbox" value="Nupositive" {{ checked("application_select", "Nupositive") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_8">Nupositive</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Nupositive</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£7,500 </td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">C</span>50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">D</span> 13/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-9" data-status="3" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_9" name="application_select" type="checkbox" value="Zurova" {{ checked("application_select", "Zurova") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_9">Zurova</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Zurova</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£1,250 </td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">D</span> 13/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-10" data-status="4" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_10" name="application_select" type="checkbox" value="Radicalsy Limited" {{ checked("application_select", "Radicalsy Limited") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_10">Radicalsy Limited</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Radicalsy Limited</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£1,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 6 - 10 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 11 - 15 START ///////////////////////////// -->
+                         <tr class="govuk-table__row row-11" data-status="2" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_11" name="application_select" type="checkbox" value="Steepway Limited" {{ checked("application_select", "Steepway Limited") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_11">Steepway Limited</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Steepway Limited</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£2,900</td>
+                              <td class="govuk-table__cell">30 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-12" data-status="5" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_12" name="application_select" type="checkbox" value="Confidentify PLC" {{ checked("application_select", "Confidentify PLC") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_12">Confidentify PLC</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Confidentify PLC</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£36,000</td>
+                              <td class="govuk-table__cell">36 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">B</span>75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-13" data-status="5" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_13" name="application_select" type="checkbox" value="Steepby & Co" {{ checked("application_select", "Steepby & Co") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_13">Steepby & Co</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Steepby & Co</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£7,500</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">C</span>50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-14" data-status="4" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_14" name="application_select" type="checkbox" value="Onradical" {{ checked("application_select", "Onradical") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_14">Onradical</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Onradical</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£1,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">E</span> 12/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-15" data-status="2" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_15" name="application_select" type="checkbox" value="Heroicology PLC" {{ checked("application_select", "Heroicology PLC") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_15">Heroicology PLC</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Heroicology PLC</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£10,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">F</span> 10/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 11 - 15 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 16 - 20 START ///////////////////////////// -->
+                         <tr class="govuk-table__row row-16" data-status="2" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_16" name="application_select" type="checkbox" value="Fearlessia Limited" {{ checked("application_select", "Fearlessia Limited") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_16">Fearlessia Limited</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Fearlessia Limited</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£5,000</td>
+                              <td class="govuk-table__cell">30 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">F</span> 10/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-17" data-status="2" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_17" name="application_select" type="checkbox" value="Steepist PLC" {{ checked("application_select", "Steepist PLC") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_17">Steepist PLC</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Steepist PLC</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£36,000</td>
+                              <td class="govuk-table__cell">36 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">B</span>75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">F</span> 10/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-18" data-status="2" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_18" name="application_select" type="checkbox" value="Steepline" {{ checked("application_select", "Steepline") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_18">Steepline</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Steepline</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£7,500</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">C</span>50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">G</span> 07/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-19" data-status="4" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_19" name="application_select" type="checkbox" value="Modby" {{ checked("application_select", "Modby") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_19">Modby</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Modby</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£1,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">G</span> 07/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--orange">Withdrawn by applicant</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-20" data-status="2" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_20" name="application_select" type="checkbox" value="Heroicon Ltd" {{ checked("application_select", "Heroicon Ltd") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_20">Heroicon Ltd</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Heroicon Ltd</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£10,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">G</span> 07/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 16 - 20 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 21 - 25 START ///////////////////////////// -->
+                         <tr class="govuk-table__row row-21" data-status="2" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_21" name="application_select" type="checkbox" value="Positivela" {{ checked("application_select", "Positivela") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_21">Positivela</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Positivela</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£7,500</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">H</span> 01/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-22" data-status="2" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_22" name="application_select" type="checkbox" value="Heroicbar Ltd" {{ checked("application_select", "Heroicbar Ltd") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_22">Heroicbar Ltd</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Heroicbar Ltd</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£16,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">B</span>75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">H</span> 01/11/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-23" data-status="2" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_23" name="application_select" type="checkbox" value="Obviousmax Partners & Son" {{ checked("application_select", "Obviousmax Partners & Son") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_23">Obviousmax Partners & Son</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Obviousmax Partners & Son</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£9,500</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">C</span>50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">I</span> 28/10/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-24" data-status="2" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_24" name="application_select" type="checkbox" value="Nubold Ltd" {{ checked("application_select", "Nubold Ltd") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_24">Nubold Ltd</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Nubold Ltd</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£10,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">I</span> 28/10/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-25" data-status="2" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_25" name="application_select" type="checkbox" value="Edbold" {{ checked("application_select", "Edbold") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_25">Edbold</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Edbold</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£3,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">J</span> 26/10/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 21 - 25 END ///////////////////////////// -->
+
+                         <!-- ///////////////////////////// BLOCK 26 - 30 START ///////////////////////////// -->
+                         <tr class="govuk-table__row row-26" data-status="3" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_26" name="application_select" type="checkbox" value="Boldring PLC" {{ checked("application_select", "Boldring PLC") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_26">Boldring PLC</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Boldring PLC</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£17,500</td>
+                              <td class="govuk-table__cell">24 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">K</span> 25/10/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-27" data-status="2" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_27" name="application_select" type="checkbox" value="Oxlac Ltd" {{ checked("application_select", "Oxlac Ltd") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_27">Oxlac Ltd</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Oxlac Ltd</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£24,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">D</span>25% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">K</span> 25/10/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-28" data-status="2" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_28" name="application_select" type="checkbox" value="Obviousmax Partners & Son" {{ checked("application_select", "Obviousmax Partners & Son") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_28">Obviousmax Partners & Son</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Obviousmax Partners & Son</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£18,500</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">D</span>25% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">K</span> 25/10/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-29" data-status="2" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_29" name="application_select" type="checkbox" value="Nubold Ltd" {{ checked("application_select", "Nubold Ltd") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_29">Nubold Ltd</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Nubold Ltd</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£10,000</td>
+                              <td class="govuk-table__cell">18 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">L</span> 24/10/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                                   <strong class="govuk-tag govuk-tag--yellow approved-label">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row row-30" data-status="3" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_30" name="application_select" type="checkbox" value="Edbold" {{ checked("application_select", "Edbold") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_30">Edbold</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#">Edbold</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell">£3,000</td>
+                              <td class="govuk-table__cell">12 months</td>
+                              <td class="govuk-table__cell">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell"><span class="hide-content">J</span> 26/10/2021</td>
+                              <td class="govuk-table__cell">
+                                   <strong class="govuk-tag govuk-tag--yellow">Awaiting acceptance by applicant</strong>
+                                   <strong class="govuk-tag govuk-tag--red rejected-label">Rejected</strong>
+                              </td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 26 - 30 END ///////////////////////////// -->
+
+                    </tbody>
+               </table>
+
+               <p class="empty-row">
+                    There are <strong>0 applications</strong> that have been approved
+               </p>
+
+               <p><br></p>
+
+               <a href="#" class="govuk-button">Create a new transfer pledge</a>
+
+               <a href="13-delete-pledge" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button no-margin-top">Close pledge</a>
+
+               <br>
+
+               <a href="4-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+<div class="sticky-footer">
+     <div class="govuk-width-container">
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-form-group">
+                         <span class="shortlist-button applications-selected">
+                              <span class="number">0</span>
+                              <div>Selected</div>
+                         </span>
+                    </div>
+                    <div class="govuk-form-group">
+                         <form class="" action="" method="post" id="applications_actions_form">
+                              <select class="govuk-select" id="type-of-action" name="type-of-action">
+                                   <option value="All actions" selected="true" disabled="disabled">-- Actions --</option>
+                                   <option disabled="disabled">-----------------------</option>
+                                   <option value="approve">Approve applications</option>
+                                   <option value="shortlist">Add to shortlist</option>
+                                   <option value="reject">Reject applications</option>
+                              </select>
+                              <button class="govuk-button" data-module="govuk-button" id="applications-action">Continue</button>
+                         </form>
+                    </div>
+                    <p><a class="clear-selection">Clear selection</a></p>
+               </div>
+               <div class="govuk-grid-column-one-third">
+                    <a href="9-shortlist" class="shortlist-button float-right">
+                         <span class="number">0</span>
+                         <div>View shortlist</div>
+                    </a>
+               </div>
+          </div>
+     </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+{% endblock %}

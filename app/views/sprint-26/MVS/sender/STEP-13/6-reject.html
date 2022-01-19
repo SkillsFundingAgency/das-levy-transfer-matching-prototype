@@ -1,0 +1,101 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Rejecting the apprenticeship application</h1>
+
+               <form method="post" action="5-pledge-details" id="">
+
+                    <section class="employer-details side-panel applications_for_approval">
+                         <p class="govuk-heading-s">Applications for rejection</p>
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li class="application_rejection application_1">Belhavel Construction Ltd</li>
+                              <li class="application_rejection application_2">CBJ Engineering</li>
+                              <li class="application_rejection application_3">Johnson and Johnson Building Co</li>
+                              <li class="application_rejection application_4">123 Windows Co</li>
+                              <li class="application_rejection application_5">Ferlot & Co</li>
+                              <li class="application_rejection application_6">ActiveCub Ltd</li>
+                              <li class="application_rejection application_7">Solidaric</li>
+                              <li class="application_rejection application_8">Nupositive</li>
+                              <li class="application_rejection application_9">Zurova</li>
+                              <li class="application_rejection application_10">Radicalsy Limited</li>
+                              <li class="application_rejection application_11">Steepway Limited</li>
+                              <li class="application_rejection application_12">Confidentify PLC</li>
+                              <li class="application_rejection application_13">Steepby & Co</li>
+                              <li class="application_rejection application_14">Onradical</li>
+                              <li class="application_rejection application_15">Heroicology PLC</li>
+                              <li class="application_rejection application_16">Fearlessia Limited</li>
+                              <li class="application_rejection application_17">Steepist PLC</li>
+                              <li class="application_rejection application_18">Steepline</li>
+                              <li class="application_rejection application_19">Modby</li>
+                              <li class="application_rejection application_20">Heroicon Ltd</li>
+                              <li class="application_rejection application_21">Positivela</li>
+                              <li class="application_rejection application_22">Heroicbar Ltd</li>
+                              <li class="application_rejection application_23">Obviousmax Partners & Son</li>
+                              <li class="application_rejection application_24">Nubold Ltd</li>
+                              <li class="application_rejection application_25">Edbold</li>
+                              <li class="application_rejection application_26">Boldring PLC</li>
+                              <li class="application_rejection application_27">Oxlac Ltd</li>
+                              <li class="application_rejection application_28">Obviousmax Partners & Son</li>
+                              <li class="application_rejection application_29">Nubold Ltd</li>
+                              <li class="application_rejection application_30">Edbold</li>
+                         </ul>
+                    </section>
+
+                    <div class="govuk-form-group" id="reject_application_form">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                   <h2 class="govuk-heading-m no-margin-bottom">What would you like to do?</h2>
+                              </legend>
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="reject_application_reject" name="reject_application" type="radio" value="Reject">
+                                        <label class="govuk-label govuk-radios__label" for="reject_application_reject">Reject the application(s)</label>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="reject_application_cancel" name="reject_application" type="radio" value="Cancel">
+                                        <label class="govuk-label govuk-radios__label" for="reject_application_cancel">Cancel, return to applications</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button" id="reject_application">Continue</button>
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
