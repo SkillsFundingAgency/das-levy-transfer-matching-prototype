@@ -37,7 +37,7 @@
                          <h2 class="app-task-list__section">
                               <span class="app-task-list__section-number number-one">1. </span>
                               Pledge amount and option to hide<br>organisation name
-                              {% if data['pledge_amount'] and data['show_publicly'] %}
+                              {% if data['pledge_amount'] or data['show_publicly'] %}
                                    <strong class="govuk-tag app-task-list__tag">completed</strong>
                               {% else %}
                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
@@ -93,7 +93,11 @@
                                                   {% endfor %}
                                              </ul>
                                         {% else %}
-                                             All of England
+                                        <ul class="govuk-list govuk-list--bullet">
+                                             <li>Manchester</li>
+                                             <li>Liverpool</li>
+                                             <li>Leeds</li>
+                                        </ul>
                                         {% endif %}
                                    </p>
                               </li>
@@ -109,7 +113,10 @@
                                                   {% endfor %}
                                              </ul>
                                         {% else %}
-                                             All sectors and industries
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  <li>Construction</li>
+                                                  <li>Engineering and manufacturing</li>
+                                             </ul>
                                         {% endif %}
                                    </p>
                               </li>
@@ -125,7 +132,11 @@
                                                   {% endfor %}
                                              </ul>
                                         {% else %}
-                                             All apprenticeship job roles
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  <li>Business and administration</li>
+                                                  <li>Construction</li>
+                                                  <li>Digital</li>
+                                             </ul>
                                         {% endif %}
                                    </p>
                               </li>
@@ -142,11 +153,7 @@
                                                   {% endfor %}
                                              </ul>
                                         {% else %}
-                                             <ul class="govuk-list govuk-list--bullet">
-                                                  <li>Level 4 - higher national certificate (HNC)</li>
-                                                  <li>Level 5 - higher national diploma (HND)</li>
-                                                  <li>Level 6 - degree</li>
-                                             </ul>
+                                             All qualification levels
                                         {% endif %}
                                    </div>
                               </li>
@@ -179,25 +186,7 @@
           </div>
 
           <div class="govuk-grid-column-one-third">
-               <!-- <section class="employer-details side-panel criteria">
-                    <p class="govuk-heading-s">Previous criteria:</p>
-                    <p class="details">
-                         Location:<br><strong>Manchester, Liverpool, Leeds</strong>
-                    </p>
-                    <p class="details">
-                         Sector:<br><strong>Construction, Engineering and manufacturing</strong>
-                    </p>
-                    <p class="details">
-                         Type of job role:<br><strong>Business and administration, Construction, Digital</strong>
-                    </p>
-                    <p class="details">
-                         Level:<br><strong>Level 4 - HNC, Level 5 - HND, Level 6 - degree</strong>
-                    </p>
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                    <p class="details">
-                         Total pledge funds committed in FY 2021/22:<br><strong>£65,000</strong>
-                    </p>
-               </section> -->
+
           </div>
 
      </div>
