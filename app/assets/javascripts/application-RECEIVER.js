@@ -399,7 +399,7 @@ $(document).ready( function () {
         var applicationsTotalCost = parseInt(apprenticeshipNumbers * applicationsCost);
         var applicationsMaths = apprenticeshipNumbers * applicationsCost;
         var startYear = parseInt($('#pledge-application-start-year').val());
-         if (isNaN(applicationsMaths) | (startYear != 2021)) {
+         if (isNaN(applicationsMaths) | (startYear != 2022)) {
               $('#apprenticeship-cost .number span').text(zero);
          } else {
              $('#apprenticeship-cost .number span').text(applicationsMaths.toLocaleString('en-US'));

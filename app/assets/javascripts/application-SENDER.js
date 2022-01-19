@@ -7,18 +7,24 @@ $('#pledge-amount-error, #pledge-amount-error-message').hide();
 $('#pledge_amount').on("keyup", function (e) {
      var fundingTotal = parseInt($('#pledge_amount').val());
      if (fundingTotal <= 999) {
+          $('.error-action').show();
+          $('.form-action').hide();
           $('#pledge-funding-form').attr('action','');
-          $('#pledge-amount-container').addClass('govuk-form-group--error');
-          // $('#pledge-amount-error-message').addClass('govuk-error-message').removeClass('govuk-hint');
-          $('#pledge-amount-error, #pledge-amount-error-message').show();
      } else if (fundingTotal >= 1000) {
+          $('.error-action').hide();
+          $('.form-action').show();
           $('#pledge-amount-container').removeClass('govuk-form-group--error');
           $('#pledge-amount-error, #pledge-amount-error-message').hide();
-          $('#pledge-funding-form').attr('action','5-new-pledge-details#section-1');
-     } else {
-          $('#pledge-funding-form').attr('action','5-new-pledge-details#section-1');
+          $('#pledge-funding-form').attr('action','5-pledge-details#section-1');
      }
 });
+
+$('#amount_error').on("click", function (e) {
+     $('#pledge-funding-form').attr('action','');
+     $('#pledge-amount-container').addClass('govuk-form-group--error');
+     $('#pledge-amount-error, #pledge-amount-error-message').show();
+});
+
 
    // Locations
    $('input#pledge-location-cities').on("click", function (e) {
