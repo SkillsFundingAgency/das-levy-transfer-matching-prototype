@@ -106,9 +106,9 @@
                                         <a href="6C-pledge-details">Sector</a>
                                    </span>
                                    <p>
-                                        {% if data['pledge_sector'] %}
+                                        {% if data['new_pledge_sector'] %}
                                              <ul class="govuk-list govuk-list--bullet">
-                                                  {% for answer in data['pledge_sector'] -%}
+                                                  {% for answer in data['new_pledge_sector'] -%}
                                                   <li>{{ answer }}</li>
                                                   {% endfor %}
                                              </ul>
@@ -125,9 +125,9 @@
                                         <a href="6D-pledge-details">Type of job role</a>
                                    </span>
                                    <p>
-                                        {% if data['pledge_training'] %}
+                                        {% if data['new_pledge_training'] %}
                                              <ul class="govuk-list govuk-list--bullet">
-                                                  {% for answer in data['pledge_training'] -%}
+                                                  {% for answer in data['new_pledge_training'] -%}
                                                   <li>{{ answer }}</li>
                                                   {% endfor %}
                                              </ul>
@@ -146,9 +146,9 @@
                                    </span>
                                    <p class="pledge_level_all">All qualification levels</p>
                                    <div class="pledge_level_specific">
-                                        {% if data['pledge_level'] %}
+                                        {% if data['new_pledge_level'] %}
                                              <ul class="govuk-list govuk-list--bullet">
-                                                  {% for answer in data['pledge_level'] -%}
+                                                  {% for answer in data['new_pledge_level'] -%}
                                                   <li>{{ answer }}</li>
                                                   {% endfor %}
                                              </ul>

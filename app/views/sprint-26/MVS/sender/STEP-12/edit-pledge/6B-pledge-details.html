@@ -37,6 +37,42 @@
                <form method="post" action="5-new-pledge-details#section-2" id="sender-location-non-javascript">
 
                     <div class="updates-locations">
+                         <div id="locations" data-location-count="">
+
+                              <div class="govuk-form-group first-of-type">
+                                   <label class="govuk-label" for="pledge-location[url0]">Start typing to find the city, town or local authority you'd like to pledge funding to.</label>
+                                   <div class="govuk-hint">
+                                        For example, Manchester or Greater Manchester Combined Authority (GMCA)
+                                   </div>
+                                   <span id="location-input-error" class="govuk-error-message" style="display: none;">
+                                        <span class="govuk-visually-hidden">Error:</span> Check the spelling of your location
+                                   </span>
+                                   <input class="govuk-input govuk-input--width-20 location-non-javascript" id="pledge-location" name="pledge-location[url0]" type="text" spellcheck="false" autocomplete="off" value="Manchester">
+                                   <input class="govuk-input govuk-input--width-20 pledge-location-hidden" id="location-error" name="" type="text" spellcheck="false" style="display: none;" value="Manchester">
+                              </div>
+                              <div class="govuk-form-group new-location">
+                                   <label class="govuk-label" for="pledge-location[url1]">Additional location</label>
+                                   <input class="govuk-input govuk-input--width-20 pledge-location-test" id="pledge-location[url1]" name="pledge-location[url1]" type="text" spellcheck="false" value="Liverpool">
+                                   <p class="govuk-body">
+                                        <a class="govuk-link govuk-link--no-visited-state" data-remove="url1" href="#">remove</a>
+                                   </p>
+                              </div>
+
+                              <div class="govuk-form-group new-location">
+                                   <label class="govuk-label" for="pledge-location[url2]">Additional location</label>
+                                   <input class="govuk-input govuk-input--width-20 pledge-location-test" id="pledge-location[url2]" name="pledge-location[url2]" type="text" spellcheck="false" value="Leeds">
+                                   <p class="govuk-body">
+                                        <a class="govuk-link govuk-link--no-visited-state" data-remove="url2" href="#">remove</a>
+                                   </p>
+                              </div>
+                         </div>
+                         <p class="govuk-body govuk-!-margin-bottom-6">
+                              <a class="govuk-link govuk-link--no-visited-state add-location" href="#" id="addAnotherLocation">Add another location</a>
+                         </p>
+                    </div>
+
+
+                    <!-- <div class="updates-locations">
                          <div id="locations" data-location-count="{{numberOfLocations}}">
 
                               <div class="govuk-form-group first-of-type">
@@ -68,7 +104,7 @@
                          <p class="govuk-body govuk-!-margin-bottom-6">
                               <a class="govuk-link govuk-link--no-visited-state add-location" href="#" id="addAnotherLocation">Add another location</a>
                          </p>
-                    </div>
+                    </div> -->
 
                     <div class="govuk-inset-text" id="clear-pledge-location-all-of-england">
                          <div class="govuk-form-group">

@@ -49,13 +49,19 @@
                     <tbody class="govuk-table__body">
                          <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header"><a href="5-pledge-details" style="font-weight: 400;">910106</a></th>
-                              <td class="govuk-table__cell govuk-table__cell--numeric">£65,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['new_pledge_amount'] %}
+                                        £<span class="value-format">{{ data['new_pledge_amount'] }}</span>
+                                   {% else %}
+                                        £<span class="value-format">65000</span>
+                                   {% endif %}
+                              </td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">£36,000</td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">
-                                   {% if data['accept_application'] == 'Accept' %}
-                                        £26,100
+                                   {% if data['new_pledge_amount'] %}
+                                        £<span class="value-format">{{ data['new_pledge_amount'] - 29000 }}</span>
                                    {% else %}
-                                        £29,000
+                                        £<span class="value-format">29000</span>
                                    {% endif %}
                               </td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">30</td>
