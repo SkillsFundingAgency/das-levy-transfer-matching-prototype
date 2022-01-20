@@ -25,7 +25,8 @@
                     <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
                     <div class="govuk-error-summary__body">
                          <ul class="govuk-list govuk-error-summary__list">
-                              <li><a href="#pledge-amount">Your pledge amount is under £1,000</a></li>
+                              <li class="under-1000"><a href="#pledge-amount">Your pledge amount is under £1,000</a></li>
+                              <li class="over-80000"><a href="#pledge-amount">Your pledge amount is over £80,000</a></li>
                          </ul>
                     </div>
                </div>
@@ -33,16 +34,6 @@
                <h1 class="govuk-heading-xl">Pledge amount and option to hide organisation name</h1>
 
                <form method="post" action="5-new-pledge-details#section-1" id="pledge-funding-form">
-
-                    <!--
-
-                    <p>Create a transfers funding pledge that will be advertised online so that businesses can apply to you for funding.</p>
-
-                    <p>The amount you choose and the criteria you set will be displayed publicly.</p>
-
-                    <p>You can choose whether or not to show your organisation's name publicly.</p>
-
-                    -->
 
                     <div class="govuk-form-group" id="pledge-amount-container">
                          <div class="total">
@@ -55,7 +46,8 @@
                                    Minimum pledge amount is £1,000
                               </div>
                               <span id="pledge-amount-error-message" class="govuk-error-message">
-                                   <span class="govuk-visually-hidden">Error:</span> Your pledge amount is under £1,000
+                                   <div class="under-1000"><span class="govuk-visually-hidden">Error:</span> Your pledge amount is under £1,000</div>
+                                   <div class="over-80000"><span class="govuk-visually-hidden">Error:</span> Your pledge amount is over £80,000</div>
                               </span>
                               <div class="govuk-input__wrapper">
                                   <div class="govuk-input__prefix" aria-hidden="true">£</div>

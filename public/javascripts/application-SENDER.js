@@ -4,12 +4,22 @@
 $('#pledge-amount-error, #pledge-amount-error-message').hide();
 
 // Funding
+$('.under-1000, .over-80000').hide();
+
 $('#pledge_amount, #new_pledge_amount').on("keyup", function (e) {
      var fundingTotal = parseInt($('#pledge_amount, #new_pledge_amount').val());
      if (fundingTotal <= 999) {
           $('.error-action').show();
           $('.form-action').hide();
           $('#pledge-funding-form').attr('action','');
+          $('.under-1000').show();
+          $('.over-80000').hide();
+     } else if (fundingTotal >= 80000) {
+          $('.error-action').show();
+          $('.form-action').hide();
+          $('#pledge-funding-form').attr('action','');
+          $('.under-1000').hide();
+          $('.over-80000').show();
      } else if (fundingTotal >= 1000) {
           $('.error-action').hide();
           $('.form-action').show();
