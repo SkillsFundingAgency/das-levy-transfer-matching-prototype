@@ -23,79 +23,79 @@
 
                <h1 class="govuk-heading-xl">Choose the sectors you'd like to fund</h1>
 
-               <form method="post" action="5-pledge-details#section-2">
+               <form method="post" action="5-new-pledge-details#section-2">
 
                     <div class="govuk-form-group">
                          <fieldset class="govuk-fieldset">
                               <!-- <legend class="govuk-fieldset__legend">Select the business sectors you want to fund.</legend> -->
                               <div class="govuk-checkboxes">
                                    <div class="govuk-checkboxes__item select-all">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_all" name="_pledge_sector" type="checkbox" value="All sectors and industries" onClick="toggle(this)" {{ checked("_pledge_sector", "Select all") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_all" name="_new_pledge_sector" type="checkbox" value="All sectors and industries" onClick="toggle(this)" {{ checked("_pledge_sector", "Select all") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_all">All sectors and industries</label>
                                    </div>
 
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_agriculture" name="pledge_sector" type="checkbox" value="Agriculture, environmental and animal care" {{ checked("pledge_sector", "Agriculture, environmental and animal care") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_agriculture" name="new_pledge_sector" type="checkbox" value="Agriculture, environmental and animal care" {{ checked("pledge_sector", "Agriculture, environmental and animal care") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_agriculture">Agriculture, environmental and animal care</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_business" name="pledge_sector" type="checkbox" value="Business and administration" {{ checked("pledge_sector", "Business and administration") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_business" name="new_pledge_sector" type="checkbox" value="Business and administration" {{ checked("pledge_sector", "Business and administration") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_business">Business and administration</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_care" name="pledge_sector" type="checkbox" value="Care services" {{ checked("pledge_sector", "Care services") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_care" name="new_pledge_sector" type="checkbox" value="Care services" {{ checked("pledge_sector", "Care services") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_care">Care services</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_catering" name="pledge_sector" type="checkbox" value="Catering and hospitality" {{ checked("pledge_sector", "Catering and hospitality") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_catering" name="new_pledge_sector" type="checkbox" value="Catering and hospitality" {{ checked("pledge_sector", "Catering and hospitality") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_catering">Catering and hospitality</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_charity" name="pledge_sector" type="checkbox" value="Charity" {{ checked("pledge_sector", "Charity") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_charity" name="new_pledge_sector" type="checkbox" value="Charity" {{ checked("pledge_sector", "Charity") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_charity">Charity</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_construction" name="pledge_sector" type="checkbox" value="Construction" checked>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_construction" name="new_pledge_sector" type="checkbox" value="Construction" {{ checked("pledge_sector", "Construction") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_construction">Construction</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_creative" name="pledge_sector" type="checkbox" value="Creative and design" {{ checked("pledge_sector", "Creative and design") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_creative" name="new_pledge_sector" type="checkbox" value="Creative and design" {{ checked("pledge_sector", "Creative and design") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_creative">Creative and design</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_digital" name="pledge_sector" type="checkbox" value="Digital" {{ checked("pledge_sector", "Digital") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_digital" name="new_pledge_sector" type="checkbox" value="Digital" {{ checked("pledge_sector", "Digital") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_digital">Digital</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_education" name="pledge_sector" type="checkbox" value="Education and childcare" {{ checked("pledge_sector", "Education and childcare") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_education" name="new_pledge_sector" type="checkbox" value="Education and childcare" {{ checked("pledge_sector", "Education and childcare") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_education">Education and childcare</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_engineering" name="pledge_sector" type="checkbox" value="Engineering and manufacturing" checked>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_engineering" name="new_pledge_sector" type="checkbox" value="Engineering and manufacturing" {{ checked("pledge_sector", "Engineering and manufacturing") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_engineering">Engineering and manufacturing</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_hair" name="pledge_sector" type="checkbox" value="Hair and beauty" {{ checked("pledge_sector", "Hair and beauty") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_hair" name="new_pledge_sector" type="checkbox" value="Hair and beauty" {{ checked("pledge_sector", "Hair and beauty") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_hair">Hair and beauty</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_health" name="pledge_sector" type="checkbox" value="Health and science" {{ checked("pledge_sector", "Health and science") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_health" name="new_pledge_sector" type="checkbox" value="Health and science" {{ checked("pledge_sector", "Health and science") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_health">Health and science</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_legal" name="pledge_sector" type="checkbox" value="Legal, finance and accounting" {{ checked("pledge_sector", "Legal, finance and accounting") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_legal" name="new_pledge_sector" type="checkbox" value="Legal, finance and accounting" {{ checked("pledge_sector", "Legal, finance and accounting") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_legal">Legal, finance and accounting</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_protective" name="pledge_sector" type="checkbox" value="Protective services" {{ checked("pledge_sector", "Protective services") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_protective" name="new_pledge_sector" type="checkbox" value="Protective services" {{ checked("pledge_sector", "Protective services") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_protective">Protective services</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_sales" name="pledge_sector" type="checkbox" value="Sales, marketing and procurement" {{ checked("pledge_sector", "Sales, marketing and procurement") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_sales" name="new_pledge_sector" type="checkbox" value="Sales, marketing and procurement" {{ checked("pledge_sector", "Sales, marketing and procurement") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_sales">Sales, marketing and procurement</label>
                                    </div>
                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="pledge_sector_transport" name="pledge_sector" type="checkbox" value="Transport and logistics" {{ checked("pledge_sector", "Transport and logistics") }}>
+                                        <input class="govuk-checkboxes__input" id="pledge_sector_transport" name="new_pledge_sector" type="checkbox" value="Transport and logistics" {{ checked("pledge_sector", "Transport and logistics") }}>
                                         <label class="govuk-label govuk-checkboxes__label" for="pledge_sector_transport">Transport and logistics</label>
                                    </div>
                               </div>

@@ -67,7 +67,7 @@
                     <div class="govuk-form-group">
                          <fieldset class="govuk-fieldset">
                               <legend class="govuk-fieldset__legend">
-                              Would you like your pledge to show your organisation's name publicly?
+                                   Would you like your pledge to show your organisation's name publicly?
                               </legend>
                               <div class="govuk-radios">
                                    <div class="govuk-radios__item">
@@ -82,11 +82,15 @@
                          </fieldset>
                     </div>
 
-                    <button class="govuk-button pledge-amount-continue" data-module="govuk-button">Continue</button>
-
-                    <!-- <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a> -->
+                    <div class="form-action">
+                         <button class="govuk-button pledge-amount-continue" data-module="govuk-button" id="accept_amount">Continue</button>
+                    </div>
 
                </form>
+
+               <div class="error-action">
+                    <button class="govuk-button" data-module="govuk-button" id="amount_error">Continue</button>
+               </div>
 
           </div>
 

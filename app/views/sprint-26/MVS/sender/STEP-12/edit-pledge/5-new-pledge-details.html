@@ -37,7 +37,7 @@
                          <h2 class="app-task-list__section">
                               <span class="app-task-list__section-number number-one">1. </span>
                               Pledge amount and option to hide<br>organisation name
-                              {% if data['pledge_amount'] or data['show_publicly'] %}
+                              {% if data['new_pledge_amount'] or data['new_show_publicly'] %}
                                    <strong class="govuk-tag app-task-list__tag">completed</strong>
                               {% else %}
                                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
@@ -49,8 +49,8 @@
                                         <a href="6A-pledge-details">Amount you want to pledge</a>
                                    </span>
                                    <p>
-                                        {% if data['pledge_amount'] %}
-                                             £<span class="value-format">{{ data['pledge_amount'] }}</span>
+                                        {% if data['new_pledge_amount'] %}
+                                             £<span class="value-format">{{ data['new_pledge_amount'] }}</span>
                                         {% else %}
                                              £<span class="value-format">65000</span>
                                         {% endif %}
@@ -61,8 +61,8 @@
                                         <a href="6A-pledge-details">Show or hide your organisation's name</a>
                                    </span>
                                    <p>
-                                        {% if data['show_publicly'] %}
-                                             {{ data['show_publicly'] }}
+                                        {% if data['new_show_publicly'] == 'No' %}
+                                             No, I'd like our organisation to be anonymous
                                         {% else %}
                                              Show
                                         {% endif %}

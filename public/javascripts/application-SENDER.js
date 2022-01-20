@@ -4,8 +4,8 @@
 $('#pledge-amount-error, #pledge-amount-error-message').hide();
 
 // Funding
-$('#pledge_amount').on("keyup", function (e) {
-     var fundingTotal = parseInt($('#pledge_amount').val());
+$('#pledge_amount, #new_pledge_amount').on("keyup", function (e) {
+     var fundingTotal = parseInt($('#pledge_amount, #new_pledge_amount').val());
      if (fundingTotal <= 999) {
           $('.error-action').show();
           $('.form-action').hide();

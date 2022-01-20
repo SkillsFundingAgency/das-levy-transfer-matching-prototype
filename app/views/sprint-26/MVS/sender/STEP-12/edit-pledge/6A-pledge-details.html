@@ -32,7 +32,7 @@
 
                <h1 class="govuk-heading-xl">Pledge amount and option to hide organisation name</h1>
 
-               <form method="post" action="5-pledge-details#section-1" id="pledge-funding-form">
+               <form method="post" action="5-new-pledge-details#section-1" id="pledge-funding-form">
 
                     <div class="govuk-form-group" id="pledge-amount-container">
                          <div class="total">
@@ -40,34 +40,61 @@
                               <p class="number">£164,000</p>
                          </div>
                          <div class="wrapper">
-                              <label class="govuk-label" for="pledge_amount">How much funding would you like to transfer?</label>
-                              <div id="pledge_amount-hint" class="govuk-hint">
-                                   Minimum pledge amount is £1,000
-                              </div>
-                              <span id="pledge-amount-error-message" class="govuk-error-message">
-                                   <span class="govuk-visually-hidden">Error:</span> Your pledge amount is under £1,000
-                              </span>
-                              <div class="govuk-input__wrapper">
-                                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
-                                  <input class="govuk-input govuk-input--width-10" id="pledge_amount" name="pledge_amount" type="text" spellcheck="false" value="65000">
-                              </div>
+                              {% if data['new_pledge_amount'] %}
+                                   <label class="govuk-label" for="new_pledge_amount">How much funding would you like to transfer?</label>
+                                   <div id="new_pledge_amount-hint" class="govuk-hint">
+                                        Minimum pledge amount is £1,000
+                                   </div>
+                                   <span id="pledge-amount-error-message" class="govuk-error-message">
+                                        <span class="govuk-visually-hidden">Error:</span> Your pledge amount is under £1,000
+                                   </span>
+                                   <div class="govuk-input__wrapper">
+                                       <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                       <input class="govuk-input govuk-input--width-10" id="new_pledge_amount" name="new_pledge_amount" type="text" spellcheck="false" value="{{ data['new_pledge_amount'] }}">
+                                   </div>
+                              {% else %}
+                                   <label class="govuk-label" for="new_pledge_amount">How much funding would you like to transfer?</label>
+                                   <div id="new_pledge_amount-hint" class="govuk-hint">
+                                        Minimum pledge amount is £1,000
+                                   </div>
+                                   <span id="pledge-amount-error-message" class="govuk-error-message">
+                                        <span class="govuk-visually-hidden">Error:</span> Your pledge amount is under £1,000
+                                   </span>
+                                   <div class="govuk-input__wrapper">
+                                       <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                       <input class="govuk-input govuk-input--width-10" id="new_pledge_amount" name="new_pledge_amount" type="text" spellcheck="false" value="65000">
+                                   </div>
+                              {% endif %}
                          </div>
                     </div>
+
+
 
                     <div class="govuk-form-group">
                          <fieldset class="govuk-fieldset">
                               <legend class="govuk-fieldset__legend">
-                              Would you like your pledge to show your organisation's name publicly?
+                                   Would you like your pledge to show your organisation's name publicly?
                               </legend>
                               <div class="govuk-radios">
-                                   <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="show_publicly_show" name="show_publicly" type="radio" value="Show" checked>
-                                        <label class="govuk-label govuk-radios__label" for="show_publicly_show">Yes</label>
-                                   </div>
-                                   <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="show_publicly_hide" name="show_publicly" type="radio" value="No, I'd like our organisation to be anonymous">
-                                        <label class="govuk-label govuk-radios__label" for="show_publicly_hide">No, I'd like our organisation to be anonymous</label>
-                                   </div>
+                                   {% if data['new_show_publicly'] == 'No' %}
+                                        <div class="govuk-radios__item">
+                                             <input class="govuk-radios__input" id="show_publicly_show" name="new_show_publicly" type="radio" value="Show" {{ checked("show_publicly", "Show") }}>
+                                             <label class="govuk-label govuk-radios__label" for="show_publicly_show">Yes</label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                             <input class="govuk-radios__input" id="show_publicly_hide" name="new_show_publicly" type="radio" value="No" {{ checked("show_publicly", "No") }}>
+                                             <label class="govuk-label govuk-radios__label" for="show_publicly_hide">No, I'd like our organisation to be anonymous</label>
+                                        </div>
+                                   {% else %}
+                                        <div class="govuk-radios__item">
+                                             <input class="govuk-radios__input" id="show_publicly_show" name="new_show_publicly" type="radio" value="Show" checked>
+                                             <label class="govuk-label govuk-radios__label" for="show_publicly_show">Yes</label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                             <input class="govuk-radios__input" id="show_publicly_hide" name="new_show_publicly" type="radio" value="No" {{ checked("show_publicly", "No") }}>
+                                             <label class="govuk-label govuk-radios__label" for="show_publicly_hide">No, I'd like our organisation to be anonymous</label>
+                                        </div>
+                                   {% endif %}
                               </div>
                          </fieldset>
                     </div>
