@@ -16,7 +16,7 @@
           <ol class="govuk-breadcrumbs__list">
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
-               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3A-transfers">Transfers</a></li>
                <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My transfer pledges</a></li>
           </ol>
      </div>
@@ -32,7 +32,7 @@
 
           <div class="govuk-grid-column-full">
 
-               <p>You have <strong>1</strong> transfer pledge.</p>
+               <p>You have <strong>3</strong> transfer pledges.</p>
 
                <table class="govuk-table">
                     <thead class="govuk-table__head">
@@ -43,30 +43,38 @@
                               <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
                               <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
                               <th scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
-                              <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
                          </tr>
                     </thead>
                     <tbody class="govuk-table__body">
                          <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header"><a href="5-pledge-details" style="font-weight: 400;">910106</a></th>
-                              <td class="govuk-table__cell govuk-table__cell--numeric">
-                                   {% if data['new_pledge_amount'] %}
-                                        £<span class="value-format">{{ data['new_pledge_amount'] }}</span>
-                                   {% else %}
-                                        £<span class="value-format">65000</span>
-                                   {% endif %}
-                              </td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£65,000</td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">£36,000</td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">
-                                   {% if data['new_pledge_amount'] %}
-                                        £<span class="value-format">{{ data['new_pledge_amount'] - 29000 }}</span>
+                                   {% if data['accept_application'] == 'Accept' %}
+                                        £26,100
                                    {% else %}
-                                        £<span class="value-format">29000</span>
+                                        £29,000
                                    {% endif %}
                               </td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric">30</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
                               <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">Active</strong></td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="./edit-pledge/5-new-pledge-details">Edit</a></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header"><a href="#" style="font-weight: 400;">910105</a></th>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£78,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£64,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£14,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">Active</strong></td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <th scope="row" class="govuk-table__header"><a href="#" style="font-weight: 400;">910104</a></th>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£42,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£6,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£36,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">Active</strong></td>
                          </tr>
                     </tbody>
                </table>
