@@ -1014,9 +1014,21 @@
                     There are <strong>0 applications</strong> that have been approved
                </p>
 
-               <p><br></p>
-
-               <br>
+               <div class="non-sticky-footer">
+                    <div class="govuk-width-container">
+                         <div class="govuk-grid-row">
+                              <div class="govuk-grid-column-full">
+                                   <div class="govuk-form-group">
+                                        <form class="" action="6-reject" method="post" id="applications_actions_form">
+                                             <p>Reject selected applications:</p>
+                                             <button class="govuk-button" data-module="govuk-button" id="applications-action">Continue</button>
+                                        </form>
+                                   </div>
+                                   <p class="float-right"><a class="clear-selection">Clear selection</a></p>
+                              </div>
+                         </div>
+                    </div>
+               </div>
 
                <a href="4-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
 
@@ -1024,41 +1036,6 @@
 
      </div>
 
-</div>
-
-<div class="sticky-footer">
-     <div class="govuk-width-container">
-          <div class="govuk-grid-row">
-               <div class="govuk-grid-column-full">
-                    <div class="govuk-form-group">
-                         <!-- <span class="shortlist-button applications-selected">
-                              <span class="number">0</span>
-                              <div>Selected</div>
-                         </span> -->
-                    </div>
-                    <div class="govuk-form-group">
-                         <form class="" action="6-reject" method="post" id="applications_actions_form">
-                              <p>Reject selected applications:</p>
-                              <!-- <select class="govuk-select" id="type-of-action" name="type-of-action">
-                                   <option value="All actions" selected="true" disabled="disabled">-- Actions --</option>
-                                   <option disabled="disabled">-----------------------</option>
-                                   <option value="approve">Approve applications</option>
-                                   <option value="shortlist">Add to shortlist</option>
-                                   <option value="reject">Reject applications</option>
-                              </select> -->
-                              <button class="govuk-button" data-module="govuk-button" id="applications-action">Continue</button>
-                         </form>
-                    </div>
-                    <p class="float-right"><a class="clear-selection">Clear selection</a></p>
-               </div>
-               <!-- <div class="govuk-grid-column-one-third">
-                    <a href="9-shortlist" class="shortlist-button float-right">
-                         <span class="number">0</span>
-                         <div>View shortlist</div>
-                    </a>
-               </div> -->
-          </div>
-     </div>
 </div>
 
 {% endblock %}
