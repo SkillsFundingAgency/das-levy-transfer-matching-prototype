@@ -76,7 +76,13 @@
                          <div class="sub-text">Pledge funds for 2021/22</div>
                     </h3>
                     <h3 class="govuk-heading-l">
-                         <strong>£<span class="value-format">29000</span></strong>
+                         {% if data['accept_application'] == 'Accept' %}
+                              <strong>£<span class="value-format">26100</span></strong>
+                         {% elseif data['accept_application'] == 'Reject' %}
+                              <strong>£<span class="value-format">29000</span></strong>
+                         {% else %}
+                              <strong>£<span class="value-format">29000</span></strong>
+                         {% endif %}
                          <div class="sub-text">Remaining pledge funds for 2021/22</div>
                     </h3>
                </div>
