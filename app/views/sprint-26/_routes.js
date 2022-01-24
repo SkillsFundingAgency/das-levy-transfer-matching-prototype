@@ -8,9 +8,9 @@ const version = 'sprint-26'
 router.post('/MVS/sender/STEP-8/delete_pledge_action', function (req, res) {
      const delete_pledge = req.session.data.delete_pledge
      if (delete_pledge === 'Yes') {
-          res.redirect('/' + version + '/MVS/sender/STEP-8/8A-pledge-details')
+          res.redirect('/' + version + '/MVS/sender/STEP-8/7-my-pledges')
      } else {
-          res.redirect('/' + version + '/MVS/sender/STEP-8/8A-pledge-details')
+          res.redirect('/' + version + '/MVS/sender/STEP-8/8-pledge-details')
      }
 })
 
@@ -134,7 +134,7 @@ router.post('/MVS/receiver/STEP-9-10/cancel_application_action', function (req, 
      if (cancel_application === 'Yes') {
           res.redirect('/' + version + '/MVS/receiver/STEP-9-10/4-my-applications')
      } else {
-          res.redirect('/' + version + '/MVS/receiver/STEP-9-10/5B-pledge-details')
+          res.redirect('/' + version + '/MVS/receiver/STEP-9-10/5B-application')
      }
 })
 

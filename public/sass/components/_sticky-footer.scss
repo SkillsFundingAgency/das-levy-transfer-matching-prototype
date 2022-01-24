@@ -1,4 +1,4 @@
-.sticky-footer {
+.sticky-footer, .non-sticky-footer {
      display: inline-block;
      position: fixed;
      padding: 0.5em 0 !important;
@@ -30,4 +30,18 @@
                }
           }
      }
+}
+
+.non-sticky-footer {
+     display: inline-block;
+     position: relative;
+     padding: 2em 2.5% !important;
+     width: 95%;
+     margin: -2em 0 2em 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: govuk-colour("light-grey");
+     box-shadow: none;
+     border: none;
 }
