@@ -1,0 +1,53 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation pledge-approved">
+
+                    <h1 class="govuk-panel__title">Pledge 910106 has been updated</h1>
+
+               </div>
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <p>Your pledge is now public and can be <a href="#">viewed online</a>.</p>
+
+               <p>You can share your pledge link with organisations you work with to promote your pledge.</p>
+
+               <p>You'll receive notifications when a business applies for your funding transfer.</p>
+
+               <p>
+                    <!-- <a href="../8-pledge-details" class="govuk-link govuk-link--no-visited-state">View pledge 910106</a><br>
+                    or<br> -->
+                    <a href="../4-my-pledges" class="govuk-link govuk-link--no-visited-state">View your pledges</a>
+               </p>
+
+               <a href="../3-transfers" class="govuk-back-link">Back to transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

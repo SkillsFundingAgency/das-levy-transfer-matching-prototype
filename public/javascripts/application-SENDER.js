@@ -29,6 +29,29 @@ $('#pledge_amount, #new_pledge_amount').on("keyup", function (e) {
      }
 });
 
+$('#new_pledge_amount-A').on("keyup", function (e) {
+     var fundingTotal = parseInt($('#new_pledge_amount-A').val());
+     if (fundingTotal <= 999) {
+          $('.error-action').show();
+          $('.form-action').hide();
+          $('#pledge-funding-form').attr('action','');
+          $('.under-1000').show();
+          $('.over-80000').hide();
+     } else if (fundingTotal >= 80000) {
+          $('.error-action').show();
+          $('.form-action').hide();
+          $('#pledge-funding-form').attr('action','');
+          $('.under-1000').hide();
+          $('.over-80000').show();
+     } else if (fundingTotal >= 1000) {
+          $('.error-action').hide();
+          $('.form-action').show();
+          $('#pledge-amount-container').removeClass('govuk-form-group--error');
+          $('#pledge-amount-error, #pledge-amount-error-message').hide();
+          $('#pledge-funding-form').attr('action','7-pledge-confirmation');
+     }
+});
+
 $('#amount_error').on("click", function (e) {
      $('#pledge-funding-form').attr('action','');
      $('#pledge-amount-container').addClass('govuk-form-group--error');
