@@ -193,17 +193,21 @@ $('.clear-selection').on("click", function (e) {
 });
 
 $('#applications-action').on("click", function (e) {
-     // $('.applications-selected .number').text('0');
      $('.clear-selection').hide();
-     // if ($('#type-of-action').val() == 'shortlist') {
-     //      $('#applications_actions_form').attr("action", '5C-pledge-details');
-     // } else if ($('#type-of-action').val() == 'approve') {
-     //      $('#applications_actions_form').attr("action", '10A-approval');
-     // } else if ($('#type-of-action').val() == 'reject') {
-     //      $('#applications_actions_form').attr("action", '11-reject');
-     // } else if ($('#type-of-action').val() == 'remove-from-shortlist') {
-     //      $('#applications_actions_form').attr("action", '9-shortlist');
-     // }
+});
+
+$('#applications-action-multiple').on("click", function (e) {
+     $('.applications-selected .number').text('0');
+     $('.clear-selection').hide();
+     if ($('#type-of-action').val() == 'shortlist') {
+          $('#applications_actions_form').attr("action", '5C-pledge-details');
+     } else if ($('#type-of-action').val() == 'approve') {
+          $('#applications_actions_form').attr("action", '10A-approval');
+     } else if ($('#type-of-action').val() == 'reject') {
+          $('#applications_actions_form').attr("action", '11-reject');
+     } else if ($('#type-of-action').val() == 'remove-from-shortlist') {
+          $('#applications_actions_form').attr("action", '9-shortlist');
+     }
 });
 
 
