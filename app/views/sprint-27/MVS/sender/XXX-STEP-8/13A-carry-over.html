@@ -1,0 +1,72 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Would you like to carry over the applications from pledge 910105?</h1>
+
+               <form method="post" action="confirm_carry_over">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                              <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Is this what you want to pledge for 2022/23?</legend> -->
+
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="confirm_carry_over_910105" id="confirm_carry_over_yes_910105" value="Carry over" type="radio">
+                                        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="confirm_carry_over_yes_910105">Yes, carry over applications</label>
+
+                                        <ul class="govuk-list govuk-list--bullet govuk-caption-m">
+                                             <li>applications "awaiting approval" and "Awaiting acceptance by applicant" will be carried forward into the renewed pledge</li>
+                                             <li>all "Withdrawn" and "Rejected" applications will not be carried forward</li>
+                                        </ul>
+                                   </div>
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="confirm_carry_over_910105" id="dont_910105" value="Dont carry over" type="radio">
+                                        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="dont_910105">No, remove all applications</label>
+
+                                        <ul class="govuk-list govuk-list--bullet govuk-caption-m">
+                                             <li>applications "awaiting approval",  "Awaiting acceptance by applicant" will be automatically rejected</li>
+                                             <li>you will continue to fund all applications you have already approved.</li>
+                                        </ul>
+                                   </div>
+
+                              </div>
+
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

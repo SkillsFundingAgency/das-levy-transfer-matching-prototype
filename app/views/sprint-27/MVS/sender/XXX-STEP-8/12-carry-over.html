@@ -1,0 +1,93 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Would you like to use the same funding amount and same criteria as 910106?</h1>
+
+               <h3 class="govuk-heading-s no-margin-bottom">Criteria</h3>
+               <p class="govuk-caption-m">
+                    Location: <strong>Manchester, Liverpool, Leeds</strong><br>
+                    Sector: <strong>Construction, Engineering and manufacturing</strong><br>
+                    Type of job role: <strong>Business and administration, Construction, Digital</strong><br>
+                    Level: <strong>All</strong>
+               </p>
+
+               <h3 class="govuk-heading-s no-margin-bottom">Funds</h3>
+               <p class="govuk-caption-m">
+                    Total pledge funds committed in FY 2021/22: <strong>£65,000</strong>
+               </p>
+
+               <!-- <div class="govuk-inset-text no-margin-top">
+                    <p>If the actual transfer allowance is lower than the sum of your pledges we will notify you. We will automatically reduce the pledges to match the transfer allowance that is available.</p>
+               </div> -->
+
+               <form method="post" action="pledge_action_carry_criteria">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="pledge_action_criteria" id="pledge_action_criteria_yes" value="Yes" type="radio">
+                                        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_action_criteria_yes">Yes, use same funding amount and same criteria</label>
+
+                                   </div>
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="pledge_action_criteria" id="pledge_action_criteria_no" value="No" type="radio">
+                                        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pledge_action_criteria_no">No, change funding amount and/or criteria</label>
+
+                                   </div>
+
+                              </div>
+
+                         </fieldset>
+                    </div>
+
+                    <div class="govuk-inset-text">
+
+                         <p><strong>What happens to applications?</strong></p>
+
+                         <p>When you continue with a pledge, or if it expires, then these applications are rejected at the end of the financial year, 5th April 2022:</p>
+
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li>applications that have not been approved</li>
+                              <li>applications that have not have not been accepted by the receiving employer</li>
+                         </ul>
+
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                    <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

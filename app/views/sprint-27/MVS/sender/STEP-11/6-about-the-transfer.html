@@ -1,0 +1,73 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Tell us about the transfer you want to make to <span class="highlight-text">Belhavel Construction Ltd</span></h1>
+
+               <form method="post" action="about_the_transfer">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Do you want to specify the training course being funded?</legend>
+
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="about_the_transfer" id="about_the_transfer_yes" value="Yes" type="radio">
+                                        <label class="govuk-label govuk-radios__label" for="about_the_transfer_yes">Yes</label>
+                                   </div>
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="about_the_transfer" id="about_the_transfer_no" value="No" type="radio">
+                                        <label class="govuk-label govuk-radios__label" for="about_the_transfer_no">No, I only want to set a funding amount that can be spent on any type of apprenticeship training</label>
+                                   </div>
+
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                    <a href="3-transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel transfer</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+
+<script>
+    function myFunction() {
+
+        if(document.getElementById('option1').checked) {
+            document.getElementById('link').href = "transfer-to-business-4a-1.html";
+        }
+        if(document.getElementById('option2').checked) {
+            document.getElementById('link').href = "transfer-to-business-4b-1.html";
+        }
+    }
+</script>
+
+
+{% endblock %}

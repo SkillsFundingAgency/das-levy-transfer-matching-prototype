@@ -1,0 +1,122 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+               <h1 class="govuk-heading-xl">Approving the apprenticeship application(s)</h1>
+          </div>
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <form method="post" action="10B-approval" id="">
+
+                    <section class="employer-details side-panel applications_for_approval">
+                         <p class="govuk-heading-s">Applications for approval</p>
+                         <ul class="govuk-list govuk-list--bullet">
+                              <li class="application_approval application_1"><a href="#">Belhavel Construction Ltd</a></li>
+                              <li class="application_approval application_2"><a href="#">CBJ Engineering</a></li>
+                              <li class="application_approval application_3"><a href="#">Johnson and Johnson Building Co</a></li>
+                              <li class="application_approval application_4"><a href="#">123 Windows Co</a></li>
+                              <li class="application_approval application_5"><a href="#">Ferlot & Co</a></li>
+                              <li class="application_approval application_6"><a href="#">ActiveCub Ltd</a></li>
+                              <li class="application_approval application_7"><a href="#">Solidaric</a></li>
+                              <li class="application_approval application_8"><a href="#">Nupositive</a></li>
+                              <li class="application_approval application_9"><a href="#">Zurova</a></li>
+                              <li class="application_approval application_10"><a href="#">Radicalsy Limited</a></li>
+                              <li class="application_approval application_11"><a href="#">Steepway Limited</a></li>
+                              <li class="application_approval application_12"><a href="#">Confidentify PLC</a></li>
+                              <li class="application_approval application_13"><a href="#">Steepby & Co</a></li>
+                              <li class="application_approval application_14"><a href="#">Onradical</a></li>
+                              <li class="application_approval application_15"><a href="#">Heroicology PLC</a></li>
+                              <li class="application_approval application_16"><a href="#">Fearlessia Limited</a></li>
+                              <li class="application_approval application_17"><a href="#">Steepist PLC</a></li>
+                              <li class="application_approval application_18"><a href="#">Steepline</a></li>
+                              <li class="application_approval application_19"><a href="#">Modby</a></li>
+                              <li class="application_approval application_20"><a href="#">Heroicon Ltd</a></li>
+                              <li class="application_approval application_21"><a href="#">Positivela</a></li>
+                              <li class="application_approval application_22"><a href="#">Heroicbar Ltd</a></li>
+                              <li class="application_approval application_23"><a href="#">Obviousmax Partners & Son</a></li>
+                              <li class="application_approval application_24"><a href="#">Nubold Ltd</a></li>
+                              <li class="application_approval application_25"><a href="#">Edbold</a></li>
+                              <li class="application_approval application_26"><a href="#">Boldring PLC</a></li>
+                              <li class="application_approval application_27"><a href="#">Oxlac Ltd</a></li>
+                              <li class="application_approval application_28"><a href="#">Obviousmax Partners & Son</a></li>
+                              <li class="application_approval application_29"><a href="#">Nubold Ltd</a></li>
+                              <li class="application_approval application_30"><a href="#">Edbold</a></li>
+                         </ul>
+                    </section>
+
+                    <div class="govuk-form-group" id="accept_application_form">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                   <h2 class="govuk-heading-m no-margin-bottom">What would you like to do?</h2>
+                              </legend>
+                              <span id="accept_application_error_text" class="govuk-error-message">
+                                   <span class="govuk-visually-hidden">Error:</span> You must choose to either approve or reject this application
+                              </span>
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="accept_application_accept" name="accept_application" type="radio" value="Accept" data-aria-controls="conditional-accept_application">
+                                        <label class="govuk-label govuk-radios__label" for="accept_application_accept">Approve the application(s)</label>
+                                   </div>
+                                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-accept_application">
+                                        <div class="govuk-form-group">
+                                             <p>
+                                                  <strong>Disclaimer:</strong>
+                                             </p>
+                                             <p>
+                                                  The information provided by Belhavel Construction Ltd in their application for this pledge has not been checked and verified by the apprenticeship service.
+                                             </p>
+                                             <p>
+                                                  Please carry out your own due diligence when deciding whether to offer a transfer of your levy funds.
+                                             </p>
+                                             <p>
+                                                  Before this is confirmed, you will need to choose how to approve the apprentice details on the next page.
+                                             </p>
+                                        </div>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="accept_application_cancel" name="accept_application" type="radio" value="Cancel">
+                                        <label class="govuk-label govuk-radios__label" for="accept_application_cancel">Cancel, return to applications</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button" id="accept_application">Continue</button>
+
+               </form>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+
+
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

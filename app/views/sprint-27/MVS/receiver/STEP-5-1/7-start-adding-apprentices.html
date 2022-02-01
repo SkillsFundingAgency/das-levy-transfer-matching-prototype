@@ -1,0 +1,61 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_apprentices.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Start adding apprentices</h1>
+
+               <p class="govuk-body-l">
+                    You can start adding details of your apprentices or ask your training provider to add them for you.
+               </p>
+
+               <p class="govuk-body-l">
+                    If you ask your training provider to add them, you need to check and agree the details before any payments are made.
+               </p>
+
+               <form method="post" action="start_adding_apprentices">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset">
+                              <div class="govuk-radios">
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="start_adding_apprentices_me" name="start_adding_apprentices" type="radio" value="I will add apprentices" {{ checked("start_adding_apprentices", "I will add apprentices") }}>
+                                        <label class="govuk-label govuk-radios__label" for="start_adding_apprentices_me">I will add apprentices</label>
+                                   </div>
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="start_adding_apprentices_provider" name="start_adding_apprentices" type="radio" value="Training provider" {{ checked("start_adding_apprentices", "Training provider") }}>
+                                        <label class="govuk-label govuk-radios__label" for="start_adding_apprentices_provider">I would like my provider to add apprentices</label>
+                                   </div>
+                              </div>
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

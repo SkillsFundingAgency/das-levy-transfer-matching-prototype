@@ -1,0 +1,157 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">
+                    Use transfer funds from
+                    {% if data['pledge-application-standard'] %}
+                         <span class="pledge-name-answer">####</span>
+                    {% else %}
+                         BARRY & BARRY Ltd (910106)
+                    {% endif %}
+               </h1>
+
+               <div class="govuk-warning-text application-status-one">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span>
+                         Application status: <span class="govuk-tag">Funds available to use</span>
+                    </strong>
+               </div>
+
+               <div class="accepted-text-hide">
+                    <h2 class="govuk-heading-m">About your apprenticeship training course</h2>
+               </div>
+
+               <section class="employer-contact-details">
+                    <p>
+                         <strong>Apprenticeship training course:</strong>
+                         {% if data['pledge-application-standard'] %}
+                              {{ data['pledge-application-standard'] }}
+                         {% else %}
+                              Bricklayer (level 2)
+                         {% endif %}
+                    </p>
+                    <p>
+                         <strong>Number of apprentices:</strong>
+                         {% if data['pledge-application-apprentices'] %}
+                              {{ data['pledge-application-apprentices'] }}
+                         {% else %}
+                              2
+                         {% endif %}
+                    </p>
+                    <p>
+                         <strong>Estimated total cost:</strong>
+                         {% if data['pledge-application-standard'] %}
+                              £<span class="total-cost-multiplied value-format">####</span>
+                         {% else %}
+                              £18,000
+                         {% endif %}
+                    </p>
+                    <p>
+                         <strong>Apprenticeship training to start by:</strong>
+                         {% if data['pledge-application-start-month'] %}
+                              {{ data['pledge-application-start-month'] }}/{{ data['pledge-application-start-year'] }}
+                         {% else %}
+                              10/2021
+                         {% endif %}
+                    </p>
+               </section>
+
+               <h2 class="govuk-heading-m">Add apprentices</h2>
+               <p>You'll need to add details of your apprentices to your apprenticeship service account, and authorise payments to your training provider.</p>
+
+               <p>
+                    The apprentice details may be rejected if they exceed the estimated total cost that
+                    {% if data['pledge-application-standard'] %}
+                         <strong class="pledge-name-answer">####</strong>
+                    {% else %}
+                         <strong>BARRY & BARRY Ltd</strong>
+                    {% endif %}
+                    agreed to fund when they approved your application. If this happens you will be able to amend the apprentice details and send for approval again.
+               </p>
+
+               <h2 class="govuk-heading-m">Before you start</h2>
+
+               <p>You must:</p>
+
+               <ul class="govuk-list govuk-list--bullet">
+                    <li>know the names of your apprentices</li>
+                    <li>have a training provider in place</li>
+                    <li>know your training provider's UK Provider Reference Number (UKPRN) - your training provider can tell you this</li>
+                    <li>make sure the organisation that's named on the contract you have with your training provider is in your account - <a href="#">view organisations in this account</a> </li>
+                    <li>make sure the PAYE scheme that each apprentice is paid through is in your account - <a href="#">view PAYE schemes in this account</a></li>
+               </ul>
+
+               <p><a href="https://findapprenticeshiptraining.apprenticeships.education.gov.uk" target="blank">Find a training provider</a>.</p>
+
+               <br>
+
+               <a href="../STEP-5-1/4B-choose-org" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                    Start now
+                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                         <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                    </svg>
+               </a>
+
+               <br>
+
+               <p><a href="4-my-applications">View my applications</a></p>
+
+               <br><br><br>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               {% if data['pledge-application-standard'] %}
+                    <section class="employer-details side-panel">
+                         <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
+                         <p class="details">
+                              Location: <strong class="pledge-location-answer">####</strong><br>
+                              Sector: <strong class="pledge-sector-answer">####</strong><br>
+                              Type of job role: <strong class="pledge-training-answer">####</strong><br>
+                              Level: <strong class="pledge-level-answer">####</strong>
+                         </p>
+                         <div class="total">
+                              <p class="govuk-heading-s">Total funding available:<br>up to £<span class="pledge-value-answer value-format">####</span> in 2021/22</p>
+                         </div>
+                    </section>
+               {% else %}
+                    <section class="employer-details side-panel">
+                         <p class="govuk-heading-s">BARRY & BARRY Ltd (910106) wants to fund apprenticeship training in:</p>
+                         <p class="details">
+                              Location: <strong>Manchester, Liverpool, Leeds</strong><br>
+                              Sector: <strong>Construction, Engineering and manufacturing</strong><br>
+                              Type of job role: <strong>Business and administration, Construction, Digital</strong><br>
+                              Level: <strong>Level 4 - HNC, Level 5 - HND, Level 6 - degree</strong>
+                         </p>
+                         <div class="total">
+                              <p class="govuk-heading-s">Total funding available:<br>up to £65,000 in 2021/22</p>
+                         </div>
+                    </section>
+               {% endif %}
+          </div>
+
+     </div>
+
+</div>
+{% endblock %}
