@@ -14,8 +14,6 @@ const requireDir = require('require-dir')
 // Require all tasks in gulp/tasks, including subfolders
 requireDir('./gulp', { recurse: true })
 
-// var sass = require('gulp-sass')(require('sass'));
-
 // gulp 4 requires dependency tasks to be defined before they are called.
 // We'll keep our top-level tasks in this file so that they are defined at the end of the chain, after their dependencies.
 gulp.task('generate-assets', gulp.series(
