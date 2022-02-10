@@ -520,3 +520,68 @@ details {
           }
      }
 }
+
+
+.das-highlight {
+     padding: 20px;
+     margin-bottom: 20px;
+     background: govuk-colour(light-grey);
+     dl {
+          overflow: hidden;
+          margin: 0;
+          dt {
+               clear: both;
+               float: left;
+               margin-right: 10px;
+
+               margin-bottom: 2px;
+               &:after {
+                    content: ":";
+               }
+          }
+          dd {
+               float: left;
+               margin: 0;
+               font-weight: 700;
+          }
+     }
+}
+
+table.app-application-table {
+     font-size: 16px;
+     .govuk-details {
+          margin-bottom: 0;
+          font-size: inherit;
+     }
+     .govuk-details__summary {
+          padding-left: 20px;
+          color: govuk-colour(black);
+     }
+     .govuk-details__text {
+          padding-top: 0;
+          padding-bottom: 0;
+          padding-left: 5px;
+     }
+     .govuk-list {
+          font-size: inherit;
+          color: #333;
+     }
+     .govuk-tag {
+          font-size: 14px;
+     }
+     .govuk-checkboxes--small .govuk-checkboxes__item {
+          padding-left: 10px;
+     }
+     .govuk-checkboxes--small .govuk-checkboxes__label:before {
+          top: 2px;
+     }
+     .govuk-checkboxes--small .govuk-checkboxes__label:after {
+          top: 10px;
+     }
+     .th-1 { width: 4% }
+     .th-2 { width: 25% }
+     .th-3 { width: 15% }
+     .th-4 { width: 10% }
+     .th-5 { width: 15% }
+     .th-6 { width: 16% }
+}
