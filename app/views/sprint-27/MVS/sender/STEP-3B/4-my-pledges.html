@@ -64,7 +64,12 @@
                                    {% endif %}
                               </td>
                               <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
-                              <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">Active</strong></td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['accept_application'] == 'Accept' %}
+                                        <strong class="govuk-tag govuk-tag--grey">Inactive</strong>
+                                   {% else %}
+                                        <strong class="govuk-tag">Active</strong></td>
+                                   {% endif %}
                          </tr>
                          <tr class="govuk-table__row">
                               <th scope="row" class="govuk-table__header"><a href="#" style="font-weight: 400;">910105</a></th>
