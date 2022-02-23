@@ -1,0 +1,44 @@
+
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+     GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+     <!-- <div class="email-banner">
+          <img src="/public/images/ESFA-logo.jpg" alt="Education & Skills Funding Agency">
+     </div> -->
+{% endblock %}
+
+{% block content %}
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <h1 class="govuk-heading-m">Barry and Barry</h1>
+
+               <h1 class="govuk-heading-s">Your pledge 901016 balance is low</h1>
+
+               <p>This is may not be enough to fund an aprenticeship.</p>
+
+               <p>You may want to take action to edit or close this pledge.</p>
+
+               <p>
+                    Sign into your apprenticeship service account and go to 'My transfer pledges' to review your options: <a href="4-my-pledges">[URL]</a>
+               </p>
+
+               <p class="govuk-body">
+                    This is an automated message. Please don't reply to this email.
+               </p>
+
+               <p class="govuk-body">
+                    Kind regards,<br>
+                    <strong>Apprenticeship service team</strong>
+               </p>
+
+          </div>
+
+     </div>
+
+{% endblock %}
