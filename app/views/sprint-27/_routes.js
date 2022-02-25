@@ -208,6 +208,16 @@ router.post('/MVS/receiver/STEP-5-1/approve_apprentice_details', function (req, 
      res.redirect('/' + version + '/MVS/receiver/STEP-5-1/10-confirmation')
 })
 
+// 7
+router.post('/MVS/receiver/STEP-5-1/withdraw_application', function (req, res) {
+     const withdraw_application = req.session.data.withdraw_application
+     if (withdraw_application === 'Yes') {
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/10B-withdraw-confirmation')
+     } else {
+          res.redirect('/' + version + '/MVS/receiver/STEP-5-1/4A-application-details')
+     }
+})
+
 
 // STEP 5.2 - APPROVALS - PROVIDER
 // 1
