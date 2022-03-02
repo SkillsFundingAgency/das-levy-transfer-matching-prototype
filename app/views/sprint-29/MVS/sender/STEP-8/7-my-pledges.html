@@ -1,0 +1,116 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="5-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">My transfer pledges</a></li>
+          </ol>
+     </div>
+
+     <p style="padding-bottom: 30px;"></p>
+
+     <!-- /////////////////// PLEDGE CLOSED - START ///////////////////-->
+     {% if data['delete_pledge'] == "Yes" %}
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-full">
+
+                    <div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                         <div class="govuk-notification-banner__header">
+                              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
+                         </div>
+                         <div class="govuk-notification-banner__content">
+                              <p class="govuk-notification-banner__heading">Transfer pledge closed</p>
+                              <p class="govuk-body">You closed the transfer pledge 910107.</p>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     {% else %}
+
+     {% endif %}
+     <!-- /////////////////// PLEDGE CLOSED - END ///////////////////-->
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">My transfer pledges</h1>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+               <p>You have <strong>2</strong> transfer pledges.</p>
+
+               <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Transfer pledge</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Pledged to transfers</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Approved for apprenticeships</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Remaining funds</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Applications</th>
+                              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                   <a href="8-pledge-details">910107</a><br>
+                              </td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   £<span class="value-format">42000</span>
+                              </td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   £<span class="value-format">42000</span>
+                              </td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">
+                                   {% if data['delete_pledge'] == "Yes" %}
+                                        <strong class="govuk-tag govuk-tag--grey">CLOSED</strong>
+                                   {% else %}
+                                        <strong class="govuk-tag">ACTIVE</strong>
+                                   {% endif %}
+                              </td>
+                         </tr>
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><a href="#">910106</a></td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£65,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£36,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">£29,000</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric">30</td>
+                              <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag">ACTIVE</strong></td>
+                         </tr>
+                    </tbody>
+               </table>
+
+               <br>
+
+               <a href="#" class="govuk-button" data-module="govuk-button">Create a transfer pledge</a>
+
+               <br><br>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

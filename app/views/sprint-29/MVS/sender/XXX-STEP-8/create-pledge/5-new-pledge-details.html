@@ -1,0 +1,207 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds pledge-core">
+
+
+               <h1 class="govuk-heading-xl">Set new criteria</h1>
+
+               <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                         <span class="govuk-warning-text__assistive">Warning</span> You will get a new reference number for each pledge you create.
+                    </strong>
+               </div>
+
+               <ol class="app-task-list">
+
+                    <li id="section-1">
+                         <h2 class="app-task-list__section">
+                              <span class="app-task-list__section-number number-one">1. </span>
+                              Pledge amount and option to hide<br>organisation name
+                              {% if data['pledge_amount'] and data['show_publicly'] %}
+                                   <strong class="govuk-tag app-task-list__tag">completed</strong>
+                              {% else %}
+                                   <strong class="govuk-tag govuk-tag--grey app-task-list__tag">Not started</strong>
+                              {% endif %}
+                         </h2>
+                         <ul class="app-task-list__items">
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="6A-new-pledge-details">Amount you want to pledge</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge_amount'] %}
+                                             £<span class="value-format">{{ data['pledge_amount'] }}</span>
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="6A-new-pledge-details">Show or hide your organisation's name</a>
+                                   </span>
+                                   <p>
+                                        {% if data['show_publicly'] %}
+                                             {{ data['show_publicly'] }}
+                                        {% else %}
+                                             -
+                                        {% endif %}
+                                   </p>
+                              </li>
+                         </ul>
+                    </li>
+
+                    <li id="section-2">
+                         <h2 class="app-task-list__section">
+                              <span class="app-task-list__section-number">2. </span>
+                              <div class="text-wrapper">
+                                   Criteria
+                                   <span class="govuk-caption-m">The following criteria are all optional. They will remain set to 'all' unless you choose to change them.</span>
+                              </div>
+                              <strong class="govuk-tag govuk-tag--grey app-task-list__tag">optional</strong>
+                         </h2>
+                         <ul class="app-task-list__items">
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="6B-new-pledge-details">Location</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge-location'] %}
+                                             <ul class="govuk-list">
+                                                  {% for key, location in data['pledge-location'] %}
+                                                       <li>{{ location }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                        {% else %}
+                                             All of England
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="6C-new-pledge-details">Sector</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge_sector'] %}
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['pledge_sector'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                        {% else %}
+                                             All sectors and industries
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="6D-new-pledge-details">Type of job role</a>
+                                   </span>
+                                   <p>
+                                        {% if data['pledge_training'] %}
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['pledge_training'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                        {% else %}
+                                             All apprenticeship job roles
+                                        {% endif %}
+                                   </p>
+                              </li>
+                              <li class="app-task-list__item">
+                                   <span class="app-task-list__task-name">
+                                        <a href="6E-new-pledge-details">Level</a>
+                                   </span>
+                                   <p class="pledge_level_all">All qualification levels</p>
+                                   <div class="pledge_level_specific">
+                                        {% if data['pledge_level'] %}
+                                             <ul class="govuk-list govuk-list--bullet">
+                                                  {% for answer in data['pledge_level'] -%}
+                                                  <li>{{ answer }}</li>
+                                                  {% endfor %}
+                                             </ul>
+                                        {% else %}
+                                             All qualification levels
+                                        {% endif %}
+                                   </div>
+                              </li>
+
+                         </ul>
+                    </li>
+
+               </ol>
+
+               {% if data['pledge_amount'] and data['show_publicly'] %}
+                    <h2 class="govuk-heading-m">Submit your transfer pledge</h2>
+
+                    <p class="govuk-body">I confirm that I want to make the above pledge so I can fund another business's apprenticeship training and assessment with my levy funds.</p>
+
+                    <div class="govuk-inset-text">
+                         <strong>Disclaimer:</strong> The information provided by applicants to your pledge will not be checked and verified by the apprenticeship service.
+                         <br>
+                         <br>Please carry out your own due diligence when deciding whether to offer a transfer of your levy funds.
+                    </div>
+
+                    <form action="7-new-pledge-confirmation" method="post" novalidate>
+
+                         <input type="hidden" name="answers-checked" value="true">
+                         <div class="govuk-button-group">
+                              <button class="govuk-button" data-module="govuk-button">Submit my pledge</button>
+                              <a href="3-transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel pledge</a>
+                         </div>
+
+                    </form>
+               {% else %}
+
+               {% endif %}
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <section class="employer-details side-panel criteria">
+                    <p class="govuk-heading-s">Previous criteria:</p>
+                    <p class="details">
+                         Location:<br><strong>Manchester, Liverpool, Leeds</strong>
+                    </p>
+                    <p class="details">
+                         Sector:<br><strong>Construction, Engineering and manufacturing</strong>
+                    </p>
+                    <p class="details">
+                         Type of job role:<br><strong>Business and administration, Construction, Digital</strong>
+                    </p>
+                    <p class="details">
+                         Level:<br><strong>Level 4 - HNC, Level 5 - HND, Level 6 - degree</strong>
+                    </p>
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                    <p class="details">
+                         Total pledge funds committed in FY 2021/22:<br><strong>£65,000</strong>
+                    </p>
+               </section>
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

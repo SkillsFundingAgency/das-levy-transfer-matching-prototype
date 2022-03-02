@@ -1,0 +1,100 @@
+{% extends "layout-ltm.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry" id="transfers-hub">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+
+               <h1 class="govuk-heading-xl">Transfer fund details for Opportunity (223456)</h1>
+
+               <!-- PLEDGE DETAILS - START -->
+               <h2 class="govuk-heading-m">Details of the opportunity 
+                     <br>
+               <strong class="govuk-tag govuk-tag--grey">
+                    No funds available
+                  </strong>
+               </h2>
+
+               <section class="employer-details side-panel  applications-details">
+                    <p class="govuk-heading-s"><span class="pledge-name-answer">####</span> wants to fund apprenticeship training in:</p>
+                    <p class="details">
+                         Location: <strong class="pledge-location-answer">####</strong><br>
+                         Sector: <strong class="pledge-sector-answer">####</strong><br>
+                         Type of job role: <strong class="pledge-training-answer">####</strong><br>
+                         Level: <strong class="pledge-level-answer">####</strong>
+                    </p>
+                    <div class="total">
+                         <p class="govuk-heading-s">Total funding available: up to £<span class="value-format">0</span> available in 2021/22</p>
+                    </div>
+               </section>
+               <!-- PLEDGE DETAILS - END -->
+
+               <form class="" action="#" method="post">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Would you like to apply for the transfer funds?</legend>
+
+                              <p></p>
+
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="apply_for_transfer" id="apply_for_transfer_yes" type="radio" value="Yes" data-aria-controls="conditional-contact">
+                                        <label class="govuk-label govuk-radios__label" for="apply_for_transfer_yes">Yes</label>
+                                   </div>
+
+                                   <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                                        <div class="govuk-form-group">
+                                             <div class="govuk-warning-text">
+                                                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                                                  <strong class="govuk-warning-text__text">
+                                                       <span class="govuk-warning-text__assistive">Warning</span>
+                                                       You'll need an apprenticeship service account to apply to be considered for funding
+                                                  </strong>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="apply_for_transfer" id="apply_for_transfer_no" type="radio" value="No">
+                                        <label class="govuk-label govuk-radios__label" for="apply_for_transfer_no">No</label>
+                                   </div>
+                              </div>
+
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                    <!-- <a href="javascript:history.back()" class="govuk-link govuk-link-secondary govuk-link--no-visited-state govuk-back-link">Back</a> -->
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

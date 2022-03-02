@@ -1,0 +1,42 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Your pledge 100356 has now been withdrawn</h1>
+
+               <p><strong>You do not need to take any more action.</strong></p>
+
+               <p>Pledge 910106 will still be closed at the end of the financial year.</p>
+
+               <p><br></p>
+
+               <a href="7-my-pledges" class="govuk-button" id="withdraw-pledge">Continue</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

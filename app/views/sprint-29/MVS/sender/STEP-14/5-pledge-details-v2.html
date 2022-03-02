@@ -1,0 +1,257 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+<div class="govuk-width-container">
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-transfers">Transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-my-pledges">My transfer pledges</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="5-pledge-details">Transfer pledge 910106</a></li>
+          </ol>
+     </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h1 class="govuk-heading-xl govuk-!-margin-top-5">Transfer pledge 910106</h1>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+               <div class="das-highlight">
+                    <p class="govuk-heading-s govuk-!-margin-0">Pledged funds for 2022/23</p>
+                    <p class="govuk-heading-l govuk-!-margin-0 govuk-!-padding-0">£60,000</p>
+               </div>
+          </div>
+          <div class="govuk-grid-column-one-third">
+               <div class="das-highlight" style="background: #d2e2f1;">
+                    <p class="govuk-heading-s govuk-!-margin-0" style="color: #144e81;">Remaining funds for 2022/23</p>
+                    <p class="govuk-heading-l govuk-!-margin-0 govuk-!-padding-0" style="color: #144e81;">£29,000</p>
+               </div>
+          </div>
+     </div>
+
+
+     <h2 class="govuk-heading-l">5 applications</h2>
+
+
+     <table class="govuk-table app-application-table">
+          <thead>
+               <tr>
+                    <th scope="col" class="govuk-table__header th-1">
+                         <div class="govuk-checkboxes govuk-checkboxes--small">
+                              <div class="govuk-checkboxes__item select-all">
+                                   <input class="govuk-checkboxes__input" id="application_select_all" name="_application_select" type="checkbox" value="All applications" onClick="toggle(this)" {{ checked("_application_select", "Select all") }}>
+                                   <label class="govuk-label govuk-checkboxes__label" for="application_select_all"></label>
+                              </div>
+                         </div>
+                    </th>
+                    <th scope="col" class="govuk-table__header th-2"><span>Applicant</span></th>
+                    <th scope="col" class="govuk-table__header th-3"><span>Estimated cost 2021/22</span></th>
+                    <th scope="col" class="govuk-table__header th-4"><span>Typical duration</span></th>
+                    <th scope="col" class="govuk-table__header th-5"><span>Criteria</span></th>
+                    <th scope="col" class="govuk-table__header th-6"><span>Status</span></th>
+               </tr>
+          </thead>
+          <tbody>
+               <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                         <div class="govuk-checkboxes govuk-checkboxes--small">
+                              <div class="govuk-checkboxes__item">
+                                   <input class="govuk-checkboxes__input" id="application_select_1" name="application_select" type="checkbox" value="Belhavel Construction Ltd" {{ checked("application_select", "Belhavel Construction Ltd") }}>
+                                   <label class="govuk-label govuk-checkboxes__label" for="application_select_1"></label>
+                              </div>
+                         </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                         <a href="#">Belhavel Construction Ltd</a>
+                    </td>
+                    <td class="govuk-table__cell">
+                         £2,900
+                    </td>
+                    <td class="govuk-table__cell">30 months</td>
+                    <td class="govuk-table__cell">
+                         <details class="govuk-details">
+                              <summary class="govuk-details__summary">100% match</summary>
+                              <div class="govuk-details__text">
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        <li>Location </li>
+                                        <li>Sector </li>
+                                        <li>Type of job role </li>
+                                        <li>Level</li>
+                                   </ul>
+                              </div>
+                         </details>
+                    </td>
+                    <td class="govuk-table__cell">
+                         <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                    </td>
+               </tr>
+               <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                         &nbsp;
+                    </td>
+                    <td class="govuk-table__cell">
+                         <a href="#">CBJ Engineering</a>
+                    </td>
+                    <td class="govuk-table__cell">
+                         £2,900
+                    </td>
+                    <td class="govuk-table__cell">12 months</td>
+                    <td class="govuk-table__cell">
+                         <details class="govuk-details">
+                              <summary class="govuk-details__summary">75% match</summary>
+                              <div class="govuk-details__text">
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        <li>Location </li>
+                                        <li>Sector </li>
+                                        <li>Level</li>
+                                   </ul>
+                              </div>
+                         </details>
+                    </td>
+                    <td class="govuk-table__cell">
+                         <strong class="govuk-tag govuk-tag--orange">Withdrawn</strong>
+                    </td>
+               </tr>
+               <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        &nbsp;
+                    </td>
+                    <td class="govuk-table__cell">
+                         <a href="#">Fearlessia Limited</a>
+                    </td>
+                    <td class="govuk-table__cell">
+                         £16,000
+                    </td>
+                    <td class="govuk-table__cell">30 months</td>
+                    <td class="govuk-table__cell">
+                         <details class="govuk-details">
+                              <summary class="govuk-details__summary">50% match</summary>
+                              <div class="govuk-details__text">
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        <li>Location </li>
+                                        <li>Sector </li>
+                                   </ul>
+                              </div>
+                         </details>
+                    </td>
+                    <td class="govuk-table__cell">
+                         <strong class="govuk-tag govuk-tag--yellow ">With the applicant</strong>
+                    </td>
+               </tr>
+               <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                         &nbsp;
+                    </td>
+                    <td class="govuk-table__cell">
+                         <a href="#">123 company with a longer name</a>
+                    </td>
+                    <td class="govuk-table__cell">
+                         £1,000
+                    </td>
+                    <td class="govuk-table__cell">24 months</td>
+                    <td class="govuk-table__cell">
+                         0% match
+                    </td>
+                    <td class="govuk-table__cell">
+                         <strong class="govuk-tag govuk-tag--red">Rejected</strong>
+                    </td>
+               </tr>
+               <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                         <div class="govuk-checkboxes govuk-checkboxes--small">
+                              <div class="govuk-checkboxes__item">
+                                   <input class="govuk-checkboxes__input" id="application_select_1" name="application_select" type="checkbox" value="Belhavel Construction Ltd" {{ checked("application_select", "Belhavel Construction Ltd") }}>
+                                   <label class="govuk-label govuk-checkboxes__label" for="application_select_1"></label>
+                              </div>
+                         </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                         <a href="#">Obviousmax Partners &amp; Son</a>
+                    </td>
+                    <td class="govuk-table__cell">
+                         £9,500
+                    </td>
+                    <td class="govuk-table__cell">12 months</td>
+                    <td class="govuk-table__cell">
+                         <details class="govuk-details">
+                              <summary class="govuk-details__summary">25% match</summary>
+                              <div class="govuk-details__text">
+                                   <ul class="govuk-list govuk-list--bullet">
+                                        <li>Location </li>
+                                   </ul>
+                              </div>
+                         </details>
+                    </td>
+                    <td class="govuk-table__cell">
+                         <strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>
+                    </td>
+               </tr>
+          </tbody>
+     </table>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+               <button class="govuk-button">Reject selected applications</button>
+          </div>
+          <div class="govuk-grid-column-one-half">
+               <p style="float: right">
+
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Download applications in CSV format</a>
+               </p>
+          </div>
+     </div>
+
+
+
+
+     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+     <a href="13-delete-pledge" class="govuk-button govuk-button--warning">Withdraw pledge</a>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="sticky-footer">
+     <div class="govuk-width-container">
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-full">
+                    <div class="govuk-form-group">
+                         <form class="" action="6-reject" method="post" id="applications_actions_form">
+                              <p>Reject selected applications:</p>
+                              <button class="govuk-button" data-module="govuk-button" id="applications-action">Continue</button>
+                         </form>
+                    </div>
+                    <p class="float-right"><a class="clear-selection">Clear selection</a></p>
+               </div>
+          </div>
+     </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+{% endblock %}
