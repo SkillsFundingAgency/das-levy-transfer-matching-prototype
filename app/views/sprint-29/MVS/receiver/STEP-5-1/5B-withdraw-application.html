@@ -23,7 +23,7 @@
 
                <h1 class="govuk-heading-xl">Withdraw transfer application to BARRY & BARRY Ltd (910106)</h1>
 
-               <form method="post" action="withdraw_application">
+               <form method="post" action="withdraw_application" novalidate data-validate='error-state-validation'>
 
                     <div class="govuk-form-group">
                          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -56,5 +56,16 @@
      </div>
 
 </div>
+
+
+<script type="application/json" id="error-state-validation">
+     { 		  	
+       "withdraw_application": {
+         "presence": {
+           "message": "^You must confirm that you want to withdraw the application"
+         }
+       }
+     }
+     </script>
 
 {% endblock %}
