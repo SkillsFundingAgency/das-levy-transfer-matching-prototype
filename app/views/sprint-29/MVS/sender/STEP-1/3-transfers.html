@@ -49,11 +49,11 @@
                <div class="transfer-values-prototype mvs-version">
                     <div class="transfer-values">
                          <div class="transfer-funds">
-                              <p><span>Your transfer allowance FY 2021/22</span></p>
+                              <p><span>Your available transfer allowance<br> FY 2021/22</span></p>
                               <p class="number">£200,000</p>
                          </div>
                          <div class="transfer-funds">
-                              <p><span>Pledges & transfer connections FY 2021/22</span></p>
+                              <p><span>Pledges & transfer connections <br>FY 2021/22</span></p>
                               {% if data['pledge_amount'] %}
                                    <p class="number">£<span class="value-format">{{ 120000+data['pledge_amount'] | int }}</span></p>
                               {% else %}
@@ -61,7 +61,7 @@
                               {% endif %}
                          </div>
                          <div>
-                              <p><span>Remaining transfer funds FY 2021/22</span></p>
+                              <p><span>How much more you can pledge <br> FY 2021/22</span></p>
                               {% if data['pledge_amount'] %}
                                    <p class="number">£<span class="value-format">{{ 80000-data['pledge_amount'] | int }}</span></p>
                               {% else %}
@@ -78,8 +78,9 @@
                          <p><strong>Your transfer allowance for this financial year (FY)</strong></p>
                          <p>This is calculated every year on 6 April and shows in your account after 20 April.</p>
                          <p>Transfer payments will leave your account before payments for your own apprenticeships.</p>
+                         <p>Your available transfer allowance is the amount you have left to transfer after any deduction for in-house apprenticeships has been taken from your total transfer allowance.</p>
                          <p><strong>Pledges and transfer connections</strong></p>
-                         <p>This is an estimate of the amount allocated for your transfers in this financial year. It includes any existing transfer commitments carried over from last year.</p>
+                         <p>This is an estimate of the amount allocated for your transfers in this financial year. It includes any existing transfer connections carried over from last year.</p>
                          <p><strong>Remaining transfer funds</strong></p>
                          <p>This is an estimate of what remains for you to pledge to transfers in this financial year.</p>
                     </div>
