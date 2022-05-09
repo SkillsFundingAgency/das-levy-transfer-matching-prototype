@@ -1,0 +1,249 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "./includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3A-transfers">Your transfers</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="4-my-pledges">My transfer pledges</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfer pledge 910106</a></li>
+          </ol>
+     </div>
+
+     <p><br></p>
+
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h1 class="govuk-heading-xl no-margin-bottom">Transfer pledge 910106</h1>
+
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+               <div class="side-panel-applications">
+                    <a href="#" class="download-csv black-version float-right">
+                         <span class="black-download"></span>
+                         <div>Download applications - excel</div>
+                    </a>
+               </div>
+          </div>
+
+     </div>
+
+<br><br>
+
+
+     <div class="transfer-values-prototype mvs-version">
+
+          <div class="transfer-values">
+               <div class="transfer-funds">
+                    <p><span class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold">Pledged funds for 2022/23</span></p>
+                    <p class="number">£65,000</p>
+               </div>
+
+               
+               <div style="background-color: #D2E1F0;">
+                    <p><span class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold" style="color:#144e81;">Remaining funds for 2022/23</span></p>
+                    <p class="number"><span style="color:#144e81;">£29,000</span></p>
+               </div>
+
+          </div>
+
+     </div>
+
+
+<!-- INSET TEXT -->
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <div class="govuk-inset-text">
+                    Applications awaiting approval are waiting for you to review and approve or reject. Applicants appreciate a response from you in order to manage their apprenticeships.
+               </div>
+          </div>
+     </div>
+<!-- END INSET TEXT -->
+
+<!-- BUTTONS -->
+     <a href="#" class="govuk-button">Create a new transfer pledge</a>
+
+     <a href="#" class="govuk-button govuk-link-secondary govuk-button--warning accepted-journey-cancel-button no-margin-top">Close pledge</a>
+<!-- END BUTTONS -->
+
+<!-- TABLE -->
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <table class="govuk-table applications-table in-tab" id="new-applications-table" data-page-length='50'>
+                    <thead class="govuk-table__head">
+                         <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"></td>
+                              <th scope="col" class="govuk-table__header sort-section" width="27.5%"  style="font-size: 19px" onclick="sortTable(1)">Applicant</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="15%" style="font-size: 19px" onclick="sortTable(2)">Estimated cost 2022/23</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="12.5%" style="font-size: 19px" onclick="sortTable(3)">Typical duration</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="22.5%" style="font-size: 19px" onclick="sortTable(4)">Criteria</th>
+                              <th scope="col" class="govuk-table__header sort-section" width="17.5%" style="font-size: 19px;" onclick="sortTable(5)">Status</th>
+                         </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                         <!-- ///////////////////////////// BLOCK 1 - 5 START ///////////////////////////// -->
+                         <tr class="govuk-table__row row-1" data-status="2" data-criteria="100">
+                              <td class="govuk-table__cell">
+                                   <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_1" name="application_select" type="checkbox" value="Belhavel Construction Ltd" {{ checked("application_select", "Belhavel Construction Ltd") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_1">Belhavel Construction Ltd</label>
+                                        </div>
+                                   </div>
+                              </td>
+                              <td class="govuk-table__cell"> 
+                                   <a href="#" style="font-size: 19px">Belhavel Construction Ltd</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                                   </span>
+                              </td>
+                              <td class="govuk-table__cell"style="font-size: 19px">
+                                   <span class="hide-content">K</span> £2,900
+                              </td>
+                              <td class="govuk-table__cell" style="font-size: 19px">30 months</td>
+                              <td class="govuk-table__cell" style="font-size: 19px">
+                                   <span class="hide-content">A</span>100% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role <br>
+                                        &#8226; Level
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell" style="text-align: left;">
+                                   <strong class="govuk-tag govuk-tag--blue" style="font-size: 16px">Awaiting approval</strong>
+                              </td>
+                         </tr>
+
+                         <tr class="govuk-table__row row-2" data-status="3" data-criteria="75">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_2" name="application_select" type="checkbox" value="CBJ Engineering" {{ checked("application_select", "CBJ Engineering") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_2">CBJ Engineering</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#" style="font-size: 19px">CBJ Engineering</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell" style="font-size: 19px">
+                                   <span class="hide-content">A</span> £36,000
+                              </td>
+                              <td class="govuk-table__cell" style="font-size: 19px">24 months</td>
+                              <td class="govuk-table__cell" style="font-size: 19px">
+                                   <span class="hide-content">B</span>75% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Location <br>
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell" style="text-align: left;">
+                                   <strong class="govuk-tag govuk-tag--yellow" style="font-size: 16px">Awaiting acceptance by applicant</strong>
+                              </td>
+                         </tr>
+
+                         <tr class="govuk-table__row row-3" data-status="5" data-criteria="50">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_3" name="application_select" type="checkbox" value="Johnson and Johnson Building Co" {{ checked("application_select", "Johnson and Johnson Building Co") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_3">Johnson and Johnson Building Co</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#" style="font-size: 19px">Johnson and Johnson Building Co</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell" style="font-size: 19px">
+                                   <span class="hide-content">H</span> £7,500
+                              </td>
+                              <td class="govuk-table__cell" style="font-size: 19px">24 months</td>
+                              <td class="govuk-table__cell" style="font-size: 19px">
+                                   <span class="hide-content">C</span>50% match
+                                   <p style="color: grey; padding-top: 5px;font-size: 16px;">
+                                        &#8226; Sector <br>
+                                        &#8226; Type of job role
+                                   </p>
+                              </td>
+                              <td class="govuk-table__cell" style="text-align: left;">
+                                   <strong class="govuk-tag govuk-tag--red" style="font-size: 16px">Rejected</strong>
+                              </td>
+                         </tr>
+
+                         <tr class="govuk-table__row row-5" data-status="4" data-criteria="0">
+                              <td class="govuk-table__cell">
+                                   <!-- <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                             <input class="govuk-checkboxes__input" id="application_select_5" name="application_select" type="checkbox" value="Ferlot & Co" {{ checked("application_select", "Ferlot & Co") }}>
+                                             <label class="govuk-label govuk-checkboxes__label" for="application_select_5">Ferlot & Co</label>
+                                        </div>
+                                   </div> -->
+                              </td>
+                              <td class="govuk-table__cell">
+                                   <a href="#"style="font-size: 19px">Ferlot & Co</a>
+                                   <strong class="govuk-tag govuk-tag--green shortlisted">shortlisted</strong>
+                              </td>
+                              <td class="govuk-table__cell" style="font-size: 19px">
+                                   <span class="hide-content">M</span> £1,200
+                              </td>
+                              <td class="govuk-table__cell" style="font-size: 19px">12 months</td>
+                              <td class="govuk-table__cell" style="font-size: 19px">
+                                   <span class="hide-content">E</span>0% match
+                              </td>
+                              <td class="govuk-table__cell" style="text-align: left;" id="left">
+                                   <strong class="govuk-tag govuk-tag--yellow" style="font-size: 16px">Withdrawn by applicant</strong>
+                              </td>
+                         </tr>
+                         <!-- ///////////////////////////// BLOCK 1 - 5 END ///////////////////////////// -->
+
+                    </tbody>
+               </table>
+
+               <br><br>
+
+               <div class="non-sticky-footer">
+                    <div class="govuk-width-container">
+                         <div class="govuk-grid-row">
+                              <div class="govuk-grid-column-full">
+                                   <div class="govuk-form-group">
+                                        <form class="" action="#" method="post" id="applications_actions_form">
+                                             <p>Reject selected applications:</p>
+                                             <button class="govuk-button" data-module="govuk-button" id="applications-action">Continue</button>
+                                        </form>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+               <a href="4-my-pledges" class="govuk-back-link">Back to my transfer pledges</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+{% endblock %}
