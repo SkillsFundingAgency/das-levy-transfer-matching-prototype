@@ -31,6 +31,7 @@ router.use('/sprint-24-25', require('./views/sprint-24-25/_routes'))
 router.use('/sprint-26', require('./views/sprint-26/_routes'))
 router.use('/sprint-27', require('./views/sprint-27/_routes'))
 router.use('/sprint-29', require('./views/sprint-29/_routes'))
+router.use('/sprint-29', require('./views/sprint-30/_routes'))
 router.use('/finance-webinar', require('./views/finance-webinar/_routes'))
 
 module.exports = router

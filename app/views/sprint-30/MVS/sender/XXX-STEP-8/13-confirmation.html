@@ -1,0 +1,51 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation pledge-approved">
+                    <h1 class="govuk-panel__title">On 6th April, pledge 100356 will go live</h1>
+               </div>
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <!-- <p>You don't need to do anything else, your pledge will automatically renew when the new financial year begins on 6th April 2022.</p> -->
+
+               <p>Your pledge will go live on the 6th April 2022 to align with the start of the next financial year.</p>
+
+               <p>We will notify you when it is live.</p>
+
+               <p>You can continue to accept or reject applications on the old pledge 910106 until the 5th April 2022.</p>
+
+               <p>
+                    <a href="7-my-pledges" class="govuk-link govuk-link--no-visited-state">View your pledges</a>
+               </p>
+
+               <a href="5-transfers" class="govuk-back-link">Back to transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

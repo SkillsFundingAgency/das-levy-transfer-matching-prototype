@@ -1,0 +1,83 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+          </div>
+     </div>
+
+     <div class="govuk-grid-row" id="">
+          <div class="govuk-grid-column-two-thirds">
+
+               <h1 class="govuk-heading-xl">Confirm details</h1>
+
+               <div class="section-one">
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key" style="width: 40%;">Sending employer</dt>
+                              <dd class="govuk-summary-list__value">BARRY & BARRY Ltd</dd>
+                              <dd class="govuk-summary-list__actions"></dd>
+                         </div>
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">Receiving employer</dt>
+                              <dd class="govuk-summary-list__value">Belhavel Construction Ltd</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="4-transfer-to-business">Change<span class="govuk-visually-hidden"> receiving employer</span></a></dd>
+                         </div>
+                         <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">Receiving account ID</dt>
+                              <dd class="govuk-summary-list__value">12345678</dd>
+                              <dd class="govuk-summary-list__actions"><a class="govuk-link" href="4-transfer-to-business.html">Change<span class="govuk-visually-hidden"> receiving account ID</span></a></dd>
+                         </div>
+                    </dl>
+               </div>
+
+               <form method="post" action="connect_to_employer">
+
+                    <div class="govuk-form-group">
+                         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Do you want to connect with this receiving employer?</legend>
+
+                              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="connect_to_employer" id="connect_to_employer_yes" value="Yes" type="radio" data-aria-controls="conditional-contact-2">
+                                        <label class="govuk-label govuk-radios__label" for="connect_to_employer_yes">Yes, this is the correct employer</label>
+                                   </div>
+
+                                   <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" name="connect_to_employer" id="connect_to_employer_no" value="No" type="radio">
+                                        <label class="govuk-label govuk-radios__label" for="connect_to_employer_no">No, I want to re-enter account ID</label>
+                                   </div>
+
+                              </div>
+
+                         </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                    <a href="3-transfers" class="govuk-link govuk-link-secondary govuk-link--no-visited-state">Cancel transfer</a>
+
+               </form>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

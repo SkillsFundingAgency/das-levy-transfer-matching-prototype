@@ -1,0 +1,92 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+               <!-- ERROR MESSAGING - START -->
+               <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary" id="pledge-amount-error">
+                    <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+                    <div class="govuk-error-summary__body">
+                         <ul class="govuk-list govuk-error-summary__list">
+                              <li class="under-1000"><a href="#pledge-amount">Your pledge amount is under £1,000</a></li>
+                              <li class="over-80000"><a href="#pledge-amount">Your pledge amount is over £80,000</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- ERROR MESSAGING - END -->
+
+               <h1 class="govuk-heading-xl">Set my plegde amount</h1>
+
+               <form method="post" action="7-pledge-confirmation" id="pledge-funding-form">
+
+                    <div class="govuk-form-group" id="pledge-amount-container">
+                         <div class="total">
+                              <p>In this financial year you can pledge up to:</p>
+                              <p class="number">£80,000</p>
+                         </div>
+                         <div class="wrapper">
+                              {% if data['new_pledge_amount-A'] %}
+                                   <label class="govuk-label" for="new_pledge_amount-A">How much funding would you like to pledge?</label>
+                                   <div id="new_pledge_amount-hint" class="govuk-hint">
+                                        Minimum pledge amount is £1,000
+                                   </div>
+                                   <span id="pledge-amount-error-message" class="govuk-error-message">
+                                        <div class="under-1000"><span class="govuk-visually-hidden">Error:</span> Your pledge amount is under £1,000</div>
+                                        <div class="over-80000"><span class="govuk-visually-hidden">Error:</span> Your pledge amount is over £80,000</div>
+                                   </span>
+                                   <div class="govuk-input__wrapper">
+                                       <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                       <input class="govuk-input govuk-input--width-10" id="new_pledge_amount-A" name="new_pledge_amount-A" type="text" spellcheck="false" value="{{ data['new_pledge_amount-A'] }}">
+                                   </div>
+                              {% else %}
+                                   <label class="govuk-label" for="new_pledge_amount-A">How much funding would you like to pledge?</label>
+                                   <div id="new_pledge_amount-hint" class="govuk-hint">
+                                        Minimum pledge amount is £1,000
+                                   </div>
+                                   <span id="pledge-amount-error-message" class="govuk-error-message">
+                                        <div class="under-1000"><span class="govuk-visually-hidden">Error:</span> Your pledge amount is under £1,000</div>
+                                        <div class="over-80000"><span class="govuk-visually-hidden">Error:</span> Your pledge amount is over £80,000</div>
+                                   </span>
+                                   <div class="govuk-input__wrapper">
+                                       <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                       <input class="govuk-input govuk-input--width-10" id="new_pledge_amount-A" name="new_pledge_amount-A" type="text" spellcheck="false" value="65000">
+                                   </div>
+                              {% endif %}
+                         </div>
+                    </div>
+
+                    <div class="form-action">
+                         <button class="govuk-button pledge-amount-continue" data-module="govuk-button" id="accept_amount">Continue</button>
+                    </div>
+
+               </form>
+
+               <div class="error-action">
+                    <button class="govuk-button" data-module="govuk-button" id="amount_error">Continue</button>
+               </div>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

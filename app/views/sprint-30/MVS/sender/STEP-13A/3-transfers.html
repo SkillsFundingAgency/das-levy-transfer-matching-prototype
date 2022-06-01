@@ -1,0 +1,116 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+     <div class="govuk-breadcrumbs">
+          <ol class="govuk-breadcrumbs__list">
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="2-my-account">Home</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="3-finance">Finance</a></li>
+               <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Transfers</a></li>
+          </ol>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <p><br></p>
+
+               <div class="govuk-notification-banner" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__header">
+                         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                         <h3 class="govuk-notification-banner__heading">You can amend your pledges.</h3>
+                         <p class="govuk-body">Your options are to view, amend your pledge amount, transfer to a connection or close. Use the <a href="4-my-pledges">view my transfer pledge and applications</a> button.</p>
+                    </div>
+               </div>
+
+               <h1 class="govuk-heading-xl">Manage transfers</h1>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <h2 class="govuk-heading-m">My transfer finances</h2>
+               <p>This is a financial snapshot of what is available.</p>
+          </div>
+     </div>
+
+     <!-- transfer-values -->
+
+     <div class="transfer-values-prototype mvs-version">
+
+          <div class="transfer-values">
+               <div class="transfer-funds">
+                    <p><span>Your available transfer allowance <br> FY 2022/23</span></p>
+                    <p class="number">£200,000</p>
+               </div>
+
+
+               <div class="transfer-funds">
+                    <p><span>Pledges & transfer connections <br> FY 2022/23</span></p>
+                    <p class="number">£120,000</p>
+               </div>
+
+               <div>
+                    <p><span>How much more you can pledge <br> FY 2022/23</span></p>
+                    <p class="number">£80,000</p>
+               </div>
+
+          </div>
+
+     </div>
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+               <h2 class="govuk-heading-m">Transfers allowance information</h2>
+               <p><strong>Your transfer allowance for this financial year (FY)</strong></p>
+               <p>This is calculated every year on 6 April and shows in your account after 20 April.</p>
+               <p>Transfer payments will leave your account before payments for your own apprenticeships.</p>
+               <p>Your available transfer allowance is the amount you have left to transfer after any deduction for in-house apprenticeships has been taken from your total transfer allowance.</p>
+               <p><strong>Pledges and transfer connections</strong></p>
+               <p>This is an estimate of the amount allocated for your transfers in this financial year. It includes any existing transfer connections carried over from last year.</p>
+               <p><strong>Remaining transfer funds</strong></p>
+               <p>This is an estimate of what remains for you to pledge to transfers in this financial year.</p>
+
+
+               <a href="#" class="govuk-button govuk-button--secondary secondary-overwrite">View my transfer finances</a>
+          </div>
+     </div>
+
+     <div class="section">
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-two-thirds">
+                    <h2 class="govuk-heading-m">My transfer pledges</h2>
+                    <p>Create a public funding pledge which is shown online so that businesses can apply to you for a transfer of funds.</p>
+                    <div class="govuk-inset-text">You have <strong>1</strong> transfer pledge.</div>
+                    <a href="#" class="govuk-button" data-module="govuk-button">Create a transfer pledge</a>
+                    <a href="4-my-pledges" class="govuk-button govuk-button--secondary" data-module="govuk-button">View my transfer pledges and applications</a>
+               </div>
+          </div>
+     </div>
+
+     <div class="section">
+          <div class="govuk-grid-row">
+               <div class="govuk-grid-column-two-thirds">
+                    <h2 class="govuk-heading-m">My transfer connections</h2>
+                    <p>If you know a business you want to transfer funds to, you can make a connection to them and set up a transfer.</p>
+                    <p>You'll need to know their apprenticeship service account ID number.</p>
+                    <div class="govuk-inset-text">You have <strong>0</strong> pending transfer connections.</div>
+                    <a href="#" class="govuk-button govuk-button--secondary secondary-overwrite" data-module="govuk-button">Make a transfer to a business I know</a>
+               </div>
+          </div>
+     </div>
+
+</div>
+
+{% endblock %}

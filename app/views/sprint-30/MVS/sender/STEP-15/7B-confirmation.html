@@ -1,0 +1,62 @@
+{% extends "layout-my-account.html" %}
+
+{% block pageTitle %}
+     Manage apprenticeships
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../includes/navigation_sender_finance.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container form-entry">
+
+     <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+               <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+          </div>
+     </div>
+
+     <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+               <div class="govuk-panel govuk-panel--confirmation pledge-approved">
+                    <h1 class="govuk-panel__title">Application approved</h1>
+                    <p>You approved the Belhavel Construction Ltd application</p>
+               </div>
+
+               <h2 class="govuk-heading-m">What happens next</h2>
+
+               <p>We've let them know, so they can accept your funding pledge.</p>
+
+               <p>You'll receive notifications when <strong>Belhavel Construction Ltd</strong> accepts your pledge.</p>
+
+               <!-- <ul class="govuk-list govuk-list--bullet">
+                    <li>accepts your pledge</li>
+                    <li>adds apprentices to their account</li>
+               </ul> -->
+
+               <p><a href="5-pledge-details" class="govuk-link govuk-link--no-visited-state">View other applications</a></p>
+
+               <br>
+
+               <h2 class="govuk-heading-m">Your pledge balance</h2>
+
+               <p>The pledge balance now has less than £1,000. This may not enough to fund an aprenticeship.</p>
+
+               <p>You may want to take action to <a href="5-pledge-details">edit or close</a> this pledge.</p>
+
+               <br>
+
+
+               <a href="3A-transfers" class="govuk-back-link">Back to Transfers</a>
+
+          </div>
+
+     </div>
+
+</div>
+
+{% endblock %}

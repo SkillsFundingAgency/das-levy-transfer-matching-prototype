@@ -98,9 +98,9 @@
 
           <h2 class="govuk-heading-l" style="padding-top: 10px;margin-bottom: 0px;">MVS prototypes</h2>
 
-          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Sprint 29</span>
+          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Sprint 30</span>
 
-          {% include './sprint-29/_summary.html' %}
+          {% include './sprint-30/_summary.html' %}
 
      </div>
 
@@ -116,7 +116,7 @@
 
           <h2 class="govuk-heading-l" style="padding-top: 10px;margin-bottom: 0px;">Sprint prototypes</h2>
 
-          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Up to sprint 28</span>
+          <span class="govuk-caption-m" style="padding-bottom: 20px;margin-top: 5px;">Up to sprint 29</span>
 
           <details class="govuk-details" data-module="govuk-details">
                <summary class="govuk-details__summary">
@@ -131,6 +131,10 @@
                          <div class="govuk-grid-column-two-thirds">
 
                               <h2 class="govuk-heading-l">Beta sprints</h2>
+
+                              {% set sprint29Html %}
+                                   {% include './sprint-27/_summary.html' %}
+                              {% endset %}
 
                               {% set sprint27Html %}
                                    {% include './sprint-27/_summary.html' %}
@@ -199,6 +203,17 @@
                               {{ govukAccordion({
                                    id: "accordion-beta",
                                    items: [
+                                   {
+                                        heading: {
+                                             text: "Sprint 29"
+                                        },
+                                        content: {
+                                             html: sprint29Html
+                                        },
+                                        summary: {
+                                             html: '2nd March 2022 - 15th March 2022'
+                                        }
+                                   },
                                    {
                                         heading: {
                                              text: "Sprint 27/28"

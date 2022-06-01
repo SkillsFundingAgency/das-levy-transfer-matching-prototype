@@ -1,0 +1,53 @@
+<div class="filter search-applications">
+     <div class="search">
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+               label: {
+                    text: "Search applications"
+               },
+               id: "search-applications",
+               name: "Search applications"
+          }) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+               text: "Search"
+          }) }}
+     </div>
+     <div class="dropdowns">
+          {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+          {{ govukSelect({
+               id: "applications-per-page",
+               name: "applications-per-page",
+               label: {
+                    text: "Per page"
+               },
+               items: [
+                    {
+                         value: "item-25",
+                         text: "25"
+                    },
+                    {
+                         value: "item-50",
+                         text: "50"
+                    },
+                    {
+                         value: "item-75",
+                         text: "75"
+                    },
+                    {
+                         value: "item-100",
+                         text: "100"
+                    },
+                    {
+                         value: "all-applications",
+                         text: "All applications"
+                    }
+               ]
+          }) }}
+
+     </div>
+</div>
